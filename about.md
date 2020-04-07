@@ -65,12 +65,12 @@ Date|Position| Affiliation
 
 ##### Funded
 
-2016-2021	National Science Foundation Graduate Research Fellow ($114,000)
-2016-2019	Hawaii Institute of Marine Biology Lord Scholarship Fund ($8,500)
-2016-2019	University of Hawaii at Manoa Edmondson Research Fund ($3,850)
-2018-2019	Philanthropic Education Organization Scholar Award ($15,000)
-2019			University of Hawaii at Manoa Graduate Student Organization Mentorship Award ($5,000)
-2012-2014	National Oceanic and Atmospheric Administration Ernest Hollings Scholar ($27,000)
+2016-2021	National Science Foundation Graduate Research Fellow ($114,000)  
+2016-2019	Hawaii Institute of Marine Biology Lord Scholarship Fund ($8,500)  
+2016-2019	University of Hawaii at Manoa Edmondson Research Fund ($3,850)  
+2018-2019	Philanthropic Education Organization Scholar Award ($15,000)  
+2019			University of Hawaii at Manoa Graduate Student Organization Mentorship Award ($5,000)  
+2012-2014	National Oceanic and Atmospheric Administration Ernest Hollings Scholar ($27,000)  
 
 
 
