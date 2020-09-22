@@ -3,7 +3,7 @@ layout: post
 title: Mcapitata Spawning and Fertilization July 2020
 date: '2020-07-20'
 categories: Mcapitata-EarlyLifeHistory-2020
-tags: Reproduction, Husbandry, Spawning
+tags: Reproduction Husbandry Spawning
 ---
 
 **Overview**  
@@ -15,4 +15,4 @@ Collection, fertilization, and rearing of *Montipora capitata* spawned gametes d
 
 Sampling and data collection are detailed in additional notebook entries.  
 
-ASH, entry 9/22/2020 
+ASH, entry 9/22/2020
