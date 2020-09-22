@@ -21,11 +21,6 @@ www.gatescorallab.com
 <center>University of Rhode Island</center>
 <center>120 Flagg Road, Kingston RI 02881</center>
 
-<center>Visiting Researcher</center>
-<center>Hawaii Institute of Marine Biology</center>
-<center>46-007 Lilipuna Road, Kaneohe HI 96744</center>
-
-
 ### POSITIONS HELD
 
 Time|Position| Affiliation
@@ -42,13 +37,13 @@ Date|Position| Affiliation
 
  - PhD Dissertation: Getting a head start: Influential early experiences for juvenile corals and community college science students
 
-### PUBLICATIONS 
+### PUBLICATIONS
 
 [Google Scholar Profile](https://scholar.google.com/citations?user=_dw3pYEAAAAJ&hl=en)
 
-7.	Huffmyer AS. 2020. Getting a head start: Influential early experiences for juvenile corals and science students. PhD Dissertation. University of Hawaii at Manoa, Marine Biology Graduate Program. 
+7.	Huffmyer AS. 2020. Getting a head start: Influential early experiences for juvenile corals and science students. PhD Dissertation. University of Hawaii at Manoa, Marine Biology Graduate Program.
 
-6.	Huffmyer AS, SB Matsuda, AE Eggers, JD Lemus, RD Gates. 2020. Evaluation of laser scanning confocal microscopy as a method for characterizing reef-building coral tissue thickness and Symbiodiniaceae fluorescence. Journal of Experimental Biology 223(6): jeb220335. Cover image selected for issue. 
+6.	Huffmyer AS, SB Matsuda, AE Eggers, JD Lemus, RD Gates. 2020. Evaluation of laser scanning confocal microscopy as a method for characterizing reef-building coral tissue thickness and Symbiodiniaceae fluorescence. Journal of Experimental Biology 223(6): jeb220335. Cover image selected for issue.
 
 5.	Matsuda S, AS Huffmyer, EA Lenz, J Davidson, J Hancock, A Przybylowski, T Innis, RD Gates, KL Barott. 2020. Coral bleaching susceptibility is predictive of subsequent mortality within but not between coral species. Frontiers in Ecology and Evolution. In revision, March 2020.  
 
@@ -59,8 +54,8 @@ Date|Position| Affiliation
 2.	Meltvedt AM. 2014. Population structure and genetic variation in the Hawaiian Opakapaka (Pristipomoides filamentosus): Evidence of a genetic bottleneck in a captive broodstock. Oregon State University Senior Undergraduate Thesis.
 
 1.	Meltvedt AM. 2012. Status of reef health at Yellow Sub study site on Bonaire, Dutch Caribbean: progression of a coral-algal phase shift. Physis: Jour of Mar Sci 8:88-98.
-	   
-	   
+
+
 ### RESEARCH GRANTS
 
 ##### Funded
@@ -76,7 +71,3 @@ Date|Position| Affiliation
 2019			University of Hawaii at Manoa Graduate Student Organization Mentorship Award ($5,000)  
 
 2012-2014	National Oceanic and Atmospheric Administration Ernest Hollings Scholar ($27,000)  
-
-
-
-
