@@ -29,7 +29,7 @@ This entry describes the protocol for measuring photosynthesis and respiration i
 
 ## *Prepare system*  
 
-1. Connect all components of the SDR and complete steps to connect computer and enter oxygen calibration data from manufacturer. Here, calibration data was obtained from Loligo systems: [PSt5-1624-01_25°C.dat](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/blob/master/Data/Respiration/Mcap2020/PSt5-1624-01_25%C2%B0C.datADD)
+1. Connect all components of the SDR and complete steps to connect computer and enter oxygen calibration data from manufacturer. Here, calibration data was obtained from Loligo systems: PSt5-1624-01_25°C.dat  
 2. Clean and rinse microplate with filtered seawater. After rinsing, fill all wells with filtered seawater and allow to soak for 10-15 minutes prior to run. If running photosynthesis using an aquarium light, turn light on to allow temperature to equilibrate in the chamber. If using an incubator, put microplate in incubator to allow temperature of chamber to equilibrate.  
 3. Ensure that plate well numbers are aligned between the microplate and the SDR. Ensure that system is protected from water exposure and splashing.  
 
