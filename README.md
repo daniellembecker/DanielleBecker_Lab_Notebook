@@ -1,8 +1,10 @@
+Website built by Jekyll on GitHub
+
 #Open For Science 
 
 I believe the scientific endeavor is best served by transparent and reproducible work. It is my goal to participate in open science and share not only outcomes but process. My notebook documents thoughts, analyses, knowledge gains, roadblocks, detours, and products. My goal is to facilitate scientific advancement through the open sharing of data and analytical approaches. As with science, this notebook is a work in process, hopefully advancing with every iteration. 
 
-This notebook is organized with categories, dates, and tags for each post. 
+This notebook section of this website is organized with categories, dates, and tags for each post. 
 
 **Categories**: Identified as project codes ("Species - Project - Year")
 **Tags**: Objectives, responses measured, activities (e.g., "Respirometry", "Sampling", "Coding", "Husbandry")
