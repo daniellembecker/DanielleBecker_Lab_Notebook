@@ -3,13 +3,19 @@
 #
 
 # Name of your site (displayed in the header)
-name: Ariana S Huffmyer, Putnam Lab Notebook
+name: Ariana S Huffmyer
 
 # Short bio or description (displayed in the header)
 description: Postdoctoral Researcher, Putnam Lab, University of Rhode Island
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: "/ASH_Putnam_Lab_Notebook/images/ArianaHuffmyer.jpg"
+avatar: "/ahuffmyer.github.io/images/ArianaHuffmyer.jpg"
+
+navbar-links:
+  About: "about"
+  Lab Notebook: "notebook"
+  Publications: "publications"
+  Outreach: "outreach"
 
 #
 # Flags below are optional
