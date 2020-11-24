@@ -16,9 +16,9 @@ Data were collected as detailed in the [respirometry protocol](https://ahuffmyer
 
 Larvae and juveniles were collected from [larval rearing and settlement protocols](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Mcapitata-Larval-Rearing-and-Settlement-July-2020/). Juveniles were collected from those grown from June 2020 spawning reared by J. Hancock. These individuals were used to test metabolic scaling in colonies of different fusion sizes (solitary juveniles vs fusion between multiple juveniles at time of settlement).  
 
-Metadata of each well in each run, including number of samples and well location can be found in [respirometry metadata](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/blob/master/Data/Respiration/Mcap2020/Resp_Sample_Info.csv). When recruits were available, larvae and recruits were analyzed in the same run, but in separate wells (i.e., 5 wells of larvae, 5 wells of recruits).  
+Metadata of each well in each run, including number of samples and well location can be found in [respirometry metadata](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/blob/master/Mcap2020/Data/Respiration/Resp_Sample_Info.csv). When recruits were available, larvae and recruits were analyzed in the same run, but in separate wells (i.e., 5 wells of larvae, 5 wells of recruits).  
 
-In each run, photosynthesis was run under light for ~15 minutes. In future runs add more time for each phase (25-30 min if possible). Lights were then turned off and respiration was run for another ~15 minutes. Specific start and end times for consistent slope can be found in the [start times datasheet](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/blob/master/Data/Respiration/Mcap2020/starttimes.csv).     
+In each run, photosynthesis was run under light for ~15 minutes. In future runs add more time for each phase (25-30 min if possible). Lights were then turned off and respiration was run for another ~15 minutes. Specific start and end times for consistent slope can be found in the [start times datasheet](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/blob/master/Mcap2020/Data/Respiration/starttimes.csv).     
 
 # **Run Information**  
 
@@ -42,4 +42,4 @@ Table 1: Respirometry run information for *M. capitata* early life history measu
 
 # **Data Offload**  
 
-All raw data files were offloaded and can be found here: [raw data frames](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/tree/master/Data/Respiration/Mcap2020/Runs).  
+All raw data files were offloaded and can be found here: [raw data frames](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/tree/master/Mcap2020/Data/Respiration/Runs).  

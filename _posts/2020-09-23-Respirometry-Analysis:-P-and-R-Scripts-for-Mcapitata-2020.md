@@ -14,11 +14,11 @@ All scripts and data can be found in my EarlyLifeHistory_Energetics Github repos
 
 To analyze and obtain slopes for photosynthesis and respiration in the same run, I modified previous respiration scripts with the following changes:
 
-[Slope Extraction Script](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/blob/master/Scripts/Respirometry_Extraction.Rmd)
+[Slope Extraction Script](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/blob/master/Mcap2020/Scripts/Respirometry_Extraction_Mcap2020.Rmd)
 * Split data by start and end times specified in dataframe to separate P and R runs.  
 * Calculate blanks for each section of P and R runs and subtract from slopes obtained.  
 * Output corrected slopes into .csv file.  
 
-[Analysis and Plotting Script](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/blob/master/Scripts/Respirometry_Plotting_Stats.Rmd)
+[Analysis and Plotting Script](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/blob/master/Mcap2020/Scripts/Respirometry_Plotting_Stats_Mcap2020.Rmd)
 * Plotting R and P values by net and gross metrics for each life stage measured in this experiment.  
 * Application of statistics (parametric and non-parametric).  

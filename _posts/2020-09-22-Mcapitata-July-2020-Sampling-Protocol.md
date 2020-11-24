@@ -22,13 +22,13 @@ Sampling is conducted using three methods below. Each method will allow for diff
 
 ## **Preservation in Paraformaldehyde (PFA)**  
 
-1) Prepare 4% paraformadehyde solution by diluting concentrated PFA with millepore filtered water. Store this solution in the dark in a flammable cabinet. Transfer fixative to tubes within a properly ventilated hood and with PPE.
+1) Prepare 4 percent paraformadehyde solution by diluting concentrated PFA with millepore filtered water. Store this solution in the dark in a flammable cabinet. Transfer fixative to tubes within a properly ventilated hood and with PPE.
 2) Add live samples (larvae, eggs, recruits) to screw-cap cryo-tubes. Using a pipette, remove as much seawater as possible.  
-3) Add 500-800ul 4% PFA, depending on sample volume. Samples should be completely submerged.  
+3) Add 500-800ul 4 percent PFA, depending on sample volume. Samples should be completely submerged.  
 4) Slowly invert tube several times to encourage mixing of fixative in sample.  
 5) Store at 4°C overnight.  
-6) The next morning (8-12h later), remove 4% PFA from tube using a pipette and discard appropriately.
-7) Add 70% ethanol to sample (500-800uL) for long term storage.  
+6) The next morning (8-12h later), remove 4 percent PFA from tube using a pipette and discard appropriately.
+7) Add 70 percent ethanol to sample (500-800uL) for long term storage.  
 8) Store at 4°C.  
 
 ## **Fixation in RNA/DNA Shield**  
@@ -37,4 +37,3 @@ Sampling is conducted using three methods below. Each method will allow for diff
 2) Add RNA/DNA Shield to tube in at least 1 : 3 to 1 : 5 ratio of sample : shield.
 3) Store at -20°C until processing. Can store at -80°C for long-term storage.  
 
-ASH

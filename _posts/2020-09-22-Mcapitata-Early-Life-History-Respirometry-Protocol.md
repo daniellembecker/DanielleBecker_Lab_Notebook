@@ -21,7 +21,7 @@ This entry describes the protocol for measuring photosynthesis and respiration i
 * Bubbler and aeration  
 * Microfiber towels  
 * PC computer  
-* 4% PFA and small (250 uL) sampling tubes
+* 4 percent PFA and small (250 uL) sampling tubes
 * Pipettes  
 * MilliQ filtered water  
 
@@ -64,7 +64,7 @@ This entry describes the protocol for measuring photosynthesis and respiration i
 ## *Sampling biological samples*   
 
 1. Samples can now be removed from the microplate. Remove with a pipette and transfer to tubes if sampling is desired.  
-2. In this protocol, sample to measure larval size/volume and store in 250uL of 4% PFA at 4°C.  
+2. In this protocol, sample to measure larval size/volume and store in 250uL of 4 percent PFA at 4°C.  
 3. Move all larvae from each well into one tube. Label the tube and write down the corresponding well and run number.  
 
 ## *Data downloading*    

@@ -6,8 +6,6 @@ categories: Ahyacinthus_EarlyLifeHistory_2020
 tags: Ahyacinthus Reproduction Respirometry Sampling
 ---
 
-Note that LIVE LINK indicates links that will be added upon Git repo commit.  
-
 # **Overview**  
 
 This entry describes the sampling and respirometry data collection for Acropora hyacinthus in Moorea, French Polynesia at CRIOBE and Gump Research Stations. Sampling was conducted by D. Becker and D. Conetta. 
@@ -45,13 +43,13 @@ Each well contained 6 larvae with 2 blanks per plate per run. One run was conduc
 
 Plates were filled with filtered seawater and sealed with glass coverslips.  
 
-Photographs of notebooks can be found here LIVE LINK.  
+Photographs of notebooks can be found here [Notebook Photos] (https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/tree/master/Ahya2020/Notebook)   
 
 Temperature was measured in air and in a well before and at the end of the run. Temperatures were between 25-28C.  
 
 In all SDR 641 plates, sensor B6 was broken and excluded from analysis. Wells with bubbles or other problems were excluded from analysis.  
 
-Metadata of all runs can be found here LIVE LINK.  
+Metadata of all runs can be found here [Respirometry metadata] (https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/blob/master/Ahya2020/Data/Respiration/Resp_Sample_Info.csv)   
 
 All runs were completed between 1000 and 1300 on each sampling day.  
 
@@ -59,8 +57,6 @@ All runs were completed between 1000 and 1300 on each sampling day.
 
 Samples were frozen each day in -40C freezers. Sampling was conducted each day just prior to respiration run start times.  
 
-Sample metadata can be found here LIVE LINK.  
-
 # **Analysis and Processing**  
 
-AH will process analysis of respiration and photosynthesis using scripts and protocols as described for Mcapitata. LIVE LINK.  
+AH will process analysis of respiration and photosynthesis using scripts and protocols as described for Mcapitata. [Ahyacinthus respository] (https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/tree/master/Ahya2020)

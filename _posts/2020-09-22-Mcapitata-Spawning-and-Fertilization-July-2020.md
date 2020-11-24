@@ -17,5 +17,3 @@ Collection, fertilization, and rearing of *Montipora capitata* spawned gametes d
 * After collection, bundles were transported to the laboratory where egg and sperm were separated and respectively pooled after natural breakage of the bundles. Pooled egg and sperm were allowed to fertilize for approximately 60 minutes in 50mL falcon tubes at approximately 27.5°C. Following fertilization, embryos were added to 15L conical rearing vessels and were washed to remove sperm. Conicals were supplied with flow-through 1um filtered seawater at ambient temperature. Throughout development, embryos were gently stirred and debris or dead material was removed hourly.  
 
 Sampling and data collection are detailed in additional notebook entries.   
-
-ASH  
