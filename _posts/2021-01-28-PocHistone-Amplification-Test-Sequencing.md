@@ -99,6 +99,7 @@ C26|32.8|32.8|32.8
 - Brought upstairs for sequencing the next day
 
 #### Sequencing Submission 2021-01-28
+- Submitted four test samples for sequencing at 9:40am 
 
 **Spreadsheet for Sequencing**
 
