@@ -17,7 +17,7 @@ Information on Sanger sequencing at the URI GSC is [here](https://web.uri.edu/gs
 
 #### DNA Dilutions 2020-08-27
 
-**[DNA Dilutions](https://github.com/meschedl/MESPutnam_Open_Lab_Notebook/blob/master/_posts/2020-08-27-mtORF-protocol.md) for samples completed by Maggie on 2020-08-27. See above notebook post for in depth details for this protocol.**
+DNA dilutions for samples completed by Maggie on 2020-08-27. See the [notebook post](https://github.com/meschedl/MESPutnam_Open_Lab_Notebook/blob/master/_posts/2020-08-27-mtORF-protocol.md) for in depth details for this protocol.
 
 #### Histone Amplifications 2021-01-25
 
