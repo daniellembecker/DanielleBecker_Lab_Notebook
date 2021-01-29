@@ -1,13 +1,13 @@
 ---
 layout: post
-title: PocHistone Amplification and Sanger Sequencing Prep Protocol
+title: PocHistone Amplification and Test Sanger Sequencing Prep Protocol
 category: [ PCR , Protocol ]
 tag: [ Pocillopora, PocHistone ]
 ---
-# Protocol for PocHistone Amplification and Sanger Sequencing for Determining *Pocillopora* Species
+# Protocol for PocHistone Amplification and Test Sanger Sequencing Prep
 
 #### Goal:
-Amplify the histone 3 region region  of _Pocillopora_ coral DNA using PCR (polymerase chain reaction). Then use amplification product for Sanger Sequencing and determination of _Pocillopora_ coral species between _P. eydouxi_ and _P. meandrina_. Primer sequences and concept developed in [Johnston et. al 2018](https://peerj.com/articles/4355/).
+Amplify the histone 3 region of _Pocillopora_ coral DNA using PCR (polymerase chain reaction). Then use amplification product for Sanger Sequencing and determination of _Pocillopora_ coral species between _P. eydouxi_ and _P. meandrina_ on 4 test samples out of 32 samples. Primer sequences and concept developed in [Johnston et. al 2018](https://peerj.com/articles/4355/).
 
 Information on Sanger sequencing at the URI GSC is [here](https://web.uri.edu/gsc/sanger_sequencing/). Sequencing takes place after 10am on Tuesdays and Thursdays.
 
@@ -17,24 +17,21 @@ Information on Sanger sequencing at the URI GSC is [here](https://web.uri.edu/gs
 
 #### DNA Dilutions 2020-08-27
 
-- Arranged samples in a 96 well plate randomly with 3 spots for control reactions
-- Allocated DNA for 10ng/ul in 10ul of nuclease free water, so 100ng of DNA. If samples had concentrations below 10ng/ul to start with, just 10ul of those samples was added to each well
-
-![](https://raw.githubusercontent.com/meschedl/MESPutnam_Open_Lab_Notebook/master/images/dilution-plate.png)
+**[DNA Dilutions](https://github.com/meschedl/MESPutnam_Open_Lab_Notebook/blob/master/_posts/2020-08-27-mtORF-protocol.md) for samples completed by Maggie on 2020-08-27. See above notebook post for in depth details for this protocol.**
 
 #### Histone Amplifications 2021-01-25
 
 - 32 samples plus three negative controls is 35 reactions, use an additional 3 for error
 - Made a master mix for 38 samples and 3 reactions each:
   - 1900ul Phusion master mix
-  - 49.4ul FatP6.1 10uM Primer
-  - 49.4ul RORF 10uM Primer
+  - 49.4ul working stock PocHistoneF 10uM Primer
+  - 49.4ul working stock PocHistoneR 10uM Primer
   - 1672ul nuclease free water
 - Added 97ul of master mix into 35 wells in a new plate
 - Used a multichannel to add 3ul of DNA from the dilution plate in to the same orientation wells in the plate with the master mix
 - Covered plate and vortexed and spun down
 - Separated plate out 2 times into 3 separated reaction mixes each with 33ul
-- Covered plates, spun down, and placed in three thermocyclers FatP6.1 RORF program
+- Covered plates, spun down, and placed in three thermocyclers PocHistone program
 
 #### 1X Bead Cleanup and Quantification 2021-01-25
 
@@ -42,10 +39,18 @@ Information on Sanger sequencing at the URI GSC is [here](https://web.uri.edu/gs
 - Added 1X (100ul) beads to each well
 - Followed bead cleanup protocol
 - Resuspended and eluted DNA in 50ul ultra-pure water and removed into a new plate (same orientation)
+
+#### Broad Range Qubit 2020-01-25
+
 - dsDNA broad range Qubit assay for 35 samples (n# 40)
+- Followed [qubit protocol](https://meschedl.github.io/MESPutnam_Open_Lab_Notebook/Qubit-Protocol/)
+- Included 32 samples, 3 controls, and 2 standards
 
 **Sample.ID**|**Qubit reading 1 (ng/ul)**|**Qubit reading 2 (ng/ul)**|**average DNA (ng/ul)**
 :-----:|:-----:|:-----:|:-----:
+std. 1|176.98|NA|NA
+std. 1|20368.25|NA|NA
+E10|49|49|49
 C22|38.2|38.4|38.3
 E10|49|49|49
 E2|49|49.4|49.2
@@ -89,17 +94,29 @@ C26|32.8|32.8|32.8
 #### Dilution and Sequencing Prep 2021-01-27
 
 - Used samples E12 (small band underneath); E8 (no smearing); C17 (small band above); C30 (smearing)
-- Diluted each DNA amplification by 1:10 (2ul of DNA and 18ul of ultra-pure water)
-- 2 ul primer for four DNA samples and some for error = 9 ul primer
-- Diluted primer with 2.88 ul of primer (calculated by using a stock concentration of 10 uM; 9 ul of primer; and a desired concentration 3.2 uM) and 6.12 ul H2O
-- Created plate with 16.7ng of DNA for each sample and ultra-pure water up to 10ul
- ![](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/20210126_16.7ng_H20_10ul.png)
-- Added 2ul of 3.2uM RORF primer to each well
-- Covered, vortexed, spun down plate
-- Brought upstairs for sequencing the next day
+- For sequencing I need 9ul (4 * 2 +1 for error) of 3.2uM RORF primer
+- The mtORF product should be ~669 bp, so 669 / 100 * 1.25 * 2 = 16.7ng of each sample
+- 16.7ng is still less than 1ul for every sample, so I did a 1:10 dilution for each one
+- Added 18ul of ultra pure water to 4 new strip tubes, and added 2ul of each cleaned DNA to their corresponding well
+- Pipetted 16.7ng of each sample from diluted stock to new strip tubes
+- Increased volume in tubes to 10ul with ultra pure water
+
+|Sample|GSC sample code|Dilution conc.|ng needed|Volume diluted PCR product|volume ultra pure H2O|
+|---|---|---|---|---|---|
+|E12|HPD33|5.33|16.7|3.13|6.87|
+|E8|HPD34|4.51|16.7|3.70|6.30|
+|C17|HPD35|5.28|16.7|3.16|6.84|
+|C30|HPD36|5.52|16.7|3.03|6.97|
+
+- Made 9ul of diluted 10uM stock RORF to 3.2uM
+- Added 6.12ul of ultra pure water to 1 PCR tube
+- Added 2.88ul of 10uM RORF primer to tube
+- Vortex and spin down to mix
+- Added 2ul of 3.2uM primer to each of the 8 strip tubes diluted for sequencing
+- Stored prepared samples in -20 freezer
 
 #### Sequencing Submission 2021-01-28
-- Submitted four test samples for sequencing at 9:40am 
+- Submitted four test samples for sequencing at 9:40am
 
 **Spreadsheet for Sequencing**
 
