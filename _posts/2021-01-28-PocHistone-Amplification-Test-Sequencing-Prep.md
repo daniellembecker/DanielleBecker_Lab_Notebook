@@ -4,7 +4,7 @@ title: PocHistone Amplification and Test Sanger Sequencing Prep Protocol
 category: [ PCR , Protocol ]
 tag: [ Pocillopora, PocHistone ]
 ---
-# Protocol for PocHistone Amplification and Test Sanger Sequencing Prep
+## Protocol for PocHistone Amplification and Test Sanger Sequencing Prep
 
 #### Goal:
 Amplify the histone 3 region of _Pocillopora_ coral DNA using PCR (polymerase chain reaction). Then use amplification product for Sanger Sequencing and determination of _Pocillopora_ coral species between _P. eydouxi_ and _P. meandrina_ on 4 test samples out of 32 samples. Primer sequences and concept developed in [Johnston et. al 2018](https://peerj.com/articles/4355/).

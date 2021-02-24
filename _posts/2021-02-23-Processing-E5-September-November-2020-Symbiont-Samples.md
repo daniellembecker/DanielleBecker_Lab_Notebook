@@ -1,10 +1,10 @@
 ---
 layout: post
 title: E5 Timepoint 3 and 4 Endosymbiont Sample Processing (2020)
-category: [ Processing ]
+category: [ Processing, Protocol ]
 tag: [ Physiology, Endosymbiont Samples ]
 ---
-# Counting the E5 September and November 2020 Endosymbiont Samples
+## Counting the E5 September and November 2020 Endosymbiont Samples
 
 ### Goal:
 Process all remaining endosymbiont samples collected for the [E5 uROL Epigenetics Project](https://urol-e5.github.io). The remaining endosymbiont samples were collected in September (n = 75) and November (n = 113) 2020 and fixed in 10% formalin for transportation back to URI on November, 22nd 2020.
