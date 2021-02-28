@@ -40,7 +40,7 @@ When beginning the protocol, I noticed that the endosymbiont pellets within the 
 7. Vortex the sample for ~10 seconds before loading the haemocytometer in the flume hood for the first time following the E5 protocol above, and remember to always vortex the sample before each subsequent loading.
     - Every subsequent loading of the haemocytometer must take place within the flume hood.
 8. Between each sample, clean the homogenizer in a 10% bleach solution for 10 seconds, DI wash #1 for 10 seconds, DI wash #2 for 10 seconds, then wipe down with an isopropanol wipe in the flume hood.
-9. Properly dispose of any seawater and formalin solution into the formalin waste container in the flume hood and store formalin exposed pen and haemocytometer in the flume hood. 
+9. Properly dispose of any seawater and formalin solution into the formalin waste container in the flume hood and store formalin exposed pen and haemocytometer in the flume hood.
 
 #### Data for counts completed on 20210223 (n = 12)
 
@@ -89,4 +89,24 @@ When beginning the protocol, I noticed that the endosymbiont pellets within the 
 
 
 **Daily Notes (20210225)**
-- Samples POC-57 and POC-372 had smaller pellets that did not homogenize as well as others 
+- Samples POC-57 and POC-372 had smaller pellets that did not homogenize as well as others
+
+#### Data for counts completed on 20210228 (n = 12)
+
+| colony_id | timepoint | Squares.Counted | Count1 | Count2 | Count3 | Count4 | Count5 | Count6 | Count7 | Count8 | Dilution | Counter | Date.Counted | Average Per Square | Std.Dev. Per square | CV          |
+|-----------|-----------|-----------------|--------|--------|--------|--------|--------|--------|--------|--------|----------|---------|--------------|--------------------|---------------------|-------------|
+| POC-68    | 3         | 2               | 136    | 131    | 152    | 144    | 125    | 131    |        |        | NA       | DMB     | 20210227     | 68.25              | 4.947221442         | 7.248676106 |
+| ACR-343   | 3         | 3               | 131    | 140    | 142    | 136    | 145    | 140    |        |        | NA       | DMB     | 20210227     | 46.33333333        | 1.632993162         | 3.524445673 |
+| ACR-229   | 3         | 3               | 105    | 101    | 102    | 98     | 109    | 99     |        |        | NA       | DMB     | 20210227     | 34.11111111        | 1.360827635         | 3.989396975 |
+| POR-69    | 3         | 2               | 171    | 168    | 164    | 172    | 140    | 166    |        |        | NA       | DMB     | 20210227     | 81.75              | 5.947688627         | 7.275460094 |
+| POR-73    | 3         | 2               | 136    | 141    | 129    | 130    | 136    | 130    |        |        | NA       | DMB     | 20210227     | 66.83333333        | 2.380476143         | 3.56180969  |
+| POC-45    | 3         | 2               | 121    | 118    | 123    | 120    | 113    | 120    |        |        | NA       | DMB     | 20210227     | 59.58333333        | 1.715128761         | 2.878537781 |
+| POC-52    | 3         | 2               | 111    | 109    | 112    | 112    | 115    | 107    |        |        | NA       | DMB     | 20210227     | 55.5               | 1.378404875         | 2.483612388 |
+| ACR-241   | 3         | 3               | 120    | 122    | 114    | 116    | 120    | 121    |        |        | NA       | DMB     | 20210227     | 39.61111111        | 1.041722221         | 2.629873769 |
+| POC-201   | 3         | 2               | 106    | 100    | 99     | 101    | 105    | 100    |        |        | NA       | DMB     | 20210227     | 50.91666667        | 1.463443428         | 2.874193312 |
+| POC-255   | 3         | 3               | 101    | 105    | 118    | 98     | 110    | 100    |        |        | NA       | DMB     | 20210227     | 35.11111111        | 2.509242176         | 7.146575817 |
+| ACR-364   | 3         | 3               | 128    | 110    | 118    | 122    | 125    | 120    |        |        | NA       | DMB     | 20210227     | 40.16666667        | 2.084333093         | 5.189211021 |
+| ACR-140   | 3         | 3               | 121    | 122    | 121    | 116    | 125    |        |        |        | NA       | DMB     | 20210227     | 40.33333333        | 1.08012345          | 2.677992024 |
+
+**Daily Notes (20210228)**
+- No daily notes, all samples homogenized well
