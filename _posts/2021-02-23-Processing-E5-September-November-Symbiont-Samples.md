@@ -1,6 +1,6 @@
 ---
 layout: post
-title: E5 Timepoint 3 and 4 Endosymbiont Sample Processing (2020)
+title: E5 Timepoint 3 and 4 Endosymbiont Sample Processing (Samples Collected in 2020)
 category: [ Processing, Protocol ]
 tag: [ Physiology, Endosymbiont Samples, Formalin Fixed Samples ]
 ---
