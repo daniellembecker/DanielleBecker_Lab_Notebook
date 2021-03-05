@@ -74,3 +74,7 @@ Process all of the physiological data (i.e. counts, size, symbiont counts) for t
 
 #### Notes for count data completed on 20210304
 - Noticed that the larvae 1 timepoint replicates were slightly degraded but still had a sufficient amount of larvae that was good
+
+![][https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/larvae1.tube.jpg]
+
+![][https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/larvae1.dish.jpg]
