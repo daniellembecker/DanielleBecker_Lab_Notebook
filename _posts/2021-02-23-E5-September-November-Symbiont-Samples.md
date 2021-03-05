@@ -45,7 +45,7 @@ When beginning the protocol, I noticed that the endosymbiont pellets within the 
 #### Data for counts completed on 20210223 (n = 12)
 
 | colony_id | timepoint | squares.counted | count1 | count2 | count3 | count4 | count5 | count6 | count7 | count8 | dilution | counter | average.per.square | std.dev.per.square | cv  |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|------|----------|----------|-------------|-------------|-------------|------|----------|----------|-------------|-------------|-------------|----------|-------------|-------------|-------------|
 | POC-53    | 3         | 2               | 129    | 145    | 135    | 146    | 139    | 146    |        |        | NA       | DMB     | 70                 | 3.492849839        | 4.989785485 |
 | POR-209   | 3         | 3               | 102    | 101    | 111    | 114    | 114    | 110    |        |        | NA       | DMB     | 36.22222222        | 1.928346058        | 5.323654761 |
 | POR-76    | 3         | 2               | 149    | 150    | 154    | 151    | 159    | 155    |        |        | NA       | DMB     | 76.5               | 1.870828693        | 2.445527704 |
