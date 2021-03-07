@@ -185,7 +185,16 @@ C26|32.8|32.8|32.8
 
 #### Sequences Recieved 2021-03-03
 
-- Many of the sequences showed peaks and overlap in their chromatograms, but some were good. During troubleshooting, I organized the sequences that did not exhibit overlap and peaks in their chromatograms. I was able to align and delinate to species for samples: E10, C25, E6, C24, E7, and E13. 
+- Many of the sequences showed peaks and overlap in their chromatograms, but some were good. During troubleshooting, I organized the sequences that did not exhibit overlap and peaks in their chromatograms. 
+
+Example of a successful and unsuccessful chromatogram for two samples in the same sequence run:
+
+![](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/20210303_chromatogram_successful.png)
+
+
+![](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/20210303_chromatogram_unsuccessful.png)
+
+- I was able to align and delinate to species for samples: E10, C25, E6, C24, E7, and E13. 
 - Upon discussion, Maggie and Hollie suggested running a gel for longer could show if our gel was masking bacterial, symbiont, or coral gene duplication DNA that the primer worked on as well as the targeted region.
     - Disscussion points: since the gel showed very bright bands it could mean that it was probably a little too much DNA in each well. Which may have been masking something that is a little larger in size. If we had a lot of DNA, it could be too much to all be moving at the same pace, she suggested that could be why we got some fuzzy/glowy bands. Adding less DNA to the gel (like using the 1:10 dilution) and running it for longer, maybe 1.5 hours, will make less bright bands and spread them out more if there are two. 
 - We then reached out to Dr. Erika Johnston who developed and worked heavily with these primers, she suggested that maybe the forward primer could be picking up non-specific DNA that could have been amplified in the smear, possibly from bacteria, etc. She suggested using the reverse primer instead beacuse it is much more specific than the forward. 
