@@ -200,4 +200,4 @@ Example of a successful and unsuccessful chromatogram for two samples in the sam
 - We then reached out to Dr. Erika Johnston who developed and worked heavily with these primers, she suggested that maybe the forward primer could be picking up non-specific DNA that could have been amplified in the smear, possibly from bacteria, etc. She suggested using the reverse primer instead beacuse it is much more specific than the forward. 
 - I will be prepping the remaining 22 samples for sequencing using the reverse primer to see if this was the main issue from this round of sequencing.
 
-Example chromatograms
+
