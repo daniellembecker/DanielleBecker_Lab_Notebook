@@ -93,8 +93,8 @@ C26|32.8|32.8|32.8
 
 #### Dilution (2021-01-26) and Sequencing Prep for Remaining 28 Samples (2021-03-01)
 
-###### All samples were diluted at the same time on 2021-01-26 
-- Prepped the remaining 28 samples for sequencing 
+###### All samples were diluted at the same time on 2021-01-26
+- Prepped the remaining 28 samples for sequencing
 - For sequencing I needed 57ul (28 * 2 +1 for error) of 3.2uM FORF primer
 - The mtORF product should be ~669 bp, so 669 / 100 * 1.25 * 2 = 16.7ng of each sample
 - 16.7ng is still less than 1ul for every sample, so a 1:10 dilution was done for each sample on 2021-01-26
@@ -185,7 +185,7 @@ C26|32.8|32.8|32.8
 
 #### Sequences Recieved 2021-03-03
 
-- Many of the sequences showed peaks and overlap in their chromatograms, but some were good. During troubleshooting, I organized the sequences that did not exhibit overlap and peaks in their chromatograms. 
+- Many of the sequences showed peaks and overlap in their chromatograms, but some were good. During troubleshooting, I organized the sequences that did not exhibit overlap and peaks in their chromatograms.
 
 Example of a successful and unsuccessful chromatogram for two samples in the same sequence run:
 
@@ -194,10 +194,8 @@ Example of a successful and unsuccessful chromatogram for two samples in the sam
 
 ![](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/20210303_chromatogram_unsuccessful.png)
 
-- I was able to align and delinate to species for samples: E10, C25, E6, C24, E7, and E13. 
+- I was able to align and delineate to species for samples: E10, C25, E6, C24, E7, and E13.
 - Upon discussion, Maggie and Hollie suggested running a gel for longer could show if our gel was masking bacterial, symbiont, or coral gene duplication DNA that the primer worked on as well as the targeted region.
-    - Disscussion points: since the gel showed very bright bands it could mean that it was probably a little too much DNA in each well. Which may have been masking something that is a little larger in size. If we had a lot of DNA, it could be too much to all be moving at the same pace, she suggested that could be why we got some fuzzy/glowy bands. Adding less DNA to the gel (like using the 1:10 dilution) and running it for longer, maybe 1.5 hours, will make less bright bands and spread them out more if there are two. 
-- We then reached out to Dr. Erika Johnston who developed and worked heavily with these primers, she suggested that maybe the forward primer could be picking up non-specific DNA that could have been amplified in the smear, possibly from bacteria, etc. She suggested using the reverse primer instead beacuse it is much more specific than the forward. 
+    - Discussion points: since the gel showed very bright bands it could mean that it was probably a little too much DNA in each well. Which may have been masking something that is a little larger in size. If we had a lot of DNA, it could be too much to all be moving at the same pace, she suggested that could be why we got some fuzzy/glowy bands. Adding less DNA to the gel (like using the 1:10 dilution) and running it for longer, maybe 1.5 hours, will make less bright bands and spread them out more if there are two.
+- We then reached out to Dr. Erika Johnston who developed and worked heavily with these primers, she suggested that maybe the forward primer could be picking up non-specific DNA that could have been amplified in the smear, possibly from bacteria, etc. She suggested using the reverse primer instead because it is much more specific than the forward.
 - I will be prepping the remaining 22 samples for sequencing using the reverse primer to see if this was the main issue from this round of sequencing.
-
-
