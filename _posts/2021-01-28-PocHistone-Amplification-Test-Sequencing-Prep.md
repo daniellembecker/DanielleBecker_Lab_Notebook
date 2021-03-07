@@ -126,3 +126,7 @@ C26|32.8|32.8|32.8
 | HPD34      |                      | PCR            | 669                      | 4.51                            | 16.725                                               | 3.70                                 | 6.30                                           | 2                                          |
 | HPD35      |                      | PCR            | 669                      | 5.28                            | 16.725                                               | 3.16                                 | 6.84                                           | 2                                          |
 | HPD36      |                      | PCR            | 669                      | 5.52                            | 16.725                                               | 3.03                                 | 6.97                                           | 2                                          |
+
+#### Sequences Recieved 2021-01-29
+
+- All sequences looked good, was able to align and delinate to species using Geneious Prime.
