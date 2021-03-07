@@ -136,6 +136,10 @@ C26|32.8|32.8|32.8
 ###### Sequencing prep on 2021-03-01
 - Added 16.7 ng of DNA following the volume of the diluted PCR product for each sample above to each corresponding well in a 96-well plate
 - Added the volume of ultra pure H2O corresponding to each sample above into the 96-well plate wells
+
+![](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/28_samples_sequence_layout.png)
+
+
 - Made 57ul of diluted 10uM stock FORF to 3.2uM
 - Added 38.76ul of ultra pure water to 1 PCR tube
 - Added 18.24ul of 10uM FORF primer to tube
