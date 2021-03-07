@@ -1,6 +1,6 @@
 ---
 layout: post
-title: PocHistone Sanger Sequencing Prep Protocol
+title: PocHistone Sanger Sequencing Prep Protocol for 28 Samples
 category: [ PCR , Protocol ]
 tag: [ Pocillopora, PocHistone ]
 ---
