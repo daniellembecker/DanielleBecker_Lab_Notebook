@@ -9,7 +9,7 @@ tag: [ Physiology, Larval Developmental Counts, Size, Symbiont Counts ]
 ### Goal:
 Process all of the physiological data (i.e. counts, size, symbiont counts) for the *Montipora capitata* (vertical spawner) developmental timepoint samples (n=40). Samples were collected at the Hawaii Institute of Marine Biology in July 2020 and are apart of a larger project which focuses on early life history energetics and symbiotic integration in vertical and horizontal transmission corals.
 
-### Count Process:
+### Count Protocol:
 
 **Materials**
  - Glass pipette
