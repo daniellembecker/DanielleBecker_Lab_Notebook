@@ -174,3 +174,5 @@ C26|32.8|32.8|32.8
 #### Sequences Received 2021-03-09
 
 - All sequences good besides sample HPD81, sample C23
+
+![](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/20210309_HPD81_chromatogram.png)
