@@ -84,4 +84,50 @@ Total Alkalinity Output
 
 
 #### New pH probe received on 20210303
+
 #### New pH probe assembled, installed and tested on 20210307 
+
+#### Data and notes for testing variability in CRMs and new pH probe 20210314
+
+Notes:
+- Continued the troubleshooting process and had great pH calibration values with the new probe and buffers before any runs today. Purged all bubbles and checked every box before running one junk and 8 CRM samples. After the run with 8 CRMS, I noticed that the variability from the CRM value was still >1% in a few of the samples. I attributed this to the older CRM bottle that was opened on 20210228. I opened a brand new CRM bottle and ran four samples but there was still variability to the original CRM value but less than in the previous run. I called Mettler Toledo support and they said this could be an offset with the titrant (acid) and they have had this happen. We could measure the titrant against tris buffer to calculate the offset and apply that to our equations. Currently thinking about next steps.
+
+Data:
+
+CRM Accuracy Data
+
+| Date     | CRM value   | Batch value | % off        | Batch # | Notes               |
+|----------|-------------|-------------|--------------|---------|---------------------|
+| 20210314 | 2182.69197  | 2234.07     | -2.29975022  | 141     | CRM opened 20210228 |
+| 20210314 | 2183.070705 | 2234.07     | -2.282797543 | 141     | CRM opened 20210228 |
+| 20210314 | 2179.989317 | 2234.07     | -2.420724647 | 141     | CRM opened 20210228 |
+| 20210314 | 2180.118916 | 2234.07     | -2.414923637 | 141     | CRM opened 20210228 |
+| 20210314 | 2194.262889 | 2234.07     | -1.781820203 | 141     | CRM opened 20210228 |
+| 20210314 | 2194.808799 | 2234.07     | -1.757384566 | 141     | CRM opened 20210228 |
+| 20210314 | 2192.134088 | 2234.07     | -1.877108222 | 141     | CRM opened 20210228 |
+| 20210314 | 2192.253611 | 2234.07     | -1.871758246 | 141     | CRM opened 20210228 |
+| 20210314 | 2205.731211 | 2224.47     | -0.842393439 | 180     | CRM opened 20210314 |
+| 20210314 | 2194.005521 | 2224.47     | -1.369516288 | 180     | CRM opened 20210314 |
+| 20210314 | 2192.044753 | 2224.47     | -1.457661693 | 180     | CRM opened 20210314 |
+| 20210314 | 2196.378938 | 2224.47     | -1.262820467 | 180     | CRM opened 20210314 |
+
+Total Alkalinity Output
+
+| SampleID | TA          | Mass   | Salinity |
+|----------|-------------|--------|----------|
+| JUNK1    | 1981.003448 | 60.113 | 35       |
+| CRM1     | 2182.69197  | 60.225 | 33.417   |
+| CRM2     | 2183.070705 | 59.774 | 33.417   |
+| CRM3     | 2179.989317 | 60.107 | 33.417   |
+| CRM4     | 2180.118916 | 60.161 | 33.417   |
+| CRM5     | 2194.262889 | 59.659 | 33.417   |
+| CRM6     | 2194.808799 | 59.719 | 33.417   |
+| CRM7     | 2192.134088 | 59.651 | 33.417   |
+| CRM8     | 2192.253611 | 59.892 | 33.417   |
+| CRM1     | 2205.731211 | 60.297 | 33.623   |
+| CRM2     | 2194.005521 | 60.319 | 33.623   |
+| CRM3     | 2192.044753 | 59.881 | 33.623   |
+| CRM4     | 2196.378938 | 59.971 | 33.623   |
+
+
+
