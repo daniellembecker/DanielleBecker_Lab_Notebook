@@ -6,10 +6,10 @@ tag: [ Physiology, Calcification Samples, Mercuric Chloride Fixed Samples ]
 ---
 ## Processing the E5 January and March 2020 Instantaneous Calcification Samples
 
-### Goal:
+### **Goal**
 Process calcification samples collected for the [E5 uROL Epigenetics Project](https://urol-e5.github.io) from January and March 2020 (timepoint 1 and 2). The samples were collected in January (n = X) and March (n = X) 2020 and fixed with 75uL of saturated mercuric chloride for transportation back to URI on November, 22nd 2020.
 
-### Process:
+### **Process**
 
 **Samples were collected, experimental run, and transported back to URI following the [E5 Instantaneous Calcification Protocol](https://github.com/urol-e5/protocols/blob/master/2020-01-01-Instantaneous-Calcification-Protocol.md) in Mo'orea, French Polynesia.**
 
@@ -20,12 +20,12 @@ All samples will be processed following the established [Putnam Lab Titrator Pro
 All data processed and collected on the Putnam Lab Titrator will be available on the [Putnam Lab Titrator GitHub Repository](https://github.com/Putnam-Lab/Titrator).
 
 
-#### Data and notes for testing pH probe and buffers on 20210221
+#### **Data and notes for testing pH probe and buffers on 20210221**
 
-Notes:
+**Notes**
 - In the initial titration set-up I noticed that the pH calibration was a bit off due to the zero point and slope values we received [here](https://github.com/Putnam-Lab/Titrator/blob/main/Data/pHCalibration.csv). I ran a CRM and found that is was within the < 1% accuracy that we would expect but at a value of -0.82% was a little high especially with the floating pH calibration data. I began to troubleshoot the problem and thought that maybe the pH buffers could be off from prior knowledge. A new round of buffers was ordered to test the pH probe. pH calibration and CRM accuracy information can be found in the [Putnam Lab Titrator Protocol](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resourses/Equipment_Protocols/Titrator_Protocols/Titrator_Protocol.md).
 
-Data:
+**Data**
 
 | SampleID | TA               | Mass   | Salinity |
 |----------|------------------|--------|----------|
@@ -34,9 +34,9 @@ Data:
 
 
 
-#### Data and notes for testing variability in CRMs and pH probe 20210228
+#### **Data and notes for testing variability in CRMs and pH probe 20210228**
 
-Notes:
+**Notes**
 - Continued the troubleshooting process and still saw that the pH calibration values were off and the probe was floating in its mV values when measured manually for 40 seconds in each of the 4, 7, and 10 pH buffers. The values were small but still seemed inconsistent. To test how much variability we were seeing in CRMs due to the pH probe, I ran 8 CRMs. There was a lot of variability between the CRMs so a new pH probe was ordered and received on 20210304.
 
 pH buffer 4 manually measured values (mV)
@@ -51,7 +51,7 @@ pH buffer 10 manually measured values (mV)
 
 ![](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/pH.probe.10.jpg)
 
-Data:
+**Data**
 
 CRM Accuracy Data
 
@@ -83,16 +83,16 @@ Total Alkalinity Output
 | CRM8     | 2222.545765 | 60.105 | 33.417   |
 
 
-#### New pH probe received on 20210303
+#### **New pH probe received on 20210303**
 
-#### New pH probe assembled, installed and tested on 20210307 
+#### **New pH probe assembled, installed and tested on 20210307**
 
-#### Data and notes for testing variability in CRMs and new pH probe 20210314
+#### **Data and notes for testing variability in CRMs and new pH probe 20210314**
 
-Notes:
-- Continued the troubleshooting process and had great pH calibration values with the new probe and buffers before any runs today. Purged all bubbles and checked every box before running one junk and 8 CRM samples. After the run with 8 CRMS, I noticed that the variability from the CRM value was still >1% in a few of the samples. I attributed this to the older CRM bottle that was opened on 20210228. I opened a brand new CRM bottle and ran four samples but there was still variability to the original CRM value but less than in the previous run. I called Mettler Toledo support and they said this could be an offset with the titrant (acid) and they have had this happen. We could measure the titrant against tris buffer to calculate the offset and apply that to our equations. Currently thinking about next steps.
+**Notes**
+- Continued the troubleshooting process and had great pH calibration values with the new probe and buffers before any runs today. Purged all bubbles and checked every box before running one junk and 8 CRM samples. After the run with 8 CRMS, I noticed that the variability from the CRM value was still >1% in a few of the samples. I attributed this to the older CRM bottle that was opened on 20210228. I opened a brand new CRM bottle and ran four samples but there was still variability to the original CRM value but less than in the previous run. I called Mettler Toledo support and they said this could be an offset with the titrant (acid) and they have had this happen. We could measure the titrant against tris buffer to calculate the offset and apply that to our equations. Noticed that the titrant was replaced in May 2019, which seemed very old and think evaporation could have effected its composition. Next round I am going to change out the titrant with a new bottle.
 
-Data:
+**Data**
 
 CRM Accuracy Data
 
@@ -130,4 +130,32 @@ Total Alkalinity Output
 | CRM4     | 2196.378938 | 59.971 | 33.623   |
 
 
+#### **Data and notes for testing variability in CRMs with new titrant 20210328**
 
+**Notes**
+- Continued the troubleshooting process and changed out the older titrant with a new Batch #A16 titrant. Purged the lines four times to make sure to run through any of the older titrant from the lines. Ran a pH calibration that had sound numbers and then I ran a junk sample before five CRMs. IT WORKED! The CRM values were very accurate and everything looked good from the run. Can continue with samples moving forward.
+
+**Data**
+
+CRM Accuracy Data
+
+| Date     | CRM value   | Batch value | % off        | Batch # | Notes               |
+|----------|-------------|-------------|--------------|---------|---------------------|
+| 20210328 | 2766.991908 | 2225.47     | 24.33292331  | 180     | CRM opened 20210314 |
+| 20210328 | 2226.220045 | 2226.47     | -0.011226509 | 180     | CRM opened 20210314 |
+| 20210328 | 2224.425627 | 2227.47     | -0.136674041 | 180     | CRM opened 20210314 |
+| 20210328 | 2224.201971 | 2228.47     | -0.191522852 | 180     | CRM opened 20210314 |
+| 20210328 | 2225.549637 | 2229.47     | -0.175842846 | 180     | CRM opened 20210314 |
+| 20210328 | 2228.292488 | 2230.47     | -0.097625722 | 180     | CRM opened 20210314 |
+
+
+Total Alkalinity Output
+
+| SampleID | TA               | Mass   | Salinity |
+|----------|------------------|--------|----------|
+| JUNK1    | 2766.9919084924  | 60.137 | 35       |
+| CRM1     | 2226.22004515256 | 60.18  | 33.623   |
+| CRM2     | 2224.4256267384  | 60.274 | 33.623   |
+| CRM3     | 2224.20197069824 | 60.29  | 33.623   |
+| CRM4     | 2225.54963650217 | 60.077 | 33.623   |
+| CRM5     | 2228.2924875591  | 60.135 | 33.623   |
