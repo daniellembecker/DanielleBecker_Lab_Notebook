@@ -95,8 +95,8 @@ C26|32.8|32.8|32.8
 
 ###### All samples were diluted at the same time on 2021-01-26
 - Prepped the 22 samples that needed to be redone for sequencing
-- For sequencing I needed 45ul (22 * 2 +1 for error) of 3.2uM RORF primer
-- The mtORF product should be ~669 bp, so 669 / 100 * 1.25 * 2 = 16.7ng of each sample
+- For sequencing I needed 45ul (22 * 2 +1 for error) of 3.2uM PocHistone R primer
+- The PocHistone product should be ~669 bp, so 669 / 100 * 1.25 * 2 = 16.7ng of each sample
 - 16.7ng is still less than 1ul for every sample, so a 1:10 dilution was done for each sample on 2021-01-26
 - Added 18ul of ultra pure water to the 96-well plate for 32 samples, and added 2ul of each cleaned DNA to their corresponding well
 - Pipetted 16.7ng of each sample from diluted stock to the 96-well plate for 32 samples
@@ -135,9 +135,9 @@ C26|32.8|32.8|32.8
 
 ![](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/20210308_sequence_plate_PocHistone.png)
 
-- Made 45ul of diluted 10uM stock RORF to 3.2uM
+- Made 45ul of diluted 10uM stock PocHistone R to 3.2uM
 - Added 30.6ul of ultra pure water to 1 PCR tube
-- Added 14.40ul of 10uM RORF primer to tube
+- Added 14.40ul of 10uM PocHistone R primer to tube
 - Vortexed and centrifuged to mix
 - Added 2ul of 3.2uM primer to each of the 22 wells of the 96-well plate
 

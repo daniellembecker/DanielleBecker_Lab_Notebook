@@ -78,3 +78,42 @@ Process all of the physiological data (i.e. counts, size, symbiont counts) for t
 ![](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/larvae1.tube.jpg)
 
 ![](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/larvae1.dish.jpg)
+
+
+### Symbiont Count Protocol:
+
+###### I had to first troubleshoot various methods so that we could properly homogenize the eggs to larvae developmental stage samples. I had to ensure that the symbiont cells were not lysing or degrading due to the sonicator. I used 1 mL aliquots of Emma's adult Mcap (n = 2) and Pacuta (n = 1) tissue homogenate samples and Hollie's Mcap developmental timepoint samples (n = 6) to test sonicator and homogenizing methods. 
+
+**Materials**
+ - Glass pipette
+ - [OMAX compound light microscope](https://www.amscope.com/compound-microscopes.html?gclid=CjwKCAiAp4KCBhB6EiwAxRxbpGAZ_TUEvUZC3dfCPwTPWsNgzutgcwHwgBuKzaXCTCSDYKy2NENyPhoCH84QAvD_BwE&gclsrc=aw.ds&p=3)
+ - Vortex
+ - Haemocytometer
+ - Hand held tally counter
+ - [Sonicator](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Lab_Resourses/Equipment_Protocols/Equip_Images/Sonicator.jpg)
+ - [Transformer](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Lab_Resourses/Equipment_Protocols/Equip_Images/Simran_Transformer.jpg)
+ - 1000 uL pipette
+
+
+**Protocol Steps**
+1. Since the sonicator had a 220V outlet intended for use in Mo'orea, we had to order a transformer to convert the voltage safely.
+
+***Always read the instructions carefully when operating a transformer and make sure there is no liquid around the transformer***
+
+2. Once unpacked, I plugged the transformer into a 110V outlet and read the instructions carefully. I changed the INPUT to the transformer to 110V (this step is extremely important, make sure the voltage you plug the transfromer into matches the INPUT tab located in the back of the transformer).
+
+![](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Lab_Resourses/Equipment_Protocols/Equip_Images/Transformer_backinput.jpg)
+
+3. With the transformer turned to OFF, I plugged in the sonicator into the 220V outlet on the transformer and tested that it turned on with no noise or spark. 
+
+![](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Lab_Resourses/Equipment_Protocols/Equip_Images/Transformer_220V_plugs.jpg)
+
+4. Following the [sonicator instruction manual](http://redstarvietnam.com/media/lib/ba_elmasonic_easy_en.pdf), I filled the sonicator 2/3rds of the way which was 2,000 mL. 
+    - This specific sonicator does not have a way to change the frequency settings, you can only adjust the time it runs for and the temperature it runs at. 
+    
+![](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Lab_Resourses/Equipment_Protocols/Equip_Images/Sonicator.jpg)
+
+5. Tested the sonicator by increasing time intervals for each sample and using subsequent counts to make sure cells were not being lysed or degraded.
+
+#### Symbiont count data for test samples completed on 20210321
+

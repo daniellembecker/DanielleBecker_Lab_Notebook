@@ -94,8 +94,8 @@ C26|32.8|32.8|32.8
 #### Dilution and Sequencing Prep 2021-01-27
 
 - Used samples E12 (small band underneath); E8 (no smearing); C17 (small band above); C30 (smearing)
-- For sequencing I need 9ul (4 * 2 +1 for error) of 3.2uM RORF primer
-- The mtORF product should be ~669 bp, so 669 / 100 * 1.25 * 2 = 16.7ng of each sample
+- For sequencing I need 9ul (4 * 2 +1 for error) of 3.2uM PocHistone R primer
+- The PocHistone product should be ~669 bp, so 669 / 100 * 1.25 * 2 = 16.7ng of each sample
 - 16.7ng is still less than 1ul for every sample, so I did a 1:10 dilution for each one
 - Added 18ul of ultra pure water to 4 new strip tubes, and added 2ul of each cleaned DNA to their corresponding well
 - Pipetted 16.7ng of each sample from diluted stock to new strip tubes
@@ -108,9 +108,9 @@ C26|32.8|32.8|32.8
 |C17|HPD35|5.28|16.7|3.16|6.84|
 |C30|HPD36|5.52|16.7|3.03|6.97|
 
-- Made 9ul of diluted 10uM stock RORF to 3.2uM
+- Made 9ul of diluted 10uM stock PocHistone R to 3.2uM
 - Added 6.12ul of ultra pure water to 1 PCR tube
-- Added 2.88ul of 10uM RORF primer to tube
+- Added 2.88ul of 10uM PocHistone R primer to tube
 - Vortex and spin down to mix
 - Added 2ul of 3.2uM primer to each of the 8 strip tubes diluted for sequencing
 - Stored prepared samples in -20 freezer
