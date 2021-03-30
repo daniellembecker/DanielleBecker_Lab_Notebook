@@ -82,7 +82,7 @@ Process all of the physiological data (i.e. counts, size, symbiont counts) for t
 
 ### **Symbiont Count Protocol**:
 
-###### I had to first troubleshoot various methods so that we could properly homogenize the eggs to larvae developmental stage samples. I had to ensure that the symbiont cells were not lysing or degrading due to the sonicator. I used 1 mL aliquots of Emma's adult Mcap (n = 2) and Pacuta (n = 1) tissue homogenate samples and Hollie's Mcap developmental timepoint samples (n = 6) to test sonicator and homogenizing methods. 
+###### I had to first troubleshoot various methods so that we could properly homogenize the eggs to larvae developmental stage samples. I had to ensure that the symbiont cells were not lysing or degrading due to the sonicator. I used 1 mL aliquots of Emma's adult Mcap (n = 2) and Pacuta (n = 1) tissue homogenate samples and Hollie's Mcap developmental timepoint samples (n = 6) to test sonicator and homogenizing methods.
 
 **Materials**
  - Glass pipette
@@ -93,7 +93,7 @@ Process all of the physiological data (i.e. counts, size, symbiont counts) for t
  - [Sonicator](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Lab_Resourses/Equipment_Protocols/Equip_Images/Sonicator.jpg)
  - [Transformer](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Lab_Resourses/Equipment_Protocols/Equip_Images/Simran_Transformer.jpg)
  - 1000 uL pipette
- - Combination tube rack 
+ - Combination tube rack
 
 
 **Protocol Steps**
@@ -105,13 +105,13 @@ Process all of the physiological data (i.e. counts, size, symbiont counts) for t
 
 ![](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Lab_Resourses/Equipment_Protocols/Equip_Images/Transformer_backinput.jpg)
 
-3. With the transformer turned to OFF, I plugged in the sonicator into the 220V outlet on the transformer and tested that it turned on with no noise or spark. 
+3. With the transformer turned to OFF, I plugged in the sonicator into the 220V outlet on the transformer and tested that it turned on with no noise or spark.
 
 ![](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Lab_Resourses/Equipment_Protocols/Equip_Images/Transformer_220V_plugs.jpg)
 
-4. Following the [sonicator instruction manual](http://redstarvietnam.com/media/lib/ba_elmasonic_easy_en.pdf), I filled the sonicator 2/3rds of the way which was 2,000 mL. 
-    - This specific sonicator does not have a way to change the frequency settings, you can only adjust the time it runs for and the temperature it runs at. 
-    
+4. Following the [sonicator instruction manual](http://redstarvietnam.com/media/lib/ba_elmasonic_easy_en.pdf), I filled the sonicator 2/3rds of the way which was 2,000 mL.
+    - This specific sonicator does not have a way to change the frequency settings, you can only adjust the time it runs for and the temperature it runs at.
+
 ![](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Lab_Resourses/Equipment_Protocols/Equip_Images/Sonicator.jpg)
 
 5. Placed a combination tube rack with the 1.5 mL tube size facing up to hold the test tubes while the sonicator runs.
@@ -163,12 +163,12 @@ Process all of the physiological data (i.e. counts, size, symbiont counts) for t
 
 #### **Notes for 20210323**
 
-- I noticed that the sonicator seemed to be more just mixing the samples but did not seem strong enough to breakdown the samples on its own. We decided to use a platic pestle to break apart the initial layer of the individuals and sonicated them again. It seemed to work on two of the samples but not the last one and I did not want to reach the limit where the cells would start to lyse. I instead used the plastic pestle, the homogenizer, and the vortex to get the samples to fully homogenize within the tubes. We decided this was the best step moving forward since the sonicator did not have a setting to adjust the frequency. 
+- I noticed that the sonicator seemed to be more just mixing the samples but did not seem strong enough to breakdown the samples on its own. We decided to use a plastic pestle to break apart the initial layer of the individuals and sonicated them again. It seemed to work on two of the samples but not the last one and I did not want to reach the limit where the cells would start to lyse. I instead used the plastic pestle, the homogenizer, and the vortex to get the samples to fully homogenize within the tubes. We decided this was the best step moving forward since the sonicator did not have a setting to adjust the frequency.
 
 
 #### **Symbiont count data for test samples and Ariana samples completed on 20210325**
 
-- I used Hollie's 2018 Mcap developmental timeseries samples from fertilized eggs, cleaving eggs, and swimming larvae stages to test the plastic pestle, homogenizer, and vortex sequence of steps again before moving forward. Once we were satisfied with how well the samples were homogenixed using this method, I moved forward with counts for Ariana's samples.
+- I used Hollie's 2018 Mcap developmental timeseries samples from fertilized eggs, cleaving eggs, and swimming larvae stages to test the plastic pestle, homogenizer, and vortex sequence of steps again before moving forward. Once we were satisfied with how well the samples were homogenized using this method, I moved forward with counts for Ariana's samples.
 
 ![](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/20210325_Arianas_homogenized_symintegration.JPG)
 
@@ -181,7 +181,7 @@ Process all of the physiological data (i.e. counts, size, symbiont counts) for t
 | TEST_348 | none           | 20210325     | 7           | 112    | 105    | 109    | 111    | 104    | 106    |        |        | 18            | 300         | 15.4047619     | 4621.428571 | 77023.81           | 0.473085113    | 3.071031643 | DMB      | testing pestle, homogenizing, vortexing; swimming larvae |
 | TEST_344 | none           | 20210325     | 8           | 104    | 103    | 106    | 100    | 105    | 104    |        |        | 38            | 500         | 12.95833333    | 6479.166667 | 85252.19           | 0.25819889     | 1.992531625 | DMB      | testing pestle, homogenizing, vortexing; swimming larvae |
 
-##### Symbiont count data with Hollie's samples
+##### Symbiont count data with Ariana's samples
 
 | tube.ID | lifestage      | date.counted | num.squares | count1 | count2 | count3 | count4 | count5 | count6 | count7 | count8 | avg.per.square | std.per.square | cv          | total.volume.ul | num.individuals | initials | notes |
 |---------|----------------|--------------|-------------|--------|--------|--------|--------|--------|--------|--------|--------|----------------|----------------|-------------|-----------------|-----------------|----------|-------|
@@ -193,7 +193,7 @@ Process all of the physiological data (i.e. counts, size, symbiont counts) for t
 
 #### **Notes for 20210325**
 
-- Happy with how the sample counts turned out and how homogenized they were for the symbiont counts. There was some tissue remains left within the samples under the microscope but not enough to disturbe the accuracy of the counts.
+- Happy with how the sample counts turned out and how homogenized they were for the symbiont counts. There was some tissue remains left within the samples under the microscope but not enough to disturb the accuracy of the counts.
 
 #### **Symbiont count data for Ariana samples completed on 20210328**
 
