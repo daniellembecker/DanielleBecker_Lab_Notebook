@@ -27,7 +27,7 @@ Process all of the physiological data (i.e. counts, size, symbiont counts) for t
 5. If I was ever concerned that individuals were stuck together or too small to count by eye, I placed the cell culture dish under the 4x magnification on the compound light microscope.
 6. In between each count, I cleaned the glass pipette and cell culture dishes with the 70% ethanol solution.
 
-#### **Count data for all samples (n=40) completed on 20210304**
+### **Count data for all samples (n=40) completed on 20210304**
 
 | tube.ID | lifestage      | date     | num.sampled | count | initials | notes                  |
 |---------|----------------|----------|-------------|-------|----------|------------------------|
@@ -120,7 +120,7 @@ Process all of the physiological data (i.e. counts, size, symbiont counts) for t
 
 6. Tested the sonicator by adjusting the time setting in increasing intervals and using subsequent counts to make sure cells were not being lysed or degraded.
 
-#### **Symbiont count data for test samples completed on 20210321**
+### **Symbiont count data for test samples completed on 20210321**
 
 - I used Emma's adult tissue homogenate Pacuta and Mcap samples for this first round.
 
@@ -151,7 +151,7 @@ Process all of the physiological data (i.e. counts, size, symbiont counts) for t
 - I started to notice that cells started to lyse and degrade after a total time in sonicator of 15 minutes. The next step was to test Hollie's 2018 Mcap developmental timeseries samples, making sure to test samples from eggs to larvae.
 
 
-#### **Symbiont count data for test samples completed on 20210323**
+### **Symbiont count data for test samples completed on 20210323**
 
 - I used Hollie's 2018 Mcap developmental timeseries samples from fertilized eggs, gastrula, and larvae stages.
 
@@ -166,7 +166,7 @@ Process all of the physiological data (i.e. counts, size, symbiont counts) for t
 - I noticed that the sonicator seemed to be more just mixing the samples but did not seem strong enough to breakdown the samples on its own. We decided to use a plastic pestle to break apart the initial layer of the individuals and sonicated them again. It seemed to work on two of the samples but not the last one and I did not want to reach the limit where the cells would start to lyse. I instead used the plastic pestle, the homogenizer, and the vortex to get the samples to fully homogenize within the tubes. We decided this was the best step moving forward since the sonicator did not have a setting to adjust the frequency.
 
 
-#### **Symbiont count data for test samples and Ariana samples completed on 20210325**
+### **Symbiont count data for test samples and Ariana samples completed on 20210325**
 
 - I used Hollie's 2018 Mcap developmental timeseries samples from fertilized eggs, cleaving eggs, and swimming larvae stages to test the plastic pestle, homogenizer, and vortex sequence of steps again before moving forward. Once we were satisfied with how well the samples were homogenized using this method, I moved forward with counts for Ariana's samples.
 
@@ -181,7 +181,7 @@ Process all of the physiological data (i.e. counts, size, symbiont counts) for t
 | TEST_348 | none           | 20210325     | 7           | 112    | 105    | 109    | 111    | 104    | 106    |        |        | 18            | 300         | 15.4047619     | 4621.428571 | 77023.81           | 0.473085113    | 3.071031643 | DMB      | testing pestle, homogenizing, vortexing; swimming larvae |
 | TEST_344 | none           | 20210325     | 8           | 104    | 103    | 106    | 100    | 105    | 104    |        |        | 38            | 500         | 12.95833333    | 6479.166667 | 85252.19           | 0.25819889     | 1.992531625 | DMB      | testing pestle, homogenizing, vortexing; swimming larvae |
 
-##### Symbiont count data with Ariana's samples
+#### **Symbiont count data with Ariana's samples (n=4)**
 
 | tube.ID | lifestage      | date.counted | num.squares | count1 | count2 | count3 | count4 | count5 | count6 | count7 | count8 | avg.per.square | std.per.square | cv          | total.volume.ul | num.individuals | initials | notes |
 |---------|----------------|--------------|-------------|--------|--------|--------|--------|--------|--------|--------|--------|----------------|----------------|-------------|-----------------|-----------------|----------|-------|
@@ -195,7 +195,7 @@ Process all of the physiological data (i.e. counts, size, symbiont counts) for t
 
 - Happy with how the sample counts turned out and how homogenized they were for the symbiont counts. There was some tissue remains left within the samples under the microscope but not enough to disturb the accuracy of the counts.
 
-#### **Symbiont count data for Ariana samples completed on 20210328**
+### **Symbiont count data for Ariana samples completed on 20210328 (n=6)**
 
 | tube.ID | lifestage | date.counted | num.squares | count1 | count2 | count3 | count4 | count5 | count6 | count7 | count8 | avg.per.square | std.per.square | cv          | total.volume.ul | num.individuals | initials | notes |
 |---------|-----------|--------------|-------------|--------|--------|--------|--------|--------|--------|--------|--------|----------------|----------------|-------------|-----------------|-----------------|----------|-------|
@@ -207,5 +207,25 @@ Process all of the physiological data (i.e. counts, size, symbiont counts) for t
 | H10     | Larvae 1  | 20210328     | 2           | 137    | 130    | 129    | 122    | 131    | 136    |        |        | 65.41666667    | 2.709551008    | 4.141988803 | 500             | 294             | DMB      |       |
 
 #### **Notes for 20210328**
+
+- All the counts went well and the CV's all checked out.
+
+
+### **Symbiont count data for Ariana samples completed on 20210330 (n=10)**
+
+| tube.ID | lifestage | date.counted | num.squares | count1 | count2 | count3 | count4 | count5 | count6 | count7 | count8 | avg.per.square | std.per.square | cv          | total.volume.ul | num.individuals | initials | notes |
+|---------|-----------|--------------|-------------|--------|--------|--------|--------|--------|--------|--------|--------|----------------|----------------|-------------|-----------------|-----------------|----------|-------|
+| H11     | Larvae 1  | 20210330     | 3           | 112    | 116    | 110    | 110    | 108    | 105    |        |        | 36.72222222    | 1.236781965    | 3.367938786 | 500             | 189             | DMB      |       |
+| H12     | Larvae 1  | 20210330     | 3           | 135    | 143    | 143    | 156    | 151    | 155    |        |        | 49.05555556    | 2.735906648    | 5.577159644 | 500             | 119             | DMB      |       |
+| H13     | Larvae 2  | 20210330     | 3           | 129    | 131    | 128    | 125    | 131    | 130    |        |        | 43             | 0.76011695     | 1.767713837 | 500             | 105             | DMB      |       |
+| H14     | Larvae 2  | 20210330     | 5           | 115    | 117    | 115    | 118    | 110    | 111    |        |        | 22.86666667    | 0.640832792    | 2.802475765 | 500             | 38              | DMB      |       |
+| H15     | Larvae 2  | 20210330     | 5           | 122    | 115    | 116    | 125    | 120    | 130    |        |        | 24.26666667    | 1.129011367    | 4.652519369 | 500             | 49              | DMB      |       |
+| H16     | Larvae 2  | 20210330     | 5           | 128    | 130    | 123    | 129    | 112    | 110    |        |        | 24.4           | 1.775387282    | 7.276177384 | 500             | 40              | DMB      |       |
+| H17     | Larvae 3  | 20210330     | 3           | 100    | 109    | 103    | 106    | 101    | 105    |        |        | 34.66666667    | 1.115546702    | 3.217923179 | 500             | 66              | DMB      |       |
+| H18     | Larvae 3  | 20210330     | 3           | 120    | 113    | 107    | 111    | 112    | 107    |        |        | 37.22222222    | 1.600925658    | 4.300994306 | 500             | 88              | DMB      |       |
+| H19     | Larvae 3  | 20210330     | 3           | 115    | 114    | 106    | 101    | 103    | 102    |        |        | 35.61111111    | 2.059305888    | 5.782762244 | 500             | 76              | DMB      |       |
+| H20     | Larvae 3  | 20210330     | 4           | 105    | 110    | 110    | 120    | 121    | 106    |        |        | 28             | 1.724818831    | 6.160067254 | 500             | 38              | DMB      |       |
+
+#### **Notes for 20210330**
 
 - All the counts went well and the CV's all checked out.
