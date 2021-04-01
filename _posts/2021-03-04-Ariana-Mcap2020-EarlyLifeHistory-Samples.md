@@ -181,7 +181,7 @@ Process all of the physiological data (i.e. counts, size, symbiont counts) for t
 | TEST_348 | none           | 20210325     | 7           | 112    | 105    | 109    | 111    | 104    | 106    |        |        | 18            | 300         | 15.4047619     | 4621.428571 | 77023.81           | 0.473085113    | 3.071031643 | DMB      | testing pestle, homogenizing, vortexing; swimming larvae |
 | TEST_344 | none           | 20210325     | 8           | 104    | 103    | 106    | 100    | 105    | 104    |        |        | 38            | 500         | 12.95833333    | 6479.166667 | 85252.19           | 0.25819889     | 1.992531625 | DMB      | testing pestle, homogenizing, vortexing; swimming larvae |
 
-#### **Symbiont count data with Ariana's samples (n=4)**
+### **Symbiont count data with Ariana's samples (n=4)**
 
 | tube.ID | lifestage      | date.counted | num.squares | count1 | count2 | count3 | count4 | count5 | count6 | count7 | count8 | avg.per.square | std.per.square | cv          | total.volume.ul | num.individuals | initials | notes |
 |---------|----------------|--------------|-------------|--------|--------|--------|--------|--------|--------|--------|--------|----------------|----------------|-------------|-----------------|-----------------|----------|-------|
