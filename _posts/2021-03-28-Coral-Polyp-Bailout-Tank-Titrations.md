@@ -45,3 +45,6 @@ Total Alkalinity Output
 | TANK1    | 2032.99636827027 | 60.236 | 32.86    |
 | TANK2    | 2025.35809989408 | 59.601 | 32.86    |
 | TANK3    | 2026.8978478435  | 60.205 | 32.86    |
+
+
+#### **Unable to run titrations on 20210404 due to pH probe issues**
