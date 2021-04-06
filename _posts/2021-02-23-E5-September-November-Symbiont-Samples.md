@@ -42,7 +42,7 @@ When beginning the protocol, I noticed that the endosymbiont pellets within the 
 8. Between each sample, clean the homogenizer in a 10% bleach solution for 10 seconds, DI wash #1 for 10 seconds, DI wash #2 for 10 seconds, then wipe down with an isopropanol wipe in the flume hood.
 9. Properly dispose of any seawater and formalin solution into the formalin waste container in the flume hood and store formalin exposed pen and haemocytometer in the flume hood.
 
-#### Data for counts completed on 20210223 (n = 12)
+#### **Data for counts completed on 20210223 (n = 12)**
 
 | colony_id | timepoint | squares.counted | count1 | count2 | count3 | count4 | count5 | count6 | count7 | count8 | dilution | counter | average.per.square | std.dev.per.square | cv  |
 |------|----------|----------|-------------|-------------|-------------|------|----------|----------|-------------|-------------|-------------|----------|-------------|-------------|-------------|
@@ -62,7 +62,7 @@ When beginning the protocol, I noticed that the endosymbiont pellets within the 
 **Daily Notes (20210223)**
 - Samples POR-209, POC-366, and POR-214 had much smaller pellets than the rest
 
-#### Data for counts completed on 20210225 (n = 20)
+#### **Data for counts completed on 20210225 (n = 20)**
 
 | colony_id | timepoint | Squares.Counted | Count1 | Count2 | Count3 | Count4 | Count5 | Count6 | Count7 | Count8 | Dilution | Counter | Date.Counted | Average Per Square | Std.Dev. Per square | CV          |
 |-----------|-----------|-----------------|--------|--------|--------|--------|--------|--------|--------|--------|----------|---------|--------------|--------------------|---------------------|-------------|
@@ -91,7 +91,7 @@ When beginning the protocol, I noticed that the endosymbiont pellets within the 
 **Daily Notes (20210225)**
 - Samples POC-57 and POC-372 had smaller pellets that did not homogenize as well as others
 
-#### Data for counts completed on 20210228 (n = 12)
+#### **Data for counts completed on 20210228 (n = 12)**
 
 | colony_id | timepoint | Squares.Counted | Count1 | Count2 | Count3 | Count4 | Count5 | Count6 | Count7 | Count8 | Dilution | Counter | Date.Counted | Average Per Square | Std.Dev. Per square | CV          |
 |-----------|-----------|-----------------|--------|--------|--------|--------|--------|--------|--------|--------|----------|---------|--------------|--------------------|---------------------|-------------|
@@ -111,7 +111,7 @@ When beginning the protocol, I noticed that the endosymbiont pellets within the 
 **Daily Notes (20210228)**
 - No daily notes, all samples homogenized well
 
-#### Data for counts completed on 20210302 (n = 20)
+#### **Data for counts completed on 20210302 (n = 20)**
 
 | colony_id | timepoint | Squares.Counted | Count1 | Count2 | Count3 | Count4 | Count5 | Count6 | Count7 | Count8 | Dilution | Counter | Date.Counted | Average Per Square | Std.Dev. Per square | CV          |
 |-----------|-----------|-----------------|--------|--------|--------|--------|--------|--------|--------|--------|----------|---------|--------------|--------------------|---------------------|-------------|
@@ -139,7 +139,7 @@ When beginning the protocol, I noticed that the endosymbiont pellets within the 
 **Daily Notes (20210302)**
 - ACR 173, ACR 139, and ACR 190 had small pellets.
 
-#### Data for counts completed on 20210307 (n = 10), completed all remaining September 2020 (TP 3) counts 
+#### **Data for counts completed on 20210307 (n = 10), completed all remaining September 2020 (TP 3) counts**
 
 | colony_id | timepoint | Squares.Counted | Count1 | Count2 | Count3 | Count4 | Count5 | Count6 | Count7 | Count8 | Dilution | Counter | Date.Counted | Average Per Square | Std.Dev. Per square | CV          |
 |-----------|-----------|-----------------|--------|--------|--------|--------|--------|--------|--------|--------|----------|---------|--------------|--------------------|---------------------|-------------|
@@ -157,7 +157,7 @@ When beginning the protocol, I noticed that the endosymbiont pellets within the 
 **Daily Notes (20210302)**
 - ACR 225 and ACR 244 had small pellets.
 
-#### Data for counts completed on 20210311 (n = 6), starting November 2020 (T4) counts
+#### **Data for counts completed on 20210311 (n = 6), starting November 2020 (T4) counts**
 
 | colony_id | timepoint | Squares.Counted | Count1 | Count2 | Count3 | Count4 | Count5 | Count6 | Count7 | Count8 | Dilution | Counter | Date.Counted | Average Per Square | Std.Dev. Per square | CV          |
 |-----------|-----------|-----------------|--------|--------|--------|--------|--------|--------|--------|--------|----------|---------|--------------|--------------------|---------------------|-------------|
@@ -172,7 +172,7 @@ When beginning the protocol, I noticed that the endosymbiont pellets within the 
 - No daily notes, all samples homogenized wells
 
 
-#### Data for counts completed on 20210316 (n = 10), November 2020 (T4) counts
+#### **Data for counts completed on 20210316 (n = 10), November 2020 (T4) counts**
 
 | colony_id | timepoint | Squares.Counted | Count1 | Count2 | Count3 | Count4 | Count5 | Count6 | Count7 | Count8 | Dilution | Counter | Date.Counted | Average Per Square | Std.Dev. Per square | CV          |
 |-----------|-----------|-----------------|--------|--------|--------|--------|--------|--------|--------|--------|----------|---------|--------------|--------------------|---------------------|-------------|
@@ -190,7 +190,7 @@ When beginning the protocol, I noticed that the endosymbiont pellets within the 
 **Daily Notes (20210302)**
 - No daily notes, all samples homogenized wells
 
-#### Data for counts completed on 20210318 (n = 20), November 2020 (T4) counts
+#### **Data for counts completed on 20210318 (n = 20), November 2020 (T4) counts**
 
 | colony_id | timepoint | Squares.Counted | Count1 | Count2 | Count3 | Count4 | Count5 | Count6 | Count7 | Count8 | Dilution | Counter | Date.Counted | Average Per Square | Std.Dev. Per square | CV          |
 |-----------|-----------|-----------------|--------|--------|--------|--------|--------|--------|--------|--------|----------|---------|--------------|--------------------|---------------------|-------------|
@@ -217,3 +217,21 @@ When beginning the protocol, I noticed that the endosymbiont pellets within the 
 
 **Daily Notes (20210318)**
 - ACR 145 and 150 had small pellets
+
+#### **Data for counts completed on 20210406 (n = 10), November 2020 (T4) counts**
+
+| colony_id | timepoint | Squares.Counted | Count1 | Count2 | Count3 | Count4 | Count5 | Count6 | Count7 | Count8 | Dilution | Counter | Date.Counted | Average Per Square | Std.Dev. Per square | CV          |
+|-----------|-----------|-----------------|--------|--------|--------|--------|--------|--------|--------|--------|----------|---------|--------------|--------------------|---------------------|-------------|
+| ACR-139   | 4         | 4               | 122    | 126    | 117    | 124    | 128    | 115    |        |        | NA       | DMB     | 20210406     | 30.5               | 1.274754878         | 4.179524191 |
+| POC-48    | 4         | 3               | 102    | 100    | 110    | 106    | 101    | 100    |        |        | NA       | DMB     | 20210406     | 34.38888889        | 1.340259787         | 3.89736287  |
+| POC-47    | 4         | 3               | 117    | 115    | 119    | 117    | 116    | 112    |        |        | NA       | DMB     | 20210406     | 38.66666667        | 0.788810638         | 2.040027511 |
+| POC-44    | 4         | 3               | 120    | 123    | 123    | 129    | 150    | 152    | 134    | 133    | NA       | DMB     | 20210406     | 44.33333333        | 4.05517502          | 9.147011324 |
+| ACR-186   | 4         | 3               | 115    | 121    | 108    | 112    | 106    | 111    |        |        | NA       | DMB     | 20210406     | 37.38888889        | 1.781593128         | 4.765033626 |
+| ACR-185   | 4         | 2               | 105    | 110    | 110    | 108    | 103    | 106    |        |        | NA       | DMB     | 20210406     | 53.5               | 1.414213562         | 2.643389836 |
+| POR-82    | 4         | 2               | 163    | 171    | 182    | 180    | 187    | 194    |        |        | NA       | DMB     | 20210406     | 89.75              | 5.556527693         | 6.191117206 |
+| POR-74    | 4         | 1               | 115    | 108    | 120    | 112    | 109    | 123    |        |        | NA       | DMB     | 20210406     | 114.5              | 6.024948133         | 5.261963435 |
+| POC-57    | 4         | 3               | 105    | 103    | 111    | 113    | 106    | 101    |        |        | NA       | DMB     | 20210406     | 35.5               | 1.545603083         | 4.3538115   |
+| ACR-176   | 4         | 3               | 114    | 108    | 109    | 113    | 114    | 120    |        |        | NA       | DMB     | 20210406     | 37.66666667        | 1.429840706         | 3.796037272 |
+
+**Daily Notes (20210406)**
+- ACR pellets are small, think bleached for these timepoints
