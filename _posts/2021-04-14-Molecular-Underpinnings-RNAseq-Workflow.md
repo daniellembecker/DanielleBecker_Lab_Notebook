@@ -1,10 +1,20 @@
-# *Pocillopora* spp. RNAseq QC, Alignment, Assembly Bioinformatic Pipeline
+---
+layout: post
+title: RNA-seq Bioinformatic Workflow
+date: 2021-04-14
+category: [ Code ]
+tag: [ RNA-seq, Bioinformatics ]
+projects: Molecular Underpinnings
+---
+## *Pocillopora* spp. RNAseq QC, Alignment, Assembly Bioinformatic Pipeline
+
+### **Goal**
+
+*The following document contains the bioinformatic pipeline used for cleaning, aligning and assembling our raw RNA sequences. These commands were compiled into bash scripts to run on the bluewaves server and are available on the [Molecular Underpinnings of Enhanced Thermal Performance due to Chronic Low Nutrient Enrichment Repository](https://github.com/hputnam/Becker_E5)*
 
 Author: Hollie Putnam and Danielle Becker
 Last Updated: 2021/04/14
-Data uploaded and analyzed on the URI HPC [bluewaves](https://web.uri.edu/hpc-research-computing/using-bluewaves/) server.
-
-*The following document contains the bioinformatic pipeline used for cleaning, aligning and assembling our raw RNA sequences. These commands were compiled into bash scripts to run on the bluewaves server and are available on the [Molecular Underpinnings of Enhanced Thermal Performance due to Chronic Low Nutrient Enrichment Repository](https://github.com/hputnam/Becker_E5)*
+Data uploaded and analyzed on the URI Putnam Lab [bluewaves](https://web.uri.edu/hpc-research-computing/using-bluewaves/) server.
 
 ---
 
