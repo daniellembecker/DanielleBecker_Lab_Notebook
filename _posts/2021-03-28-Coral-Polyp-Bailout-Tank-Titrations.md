@@ -19,6 +19,7 @@ All data processed and collected on the Putnam Lab Titrator will be available on
 
 
 #### **Data for triplicate samples run on 20210328**
+---
 
 **Notes**
 - Before the titration run, salinity was measured following the [conductivity calibration protocol](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resourses/Equipment_Protocols/Orion_MultiParameter_Sensor_Protocol.md#Conductivity).
@@ -47,6 +48,7 @@ Total Alkalinity Output
 
 
 #### **Unable to run titrations on 20210404 due to pH probe issues**
+---
 
 **Data**
 
@@ -57,11 +59,13 @@ CRM Accuracy Data
 | 20210404 | 2272.887  | 2224.47     | 2.176563406 | 180     | CRM opened 20210404 |
 
 #### **Unable to run titrations on 20210411 due to pH probe issues**
+---
 
 #### **New pH probe arrived 20210413 and was tested, titrator good to use**
+---
 
 #### **Data for triplicate samples run on 20210418**
-
+---
 **Notes**
 - Before the titration run, salinity was measured following the [conductivity calibration protocol](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resourses/Equipment_Protocols/Orion_MultiParameter_Sensor_Protocol.md#Conductivity).
 
