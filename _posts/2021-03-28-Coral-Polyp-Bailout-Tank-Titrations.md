@@ -29,12 +29,11 @@ CRM Accuracy Data
 
 | Date     | CRM value   | Batch value | % off        | Batch # | Notes               |
 |----------|-------------|-------------|--------------|---------|---------------------|
-| 20210328 | 2766.991908 | 2225.47     | 24.33292331  | 180     | CRM opened 20210314 |
-| 20210328 | 2226.220045 | 2226.47     | -0.011226509 | 180     | CRM opened 20210314 |
-| 20210328 | 2224.425627 | 2227.47     | -0.136674041 | 180     | CRM opened 20210314 |
-| 20210328 | 2224.201971 | 2228.47     | -0.191522852 | 180     | CRM opened 20210314 |
-| 20210328 | 2225.549637 | 2229.47     | -0.175842846 | 180     | CRM opened 20210314 |
-| 20210328 | 2228.292488 | 2230.47     | -0.097625722 | 180     | CRM opened 20210314 |
+| 20210328 | 2226.220045 | 2224.47     | 0.078672455  | 180     | CRM opened 20210314 |
+| 20210328 | 2224.425627 | 2224.47     | -0.001994779 | 180     | CRM opened 20210314 |
+| 20210328 | 2224.201971 | 2224.47     | -0.012049131 | 180     | CRM opened 20210314 |
+| 20210328 | 2225.549637 | 2224.47     | 0.04853455   | 180     | CRM opened 20210314 |
+| 20210328 | 2228.292488 | 2224.47     | 0.171838126  | 180     | CRM opened 20210314 |
 
 
 Total Alkalinity Output
@@ -48,3 +47,39 @@ Total Alkalinity Output
 
 
 #### **Unable to run titrations on 20210404 due to pH probe issues**
+
+**Data**
+
+CRM Accuracy Data
+
+| Date     | CRM value | Batch value | % off       | Batch # | Notes               |
+|----------|-----------|-------------|-------------|---------|---------------------|
+| 20210404 | 2272.887  | 2224.47     | 2.176563406 | 180     | CRM opened 20210404 |
+
+#### **Unable to run titrations on 20210411 due to pH probe issues**
+
+#### **New pH probe arrived 20210413 and was tested, titrator good to use**
+
+#### **Data for triplicate samples run on 20210418**
+
+**Notes**
+- Before the titration run, salinity was measured following the [conductivity calibration protocol](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resourses/Equipment_Protocols/Orion_MultiParameter_Sensor_Protocol.md#Conductivity).
+
+**Data**
+
+CRM Accuracy Data
+
+| Date     | CRM value | Batch value | % off       | Batch # | Notes               |
+|----------|-----------|-------------|-------------|---------|---------------------|
+| 20210418 | 2218.256  | 2224.47     | -0.27934744 | 180     | CRM opened 20210418 |
+
+
+Total Alkalinity Output
+
+| SampleID | TA               | Mass   | Salinity |
+|----------|------------------|--------|----------|
+| junk1    | 2051.39244714175 | 59.952 | 35       |
+| tank1    | 2046.22678935555 | 60.234 | 35.58    |
+| tank2    | 2043.87189424588 | 60.347 | 35.58    |
+| tank3    | 2041.76501819174 | 59.78  | 35.58    |
+
