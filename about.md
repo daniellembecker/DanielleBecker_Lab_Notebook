@@ -41,19 +41,16 @@ Date|Position| Affiliation
 
 [Google Scholar Profile](https://scholar.google.com/citations?user=_dw3pYEAAAAJ&hl=en)
 
-7.	Huffmyer AS. 2020. Getting a head start: Influential early experiences for juvenile corals and science students. PhD Dissertation. University of Hawaii at Manoa, Marine Biology Graduate Program.
+9. Barott KL, **AS Huffmyer**, J Davidson, EA Lenz, SB Matsuda, J Hancock, T Innis, B Glazer, C Drury, H Putnam, RD Gates. Fitness of thermally tolerant corals following transplantation supports utility of assisted gene flow for climate change remediation of coral reefs. PNAS. In press.   
+8. Innis T, L Allen-Waller, KT Brown, W Sparagon, C Carlson, E Kruse, **AS Huffmyer**, CE Nelson, HM Putnam, KL Barott. Marine heatwaves depress metabolic activity and impair cellular acid-base homeostasis in reef-building corals regardless of bleaching susceptibility. Global Change Biology. https://doi.org/10.1111/gcb.15622  
+7. **Huffmyer AS**, C Drury, E Majerová, JD Lemus, RD Gates. 2021. Tissue fusion and enhanced genotypic diversity support survival of juvenile Pocillopora acuta corals under thermal stress. Coral Reefs 40(2): 447-458  
+6. Roach TNF, S Yadav, C Caruso, J Dilworth, CM Foley, JR Hancock, J Huckeba, **AS Huffmyer**, K Hughes, VA Kahkejian, EMP Madin, SB Matsuda, M McWilliam, S Miller, EP Santoro, M Rocha de Souza, D Torres-Pulliza, C Drury, JS Madin. 2021. A field primer for monitoring benthic ecosystems using structure-from-motion photogrammetry. Journal of Visualized Experiments. 170: e61815.   
+5. Hancock J, A Barrows, T Roome, **AS Huffmyer**, SB Matsuda, S Rahnke, N Munk, C Drury. 2021. Coral husbandry for ocean futures: leveraging abiotic factors to increase survivorship, growth, and resilience in juvenile Montipora capitata. Marine Ecology Progress Series 657:123-133  
+4. Matsuda S, **AS Huffmyer**, EA Lenz, J Davidson, J Hancock, A Przybylowski, T Innis, RD Gates, KL Barott. 2020. Coral bleaching susceptibility is predictive of subsequent mortality within but not between coral species. Frontiers in Ecology and Evolution 8:178  
+3. **Huffmyer AS**, SB Matsuda, AE Eggers, JD Lemus, RD Gates. 2020. Evaluation of laser scanning confocal microscopy as a method for characterizing reef-building coral tissue thickness and Symbiodiniaceae fluorescence. Journal of Experimental Biology 223(6): jeb220335. Cover image contribution.   
+2. **Huffmyer AS** and JD Lemus. 2019. Graduate TA teaching styles impact student achievement in a research-based undergraduate science course. Journal of College Science Teaching 48(3):56-65.  
+1. **Meltvedt AM** and C Jadot. 2014. Progression of the coral – algal phase shift in the Caribbean: a case study in Bonaire, Dutch Caribbean. Marine Technology Society Journal: 48(6):33-41.
 
-6.	Huffmyer AS, SB Matsuda, AE Eggers, JD Lemus, RD Gates. 2020. Evaluation of laser scanning confocal microscopy as a method for characterizing reef-building coral tissue thickness and Symbiodiniaceae fluorescence. Journal of Experimental Biology 223(6): jeb220335. Cover image selected for issue.
-
-5.	Matsuda S, AS Huffmyer, EA Lenz, J Davidson, J Hancock, A Przybylowski, T Innis, RD Gates, KL Barott. 2020. Coral bleaching susceptibility is predictive of subsequent mortality within but not between coral species. Frontiers in Ecology and Evolution. In revision, March 2020.  
-
-4.	Huffmyer AS and JD Lemus. 2019. Graduate TA teaching styles impact student achievement in a research-based undergraduate science course. Journal of College Science Teaching 48(3):56-65.
-
-3.	Meltvedt AM. 2014. Progression of the coral – algal phase shift in the Caribbean: A case study in Bonaire, Dutch Caribbean. Marine Technology Society Journal: 48(6):33-41.
-
-2.	Meltvedt AM. 2014. Population structure and genetic variation in the Hawaiian Opakapaka (Pristipomoides filamentosus): Evidence of a genetic bottleneck in a captive broodstock. Oregon State University Senior Undergraduate Thesis.
-
-1.	Meltvedt AM. 2012. Status of reef health at Yellow Sub study site on Bonaire, Dutch Caribbean: progression of a coral-algal phase shift. Physis: Jour of Mar Sci 8:88-98.
 
 
 ### RESEARCH GRANTS
