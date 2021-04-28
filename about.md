@@ -41,7 +41,8 @@ Date|Position| Affiliation
 
 [Google Scholar Profile](https://scholar.google.com/citations?user=_dw3pYEAAAAJ&hl=en)
 
-9. Barott KL, **AS Huffmyer**, J Davidson, EA Lenz, SB Matsuda, J Hancock, T Innis, B Glazer, C Drury, H Putnam, RD Gates. Fitness of thermally tolerant corals following transplantation supports utility of assisted gene flow for climate change remediation of coral reefs. PNAS. In press.   
+10. **Huffmyer AS**, CJ Johnson, AM Epps, JD Lemus, RD Gates. Feeding and thermal conditioning enhance coral temperature tolerance in juvenile Pocillopora acuta. Royal Society Open Science. *In press.*
+9. Barott KL, **AS Huffmyer**, J Davidson, EA Lenz, SB Matsuda, J Hancock, T Innis, B Glazer, C Drury, H Putnam, RD Gates. Fitness of thermally tolerant corals following transplantation supports utility of assisted gene flow for climate change remediation of coral reefs. PNAS. *In press.*   
 8. Innis T, L Allen-Waller, KT Brown, W Sparagon, C Carlson, E Kruse, **AS Huffmyer**, CE Nelson, HM Putnam, KL Barott. Marine heatwaves depress metabolic activity and impair cellular acid-base homeostasis in reef-building corals regardless of bleaching susceptibility. Global Change Biology. https://doi.org/10.1111/gcb.15622  
 7. **Huffmyer AS**, C Drury, E Majerová, JD Lemus, RD Gates. 2021. Tissue fusion and enhanced genotypic diversity support survival of juvenile Pocillopora acuta corals under thermal stress. Coral Reefs 40(2): 447-458  
 6. Roach TNF, S Yadav, C Caruso, J Dilworth, CM Foley, JR Hancock, J Huckeba, **AS Huffmyer**, K Hughes, VA Kahkejian, EMP Madin, SB Matsuda, M McWilliam, S Miller, EP Santoro, M Rocha de Souza, D Torres-Pulliza, C Drury, JS Madin. 2021. A field primer for monitoring benthic ecosystems using structure-from-motion photogrammetry. Journal of Visualized Experiments. 170: e61815.   
