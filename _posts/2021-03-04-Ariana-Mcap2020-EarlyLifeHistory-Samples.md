@@ -88,17 +88,38 @@ Contents
 
 **Materials**
  -  Glass pipette
- -  Dissecting light microscope 
+ -  Dissecting light microscope
  -  [OMAX digital microscope camera](https://omaxmicroscope.com/a35180u3-omax-18-0mp-usb3-0-digital-camera-for-microscope-with-0-01mm-calibration-slide-windows-mac-linux.html)
  - [ImageJ software](https://imagej.net/Welcome)
  - [OMAX 0.01 mm stage micrometer](https://www.amazon.com/OMAX-0-01mm-Microscope-Calibration-Micrometer/dp/B00FG89F0M)
+ - [ToupView software (windows operating system only)](http://www.touptek.com/product/showproduct.php?lang=en&id=103)
  - Cell culture dish
- 
+
 **Protocol Steps**
-1. I used a glass pipette to carefully remove ~30 individuals from each of the sample tubes. 
-2. I aligned the cell culture dish next to the 0.01 mm stage micrometer so that the total length of the scale could be seen within the photo along with all the individuals. 
+1. I used a glass pipette to carefully remove ~20-30 individuals from each of the sample tubes.
+2. I aligned the cell culture dish underneath the dissecting microscope with the light on medium to high and positioned the cell culture dish next to the 0.01 mm stage micrometer so that the total length of the scale could be seen within the photo along with all the individuals.
+  - make sure to keep some ethanol/water in the sample to reduce reflections of light and to have a more even photo
+  - it is very important to have the scale micrometer within each individual photo as the zoom and focus may change on the microscope in between samples and you will need it to calibrate your photos later on in ImageJ
 
 ![](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/raw/master/images/20210309_Micrometer_Photo.png)
+
+3. Once the stage micrometer and individuals were focused and clear in view, I used the [ToupView software](https://mmrc.caltech.edu/Gniometeer//ToupViewHelpManual/05_ToupView_Quick_Help_en.pdf) to snap a photo and save it to the windows computer.
+4. I uploaded the photos to Google Drive and then when I was ready to size the individuals I would open them in ImageJ.
+  - Refer to the [ImageJ manual](https://imagej.nih.gov/ij/docs/guide/146-19.html) with any questions on how to calibrate or how to use the freehand tool
+5. I opened (File > Open) each individual photo into ImageJ and used the text tool to randomly select and label a sub-sample of 10 individuals per photo.
+  - make a small text box next to each individual you will size and label from 1-10, press command D after each text box to overlay it on the photo
+  - save the labeled photo before calibrating the scale in ImageJ
+6. I selected the Straight Line Selection Tool in ImageJ and zoomed in to the scale bar on the stage micrometer. I then carefully drew a line from each end of the 0.01 mm scale bar. I then set the number of pixels to a known distance of 1.0 and the unit length to mm. I also click on global so that it will be set for as long as I have this image open.
+
+![](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/20210503_ImageJ_setscale.png)
+
+7. I then use the freehand selections tool to carefully draw a circle around the entire outline of each individual.
+  - make sure to go slow and zoom in as far as possible with the individual still in focus when doing this step.
+8. After outlining the individual, I press command M (measure) and a small data box will pop up with the calculated surface area of the individual in mm.
+  - make sure to keep an eye on these measurements and if you see them fluctuating or having large numbers, do the set scale step above again
+9. I then save the photo again and transfer the measured values into a csv document.
+10. All labeled images were uploaded [here](https://drive.google.com/drive/u/0/folders/1nq_wBB9y6i8OUQ-HtpDn_trIYfuKBwZa).
+
 
 ###  <a name="SymCount"></a> **Symbiont Count Protocol**
 
@@ -278,6 +299,3 @@ Contents
 #### **Notes for 20210401**
 
 - All the counts went well and the CV's all checked out. All symbiont counts completed.
-
-
-
