@@ -98,6 +98,8 @@ Contents
 1. I used a glass pipette to carefully remove ~30 individuals from each of the sample tubes. 
 2. I aligned the cell culture dish next to the 0.01 mm stage micrometer so that the total length of the scale could be seen within the photo along with all the individuals. 
 
+![](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/raw/master/images/20210309_Micrometer_Photo.png)
+
 ###  <a name="SymCount"></a> **Symbiont Count Protocol**
 
 ###### I had to first troubleshoot various methods so that we could properly homogenize the eggs to larvae developmental stage samples. I had to ensure that the symbiont cells were not lysing or degrading due to the sonicator. I used 1 mL aliquots of Emma's adult Mcap (n = 2) and Pacuta (n = 1) tissue homogenate samples and Hollie's Mcap developmental timepoint samples (n = 6) to test sonicator and homogenizing methods.
