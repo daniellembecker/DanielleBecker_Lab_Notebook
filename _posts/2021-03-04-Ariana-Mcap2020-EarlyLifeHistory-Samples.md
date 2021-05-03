@@ -9,7 +9,12 @@ tag: [ Physiology, Larval Developmental Counts, Size, Symbiont Counts ]
 ### Goal:
 Process all of the physiological data (i.e. counts, size, symbiont counts) for the *Montipora capitata* (vertical spawner) developmental timepoint samples (n=40). Samples were collected at the Hawaii Institute of Marine Biology in July 2020 and are apart of a larger project which focuses on early life history energetics and symbiotic integration in vertical and horizontal transmission corals.
 
-### Count Protocol:
+Contents
+- [**Count Protocol**](#Count)
+- [**Size Protocol**](#Size)
+- [**Symbiont Count Protocol**](#SymCount)
+
+### <a name="Count"></a> **Count Protocol**
 
 **Materials**
  - Glass pipette
@@ -79,8 +84,21 @@ Process all of the physiological data (i.e. counts, size, symbiont counts) for t
 
 ![](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/larvae1.dish.jpg)
 
+###  <a name="Size"></a> **Size Protocol**
 
-### **Symbiont Count Protocol**:
+**Materials**
+ -  Glass pipette
+ -  Dissecting light microscope 
+ -  [OMAX digital microscope camera](https://omaxmicroscope.com/a35180u3-omax-18-0mp-usb3-0-digital-camera-for-microscope-with-0-01mm-calibration-slide-windows-mac-linux.html)
+ - [ImageJ software](https://imagej.net/Welcome)
+ - [OMAX 0.01 mm stage micrometer](https://www.amazon.com/OMAX-0-01mm-Microscope-Calibration-Micrometer/dp/B00FG89F0M)
+ - Cell culture dish
+ 
+**Protocol Steps**
+1. I used a glass pipette to carefully remove ~30 individuals from each of the sample tubes. 
+2. I aligned the cell culture dish next to the 0.01 mm stage micrometer so that the total length of the scale could be seen within the photo along with all the individuals. 
+
+###  <a name="SymCount"></a> **Symbiont Count Protocol**
 
 ###### I had to first troubleshoot various methods so that we could properly homogenize the eggs to larvae developmental stage samples. I had to ensure that the symbiont cells were not lysing or degrading due to the sonicator. I used 1 mL aliquots of Emma's adult Mcap (n = 2) and Pacuta (n = 1) tissue homogenate samples and Hollie's Mcap developmental timepoint samples (n = 6) to test sonicator and homogenizing methods.
 
@@ -258,3 +276,6 @@ Process all of the physiological data (i.e. counts, size, symbiont counts) for t
 #### **Notes for 20210401**
 
 - All the counts went well and the CV's all checked out. All symbiont counts completed.
+
+
+
