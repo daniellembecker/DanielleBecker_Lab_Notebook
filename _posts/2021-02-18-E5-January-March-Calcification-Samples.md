@@ -159,3 +159,56 @@ Total Alkalinity Output
 | CRM3     | 2224.20197069824 | 60.29  | 33.623   |
 | CRM4     | 2225.54963650217 | 60.077 | 33.623   |
 | CRM5     | 2228.2924875591  | 60.135 | 33.623   |
+
+#### **Data and notes for testing E5 samples TA signal 20210504**
+
+**Notes**
+- The CRM values were very accurate and everything looked good from the previous run, testing a batch of samples from March (TP2) run 1 on 20200304 to see if there is a processable deltaTA signal from the initial sample to the blank and other coral sample chambers. All went well and we were able to see > 30 for deltaTA in almost all samples which is a good value moving forward. Going to run more samples from another run to make sure this occurs in other replicates.
+
+**Data**
+
+CRM Accuracy Data
+
+| Date     | CRM value | Batch value | % off    | Batch # | Notes               |
+|----------|-----------|-------------|----------|---------|---------------------|
+| 20210504 | 2224.823  | 2224.47     | 0.015869 | 180     | CRM opened 20210418 |
+
+
+Total Alkalinity Output
+
+| SampleID  | TA               | Mass   | Salinity |
+|-----------|------------------|--------|----------|
+| JUNK1     | 2030.80445223374 | 60.035 | 35       |
+| INITIAL-2 | 2325.79665116253 | 59.525 | 36.03    |
+| ACR-225   | 2229.92073279084 | 60.488 | 36.03    |
+| POC-215   | 2271.34957005683 | 59.695 | 36.02    |
+| BLANK-1   | 2298.63819200678 | 60.297 | 36.03    |
+| POR-224   | 2206.22121318086 | 60.266 | 36       |
+
+#### **Data and notes for testing E5 samples TA signal 20210506**
+
+**Notes**
+- The CRM values were very accurate and everything looked good from the previous run, testing a batch of samples from March (TP2) run 2 on 20200304 to see if the deltaTA values are also representative of what we saw in yesterdays runs. Most of the samples again had deltaTA's > 30 and all looked good. 
+
+**Data**
+
+CRM Accuracy Data
+
+| Date     | CRM value | Batch value | % off    | Batch # | Notes               |
+|----------|-----------|-------------|----------|---------|---------------------|
+| 20210506 | 2225.094  | 2224.47     | 0.028052 | 180     | CRM opened 20210418 |
+
+
+Total Alkalinity Output
+
+| SampleID  | TA               | Mass   | Salinity |
+|-----------|------------------|--------|----------|
+| JUNK1     | 2018.39880477983 | 60.226 | 35       |
+| INITIAL-1 | 2309.66768581353 | 60.083 | 37.38    |
+| INITIAL-2 | 2310.6341993138  | 59.885 | 37.38    |
+| BLANK-2   | 2312.66284694853 | 59.917 | 37.4     |
+| POC-201   | 2302.40007114124 | 59.624 | 37.4     |
+| ACR-244   | 2277.31062313817 | 59.786 | 37.39    |
+| POR-235   | 2288.18858541504 | 59.525 | 37.41    |
+| ACR-229   | 2272.13489556652 | 59.84  | 37.38    |
+| POR-245   | 2268.37232119263 | 60.317 | 37.43    |
