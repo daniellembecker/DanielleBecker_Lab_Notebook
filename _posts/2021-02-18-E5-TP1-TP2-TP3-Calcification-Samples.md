@@ -188,7 +188,7 @@ Total Alkalinity Output
 #### **Data and notes for testing E5 samples TA signal 20210506**
 
 **Notes**
-- The CRM values were very accurate and everything looked good from the previous run, testing a batch of samples from March (TP2) run 2 on 20200304 to see if the deltaTA values are also representative of what we saw in yesterdays runs. Most of the samples again had deltaTA's > 30 and all looked good. 
+- The CRM values were very accurate and everything looked good from the previous run, testing a batch of samples from March (TP2) run 2 on 20200304 to see if the deltaTA values are also representative of what we saw in yesterdays runs. Most of the samples again had deltaTA's > 30 and all looked good.
 
 **Data**
 
@@ -212,3 +212,69 @@ Total Alkalinity Output
 | POR-235   | 2288.18858541504 | 59.525 | 37.41    |
 | ACR-229   | 2272.13489556652 | 59.84  | 37.38    |
 | POR-245   | 2268.37232119263 | 60.317 | 37.43    |
+
+
+#### **Data and notes for processing E5 samples TP2, Run 5 20210511**
+
+**Notes**
+- Had to completed two seperate titration runs. All samples looked good. Updated timeseries data to urol-e5 GitHub.
+
+**Data**
+
+CRM Accuracy Data
+
+| Date     | CRM value | Batch value | % off    | Batch # | Notes               |
+|----------|-----------|-------------|----------|---------|---------------------|
+| 20210511 | 2228.879  | 2224.47     | 0.198204516 | 180     | CRM opened 20210418 |
+
+
+Total Alkalinity Output - Titration Run 1 (8 samples)
+
+| SampleID  | TA               | Mass   | Salinity |
+|-----------|------------------|--------|----------|
+| JUNK1     | 2023.62860758224 | 60.323 | 35       |
+| ACR-360   | 2299.24809778777 | 59.666 | 37.3     |
+| POR-355   | 2272.98399534722 | 60.365 | 37.29    |
+| POC-394   | 2331.64157338251 | 59.807 | 37.3     |
+| ACR-351   | 2308.62561873151 | 59.796 | 37.27    |
+| BLANK-5   | 2341.16654731596 | 59.832 | 37.3     |
+| INITIAL-1 | 2349.40134517588 | 60.137 | 37.3     |
+| ACR-368   | 2335.36944848248 | 60.295 | 37.32    |
+| POR-349   | 2312.55677108142 | 59.746 | 37.28    |
+
+Total Alkalinity Output - Titration Run 2 (4 samples)
+
+| SampleID | TA               | Mass   | Salinity |
+|----------|------------------|--------|----------|
+| JUNK1    | 2020.61803398065 | 60.11  | 35       |
+| POR-367  | 2271.59356605544 | 59.959 | 37.32    |
+| POR-353  | 2246.61383181666 | 60.357 | 37.32    |
+| POC-359  | 2320.53306339006 | 59.601 | 37.29    |
+| INITIAL-2 | 2354.906625 | 59.539 | 36.52    |
+
+#### **Data and notes for processing E5 samples TP2, remaining Run 1 samples 20210525**
+
+**Notes**
+- All samples looked good. Updated timeseries data to urol-e5 GitHub.
+
+**Data**
+
+CRM Accuracy Data
+
+| Date     | CRM value | Batch value | % off    | Batch # | Notes               |
+|----------|-----------|-------------|----------|---------|---------------------|
+| 20210525 | 2223.505163  | 2224.47     | -0.043373783 | 180     | CRM opened 20210418 |
+
+
+Total Alkalinity Output
+
+| SampleID  | TA          | Mass   | Salinity |
+|-----------|-------------|--------|----------|
+| JUNK1     | 2021.113958 | 59.52  | 35       |
+| INITIAL-1 | 2328.815162 | 59.78  | 36.1     |
+| POR-214   | 2166.262087 | 59.875 | 36.12    |
+| POC-200   | 2257.931561 | 60.457 | 36.08    |
+| POC-255   | 2290.17382  | 60.446 | 36.1     |
+| ACR-237   | 2282.117545 | 59.516 | 36.11    |
+| POR-253   | 2121.493182 | 59.948 | 36.09    |
+| ACR-258   | 2263.09945  | 59.723 | 36.12    |
