@@ -114,7 +114,7 @@ Total Alkalinity Output
 #### **Data for triplicate samples run on 20210505**
 ---
 **Notes**
-- Before the titration run, salinity was measured following the [conductivity calibration protocol](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resourses/Equipment_Protocols/Orion_MultiParameter_Sensor_Protocol.md#Conductivity). TA values have been steadily declining every week by ~ 20. 
+- Before the titration run, salinity was measured following the [conductivity calibration protocol](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resourses/Equipment_Protocols/Orion_MultiParameter_Sensor_Protocol.md#Conductivity). TA values have been steadily declining every week by ~ 20.
 
 **Data**
 
@@ -133,3 +133,26 @@ Total Alkalinity Output
 | TANK1    | 1989.13570487248 | 60.341 | 33.93    |
 | TANK2    | 1988.33638752862 | 60.22  | 33.93    |
 | TANK3    | 1992.54820128628 | 60.278 | 33.93    |
+
+#### **Data for triplicate samples run on 20210526**
+---
+**Notes**
+- Before the titration run, salinity was measured following the [conductivity calibration protocol](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resourses/Equipment_Protocols/Orion_MultiParameter_Sensor_Protocol.md#Conductivity). 
+
+**Data**
+
+CRM Accuracy Data
+
+| Date     | CRM value | Batch value | % off    | Batch # | Notes               |
+|----------|-----------|-------------|----------|---------|---------------------|
+| 20210526 | 2223.47  | 2224.47     | -0.044954528 | 180     | CRM opened 20210418 |
+
+
+Total Alkalinity Output
+
+| SampleID | TA               | Mass   | Salinity |
+|----------|------------------|--------|----------|
+| JUNK1    | 2046.27262934681 | 60.469 | 35       |
+| TANK1    | 2041.88469882272 | 60.165 | 32.21    |
+| TANK2    | 2042.56549084997 | 59.926 | 32.21    |
+| TANK3    | 2037.4502555346  | 59.838 | 32.21    |

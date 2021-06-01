@@ -1,6 +1,6 @@
 ---
 layout: post
-title: E5 Timepoint 1 and 2 Instantaneous Calcification Sample Processing (Samples Collected in 2020)
+title: E5 Timepoint 1, 2, and 3 Instantaneous Calcification Sample Processing (Samples Collected in 2020)
 category: [ Processing, Protocol ]
 tag: [ Physiology, Calcification Samples, Mercuric Chloride Fixed Samples ]
 ---
@@ -252,7 +252,7 @@ Total Alkalinity Output - Titration Run 2 (4 samples)
 | POC-359  | 2320.53306339006 | 59.601 | 37.29    |
 | INITIAL-2 | 2354.906625 | 59.539 | 36.52    |
 
-#### **Data and notes for processing E5 samples TP2, remaining Run 1 samples 20210525**
+#### **Data and notes for processing E5 samples TP2, remaining Run 1 samples and 1 run 5 sample 20210525**
 
 **Notes**
 - All samples looked good. Updated timeseries data to urol-e5 GitHub.
@@ -278,3 +278,65 @@ Total Alkalinity Output
 | ACR-237   | 2282.117545 | 59.516 | 36.11    |
 | POR-253   | 2121.493182 | 59.948 | 36.09    |
 | ACR-258   | 2263.09945  | 59.723 | 36.12    |
+| INITIAL-2 | 2354.906625 | 59.539 | 36.52    |
+
+#### **Data and notes for processing E5 samples TP2, remaining Run 2 samples (4), 9 samples from run 3 20210526**
+
+**Notes**
+- All samples looked good. Updated timeseries data to urol-e5 GitHub. Started to record the temperature of seawater in the room for each day. Today it was 24.8°C.
+
+**Data**
+
+CRM Accuracy Data
+
+| Date     | CRM value | Batch value | % off    | Batch # | Notes               |
+|----------|-----------|-------------|----------|---------|---------------------|
+| 20210526 | 2223.47  | 2224.47     | -0.044954528 | 180     | CRM opened 20210418 |
+
+
+Total Alkalinity Output
+
+| SampleID  | TA               | Mass   | Salinity | Run |
+|-----------|------------------|--------|----------|-----|
+| POC-257   | 2294.21281589112 | 60.182 | 36.79    | 2   |
+| POR-240   | 2253.77127801894 | 60.261 | 36.88    | 2   |
+| POR-262   | 2248.02673011785 | 59.802 | 36.87    | 2   |
+| POC-254   | 2287.41202551437 | 60.339 | 36.86    | 2   |
+| ACR-265   | 2283.76004008528 | 59.977 | 37       | 3   |
+| POC-239   | 2295.81472407995 | 60.457 | 37.03    | 3   |
+| INITIAL-1 | 2315.48416509178 | 59.894 | 37.02    | 3   |
+| POR-209   | 2254.08211275199 | 60.23  | 37.02    | 3   |
+| POC-217   | 2299.82917108649 | 60.113 | 37.01    | 3   |
+| BLANK-3   | 2308.18866510965 | 59.689 | 37.02    | 3   |
+| POR-221   | 2172.68917435377 | 60.417 | 37.01    | 3   |
+| POC-259   | 2285.3899644917  | 59.997 | 37.04    | 3   |
+| POC-207   | 2299.9880480591  | 59.653 | 37.04    | 3   |
+
+
+#### **Data and notes for processing E5 samples TP2, remaining Run 3 samples (3), 5 samples from run 4 20210527**
+
+**Notes**
+- All samples looked good. Updated timeseries data to urol-e5 GitHub. Temperature of room seawater: 24.5°C.
+
+**Data**
+
+CRM Accuracy Data
+
+| Date     | CRM value | Batch value | % off    | Batch # | Notes               |
+|----------|-----------|-------------|----------|---------|---------------------|
+| 20210527 | 2221.347  | 2224.47     | -0.140392992 | 180     | CRM opened 20210418 |
+
+
+Total Alkalinity Output
+
+| SampleID  | TA               | Mass   | Salinity | Run |
+|-----------|------------------|--------|----------|-----|
+| JUNK1     | 2048.4918806143  | 60.049 | 35       | -   |
+| POR-236   | 2210.78794910016 | 59.592 | 35.35    | 3   |
+| POR-206   | 2169.18082109917 | 60.638 | 35.38    | 3   |
+| INITIAL-2 | 2314.88140617624 | 60.075 | 35.35    | 3   |
+| POR-260   | 2215.42467558492 | 59.651 | 35.5     | 4   |
+| POC-222   | 2294.11805543367 | 59.754 | 35.49    | 4   |
+| POR-242   | 2002.10749874344 | 60.135 | 35.5     | 4   |
+| POR-266   | 2128.69485050727 | 60.084 | 35.49    | 4   |
+| POC-248   | 2291.29416890313 | 60.283 | 35.5     | 4   |
