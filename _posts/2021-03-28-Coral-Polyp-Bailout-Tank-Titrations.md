@@ -138,6 +138,8 @@ Total Alkalinity Output
 ---
 **Notes**
 - Before the titration run, salinity was measured following the [conductivity calibration protocol](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resourses/Equipment_Protocols/Orion_MultiParameter_Sensor_Protocol.md#Conductivity). 
+- Room seawater emperature = 24.8 °C
+
 
 **Data**
 
@@ -145,7 +147,7 @@ CRM Accuracy Data
 
 | Date     | CRM value | Batch value | % off    | Batch # | Notes               |
 |----------|-----------|-------------|----------|---------|---------------------|
-| 20210526 | 2223.47  | 2224.47     | -0.044954528 | 180     | CRM opened 20210418 |
+| 20210526 | 2223.47  | 2224.47     | -0.044954528 | 180     | CRM opened 20210526 |
 
 
 Total Alkalinity Output
@@ -156,3 +158,26 @@ Total Alkalinity Output
 | TANK1    | 2041.88469882272 | 60.165 | 32.21    |
 | TANK2    | 2042.56549084997 | 59.926 | 32.21    |
 | TANK3    | 2037.4502555346  | 59.838 | 32.21    |
+
+#### **Data for triplicate samples run on 20210603**
+---
+**Notes**
+- Before the titration run, salinity was measured following the [conductivity calibration protocol](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resourses/Equipment_Protocols/Orion_MultiParameter_Sensor_Protocol.md#Conductivity). 
+- Room seawater emperature = 24.3 °C
+
+**Data**
+
+CRM Accuracy Data
+
+| Date     | CRM value | Batch value | % off    | Batch # | Notes               |
+|----------|-----------|-------------|----------|---------|---------------------|
+| 20210603 | 2228.967  | 2224.47s    | 0.202149 | 180     | CRM opened 20210526 |
+
+
+Total Alkalinity Output
+
+| SampleID | TA               | Mass   | Salinity |
+|----------|------------------|--------|----------|
+| TANK1    | 2066.79468144144 | 60.3   | 32.14    |
+| TANK2    | 2070.19831122349 | 60.183 | 32.14    |
+| TANK3    | 2069.37369394528 | 59.66  | 32.14    |
