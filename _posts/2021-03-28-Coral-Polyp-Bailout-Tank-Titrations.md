@@ -137,7 +137,7 @@ Total Alkalinity Output
 #### **Data for triplicate samples run on 20210526**
 ---
 **Notes**
-- Before the titration run, salinity was measured following the [conductivity calibration protocol](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resourses/Equipment_Protocols/Orion_MultiParameter_Sensor_Protocol.md#Conductivity). 
+- Before the titration run, salinity was measured following the [conductivity calibration protocol](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resourses/Equipment_Protocols/Orion_MultiParameter_Sensor_Protocol.md#Conductivity).
 - Room seawater emperature = 24.8 °C
 
 
@@ -162,8 +162,8 @@ Total Alkalinity Output
 #### **Data for triplicate samples run on 20210603**
 ---
 **Notes**
-- Before the titration run, salinity was measured following the [conductivity calibration protocol](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resourses/Equipment_Protocols/Orion_MultiParameter_Sensor_Protocol.md#Conductivity). 
-- Room seawater emperature = 24.3 °C
+- Before the titration run, salinity was measured following the [conductivity calibration protocol](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resourses/Equipment_Protocols/Orion_MultiParameter_Sensor_Protocol.md#Conductivity).
+- Room seawater temperature = 24.3 °C
 
 **Data**
 
@@ -171,7 +171,7 @@ CRM Accuracy Data
 
 | Date     | CRM value | Batch value | % off    | Batch # | Notes               |
 |----------|-----------|-------------|----------|---------|---------------------|
-| 20210603 | 2228.967  | 2224.47s    | 0.202149 | 180     | CRM opened 20210526 |
+| 20210603 | 2228.967  | 2224.47    | 0.202149 | 180     | CRM opened 20210526 |
 
 
 Total Alkalinity Output
@@ -181,3 +181,52 @@ Total Alkalinity Output
 | TANK1    | 2066.79468144144 | 60.3   | 32.14    |
 | TANK2    | 2070.19831122349 | 60.183 | 32.14    |
 | TANK3    | 2069.37369394528 | 59.66  | 32.14    |
+
+
+#### **Data for triplicate samples run on 20210610**
+---
+**Notes**
+- Added DT1000 temperature probe to titrator, was tested and now taking continuous temperature measurements during titrations.
+- Before the titration run, salinity was measured following the [conductivity calibration protocol](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resourses/Equipment_Protocols/Orion_MultiParameter_Sensor_Protocol.md#Conductivity).
+
+**Data**
+
+CRM Accuracy Data
+
+| Date     | CRM value | Batch value | % off    | Batch # | Notes               |
+|----------|-----------|-------------|----------|---------|---------------------|
+| 20210610 | 2229.315  | 2224.47   | 0.217804691 | 180     | CRM opened 20210526 |
+
+
+Total Alkalinity Output
+
+| SampleID | TA               | Mass   | Salinity |
+|----------|------------------|--------|----------|
+| JUNK1    | 2074.10544477908 | 59.34  | 35       |
+| TANK1    | 2070.03617533076 | 60.017 | 32.99    |
+| TANK2    | 2072.43783887673 | 60.449 | 32.99    |
+| TANK3    | 2070.84952930117 | 59.978 | 32.99    |
+
+#### **Data for triplicate samples run on 20210615**
+---
+**Notes**
+- Added DT1000 temperature probe to titrator, was tested and now taking continuous temperature measurements during titrations.
+- Before the titration run, salinity was measured following the [conductivity calibration protocol](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resourses/Equipment_Protocols/Orion_MultiParameter_Sensor_Protocol.md#Conductivity).
+
+**Data**
+
+CRM Accuracy Data
+
+| Date     | CRM value | Batch value | % off    | Batch # | Notes               |
+|----------|-----------|-------------|----------|---------|---------------------|
+| 20210615 | 2228.722  | 2224.47    | 0.191146655 | 180     | CRM opened 20210526 |
+
+
+Total Alkalinity Output
+
+| SampleID | TA               | Mass   | Salinity |
+|----------|------------------|--------|----------|
+| JUNK1    | 2157.0790843601  | 59.992 | 35       |
+| TANK1    | 2154.3808303586  | 60.409 | 33.36    |
+| TANK2    | 2153.98057496642 | 60.416 | 33.36    |
+| TANK3    | 2155.33486336584 | 60.433 | 33.36    |
