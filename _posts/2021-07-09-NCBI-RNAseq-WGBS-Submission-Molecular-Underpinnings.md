@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Workflow for Uploading Raw Sequences to NCBI SRA
+title: Workflow for Uploading Raw Sequences to NCBI SRA (in progress)
 date: 2021-07-09
 category: [ Protocol ]
 tag: [ Sequences, RNASeq, WGBS ]
