@@ -242,14 +242,17 @@ ncftp -u 'username provided through NCBI for you' ftp-private.ncbi.nlm.nih.gov
 ![34](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/ncftp.login.png)
 
 - Once you are logged in, `cd` into the account folder given to you by NCBI
-- Create a new directory for your files with `mkdir` then `cd` into that new directory.
 
+![35](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/cd.uploads.png)
+
+- Create a new directory for your files with `mkdir` then `cd` into that new directory.
 - Then you copy the files from your directory into the remote FTP NCBI directory. You could use the `put` command to choose one file at a time, but using the `mput` command along with the `.` to specify "all files in this directory" is much easier. Simply type in and enter to start copying all files:
+
 ```
 mput *
 ```
+
 - You will then see it start uploading the files. See example command line interface in the middle of uploading:
-- Create a new directory for your files with `mkdir` then `cd` into that new directory.
 
 
 - This can take a while, depending on how many files you have and how large they are. When it is finished copying you will see the command line prompt go back to `ncftp>`.
