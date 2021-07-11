@@ -227,16 +227,22 @@ Once you have gathered those, the next thing to do is **login to the [submission
 
 - First, in your terminal connect to your [Bluewaves account](https://github.com/Putnam-Lab/Lab_Management/tree/master/Bioinformatics_%26_Coding/Bluewaves). Go to the directory that contains your raw data (usually fastq.gz) files. If there are other files not being uploaded, either remove them or create a new directory that **only** contains the sequence files you are going to upload.
 - FTP, or [File Transfer Protocol](https://searchnetworking.techtarget.com/definition/File-Transfer-Protocol-FTP), lets you access a folder for NCBI and your directory at the same time just for the purpose of transferring files. I noticed that this FTP is not functional on Bluewaves so we will be using a different command called [NcFTP](https://www.tecmint.com/command-line-ftp-clients-for-linux/) which is an alternative to the standard FTP program to connect.
+
+![33](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Bioinformatics_%26_Coding/images/select-folder.png)
+
 - While you are in the Bluewaves directory with your files, invoke the NcFTP command instead of FTP. To start the process by type:
+
 ```
 ncftp -u 'username provided through NCBI for you' ftp-private.ncbi.nlm.nih.gov
 ```
+
 - Notice that your command prompt now changes to `ncftp>`
 - Now you want to login to NCBI using the address they give you. This command will allow you to enter the username in one line and it will prompt you for your designated password.**They only give you 30 seconds to do this so make sure you are ready to C+P**.
+
+![34](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/ncftp.login.png)
+
 - Once you are logged in, `cd` into the account folder given to you by NCBI
 - Create a new directory for your files with `mkdir` then `cd` into that new directory.
-
-![33](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Bioinformatics_%26_Coding/images/select-folder.png)
 
 - Then you copy the files from your directory into the remote FTP NCBI directory. You could use the `put` command to choose one file at a time, but using the `mput` command along with the `.` to specify "all files in this directory" is much easier. Simply type in and enter to start copying all files:
 ```
@@ -245,7 +251,6 @@ mput *
 - You will then see it start uploading the files. See example command line interface in the middle of uploading:
 - Create a new directory for your files with `mkdir` then `cd` into that new directory.
 
-![34](/images/ftp-commands.png "34")
 
 - This can take a while, depending on how many files you have and how large they are. When it is finished copying you will see the command line prompt go back to `ncftp>`.
 
