@@ -8,8 +8,7 @@ projects: Molecular Underpinnings
 ---
 # Adding RNASeq and WGBS Sequence Files to NCBI Sequence Read Archive
 
-### This workflow follows the [NCBI SRA Submission Protocol](https://github.com/Putnam-Lab/Lab_Management/blob/master/Bioinformatics_%26_Coding/Data_Mangament/SRA-Upload_Protocol.md) made by meschedl. I have updated information on the NCBI SRA website from 20210709 and including a section on how to upload sequence files through the [URI Bluewaves](https://web.uri.edu/hpc-research-computing/using-bluewaves/) server.
-
+### This workflow follows the [NCBI SRA Submission Protocol](https://github.com/Putnam-Lab/Lab_Management/blob/master/Bioinformatics_%26_Coding/Data_Mangament/SRA-Upload_Protocol.md) made by [meschedl](https://github.com/meschedl). I have updated information on the NCBI SRA website from 20210709 and including a section on how to upload sequence files through the [URI Bluewaves](https://web.uri.edu/hpc-research-computing/using-bluewaves/) server.
 
 # NCBI Archive Structure
 [BioProject](https://www.ncbi.nlm.nih.gov/bioproject/): "A BioProject is a collection of biological data related to a single initiative, originating from a single organization or from a consortium. A BioProject record provides users a single place to find links to the diverse data types generated for that project." All data and samples from this initiative reside under the one BioProject.
@@ -100,17 +99,27 @@ Once you have gathered those, the next thing to do is **login to the [submission
 - Now you can go back to the BioSample submission portal and you are ready to click the blue box that says **New Submission**.
 - The first section of the portal has submitter info. If in Hollie's login there is _nothing to change here_ so click to the next section.
 - Choose when to release the BioSamples (and its associated data) and tell NCBI how you are uploading the info (batch).
+
 ![10](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Bioinformatics_%26_Coding/images/biosample-info.png)
+
 - In the next section choose the sample type, this needs to be the same as you chose above for downloading the template.
+
 ![11](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Bioinformatics_%26_Coding/images/sampletype.png)
+
 - In the next section for attributes, upload the excel file by choosing the file from your computer.
+
 ![12](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Bioinformatics_%26_Coding/images/attributes-upload.png)
+
 - When you click next here it will go through your excel file and make sure it has all the information it needs. If you get this error it means you did not provide one attribute field that is unique for each sample. This can be tough as we always have biological replicates in our experiments that are the same in all other ways. Look at the description attribute example above as an idea how to make each unique. You can always fix your sheet and upload it again.
+
 ![13](https://github.com/Putnam-Lab/Lab_Management/blob/master/Bioinformatics_%26_Coding/images/biosamp-error.png)
+
 - **At any time you can leave your submission and come back to it in the submission portal, it saves for you**
 - Once the upload is ok, you review everything to make sure it's what you want, then submit your samples!
 - In the submission portal it will change the BioSample submission from in progress to processing. It doesn't take very long to process the samples. Once they are processed, each BioSample now has an associated SAMN# with it.
+
 ![14](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Bioinformatics_%26_Coding/images/processed-samples-SAMN.png)
+
 - BioSamples are done!
 
 ## 2 BioProject Creation
@@ -118,14 +127,21 @@ Once you have gathered those, the next thing to do is **login to the [submission
 - Go into the submission portal and this time choose BioProject in the Start a New Submission Box.  
 
 ![3](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Bioinformatics_%26_Coding/images/new_sub.png)
+
 - Again the first section of the portal is submitter info. There should be nothing to change.
 - Choose **all types of data** that are applicable for this project. Usually raw sequence reads is one of them. If you have metagenome or holobiont sequences then targeted loci environmental is they type of sequence for that (target loci as the amplicon).
 - Choose the sample scope of the **whole project**, so be mindful if it is actually multi-species even though you are uploading data from one species at the moment.
+
 ![15](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Bioinformatics_%26_Coding/images/project-type.png)
+
 - The next section is target information. Add the species scientific name and add a description if there are specific limitations on that, ex. if there might be cryptic species, hybrid species, etc.
+
 ![16](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Bioinformatics_%26_Coding/images/target.png)
+
 - If this is a multispecies project, the target information allows you to describe each species.
+
 ![17](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Bioinformatics_%26_Coding/images/multispecies-target.png)
+
 - The next section is for the project information. Release information should be the same as for the BioSamples. Create a descriptive and informative title, and give more information in the public description. It is important to see that it says **public**, so this description needs to be clear and informative enough for someone from the public to be able to understand the data from this project and know if they want to use it for their purposes. For relevance, choose one of these in the dropdown menu.
   - Evolution
   - Medical
@@ -133,17 +149,29 @@ Once you have gathered those, the next thing to do is **login to the [submission
   - Industrial
   - Model Organism
   - Other
+
 ![18](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Bioinformatics_%26_Coding/images/Project-info.png)
+
 - If you know the Grant ID associated with this project, now is a good time to add it, although it can be added later. If this is part of a Consortium initiative include that information as well.
+
 ![19](https://github.com/Putnam-Lab/Lab_Management/blob/master/Bioinformatics_%26_Coding/images/grant.png)
+
 - The next section is to add the BioSample SAMN#s that you created above. This is why it's easier to make these first instead of stopping in the middle of this submission to make them. If you make more later they can still be added in afterwards.
+
 ![20](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Bioinformatics_%26_Coding/images/biosamp.png)
+
 - When adding in the SAMN# it is best to have open in another tab the portal to your submissions and copy **only** the SAMN# from that list.
+
 ![21](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Bioinformatics_%26_Coding/images/copySAMN.png)
+
 - Then paste the SAMN# into the portal for the BioProject. **Wait a second or two** until the number comes up in the drop down and click on it to choose that sample.
+
 ![22](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Bioinformatics_%26_Coding/images/pasteSAMN.png)
+
 - It's tempting to copy the whole name (ex SAMN14486766 : 128 FE LOW) and press enter, **BUT** notice that there is a space between the : and the SAMN# on the submission portal, _but not in the dropdown in the upload section_. If you don't choose from the drop-down option, NCBI will not recognize the SAMN# and that sample won't be added to the list. You will get an error like this. **So only copy and paste the SAMN# and wait to click the option**. Yes, this is tedious.
+
 ![23](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Bioinformatics_%26_Coding/images/SAMNerror.png)
+
 - The next section is for publications info. If there hasn't been any publications yet with this data you don't need to add anything.
 - Then you review all of your inputs and submit! Once again the submission needs to be processed. Once it is processed you will have a PRJNA#.
 
@@ -152,12 +180,17 @@ Once you have gathered those, the next thing to do is **login to the [submission
 - Finally! Start a new submission for a Sequence Read Archive.  
 
 ![3](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Bioinformatics_%26_Coding/images/new_sub.png)
+
 - We will be doing the ftp upload, so make sure you can access your sequence via the command line
 - Again, the submitter info is the first step and shouldn't be changed.
 - For information, paste in your new PRJNA# and say yes you have BioSamples (these will be added in the metadata sheet). Then choose the release data option that fits will all your other submissions.
+
 ![24](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Bioinformatics_%26_Coding/images/SRA-Info.png)
+
 - Next, for the metadata upload choose the Excel format and download the excel spreadsheet from NCBI.
+
 ![25](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Bioinformatics_%26_Coding/images/srametadata.png)
+
 - In the excel sheet, the first tab is general instructions about the file, the second tab is where you input your information. The third tab is all of the terms that can be used for Strategy, Source, Selection, and Platforms, as well as definitions of what they are (you should know these before hand, see information to gather before processing).
 -  In the first column add the **SAMN#** so NCBI can connect this data with the other information you have already put together.
 - The SAMN# does not have information about your samples though, so in the **library_ID** include your sample number and identifying information (as in the BioSample_name) as well as the sequencing type as there might be multiple of those per sample. These will be the titles of the links on NCBI to your sequences.
@@ -174,47 +207,50 @@ Once you have gathered those, the next thing to do is **login to the [submission
 - Then, in the **filename** column add the Read 1 complete file name. If you have paired end sequence data, add Read 2 in the **filename 2** column of that same row. *_note: make sure that your files are zipped with gzip and note zip._
 - Examples of a filled out and **accepted** SRA metadata sheet:  
 
-![26](/images/srasamn.png "26")  
+![26](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/sraSAMN.png)  
 
-![27](/images/sra-title.png "27")  
+![27](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/library_source2.png)  
 
-![28](/images/sra-lib-info.png "28")  
+![28](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/description_3.png)  
 
-![29](/images/sra-seq-info.png "29")  
-
-![30](/images/sra-descrip.png "30")  
-
-![31](/images/seq-name.png "31")  
 
 - **Please triple check that your file names match your sample number and matches your SAMN#. This is the most crucial. It is best to always stay in numerical order to help alleviate confusion, especially when you have to copy and paste single cells, or write out names completely.**
 - While on the SRA_data tab choose Save As in a **tab delimited format, such as .txt or .tsv**. This is the formatted required by the upload portal.
 - Then choose the tab-delimited version of the file for the metatdata upload in the SRA submission portal. It will check that everything is in the right format and flag you if something needs to be changed.
 - Next you go to upload your files. Choose the FTP command line preload option and click the button to request a pre-load folder.
-![32](/images/request-preload.png "32")
+
+![32](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Bioinformatics_%26_Coding/images/request-preload.png)
+
 - Then you have to choose what type of instructions to use. Click the FTP upload instructions and it will give you some command prompts that I will go into more detail with here.
-- First, in your terminal make sure you can access your files. Go to that directory. If there are other files not being uploaded, either remove them or create a new directory that **only** contains the sequence files you are going to upload.
-- FTP, or File Transfer Protocol, lets you access a folder for NCBI and your directory at the same time just for the purpose of transferring files.
-- While you are in the directory with your files, invoke the FTP process by typing:
+
+## **Instructions on how to connect to the NCBI SRA server using Bluewaves**
+
+- First, in your terminal connect to your [Bluewaves account](https://github.com/Putnam-Lab/Lab_Management/tree/master/Bioinformatics_%26_Coding/Bluewaves). Go to the directory that contains your raw data (usually fastq.gz) files. If there are other files not being uploaded, either remove them or create a new directory that **only** contains the sequence files you are going to upload.
+- FTP, or [File Transfer Protocol](https://searchnetworking.techtarget.com/definition/File-Transfer-Protocol-FTP), lets you access a folder for NCBI and your directory at the same time just for the purpose of transferring files. I noticed that this FTP is not functional on Bluewaves so we will be using a different command called [NcFTP](https://www.tecmint.com/command-line-ftp-clients-for-linux/) which is an alternative to the standard FTP program to connect.
+- While you are in the Bluewaves directory with your files, invoke the NcFTP command instead of FTP. To start the process by type:
 ```
-ftp -i
+ncftp -u 'username provided through NCBI for you' ftp-private.ncbi.nlm.nih.gov
 ```
-- Notice that your command prompt now changes to `ftp>`
-- Now you want to login to NCBI using the address they give you. Right after you connect you will need to login. When it says name you copy and past the username given to you in the portal and press enter. Then do the same with the password. **They only give you 30 seconds to do this so make sure you are ready to C+P**.
-```
-open ftp-private.ncbi.nlm.nih.gov
-```
+- Notice that your command prompt now changes to `ncftp>`
+- Now you want to login to NCBI using the address they give you. This command will allow you to enter the username in one line and it will prompt you for your designated password.**They only give you 30 seconds to do this so make sure you are ready to C+P**.
 - Once you are logged in, `cd` into the account folder given to you by NCBI
 - Create a new directory for your files with `mkdir` then `cd` into that new directory.
-![33](/images/select-folder.png "33")
+
+![33](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Bioinformatics_%26_Coding/images/select-folder.png)
+
 - Then you copy the files from your directory into the remote FTP NCBI directory. You could use the `put` command to choose one file at a time, but using the `mput` command along with the `.` to specify "all files in this directory" is much easier. Simply type in and enter to start copying all files:
 ```
 mput *
 ```
 - You will then see it start uploading the files. See example command line interface in the middle of uploading:
 - Create a new directory for your files with `mkdir` then `cd` into that new directory.
+
 ![34](/images/ftp-commands.png "34")
-- This can take a while, depending on how many files you have and how large they are. When it is finished copying you will see the command line prompt go back to `ftp>`.
+
+- This can take a while, depending on how many files you have and how large they are. When it is finished copying you will see the command line prompt go back to `ncftp>`.
+
 ![35](/images/ftp.png "35")
+
 - Once that's done, you can go back to the submission portal and **Select Preload folder**. If your folder hasn't shown up yet, wait another 10 minutes and keep refreshing the folders. It can take time. Then select your folder and click use selected folder.
 - Then, you review all your information, make sure all the files are there and submit!!
 
