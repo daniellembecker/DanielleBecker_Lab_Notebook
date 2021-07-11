@@ -254,10 +254,9 @@ mput *
 
 - You will then see it start uploading the files. See example command line interface in the middle of uploading:
 
+![36](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/mput.png)
 
 - This can take a while, depending on how many files you have and how large they are. When it is finished copying you will see the command line prompt go back to `ncftp>`.
-
-![35](/images/ftp.png "35")
 
 - Once that's done, you can go back to the submission portal and **Select Preload folder**. If your folder hasn't shown up yet, wait another 10 minutes and keep refreshing the folders. It can take time. Then select your folder and click use selected folder.
 - Then, you review all your information, make sure all the files are there and submit!!
