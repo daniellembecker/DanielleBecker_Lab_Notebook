@@ -246,6 +246,9 @@ ncftp -u 'username provided through NCBI for you' ftp-private.ncbi.nlm.nih.gov
 ![35](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/cd.uploads.png)
 
 - Create a new directory for your files with `mkdir` then `cd` into that new directory.
+
+![39](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/mkdir.ncbi.png)
+
 - Then you copy the files from your directory into the remote FTP NCBI directory. You could use the `put` command to choose one file at a time, but using the `mput` command along with the `.` to specify "all files in this directory" is much easier. Simply type in and enter to start copying all files:
 
 ```
@@ -266,25 +269,25 @@ mput *
 ### What Everything Will Look Like on NCBI
 
 [**BioProject**](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA616341) Under NCBI BioProject. All information on the project is here, as well as the links to the BioSamples and the SRA sequences. Those links are the little 48 numbers.
-![36](/images/finished-project.png "36")
+![36](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Bioinformatics_%26_Coding/images/finished-project.png)
 
 If you click on the [**48**](https://www.ncbi.nlm.nih.gov/biosample?Db=biosample&DbFrom=bioproject&Cmd=Link&LinkName=bioproject_biosample&LinkReadableName=BioSample&ordinalpos=1&IdsFromResult=616341) next to BioSamples, it will list all BioSamples associated with the BioProject.
-![37](/images/finished-biosamples.png "37")
+![37](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Bioinformatics_%26_Coding/images/finished-biosamples.png)
 
 If you click on [one sample](https://www.ncbi.nlm.nih.gov/biosample/14486809) it will take you to the page for that specific sample. Here all the attributes are listed, every associated accession number, and links back to the BioProject and to the SRA submission for this sample.
-![38](/images/individ-biosamp.png "38")
+![38](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Bioinformatics_%26_Coding/images/individ-biosamp.png)
 
 If you click on the [tiny link that says SRA](https://www.ncbi.nlm.nih.gov/sra?LinkName=biosample_sra&from_uid=14486809) at the bottom of the BioSample page it will take you to the SRA page for this sample. It will tell you all the library and sequencing information, as well as how much data you have.
-![39](/images/ncbi-sra.png "39")
+![39](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Bioinformatics_%26_Coding/images/ncbi-sra.png)
 
 From here you can go back to the BioProject by clicking it's accession number, or see a list of all the sequences by clicking the [SRP number](https://trace.ncbi.nlm.nih.gov/Traces/sra/?study=SRP254626).
-![40](/images/srp.png "40")
+![40](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Bioinformatics_%26_Coding/images/srp.png)
 
 If you wanted to look at just the sequences that are linked to that BioSample, click on the [Run SRR number](https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR11452221) that's in the table with the sequence size information. Here is all of the information about these sequences, you can actually look at some of the reads, and there is a tab for accessing the data.
-![41](/images/samp-sra.png "41")
+![41](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Bioinformatics_%26_Coding/images/samp-sra.png)
 
 Additionally, you can get a list of the SRA sequences by clicking the [little 48 next to SRA](https://www.ncbi.nlm.nih.gov/sra?linkname=bioproject_sra_all&from_uid=616341) on the main BioProject page.
-![42](/images/sra-list.png "42")
+![42](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Bioinformatics_%26_Coding/images/sra-list.png)
 
 
 #### Links to NCBI pages that try to tell you how to do this but aren't very helpful. They also aren't well linked together. A lot of the information about BioProjects and BioSamples come from pages about SRA information.
