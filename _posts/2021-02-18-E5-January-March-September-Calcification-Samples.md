@@ -7,7 +7,7 @@ tag: [ Physiology, Calcification Samples, Mercuric Chloride Fixed Samples ]
 ## Processing the E5 January and March 2020 Instantaneous Calcification Samples
 
 ### **Goal**
-Process calcification samples collected for the [E5 uROL Epigenetics Project](https://urol-e5.github.io) from January, March, and September 2020 (timepoints 1, 2, and 3). The samples were collected in January (n = X), March (n = X), and September 2020 (n = X) and fixed with 75uL of saturated mercuric chloride for transportation back to URI on November, 22nd 2020. All samples were brought back from the January and March timepoints, but only 51 bottles could fit in the containers from the September timepoint. The remaining samples for the September and November 2020 timepoints are in Mo'orea in the LTER back lab.
+Process calcification samples collected for the [E5 uROL Epigenetics Project](https://urol-e5.github.io) from January, March, and September 2020 (timepoints 1, 2, and 3). The samples were collected in January (n = 146), March (n = 151), and September 2020 (n = 51) and fixed with 75uL of saturated mercuric chloride for transportation back to URI on November, 22nd 2020. All samples were brought back from the January and March timepoints, but only 51 bottles could fit in the containers from the September timepoint. The remaining samples for the September and November 2020 timepoints are in Mo'orea in the LTER back lab.
 
 ### **Process**
 
