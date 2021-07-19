@@ -7,7 +7,7 @@ tag: [ Physiology, Calcification Samples, Mercuric Chloride Fixed Samples ]
 ## Processing the E5 January and March 2020 Instantaneous Calcification Samples
 
 ### **Goal**
-Process calcification samples collected for the [E5 uROL Epigenetics Project](https://urol-e5.github.io) from January and March 2020 (timepoint 1 and 2). The samples were collected in January (n = X) and March (n = X) 2020 and fixed with 75uL of saturated mercuric chloride for transportation back to URI on November, 22nd 2020.
+Process calcification samples collected for the [E5 uROL Epigenetics Project](https://urol-e5.github.io) from January, March, and September 2020 (timepoints 1, 2, and 3). The samples were collected in January (n = X), March (n = X), and September 2020 (n = X) and fixed with 75uL of saturated mercuric chloride for transportation back to URI on November, 22nd 2020. All samples were brought back from the January and March timepoints, but only 51 bottles could fit in the containers from the September timepoint. The remaining samples for the September and November 2020 timepoints are in Mo'orea in the LTER back lab.
 
 ### **Process**
 
@@ -471,3 +471,39 @@ Total Alkalinity Output
 | INITIAL-1 | 2348.49847005759 | 59.952 | 37.89    | 9   |
 | ACR-173   | 2267.79743612355 | 59.932 | 37.95    | 9   |
 | POC-50    | 2329.21094044675 | 60.098 | 37.9     | 9   |
+
+#### **Data and notes for processing E5 samples TP2, Run 9 samples (2), run 10 samples (12), and run 11 samples (2) 20210715**
+
+**Notes**
+- All samples looked good. Updated timeseries data to urol-e5 GitHub.
+
+**Data**
+
+CRM Accuracy Data
+
+| Date     | CRM value | Batch value | % off    | Batch # | Notes               |
+|----------|-----------|-------------|----------|---------|---------------------|
+| 20210715 | 2230.460292  | 2224.47     | 0.269290768 | 180     | CRM opened 20210526 |
+
+
+Total Alkalinity Output
+
+| SampleID  | TA               | Mass   | Salinity | Run |
+|-----------|------------------|--------|----------|-----|
+| JUNK1     | 2270.28371447114 | 60.173 | 35       | NA  |
+| POC-386   | 2324.0085661087  | 60.373 | 38.06    | 9   |
+| POR-354   | 2309.65549162679 | 59.868 | 38.06    | 9   |
+| INITIAL-2 | 2336.08593365965 | 59.517 | 38.15    | 10  |
+| INITIAL-1 | 2334.68461218021 | 60.175 | 38.14    | 10  |
+| POC-44    | 2316.96398025246 | 59.912 | 38.17    | 10  |
+| BLANK-10  | 2336.38727847286 | 60.094 | 38.18    | 10  |
+| POR-79    | 2257.74172138601 | 60.193 | 38.17    | 10  |
+| POC-45    | 2319.05071812265 | 60.091 | 38.18    | 10  |
+| POR-69  | 2164.33223065006 | 59.976 | 38.14 | 10 |
+| POC-68  | 2321.23543991343 | 59.537 | 38.16 | 10 |
+| POR-71  | 2184.29178281424 | 60.46  | 38.17 | 10 |
+| ACR-139 | 2297.47202192576 | 59.631 | 38.17 | 10 |
+| POR-77  | 2231.06018551181 | 59.984 | 38.17 | 10 |
+| ACR-145 | 2313.15975234594 | 59.812 | 38.17 | 10 |
+| POC-55  | 2314.56794666255 | 60.002 | 38.17 | 11 |
+| POR-80  | 2243.56993167095 | 59.773 | 38.17 | 11 |
