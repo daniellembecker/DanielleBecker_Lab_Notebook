@@ -20,6 +20,7 @@ www.gatescorallab.com
 <center>Department of Biological Sciences</center>
 <center>University of Rhode Island</center>
 <center>120 Flagg Road, Kingston RI 02881</center>
+<center>ashuffmyer@uri.edu</center>
 
 ### POSITIONS HELD
 
@@ -41,24 +42,23 @@ Date|Position| Affiliation
 
 [Google Scholar Profile](https://scholar.google.com/citations?user=_dw3pYEAAAAJ&hl=en)
 
-10. **Huffmyer AS**, CJ Johnson, AM Epps, JD Lemus, RD Gates. Feeding and thermal conditioning enhance coral temperature tolerance in juvenile Pocillopora acuta. Royal Society Open Science. *In press.*
-9. Barott KL, **AS Huffmyer**, J Davidson, EA Lenz, SB Matsuda, J Hancock, T Innis, B Glazer, C Drury, H Putnam, RD Gates. Fitness of thermally tolerant corals following transplantation supports utility of assisted gene flow for climate change remediation of coral reefs. PNAS. *In press.*   
-8. Innis T, L Allen-Waller, KT Brown, W Sparagon, C Carlson, E Kruse, **AS Huffmyer**, CE Nelson, HM Putnam, KL Barott. Marine heatwaves depress metabolic activity and impair cellular acid-base homeostasis in reef-building corals regardless of bleaching susceptibility. Global Change Biology. https://doi.org/10.1111/gcb.15622  
-7. **Huffmyer AS**, C Drury, E Majerová, JD Lemus, RD Gates. 2021. Tissue fusion and enhanced genotypic diversity support survival of juvenile Pocillopora acuta corals under thermal stress. Coral Reefs 40(2): 447-458  
+10. **Huffmyer AS**, CJ Johnson, AM Epps, JD Lemus, RD Gates. Feeding and thermal conditioning enhance coral temperature tolerance in juvenile Pocillopora acuta. Royal Society Open Science 8: 210644.  
+9. Barott KL, **AS Huffmyer**, J Davidson, EA Lenz, SB Matsuda, J Hancock, T Innis, B Glazer, C Drury, H Putnam, RD Gates. Fitness of thermally tolerant corals following transplantation supports utility of assisted gene flow for climate change remediation of coral reefs. PNAS 118: e2025435118.  
+8. Innis T, L Allen-Waller, KT Brown, W Sparagon, C Carlson, E Kruse, **AS Huffmyer**, CE Nelson, HM Putnam, KL Barott. Marine heatwaves depress metabolic activity and impair cellular acid-base homeostasis in reef-building corals regardless of bleaching susceptibility. Global Change Biology 27: 2728-2743.  
+7. **Huffmyer AS**, C Drury, E Majerová, JD Lemus, RD Gates. 2021. Tissue fusion and enhanced genotypic diversity support survival of juvenile Pocillopora acuta corals under thermal stress. Coral Reefs 40(2): 447-458.  
 6. Roach TNF, S Yadav, C Caruso, J Dilworth, CM Foley, JR Hancock, J Huckeba, **AS Huffmyer**, K Hughes, VA Kahkejian, EMP Madin, SB Matsuda, M McWilliam, S Miller, EP Santoro, M Rocha de Souza, D Torres-Pulliza, C Drury, JS Madin. 2021. A field primer for monitoring benthic ecosystems using structure-from-motion photogrammetry. Journal of Visualized Experiments. 170: e61815.   
-5. Hancock J, A Barrows, T Roome, **AS Huffmyer**, SB Matsuda, S Rahnke, N Munk, C Drury. 2021. Coral husbandry for ocean futures: leveraging abiotic factors to increase survivorship, growth, and resilience in juvenile Montipora capitata. Marine Ecology Progress Series 657:123-133  
-4. Matsuda S, **AS Huffmyer**, EA Lenz, J Davidson, J Hancock, A Przybylowski, T Innis, RD Gates, KL Barott. 2020. Coral bleaching susceptibility is predictive of subsequent mortality within but not between coral species. Frontiers in Ecology and Evolution 8:178  
+5. Hancock J, A Barrows, T Roome, **AS Huffmyer**, SB Matsuda, S Rahnke, N Munk, C Drury. 2021. Coral husbandry for ocean futures: leveraging abiotic factors to increase survivorship, growth, and resilience in juvenile Montipora capitata. Marine Ecology Progress Series 657:123-133.  
+4. Matsuda S, **AS Huffmyer**, EA Lenz, J Davidson, J Hancock, A Przybylowski, T Innis, RD Gates, KL Barott. 2020. Coral bleaching susceptibility is predictive of subsequent mortality within but not between coral species. Frontiers in Ecology and Evolution 8:178.  
 3. **Huffmyer AS**, SB Matsuda, AE Eggers, JD Lemus, RD Gates. 2020. Evaluation of laser scanning confocal microscopy as a method for characterizing reef-building coral tissue thickness and Symbiodiniaceae fluorescence. Journal of Experimental Biology 223(6): jeb220335. Cover image contribution.   
 2. **Huffmyer AS** and JD Lemus. 2019. Graduate TA teaching styles impact student achievement in a research-based undergraduate science course. Journal of College Science Teaching 48(3):56-65.  
-1. **Meltvedt AM** and C Jadot. 2014. Progression of the coral – algal phase shift in the Caribbean: a case study in Bonaire, Dutch Caribbean. Marine Technology Society Journal: 48(6):33-41.
-
+1. **Meltvedt AM** and C Jadot. 2014. Progression of the coral – algal phase shift in the Caribbean: a case study in Bonaire, Dutch Caribbean. Marine Technology Society Journal: 48(6):33-41.    
 
 
 ### RESEARCH GRANTS
 
 ##### Funded
 
-2016-2021	National Science Foundation Graduate Research Fellow ($114,000)  
+2016-2020	National Science Foundation Graduate Research Fellow ($114,000)  
 
 2016-2019	Hawaii Institute of Marine Biology Lord Scholarship Fund ($8,500)  
 
@@ -69,3 +69,45 @@ Date|Position| Affiliation
 2019			University of Hawaii at Manoa Graduate Student Organization Mentorship Award ($5,000)  
 
 2012-2014	National Oceanic and Atmospheric Administration Ernest Hollings Scholar ($27,000)  
+
+
+### PRESENTATIONS  
+
+#### *Oral Presentations*  
+
+16. **Huffmyer AS**. Metabolomics in coral early life history and application of stable isotope tracing. E5 Rules of Life – Epigenetics Annual Meeting. Virtual presentation. April 2021.
+15. **Huffmyer AS**. Early life history nutritional exchange in the reef coral-Symbiodiniaceae symbiosis. E5 Rules of Life – Epigenetics Annual Meeting. Virtual presentation. December 2020.
+14. **Huffmyer AS**, T O’Neill, JD Lemus. Supporting professional science identity for science students. STEMS2 Symposium. Virtual presentation. June 2020.
+13. **Huffmyer AS**. Getting a head start: Influential early experiences for juvenile corals and science students. PhD Dissertation Defense. University of Hawaiʻi at Mānoa. Honolulu, Hawaiʻi, USA. January 2020.
+12. **Huffmyer AS**. Conditioning and physiological flexibility in juvenile corals. Coral Assisted Evolution Symposium. Australian Institute of Marine Science, Queensland, Australia. May 2019.
+11. **Huffmyer AS**. Strength in numbers: Fusion in juvenile corals. Hawaiʻi Institute of Marine Biology Scholarship Symposium. Kāneʻohe, Hawaiʻi, USA. March 2019.
+10. **Huffmyer AS** and RD Gates. Getting a head start: Thermal and nutritional conditioning of juvenile corals. UHM Albert L. Tester Symposium. Honolulu, Hawaiʻi, USA. April 2018.
+9. Hughes K, **AS Huffmyer**, S Matsuda, E Lenz. Coral Assisted Evolution. Hawaiʻi Institute of Marine Biology Science Seminar Series. Kāneʻohe, Hawaiʻi, USA. April 2018.
+8. **Huffmyer AS** and RD Gates. Getting a head start: Thermal and nutritional conditioning of juvenile corals. Society of Integrative and Comparative Biology. San Francisco, California, USA. January 2018.
+7. **Huffmyer AS**, H Putnam, RD Gates. Parental influence on growth and survivorship of juvenile Pocillopora damicornis corals exposed to increased temperature. American Society of Limnology and Oceanography. Honolulu, Hawaiʻi, USA. February 2017.
+6. **Huffmyer AS** and J Lemus. TA teaching styles impact student achievement in a research-based undergraduate science course. UHM Albert L. Tester Symposium. Honolulu, Hawaiʻi, USA. April 2016.
+5. **Meltvedt AM**. Population structure and genetic variation in the Hawaiian Opakapaka (Pristipomoides filamentosus): Evidence of a genetic bottleneck in offspring of a captive broodstock. Undergraduate Thesis Defense. Corvallis, Oregon, USA. May 2014.
+4. **Meltvedt AM**. Increasing literacy in marine science: A summer education program for Hawaiʻi high school students. Hawaiʻi NOAA Scholars Symposium. Honolulu, Hawaiʻi, USA. July 2013.
+3. **Meltvedt AM**. Increasing literacy in marine science: A summer education program for Hawaiʻi high school students. NOAA Hollings Scholar Symposium. August 2013. Silver Springs, Maryland, USA.
+2. **Meltvedt AM**, K Beem, A Carsh. Site and light: factors affecting growth rates of Saccharina sessilis kelp. Hatfield Marine Science Student Symposium. Newport, Oregon, USA. June 2013.
+1. **Meltvedt AM**. Reef health at Yellow Sub, Bonaire: progression of a coral-algal phase shift. CIEE Student Research Symposium. Bonaire, Dutch Caribbean. November 2012.  
+
+#### *Oral Presentations*  
+
+5. **Huffmyer AS** and J Lemus. TA teaching styles impact student achievement in a research-based undergraduate science course. Society of Integrative and Comparative Biology. New Orleans, Louisiana, USA. January 2017.
+4. **Huffmyer AS**, H Putnam, RD Gates. Parental influence on patterns of growth and survivorship in juvenile Pocillopora damicornis corals exposed to thermal stress conditions. Western Society of Naturalists. Monterey Bay, California, USA. November 2016.
+3. **Huffmyer AS** and J Lemus. TA teaching styles impact student achievement in a research-based undergraduate science course. International Coral Reef Symposium. Honolulu, Hawaiʻi, USA. June 2016.
+2. **Huffmyer AS**. Utilizing heterotrophy: Nutritional provisioning for juvenile corals in climate change. UHM Albert L. Tester Symposium. Honolulu, Hawaiʻi, USA. April 2016.
+1. **Meltvedt AM**. Novel nematode characterization and phylogeny. Science Education Alliance Symposium. Janelia Farms, Virginia, USA. June 2011.  
+
+#### *Invited Lectures and Presentations*  
+
+6. **Huffmyer AS** and HG Reich. Coral symbiosis and application of ‘omics to answer emerging questions in marine invertebrate ecophysiology. University of Rhode Island - Marine Environmental Physiology course. Virtual invited lecture. April 2021. 
+5. **Huffmyer AS** and EA Lenz. Coral reef resiliency and recovery in the face of global climate change. ARCS Honolulu Chapter. Invited presentation. Honolulu, Hawaiʻi, USA. February 2019.
+4. **Huffmyer AS**. Early life history of reef building corals. University of Hawaiʻi at Mānoa - Corals and Coral Reefs course. Invited lecture. Honolulu, Hawaiʻi, USA. April 2018.
+3. **Huffmyer AS**. You are what you eat: Coral nutrition. University of Hawaiʻi Mānoa Corals and Coral Reefs course. Invited lecture. Honolulu, Hawaiʻi, USA. April 2017.
+2. **Huffmyer AS**. Corals in Hawaiʻi and a day in the life of a marine biologist. Invited lecture. Nānākuli High School, Nānākuli, Hawaiʻi, USA. September 2016.
+1. **Huffmyer AS**. Coral reef monitoring and ecological sampling methods. Summer Research Experience in Marine Biology Program. Lecture. Hawaiʻi Institute of Marine Biology, Kāneʻohe, Hawaiʻi, USA. July 2015.
+
+
+
