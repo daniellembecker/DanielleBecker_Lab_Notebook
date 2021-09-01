@@ -48,6 +48,6 @@ Fertilization of wildtype *M. capitata* gametes for rearing an use of larvae in 
 
 * Cultures in buckets were combined and cleaned into n=12 buckets. These buckets were then put into two black tanks and submerged such that the black tank created 
 
-![Falcon tubes with bundles] (https://raw.githubusercontent.com/ahuffmyer/ASH_Putnam_Lab_Notebook/images/NotebookImages/Falcon_Tubes_2021.jpg)  
+![Falcon tubes with bundles] (https://raw.githubusercontent.com/ahuffmyer/ASH_Putnam_Lab_Notebook/images/NotebookImages/Falcon_Tubes_2021.jpeg)  
 
-![Embryos in conicals] (https://raw.githubusercontent.com/ahuffmyer/ASH_Putnam_Lab_Notebook/images/NotebookImages/Embryos_Conicals_2021.jpg)  
+![Embryos in conicals] (https://raw.githubusercontent.com/ahuffmyer/ASH_Putnam_Lab_Notebook/images/NotebookImages/Embryos_Conicals_2021.jpeg)  

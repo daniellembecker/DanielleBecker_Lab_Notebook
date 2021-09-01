@@ -24,3 +24,5 @@ Measured physical conditions daily and recorded in Google drive.
 Calibrated apex probes to digital thermometer prior to temperature start and on 6/15/2021. High tank probe was reading high, so first day was lower than target, providing a "ramp" day. 
 
 Continuing to check and clean cultures regularly every 2-3 hours from 6/15-6/18. 
+
+![Swimming larvae] (https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Larvae_Scope_2021.jpeg) 
