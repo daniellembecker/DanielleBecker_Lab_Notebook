@@ -5,14 +5,15 @@ date: '2020-11-20'
 categories: Ahyacinthus_EarlyLifeHistory_2020
 tags: Ahyacinthus Reproduction Respirometry Sampling
 ---
+This entry describes the sampling and respirometry data collection for Acropora hyacinthus in Moorea, French Polynesia at CRIOBE and Gump Research Stations.
 
-# **Overview**  
+# Overview  
 
-This entry describes the sampling and respirometry data collection for Acropora hyacinthus in Moorea, French Polynesia at CRIOBE and Gump Research Stations. Sampling was conducted by D. Becker and D. Conetta. 
+Sampling was conducted by D. Becker and D. Conetta. 
 
 Protocols are as described for Montipora capitata in this online notebook: [Respirometry Protocol] (https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Mcapitata-Early-Life-History-Respirometry-Protocol/) 
 
-# **Sampling Time Points** 
+# Sampling Time Points 
 
 Samples were collected for two methodologies:  
 
@@ -31,7 +32,7 @@ Table of sampling time points is below.
 | 4   | 1000-1200   | 96                       | Larvae                  | Freeze + Resp   | Nov 13 |
 | 7   | 1000-1200   | 144                      | Larvae                  | Freeze + Resp   | Nov 16 |  
 
-# **Sampling Details**  
+# Sampling Details  
 
 *Respirometry*  
 
@@ -57,6 +58,6 @@ All runs were completed between 1000 and 1300 on each sampling day.
 
 Samples were frozen each day in -40C freezers. Sampling was conducted each day just prior to respiration run start times.  
 
-# **Analysis and Processing**  
+# Analysis and Processing  
 
 AH will process analysis of respiration and photosynthesis using scripts and protocols as described for Mcapitata. [Ahyacinthus respository] (https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/tree/master/Ahya2020)

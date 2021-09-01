@@ -6,11 +6,9 @@ categories: Mcapitata_EarlyLifeHistory_2020
 tags: Reproduction Husbandry Mcapitata
 ---
 
-**Overview**  
-
 Collection, fertilization, and rearing of *Montipora capitata* spawned gametes during the July 2020 spawning at the Hawaii Institute of Marine Biology in collaboration with C. Drury and J. Hancock in the Gates Coral Lab.  
 
-**Activities**   
+# Activities
 
 * Gates Lab collected gametes by scooping from the water at approx. 2100 at Reef 13 in Kaneohe Bay, Oahu, Hawaii. Gametes were collected as part of a large experiment and a subset of these gametes will be used for this early life history work described in this notebook category. *Montipora capitata* is a gonochoristic broadcast spawning, vertically-transmitting coral species that is abundant in Kaneohe Bay. Collection of wild released bundles allowed for gamete collection representative of the natural spawning population.  
 

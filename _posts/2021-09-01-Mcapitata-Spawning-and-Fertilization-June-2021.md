@@ -6,9 +6,11 @@ categories: Mcapitata_LarvalTemp_2021
 tags: Husbandry Mcapitata Reproduction
 ---
 
+Collection, fertilization, and rearing of *Montipora capitata* spawned gametes during the June 2021 spawning at the Hawaii Institute of Marine Biology. 
+
 # Overview 
 
-Collection, fertilization, and rearing of *Montipora capitata* spawned gametes during the June 2021 spawning at the Hawaii Institute of Marine Biology. Follows protocols outlined in my [July 2020 spawning notebook post] (https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Mcapitata-Spawning-and-Fertilization-July-2020/).  
+Follows protocols outlined in my [July 2020 spawning notebook post] (https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Mcapitata-Spawning-and-Fertilization-July-2020/).  
 
 Fertilization of wildtype *M. capitata* gametes for rearing an use of larvae in larval temperature experiment at HIMB in June 2021.  
 

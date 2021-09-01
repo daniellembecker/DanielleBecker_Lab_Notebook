@@ -5,10 +5,11 @@ date: '2020-07-30'
 categories: Mcapitata_EarlyLifeHistory_2020
 tags: Reproduction Mcapitata Sampling
 ---
+This entry details the sampling and collection of embryos, larvae, and recruits of *Montipora capitata* during July-Aug 2020 spawning period. 
 
-# **Overview**  
+# Overview  
 
-This entry details the sampling and collection of embryos, larvae, and recruits of *Montipora capitata* during July-Aug 2020 spawning period. This sampling follows the protocol in the [Mcapitata Sampling Protocol](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Mcapitata-July-2020-Sampling-Protocol/). Specific sampling notes and deviations from the protocol are detailed here. Preservation (PFA), fixation (RNA/DNA shield), snap frozen (liquid nitrogen) sampling described here.   
+This sampling follows the protocol in the [Mcapitata Sampling Protocol](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Mcapitata-July-2020-Sampling-Protocol/). Specific sampling notes and deviations from the protocol are detailed here. Preservation (PFA), fixation (RNA/DNA shield), snap frozen (liquid nitrogen) sampling described here.   
 
 Metadata for these samples (including sample identification numbers) can be found here: [Sample Metadata](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/blob/master/Mcap2020/Data/Respiration/Mcapitata_2020_sampling_metadata.csv).  
 
@@ -18,7 +19,7 @@ Volume of sample (uL) indicates volume of concentrated embryo/larvae/recruit add
 
 See [Fertilization entry](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Mcapitata-Spawning-and-Fertilization-July-2020/)and [Larval rearing entry](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Mcapitata-Larval-Rearing-and-Settlement-July-2020/) for further information on larval fertilization and rearing.  
 
-# **Sampling Activities**  
+# Sampling Activities  
 
 ## *Embryos*  
 

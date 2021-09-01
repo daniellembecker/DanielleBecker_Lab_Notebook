@@ -5,12 +5,9 @@ date: '2020-07-30'
 categories: Mcapitata_EarlyLifeHistory_2020
 tags: Respirometry Sampling Mcapitata Reproduction
 ---
-
-# **Overview**  
-
 This entry lists the runs and data collection for early life history respirometry (photosynthesis and respiration) in early life stages (larvae, recruits, and juveniles) of *Montipora capitata* in July 2020.  
 
-# **Activities**  
+# Activities  
 
 Data were collected as detailed in the [respirometry protocol](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Mcapitata-Early-Life-History-Respirometry-Protocol/). In this project, respirometry was conducted on the bench top at ambient temperature. Photosynthesis was measured at 500 PAR under AquaIllumination light. All measurements were taken in 1um filtered seawater with coverslips used for sealing.    
 
@@ -20,7 +17,7 @@ Metadata of each well in each run, including number of samples and well location
 
 In each run, photosynthesis was run under light for ~15 minutes. In future runs add more time for each phase (25-30 min if possible). Lights were then turned off and respiration was run for another ~15 minutes. Specific start and end times for consistent slope can be found in the [start times datasheet](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/blob/master/Mcap2020/Data/Respiration/starttimes.csv).     
 
-# **Run Information**  
+# Run Information  
 
 Table 1: Respirometry run information for *M. capitata* early life history measurements in July 2020.  
 
@@ -40,6 +37,6 @@ Table 1: Respirometry run information for *M. capitata* early life history measu
 | 30 July|   2   |    1430    | Larvae, Recruits | 6 per well          |  2 wells   |    10 wells      |   250uL 4% PFA  |                        |
 | 30 July|   3   |    1530    | Larvae, Recruits | 6 per well          |  2 wells   |    10 wells      |   250uL 4% PFA  |                        |
 
-# **Data Offload**  
+# Data Offload  
 
 All raw data files were offloaded and can be found here: [raw data frames](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/tree/master/Mcap2020/Data/Respiration/Runs).  

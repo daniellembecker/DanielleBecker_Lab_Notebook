@@ -4,11 +4,13 @@ title: Respirometry Analysis: P and R Scripts for Mcapitata 2020
 date: '2020-08-30'
 categories: Mcapitata_EarlyLifeHistory_2020 Scripts_Analysis
 tags: Analysis Respirometry
----
+--- 
 
-**Overview**  
+This entry references scripts and analysis for respirometry data obtained from Oxy-10 SDR with microplate. 
 
-This entry references scripts and analysis for respirometry data obtained from Oxy-10 SDR with microplate. Scripts were modified from K. Wong and S. Gurr scripts in the LoLinR package in R.  
+# Overview 
+
+Scripts were modified from K. Wong and S. Gurr scripts in the LoLinR package in R.  
 
 All scripts and data can be found in my EarlyLifeHistory_Energetics Github repository here: https://github.com/AHuffmyer/EarlyLifeHistory_Energetics.
 

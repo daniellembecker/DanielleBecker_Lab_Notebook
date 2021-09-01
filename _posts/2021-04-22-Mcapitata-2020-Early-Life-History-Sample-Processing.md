@@ -5,11 +5,9 @@ date: '2021-04-22'
 categories: Mcapitata_EarlyLifeHistory_2020
 tags: Mcapitata Protocol Processing
 ---
-# **Overview**   
-
 This entry details sample processing for Mcapitata 2020 early life history samples for metabolomics, larval size and symbiont cell densitites, and RNA excxtraction for TagSeq.  
 
-# **Metabolomics** 
+# Metabolomics 
 
 Metabolomics extractions performed by Kevin Wong.  
 
@@ -19,7 +17,7 @@ Metabolomics extractions performed by Kevin Wong.
 
 [Sample Metadata](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/blob/master/Mcap2020/Data/Metabolomics/Metabolomics_Metadata.csv) 
 
-# **RNA extraction** 
+# RNA extraction 
 
 RNA extractions performed by Maggie Schedl. 
 
@@ -41,10 +39,14 @@ Notebook posts detailing extractions can be found at the links below:
 QC information for extractions can be found here: 
 [Extraction QC](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/blob/master/Mcap2020/Data/TagSeq/QC_Mcap2020_Extractions.csv) 
 
-# **Symbiont cell densities** 
+# Symbiont cell densities 
 
 Symbiont cell densities processed by Danielle Becker.  
 
 [Sample metadata](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/blob/master/Mcap2020/Data/Physiology/Physiology_Metadata.csv) 
 
 [Notebook posts and protocol](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/_posts/2021-03-04-Ariana-Mcap2020-EarlyLifeHistory-Samples.md) 
+
+# Larval size 
+
+Larval size 

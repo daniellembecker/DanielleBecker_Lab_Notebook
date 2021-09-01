@@ -5,12 +5,13 @@ date: '2020-07-30'
 categories: Mcapitata_EarlyLifeHistory_2020
 tags: Mcapitata Protocol Respirometry Sampling Reproduction
 ---
+This entry describes the protocol for measuring photosynthesis and respiration in early life history stages of *Montipora capitata*. 
 
-# **Overview**  
+# Overview
 
-This entry describes the protocol for measuring photosynthesis and respiration in early life history stages of *Montipora capitata*. This protocol can be adapted for use in other species and locations. This protocol does not describe use of the SDR system, rather the application for this specific purpose. This protocol would also be improved with addition of measurement of Pi curves, this was not done in this study.   
+This protocol can be adapted for use in other species and locations. This protocol does not describe use of the SDR system, rather the application for this specific purpose. This protocol would also be improved with addition of measurement of Pi curves, this was not done in this study.   
 
-# **Equipment Required**  
+# Equipment Required  
 
 * PreSens Oxy-10 Sensor Dish Reader (SDR) in combination with Loligo 24-well microplate  
 * Custom built acrylic chamber for alignment of plate on SDR reader  

@@ -5,8 +5,6 @@ date: '2021-09-01'
 categories: Mcapitata_LarvalTemp_2021
 tags: Reproduction Mcapitata ExperimentalDesign
 ---
-# Overview  
-
 Post detailing tank and experimental set up for *Montipora capitata* coral spawning in Hawaii in June 2021.  
 
 # Equipment Preparation  
