@@ -18,3 +18,7 @@ Coolers equipped with 2 heaters and pump to pump water through manifold into con
 Double layer of shade cloth covered all tanks.    
 
 ![Conicals with banjo filters] (https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Mcap_2021_conicals.jpg)  
+
+# Logger Launching  
+
+Launched Hobo temperature loggers on 6/11/2021 at 1500. n=3 loggers per black tank allocated into three conicals.  

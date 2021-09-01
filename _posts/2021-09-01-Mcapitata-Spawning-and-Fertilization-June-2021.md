@@ -44,9 +44,10 @@ Fertilization of wildtype *M. capitata* gametes for rearing an use of larvae in 
 
 * Because we had many embryos/falcon tubes, embryos were also added into 5 gallon buckets filled with water (with no flow) under shade tent. Total of 16 buckets used as "backups".  
 
-* All cultures were checked every 1-2 hours follwoing fertilization and cleaned as necessary. Surface mixing from wind helped reduce mortality in buckets, these cultures were very successful. Kim wipes were used to remove any film from the surface of the water and any dead material was removed with a transfer pipette. 
+* All cultures were checked every 1-2 hours follwoing fertilization and cleaned as necessary. Surface mixing from wind helped reduce mortality in buckets, these cultures were very successful. Kim wipes were used to remove any film from the surface of the water and any dead material was removed with a transfer pipette. Some mortality occured around 8-10am, but fertilized and developing embryos were present and mortality was minimal. 
 
-![Falcon tubes with bundles] (https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Falcon_Tubes_2021.jpg)  
+* Cultures in buckets were combined and cleaned into n=12 buckets. These buckets were then put into two black tanks and submerged such that the black tank created 
 
-![Embryos in conicals] (https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Embryos_Conicals_2021.jpg)  
+![Falcon tubes with bundles] (https://raw.githubusercontent.com/ahuffmyer/ASH_Putnam_Lab_Notebook/images/NotebookImages/Falcon_Tubes_2021.jpg)  
 
+![Embryos in conicals] (https://raw.githubusercontent.com/ahuffmyer/ASH_Putnam_Lab_Notebook/images/NotebookImages/Embryos_Conicals_2021.jpg)  
