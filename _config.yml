@@ -47,7 +47,7 @@ google_analytics: UA-84132736-1
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
-url: "http://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook"
+url: "http://ahuffmyer.github.io"
 
 # If you're hosting your site at a Project repository on GitHub pages
 # (http://yourusername.github.io/repository-name)
