@@ -25,4 +25,4 @@ Calibrated apex probes to digital thermometer prior to temperature start and on 
 
 Continuing to check and clean cultures regularly every 2-3 hours from 6/15-6/18. 
 
-![Swimming larvae] (https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Larvae_Scope_2021.jpeg) 
+![Swimming larvae](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Larvae_Scope_2021.jpeg) 

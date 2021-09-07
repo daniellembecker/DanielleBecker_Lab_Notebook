@@ -11,13 +11,13 @@ Post details sampling and data collection for M. capitata larval temperature exp
 
 6/16/2021
 
-* Set up prelimimary tests for respirometry equipment. Tested light levels and set up SDR in incubators according to [Respirometry Protocol] (https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Mcapitata-Early-Life-History-Respirometry-Protocol/). 
+* Set up prelimimary tests for respirometry equipment. Tested light levels and set up SDR in incubators according to [Respirometry Protocol](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Mcapitata-Early-Life-History-Respirometry-Protocol/). 
 
 * One incubator is set up at high (30C) and one at ambient (27C) with two SDRS connected to system to simultaneously conduct respirometry measurements at two temperatures. Aqua Illumination puck light added to the incubators for use in light cycles for photosynthesis measurements. SDR 641 and SDR 710 used.  
 
 * Conducted trial run on extra larvae from buckets at 900 PAR light levels (10% intensity on all channels, no UV channel). Use 30-40 minutes in each dark and light phase for respirometry measurements. Signals obtains for 6 larvae per well. Run light and then dark to normalize light environment and avoid oxygen depletion. 
 
-![Respirometry Set up] (https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Respirometry_2021.jpeg) 
+![Respirometry Set up](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Respirometry_2021.jpeg) 
 
 * Labeling tubes, cleaning glass vials in preparation for full sampling on 6/18/2021. 
 
@@ -28,9 +28,9 @@ Post details sampling and data collection for M. capitata larval temperature exp
 
 * Drained conicals and moved larvae into jars per conical (labeled A1-A6 and H1-H6) at 1100. All conicals cleaned. Left jars floating in temperature treatment until use. 
 
-![Larvae pooled in jars] (https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Larval_Pool_2021.jpeg) 
+![Larvae pooled in jars](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Larval_Pool_2021.jpeg) 
 
-* Conducted respirometry measurements as described in protocol referenced above. Ran 2 runs of respirometry at 1460 and 1800. Each run included both SDRs at 27C and 30C. Two wells with 1um Filtered Seawater were included as blanks on each SDR for each run. Six larvae were added into each well with n=2 wells per conical per run, such that all conicals were run on each SDR at each temperature (reciprocal temperature exposure). Larvae rinsed with 1um FSW prior to loading. Once all larvae were loaded, wells were filled with 1um FSW and then covered with small class cover slips. n=2 blanks per run and n=22 larval wells per run per plate. Plates were moved into incubators at 900PAR and then the light phase of oxygen measurements were conducted to capture photosynthesis. After 30-40 minutes, lights were turned off, immediately beginning the dark respiration phase. Positive and negative slopes were achieved as expected for all wells with no slope in the blanks. Metadata recorded on Drive and files downloaded onto Google Drive. Scripts, data, and analyses are on the [Symbiont Integration GitHub repo] (https://github.com/AHuffmyer/SymbioticIntegration). 
+* Conducted respirometry measurements as described in protocol referenced above. Ran 2 runs of respirometry at 1460 and 1800. Each run included both SDRs at 27C and 30C. Two wells with 1um Filtered Seawater were included as blanks on each SDR for each run. Six larvae were added into each well with n=2 wells per conical per run, such that all conicals were run on each SDR at each temperature (reciprocal temperature exposure). Larvae rinsed with 1um FSW prior to loading. Once all larvae were loaded, wells were filled with 1um FSW and then covered with small class cover slips. n=2 blanks per run and n=22 larval wells per run per plate. Plates were moved into incubators at 900PAR and then the light phase of oxygen measurements were conducted to capture photosynthesis. After 30-40 minutes, lights were turned off, immediately beginning the dark respiration phase. Positive and negative slopes were achieved as expected for all wells with no slope in the blanks. Metadata recorded on Drive and files downloaded onto Google Drive. Scripts, data, and analyses are on the [Symbiont Integration GitHub repo](https://github.com/AHuffmyer/SymbioticIntegration). 
 
 # Stable Isotope Incubations
 
@@ -61,7 +61,7 @@ Lights set to 900 PAR, wrapped n=2 dark controls with foil so no light could get
 
 Vials moved into incubators. 
 
-![Isotope set up] (https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Isotopes_2021.jpeg) 
+![Isotope set up](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Isotopes_2021.jpeg) 
 
 After incubations, vials were sampled. Sampled by using separate equipment for each isotope type to avoid C13 contamination. Poured vial through cell strainer, rinsed in FSW 1uM in 6 well plates 3x, pipetted into tube. Tube then centrifuged 1.5min @ 13000, removed all water, flash froze and stored at -80C. Sampling between 0030 and 0200 on 6/19/2021, n=1 tube per vial, n=40 tubes. 
 

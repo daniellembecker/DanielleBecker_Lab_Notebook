@@ -11,7 +11,7 @@ This entry describes the sampling and respirometry data collection for Acropora 
 
 Sampling was conducted by D. Becker and D. Conetta. 
 
-Protocols are as described for Montipora capitata in this online notebook: [Respirometry Protocol] (https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Mcapitata-Early-Life-History-Respirometry-Protocol/) 
+Protocols are as described for Montipora capitata in this online notebook: [Respirometry Protocol](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Mcapitata-Early-Life-History-Respirometry-Protocol/) 
 
 # Sampling Time Points 
 
@@ -44,13 +44,13 @@ Each well contained 6 larvae with 2 blanks per plate per run. One run was conduc
 
 Plates were filled with filtered seawater and sealed with glass coverslips.  
 
-Photographs of notebooks can be found here [Notebook Photos] (https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/tree/master/Ahya2020/Notebook)   
+Photographs of notebooks can be found here [Notebook Photos](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/tree/master/Ahya2020/Notebook)   
 
 Temperature was measured in air and in a well before and at the end of the run. Temperatures were between 25-28C.  
 
 In all SDR 641 plates, sensor B6 was broken and excluded from analysis. Wells with bubbles or other problems were excluded from analysis.  
 
-Metadata of all runs can be found here [Respirometry metadata] (https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/blob/master/Ahya2020/Data/Respiration/Resp_Sample_Info.csv)   
+Metadata of all runs can be found here [Respirometry metadata](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/blob/master/Ahya2020/Data/Respiration/Resp_Sample_Info.csv)   
 
 All runs were completed between 1000 and 1300 on each sampling day.  
 
@@ -60,4 +60,4 @@ Samples were frozen each day in -40C freezers. Sampling was conducted each day j
 
 # Analysis and Processing  
 
-AH will process analysis of respiration and photosynthesis using scripts and protocols as described for Mcapitata. [Ahyacinthus respository] (https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/tree/master/Ahya2020)
+AH will process analysis of respiration and photosynthesis using scripts and protocols as described for Mcapitata. [Ahyacinthus respository](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/tree/master/Ahya2020) 

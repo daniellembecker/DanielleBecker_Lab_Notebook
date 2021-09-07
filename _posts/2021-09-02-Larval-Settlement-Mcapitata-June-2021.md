@@ -19,9 +19,9 @@ Buckets with spare larvae put into n=6 large settlement containers with ~50 plug
 
 Will check settlement over the next rate to record settlement rate. Maintaining temperature treatments with Apex unit. Water mixed in chambers gently daily.  
 
-![Settlement set up] (https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Settlement_2021.jpeg) 
+![Settlement set up](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Settlement_2021.jpeg) 
 
-![Settlement chambers] (https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Settlement_Chambers_2021.jpeg) 
+![Settlement chambers](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Settlement_Chambers_2021.jpeg) 
 
 6/21/2021
 
@@ -29,9 +29,9 @@ Counted the number of settled larvae at 1400 (48hrs post time in chamber) and mi
 
 Identified settlers by oral disk and septa formation and polyp structures. 
 
-![Recruits] (https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Plug_2021.jpeg) 
+![Recruits](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Plug_2021.jpeg) 
 
-![Recruits close up] (https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Spat_2021.jpeg) 
+![Recruits close up](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Spat_2021.jpeg) 
 
 Changed water in leftover larval jars at 1000, can use for testing and trials. 
 
@@ -57,4 +57,4 @@ Sent live fragments and extra plugs to URI
 
 Some plugs stored long term at the Coral Resilience Lab at HIMB
 
-![Long term recruits at HIMB] (https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Recruits_2021.jpeg) 
+![Long term recruits at HIMB](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Recruits_2021.jpeg) 

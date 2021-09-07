@@ -10,7 +10,7 @@ Collection, fertilization, and rearing of *Montipora capitata* spawned gametes d
 
 # Overview 
 
-Follows protocols outlined in my [July 2020 spawning notebook post] (https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Mcapitata-Spawning-and-Fertilization-July-2020/) .  
+Follows protocols outlined in my [July 2020 spawning notebook post](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Mcapitata-Spawning-and-Fertilization-July-2020/).  
 
 Fertilization of wildtype *M. capitata* gametes for rearing an use of larvae in larval temperature experiment at HIMB in June 2021.  
 
@@ -24,7 +24,7 @@ Fertilization of wildtype *M. capitata* gametes for rearing an use of larvae in 
 
 * No spawning observed on 6/9/2021. No gametes collected. 
 
-* Spawning observed on 6/10/2021. Collected bundles from 4-5 parent colonies at 2030-2130 and added bundles into 50mL falcon tubes per Coral Resilience Lab protocols in [Hancock et al. 2021] (https://www.int-res.com/articles/meps2020/657/m657p123.pdf). 
+* Spawning observed on 6/10/2021. Collected bundles from 4-5 parent colonies at 2030-2130 and added bundles into 50mL falcon tubes per Coral Resilience Lab protocols in [Hancock et al. 2021](https://www.int-res.com/articles/meps2020/657/m657p123.pdf). 
 
 * 2-5 mL of bundles added to 35-45mL of water in falcon tubes. Tubes laid sideways to maximize surface area for fertilization. Allowed to fertilize until all bundles were broken apart into eggs and sperm. Total n=7 tubes. All embryos kept at ambient temperature.  
 
@@ -48,6 +48,6 @@ Fertilization of wildtype *M. capitata* gametes for rearing an use of larvae in 
 
 * Cultures in buckets were combined and cleaned into n=12 buckets. These buckets were then put into two black tanks and submerged such that the black tank created 
 
-![Falcon tubes with bundles] (https://raw.githubusercontent.com/ahuffmyer/ASH_Putnam_Lab_Notebook/images/NotebookImages/Falcon_Tubes_2021.jpeg)  
+![Falcon tubes with bundles](https://raw.githubusercontent.com/ahuffmyer/ASH_Putnam_Lab_Notebook/images/NotebookImages/Falcon_Tubes_2021.jpeg)  
 
-![Embryos in conicals] (https://raw.githubusercontent.com/ahuffmyer/ASH_Putnam_Lab_Notebook/images/NotebookImages/Embryos_Conicals_2021.jpeg)  
+![Embryos in conicals](https://raw.githubusercontent.com/ahuffmyer/ASH_Putnam_Lab_Notebook/images/NotebookImages/Embryos_Conicals_2021.jpeg)  

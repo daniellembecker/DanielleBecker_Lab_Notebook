@@ -17,7 +17,7 @@ Placed in clean black tanks n=7 per tank, labeled, at ambient temperature under 
 
 Built manifold to supply water to colonies in collection bowls emptied into mesh collection cups. Adults placed into bowls each evening with larvae collected each morning.  
 
-![Pocillopora set up] (https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Pocillopora_2021.jpeg) 
+![Pocillopora set up](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Pocillopora_2021.jpeg) 
 
 Launched Hobo logger in each tank at 1500. 
 

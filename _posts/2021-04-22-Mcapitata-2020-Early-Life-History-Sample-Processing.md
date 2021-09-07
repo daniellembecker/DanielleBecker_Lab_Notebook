@@ -49,4 +49,6 @@ Symbiont cell densities processed by Danielle Becker.
 
 # Larval size 
 
-Larval size 
+Larval size processed by Danielle Becker
+
+[Notebook posts and protocol](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/_posts/2021-03-04-Ariana-Mcap2020-EarlyLifeHistory-Samples.md)
