@@ -51,16 +51,51 @@ Re-email with Kevin Bryant:
 
 "I would make some changes to the scripts that are there in sbatch_executables. For example, download_nr_database.sh should not use --exclusive, as it will only use one cpu to download.
 
-The make_diamond_nr_db.sh script, however should have #SBATCH --exclusive, but doesn't. Diamond will auto-detect the number of CPUs available and use them. You should remove the wget from this file, and submit the two jobs separately, but have the second one depend on the first one succeeding:
+The make_diamond_nr_db.sh script, however should have #SBATCH --exclusive, but doesn't. Diamond will auto-detect the number of CPUs available and use them. You should remove the wget from this file, and submit the two jobs separately, but have the second one depend on the first one succeeding:"
+
+Updates to the scripts in the shared folder:
+
+download_nr_database.sh:
 
 ```
-$ sbatch download_nr_database.sh
-Submitted batch job NNN
-$ sbatch -d afterok:NNN make_diamond_nr_db.sh
-```
-Also wget command will not overwrite files by default, so if you look at shared/databases, you'll see nr.gz.{1,2,3} that were downloaded but not used. You can change the wget line in download_nr_database.sh to specify an output file:
+#!/bin/bash
+#SBATCH --job-name="ref"
+#SBATCH -t 100:00:00
+#SBATCH --export=NONE
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=danielle_becker@uri.edu
+#SBATCH -D /data/putnamlab/shared
 
-wget -O nc.gz ftp://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nr.gz"
+echo "START" $(date)
+cd databases
+wget  -O nr.gz ftp://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nr.gz 
+gunzip nr.gz
+echo "STOP" $(date)
+```
+
+make_diamond_nr_db.sh
+
+```
+#!/bin/bash
+#SBATCH --job-name="diamond_db_update" #CHANGE_NAME
+#SBATCH -t 100:00:00
+#SBATCH --export=NONE
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=danielle_becker@uri.edu #CHANGE_EMAIL
+#SBATCH --mem=128GB
+
+echo "START" $(date)
+module load DIAMOND/2.0.0-GCC-8.3.0 #Load DIAMOND
+
+cd /data/putnamlab/shared/databases/
+
+echo "Making diamond database" $date
+diamond makedb --in nr.gz -d nr
+diamond dbinfo -d nr.dmnd
+
+echo "STOP" $(date)
+```
+Then submit them in two steps, since the download takes a long time, it won't tie up extra resources that way:
 
 **Use the following to run the scripts moving forward:**
 
