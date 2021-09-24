@@ -59,7 +59,7 @@ Bluewaves Script:
 #SBATCH --mail-user=danielle_becker@uri.edu
 #SBATCH --nodes=1 --ntasks-per-node=20
 #SBATCH --mem=100GB
-#SBATCH -D /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/data/KEGG/
+#SBATCH -D /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/KEGG/
 
 echo "Loading modules" $(date)
 module load kofam_scan/1.3.0-foss-2019b
@@ -100,8 +100,8 @@ In the slurm output, this error was written out:
 hmmsearch was not run successfully
 
 Error: File existence/permissions problem in trying to open HMM file
-/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/data/KEGG/profiles/K00637.hmm.
-HMM file /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/data/KEGG/profiles/K00637.hmm not found (nor an .h3m binary of it)
+/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/KEGG/profiles/K00637.hmm.
+HMM file /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/KEGG/profiles/K00637.hmm not found (nor an .h3m binary of it)
 ```
 
 Some troubleshooting was done to check this error, you can search the profiles folder to see if a .hmm file was extracted correctly:
