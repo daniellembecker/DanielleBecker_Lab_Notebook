@@ -112,6 +112,7 @@ $ sbatch -d afterok:NNN make_diamond_nr_db.sh
 ```
 
 **If you are not in the Putnam Lab**  
+
 **I used this step for this functional annotation**
 Download the nr database from [NCBI](ftp://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nr.gz). Then, use Diamond's ```makedb``` command to format the database in a Diamond-friendly format. You can also use the command ```dbinfo``` to find version information for the database.
 
