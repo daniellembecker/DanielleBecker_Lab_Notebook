@@ -45,6 +45,31 @@ The nr, or non-redundant, database is a comprehensive collection of protein sequ
 **If you are in the Putnam Lab and on bluewaves**  
 Go to the *sbatch_executables* subdirectory in the Putnam Lab *shared* folder and run the script, ```make_diamond_nr_db.sh```. This script, created by Erin Chille on August 6, 2020, downloads the most recent nr database in FASTA format from [NCBI](ftp://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nr.gz) and uses it to make a Diamond-formatted nr database.   
 
+**Danielle Becker-Polinski made the following changes to the  ```download_nr_database.sh``` and ```make_diamond_nr_db.sh``` following Kevin Bryants recommendations on September 24th, 2021.**
+
+Re-email with Kevin Bryant:
+
+"I would make some changes to the scripts that are there in sbatch_executables. For example, download_nr_database.sh should not use --exclusive, as it will only use one cpu to download.
+
+The make_diamond_nr_db.sh script, however should have #SBATCH --exclusive, but doesn't. Diamond will auto-detect the number of CPUs available and use them. You should remove the wget from this file, and submit the two jobs separately, but have the second one depend on the first one succeeding:
+
+```
+$ sbatch download_nr_database.sh
+Submitted batch job NNN
+$ sbatch -d afterok:NNN make_diamond_nr_db.sh
+```
+Also wget command will not overwrite files by default, so if you look at shared/databases, you'll see nr.gz.{1,2,3} that were downloaded but not used. You can change the wget line in download_nr_database.sh to specify an output file:
+
+wget -O nc.gz ftp://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nr.gz"
+
+**Use the following to run the scripts moving forward:**
+
+```
+$ sbatch download_nr_database.sh
+Submitted batch job NNN
+$ sbatch -d afterok:NNN make_diamond_nr_db.sh
+```
+
 **If you are not in the Putnam Lab**  
 Download the nr database from [NCBI](ftp://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nr.gz). Then, use Diamond's ```makedb``` command to format the database in a Diamond-friendly format. You can also use the command ```dbinfo``` to find version information for the database.
 ```
