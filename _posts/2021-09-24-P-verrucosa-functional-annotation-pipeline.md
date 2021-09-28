@@ -67,7 +67,7 @@ For this functional annotation workflow tutorial, you will need:
 - Access to a high performance computing server (ie URI Andromeda) with the following programs:
 **Make sure to check the modules and see if there are any new versions. If so, contact Kevin Bryant to update modules on Andromeda when needed**
     - DIAMOND v2.0.0-GCC-8.3.0
-    - InterProScan v5.52-86.0-foss-2019b
+    - InterProScan/5.52-86.0-foss-2021a
     - Java v11.0.2
 - Laptop with access to the Internet and the following programs installed: 
     - Blast2GO Basic 
@@ -232,6 +232,7 @@ scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNA
 DIAMOND BLAST results can now be used in further analyses. 
 
 **Full Andromeda Script:**
+**This step will take over 20 hours, you can run this and the InterProScan script at the same time on Andromeda**
 
 ```
 Pver_annot_diamond.sh:
@@ -342,7 +343,7 @@ InterProScan utilizes several member databases to enhance the chance of obtainin
 # On Andromeda 
  
 # Load module
-module load InterProScan/5.52-86.0-foss-2019b
+module load InterProScan/5.52-86.0-foss-2021a
 module load Java/11.0.2
 java -version
 
@@ -407,17 +408,19 @@ Pver_InterProScan.sh:
 #SBATCH --mem=100GB
 #SBATCH --error="interproscan_out_error"
 #SBATCH --output="interproscan_out"
+#SBATCH --exclusive
 
 cd /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/BLAST-GO-KO/InterProScan/
 
 echo "START $(date)"
 
 # Load module
-module load InterProScan/5.52-86.0-foss-2019b
+module load InterProScan/5.52-86.0-foss-2021a
 module load Java/11.0.2
 java -version
 
 # Run InterProScan
+interproscan.sh --cpu $SLURM_CPUS_ON_NODE ...
 interproscan.sh -version
 interproscan.sh -f XML -i Pver_proteins_names_v1.0.faa -b ./Pver.interpro.20210927  -iprlookup -goterms -pa
 interproscan.sh -mode convert -f GFF3 -i ./Pver.interpro.20210927.xml -b ././Pver.interpro.20210927
@@ -452,6 +455,17 @@ ModuleCmd_Load.c(213):ERROR:105: Unable to locate a modulefile for 'InterProScan
 #Kevin had to download the background packages on bluewaves and suggested to use andromeda for faster running times, ran on andromeda and it worked
 
 Submitted batch job 88966
+
+#noticed in my output script that it mentioned a new version/module of InterProtScan available, had Kevin Bryant update this to InterProScan/5.52-86.0-foss-2021a
+
+#also Kevin suggested adding these two additions to the above code to speed up the process:
+
+#SBATCH --exclusive
+interproscan.sh --cpu $SLURM_CPUS_ON_NODE ...
+
+#added them above and submitted
+
+Submitted batch job 89016
 ```
 
 ##### c) Secure-copy output file to local computer 
