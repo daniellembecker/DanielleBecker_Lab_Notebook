@@ -65,8 +65,9 @@ This project aims to develop a functional genomic annotation workflow for non-mo
 For this functional annotation workflow tutorial, you will need:
 
 - Access to a high performance computing server (ie URI Andromeda) with the following programs:
+**Make sure to check the modules and see if there are any new versions. If so, contact Kevin Bryant to update modules on Andromeda when needed**
     - DIAMOND v2.0.0-GCC-8.3.0
-    - InterProScan v5.46-81.0-foss-2019b
+    - InterProScan v5.52-86.0-foss-2019b
     - Java v11.0.2
 - Laptop with access to the Internet and the following programs installed: 
     - Blast2GO Basic 
@@ -223,9 +224,9 @@ Pver_evm.model.Segkk0_pilon.12 | XP_015753513.1 | 86.7 | 1103 | 15 | 1 | 1 | 291
 ```
 # From a new terminal window (ie not Andromeda or remote server)
 
-scp danielle_becker@bluewaves.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/BLAST-GO-KO/Diamond/Pver.annot.20210924.xml /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/RAnalysis/Genome/BLAST_GO_KO/
+scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/BLAST-GO-KO/Diamond/Pver.annot.20210924.xml /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/RAnalysis/Genome/BLAST_GO_KO/
 
-scp danielle_becker@bluewaves.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/BLAST-GO-KO/Diamond/Pver.annot.20210924.tab /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/RAnalysis/Genome/BLAST_GO_KO/
+scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/BLAST-GO-KO/Diamond/Pver.annot.20210924.tab /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/RAnalysis/Genome/BLAST_GO_KO/
 ```
 
 DIAMOND BLAST results can now be used in further analyses. 
@@ -341,17 +342,14 @@ InterProScan utilizes several member databases to enhance the chance of obtainin
 # On Andromeda 
  
 # Load module
-module load InterProScan/5.46-81.0-foss-2019b
+module load InterProScan/5.52-86.0-foss-2019b
 module load Java/11.0.2
 java -version
 
 # Run InterProScan
 interproscan.sh -version
-interproscan.sh -f XML -i /data/putnamlab/REFS/Pverr/Pver_proteins_names_v1.0.faa -b ./Pver.inte$
-interproscan.sh -mode convert -f GFF3 -i ./Pver.interpro.20210924.xml -b ./Pver.interpro.20210924
-
-interproscan.sh -version
-interproscan.sh -f XML -i ../data/ref/Mcap.IPSprotein.fa -b ./Mcap.interpro.200824  -iprlookup -goterms -pa 
+interproscan.sh -f XML -i Pver_proteins_names_v1.0.faa -b ./Pver.interpro.20210927  -iprlookup -goterms -pa
+interproscan.sh -mode convert -f GFF3 -i ./Pver.interpro.20210927.xml -b ././Pver.interpro.20210927 
 
 ```
 
@@ -415,7 +413,7 @@ cd /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/BLAST-GO-KO/InterProScan/
 echo "START $(date)"
 
 # Load module
-module load InterProScan/5.46-81.0-foss-2019b
+module load InterProScan/5.52-86.0-foss-2019b
 module load Java/11.0.2
 java -version
 
@@ -447,7 +445,7 @@ OpenJDK 64-Bit Server VM 18.9 (build 11.0.2+9, mixed mode)
 
 Error searching for module:
 
-ModuleCmd_Load.c(213):ERROR:105: Unable to locate a modulefile for 'InterProScan/5.46-81.0-foss-2019b'
+ModuleCmd_Load.c(213):ERROR:105: Unable to locate a modulefile for 'InterProScan/5.52-86.0-foss-2019b'
 ```
 
 ```
@@ -461,7 +459,7 @@ Submitted batch job 88966
 ```
 # From a new terminal window (ie not Andromeda or remote server)
 
-scp danielle_becker@bluewaves.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/BLAST-GO-KO/InterProScan/Pver.annot.20210924.gff3 /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/RAnalysis/Genome/BLAST_GO_KO/InterProScan/
+scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/BLAST-GO-KO/InterProScan/Pver.annot.20210924.gff3 /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/RAnalysis/Genome/BLAST_GO_KO/InterProScan/
 
 ```
 
