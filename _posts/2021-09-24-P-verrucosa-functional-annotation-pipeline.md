@@ -236,26 +236,30 @@ DIAMOND BLAST results can now be used in further analyses.
 Pver_annot_diamond.sh:
 
 #!/bin/bash
-#SBATCH --job-name="diamond" #CHANGE_NAME
+#SBATCH --job-name="diamond-blastx"
 #SBATCH -t 240:00:00
 #SBATCH --export=NONE
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --mail-user=danielle_becker@uri.edu
 #SBATCH --mem=100GB
+#SBATCH --error="diamond_blastx_out_error"
+#SBATCH --output="diamond_blastx_out"
 
 echo "START" $(date)
 module load DIAMOND/2.0.0-GCC-8.3.0 #Load DIAMOND
 
-cd /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/BLAST-GO-KO/Diamond/
-
 echo "Updating Pver annotation" $(date)
-diamond blastx -d /data/putnamlab/shared/databases/nr.dmnd -q /data/putnamlab/REFS/Pverr/Pver_mRNA_v1.0.fna -o Pver.annot.20210924 -f 100  -b 20 --more-sensitive -e 0.00001 -k1 --unal=1
+diamond blastx -d /data/putnamlab/shared/databases/nr.dmnd -q /data/putnamlab/REFS/Pverr/Pver_mRNA_v1.0.fna -o Pver_annot -f 100 -b20 --more-sensitive -e 0.00001 -k1
 
 echo "Search complete... converting format to XML and tab"
-diamond view -a Pver.annot.20210924.daa -o Pver.annot.20210924.xml -f 5
-diamond view -a Pver.annot.20210924.daa -o Pver.annot.20210924.tab -f 6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore qlen slen
-echo "STOP" $(date)
 
+diamond view -a Pver_annot.daa -o Pver_annot.xml -f 5
+diamond view -a Pver_annot.daa -o Pver_annot.tab -f 6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore qlen slen
+
+echo "STOP" $(date)
+```
+```
+Submitted batch job 1931742
 ```
 
 ### Step 3: Assign gene ontology terms to sequences
@@ -317,6 +321,13 @@ There are many different methdods to assigning GO terms to genes/gene products o
 
 [InterProScan](https://www.ebi.ac.uk/interpro/) is a website/software that provides functional analysis of proteins by using predictive models that look across protein databases to find homologies with query proteins. If a homology is identified in one of the databases, the information about that homology is used to assign the query protein a GO term. 
 
+Note: Many fasta files willl use an asterisk to denote a STOP codon. InterProScan does not accept special characters within the sequences, so I removed them prior to running the program using the code below:
+
+```
+cp Pver_proteins_names_v1.0.faa /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/BLAST-GO-KO/InterProScan/
+sed -i 's/*//g' Pver_proteins_names_v1.0.faa
+```
+
 InterProScan utilizes several member databases to enhance the chance of obtaining good protein info:
 
 - Structural domains - Gene3D, Superfamily
@@ -338,6 +349,9 @@ java -version
 interproscan.sh -version
 interproscan.sh -f XML -i /data/putnamlab/REFS/Pverr/Pver_proteins_names_v1.0.faa -b ./Pver.inte$
 interproscan.sh -mode convert -f GFF3 -i ./Pver.interpro.20210924.xml -b ./Pver.interpro.20210924
+
+interproscan.sh -version
+interproscan.sh -f XML -i ../data/ref/Mcap.IPSprotein.fa -b ./Mcap.interpro.200824  -iprlookup -goterms -pa 
 
 ```
 
@@ -392,6 +406,9 @@ Pver_InterProScan.sh:
 #SBATCH --export=NONE
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --mail-user=danielle_becker@uri.edu
+#SBATCH --mem=100GB
+#SBATCH --error="interproscan_out_error"
+#SBATCH --output="interproscan_out"
 
 cd /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/BLAST-GO-KO/InterProScan/
 
@@ -404,8 +421,8 @@ java -version
 
 # Run InterProScan
 interproscan.sh -version
-interproscan.sh -f XML -i /data/putnamlab/REFS/Pverr/Pver_proteins_names_v1.0.faa -b ./Pver.inte$
-interproscan.sh -mode convert -f GFF3 -i ./Pver.interpro.20210924.xml -b ./Pver.interpro.20210924
+interproscan.sh -f XML -i Pver_proteins_names_v1.0.faa -b ./Pver.interpro.20210927  -iprlookup -goterms -pa
+interproscan.sh -mode convert -f GFF3 -i ./Pver.interpro.20210927.xml -b ././Pver.interpro.20210927
 
 # -i is the input data
 # -b is the output file base
@@ -415,6 +432,22 @@ interproscan.sh -mode convert -f GFF3 -i ./Pver.interpro.20210924.xml -b ./Pver.
 # -pa is pathway mapping
 # -version displays version number
 
+echo "DONE $(date)"
+
+```
+```
+Script error:
+ModuleCmd_Load.c(213):ERROR:105: Unable to locate a modulefile for 'InterProScan/5.46-81.0-foss-2019b'
+openjdk version "11.0.2" 2019-01-15
+OpenJDK Runtime Environment 18.9 (build 11.0.2+9)
+OpenJDK 64-Bit Server VM 18.9 (build 11.0.2+9, mixed mode)
+/var/spool/slurmd/job1931747/slurm_script: line 21: interproscan.sh: command not found
+/var/spool/slurmd/job1931747/slurm_script: line 22: interproscan.sh: command not found
+/var/spool/slurmd/job1931747/slurm_script: line 23: interproscan.sh: command not found
+
+Error searching for module:
+
+ModuleCmd_Load.c(213):ERROR:105: Unable to locate a modulefile for 'InterProScan/5.46-81.0-foss-2019b'
 ```
 
 ##### c) Secure-copy output file to local computer 
