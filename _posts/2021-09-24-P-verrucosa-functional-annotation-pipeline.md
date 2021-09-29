@@ -395,6 +395,7 @@ Pver_evm.model.Segkk4293_pilon.5     | Pver | protein_match | 158 | 257 | 1.1E-1
     
 
 **Full Andromeda Script:**
+**Took ~16 hours to complete**
 
 ```
 Pver_InterProScan.sh:
@@ -422,8 +423,8 @@ java -version
 # Run InterProScan
 interproscan.sh --cpu $SLURM_CPUS_ON_NODE ...
 interproscan.sh -version
-interproscan.sh -f XML -i Pver_proteins_names_v1.0.faa -b ./Pver.interpro.20210927  -iprlookup -goterms -pa
-interproscan.sh -mode convert -f GFF3 -i ./Pver.interpro.20210927.xml -b ././Pver.interpro.20210927
+interproscan.sh -f XML -i Pver_proteins_names_v1.0.faa -b Pver.interpro.20210927  -iprlookup -goterms -pa
+interproscan.sh -mode convert -f GFF3 -i Pver.interpro.20210927.xml -b Pver.interpro.20210927
 
 # -i is the input data
 # -b is the output file base
@@ -456,7 +457,7 @@ ModuleCmd_Load.c(213):ERROR:105: Unable to locate a modulefile for 'InterProScan
 
 Submitted batch job 88966
 
-#noticed in my output script that it mentioned a new version/module of InterProtScan available, had Kevin Bryant update this to InterProScan/5.52-86.0-foss-2021a
+#noticed in my output script that it mentioned a new version/module of InterProtScan available, had Kevin Bryan update this to InterProScan/5.52-86.0-foss-2021a
 
 #also Kevin suggested adding these two additions to the above code to speed up the process:
 
@@ -473,7 +474,7 @@ Submitted batch job 89016
 ```
 # From a new terminal window (ie not Andromeda or remote server)
 
-scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/BLAST-GO-KO/InterProScan/Pver.annot.20210924.gff3 /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/RAnalysis/Genome/BLAST_GO_KO/InterProScan/
+scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/BLAST-GO-KO/InterProScan/Pver.interpro.20210927.gff3 /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/RAnalysis/Genome/BLAST_GO_KO/InterProScan/
 
 ```
 
