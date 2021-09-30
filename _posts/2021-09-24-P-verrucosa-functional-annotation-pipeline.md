@@ -371,7 +371,7 @@ Example of part of IPS output file:
 
 seqid | source | type | start | end | score | strand | phase | attributes
 --- | --- | --- | --- | --- | --- | --- | --- | --- |
-Pver_evm.model.Segkk4293_pilon.5     | Pver | protein_match | 158 | 257 | 1.1E-19 | + | . | date=26-09-2020;Target=Acerv_evm.model.Segkk4293_pilon.5 158 257;Ontology_term="GO:0006811","GO:0016021";ID=match$3_158_257;signature_desc=Neurotransmitter-gated ion-channel transmembrane region;Name=PF02932;status=T;Dbxref="InterPro:IPR006029"
+Pver_evm.model.Segkk4293_pilon.5     | Pver | protein_match | 158 | 257 | 1.1E-19 | + | . | date=26-09-2020;Target=Pver_evm.model.Segkk4293_pilon.5 158 257;Ontology_term="GO:0006811","GO:0016021";ID=match$3_158_257;signature_desc=Neurotransmitter-gated ion-channel transmembrane region;Name=PF02932;status=T;Dbxref="InterPro:IPR006029"
 
 **Column names**
 
@@ -395,16 +395,34 @@ Pver_evm.model.Segkk4293_pilon.5     | Pver | protein_match | 158 | 257 | 1.1E-1
 
 I noticed some inconsistencies with my output GFF3 output table and Jill's GFF3 output table.
 
-On my output table I noticed there were a lot of extra pathway annotations that occurred after the Dbxref="InterPro:IPR000504" section of the output. Compared to Jill's that did not have this. While their is nothing wrong with this, it takes up a lot of space and makes the file much longer. It is also not needed for downstream analysis so I wanted to remove it. I used the code below to remove it:
+On my output table I noticed there were a lot of extra pathway annotations that occurred after the Dbxref="InterPro:IPR000504" section of the output. Compared to Jill's that did not have this. While their is nothing wrong with this, it takes up a lot of space and makes the file much longer. 
+
+My Output GFF3 Format:
+
+![](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/interproscan.gff3.example.db.jpg)
+
+Jill's Output GFF3 Format:
+
+![](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/interproscan.gff3.output.ja.jpg)
+
+Since this information was not needed for downstream analysis, I removed it using the code below:
 
 ```
 sed -e 's#^\(.*Dbxref="InterPro:[A-Z0-9]*"\).*#\1#' Pver.interpro.20210927.gff3 > Pver.interpro.20210927-smaller.gff3
 
 ```
 
-![](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/interproscan.gff3.example.db.jpg)
+```
+I then checked to make sure nothing was deleted by this change:
 
-![](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/interproscan.gff3.output.ja.jpg)
+zgrep -c "^>" Pver.interpro.20210927.gff3
+
+455630
+
+zgrep -c "^>" Pver.interpro.20210927-smaller.gff3
+
+455630
+```
 
 
 **Full Andromeda Script:**
@@ -487,7 +505,7 @@ Submitted batch job 89016
 ```
 # From a new terminal window (ie not Andromeda or remote server)
 
-scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/BLAST-GO-KO/InterProScan/Pver.interpro.20210927.gff3 /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/RAnalysis/Genome/BLAST_GO_KO/InterProScan/
+scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/BLAST-GO-KO/InterProScan/Pver.interpro.20210927-smaller.gff3 /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/Functional_Annotation/InterProScan/
 
 ```
 
