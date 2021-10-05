@@ -224,9 +224,9 @@ Pver_evm.model.Segkk0_pilon.12 | XP_015753513.1 | 86.7 | 1103 | 15 | 1 | 1 | 291
 ```
 # From a new terminal window (ie not Andromeda or remote server)
 
-scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/BLAST-GO-KO/Diamond/Pver.annot.20210924.xml /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/RAnalysis/Genome/BLAST_GO_KO/
+scp danielle_becker@bluewaves.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/BLAST-GO-KO/Diamond/Pver_annot.xml /Users/Danielle/Desktop/Putnam_Lab/Becker_E5//Functional_Annotation/Diamond
 
-scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/BLAST-GO-KO/Diamond/Pver.annot.20210924.tab /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/RAnalysis/Genome/BLAST_GO_KO/
+scp danielle_becker@bluewaves.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/BLAST-GO-KO/Diamond/Pver_annot.tab /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/Functional_Annotation/Diamond
 ```
 
 DIAMOND BLAST results can now be used in further analyses.
@@ -415,6 +415,8 @@ sed -e 's#^\(.*Dbxref="InterPro:[A-Z0-9]*"\).*#\1#' Pver.interpro.20210927.gff3 
 ```
 I then checked to make sure nothing was deleted by this change:
 
+1. looked at number of gene names
+
 zgrep -c "^>" Pver.interpro.20210927.gff3
 
 455630
@@ -422,6 +424,37 @@ zgrep -c "^>" Pver.interpro.20210927.gff3
 zgrep -c "^>" Pver.interpro.20210927-smaller.gff3
 
 455630
+
+2. looked at number of Dbxref= references
+
+grep -c 'Dbxref=' Pver.interpro.20210927.gff3
+
+257193
+
+grep -c 'Dbxref=' Pver.interpro.20210927-smaller.gff3
+
+257193
+
+3. looked at number of Ontology_term= references
+
+grep -c 'Ontology_term=' Pver.interpro.20210927.gff3
+
+127451
+
+grep -c 'Ontology_term=' Pver.interpro.20210927-smaller.gff3
+
+127451
+
+4. looked at number of status=T references
+
+grep -c 'status=T' Pver.interpro.20210927.gff3
+
+429951
+
+grep -c 'status=T' Pver.interpro.20210927-smaller.gff3
+
+429951
+
 ```
 
 
