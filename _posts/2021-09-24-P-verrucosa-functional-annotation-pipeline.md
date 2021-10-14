@@ -6,7 +6,6 @@ Last Updated: 2021/09/28
 tags: [ Protocol, annotation, RNASeq, GO, KEGG ]
 ---
 
-#practice push for training
 
 ## Overview
 
