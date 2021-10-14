@@ -6,6 +6,8 @@ Last Updated: 2021/09/28
 tags: [ Protocol, annotation, RNASeq, GO, KEGG ]
 ---
 
+#practice push for training
+
 ## Overview
 
 All methods for this protocol were adapted following the workflows created by @echillie and @JillAshey GitHub's [here](https://github.com/echille/Mcapitata_OA_Developmental_Gene_Expression_Timeseries/blob/main/1-BLAST-GO-KO/2020-10-08-M-capitata-functional-annotation-pipeline.md) and [here](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/_posts/2021-09-24-P-verrucosa-functional-annotation-pipeline.md#b-navigate-to-uniprot-retrieveid-mapping-page-and-under-provide-your-identifiers-click-upload-your-own-file-and-upload-a-subsetted-tab-file).
@@ -224,7 +226,7 @@ Pver_evm.model.Segkk0_pilon.12 | XP_015753513.1 | 86.7 | 1103 | 15 | 1 | 1 | 291
 ```
 # From a new terminal window (ie not Andromeda or remote server)
 
-scp danielle_becker@bluewaves.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/BLAST-GO-KO/Diamond/Pver_annot.xml /Users/Danielle/Desktop/Putnam_Lab/Becker_E5//Functional_Annotation/Diamond
+scp danielle_becker@bluewaves.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/BLAST-GO-KO/Diamond/Pver_annot.xml /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/Functional_Annotation/Diamond
 
 scp danielle_becker@bluewaves.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/BLAST-GO-KO/Diamond/Pver_annot.tab /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/Functional_Annotation/Diamond
 ```
@@ -395,7 +397,7 @@ Pver_evm.model.Segkk4293_pilon.5     | Pver | protein_match | 158 | 257 | 1.1E-1
 
 I noticed some inconsistencies with my output GFF3 output table and Jill's GFF3 output table.
 
-On my output table I noticed there were a lot of extra pathway annotations that occurred after the Dbxref="InterPro:IPR000504" section of the output. Compared to Jill's that did not have this. While their is nothing wrong with this, it takes up a lot of space and makes the file much longer. 
+On my output table I noticed there were a lot of extra pathway annotations that occurred after the Dbxref="InterPro:IPR000504" section of the output. Compared to Jill's that did not have this. While their is nothing wrong with this, it takes up a lot of space and makes the file much longer.
 
 My Output GFF3 Format:
 
