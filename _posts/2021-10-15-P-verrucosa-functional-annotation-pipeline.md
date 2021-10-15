@@ -657,9 +657,9 @@ To save the unmapped identifiers, click on the 'Click here to download the 6281 
 
 This is an example of Uniprot output .tab file:
 
-my_list | top_hit | uniprotkb_entry | status | protein_names | gene_names | organism | length | go_ids | gene_ontology | kegg
+my_list | top_hit | uniprotkb_entry | status | protein_names | gene_names | organism | length | go_ids | gene_ontology | kegg |
 --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-EDO36971.1 | A7SH22 | A7SH22_NEMVE | unreviewed | Predicted protein (Fragment) | v1g118173 | Nematostella vectensis (Starlet sea anemone) | 239 | GO:0004888; GO:0005230; GO:0005887; GO:0007165; GO:0007268; GO:0030594; GO:0034220; GO:0042391; GO:0043005; GO:0045202; GO:0050877 | integral component of plasma membrane [GO:0005887]; neuron projection [GO:0043005]; synapse [GO:0045202]; extracellular ligand-gated ion channel activity [GO:0005230]; neurotransmitter receptor activity [GO:0030594]; transmembrane signaling receptor activity [GO:0004888]; chemical synaptic transmission [GO:0007268]; ion transmembrane transport [GO:0034220]; nervous system process [GO:0050877]; regulation of membrane potential [GO:0042391]; signal transduction [GO:0007165]  | nve:5508437
+EDO36971.1 | A7SH22 | A7SH22_NEMVE | unreviewed | Predicted protein (Fragment) | v1g118173 | Nematostella vectensis (Starlet sea anemone) | 239 | GO:0004888; GO:0005230; GO:0005887; GO:0007165; GO:0007268; GO:0030594; GO:0034220; GO:0042391; GO:0043005; GO:0045202; GO:0050877 | integral component of plasma membrane [GO:0005887]; neuron projection [GO:0043005]; synapse [GO:0045202]; extracellular ligand-gated ion channel activity [GO:0005230]; neurotransmitter receptor activity [GO:0030594]; transmembrane signaling receptor activity [GO:0004888]; chemical synaptic transmission [GO:0007268]; ion transmembrane transport [GO:0034220]; nervous system process [GO:0050877]; regulation of membrane potential [GO:0042391]; signal transduction [GO:0007165]  | nve:5508437 |
 
 **Column names**
 
