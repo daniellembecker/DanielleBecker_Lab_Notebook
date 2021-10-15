@@ -153,7 +153,7 @@ Now that the reference database has been properly generated, the sequences of in
 module load DIAMOND/2.0.0-GCC-8.3.0 #Load DIAMOND
 
 #Run sequence alignment against the nr database
-diamond blastx -d /data/putnamlab/shared/databases/nr.dmnd -q /data/putnamlab/REFS/Pverr/Pver_mRNA_v1.0.fna -o Pver.annot.20210924 -f 100 -b 20 --more-sensitive -e 0.00001 -k1 --unal=1
+diamond blastx -d /data/putnamlab/shared/databases/nr.dmnd -q /data/putnamlab/REFS/Pverr/Pver_transcriptome_v1.0.fasta -o Pver_annot -f 100 -b20 --more-sensitive -e 0.00001 -k1 --unal 1 --threads $SLURM_CPUS_ON_NODE --tmpdir /tmp/
 
 ```
 
@@ -247,12 +247,14 @@ Pver_annot_diamond.sh:
 #SBATCH --mem=100GB
 #SBATCH --error="diamond_blastx_out_error"
 #SBATCH --output="diamond_blastx_out"
+#SBATCH --exclusive
 
 echo "START" $(date)
 module load DIAMOND/2.0.0-GCC-8.3.0 #Load DIAMOND
 
 echo "Updating Pver annotation" $(date)
-diamond blastx -d /data/putnamlab/shared/databases/nr.dmnd -q /data/putnamlab/REFS/Pverr/Pver_transcriptome_v1.0.fasta -o Pver_annot -f 100 -b20 --more-sensitive -e 0.00001 -k1
+diamond blastx -d /data/putnamlab/shared/databases/nr.dmnd -q /data/putnamlab/REFS/Pverr/Pver_transcriptome_v1.0.fasta -o Pver_annot -f 100 -b20 --more-sensitive -e 0.00001 -k1 --unal 1 --threads $SLURM_CPUS_ON_NODE --tmpdir /tmp/
+
 
 echo "Search complete... converting format to XML and tab"
 
@@ -613,30 +615,21 @@ In this analysis, Uniprot uses BLAST input to search against its protein databas
 
 ##### a) Make a list of identifiers found by DIAMOND BLAST.
 
-Uniprot uses the .tab file generated from DIAMOND BLAST as input. The column 'sseqid' is the primary input to Uniprot, as it can use that BLAST input to find protein matches. Because UniProt is a website and lacks proper storage and RAM, it cannot handle an entire .tab DIAMOND BLAST file. To ensure that UniProt reads all inputs, subset files so that a file only has ~2000-3000 lines per file in Terminal. (there is probably a better/more efficient way to do this)
+Uniprot uses the .tab file generated from DIAMOND BLAST as input. The column 'sseqid' is the primary input to Uniprot, as it can use that BLAST input to find protein matches. Because UniProt is a website and lacks proper storage and RAM, it cannot handle an entire .tab DIAMOND BLAST file. To ensure that UniProt reads all inputs, subset files so that a file only has ~2000-3000 lines per file in Terminal. 
 
 ```
 # Check how many lines in the full file
-wc -l Pver_annot.20210924.tab
-   29515 Pver_annot.20210924.tab
+wc -l Pver_annot.tab
+    21606 Pver_annot.tab
 
-sed -n '1,2000p' Pver_annot.20210924.tab > Pver_annot.20210924_1.tab
-sed -n '2001,4000p' Pver_annot.20210924.tab > Pver_annot.20210924_2.tab
-sed -n '4001,6000p' Pver_annot.20210924.tab > Pver_annot.20210924_3.tab
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-sed -n '28001,29515p' Pver_annot.20210924.tab > Pver_annot.20210924.tab
+#https://kb.iu.edu/d/afar (for instructions on split command)
+#use split command to split into multiple files that have 2,000 designated lines each 
+
+split -l 2000 Pver_annot.tab tab
+
+tabaa  tabad  tabag  tabaj
+tabab  tabae  tabah  tabak
+tabac  tabaf  tabai
 ```
 
 ##### b) Navigate to Uniprot [Retrieve/ID mapping page](https://www.uniprot.org/uploadlists/) and under Provide your identifiers, click 'upload your own file' and upload a subsetted tab file.
@@ -659,15 +652,14 @@ To save the main table, click Download in the top left of the table. Select Down
 
 To save the unmapped identifiers, click on the 'Click here to download the 6281 unmapped identifiers'. To save UniParc results (if any are found), click on the UniParc link under the main header of ```X out of Y EMBL/GenBank/DDBJ CDS identifiers were successfully mapped to X UniProtKB IDs in the table below```. To finish downloading UniParc results, click Download in the top left of the table. Select Download all, Uncompressed, and Tab-seperated as Format. Click Go.
 
-To see UniProt analysis for all coral species, go [here](https://github.com/JillAshey/FunctionalAnnotation/blob/main/Uniprot/Uniprot.md)
 
 ##### f) View output files
 
 This is an example of Uniprot output .tab file:
 
-my_list | top_hit | uniprotkb_entry | status | protein_names | gene_names | organism | length | go_ids | gene_ontology | ko | kegg
+my_list | top_hit | uniprotkb_entry | status | protein_names | gene_names | organism | length | go_ids | gene_ontology | kegg
 --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-EDO36971.1 | A7SH22 | A7SH22_NEMVE | unreviewed | Predicted protein (Fragment) | v1g118173 | Nematostella vectensis (Starlet sea anemone) | 239 | GO:0004888; GO:0005230; GO:0005887; GO:0007165; GO:0007268; GO:0030594; GO:0034220; GO:0042391; GO:0043005; GO:0045202; GO:0050877 | integral component of plasma membrane [GO:0005887]; neuron projection [GO:0043005]; synapse [GO:0045202]; extracellular ligand-gated ion channel activity [GO:0005230]; neurotransmitter receptor activity [GO:0030594]; transmembrane signaling receptor activity [GO:0004888]; chemical synaptic transmission [GO:0007268]; ion transmembrane transport [GO:0034220]; nervous system process [GO:0050877]; regulation of membrane potential [GO:0042391]; signal transduction [GO:0007165] | K05181 | nve:5508437
+EDO36971.1 | A7SH22 | A7SH22_NEMVE | unreviewed | Predicted protein (Fragment) | v1g118173 | Nematostella vectensis (Starlet sea anemone) | 239 | GO:0004888; GO:0005230; GO:0005887; GO:0007165; GO:0007268; GO:0030594; GO:0034220; GO:0042391; GO:0043005; GO:0045202; GO:0050877 | integral component of plasma membrane [GO:0005887]; neuron projection [GO:0043005]; synapse [GO:0045202]; extracellular ligand-gated ion channel activity [GO:0005230]; neurotransmitter receptor activity [GO:0030594]; transmembrane signaling receptor activity [GO:0004888]; chemical synaptic transmission [GO:0007268]; ion transmembrane transport [GO:0034220]; nervous system process [GO:0050877]; regulation of membrane potential [GO:0042391]; signal transduction [GO:0007165]  | nve:5508437
 
 **Column names**
 
