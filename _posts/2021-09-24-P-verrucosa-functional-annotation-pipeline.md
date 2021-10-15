@@ -86,9 +86,9 @@ For this project, the coral species of interest is *Pocillopora verrucosa*.
 
 #### ii) Download genomic files for species of interest.
 
-##### [*Pocillopora verrucosa* Gene models (CDS) (mRNA) ](http://baumslab.org/research/data/)
+##### [*Pocillopora verrucosa* Full Transcripts ](http://pver.reefgenomics.org/download/)
 
-##### [*Pocillopora verrucosa* Gene models (protein)](http://baumslab.org/research/data/)
+##### [*Pocillopora verrucosa* Gene models (protein)](http://pver.reefgenomics.org/download/)
 
 Ready to start annotating!
 
@@ -225,9 +225,9 @@ Pver_evm.model.Segkk0_pilon.12 | XP_015753513.1 | 86.7 | 1103 | 15 | 1 | 1 | 291
 ```
 # From a new terminal window (ie not Andromeda or remote server)
 
-scp danielle_becker@bluewaves.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/BLAST-GO-KO/Diamond/Pver_annot.xml /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/Functional_Annotation/Diamond
+scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/BLAST-GO-KO/Diamond/Pver_annot.xml /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/Functional_Annotation/Diamond
 
-scp danielle_becker@bluewaves.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/BLAST-GO-KO/Diamond/Pver_annot.tab /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/Functional_Annotation/Diamond
+scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/BLAST-GO-KO/Diamond/Pver_annot.tab /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/Functional_Annotation/Diamond
 ```
 
 DIAMOND BLAST results can now be used in further analyses.
@@ -252,7 +252,7 @@ echo "START" $(date)
 module load DIAMOND/2.0.0-GCC-8.3.0 #Load DIAMOND
 
 echo "Updating Pver annotation" $(date)
-diamond blastx -d /data/putnamlab/shared/databases/nr.dmnd -q /data/putnamlab/REFS/Pverr/Pver_mRNA_v1.0.fna -o Pver_annot -f 100 -b20 --more-sensitive -e 0.00001 -k1
+diamond blastx -d /data/putnamlab/shared/databases/nr.dmnd -q /data/putnamlab/REFS/Pverr/Pver_transcriptome_v1.0.fasta -o Pver_annot -f 100 -b20 --more-sensitive -e 0.00001 -k1
 
 echo "Search complete... converting format to XML and tab"
 
