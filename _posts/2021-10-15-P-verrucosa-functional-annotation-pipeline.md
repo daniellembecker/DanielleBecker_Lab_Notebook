@@ -153,7 +153,7 @@ Now that the reference database has been properly generated, the sequences of in
 module load DIAMOND/2.0.0-GCC-8.3.0 #Load DIAMOND
 
 #Run sequence alignment against the nr database
-diamond blastx -d /data/putnamlab/shared/databases/nr.dmnd -q /data/putnamlab/REFS/Pverr/Pver_mRNA_v1.0.fna -o Pver.annot.20210924 -f 100 -b 20 --more-sensitive -e 0.00001 -k1 --unal=1
+diamond blastx -d /data/putnamlab/shared/databases/nr.dmnd -q /data/putnamlab/REFS/Pverr/Pver_transcriptome_v1.0.fasta -o Pver_annot -f 100 -b20 --more-sensitive -e 0.00001 -k1 --unal 1 --threads $SLURM_CPUS_ON_NODE --tmpdir /tmp/
 
 ```
 
@@ -247,12 +247,14 @@ Pver_annot_diamond.sh:
 #SBATCH --mem=100GB
 #SBATCH --error="diamond_blastx_out_error"
 #SBATCH --output="diamond_blastx_out"
+#SBATCH --exclusive
 
 echo "START" $(date)
 module load DIAMOND/2.0.0-GCC-8.3.0 #Load DIAMOND
 
 echo "Updating Pver annotation" $(date)
-diamond blastx -d /data/putnamlab/shared/databases/nr.dmnd -q /data/putnamlab/REFS/Pverr/Pver_transcriptome_v1.0.fasta -o Pver_annot -f 100 -b20 --more-sensitive -e 0.00001 -k1
+diamond blastx -d /data/putnamlab/shared/databases/nr.dmnd -q /data/putnamlab/REFS/Pverr/Pver_transcriptome_v1.0.fasta -o Pver_annot -f 100 -b20 --more-sensitive -e 0.00001 -k1 --unal 1 --threads $SLURM_CPUS_ON_NODE --tmpdir /tmp/
+
 
 echo "Search complete... converting format to XML and tab"
 
