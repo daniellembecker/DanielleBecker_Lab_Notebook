@@ -47,6 +47,10 @@ Symbiont cell densities processed by Danielle Becker.
 
 [Notebook posts and protocol](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/_posts/2021-03-04-Ariana-Mcap2020-EarlyLifeHistory-Samples.md) 
 
+Processed symbiont cell densities for attached recruits on plugs. Symbiont densities will be normalized to surface area.  
+
+[Notebook post](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/_posts/2021-03-04-2021-10-18-Ariana-Mcap2020-EarlyLifeHistory-Samples.md)   
+
 # Larval size 
 
 Larval size processed by Danielle Becker
