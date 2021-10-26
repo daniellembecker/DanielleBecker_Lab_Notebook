@@ -9,7 +9,9 @@ tags: [ Protocol, annotation, RNASeq, GO, KEGG ]
 
 ## Overview
 
-Testing out new approaches for functional annotation of  *Pocillopora verrucosa*. 
+Testing out new approaches for functional annotation of  *Pocillopora verrucosa*. Previous analyses (Erin and Jill) used the program [DIAMOND BLAST](http://www.diamondsearch.org/index.php) against the NCBI nr database. Like regular BLAST, DIAMOND is a sequence aligner for nucleotide and protein sequences; unlike BLAST, it is optimized for a higher performance capability of large datasets at 100x-20,000x speed of BLAST.  The output .xml file was then funneled to [BLAST2GO](https://www.blast2go.com) (B2G) which is a bioinformatics tools for functional annotation and analysis of gene or protein sequences. It was originally developed to provide a user-friendly interface for GO annotation and now hosts many different functional annotation tools. The B2G software makes it possible to generate annotation without requiring writing any code. While B2G can do an extensive array of functions, this analysis primarily utilizes the GO mapping and annotation functions.
+
+Through a dense literature search, multiple databases should be used for BLAST to expand the hits possible for your sequences (Buitrago-López et al 2020; Baumgarten et al. 2015; Cunning et al. 2018). The main concensus from this literature search is that the protein sequences should be searched against the SwissProt, TrEMBL, NCBI nr databases using BLASTp (Basic Local Alignment Search Tool, e-value cut-off = 1e-05) and retaining annotations from databases in this order. Then, BLAST2GO should be used to provide GO annotations, and KEGG, Pfam, InterProScan, should be searched to further annotated gene sets.
 
 
 ### Step 1: Obtain sequences of interest.
@@ -36,17 +38,106 @@ Sequence homology is the homology between DNA, RNA, and protein sequences in ter
 
 Several software programs have the ability to compare sequences to assess homology, the most popular one being NCBI's [BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) (Basic Local Alignment Search Tool - what a great name). BLAST compares nucleotide or protein sequences of interest (called a query) to their sequence databases to find regions of similarity. If a nucleotide or protein sequence of interest significantly matches a sequence/sequences in the databases, BLAST will tag the sequence of interest with the information about the known sequence(s). For example, if a new transcript sequence is identified in a mouse, BLAST could be used to see if any other animals carry a similar sequence, and if they do, what the biological functions of the sequence are.
 
-Other software programs include [SWISS-PROT](https://iop.vast.ac.vn/theor/conferences/smp/1st/kaminuma/SWISSPROT/access.html) which is a curated protein sequence database that provides a high level of annotation (such as the description of the function of a protein, its domain structure, post-translational modifications, variants, etc), a minimal level of redundancy and a high level of integration with other databases. Recent developments of the database include: an increase in the number and scope of model organisms; cross-references to seven additional databases; a variety of new documentation files; the creation of [TREMBL](http://www3.cmbi.umcn.nl/wiki/index.php/TrEMBL), an unannotated supplement to SWISS-PROT. 
+Other software programs include [SWISS-PROT](https://iop.vast.ac.vn/theor/conferences/smp/1st/kaminuma/SWISSPROT/access.html) which is a curated protein sequence database that provides a high level of annotation (such as the description of the function of a protein, its domain structure, post-translational modifications, variants, etc), a minimal level of redundancy and a high level of integration with other databases. Recent developments of the database include: an increase in the number and scope of model organisms; cross-references to seven additional databases; a variety of new documentation files; the creation of [TREMBL](http://www3.cmbi.umcn.nl/wiki/index.php/TrEMBL), an unannotated supplement to SWISS-PROT.
+
+### Step 3: Download your databases
+
+#### i) On the Andromeda server, download Swiss-Prot database from [UniProt/Swiss-Prot](ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz).
+
+I created a script on Andromeda to download the updated Swiss-Prot database, unzip it, and make it into a blast database. I followed the general instructions on how to create code to download database [here](https://www.biostars.org/p/354449/).  Current databases found [here](https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/).
+
+```
+pwd /data/putnamlab/shared/sbatch_executables/download_swissprot_database.sh
+```
+
+Full script:
+
+```
+#!/bin/bash
+#SBATCH --job-name="ref"
+#SBATCH -t 100:00:00
+#SBATCH --export=NONE
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=danielle_becker@uri.edu # CHANGE EMAIL
+#SBATCH -D /data/putnamlab/shared/databases/swiss_db
+
+echo "START" $(date)
+module load BLAST+/2.11.0-gompi-2020b
+
+cd databases/swiss_db
+
+echo "Making swissprot database" $date
+wget ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz
+gunzip uniprot_sprot.fasta.gz
+makeblastdb -in uniprot_sprot.fasta -parse_seqids -dbtype prot -out swissprot_20211022
+echo "STOP" $(date)
+
+```
+
+**It is normal to get multiple files per blast database. That is how makeblastdb is supposed to work. Just make sure files for a database stay together in the same directory and you use the "basename" for the database (a suggestion: name your database some thing other than your input file name) when you run your searches.**
+
+**Options for makeblastdb which is an application that produces BLAST databases from FASTA files, other options [here](http://nebc.nerc.ac.uk/nebc_website_frozen/nebc.nerc.ac.uk/bioinformatics/documentation/blast+/user_manual.pdf)**
+
+- ```makeblastdb``` - application produces BLAST databases from FASTA files
+- ```in``` - database that will be used to search against
+- ```parse_sequids``` - parse the seq-id(s) in the FASTA input provided
+- ```dbtype``` - molecule type of target db ("nucl" or "prot")
+- ```out``` - base output name for database file
 
 
+#### ii) On the Andromeda server, download Trembl database from [UniProt/Trembl](ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_trembl.fasta.gz).
+
+I created a script on Andromeda to download the updated Trembl database, unzip it, and make it into a blast database. I followed the general instructions on how to create code to download database [here](https://www.biostars.org/p/354449/).  Current databases found [here](https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/).
+
+```
+pwd /data/putnamlab/shared/sbatch_executables/download_trembl_database.sh
+```
+
+Full script:
+
+```
+#!/bin/bash
+#SBATCH --job-name="ref"
+#SBATCH -t 100:00:00
+#SBATCH --export=NONE
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=danielle_becker@uri.edu # CHANGE EMAIL
+#SBATCH -D /data/putnamlab/shared/databases/trembl_db
+
+echo "START" $(date)
+module load BLAST+/2.11.0-gompi-2020b
+
+cd databases/trembl_db
+
+echo "Making trembl database" $date
+wget ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_trembl.fasta.gz
+gunzip uniprot_trembl.fasta.gz
+
+makeblastdb -in uniprot_trembl.fasta -parse_seqids -dbtype prot -out trembl_20211022
+echo "STOP" $(date)
+
+```
+
+**It is normal to get multiple files per blast database. That is how makeblastdb is supposed to work. Just make sure files for a database stay together in the same directory and you use the "basename" for the database (a suggestion: name your database some thing other than your input file name) when you run your searches.**
+
+**Options for makeblastdb which is an application that produces BLAST databases from FASTA files, other options [here](http://nebc.nerc.ac.uk/nebc_website_frozen/nebc.nerc.ac.uk/bioinformatics/documentation/blast+/user_manual.pdf)**
+
+- ```makeblastdb``` - application produces BLAST databases from FASTA files
+- ```in``` - database that will be used to search against
+- ```parse_sequids``` - parse the seq-id(s) in the FASTA input provided
+- ```dbtype``` - molecule type of target db ("nucl" or "prot")
+- ```out``` - base output name for database file
 
 
+#### iii) On the Andromeda server, download updated [NCBI](ftp://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nr.gz) nr.gz database and make it into a binary format for DIAMOND BLAST.
 
+The program [DIAMOND BLAST](http://www.diamondsearch.org/index.php) will be used. Like regular BLAST, DIAMOND is a sequence aligner for nucleotide and protein sequences; unlike BLAST, it is optimized for a higher performance capability of large datasets at 100x-20,000x speed of BLAST.
 
-In this analysis, the program [DIAMOND BLAST](http://www.diamondsearch.org/index.php) was used. Like regular BLAST, DIAMOND is a sequence aligner for nucleotide and protein sequences; unlike BLAST, it is optimized for a higher performance capability of large datasets at 100x-20,000x speed of BLAST.
+**If you are in the Putnam Lab and on Andromeda**  
 
-#### i) On the Andromeda server, download Swissprot database from [UniProt](ftp://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nr.gz). 
+**I used this step for this functional annotation because using the below commands in bash took way too long**
 
+This script, created by Erin Chille on August 6, 2020, downloads the most recent nr database in FASTA format from [NCBI](ftp://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nr.gz) and uses it to make a Diamond-formatted nr database.  This step was updated by Danielle Becker-Polinski on September 24th, 2021 because the scripts were not including the full CPUs to download and a couple other formatting errors. Go to the *sbatch_executables* subdirectory in the Putnam Lab *shared* folder and run the scripts, ```make_diamond_nr_db.sh```  and  ```make_diamond_nr_db.sh``` in this order:
 
 ```
 $ sbatch download_nr_database.sh
@@ -81,9 +172,66 @@ diamond dbinfo -d nr.dmnd
 
 The file nr.dmnd is now Diamond-readable and can be used as a reference.
 
-#### ii) Align query protein sequences against database
+### Step 3: Align query protein sequences against databases
 
-Now that the reference database has been properly generated, the sequences of interest can be aligned against it.
+Now that the reference databases have been properly generated, the sequences of interest can be aligned against them.
+
+#### i) BLAST the protein sequences against Swiss-Prot
+
+```
+pwd /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/Functional_Annotation/Swissprot/swissprot_blast.sh
+
+```
+
+Full script:
+
+```
+#!/bin/bash
+#SBATCH --job-name="swissprot-blastp-protein"
+#SBATCH -t 240:00:00
+#SBATCH --export=NONE
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=danielle_becker@uri.edu
+#SBATCH --mem=100GB
+#SBATCH --error="swissprot_blastp_out_error"
+#SBATCH --output="swissprot_blastp_out"
+#SBATCH --exclusive
+
+echo "START" $(date)
+module load BLAST+/2.11.0-gompi-2020b #load blast module
+
+echo "Blast against swissprot database" $(date)
+
+blastp -max_target_seqs 5 -num_threads 20 -db /data/putnamlab/shared/databases/swiss_db/swissprot_20211022 -query /data/putnamlab/REFS/Pverr/Pver_proteins_names_v1.0.faa -evalue 1e-5 -outfmt '6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore qlen' -out PverGeneModels_vs_sprot_1e-5_max5.out
+
+echo "STOP" $(date)
+
+```
+
+# Get the best hit for each Gene Model (protein) Swiss-Prot
+
+```
+cat PverGeneModels_vs_sprot_1e-5_max5.out | sort -k1,1 -k2,2 -k3,3r -k4,4r -k11,11 | awk '!seen[$1]++' > PverGeneModels_vs_sprot_1e-5_besthit.out
+
+wc -l PverGeneModels_vs_sprot_1e-5_besthit.out #19,540
+```
+
+# Select the gene model proteins without hits in the swiss prot
+
+```
+awk '{print $1}' PverGeneModels_vs_sprot_1e-5_besthit.out > list_of_Pvergenemodelproteins_sprot.txt
+```
+
+
+#### ii) BLAST the remaining protein sequences against Trembl
+
+```
+pwd /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/Functional_Annotation/Trembl/trembl_blastp.sh
+
+```
+
+
+#### iii) BLAST the remaining protein sequences against nr
 
 ```
 # On Andromeda
@@ -554,7 +702,7 @@ In this analysis, Uniprot uses BLAST input to search against its protein databas
 
 ##### a) Make a list of identifiers found by DIAMOND BLAST.
 
-Uniprot uses the .tab file generated from DIAMOND BLAST as input. The column 'sseqid' is the primary input to Uniprot, as it can use that BLAST input to find protein matches. Because UniProt is a website and lacks proper storage and RAM, it cannot handle an entire .tab DIAMOND BLAST file. To ensure that UniProt reads all inputs, subset files so that a file only has ~2000-3000 lines per file in Terminal. 
+Uniprot uses the .tab file generated from DIAMOND BLAST as input. The column 'sseqid' is the primary input to Uniprot, as it can use that BLAST input to find protein matches. Because UniProt is a website and lacks proper storage and RAM, it cannot handle an entire .tab DIAMOND BLAST file. To ensure that UniProt reads all inputs, subset files so that a file only has ~2000-3000 lines per file in Terminal.
 
 ```
 # Check how many lines in the full file
@@ -562,7 +710,7 @@ wc -l Pver_annot.tab
     21606 Pver_annot.tab
 
 #https://kb.iu.edu/d/afar (for instructions on split command)
-#use split command to split into multiple files that have 2,000 designated lines each 
+#use split command to split into multiple files that have 2,000 designated lines each
 
 split -l 2000 Pver_annot.tab tab
 
