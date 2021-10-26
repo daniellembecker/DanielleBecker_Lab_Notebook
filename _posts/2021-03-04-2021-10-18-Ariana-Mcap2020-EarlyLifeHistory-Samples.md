@@ -13,6 +13,7 @@ Contents
 - [**Count Protocol**](#Count)
 - [**Size Protocol**](#Size)
 - [**Symbiont Count Protocol**](#SymCount)
+- [**Coral Plugs Protocol**](#Plugs)
 
 ### <a name="Count"></a> **Count Protocol**
 
@@ -138,6 +139,9 @@ Contents
 
 
 **Protocol Steps**
+
+**Followed the [E5 Symbiodiniaceae Cell Density Counting Protocol](https://github.com/urol-e5/protocols/blob/master/2020-01-07-Cell_Density-Protocol.md) with a few modifications for sonicator testing.**
+
 1. Since the sonicator had a 220V outlet intended for use in Mo'orea, we had to order a transformer to convert the voltage safely.
 
 ***Always read the instructions carefully when operating a transformer and make sure there is no liquid around the transformer***
@@ -299,3 +303,77 @@ Contents
 #### **Notes for 20210401**
 
 - All the counts went well and the CV's all checked out. All symbiont counts completed.
+
+### <a name="Plugs"></a> **Coral Plugs Protocol**
+
+Process all of the physiological data (i.e. size and symbiont counts) for the *Montipora capitata* (vertical spawner) coral plugs with recruits (n=8).
+
+#### **Notes for 20211018**
+
+**First - I took photos of each individual plug for surface area measurements.**
+
+**Materials**
+ -  Glass pipette
+ -  Dissecting light microscope
+ -  [OMAX digital microscope camera](https://omaxmicroscope.com/a35180u3-omax-18-0mp-usb3-0-digital-camera-for-microscope-with-0-01mm-calibration-slide-windows-mac-linux.html)
+ - [ImageJ software](https://imagej.net/Welcome)
+ - [OMAX 0.01 mm stage micrometer](https://www.amazon.com/OMAX-0-01mm-Microscope-Calibration-Micrometer/dp/B00FG89F0M)
+ - [ToupView software (windows operating system only)](http://www.touptek.com/product/showproduct.php?lang=en&id=103)
+ - Cell culture dish
+
+**Protocol Steps**
+1. I aligned the coral plug underneath the dissecting microscope with the light on medium to high and positioned the coral plug next to the 0.01 mm stage micrometer so that the total length of the scale could be seen within the photo along with all the individuals.
+    - it is very important to have the scale micrometer within each individual photo as the zoom and focus may change on the microscope in between samples and you will need it to calibrate your photos later on in ImageJ
+2. Once the stage micrometer and coral plugs were focused and clear in view, I used the [ToupView software](https://mmrc.caltech.edu/Gniometeer//ToupViewHelpManual/05_ToupView_Quick_Help_en.pdf) to snap a photo and save it to the windows computer.
+3. I uploaded the photos to Google Drive and then when I was ready to size the individuals I would open them in ImageJ.
+    - Refer to the [ImageJ manual](https://imagej.nih.gov/ij/docs/guide/146-19.html) with any questions on how to calibrate or how to use the freehand tool
+4. I selected the Straight Line Selection Tool in ImageJ and zoomed in to the scale bar on the stage micrometer. I then carefully drew a line from each end of the 0.01 mm scale bar. I then set the number of pixels to a known distance of 1.0 and the unit length to mm. I also click on global so that it will be set for as long as I have this image open.
+
+![](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/20210503_ImageJ_setscale.png)
+
+5. I then use the freehand selections tool to carefully draw a circle around the entire outline of each recruit on the top of the coral plugs.
+    -  make sure to go slow and zoom in as far as possible with the individual still in focus when doing this step.
+6. After outlining the individual, I press command M (measure) and a small data box will pop up with the calculated surface area of the individual in mm.
+    - make sure to keep an eye on these measurements and if you see them fluctuating or having large numbers, do the set scale step above again
+7. I then save the photo again and transfer the measured values into a csv document.
+8. All labeled images were uploaded [here](https://drive.google.com/drive/u/0/folders/1YoS6_xWRcphzx3WnEi-OfzShAmUUEmTY).
+
+
+**Second - I counted the number of endosymbionts within each coral recruit per plug for symbiont density.**
+
+**Materials**
+ - Glass pipette
+ - [OMAX compound light microscope](https://www.amscope.com/compound-microscopes.html?gclid=CjwKCAiAp4KCBhB6EiwAxRxbpGAZ_TUEvUZC3dfCPwTPWsNgzutgcwHwgBuKzaXCTCSDYKy2NENyPhoCH84QAvD_BwE&gclsrc=aw.ds&p=3)
+ - Vortex
+ - Haemocytometer
+ - Hand held tally counter
+ - 200 uL pipette
+ - 1.5 mL microcentrifuge tubes
+ - Homogenizer
+ - 70% ethanol
+ - 10% bleach
+ - DI water
+
+
+**Protocol Steps**
+
+**Followed the [E5 Symbiodiniaceae Cell Density Counting Protocol](https://github.com/urol-e5/protocols/blob/master/2020-01-07-Cell_Density-Protocol.md) with a few modifications for removing recruits from coral plugs.**
+
+1. First, I put 100 uL of Type II DI water into 8 individually labeled microcentrifuge tubes.
+2. I then sterilized a scalpel with 10% bleach, DI water, and 70% ethanol before carefully removing each individual coral recruit from the coral plugs. I lightly applied pressure underneath each coral recruit with the scalpel and slowly moved the scalpel underneath the coral recruit until it was fully removed and could be placed into the labeled 1.5 mL microcentrifuge tube.
+3. I used the small attachment head on the homogenizer and individually homogenized each microcentrifuge tube sample for 30 seconds and sterilized the homogenizer in between each sample with the 10% bleach, DI water, and 70% ethanol solutions.
+4. I then followed the [E5 Symbiodiniaceae Cell Density Counting Protocol](https://github.com/urol-e5/protocols/blob/master/2020-01-07-Cell_Density-Protocol.md) and recorded the final endosymbiont counts [here](https://docs.google.com/spreadsheets/d/1MyxpOlEfm4S0KKFocqyrp99l9U6xZ2wCjke_ooG1meM/edit#gid=600216690).
+
+
+### **Symbiont count data for coral plug samples completed on 20211018**
+
+| lifestage | date.counted | num.squares | count1 | count2 | count3 | count4 | count5 | count6 | count7 | count8 | avg.per.square | std.per.square | cv          | total.volume.ul | num.individuals | initials |
+|-----------|--------------|-------------|--------|--------|--------|--------|--------|--------|--------|--------|----------------|----------------|-------------|-----------------|-----------------|----------|
+| Plug      | Mcap1        |    20211018 |      2 |    142 |    132 |    123 |    137 |    113 |    150 |        |    66.41666667 |    6.658953872 | 10.02602841 |             100 |              NA |     DMBP |
+| Plug      | Mcap2        |    20211018 |      2 |    136 |    140 |    141 |    133 |    129 |    145 |        |    68.66666667 |    2.909753712 | 4.237505406 |             100 |              NA |     DMBP |
+| Plug      | Mcap4        |    20211018 |      2 |    150 |    141 |    147 |    156 |    151 |    143 |        |             74 |     2.75680975 | 3.725418582 |             100 |              NA |     DMBP |
+| Plug      | Mcap5        |    20211018 |      2 |    189 |    176 |    200 |    196 |    195 |    201 |        |    96.41666667 |    4.641300105 | 4.813794405 |             100 |              NA |     DMBP |
+| Plug      | Mcap6        |    20211018 |      2 |    200 |    196 |    189 |    176 |    191 |    201 |        |    96.08333333 |    4.619704175 | 4.808018222 |             100 |              NA |     DMBP |
+| Plug      | Mcap8        |    20211018 |      2 |    189 |    199 |    187 |    175 |    202 |    187 |        |    94.91666667 |    4.841659495 | 5.100958204 |             100 |              NA |     DMBP |
+| Plug      | Mcap9        |    20211018 |      2 |    172 |    180 |    198 |    200 |    186 |    191 |        |    93.91666667 |    5.370443805 | 5.718307512 |             100 |              NA |     DMBP |
+| Plug      | Mcap10       |    20211018 |      2 |    198 |    204 |    191 |    196 |    199 |    186 |        |    97.83333333 |    3.172801076 | 3.243067539 |             100 |              NA |     DMBP |
