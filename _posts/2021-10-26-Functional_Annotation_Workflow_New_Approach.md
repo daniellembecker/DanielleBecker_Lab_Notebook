@@ -13,6 +13,9 @@ Testing out new approaches for functional annotation of  *Pocillopora verrucosa*
 
 Through a dense literature search, multiple databases should be used for BLAST to expand the hits possible for your sequences (Buitrago-López et al 2020; Baumgarten et al. 2015; Cunning et al. 2018). The main concensus from this literature search is that the protein sequences should be searched against the SwissProt, TrEMBL, NCBI nr databases using BLASTp (Basic Local Alignment Search Tool, e-value cut-off = 1e-05) and retaining annotations from databases in this order. Then, BLAST2GO should be used to provide GO annotations, and KEGG, Pfam, InterProScan, should be searched to further annotated gene sets.
 
+Followed same approach for Funtional Annotation used by [Baumgarten et al. 2015](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4586855/), [Bhattacharya et al. 2016](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4878875/), and [Buitrago-López et al. 2020](https://academic.oup.com/gbe/article/12/10/1911/5898631). I generally followed the same workflow found on the [Buitrago-López et al. 2020](https://academic.oup.com/gbe/article/12/10/1911/5898631) [GitHub](https://github.com/Carol-Symbiomics/Pocillopora-verrucosa-genome/blob/master/Scripts/03.gene.models.prediction.and.annotation.sh) page for using blastp on our protein sequences against multiple databases.
+
+
 
 ### Step 1: Obtain sequences of interest.
 
@@ -219,7 +222,7 @@ wc -l PverGeneModels_vs_sprot_1e-5_besthit.out #19,540
 
 ```
 
-# Select the gene model proteins without hits in the swiss prot
+# Select the gene model proteins without hits in Swiss-Prot
 
 ```
 #first use awk to print a list of all the Gene Model names from besthits.out
@@ -227,10 +230,43 @@ wc -l PverGeneModels_vs_sprot_1e-5_besthit.out #19,540
 awk '{print $1}' PverGeneModels_vs_sprot_1e-5_besthit.out > list_of_Pvergenemodelproteins_sprot.txt
 
 #then exclude these Gene Model names from your original fasta/.faa/protein file
+#needed to load the module that has the script with the -exclude command in it
 
--exclude Pver_proteins_names_v1.0.faa list_of_Pvergenemodelproteins_sprot.txt Pver_proteins_names_v1.0.faa.prot4trembl
+#first, loaded the newest module for kentUtils/416-foss-2020b
 
-#exclude command not found in bash, emailed Kevin Bryan for follow up
+module load kentUtils/416-foss-2020b
+
+#second use module show command to see paths to certain scripts and softwares in the module
+
+module show kentUtils/416-foss-2020b
+
+-------------------------------------------------------------------
+/opt/modules/all/kentUtils/416-foss-2020b:
+
+module-whatis     Description: LiftOver, Blat and other utilities 
+module-whatis     Homepage: https://hgdownload.soe.ucsc.edu/ 
+module-whatis     URL: https://hgdownload.soe.ucsc.edu/ 
+conflict     kentUtils 
+prepend-path     CMAKE_PREFIX_PATH /opt/software/kentUtils/416-foss-2020b 
+prepend-path     PATH /opt/software/kentUtils/416-foss-2020b/bin 
+setenv         EBROOTKENTUTILS /opt/software/kentUtils/416-foss-2020b 
+setenv         EBVERSIONKENTUTILS 416 
+setenv         EBDEVELKENTUTILS /opt/software/kentUtils/416-foss-2020b/easybuild/kentUtils-416-foss-2020b-easybuild-devel 
+-------------------------------------------------------------------
+
+#I selected to the prepend-path /opt/software/kentUtils/416-foss-2020b/bin to see if it took me to the 'faSomeRecords' script which it did
+
+/opt/software/kentUtils/416-foss-2020b/bin/faSomeRecords
+
+#I then ran the -exclude command to exclude the blasted Gene Models from the .faa file
+
+/opt/software/kentUtils/416-foss-2020b/bin/faSomeRecords -exclude Pver_proteins_names_v1.0.faa list_of_Pvergenemodelproteins_sprot.txt Pver_proteins_names_v1.0.faa.prot4trembl
+
+#check the number of Gene Models
+
+wc -l Pver_proteins_names_v1.0.faa.prot4trembl #15,798
+
+#using this file to blast against trembl
 ```
 
 
@@ -241,82 +277,68 @@ pwd /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/Functional_Annotation/Trembl/
 
 ```
 
+Full Script:
+
+```
+#!/bin/bash
+#SBATCH --job-name="trembl-blastp-protein"
+#SBATCH -t 240:00:00
+#SBATCH --export=NONE
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=danielle_becker@uri.edu
+#SBATCH --mem=100GB
+#SBATCH --error="trembl_blastp_out_error"
+#SBATCH --output="trembl_blastp_out"
+#SBATCH --exclusive
+
+echo "START" $(date)
+module load BLAST+/2.11.0-gompi-2020b #load blast module
+
+echo "Blast against trembl database" $(date)
+blastp -max_target_seqs 5 -num_threads 20 -db /data/putnamlab/shared/databases/trembl_db/trembl_20211022 -query Pver_proteins_names_v1.0.faa.prot4trembl -evalue 1e-5 -outfmt '6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore qlen' -out PverGeneModels_vs_trembl_1e-5_max5.out
+
+echo "STOP" $(date)
+
+```
+
+```
+Submitted batch job 94823
+```
+
+# Get the best hit for each Gene Model (protein) Trembl
+
+```
+#Sort by 1. query name, 2. bitscore, 3. evalue, 4. protein identity, and extract the best line for each query (bitscore more important than evalue, evalue more important than nucleotide identity).
+
+cat PverGeneModels_vs_trembl_1e-5_max5.out | sort -k1,1 -k2,2 -k3,3r -k4,4r -k11,11 | awk '!seen[$1]++' > PverGeneModels_vs_trembl_1e-5_besthit.out
+
+wc -l PverGeneModels_vs_trembl_1e-5_besthit.out 
+
+```
+
+# Select the gene model proteins without hits in Trembl
+
+```
+#first use awk to print a list of all the Gene Model names from besthits.out
+
+awk '{print $1}' PverGeneModels_vs_trembl_1e-5_besthit.out > list_of_Pvergenemodelproteins_trembl.txt
+
+#then exclude these Gene Model names from your original fasta/.faa/protein file
+
+/opt/software/kentUtils/416-foss-2020b/bin/faSomeRecords -exclude Pver_proteins_names_v1.0.faa.prot4trembl list_of_Pvergenemodelproteins_trembl.txt Pver_proteins_names_v1.0.faa.prot4nr
+
+#check the number of Gene Models
+
+Pver_proteins_names_v1.0.faa.prot4nr 
+
+#using this file to blast against nr database
+```
+
 
 #### iii) BLAST the remaining protein sequences against nr
 
-```
-# On Andromeda
 
-# Load Diamond module
-module load DIAMOND/2.0.0-GCC-8.3.0 #Load DIAMOND
 
-#Run sequence alignment against the nr database
-diamond blastx -d /data/putnamlab/shared/databases/nr.dmnd -q /data/putnamlab/REFS/Pverr/Pver_transcriptome_v1.0.fasta -o Pver_annot -f 100 -b20 --more-sensitive -e 0.00001 -k1 --unal 1 --threads $SLURM_CPUS_ON_NODE --tmpdir /tmp/
-
-```
-
-Blastx: align translated DNA query sequences against protein reference database
-
-**Options**
-
-- ```d``` - path to nr database file
-- ```q``` - path to query fasta file
-- ```o``` - base output name
-- ```f``` - output format
-    - 100 = Diamond format
-- ```b``` - Block size in billions of sequence letters to be processed at a time. Larger block sizes increase the use of memory and temporary disk space, but also improve performance. Set at 20. 20 is the highest recommended value.
-- ```more-sensitive```
-- ```e``` - maximum expected value to report an alignment
-    - 1e-05 is typical cutoff for sequence alignments
-- ```k``` maximum top sequences
-    - Set at 1 to only report top sequence for each gene
-
-#### iii) Generate readable output files
-
-```
-# On Andromeda
-
-#Converting format to XML format for BLAST2GO
-diamond view -a Pver.annot.20210924.daa -o Pver.annot.20210924.xml -f 5
-diamond view -a Pver.annot.20210924.daa -o Pver.annot.20210924.tab -f 6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore qlen slen
-
-```
-
-View: generate formatted output files
-
-**Options**
-
-- ```a``` - path to input DAA file
-- ```o``` - base output name
-- ```f``` - output format
-    - 5 = XML output; 6 = TAB output
-
-The output files (XML and TAB) will both be used downstream in this workflow.
-
-#### iv) View output file
-
-This is an example of part of the DIAMOND output .tab file:
-
-qseqid | sseqid | pident | length | mismatch | gapopen | qstart | qend | sstart | send | evalue | bitscore | qlen | slen
---- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-Pver_evm.model.Segkk0_pilon.12 | XP_015753513.1 | 86.7 | 1103 | 15 | 1 | 1 | 2913 | 23 | 1125 | 0.0e+00 | 1807.7 | 2916 | 1125
-
-**Column names**
-
-- qseqid - query seq-id
-- sseqid - subject seq-id (from BLAST databases)
-- pident - % identical matches
-- length - alignment length
-- mismatch - number of mismatches
-- gapopen - number of gap openings
-- qstart - start of alignment in query
-- qend - end of alignment in query
-- sstart - start of alignment in subject
-- send - end of alignment in subject
-- evalue - number of expected hits of similar quality that could be found by chance (similar to a pvalue). The smaller the evalue, the better the match!
-- bitscore - required size of a sequence database in which the current match could be found just by chance. The higher the bitscore, the better the sequence similarity!
-- qlen - query sequence length
-- slen - subject sequence length
 
 #### v) Secure-copy output files to local computer
 
@@ -328,46 +350,11 @@ scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNA
 scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/BLAST-GO-KO/Diamond/Pver_annot.tab /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/Functional_Annotation/Diamond
 ```
 
-DIAMOND BLAST results can now be used in further analyses.
 
-**Full Andromeda Script:**
-**This step will take over 20 hours, you can run this and the InterProScan script at the same time on Andromeda**
-
-```
-Pver_annot_diamond.sh:
-
-#!/bin/bash
-#SBATCH --job-name="diamond-blastx"
-#SBATCH -t 240:00:00
-#SBATCH --export=NONE
-#SBATCH --mail-type=BEGIN,END,FAIL
-#SBATCH --mail-user=danielle_becker@uri.edu
-#SBATCH --mem=100GB
-#SBATCH --error="diamond_blastx_out_error"
-#SBATCH --output="diamond_blastx_out"
-#SBATCH --exclusive
-
-echo "START" $(date)
-module load DIAMOND/2.0.0-GCC-8.3.0 #Load DIAMOND
-
-echo "Updating Pver annotation" $(date)
-diamond blastx -d /data/putnamlab/shared/databases/nr.dmnd -q /data/putnamlab/REFS/Pverr/Pver_transcriptome_v1.0.fasta -o Pver_annot -f 100 -b20 --more-sensitive -e 0.00001 -k1 --unal 1 --threads $SLURM_CPUS_ON_NODE --tmpdir /tmp/
-
-
-echo "Search complete... converting format to XML and tab"
-
-diamond view -a Pver_annot.daa -o Pver_annot.xml -f 5
-diamond view -a Pver_annot.daa -o Pver_annot.tab -f 6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore qlen slen
-
-echo "STOP" $(date)
-```
-```
-Submitted batch job 1931742
-```
 
 ### Step 3: Assign gene ontology terms to sequences
 
-After DIAMOND BLAST is completed, analysis can move to assigning gene ontology (GO) terms to sequences.
+After blastp steps are complete, analysis can move to assigning gene ontology (GO) terms to sequences.
 
 The [Gene Ontology](http://geneontology.org) is an extensive consortium that aims to understand gene function and provide functional annotation for organisms across the tree of life. It also maintains a controlled vocabulary of gene and gene attributes across species.
 
