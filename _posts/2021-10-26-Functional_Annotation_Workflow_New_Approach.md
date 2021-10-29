@@ -211,15 +211,26 @@ echo "STOP" $(date)
 # Get the best hit for each Gene Model (protein) Swiss-Prot
 
 ```
+#Sort by 1. query name, 2. bitscore, 3. evalue, 4. protein identity, and extract the best line for each query (bitscore more important than evalue, evalue more important than nucleotide identity).
+
 cat PverGeneModels_vs_sprot_1e-5_max5.out | sort -k1,1 -k2,2 -k3,3r -k4,4r -k11,11 | awk '!seen[$1]++' > PverGeneModels_vs_sprot_1e-5_besthit.out
 
 wc -l PverGeneModels_vs_sprot_1e-5_besthit.out #19,540
+
 ```
 
 # Select the gene model proteins without hits in the swiss prot
 
 ```
+#first use awk to print a list of all the Gene Model names from besthits.out
+
 awk '{print $1}' PverGeneModels_vs_sprot_1e-5_besthit.out > list_of_Pvergenemodelproteins_sprot.txt
+
+#then exclude these Gene Model names from your original fasta/.faa/protein file
+
+-exclude Pver_proteins_names_v1.0.faa list_of_Pvergenemodelproteins_sprot.txt Pver_proteins_names_v1.0.faa.prot4trembl
+
+#exclude command not found in bash, emailed Kevin Bryan for follow up
 ```
 
 
