@@ -11,10 +11,9 @@ tags: [ Protocol, annotation, RNASeq, GO, KEGG ]
 
 Testing out new approaches for functional annotation of  *Pocillopora verrucosa*. Previous analyses (Erin and Jill) used the program [DIAMOND BLAST](http://www.diamondsearch.org/index.php) against the NCBI nr database. Like regular BLAST, DIAMOND is a sequence aligner for nucleotide and protein sequences; unlike BLAST, it is optimized for a higher performance capability of large datasets at 100x-20,000x speed of BLAST.  The output .xml file was then funneled to [BLAST2GO](https://www.blast2go.com) (B2G) which is a bioinformatics tools for functional annotation and analysis of gene or protein sequences. It was originally developed to provide a user-friendly interface for GO annotation and now hosts many different functional annotation tools. The B2G software makes it possible to generate annotation without requiring writing any code. While B2G can do an extensive array of functions, this analysis primarily utilizes the GO mapping and annotation functions.
 
-Through a dense literature search, multiple databases should be used for BLAST to expand the hits possible for your sequences (Buitrago-López et al 2020; Baumgarten et al. 2015; Cunning et al. 2018). The main concensus from this literature search is that the protein sequences should be searched against the SwissProt, TrEMBL, NCBI nr databases using BLASTp (Basic Local Alignment Search Tool, e-value cut-off = 1e-05) and retaining annotations from databases in this order. Then, BLAST2GO should be used to provide GO annotations, and KEGG, Pfam, InterProScan, should be searched to further annotated gene sets.
+Through a dense literature search, multiple databases should be used for BLAST to expand the hits possible for your sequences [Baumgarten et al. 2015](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4586855/), [Bhattacharya et al. 2016](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4878875/), [Cunning et al. 2018](https://www.nature.com/articles/s41598-018-34459-8?proof=t+target%3D), and [Buitrago-López et al. 2020](https://academic.oup.com/gbe/article/12/10/1911/5898631). The main concensus from this literature search is that the protein sequences should be searched against the SwissProt, TrEMBL, NCBI nr databases using BLASTp (Basic Local Alignment Search Tool, e-value cut-off = 1e-05) and retaining annotations from databases in this order. Then, BLAST2GO should be used to provide GO annotations, and KEGG, Pfam, InterProScan, should be searched to further annotated gene sets.
 
 Followed same approach for Funtional Annotation used by [Baumgarten et al. 2015](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4586855/), [Bhattacharya et al. 2016](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4878875/), and [Buitrago-López et al. 2020](https://academic.oup.com/gbe/article/12/10/1911/5898631). I generally followed the same workflow found on the [Buitrago-López et al. 2020](https://academic.oup.com/gbe/article/12/10/1911/5898631) [GitHub](https://github.com/Carol-Symbiomics/Pocillopora-verrucosa-genome/blob/master/Scripts/03.gene.models.prediction.and.annotation.sh) page for using blastp on our protein sequences against multiple databases.
-
 
 
 ### Step 1: Obtain sequences of interest.
@@ -132,50 +131,47 @@ echo "STOP" $(date)
 - ```out``` - base output name for database file
 
 
-#### iii) On the Andromeda server, download updated [NCBI](ftp://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nr.gz) nr.gz database and make it into a binary format for DIAMOND BLAST.
+#### iii) On the Andromeda server, download updated [NCBI](ftp://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nr.gz) nr.gz database and unzip. This is updated daily on NCBI's website, so always re-download before you run your scripts for most updated version.
 
-The program [DIAMOND BLAST](http://www.diamondsearch.org/index.php) will be used. Like regular BLAST, DIAMOND is a sequence aligner for nucleotide and protein sequences; unlike BLAST, it is optimized for a higher performance capability of large datasets at 100x-20,000x speed of BLAST.
-
-**If you are in the Putnam Lab and on Andromeda**  
+**If you are in the Putnam Lab and on Andromeda you can use the download_nr_database.sh script**  
 
 **I used this step for this functional annotation because using the below commands in bash took way too long**
 
-This script, created by Erin Chille on August 6, 2020, downloads the most recent nr database in FASTA format from [NCBI](ftp://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nr.gz) and uses it to make a Diamond-formatted nr database.  This step was updated by Danielle Becker-Polinski on September 24th, 2021 because the scripts were not including the full CPUs to download and a couple other formatting errors. Go to the *sbatch_executables* subdirectory in the Putnam Lab *shared* folder and run the scripts, ```make_diamond_nr_db.sh```  and  ```make_diamond_nr_db.sh``` in this order:
+This script, created by Erin Chille on August 6, 2020, downloads the most recent nr database in FASTA format from [NCBI](ftp://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nr.gz).  This step was updated by Danielle Becker-Polinski on September 24th, 2021 because the scripts were not including the full CPUs to download and a couple other formatting errors. Go to the *sbatch_executables* subdirectory in the Putnam Lab *shared* folder and run the script, ```download_nr_database.sh```.
 
 ```
-$ sbatch download_nr_database.sh
-Submitted batch job NNN
-$ sbatch -d afterok:NNN make_diamond_nr_db.sh
+pwd /data/putnamlab/shared/sbatch_executables/download_nr_database.sh
 ```
 
-**If you are not in the Putnam Lab**  
-Download the nr database from [NCBI](ftp://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nr.gz). Then, use Diamond's ```makedb``` command to format the database in a Diamond-friendly format. You can also use the command ```dbinfo``` to find version information for the database.
-
-The nr (non-redundant) database is a collection of non-identical protein sequences compiled by NCBI. It is updated on a daily basis.
+Full Script
 
 ```
-# On Andromeda
+#!/bin/bash
+#SBATCH --job-name="ref"
+#SBATCH -t 100:00:00
+#SBATCH --export=NONE
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=danielle_becker@uri.edu # CHANGE EMAIL
+#SBATCH -D /data/putnamlab/shared
 
-# Download db from NCBI
-wget ftp://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nr.gz
+echo "START" $(date)
+cd databases
+wget -c -O nr.gz ftp://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nr.gz 
 
-# Load Diamond module
-module load DIAMOND/2.0.0-GCC-8.3.0
-
-diamond makedb --in nr.gz -d nr
-diamond dbinfo -d nr.dmnd
+echo "STOP" $(date)
 ```
 
-**Options**
+Unzip nr.gz database
 
-- ```makedb``` - create a Diamond binary database file
-- ```in``` - database that will be used to search against
-- ```d``` - base output name for database file
-- ```dbinfo``` - print information about database file
+```
+pwd /data/putnamlab/shared/databases
+```
 
-The file nr.dmnd is now Diamond-readable and can be used as a reference.
+```
+gunzip nr.gz
+```
 
-### Step 3: Align query protein sequences against databases
+### Step 4: Align query protein sequences against databases
 
 Now that the reference databases have been properly generated, the sequences of interest can be aligned against them.
 
@@ -211,6 +207,23 @@ echo "STOP" $(date)
 
 ```
 
+Blastp: align protein query sequences against protein reference database
+
+**Options**
+
+- ```db``` - path to nr database file
+- ```query``` - path to query fasta file
+- ```out``` - base output name
+- ```outfmt``` - output format
+    - 6 = .out format
+- ```evalue``` - maximum expected value to report an alignment
+    - 1e-05 is typical cutoff for sequence alignments
+- ```max_target_seqs``` maximum top sequences
+    - Set at 5 to report multiple sequence for each gene
+- ```num_threads``` maximum top sequences
+    - Use <integer> CPU cores on a multicore system, if they are available
+
+
 # Get the best hit for each Gene Model (protein) Swiss-Prot
 
 ```
@@ -221,6 +234,31 @@ cat PverGeneModels_vs_sprot_1e-5_max5.out | sort -k1,1 -k2,2 -k3,3r -k4,4r -k11,
 wc -l PverGeneModels_vs_sprot_1e-5_besthit.out #19,540
 
 ```
+
+### View output file
+
+This is an example of the output .out file:
+
+qaccver | saccver | pident | length | mismatch | gapopen | qstart | qend | sstart | send | evalue | bitscore | qlen | 
+--- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+Pver_g1.t2 | sp_P25291_GP2_CANLF  | 38.346 | 133 | 65 | 3 | 175 | 306 |  36 | 152  |  2.58e-19 | 91.7 |  317 | 
+
+**Column names**
+
+- qaccver - query seq-id
+- saccver - subject seq-id (from BLAST databases)
+- pident - % identical matches
+- length - alignment length
+- mismatch - number of mismatches
+- gapopen - number of gap openings
+- qstart - start of alignment in query
+- qend - end of alignment in query
+- sstart - start of alignment in subject
+- send - end of alignment in subject
+- evalue - number of expected hits of similar quality that could be found by chance (similar to a pvalue). The smaller the evalue, the better the match!
+- bitscore - required size of a sequence database in which the current match could be found just by chance. The higher the bitscore, the better the sequence similarity!
+- qlen - query sequence length
+
 
 # Select the gene model proteins without hits in Swiss-Prot
 
@@ -335,24 +373,50 @@ Pver_proteins_names_v1.0.faa.prot4nr
 ```
 
 
-#### iii) BLAST the remaining protein sequences against nr
+#### iii) BLAST the remaining protein sequences against nr 
+
+```
+pwd /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/Functional_Annotation/NCBI/ncbi_blastp.sh
+
+```
+
+Full Script:
+
+```
+#!/bin/bash
+#SBATCH --job-name="ncbi-blastp-protein"
+#SBATCH -t 240:00:00
+#SBATCH --export=NONE
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=danielle_becker@uri.edu
+#SBATCH --mem=100GB
+#SBATCH --error="ncbi_blastp_out_error"
+#SBATCH --output="ncbi_blastp_out"
+#SBATCH --exclusive
+
+echo "START" $(date)
+module load BLAST+/2.11.0-gompi-2020b #load blast module
+
+echo "Blast against ncbi database" $(date)
+blastp -max_target_seqs 5 -num_threads 20 -db /data/putnamlab/shared/databases/nr -query Pver_proteins_names_v1.0.faa.prot4nr -evalue 1e-5 -outfmt '6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore qlen' -out PverGeneModels_vs_nr_1e-5_max5.out
+
+echo "STOP" $(date)
+
+```
 
 
-
-
-#### v) Secure-copy output files to local computer
+#### iv) Secure-copy output files to local computer
 
 ```
 # From a new terminal window (ie not Andromeda or remote server)
 
-scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/BLAST-GO-KO/Diamond/Pver_annot.xml /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/Functional_Annotation/Diamond
+scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/Functional_Annotation/Diamond.protein/Pver_annot.xml /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/Functional_Annotation/Diamond
 
-scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/BLAST-GO-KO/Diamond/Pver_annot.tab /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/Functional_Annotation/Diamond
+scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/Diamond.protein/Pver_annot.tab /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/Functional_Annotation/Diamond
 ```
 
 
-
-### Step 3: Assign gene ontology terms to sequences
+### Step 5: Assign gene ontology terms to sequences
 
 After blastp steps are complete, analysis can move to assigning gene ontology (GO) terms to sequences.
 
@@ -407,7 +471,8 @@ There is so much more information available with these terms, including relation
 
 There are many different methdods to assigning GO terms to genes/gene products of interest. This workflow will focus on InterProScan, BLAST2GO, and Uniprot. These tools were chosen because they all utilize different databases for annotation. Additionally, they will all be run in different places: InterProScan on HPC, BLAST2GO on local computer, and Uniprot online. Results can be compared across tools to assess how each performed.
 
-#### i) Run InterProScan to obtain GO terms
+
+### Step 6: Run InterProScan to obtain GO terms
 
 [InterProScan](https://www.ebi.ac.uk/interpro/) is a website/software that provides functional analysis of proteins by using predictive models that look across protein databases to find homologies with query proteins. If a homology is identified in one of the databases, the information about that homology is used to assign the query protein a GO term.
 
@@ -425,7 +490,7 @@ InterProScan utilizes several member databases to enhance the chance of obtainin
 - Protein features - ProSite
 - Prediction of conserved domains - ProDom
 
-##### a) Run InterProScan on Andromeda
+#### i) Run InterProScan on Andromeda
 
 ```
 # On Andromeda
@@ -453,7 +518,7 @@ interproscan.sh -mode convert -f GFF3 -i ./Pver.interpro.20210927.xml -b ././Pve
 - ```pa``` - provides mapping from matches to pathway info, which is based on matched mantually curated InterPro enteries
 - ```mode    ``` - convert - change file format
 
-##### b) View output file
+#### ii) View output file
 
 Example of part of IPS output file:
 
@@ -621,7 +686,7 @@ interproscan.sh --cpu $SLURM_CPUS_ON_NODE ...
 Submitted batch job 89016
 ```
 
-##### c) Secure-copy output file to local computer
+#### iii) Secure-copy output file to local computer
 
 ```
 # From a new terminal window (ie not Andromeda or remote server)
@@ -630,17 +695,17 @@ scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNA
 
 ```
 
-#### ii) Run BLAST2GO to obtain GO terms
+### Step 7:  Run BLAST2GO to obtain GO terms
 
 [BLAST2GO](https://www.blast2go.com) (B2G) is a bioinformatics tools for functional annotation and analysis of gene or protein sequences. It was originally developed to provide a user-friendly interface for GO annotation and now hosts many different functional annotation tools. The B2G software makes it possible to generate annotation without requiring writing any code. While B2G can do an extensive array of functions, this analysis primarily utilizes the GO mapping and annotation functions.
 
-##### a) Download BLAST2GO to personal computer and activate the Basic subscription plan.
+### i) Download BLAST2GO to personal computer and activate the Basic subscription plan.
 
 The B2G application can be downloaded [here](https://www.blast2go.com/blast2go-pro/download-b2g). B2G is available for Mac, Windows, and Linux systems. 2GB of RAM is recommended. Additionally, Internet connection is required to use most application features.
 
 Register for B2G Basic [here](https://www.blast2go.com/b2g-register-basic). B2G Basic is free and includes the necessary features for this analysis. Registering will generate an activation key, which be put into the B2G software. You must be a part of some research institution to obtain B2G Basic.
 
-##### b) Load the XML files generated from DIAMOND BLAST.
+### ii) Load the XML files generated from DIAMOND BLAST.
 
 While B2G has the ability to run BLAST, this analysis prefers to use results from DIAMOND because of its high performance capability and senstivity. The XML file generated from DIAMOND BLAST will be used here.
 
@@ -648,7 +713,7 @@ To load the file, go to File<Load<Load Blast results<Load Blast XML (Legacy)
 
 Once the file is loaded, a table loads with info about those BLAST results (nr, Tags, SeqName, Description, Length, Hits, e-Value, and sim mean). All of the cells should be orange with Tags that say BLASTED. This indicates that these sequences have only been blasted, not mapped or annotated.
 
-##### c) Map GO terms
+### iii) Map GO terms
 
 Mapping is the process of retrieving GO terms associated with the Description obtained by the DIAMOND BLAST search. Several mapping {steps} occur:
 
@@ -658,7 +723,7 @@ Mapping is the process of retrieving GO terms associated with the Description ob
 
 To map results, select the mapping icon (white circle with green circle inside) at the top of the screen. Then select Run Mapping. A box will open up; don't change anything, click run. Depending on the number of BLAST results, mapping could take hours to days. B2G will continue running if the computer is in sleep mode. Mapping status can be checked under the Progress tab in the lower left box. If mapping retrieved a GO term that may be related to a certain sequence, that sequence row will turn light green.
 
-##### d) Annotate GO terms
+### iv) Annotate GO terms
 
 Now that GO terms have been retrieved, the annotation process will select GO terms from the GO pool obtained through mapping and assign them to query sequences. Several annotation steps occur:
 
@@ -667,11 +732,11 @@ Now that GO terms have been retrieved, the annotation process will select GO ter
 
 To annotate, select the annot icon (white circle with blue circle inside) at the top of the screen. Then select Run Annotation. A box will open up; don't change anything unless thresholds need to be adjusted. If no changes are necessary, click next through the boxes until the final one and click run. Depending on the mapping results, annotating could take hours to days. B2G will continue running if the computer is in sleep mode. Annotation status can be checked under the Progress tab in the lower left box. If a GO term has been successfully assigned to a sequence, that sequence row will turn blue.
 
-##### e) Export annotated sequences and info
+### v) Export annotated sequences and info
 
 To export the file with B2G annotated genes, go to File<Export<Export as Table. A box will open up,  and save as a text file. Re-save as csv as needed.
 
-##### f) View output file
+### vi) View output file
 
 seqName | top_hit | length | evalue | simMean | GO.ID | GO_names
 --- | --- | --- | --- | --- | --- | --- |
@@ -688,7 +753,7 @@ Pver_evm.model.Segkk0_pilon.11 | EDO40119.1 | 1779 | 1.9e-199 | 68.38 | P:GO:000
 - GO_names - annotated GO terms
 
 
-#### iii) Run Uniprot to obtain GO terms
+#### Step 8: Run Uniprot to obtain GO terms
 
 [Uniprot](https://www.uniprot.org) (Universal Protein Resource) provides information for protein sequence and annotation data. It maintains several protein databases:
 
@@ -698,7 +763,7 @@ Pver_evm.model.Segkk0_pilon.11 | EDO40119.1 | 1779 | 1.9e-199 | 68.38 | P:GO:000
 
 In this analysis, Uniprot uses BLAST input to search against its protein databases.
 
-##### a) Make a list of identifiers found by DIAMOND BLAST.
+### i) Make a list of identifiers found by DIAMOND BLAST.
 
 Uniprot uses the .tab file generated from DIAMOND BLAST as input. The column 'sseqid' is the primary input to Uniprot, as it can use that BLAST input to find protein matches. Because UniProt is a website and lacks proper storage and RAM, it cannot handle an entire .tab DIAMOND BLAST file. To ensure that UniProt reads all inputs, subset files so that a file only has ~2000-3000 lines per file in Terminal.
 
@@ -717,28 +782,28 @@ tabab  tabae  tabah  tabak
 tabac  tabaf  tabai
 ```
 
-##### b) Navigate to Uniprot [Retrieve/ID mapping page](https://www.uniprot.org/uploadlists/) and under Provide your identifiers, click 'upload your own file' and upload a subsetted tab file.
+### ii) Navigate to Uniprot [Retrieve/ID mapping page](https://www.uniprot.org/uploadlists/) and under Provide your identifiers, click 'upload your own file' and upload a subsetted tab file.
 
 UniProt will be able to process the smaller/subsetted files. However, each subsetted .tab file will need to be put in as input one at a time.
 
-##### c) Under 'Select options', choose the place where the identifiers were generated (From) and what database to compare to (To).
+### iii) Under 'Select options', choose the place where the identifiers were generated (From) and what database to compare to (To).
 
 In this analysis, the identifiers were generated from the EMBL/GenBank/DDBJ CDS option (aka NCBI/BLAST) and they will be compared to (UniProtKB). Once that is finished, hit submit. It may take a few minutes). If the mapping fails and the page displays 'Service Unavailable', go back and try again.
 
-##### d) Select appropiate columns to include in table.
+### iv) Select appropiate columns to include in table.
 
 If mapping was successful, the screen should have something like ```X out of Y EMBL/GenBank/DDBJ CDS identifiers were successfully mapped to X UniProtKB IDs in the table below```. There will be a table below with the results. Select the 'Columns' tab right above the table. This will open a window to pick more column options so more information can be included in the table. Many of the column options don't apply to this analysis.
 
 Under 'Names & Taxonomy', Entry name, Gene names, Organism, and Protein Names should already be selected. Under 'Sequences', Length should already be selected. Under 'Miscellanous', the gold paper with a star and the blue paper symbols should already be selected. If they are not, select those columns. Under 'Gene Ontology', select Gene ontology (GO) and Gene ontology IDs. Under 'Genome Annotation', select KEGG. Once selections are completed, scroll back to the top of the page and hit Save in the upper-right hand corner.
 
-##### e) Save files of interest
+### v) Save files of interest
 
 To save the main table, click Download in the top left of the table. Select Download all, Uncompressed, and Tab-seperated as Format. Click Go.
 
 To save the unmapped identifiers, click on the 'Click here to download the 6281 unmapped identifiers'. To save UniParc results (if any are found), click on the UniParc link under the main header of ```X out of Y EMBL/GenBank/DDBJ CDS identifiers were successfully mapped to X UniProtKB IDs in the table below```. To finish downloading UniParc results, click Download in the top left of the table. Select Download all, Uncompressed, and Tab-seperated as Format. Click Go.
 
 
-##### f) View output files
+### vi) View output files
 
 This is an example of Uniprot output .tab file:
 
@@ -761,6 +826,6 @@ EDO36971.1 | A7SH22 | A7SH22_NEMVE | unreviewed | Predicted protein (Fragment) |
 - ko - K number used to reconstruct biological pathways in KEGG mapper (outside scope of this analysis)
 - kegg - gene identifier used to search biological pathways in KEGG mapper (outside scope of this analysis)
 
-### Step 4: Merge all information for full annotation
+### Step 9: Merge all information for full annotation
 
 Follow instructions/code [here](https://github.com/JillAshey/FunctionalAnnotation/blob/main/RAnalysis/acerv_annot_compile.R) to compile all annotation information in R.

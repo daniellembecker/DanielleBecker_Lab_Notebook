@@ -157,7 +157,7 @@ diamond blastx -d /data/putnamlab/shared/databases/nr.dmnd -q /data/putnamlab/RE
 
 ```
 
-Blastx: align translated DNA query sequences against protein reference database
+Blastp: align protein query sequences against protein reference database
 
 **Options**
 
