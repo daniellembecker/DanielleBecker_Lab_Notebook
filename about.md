@@ -13,7 +13,7 @@ www.gatescorallab.com
 
 ### Contact me
 
-[ahuffmyer@uri.edu](mailto:ahuffmyer@uri.edu)
+[ashuffmyer@uri.edu](mailto:ashuffmyer@uri.edu)
 
 
 ## <center>ARIANA S. HUFFMYER, PHD</center>
