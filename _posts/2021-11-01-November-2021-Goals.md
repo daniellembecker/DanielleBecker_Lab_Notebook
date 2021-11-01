@@ -5,8 +5,6 @@ date: '2021-11-01'
 categories: Monthly_Goals
 tags: Goals
 ---
-# **November 2021 Goals**  
-
 ### Proposals and applications  
 1. Submit education paper revisions to CBE - Life Sciences Education (November 9) 
 2. Submit Science Incubator proposal (November 10) 
