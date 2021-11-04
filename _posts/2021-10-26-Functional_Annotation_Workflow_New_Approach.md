@@ -308,6 +308,17 @@ wc -l Pver_proteins_names_v1.0.faa.prot4trembl #15,798
 ```
 
 
+#### Secure-copy output files to local computer
+
+```
+# After doing the swissprot top hits to .xml file instead
+# From a new terminal window (ie not Andromeda or remote server)
+
+scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/Functional_Annotation/Swissprot/PverGeneModels_maxhit.xml /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/Functional_Annotation/Swissprot
+
+```
+
+
 #### ii) BLAST the remaining protein sequences against Trembl
 
 ```
@@ -691,7 +702,9 @@ Submitted batch job 89016
 ```
 # From a new terminal window (ie not Andromeda or remote server)
 
-scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/BLAST-GO-KO/InterProScan/Pver.interpro.20210927-smaller.gff3 /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/Functional_Annotation/InterProScan/
+scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/Functional_Annotation/InterProScan/Pver.interpro.20210927-smaller.gff3 /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/Functional_Annotation/InterProScan/
+
+scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/Functional_Annotation/InterProScan/Pver.interpro.20210927.xml /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/Functional_Annotation/InterProScan/
 
 ```
 
