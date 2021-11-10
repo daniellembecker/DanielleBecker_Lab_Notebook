@@ -156,7 +156,7 @@ Full Script
 
 echo "START" $(date)
 cd databases
-wget -c -O nr.gz ftp://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nr.gz 
+wget -c -O nr.gz ftp://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nr.gz
 
 echo "STOP" $(date)
 ```
@@ -239,9 +239,9 @@ wc -l PverGeneModels_vs_sprot_1e-5_besthit.out #19,540
 
 This is an example of the output .out file:
 
-qaccver | saccver | pident | length | mismatch | gapopen | qstart | qend | sstart | send | evalue | bitscore | qlen | 
+qaccver | saccver | pident | length | mismatch | gapopen | qstart | qend | sstart | send | evalue | bitscore | qlen |
 --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-Pver_g1.t2 | sp_P25291_GP2_CANLF  | 38.346 | 133 | 65 | 3 | 175 | 306 |  36 | 152  |  2.58e-19 | 91.7 |  317 | 
+Pver_g1.t2 | sp_P25291_GP2_CANLF  | 38.346 | 133 | 65 | 3 | 175 | 306 |  36 | 152  |  2.58e-19 | 91.7 |  317 |
 
 **Column names**
 
@@ -281,15 +281,15 @@ module show kentUtils/416-foss-2020b
 -------------------------------------------------------------------
 /opt/modules/all/kentUtils/416-foss-2020b:
 
-module-whatis     Description: LiftOver, Blat and other utilities 
-module-whatis     Homepage: https://hgdownload.soe.ucsc.edu/ 
-module-whatis     URL: https://hgdownload.soe.ucsc.edu/ 
-conflict     kentUtils 
-prepend-path     CMAKE_PREFIX_PATH /opt/software/kentUtils/416-foss-2020b 
-prepend-path     PATH /opt/software/kentUtils/416-foss-2020b/bin 
-setenv         EBROOTKENTUTILS /opt/software/kentUtils/416-foss-2020b 
-setenv         EBVERSIONKENTUTILS 416 
-setenv         EBDEVELKENTUTILS /opt/software/kentUtils/416-foss-2020b/easybuild/kentUtils-416-foss-2020b-easybuild-devel 
+module-whatis     Description: LiftOver, Blat and other utilities
+module-whatis     Homepage: https://hgdownload.soe.ucsc.edu/
+module-whatis     URL: https://hgdownload.soe.ucsc.edu/
+conflict     kentUtils
+prepend-path     CMAKE_PREFIX_PATH /opt/software/kentUtils/416-foss-2020b
+prepend-path     PATH /opt/software/kentUtils/416-foss-2020b/bin
+setenv         EBROOTKENTUTILS /opt/software/kentUtils/416-foss-2020b
+setenv         EBVERSIONKENTUTILS 416
+setenv         EBDEVELKENTUTILS /opt/software/kentUtils/416-foss-2020b/easybuild/kentUtils-416-foss-2020b-easybuild-devel
 -------------------------------------------------------------------
 
 #I selected to the prepend-path /opt/software/kentUtils/416-foss-2020b/bin to see if it took me to the 'faSomeRecords' script which it did
@@ -361,7 +361,8 @@ Submitted batch job 94823
 
 cat PverGeneModels_vs_trembl_1e-5_max5.out | sort -k1,1 -k2,2 -k3,3r -k4,4r -k11,11 | awk '!seen[$1]++' > PverGeneModels_vs_trembl_1e-5_besthit.out
 
-wc -l PverGeneModels_vs_trembl_1e-5_besthit.out 
+wc -l PverGeneModels_vs_trembl_1e-5_besthit.out #7095
+
 
 ```
 
@@ -372,19 +373,24 @@ wc -l PverGeneModels_vs_trembl_1e-5_besthit.out
 
 awk '{print $1}' PverGeneModels_vs_trembl_1e-5_besthit.out > list_of_Pvergenemodelproteins_trembl.txt
 
+#load the newest module for kentUtils/416-foss-2020b
+
+module load kentUtils/416-foss-2020b
+
 #then exclude these Gene Model names from your original fasta/.faa/protein file
 
 /opt/software/kentUtils/416-foss-2020b/bin/faSomeRecords -exclude Pver_proteins_names_v1.0.faa.prot4trembl list_of_Pvergenemodelproteins_trembl.txt Pver_proteins_names_v1.0.faa.prot4nr
 
+
 #check the number of Gene Models
 
-Pver_proteins_names_v1.0.faa.prot4nr 
+Pver_proteins_names_v1.0.faa.prot4nr #1,608
 
 #using this file to blast against nr database
 ```
 
 
-#### iii) BLAST the remaining protein sequences against nr 
+#### iii) BLAST the remaining protein sequences against nr
 
 ```
 pwd /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/Functional_Annotation/NCBI/ncbi_blastp.sh
@@ -392,6 +398,7 @@ pwd /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/Functional_Annotation/NCBI/nc
 ```
 
 Full Script:
+
 
 ```
 #!/bin/bash
@@ -404,12 +411,13 @@ Full Script:
 #SBATCH --error="ncbi_blastp_out_error"
 #SBATCH --output="ncbi_blastp_out"
 #SBATCH --exclusive
+#SBATCH -c 36
 
 echo "START" $(date)
 module load BLAST+/2.11.0-gompi-2020b #load blast module
 
 echo "Blast against ncbi database" $(date)
-blastp -max_target_seqs 5 -num_threads 20 -db /data/putnamlab/shared/databases/nr -query Pver_proteins_names_v1.0.faa.prot4nr -evalue 1e-5 -outfmt '6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore qlen' -out PverGeneModels_vs_nr_1e-5_max5.out
+blastp -max_target_seqs 5 -num_threads $SLURM_CPUS_ON_NODE -db /data/putnamlab/shared/databases/nr -query Pver_proteins_names_v1.0.faa.prot4nr -evalue 1e-5 -outfmt '5 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore qlen' -out PverGeneModels_ncbi.xml
 
 echo "STOP" $(date)
 
