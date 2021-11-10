@@ -7,7 +7,7 @@ tag: [ Physiology, Calcification Samples, Mercuric Chloride Fixed Samples ]
 ## Processing the E5 January, March, September 2020 Instantaneous Calcification Samples
 
 ### **Goal**
-Process calcification samples collected for the [E5 uROL Epigenetics Project](https://urol-e5.github.io) from January, March, and September 2020 (timepoints 1, 2, and 3). The samples were collected in January (n = 146), March (n = 151), and September 2020 (n = 51) and fixed with 75uL of saturated mercuric chloride for transportation back to URI on November, 22nd 2020. All samples were brought back from the January and March timepoints, but only 51 bottles could fit in the containers from the September timepoint. The remaining samples for the September and November 2020 timepoints are in Mo'orea in the LTER back lab. The Silbiger lab brought back the remaining samples from Mo'orea for the September 2020 timepoint in August 2021 and processed them on their titrator in October 2021 followint the [Silbiger Lab Titrator Protocols](https://github.com/SilbigerLab/Titrator). 
+Process calcification samples collected for the [E5 uROL Epigenetics Project](https://urol-e5.github.io) from January, March, and September 2020 (timepoints 1, 2, and 3). The samples were collected in January (n = 146), March (n = 151), and September 2020 (n = 51) and fixed with 75uL of saturated mercuric chloride for transportation back to URI on November, 22nd 2020. All samples were brought back from the January and March timepoints, but only 51 bottles could fit in the containers from the September timepoint. The remaining samples for the September and November 2020 timepoints are in Mo'orea in the LTER back lab. The Silbiger lab brought back the remaining samples from Mo'orea for the September 2020 timepoint in August 2021 and processed them on their titrator in October 2021 followint the [Silbiger Lab Titrator Protocols](https://github.com/SilbigerLab/Titrator).
 
 ### **Process**
 
@@ -507,3 +507,60 @@ Total Alkalinity Output
 | ACR-145 | 2313.15975234594 | 59.812 | 38.17 | 10 |
 | POC-55  | 2314.56794666255 | 60.002 | 38.17 | 11 |
 | POR-80  | 2243.56993167095 | 59.773 | 38.17 | 11 |
+
+
+#### **Data and notes for processing E5 samples TP2, Run 11 samples (8), run 20210811**
+
+**Notes**
+- All samples looked good. Updated timeseries data to urol-e5 GitHub.
+
+**Data**
+
+CRM Accuracy Data
+
+| Date     | CRM value | Batch value | % off    | Batch # | Notes               |
+|----------|-----------|-------------|----------|---------|---------------------|
+| 20210811 | 2221.057299  | 2224.47     | -0.153416354 | 180     | CRM opened 20210720 |
+
+
+Total Alkalinity Output
+
+| SampleID  | TA               | Mass   | Salinity |
+|-----------|------------------|--------|----------|
+| JUNK1     | 1934.9754608898  | 60.346 | 35       |
+| BLANK-11  | 2324.15793070253 | 59.752 | 39.4     |
+| POC-56    | 2306.07052131465 | 59.896 | 39.42    |
+| POC-40    | 2296.8754717866  | 60.336 | 39.42    |
+| INITIAL-1 | 2336.55412418495 | 59.76  | 39.41    |
+| ACR-178   | 2269.5758792525  | 59.807 | 39.42    |
+| POR-78    | 2159.98302587912 | 60.382 | 39.41    |
+| POR-70    | 2181.20006133922 | 59.548 | 39.42    |
+| ACR-190   | 2284.78864861159 | 59.863 | 39.44    |
+
+#### **Data and notes for processing E5 samples TP2, Run 11 samples (1), Run 12 samples (7) 20211110**
+
+**Notes**
+- All samples looked good. Updated timeseries data to urol-e5 GitHub.
+
+**Data**
+
+CRM Accuracy Data
+
+| Date     | CRM value | Batch value | % off    | Batch # | Notes               |
+|----------|-----------|-------------|----------|---------|---------------------|
+| 20211110 | 2220.494702  | 2224.47     | -0.17870765 | 180     | CRM opened 20210720 |
+
+
+Total Alkalinity Output
+
+| SampleID  | TA               | Mass   | Salinity |
+|-----------|------------------|--------|----------|
+| JUNK1     | 1844.40951345787 | 60.018 | 35       |
+| POR-81    | 2279.69144608703 | 59.848 | 39.33    |
+| POR-74    | 2287.49989551604 | 60.48  | 39.42    |
+| Initial-1 | 2328.69668652401 | 60.174 | 39.59    |
+| POC-41    | 2298.07620701969 | 60.024 | 39.44    |
+| POC-47    | 2307.75218797885 | 60.395 | 39.51    |
+| BK-12     | 2328.61428528263 | 60.067 | 39.43    |
+| POR-76    | 2155.56493361319 | 60.179 | 39.53    |
+| ACR-140   | 2277.19768756345 | 59.914 | 39.75    |
