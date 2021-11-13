@@ -7,8 +7,8 @@ tags: Goals
 ---
 ### Proposals and applications  
 1. ~~Submit education paper revisions to CBE - Life Sciences Education (November 9)~~ 
-2. Submit Science Incubator proposal (November 10) 
-3. Submit NSF OCE proposal (November 12)
+2. ~~Submit Science Incubator proposal (November 10)~~ 
+3. ~~Submit NSF OCE proposal (November 12)~~
 4. Prepare E5 time series talk for Moorea LTER Annual Meeting in early December
 
 ### Data analysis    
