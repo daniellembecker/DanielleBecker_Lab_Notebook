@@ -30,7 +30,7 @@ From this analysis, we can see that metabolomic profiles change with development
 
 From this, we get a list of metabolites that drive differences in lifestages. 
 
-**Key point: These VIPs can only be extracted using *pairwise* comparisons*. Here, I did this by comparing stages across development (i.e., eggs to embryos, embryos to larvae, and so on).** 
+**Key point: These VIPs can only be extracted using pairwise comparisons.** Here, I did this by comparing stages across development (i.e., eggs to embryos, embryos to larvae, and so on). 
 
 ![VIPs](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/MetabolomicsWGCNA/vip_bars.png) 
 
