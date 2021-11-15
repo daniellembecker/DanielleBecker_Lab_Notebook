@@ -389,6 +389,15 @@ Pver_proteins_names_v1.0.faa.prot4nr #1,608
 #using this file to blast against nr database
 ```
 
+#### Secure-copy output files to local computer
+
+```
+# From a new terminal window (ie not Andromeda or remote server)
+
+scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/Functional_Annotation/Trembl/Pver_protein_blastp_trembl.xml /Users/Danielle/Documents/URI/XML_files/Pocillopora_verrucosa/Trembl
+
+```
+
 
 #### iii) BLAST the remaining protein sequences against nr
 
@@ -424,14 +433,13 @@ echo "STOP" $(date)
 ```
 
 
-#### iv) Secure-copy output files to local computer
+#### Secure-copy output files to local computer
 
 ```
 # From a new terminal window (ie not Andromeda or remote server)
 
-scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/Functional_Annotation/Diamond.protein/Pver_annot.xml /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/Functional_Annotation/Diamond
+scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/Functional_Annotation/NCBI/PverGeneModels_ncbi.xml /Users/Danielle/Documents/URI/XML_files/Pocillopora_verrucosa/NCBI
 
-scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/Diamond.protein/Pver_annot.tab /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/Functional_Annotation/Diamond
 ```
 
 
