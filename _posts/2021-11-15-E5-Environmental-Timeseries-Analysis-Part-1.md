@@ -28,6 +28,8 @@ I then generated a figure of the joined data files across the entire time series
 
 ![Raw data](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/E5_Environmental/raw.png)
 
+Here are some observations of these data:
+
 1. The top panel shows temperature obtained from the pH/temp loggers. We notice that this data set does not extend into TP4. *We need to check to see if these data are available for TP4, they are currently not in the repo*. We also notice there are several dips in these data that likely reflect offloading/deployment dates. For temperature (top panel) and pH (third panel), there is a "jump" in the data with the probes reading higher values following the jump. These data will need to be removed.  
 2. The second panel is temperature from the Hobo loggers. This is our most complete dataset. However, there is no data for site 1 from time point 1 for the Hobo loggers. *We need to check to see if these data are available for site 1, they are currently not in the repo*. If these data are not available, we can try to combine the temperature datasets for missing values (see clean data below).  
 3. pH data has several periods of probe errors that will need to be removed (e.g., site 2 dip during time point 2). 
