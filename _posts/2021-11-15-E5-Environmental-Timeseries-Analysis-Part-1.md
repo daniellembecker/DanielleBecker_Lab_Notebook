@@ -41,7 +41,7 @@ I removed data from the above time periods (probe errors, deployments, etc.) to 
 
 The QC has removed periods of probe error, deployments, and other issues and we can now work with this dataset. I generated summary statistics that are available in the [output folder](https://github.com/urol-e5/timeseries/blob/master/time_series_analysis/Output/Clean_Environmental_Summary_Stats.csv).  
 
-**An outstanding question**: For timepoint 3, is site 2 pH data "real" or a probe artifact? We know that the probe appears to malfunction before this point (see raw data above) and the values are lower than for site 3 than I would expect based on earlier points in the time series. 
+**Additional outstanding question**: For timepoint 3, is site 2 pH data "real" or a probe artifact? We know that the probe appears to malfunction before this point (see raw data above) and the values are lower than for site 3 than I would expect based on earlier points in the time series. 
 
 Although we are missing large portions of the time series, this data should give us a representative understanding of how the conditions across the sites vary. 
 
