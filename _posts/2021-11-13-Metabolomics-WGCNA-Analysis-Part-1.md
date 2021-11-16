@@ -6,9 +6,9 @@ categories: Analysis Mcapitata_EarlyLifeHistory_2020
 tags: WGCNA Metabolomics R
 ---
 
-# Overview  
-
 This posts describes weighted gene co-expression analysis (WGCNA) applied to metabolmoics data from the 2020 *Montipora capitata* early life history developmental time series.  
+
+# Overview  
 
 ![Developmental time series](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/MetabolomicsWGCNA/experiment_design.png) 
 

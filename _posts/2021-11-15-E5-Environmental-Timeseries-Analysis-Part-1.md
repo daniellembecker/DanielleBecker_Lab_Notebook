@@ -6,9 +6,9 @@ categories: Analysis E5
 tags: R Environmental
 ---
 
-# Overview  
-
 This post details environmental time series QC and plotting for the E5 Rules of Life project.  
+
+# Overview  
 
 All scripts and figures can be found on [the E5 GitHub repo](https://github.com/urol-e5/timeseries).  
 
