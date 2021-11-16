@@ -53,3 +53,5 @@ Next, I conducted a one-way anova for each environmental variable in the plot ab
 Continue to address QC issues from Part 1 and decide on our approach for plot and statistical tests for publication.   
 
 Because of the mismatch in the data (collected during limited phases in the example of light, or missing site data for pH/temp), this reduces our sample size. We can try to fill in some of the gaps to increase our observations.  
+
+Currently, we have data from all responses across 68 days.  
