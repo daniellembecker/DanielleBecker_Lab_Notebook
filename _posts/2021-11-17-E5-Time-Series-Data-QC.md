@@ -20,7 +20,7 @@ The most common reasons for `FALSE` statements are:
 - Sample was not able to be processed due to spilling or errors in processing  
 - Typos in the data frame for colony ID 
 
-All of these issues can be traced through looking at the `completeness.Rmd` outcputs as well as the notebook photographs.
+All of these issues can be traced through looking at the `completeness.Rmd` outputs as well as the notebook photographs.
 
 My notes and tracking of completeness as well as "answers" to missing data can be seen in [this excel document in our Git repo](https://github.com/urol-e5/timeseries/blob/master/metadata/E5_QC.xlsx). 
 
@@ -36,11 +36,21 @@ All missing data has been resolved for timepoint 2. This timepoint was the most 
 
 ### Timepoint 3  
 
-This timepoint was a bit more of a mess. One factor contributing to this is the longer period of time from time point 2, so several colonies were not found or had to be relabeled. In total, 47 colonies had missing data.  
+One factor contributing to missing data in this timepoint is the longer period of time from time point 2, so several colonies were not found or had to be relabeled. In total, 47 colonies had missing data.  
 
 There were several instances of POR or POC colonies being labeled as the opposite. Corrected these in data entry.  
 
-I also noticed we have very low n for all metrics for site 3 Acropora. **Where is this information located in the notebook? I couldn't find any information about why there are only 2 counts in the data sheet for this group.** It seems like this might be a general undersampling for Acropora in this timepoint. Across all metrics, we need to address why there is an n=2 for Acropora site 3. This is likely due to mortality where fewer were found in TP3 than in TP4.  
+I also noticed we have very low n for all metrics for site 3 Acropora. This is due to mortality and inability to sample. Fewer were found in TP3 than in TP4, some colonies were later recovered.  
 
 ### Timepoint 4  
+
+This timepoint had several major problems:   
+- Colonies that were not sampled, largely Acropora  
+- Typos and errors in data entry. There were several instances of incorrect data entry in chlorophyll, molecular, surface area, and tac. These were corrected.  
+- In some cases, notes were made about samples being put in whirlpacks with other colony labels. I tracked down these colonies and corrected to the correct colony id.  
+- Incomplete notebooks; some assays that were conducted after time in Moorea are not recorded in these notebooks.  
+- The protein and TAC platemaps were switched, leading to lots of errors in protein/tac.  
+- There were several colonies for each metric that were lost or not processed for some of the metrics.  
+
+There were 33 colonies that had entry errors.  
 
