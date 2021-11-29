@@ -14,15 +14,16 @@ tags: Goals
 ### Data analysis    
 1. *Montipora capitata* developmental metabolomics enrichment and pathway analysis via Metaboanalyst vs WGCNA vs pairwise VIP
 2. *Montipora capitata* developmental gene expression enrichment (GOMWU) and pathway (KEGG) analysis
-3. E5 QC for each univariate script
+3. ~~E5 QC for each univariate script~~
 4. E5 multivariate analyses: finalize PCA's and plan 'plasticity' analyses
 
 ### Field and experimental work  
-1. Prep inventory and experimental plan for Mo'orea field work in December
+1. ~~Prep inventory and experimental plan for Mo'orea field work in December~~
 
 ### Publications  
 
-1. GCB symbiont infection final revisions
+1. ~~GCB symbiont infection final revisions~~
 2. Revise intraspecific diversity paper mixed effect models 
-3. Start revisions for Coral Reefs larval conditioning paper  
+3. ~~Start revisions for Coral Reefs larval conditioning paper~~
+4. Submit Coral Reefs larval paper (December)    
 
