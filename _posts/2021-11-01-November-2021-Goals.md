@@ -9,13 +9,13 @@ tags: Goals
 1. ~~Submit education paper revisions to CBE - Life Sciences Education (November 9)~~ 
 2. ~~Submit Science Incubator proposal (November 10)~~ 
 3. ~~Submit NSF OCE proposal (November 12)~~
-4. Prepare E5 time series talk for Moorea LTER Annual Meeting in early December
+4. ~~Prepare E5 time series talk for Moorea LTER Annual Meeting in early December~~
 
 ### Data analysis    
 1. *Montipora capitata* developmental metabolomics enrichment and pathway analysis via Metaboanalyst vs WGCNA vs pairwise VIP
 2. *Montipora capitata* developmental gene expression enrichment (GOMWU) and pathway (KEGG) analysis
 3. ~~E5 QC for each univariate script~~
-4. E5 multivariate analyses: finalize PCA's and plan 'plasticity' analyses
+4. ~~E5 multivariate analyses: finalize PCA's and plan 'plasticity' analyses~~
 
 ### Field and experimental work  
 1. ~~Prep inventory and experimental plan for Mo'orea field work in December~~
@@ -24,6 +24,5 @@ tags: Goals
 
 1. ~~GCB symbiont infection final revisions~~
 2. Revise intraspecific diversity paper mixed effect models 
-3. ~~Start revisions for Coral Reefs larval conditioning paper~~
-4. Submit Coral Reefs larval paper (December)    
+3. ~~Start revisions for Coral Reefs larval conditioning paper~~   
 
