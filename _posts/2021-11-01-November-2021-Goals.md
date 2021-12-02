@@ -23,6 +23,6 @@ tags: Goals
 ### Publications  
 
 1. ~~GCB symbiont infection final revisions~~
-2. Revise intraspecific diversity paper mixed effect models 
+2. ~~Revise intraspecific diversity paper mixed effect models~~   
 3. ~~Start revisions for Coral Reefs larval conditioning paper~~   
 
