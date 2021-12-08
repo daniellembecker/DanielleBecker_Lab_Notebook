@@ -133,49 +133,16 @@ echo "STOP" $(date)
 
 #### iii) On the Andromeda server, download updated [NCBI](ftp://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nr.gz) nr.gz database and unzip. This is updated daily on NCBI's website, so always re-download before you run your scripts for most updated version.
 
-**If you are in the Putnam Lab and on Andromeda you can use the download_nr_database.sh script**  
+**If you are in the Putnam Lab and on Andromeda you can use the /data/shared/ncbi-nr/nr database that is updated by Kevin Bryan whenever you need to use contact him at bryank@uri.edu**  
 
-**I used this step for this functional annotation because using the below commands in bash took way too long**
+**If you are not in the Putnam Lab, follow instructions [here](https://danielbruzzese.wordpress.com/2018/12/08/how-to-update-or-install-your-local-ncbi-blast-database-in-a-unix-shell-using-update_blastdb-pl/) to download the NCBI database to your server**
 
-This script, created by Erin Chille on August 6, 2020, downloads the most recent nr database in FASTA format from [NCBI](ftp://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nr.gz).  This step was updated by Danielle Becker-Polinski on September 24th, 2021 because the scripts were not including the full CPUs to download and a couple other formatting errors. Go to the *sbatch_executables* subdirectory in the Putnam Lab *shared* folder and run the script, ```download_nr_database.sh```.
-
-```
-pwd /data/putnamlab/shared/sbatch_executables/download_nr_database.sh
-```
-
-Full Script
-
-```
-#!/bin/bash
-#SBATCH --job-name="ref"
-#SBATCH -t 100:00:00
-#SBATCH --export=NONE
-#SBATCH --mail-type=BEGIN,END,FAIL
-#SBATCH --mail-user=danielle_becker@uri.edu # CHANGE EMAIL
-#SBATCH -D /data/putnamlab/shared
-
-echo "START" $(date)
-cd databases
-wget -c -O nr.gz ftp://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nr.gz
-
-echo "STOP" $(date)
-```
-
-Unzip nr.gz database
-
-```
-pwd /data/putnamlab/shared/databases
-```
-
-```
-gunzip nr.gz
-```
 
 ### Step 4: Align query protein sequences against databases
 
 Now that the reference databases have been properly generated, the sequences of interest can be aligned against them.
 
-#### i) BLAST the protein sequences against Swiss-Prot
+#### 1) BLAST the protein sequences against Swiss-Prot
 
 ```
 pwd /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/Functional_Annotation/Swissprot/swissprot_blast.sh
@@ -224,7 +191,7 @@ Blastp: align protein query sequences against protein reference database
     - Use <integer> CPU cores on a multicore system, if they are available
 
 
-# Get the best hit for each Gene Model (protein) Swiss-Prot
+#### i) Get the best hit for each Gene Model (protein) Swiss-Prot
 
 ```
 #Sort by 1. query name, 2. bitscore, 3. evalue, 4. protein identity, and extract the best line for each query (bitscore more important than evalue, evalue more important than nucleotide identity).
@@ -235,7 +202,7 @@ wc -l PverGeneModels_vs_sprot_1e-5_besthit.out #19,540
 
 ```
 
-### View output file
+#### View output file
 
 This is an example of the output .out file:
 
@@ -260,7 +227,7 @@ Pver_g1.t2 | sp_P25291_GP2_CANLF  | 38.346 | 133 | 65 | 3 | 175 | 306 |  36 | 15
 - qlen - query sequence length
 
 
-# Select the gene model proteins without hits in Swiss-Prot
+#### ii) Select the gene model proteins without hits in Swiss-Prot
 
 ```
 #first use awk to print a list of all the Gene Model names from besthits.out
@@ -307,19 +274,53 @@ wc -l Pver_proteins_names_v1.0.faa.prot4trembl #15,798
 #using this file to blast against trembl
 ```
 
-
-#### Secure-copy output files to local computer
+#### You will also need a .xml file in order to use Blast2Go later on, so use another script to also download the .xml file
 
 ```
-# After doing the swissprot top hits to .xml file instead
+pwd /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/Functional_Annotation/Swissprot/swissprot_blast_xml.sh
+
+```
+
+Full script:
+
+```
+#!/bin/bash
+#SBATCH --job-name="swissprot-blastp-protein-xml"
+#SBATCH -t 240:00:00
+#SBATCH --export=NONE
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=danielle_becker@uri.edu
+#SBATCH --mem=100GB
+#SBATCH --error="xml_blastp_out_error"
+#SBATCH --output="xml_blastp_out"
+#SBATCH --exclusive
+
+echo "START" $(date)
+module load BLAST+/2.11.0-gompi-2020b #load blast module
+
+echo "Blast against swissprot database with xml format out" $(date)
+blastp -max_target_seqs 5 -num_threads 20 -db /data/putnamlab/shared/databases/swiss_db/swissprot_20211022 -query /data/putnamlab/REFS/Pverr/Pver_proteins_names_v1.0.faa -evalue 1e-5 -outfmt '5 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore qlen' -out PverGeneModels_maxhit.xml
+
+echo "STOP" $(date)
+
+```
+
+
+#### iii) Secure-copy output files to local computer
+
+```
+# After doing the Swissprot top hits to .xml file instead, .xml files take up a lot of room and cannot always be uploaded to GitHub so I save them to my computer
 # From a new terminal window (ie not Andromeda or remote server)
 
-scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/Functional_Annotation/Swissprot/PverGeneModels_maxhit.xml /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/Functional_Annotation/Swissprot
+scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/Functional_Annotation/Swissprot/PverGeneModels_maxhit.xml /Users/Danielle/Documents/URI/XML_files/Pocillopora_verrucosa/Swissprot
+
+scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/Functional_Annotation/Swissprot/PverGeneModels_vs_sprot_1e-5_besthit.out /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/Functional_Annotation/Swissprot
+
 
 ```
 
 
-#### ii) BLAST the remaining protein sequences against Trembl
+#### 2) BLAST the remaining protein sequences against Trembl
 
 ```
 pwd /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/Functional_Annotation/Trembl/trembl_blastp.sh
@@ -354,7 +355,7 @@ echo "STOP" $(date)
 Submitted batch job 94823
 ```
 
-# Get the best hit for each Gene Model (protein) Trembl
+#### i) Get the best hit for each Gene Model (protein) Trembl
 
 ```
 #Sort by 1. query name, 2. bitscore, 3. evalue, 4. protein identity, and extract the best line for each query (bitscore more important than evalue, evalue more important than nucleotide identity).
@@ -366,7 +367,7 @@ wc -l PverGeneModels_vs_trembl_1e-5_besthit.out #7095
 
 ```
 
-# Select the gene model proteins without hits in Trembl
+#### ii) Select the gene model proteins without hits in Trembl
 
 ```
 #first use awk to print a list of all the Gene Model names from besthits.out
@@ -389,17 +390,52 @@ Pver_proteins_names_v1.0.faa.prot4nr #1,608
 #using this file to blast against nr database
 ```
 
-#### Secure-copy output files to local computer
+#### You will also need a .xml file in order to use Blast2Go later on, so use another script to also download the .xml file
 
 ```
+pwd /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/Functional_Annotation/Trembl/xml_blastp.sh
+
+```
+
+Full script:
+
+```
+#!/bin/bash
+#SBATCH --job-name="xml-blastp-protein"
+#SBATCH -t 240:00:00
+#SBATCH --export=NONE
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=danielle_becker@uri.edu
+#SBATCH --mem=100GB
+#SBATCH --error="xml_blastp_out_error"
+#SBATCH --output="xml_blastp_out"
+#SBATCH --exclusive
+#SBATCH -c 36
+
+echo "START" $(date)
+module load BLAST+/2.11.0-gompi-2020b #load blast module
+
+echo "Blast against trembl database for xml" $(date)
+blastp -max_target_seqs 5 -num_threads $SLURM_CPUS_ON_NODE -db /data/putnamlab/shared/databases/trembl_db/trembl_20211022 -query Pver_proteins_names_v1.0.faa.prot4trembl -evalue 1e-5 -outfmt '5 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore qlen' -out Pver_protein_blastp_trembl.xml
+
+echo "STOP" $(date)
+
+```
+
+#### iii) Secure-copy output files to local computer
+
+```
+# .xml files take up a lot of room and cannot always be uploaded to GitHub so I save them to my computer
 # From a new terminal window (ie not Andromeda or remote server)
 
 scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/Functional_Annotation/Trembl/Pver_protein_blastp_trembl.xml /Users/Danielle/Documents/URI/XML_files/Pocillopora_verrucosa/Trembl
 
+scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/Functional_Annotation/Trembl/PverGeneModels_vs_trembl_1e-5_besthit.out /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/Functional_Annotation/Trembl
+
 ```
 
 
-#### iii) BLAST the remaining protein sequences against nr
+#### 3) BLAST the remaining protein sequences against nr
 
 ```
 pwd /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/Functional_Annotation/NCBI/ncbi_blastp.sh
@@ -426,19 +462,66 @@ echo "START" $(date)
 module load BLAST+/2.11.0-gompi-2020b #load blast module
 
 echo "Blast against ncbi database" $(date)
-blastp -max_target_seqs 5 -num_threads $SLURM_CPUS_ON_NODE -db /data/putnamlab/shared/databases/nr -query Pver_proteins_names_v1.0.faa.prot4nr -evalue 1e-5 -outfmt '5 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore qlen' -out PverGeneModels_ncbi.xml
+blastp -max_target_seqs 5 -num_threads $SLURM_CPUS_ON_NODE -db /data/shared/ncbi-nr/nr -query Pver_proteins_names_v1.0.faa.prot4nr -evalue 1e-5 -outfmt '5 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore qlen' -out PverGeneModels_ncbi.xml
+
+echo "STOP" $(date)
+
+```
+
+#### i) Get the best hit for each Gene Model (protein) NCBI
+
+```
+#Sort by 1. query name, 2. bitscore, 3. evalue, 4. protein identity, and extract the best line for each query (bitscore more important than evalue, evalue more important than nucleotide identity).
+
+cat PverGeneModels_ncbi_max5hits.out | sort -k1,1 -k2,2 -k3,3r -k4,4r -k11,11 | awk '!seen[$1]++' > PverGeneModels_vs_nr_1e-5_besthit.out
+
+
+wc -l PverGeneModels_vs_nr_1e-5_besthit.out #237
+
+
+```
+
+#### You will also need a .xml file in order to use Blast2Go later on, so use another script to also download the .xml file
+
+```
+pwd /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/Functional_Annotation/NCBI/ncbi_blastp.sh
+
+```
+
+Full script:
+
+```
+#!/bin/bash
+#SBATCH --job-name="ncbi-blastp-protein"
+#SBATCH -t 240:00:00
+#SBATCH --export=NONE
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=danielle_becker@uri.edu
+#SBATCH --mem=100GB
+#SBATCH --error="ncbi_blastp_out_error"
+#SBATCH --output="ncbi_blastp_out"
+#SBATCH --exclusive
+#SBATCH -c 36
+
+echo "START" $(date)
+module load BLAST+/2.11.0-gompi-2020b #load blast module
+
+echo "Blast against ncbi database" $(date)
+blastp -max_target_seqs 5 -num_threads $SLURM_CPUS_ON_NODE -db /data/shared/ncbi-nr/nr -query Pver_proteins_names_v1.0.faa.prot4nr -evalue 1e-5 -outfmt '5 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore qlen' -out PverGeneModels_ncbi.xml
 
 echo "STOP" $(date)
 
 ```
 
 
-#### Secure-copy output files to local computer
+#### ii) Secure-copy output files to local computer
 
 ```
 # From a new terminal window (ie not Andromeda or remote server)
 
 scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/Functional_Annotation/NCBI/PverGeneModels_ncbi.xml /Users/Danielle/Documents/URI/XML_files/Pocillopora_verrucosa/NCBI
+
+scp danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/Functional_Annotation/NCBI/PverGeneModels_vs_nr_1e-5_besthit.out /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/Functional_Annotation/NCBI
 
 ```
 
@@ -713,7 +796,7 @@ interproscan.sh --cpu $SLURM_CPUS_ON_NODE ...
 Submitted batch job 89016
 ```
 
-#### iii) Secure-copy output file to local computer
+#### ii) Secure-copy output file to local computer
 
 ```
 # From a new terminal window (ie not Andromeda or remote server)
@@ -734,7 +817,7 @@ The B2G application can be downloaded [here](https://www.blast2go.com/blast2go-p
 
 Register for B2G Basic [here](https://www.blast2go.com/b2g-register-basic). B2G Basic is free and includes the necessary features for this analysis. Registering will generate an activation key, which be put into the B2G software. You must be a part of some research institution to obtain B2G Basic.
 
-### ii) Load the XML files generated from DIAMOND BLAST.
+### ii) Load the XML files generated from DIAMOND BLAST, INTERPROSCAN, SWISSPROT, and TREMBL separately.
 
 While B2G has the ability to run BLAST, this analysis prefers to use results from DIAMOND because of its high performance capability and senstivity. The XML file generated from DIAMOND BLAST will be used here.
 
@@ -782,79 +865,7 @@ Pver_evm.model.Segkk0_pilon.11 | EDO40119.1 | 1779 | 1.9e-199 | 68.38 | P:GO:000
 - GO_names - annotated GO terms
 
 
-#### Step 8: Run Uniprot to obtain GO terms
-
-[Uniprot](https://www.uniprot.org) (Universal Protein Resource) provides information for protein sequence and annotation data. It maintains several protein databases:
-
-- UniProt Knowledgebase (UniProtKB) - central collection hub for functional protein info and annotation
-- UniProt Reference Clusters (UniRef) - provides clustering from UniProtKB to ensure complete coverage of sequences while masking redundant sequences
-- UniProt Archive (UniParc) - database of publicly available protein sequences
-
-In this analysis, Uniprot uses BLAST input to search against its protein databases.
-
-### i) Make a list of identifiers found by DIAMOND BLAST.
-
-Uniprot uses the .tab file generated from DIAMOND BLAST as input. The column 'sseqid' is the primary input to Uniprot, as it can use that BLAST input to find protein matches. Because UniProt is a website and lacks proper storage and RAM, it cannot handle an entire .tab DIAMOND BLAST file. To ensure that UniProt reads all inputs, subset files so that a file only has ~2000-3000 lines per file in Terminal.
-
-```
-# Check how many lines in the full file
-wc -l Pver_annot.tab
-    21606 Pver_annot.tab
-
-#https://kb.iu.edu/d/afar (for instructions on split command)
-#use split command to split into multiple files that have 2,000 designated lines each
-
-split -l 2000 Pver_annot.tab tab
-
-tabaa  tabad  tabag  tabaj
-tabab  tabae  tabah  tabak
-tabac  tabaf  tabai
-```
-
-### ii) Navigate to Uniprot [Retrieve/ID mapping page](https://www.uniprot.org/uploadlists/) and under Provide your identifiers, click 'upload your own file' and upload a subsetted tab file.
-
-UniProt will be able to process the smaller/subsetted files. However, each subsetted .tab file will need to be put in as input one at a time.
-
-### iii) Under 'Select options', choose the place where the identifiers were generated (From) and what database to compare to (To).
-
-In this analysis, the identifiers were generated from the EMBL/GenBank/DDBJ CDS option (aka NCBI/BLAST) and they will be compared to (UniProtKB). Once that is finished, hit submit. It may take a few minutes). If the mapping fails and the page displays 'Service Unavailable', go back and try again.
-
-### iv) Select appropiate columns to include in table.
-
-If mapping was successful, the screen should have something like ```X out of Y EMBL/GenBank/DDBJ CDS identifiers were successfully mapped to X UniProtKB IDs in the table below```. There will be a table below with the results. Select the 'Columns' tab right above the table. This will open a window to pick more column options so more information can be included in the table. Many of the column options don't apply to this analysis.
-
-Under 'Names & Taxonomy', Entry name, Gene names, Organism, and Protein Names should already be selected. Under 'Sequences', Length should already be selected. Under 'Miscellanous', the gold paper with a star and the blue paper symbols should already be selected. If they are not, select those columns. Under 'Gene Ontology', select Gene ontology (GO) and Gene ontology IDs. Under 'Genome Annotation', select KEGG. Once selections are completed, scroll back to the top of the page and hit Save in the upper-right hand corner.
-
-### v) Save files of interest
-
-To save the main table, click Download in the top left of the table. Select Download all, Uncompressed, and Tab-seperated as Format. Click Go.
-
-To save the unmapped identifiers, click on the 'Click here to download the 6281 unmapped identifiers'. To save UniParc results (if any are found), click on the UniParc link under the main header of ```X out of Y EMBL/GenBank/DDBJ CDS identifiers were successfully mapped to X UniProtKB IDs in the table below```. To finish downloading UniParc results, click Download in the top left of the table. Select Download all, Uncompressed, and Tab-seperated as Format. Click Go.
-
-
-### vi) View output files
-
-This is an example of Uniprot output .tab file:
-
-my_list | top_hit | uniprotkb_entry | status | protein_names | gene_names | organism | length | go_ids | gene_ontology | kegg |
---- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-EDO36971.1 | A7SH22 | A7SH22_NEMVE | unreviewed | Predicted protein (Fragment) | v1g118173 | Nematostella vectensis (Starlet sea anemone) | 239 | GO:0004888; GO:0005230; GO:0005887; GO:0007165; GO:0007268; GO:0030594; GO:0034220; GO:0042391; GO:0043005; GO:0045202; GO:0050877 | integral component of plasma membrane [GO:0005887]; neuron projection [GO:0043005]; synapse [GO:0045202]; extracellular ligand-gated ion channel activity [GO:0005230]; neurotransmitter receptor activity [GO:0030594]; transmembrane signaling receptor activity [GO:0004888]; chemical synaptic transmission [GO:0007268]; ion transmembrane transport [GO:0034220]; nervous system process [GO:0050877]; regulation of membrane potential [GO:0042391]; signal transduction [GO:0007165]  | nve:5508437 |
-
-**Column names**
-
-- my_list - query id (generated from DIAMOND BLAST)
-- top_hit - top match from Uniprot databases
-- uniprotkb_entry - official Uniprot entry for top_hit
-- status - entry status; indicates if entry has been manually annotated and reviewed (reviewed = SwissProt section of Uniprot, unreviewed = computer-annotated TrEMBL section)
-- protein_names - list of all names for a particular protein (Predicted protein = unreviewed = omputer-annotated TrEMBL section)
-- gene_names - name of the genes that code for particular protein sequence
-- organism - name of organism that is source of protein information
-- length - alignment length
-- go_ids - gene ontology mapping results, GO terms and evidence codes
-- gene_ontology - annotated GO terms
-- ko - K number used to reconstruct biological pathways in KEGG mapper (outside scope of this analysis)
-- kegg - gene identifier used to search biological pathways in KEGG mapper (outside scope of this analysis)
 
 ### Step 9: Merge all information for full annotation
 
-Follow instructions/code [here](https://github.com/JillAshey/FunctionalAnnotation/blob/main/RAnalysis/acerv_annot_compile.R) to compile all annotation information in R.
+Follow instructions/code [here](https://github.com/hputnam/Becker_E5/blob/master/Functional_Annotation/Scripts/pver_annot_compile.Rmd) to compile all annotation information in R.s
