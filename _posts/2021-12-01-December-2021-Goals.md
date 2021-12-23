@@ -7,7 +7,7 @@ tags: Goals
 ---
 ### Publications 
 1. Revise and submit intraspecific diversity paper   
-2. Finish revisions and submit larval thermal conditioning paper  
+2. ~~Finish revisions~~ and submit larval thermal conditioning paper  
 3. Outline revisions for Life History energetics perspective paper  
 
 ### Data analysis    
@@ -16,6 +16,6 @@ tags: Goals
 3. E5 multivariate analyses: research multivariate modeling methods  
 
 ### Field and experimental work  
-1. Do all the things in Moorea! 
-2. Larval temperature collections in Moorea
+1. ~~Do all the things in Moorea!~~   
+2. ~~Larval temperature collections in Moorea~~  
  
