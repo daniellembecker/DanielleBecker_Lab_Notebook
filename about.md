@@ -6,20 +6,16 @@ permalink: /about/
 
 I am a marine biologist and eco-physiologist working to understand the role of the physical environment and biological interactions in shaping the physiology, performance, and resilience of early life stages of reef-building corals.
 
-### More Information
-
-www.putnamlab.com
-www.gatescorallab.com
-
 ### Contact me
 
-[ashuffmyer@uri.edu](mailto:ashuffmyer@uri.edu)
-
+[ashuffmyer@uri.edu](mailto:ashuffmyer@uri.edu)  
+[URI Putnam Lab website](www.putnamlab.com)  
+[E5 Coral website](www.e5coral.org)  
+[UW Roberts Lab website](https://faculty.washington.edu/sr320/)    
 
 ## <center>ARIANA S. HUFFMYER, PHD</center>
-<center>Department of Biological Sciences</center>
-<center>University of Rhode Island</center>
-<center>120 Flagg Road, Kingston RI 02881</center>
+<center>Department of Biological Sciences | University of Rhode Island</center>
+<center>School of Aquatic and Fisheries Sciences | University of Washington</center>
 <center>ashuffmyer@uri.edu</center>
 
 ### POSITIONS HELD
@@ -92,7 +88,7 @@ Date|Position| Affiliation
 2. **Meltvedt AM**, K Beem, A Carsh. Site and light: factors affecting growth rates of Saccharina sessilis kelp. Hatfield Marine Science Student Symposium. Newport, Oregon, USA. June 2013.
 1. **Meltvedt AM**. Reef health at Yellow Sub, Bonaire: progression of a coral-algal phase shift. CIEE Student Research Symposium. Bonaire, Dutch Caribbean. November 2012.  
 
-#### *Oral Presentations*  
+#### *Poster Presentations*  
 
 5. **Huffmyer AS** and J Lemus. TA teaching styles impact student achievement in a research-based undergraduate science course. Society of Integrative and Comparative Biology. New Orleans, Louisiana, USA. January 2017.
 4. **Huffmyer AS**, H Putnam, RD Gates. Parental influence on patterns of growth and survivorship in juvenile Pocillopora damicornis corals exposed to thermal stress conditions. Western Society of Naturalists. Monterey Bay, California, USA. November 2016.
