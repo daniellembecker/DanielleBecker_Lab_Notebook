@@ -5,13 +5,13 @@ date: '2021-09-02'
 categories: Pocillopora_HI_2021
 tags: Reproduction Pacuta Husbandry
 ---
-Post describing Pocillopora larval collection for collaborative projects with Carneige and Rutgers in June 2021.  
+Post describing *Pocillopora* larval collection for collaborative projects with Carneige and Rutgers in June 2021.  
 
 # Colony collection 
 
 6/21/2021 
 
-Collected 14 Pocillopora acuta colonies <20cm diameter off Point Lab with Debashish B. and Phil Cleves labs 1200-1300
+Collected 14 *Pocillopora acuta* colonies <20cm diameter off Point Lab with Debashish B. and Phil Cleves labs 1200-1300
 
 Placed in clean black tanks n=7 per tank, labeled, at ambient temperature under 2 layers of shade cloth. 
 
