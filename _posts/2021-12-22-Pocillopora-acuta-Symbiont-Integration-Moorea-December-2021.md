@@ -78,6 +78,10 @@ Programmed apex for squaricals:
 - Ambient = 27.3-28.8°C daily (not programmed, natural profile)  
 - High = 29.3-30.8°C daily  
 
+### *Parental exposure*  
+
+Added parental colonies to high temperature bins to allow for larval developmental pre exposure to elevated temperature. Added in the evening (~1800).  
+
 ## 5 December 2021  
 
 ### *Respirometry*  
