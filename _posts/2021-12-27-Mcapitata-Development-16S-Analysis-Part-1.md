@@ -5,7 +5,7 @@ date: '2021-12-27'
 categories: Mcapitata_EarlyLifeHistory_2020
 tags: Mcapitata Molecular Protocol 16S
 ---
-This post details the 16S analysis pipeline adapted from the pipeline [developed by Emma Strand](https://github.com/emmastrand/EmmaStrand_Notebook/blob/master/_posts/2021-06-21-16s-Analysis-Pipeline.md). In this post there is information for moving/managing ITS2 sequences, but this post details preliminary analysis of 16S. ITS2 files will be analyzed in a separate post.   
+This post details MultiQC for the 16S analysis pipeline adapted from the pipeline [developed by Emma Strand](https://github.com/emmastrand/EmmaStrand_Notebook/blob/master/_posts/2021-06-21-16s-Analysis-Pipeline.md). In this post there is information for moving/managing ITS2 sequences, but this post details preliminary analysis of 16S. ITS2 files will be analyzed in a separate post.   
 
 # General Workflow  
 
@@ -177,28 +177,47 @@ Copy the report to home desktop. Open a terminal session outside of Andromeda an
  
 Initial [MultiQC report ran on 20211227](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/blob/master/Mcap2020/Data/16S/16S_raw_qc_multiqc_report_AH.html) shows several areas that we need to address. MultiQC report including:   
 
-![counts](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/rawQC/sequencecounts.png)
+![counts](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/rawQC/sequencecounts.png)  
 
-![sequence quality](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/rawQC/sequencequality.png)
+![sequence quality](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/rawQC/sequencequality.png)  
 
-![per sequence quality](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/rawQC/persequencequality.png)
+Interpretation: Reduction in quality at the end of the sequence.
+
+![per sequence quality](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/rawQC/persequencequality.png) 
+
+Interpretation: 15 samples have low quality scores.  
 
 ![per base quality](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/rawQC/perbasequality.png)
 
+Interpretation: Amplicon libraries are expected to have bias and may not have a normal distribution. Issues at the start of eqch sequence as seen here would be expected for 16S data.  
+
 ![gc content](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/rawQC/gc.png)
+
+Interpretation: Peak at beginning may be resolved with trimming/cleaning. We have a double peak here at 35% GC and 55% GC. Could be due to contamination, adapters, or over represented sequences. Look into what should be expected from 16S amplicon sequencing.  
 
 ![n content](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/rawQC/ncontent.png)
 
+Interpretation: We can remove the problems at the start of the sequences. Low N content is as expected.  
+
 ![length](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/rawQC/length.png)
+
+Interpretation: There is a double peak in the data at 240bp and at 280 bp. We should re evaluate this after trimming and cleaning, the lengths may be different depending on sequence quality.  
 
 ![duplication](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/rawQC/duplication.png)
 
+Interpretation: High level of duplication may indicate an enrichment bias in the PCR. This could mis represent the true abundance of sequences. There may also be truly over represented sequences that might be expected for microbial amplicon data.  
+
 ![overrepresentation](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/rawQC/overrep.png)
+
+Interpretation: There are many over represnted sequences. We could blast these sequences to determine what they represent. We can also revisit this after removing adapters and other QC steps.  
 
 ![adapter](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/rawQC/adapter.png)
 
-Overall status: 
+Interpretation: Adapter content can be removed with cleaning/trimming.  
+
 ![status](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/rawQC/status.png)  
+
+Interpretation: Shows failures and warnings as described above.  
 
 
 
