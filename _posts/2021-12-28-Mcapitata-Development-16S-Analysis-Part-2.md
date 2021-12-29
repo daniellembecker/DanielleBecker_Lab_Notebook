@@ -140,6 +140,10 @@ Then start a new terminal session.
 
 This did not resolve the problem, likely becuase installing on my computer does not solve the problem within Andromeda.  
 
+Perhaps I am having a problem with the manifest file. E Strand scripts have `$MANIFEST` in the input path line of the script, but I cannot find information on where this environment is coming from. It seems that we need to update conda/numpy so that it can be accessed in the cluster.  
+
+
+
 
 
 ### 8. Run QIIME2  
