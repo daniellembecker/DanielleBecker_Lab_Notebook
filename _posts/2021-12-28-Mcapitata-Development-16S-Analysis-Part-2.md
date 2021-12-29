@@ -61,7 +61,7 @@ This file is named sample_manifest.csv.
 Copy back into Andromeda.  
 
 ```
-scp ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/sample_manifest.csv ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/metadata/ 
+scp ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/sample_manifest.tsv ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/metadata/ 
 ```
 
 Sample manifest file looks like this:  
@@ -91,7 +91,7 @@ More information on [importing data here](https://docs.qiime2.org/2021.11/tutori
 
 - Sequence Data with Sequence Quality Information: because we have fastq files, not fasta files.
 - FASTQ data in the Casava 1.8 paired-end demultiplexed format: because our samples are already demultiplexed and we have 1 file per F and R.
-- PairedEndFastqManifestPhred33 option requires a forward and reverse read. This assumes that the PHRED offset for positional quality scores is 33. 
+- PairedEndFastqManifestPhred33 option requires a forward and reverse read. This assumes that the PHRED offset for positional quality scores is 33 - [more info here](https://docs.qiime2.org/2021.11/tutorials/importing/#singleendfastqmanifestphred33v2). 
 
 Enter interactive mode and load modules.  
 
@@ -104,17 +104,25 @@ module load MultiQC/1.9-intel-2020a-Python-3.8.2
 module load cutadapt/2.10-GCCcore-9.3.0-Python-3.8.2
 module load QIIME2/2021.4
 ```
-
-Run in interactive mode in the AH_MCAP_16S directory.  
+Move the manifest file in with the data files.   
 
 ```
+mv /data/putnamlab/ashuffmyer/AH_MCAP_16S/metadata/sample_manifest.tsv /data/putnamlab/ashuffmyer/AH_MCAP_16S/raw_data/ 
+```
+
+Run in the AH_MCAP_16S directory.  
+
+*Note that I had to create a new conda environment*  
+
+```
+conda create -n AH_MCAP_16S
 conda activate AH_MCAP_16S
 conda init bash
 
 qiime tools import \
   --type 'SampleData[PairedEndSequencesWithQuality]' \
   --input-path raw_data \
-  --input-format CasavaOneEightSingleLanePerSampleDirFmt \
+  --input-format PairedEndFastqManifestPhred33V2 \
   --output-path AH-MCAP-16S-paired-end-sequences1.qza
 ```
 
@@ -124,6 +132,13 @@ Running this script I got the following error:
 ValueError: numpy.ndarray size changed, may indicate binary incompatibility. Expected 88 from C header, got 80 from PyObject
 ```
  
+I tried upgrading numpy (as recommended on the internet) on my computer outside of Andromeda.  
+
+`pip install --upgrade numpy`  
+
+Then start a new terminal session. 
+
+This did not resolve the problem, likely becuase installing on my computer does not solve the problem within Andromeda.  
 
 
 
