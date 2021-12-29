@@ -169,7 +169,7 @@ ls -1 | wc -l
 
 This should be 78 x 2 = 156 (zip and html file for each raw data file). This was correct.   
 
-### MultiQC report: Visualizing FastQC  
+### 5. MultiQC report: Visualizing FastQC  
 
 Copy the report to home desktop. Open a terminal session outside of Andromeda and use login credentials when prompted.  
 

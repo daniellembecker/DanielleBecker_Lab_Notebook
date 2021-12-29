@@ -5,7 +5,7 @@ date: '2021-12-29'
 categories: Mcapitata_EarlyLifeHistory_2020
 tags: ITS2 Molecular Protocol Mcapitata
 ---
-This post details MultiQC for the ITS2 analysis pipeline adapted from the pipeline [developed by Emma Strand](https://github.com/emmastrand/EmmaStrand_Notebook/blob/master/_posts/2021-06-21-16s-Analysis-Pipeline.md). 16S files are analyzed in a separate post.   
+This post details MultiQC for the ITS2 analysis pipeline. 16S files are analyzed in a separate post.   
 
 # General Workflow  
 
@@ -155,7 +155,7 @@ ls -1 | wc -l
 
 This should be 78 x 2 = 156 (zip and html file for each raw data file). This was correct.   
 
-### MultiQC report: Visualizing FastQC  
+### 5. MultiQC report: Visualizing FastQC  
 
 Copy the report to home desktop. Open a terminal session outside of Andromeda and use login credentials when prompted.  
 

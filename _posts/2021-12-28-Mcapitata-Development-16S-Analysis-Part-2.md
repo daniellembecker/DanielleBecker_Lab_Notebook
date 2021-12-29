@@ -9,7 +9,7 @@ This post details QC and QIIME analysis for the 16S analysis adapted from the pi
 
 # General Workflow  
 
-[Steps #1-4 in Part 1 post](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Mcapitata-Development-16S-Analysis-Part-1/)  
+[Steps #1-5 in Part 1 post](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Mcapitata-Development-16S-Analysis-Part-1/)  
 
 Log into Andromeda and navigate to data folder. If off campus, use VPN connection via AnyConnect.   
 
