@@ -167,31 +167,31 @@ Initial [MultiQC report ran on 20211228](https://github.com/AHuffmyer/EarlyLifeH
 
 ![sequence quality](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/ITS2/rawQC/sequencequality.png)  
 
-Interpretation: Reduction in quality at the end of the sequence.
+Interpretation: Reduction in quality at the end of the sequence. The sequences that fail are all the reverse R2.  
 
 ![per sequence quality](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/ITS2/rawQC/persequencequality.png) 
 
-Interpretation: 15 samples have low quality scores.  
+Interpretation: All sequences pass.   
 
 ![per base quality](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/ITS2/rawQC/perbasequality.png)
 
-Interpretation: Amplicon libraries are expected to have bias and may not have a normal distribution. Issues at the start of eqch sequence as seen here would be expected for 16S data.  
+Interpretation: Amplicon libraries are expected to have bias and may not have a normal distribution. Issues at the start of eqch sequence as seen here would be expected for ITS2 data and we could resolve with trimming.  
 
 ![gc content](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/ITS2/rawQC/gc.png)
 
-Interpretation: Peak at beginning may be resolved with trimming/cleaning. We have a double peak here at 35% GC and 55% GC. Could be due to contamination, adapters, or over represented sequences. Look into what should be expected from 16S amplicon sequencing.  
+Interpretation: Peak at beginning may be resolved with trimming/cleaning. We have a triple peak here at 45%, 55% and 65% GC. Could be due to contamination, adapters, or over represented sequences. Look into what should be expected from ITS2 amplicon sequencing.  
 
-![n content](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/ITS2/rawQC/ncontent.png)
+![n content](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/ITS2/rawQC/ncontent.png) 
 
 Interpretation: We can remove the problems at the start of the sequences. Low N content is as expected.  
 
 ![length](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/ITS2/rawQC/length.png)
 
-Interpretation: There is a double peak in the data at 240bp and at 280 bp. We should re evaluate this after trimming and cleaning, the lengths may be different depending on sequence quality.  
+Interpretation: There is a primary peak at ~300bp, the small peak at the start of the sequences could be removed with trimming.   
 
 ![duplication](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/ITS2/rawQC/duplication.png)
 
-Interpretation: High level of duplication may indicate an enrichment bias in the PCR. This could mis represent the true abundance of sequences. There may also be truly over represented sequences that might be expected for microbial amplicon data.  
+Interpretation: High level of duplication may indicate an enrichment bias in the PCR. This could mis represent the true abundance of sequences. There may also be truly over represented sequences that might be expected for amplicon data.  
 
 ![overrepresentation](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/ITS2/rawQC/overrep.png)
 
@@ -199,7 +199,7 @@ Interpretation: There are many over represnted sequences. We could blast these s
 
 ![adapter](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/ITS2/rawQC/adapter.png)
 
-Interpretation: Adapter content can be removed with cleaning/trimming.  
+Interpretation: No adapter content.   
 
 ![status](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/ITS2/rawQC/status.png)  
 
