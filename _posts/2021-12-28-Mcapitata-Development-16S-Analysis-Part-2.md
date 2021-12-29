@@ -83,14 +83,14 @@ The file looks like this:
 ![metadta](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/metadata_example.png)   
 
 
-### 7. Decide on parameters for QIIME2 analysis  
+### 7. Input data into QIIME2   
 
 Next, input sample data into QIIME2. The settings were copied from [E. Strand's pipeline](https://github.com/emmastrand/EmmaStrand_Notebook/blob/master/_posts/2021-06-21-16s-Analysis-Pipeline.md) for this preliminary analysis. 
 
 More information on [importing data here](https://docs.qiime2.org/2021.11/tutorials/importing/).  
 
 - Sequence Data with Sequence Quality Information: because we have fastq files, not fasta files.
-- FASTQ data in the Casava 1.8 paired-end demultiplexed format: because our samples are already demultiplexed and we have 1 file per F and R.
+- FASTQ data in paired-end demultiplexed format: because our samples are already demultiplexed and we have 1 file per F and R.
 - PairedEndFastqManifestPhred33 option requires a forward and reverse read. This assumes that the PHRED offset for positional quality scores is 33 - [more info here](https://docs.qiime2.org/2021.11/tutorials/importing/#singleendfastqmanifestphred33v2). 
 
 Enter interactive mode and load modules.  
@@ -99,6 +99,7 @@ Enter interactive mode and load modules.
 interactive 
 
 module load Miniconda3/4.9.2
+module load Python/3.8.2-GCCcore-9.3.0
 module load FastQC/0.11.9-Java-11
 module load MultiQC/1.9-intel-2020a-Python-3.8.2
 module load cutadapt/2.10-GCCcore-9.3.0-Python-3.8.2
@@ -117,7 +118,6 @@ Run in the AH_MCAP_16S directory.
 ```
 conda create -n AH_MCAP_16S
 conda activate AH_MCAP_16S
-conda init bash
 
 qiime tools import \
   --type 'SampleData[PairedEndSequencesWithQuality]' \
@@ -132,20 +132,18 @@ Running this script I got the following error:
 ValueError: numpy.ndarray size changed, may indicate binary incompatibility. Expected 88 from C header, got 80 from PyObject
 ```
  
-I tried upgrading numpy (as recommended on the internet) on my computer outside of Andromeda.  
+I tried upgrading numpy (as recommended on the internet) on my computer outside of Andromeda.  This did not resolve the problem, likely becuase installing on my computer does not solve the problem within Andromeda.  
 
-`pip install --upgrade numpy`  
+Perhaps I am having a problem with the manifest file. E Strand scripts have `$MANIFEST` in the input path line of the script, but I cannot find information on where this environment is coming from. 
 
-Then start a new terminal session. 
+It seems that we need to update conda/numpy so that it can be accessed in the cluster.  
 
-This did not resolve the problem, likely becuase installing on my computer does not solve the problem within Andromeda.  
+`conda upgrade numpy` may be the correct solution. Contacting Kevin Bryan to ask about the option to upgrade Conda and numpy.   
 
-Perhaps I am having a problem with the manifest file. E Strand scripts have `$MANIFEST` in the input path line of the script, but I cannot find information on where this environment is coming from. It seems that we need to update conda/numpy so that it can be accessed in the cluster.  
+ 
 
+### 8. Decide on parameters for QIIME2 analysis
 
+### 9. Run QIIME2  
 
-
-
-### 8. Run QIIME2  
-
-### 9. Continue with analysis in R     
+### 10. Continue with analysis in R     
