@@ -5,9 +5,9 @@ date: '2021-12-28'
 categories: Mcapitata_EarlyLifeHistory_2020
 tags: 16S Mcapitata Molecular Protocol
 ---
-This post details QC and QIIME analysis for the 16S analysis adapted from the pipeline [developed by Emma Strand](https://github.com/emmastrand/EmmaStrand_Notebook/blob/master/_posts/2021-06-21-16s-Analysis-Pipeline.md). ITS2 files will be analyzed in a separate post.   
+This post details QC and QIIME analysis for the 16S analysis adapted from the pipeline [developed by Emma Strand](https://github.com/emmastrand/EmmaStrand_Notebook/blob/master/_posts/2021-06-21-16s-Analysis-Pipeline.md). 
 
-# 16S Analysis in QIIME2   
+# Loading 16S Data in QIIME2   
 
 [Steps #1-5 in Part 1 post](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Mcapitata-Development-16S-Analysis-Part-1/)  
 

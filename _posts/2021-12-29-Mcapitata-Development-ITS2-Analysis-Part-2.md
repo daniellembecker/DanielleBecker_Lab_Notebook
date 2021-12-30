@@ -98,7 +98,19 @@ echo "Success!" $(date)
 
 Ran overnight and completed, now I will try to run analyses to see if the downloads worked correctly.  
 
----> A currently here on 20211230  
+I got these error codes for each package:  
+
+```
+CondaVerificationError: The package for django located at /home/ashuffmyer/.con$
+appears to be corrupted. The path 'site-packages/django/views/generic/base.py'
+specified in the package manifest cannot be found.
+```
+
+It appears that no package downloaded correctly.  
+
+
+
+
 
 
 ##### Create a reference database  
