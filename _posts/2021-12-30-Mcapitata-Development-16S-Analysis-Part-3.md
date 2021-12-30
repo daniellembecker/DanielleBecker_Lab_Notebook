@@ -259,8 +259,12 @@ Move all visualization files to the desktop.
 scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/*.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/
 
 ```
+Before filtering, our taxonomy (level 1) looks like this: 
+![taxa unfiltered](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/taxa_unfiltered.png) 
 
-Our taxonomy identification looks like this:  
+One sample has a blip of eukaryotic signal that is matched to a ciliate. The proportion is low and will be removed with filtering. Looks like low potential for contamination.  
+
+Our taxonomy identification (level 5) after filtering looks like this:  
 
 ![taxa](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/taxa_bars.png)   
 
@@ -275,7 +279,7 @@ This aligns the sequences to assess the phylogenetic relationship between each o
 ```
 cd scripts
 nano phylo_tree.sh
-```  
+```   
 
 ```
 #!/bin/bash
@@ -286,8 +290,8 @@ nano phylo_tree.sh
 #SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
 #SBATCH --mail-user=ashuffmyer@uri.edu #your email to send notifications
 #SBATCH --account=putnamlab                 
-#SBATCH --error="idfiltered_script_error" #if your job fails, the error report will be put in this file
-#SBATCH --output="idfiltered_output_script" #once your job is completed, any final job report comments will be put in this file
+#SBATCH --error="tree_script_error" #if your job fails, the error report will be put in this file
+#SBATCH --output="tree_output_script" #once your job is completed, any final job report comments will be put in this file
 
 source /usr/share/Modules/init/sh # load the module function
 module load QIIME2/2021.8
@@ -311,16 +315,16 @@ qiime phylogeny midpoint-root \
   --o-rooted-tree rooted-tree.qza
 ```
 
-Move all visualization files to the desktop.  
+Move all files to the desktop.  
 
 ```
-scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/*.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/
+scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/rooted-tree.qza ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/
+
+scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/unrooted-tree.qza ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/
 
 ```
 
-SCREENSHOTS HERE 
-
-### 11. Calculate Diversity    
+### 11. Calculate Diversity Metrics     
 
 ```
 cd scripts
@@ -390,12 +394,20 @@ Move all visualization files to the desktop.
 ```
 scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/*.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/
 
+scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/*.qza ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/
+
 scp -r ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/core-metrics-results ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/
 
 ```
 
-SCREENSHOTS  
+![rarefraction](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/rarefraction.png) 
 
+![bray](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/bray_emperor.png) 
+
+
+![unifrac](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/unifrac.png)  
+
+Based on these preliminary analyses, it looks as though we have some interesting groupings by lifestage.  
 
 All data can be found on [GitHub here](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/tree/master/Mcap2020/Data/16S).  
 
@@ -403,7 +415,7 @@ All data can be found on [GitHub here](https://github.com/AHuffmyer/EarlyLifeHis
 
 This script includes all commands required for analysis once data is loaded into QIIME2. If filtering parameters need to be changed, this is a good option for running everything at once rather than individually.  
 
-This script is written to run after all the above has been run (it does not include wget commands for example). Once your directories and environment are set up, this will run . 
+This script is written to run after all the above has been run (it does not include wget commands for example). Once your directories and environment are set up, this will run. 
 
 ```
 cd scripts
@@ -545,12 +557,16 @@ qiime diversity beta-group-significance \
     --p-max-depth 800 \
     --m-metadata-file $METADATA \
     --o-visualization alpha-rarefaction.qzv
+    
+echo "Mission complete!" $(date)  
 ```
 
 Move all visualization files to desktop.  
 
 ```
 scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/*.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/
+
+scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/*.qza ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/
 
 scp -r ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/core-metrics-results ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/
 ```
