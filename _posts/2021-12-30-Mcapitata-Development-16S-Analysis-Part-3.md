@@ -86,7 +86,7 @@ module load QIIME2/2021.8
 cd ../processed_data
 
 # Metadata path
-METADATA="../metadata/sample_metadata.csv"
+METADATA="../metadata/sample_metadata.txt"
 
 qiime dada2 denoise-paired --verbose --i-demultiplexed-seqs ../raw_data/AH-MCAP-16S-paired-end-sequences1.qza \
   --p-trunc-len-r 192 --p-trunc-len-f 245 \
@@ -110,3 +110,39 @@ qiime dada2 denoise-paired --verbose --i-demultiplexed-seqs ../raw_data/AH-MCAP-
 
 ```
 
+Once complete, output will be available.  
+
+Transfer generated visualization files to home computer.  
+
+``` 
+scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/denoising-stats.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/
+
+scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/rep-seqs.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/
+
+scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/table.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/
+
+```
+
+View the file by going to https://view.qiime2.org/ and adding the files to the browser.  
+
+We get the following metadata table:  
+
+![denoise](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/denoise_meta.png) 
+
+Approx. 70-75% of sequence input passed the filters set in the script above. 
+
+Percentage of non-chimeric is approx. 40-50%.  
+
+We also get the following information about sequence length:  
+
+![rep seq](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/rep_seq_length_meta.png) 
+
+Mean sequence length = 257 bp  
+
+From the table visualization (table.qzv), we get information on the number of features and distrubtion of features in each sample.  
+
+![tablesummary](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/tablesummary.png)   
+
+![frequencypersample](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/frequencypersample.png)   
+
+xxxxxx

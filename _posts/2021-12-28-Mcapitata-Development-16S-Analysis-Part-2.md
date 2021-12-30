@@ -74,14 +74,14 @@ The file looks like this:
 
 #### *Sample metadata file*  
 
-Create a sample metadata file based on QIIME2 requirements (see links above).  Metadata includes the first row as a header and the second row as the data type (#q2:types) with metadata starting in the third row. 
+Create a sample metadata file based on QIIME2 requirements (see links above).  Metadata includes the first row as a header and the second row as the data type (#q2:types) with metadata starting in the third row. Save this file as a tab-delimited txt file as for the manifest file.  
 
 Platemaps with [sample names spreadsheet here](https://docs.google.com/spreadsheets/d/1lLvCp-RoRiBSGZ4NBPwi6cmZuozmfS20OJ7hBIueldU/edit#gid=1407808998).    
 
 I created this file manually on my computer and then copied into Andromeda.  
 
 ```
-scp ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/sample_metadata.csv ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/metadata/ 
+scp ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/sample_metadata.txt ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/metadata/ 
 ```
 
 The file looks like this:  
