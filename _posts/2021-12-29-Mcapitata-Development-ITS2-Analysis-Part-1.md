@@ -7,7 +7,7 @@ tags: ITS2 Molecular Protocol Mcapitata
 ---
 This post details MultiQC for the ITS2 analysis pipeline. 16S files are analyzed in a separate post.   
 
-# General Workflow  
+# ITS2 MultiQC   
 
 ### 1. Log onto Andromeda and go to working directory  
 

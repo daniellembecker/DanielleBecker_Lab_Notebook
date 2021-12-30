@@ -7,7 +7,7 @@ tags: Mcapitata Molecular Protocol 16S
 ---
 This post details MultiQC for the 16S analysis pipeline adapted from the pipeline [developed by Emma Strand](https://github.com/emmastrand/EmmaStrand_Notebook/blob/master/_posts/2021-06-21-16s-Analysis-Pipeline.md). In this post there is information for moving/managing ITS2 sequences, but this post details preliminary analysis of 16S. ITS2 files will be analyzed in a separate post.   
 
-# General Workflow  
+# 16S MultiQC 
 
 ### 1. Log onto Andromeda and go to working directory  
 

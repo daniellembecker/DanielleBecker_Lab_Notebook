@@ -7,7 +7,7 @@ tags: 16S Mcapitata Molecular Protocol
 ---
 This post details QC and QIIME analysis for the 16S analysis adapted from the pipeline [developed by Emma Strand](https://github.com/emmastrand/EmmaStrand_Notebook/blob/master/_posts/2021-06-21-16s-Analysis-Pipeline.md). ITS2 files will be analyzed in a separate post.   
 
-# General Workflow  
+# 16S Analysis in QIIME2   
 
 [Steps #1-5 in Part 1 post](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Mcapitata-Development-16S-Analysis-Part-1/)  
 
@@ -140,7 +140,7 @@ It seems that we need to update conda/numpy so that it can be accessed in the cl
 
 `conda upgrade numpy` may be the correct solution. Contacting Kevin Bryan to ask about the option to upgrade Conda and numpy.   
 
- 
+
 
 ### 8. Decide on parameters for QIIME2 analysis
 
