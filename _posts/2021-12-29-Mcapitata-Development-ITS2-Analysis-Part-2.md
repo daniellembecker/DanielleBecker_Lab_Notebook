@@ -56,7 +56,7 @@ user_email = "undefined" --> user_email = "ashuffmyer@uri.edu"
 
 ##### Create the SymPortal conda environment  
 
-Next, create a conda environment to work in. You can do this in interactive mode, but there is a long install. I tried to do this with a bash script but was not successful.  
+Next, create a conda environment to work in. You can do this in interactive mode, but there is a long install. 
 
 ```
 interactive
@@ -68,13 +68,9 @@ conda env create -f $EBROOTSYMPORTAL/symportal_env.yml
 exit
 ```
 
+Download often failed, so downloaded in several sessions. It appears that it recognizes what has already been downloaded and doesn't seem to repeat what was downloaded in a previous session.  
 
-
-
-
-
-
-Internet connection didn't allow for the download. Trying to download in a bash script.  
+Internet connection didn't allow for the download easily. Trying to download in a bash script overnight.    
 
 `nano install.sh` 
 
@@ -94,14 +90,15 @@ module load SymPortal
 
 conda env create -f $EBROOTSYMPORTAL/symportal_env.yml 
 
+echo "Success!" $(date) 
 ```
 
+`sbatch install.sh`  
 
 
+Ran overnight and completed, now I will try to run analyses to see if the downloads worked correctly.  
 
-
-
-This step takes a awhile to complete downloads.   
+---> A currently here on 20211230  
 
 
 ##### Create a reference database  
