@@ -68,6 +68,33 @@ conda env create -f $EBROOTSYMPORTAL/symportal_env.yml
 exit
 ```
 
+Internet connection didn't allow for the download. Trying to download in a bash script.  
+
+`nano install.sh` 
+
+```
+#!/bin/bash
+#SBATCH --job-name="install"
+#SBATCH -t 500:00:00
+#SBATCH --mem=250GB
+#SBATCH --account=putnamlab
+#SBATCH --export=NONE
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=ashuffmyer@uri.edu
+#SBATCH --exclusive
+
+module load Miniconda3/4.9.2
+module load SymPortal
+
+conda env create -f $EBROOTSYMPORTAL/symportal_env.yml 
+
+```
+
+
+
+
+
+
 This step takes a awhile to complete downloads.   
 
 

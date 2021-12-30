@@ -103,7 +103,7 @@ module load Python/3.8.2-GCCcore-9.3.0
 module load FastQC/0.11.9-Java-11
 module load MultiQC/1.9-intel-2020a-Python-3.8.2
 module load cutadapt/2.10-GCCcore-9.3.0-Python-3.8.2
-module load QIIME2/2021.4
+module load QIIME2/2021.8
 ```
 Move the manifest file in with the data files.   
 
@@ -111,9 +111,9 @@ Move the manifest file in with the data files.
 mv /data/putnamlab/ashuffmyer/AH_MCAP_16S/metadata/sample_manifest.tsv /data/putnamlab/ashuffmyer/AH_MCAP_16S/raw_data/ 
 ```
 
-Run in the AH_MCAP_16S directory.  
+Run in the `AH_MCAP_16S` directory.  
 
-*Note that I had to create a new conda environment*  
+*Note that I had to create a new conda environment, this wont be needed if conda activate works*    
 
 ```
 conda create -n AH_MCAP_16S
@@ -121,7 +121,7 @@ conda activate AH_MCAP_16S
 
 qiime tools import \
   --type 'SampleData[PairedEndSequencesWithQuality]' \
-  --input-path raw_data \
+  --input-path /data/putnamlab/ashuffmyer/AH_MCAP_16S/raw_data/sample_manifest.tsv \
   --input-format PairedEndFastqManifestPhred33V2 \
   --output-path AH-MCAP-16S-paired-end-sequences1.qza
 ```
@@ -139,6 +139,27 @@ Perhaps I am having a problem with the manifest file. E Strand scripts have `$MA
 It seems that we need to update conda/numpy so that it can be accessed in the cluster.  
 
 `conda upgrade numpy` may be the correct solution. Contacting Kevin Bryan to ask about the option to upgrade Conda and numpy.   
+
+K. Bryan updated QIIME2 to QIIME2021.8 on 20211229.  
+
+When I tried the above chunk again, the data entry proceeded, but I had errors in my metadata sheets that needed to be corrected. I resaved as a tab delimited text (.txt) in excel.  
+
+Move this file back into Andromeda 
+
+```
+scp ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/sample_manifest.txt ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/raw_data/ 
+```
+
+This time, it had a problem with duplicate sample id's, which we currently have for listing forward and reverse. Need to figure out what it is looking for in the data manifest file.  
+
+
+  
+
+
+
+
+
+
 
 
 
