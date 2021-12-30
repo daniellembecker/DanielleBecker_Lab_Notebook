@@ -68,6 +68,12 @@ conda env create -f $EBROOTSYMPORTAL/symportal_env.yml
 exit
 ```
 
+
+
+
+
+
+
 Internet connection didn't allow for the download. Trying to download in a bash script.  
 
 `nano install.sh` 

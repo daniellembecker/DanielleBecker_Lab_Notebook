@@ -52,20 +52,25 @@ scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/metadata
 
 #### *Sample manifest file*  
 
-Create a sample manifest file with the following columns: sample-id, absolute-filepath, and direction.  
+Create a sample manifest file with the following columns: sample-id, forward-absolute-path, and reverse-absolute-path. Note that this is different from previous pipeline versions. I originally create a file with a column for direction (e.g., forward or reverse) and had errors loading data due to two lines in the manifest per sample.   
 
-I manually created this files with the filenames and filepath files and added forward  (R1) and reverse (R2).  
+*Sample manifest file should have:*  
+sample-id (e.g., WSH201)  
+forward-absolute-path (file path of R1 read)    
+reverse-absolute-path (file path of R2 read) 
 
-This file is named sample_manifest.csv. 
+Save as a tab-delimited file .txt.  
+
+This file is named sample_manifest.txt.   
 
 Copy back into Andromeda.  
 
 ```
-scp ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/sample_manifest.tsv ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/metadata/ 
+scp ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/sample_manifest.txt ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/metadata/ 
 ```
 
-Sample manifest file looks like this:  
-![manifest](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/manifest_example.png)  
+The file looks like this:  
+![manifest](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/manifest_example.png) 
 
 #### *Sample metadata file*  
 
@@ -91,6 +96,7 @@ More information on [importing data here](https://docs.qiime2.org/2021.11/tutori
 
 - Sequence Data with Sequence Quality Information: because we have fastq files, not fasta files.
 - FASTQ data in paired-end demultiplexed format: because our samples are already demultiplexed and we have 1 file per F and R.
+- Input path directs to the sample manifest file created above.  
 - PairedEndFastqManifestPhred33 option requires a forward and reverse read. This assumes that the PHRED offset for positional quality scores is 33 - [more info here](https://docs.qiime2.org/2021.11/tutorials/importing/#singleendfastqmanifestphred33v2). 
 
 Enter interactive mode and load modules.  
@@ -108,12 +114,12 @@ module load QIIME2/2021.8
 Move the manifest file in with the data files.   
 
 ```
-mv /data/putnamlab/ashuffmyer/AH_MCAP_16S/metadata/sample_manifest.tsv /data/putnamlab/ashuffmyer/AH_MCAP_16S/raw_data/ 
+mv /data/putnamlab/ashuffmyer/AH_MCAP_16S/metadata/sample_manifest.txt /data/putnamlab/ashuffmyer/AH_MCAP_16S/raw_data/ 
 ```
 
-Run in the `AH_MCAP_16S` directory.  
+Run in the `AH_MCAP_16S` directory.   
 
-*Note that I had to create a new conda environment, this wont be needed if conda activate works*    
+Note that I had to create a new conda environment, the previous environment was not present. This step is not needed if `conda activate` works.   
 
 ```
 conda create -n AH_MCAP_16S
@@ -121,7 +127,7 @@ conda activate AH_MCAP_16S
 
 qiime tools import \
   --type 'SampleData[PairedEndSequencesWithQuality]' \
-  --input-path /data/putnamlab/ashuffmyer/AH_MCAP_16S/raw_data/sample_manifest.tsv \
+  --input-path raw_data/sample_manifest.txt \
   --input-format PairedEndFastqManifestPhred33V2 \
   --output-path AH-MCAP-16S-paired-end-sequences1.qza
 ```
@@ -131,40 +137,33 @@ Running this script I got the following error:
 ```
 ValueError: numpy.ndarray size changed, may indicate binary incompatibility. Expected 88 from C header, got 80 from PyObject
 ```
- 
-I tried upgrading numpy (as recommended on the internet) on my computer outside of Andromeda.  This did not resolve the problem, likely becuase installing on my computer does not solve the problem within Andromeda.  
-
-Perhaps I am having a problem with the manifest file. E Strand scripts have `$MANIFEST` in the input path line of the script, but I cannot find information on where this environment is coming from. 
 
 It seems that we need to update conda/numpy so that it can be accessed in the cluster.  
 
 `conda upgrade numpy` may be the correct solution. Contacting Kevin Bryan to ask about the option to upgrade Conda and numpy.   
 
-K. Bryan updated QIIME2 to QIIME2021.8 on 20211229.  
+K. Bryan updated QIIME2 to QIIME2021.8 on 20211229 this includes an upgrade to numpy.  
 
-When I tried the above chunk again, the data entry proceeded, but I had errors in my metadata sheets that needed to be corrected. I resaved as a tab delimited text (.txt) in excel.  
-
-Move this file back into Andromeda 
+Try to import data again. Must re activate conda environment and load modules in interactive mode each time you exit interactive mode.    
 
 ```
-scp ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/sample_manifest.txt ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/raw_data/ 
-```
+interactive 
+module load Miniconda3/4.9.2
+conda activate AH_MCAP_16S 
+module load QIIME2/2021.8
 
-This time, it had a problem with duplicate sample id's, which we currently have for listing forward and reverse. Need to figure out what it is looking for in the data manifest file.  
-
-
+qiime tools import \
+  --type 'SampleData[PairedEndSequencesWithQuality]' \
+  --input-path raw_data/sample_manifest.txt \
+  --input-format PairedEndFastqManifestPhred33V2 \
+  --output-path AH-MCAP-16S-paired-end-sequences1.qza
+``` 
   
+Success! Data imported.  
 
+Output reads: 
+`Imported raw_data/sample_manifest.txt as PairedEndFastqManifestPhred33V2 to AH-MCAP-16S-paired-end-sequences1.qza`  
 
+Now the QIIME artifact named AH-MCAP-16S-paired-end-sequences1.qza lives in the `AH_MCAP_16S` directory.  
 
-
-
-
-
-
-
-### 8. Decide on parameters for QIIME2 analysis
-
-### 9. Run QIIME2  
-
-### 10. Continue with analysis in R     
+##### *Next, we can proceed with data cleaning in QIIME2.*  
