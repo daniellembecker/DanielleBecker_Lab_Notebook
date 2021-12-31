@@ -106,7 +106,7 @@ appears to be corrupted. The path 'site-packages/django/views/generic/base.py'
 specified in the package manifest cannot be found.
 ```
 
-However, when I tried to initiate download again it said that the environment already existed. Proceeding to see if analysis works.    
+However, when I tried to initiate download again it said that the environment already existed. Proceeding with analysis.     
 
 ##### Create a reference database  
 
@@ -135,21 +135,58 @@ exit
 ```
 I had an issue with djano here (error loading django) when entering the `python3 manage.py migrate` function.    
 
----> *AH Currently stuck here*
+The issue is likely that it was trying to run the SymPortal within the data directory and it should be installed in the home 'ashuffmyer' directory. 
 
+Trying instead to run as a bash script using the conda paths from Kevin Wong's scripts that direct SymPortal to the home directory.    
 
+```
+cd scripts
+nano reference.sh
+```
 
+```
+#!/bin/bash
+#SBATCH --job-name="SP_reference"
+#SBATCH -t 500:00:00
+#SBATCH --mem=120GB
+#SBATCH --account=putnamlab
+#SBATCH --export=NONE
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=ashuffmyer@uri.edu
+#SBATCH -D /data/putnamlab/ashuffmyer/SymPortal
+#SBATCH --exclusive
 
+module load Miniconda3/4.9.2
 
+eval "$(conda shell.bash hook)"
+conda activate symportal_env
 
+module load SymPortal/0.3.21-foss-2020b
+module unload
+
+export PYTHONPATH=/data/putnamlab/ashuffmyer/SymPortal/:/data/putnamlab/ashuffmyer/SymPortal/lib/python3.7/site-packages:$PYTHONPATH
+
+export PATH=/data/putnamlab/ashuffmyer/SymPortal/:/data/putnamlab/ashuffmyer/SymPortal/bin:$PATH
+
+python3 manage.py migrate
+
+python3 populate_db_ref_seqs.py
+
+module unload SymPortal/0.3.21-foss-2020b
+
+echo "Mission Complete!" $(date)
+```
+
+This works as a script! The export paths seem to fix the problem.  
 
 ##### Test installation and reference database  
 
 SymPortal was not built to run on a cluster, so permission access was tricky as you cannot write into the master installation module. Therefore, we need to change the python and SymPortal paths to the ones we created in our own directory. Additionally, some of the dependencies needed by SymPortal are only in the master installation module. To use these dependencies but write into our own SymPortal framework, we must load then unload the master SymPortal module in our script.  
 
+`cd scripts`  
 `nano symportal_setup.sh`  
 
-```
+``` 
 #!/bin/bash
 #SBATCH --job-name="SP_setup"
 #SBATCH -t 500:00:00
@@ -179,12 +216,7 @@ python3 -m tests.tests
 echo "Mission Complete!" $(date)
 ``` 
 
-Output looks like this:  
-
-```
-
-```
-
+Job completed.  
 
 ### 6. Load experimental data  
 
@@ -246,7 +278,7 @@ eval "$(conda shell.bash hook)"
 conda activate symportal_env
 
 module load SymPortal/0.3.21-foss-2020b
-module unload SymPortal/0.3.21-foss-2020b
+module unload 
 
 export PYTHONPATH=/data/putnamlab/ashuffmyer/SymPortal/:/data/putnamlab/ashuffmyer/SymPortal/lib/python3.7/site-packages:$PYTHONPATH
 
@@ -257,6 +289,8 @@ main.py --load /data/putnamlab/ashuffmyer/AH_MCAP_ITS2/raw_data \
 --num_proc $SLURM_CPUS_ON_NODE \
 --data_sheet /data/putnamlab/ashuffmyer/AH_MCAP_ITS2/metadata/AH_MCAP_ITS2_meta.csv
 ```  
+Script output indicates 0 sequences "thrown out" due to being too divergent from references. Output file will have information on number of sequences and QC steps.  
+
 
 ### 7. Run analysis in SymPortal  
 
@@ -272,7 +306,7 @@ Create a script within the scripts directory.
 #SBATCH --account=putnamlab
 #SBATCH --export=NONE
 #SBATCH --mail-type=BEGIN,END,FAIL
-#SBATCH --mail-user= ashuffmyer@uri.edu
+#SBATCH --mail-user=ashuffmyer@uri.edu
 #SBATCH -D /data/putnamlab/ashuffmyer/SymPortal
 #SBATCH --exclusive
 
@@ -282,7 +316,7 @@ eval "$(conda shell.bash hook)"
 conda activate symportal_env
 
 module load SymPortal/0.3.21-foss-2020b
-module unload SymPortal/0.3.21-foss-2020b
+module unload 
 
 export PYTHONPATH=/data/putnamlab/ashuffmyer/SymPortal/:/data/putnamlab/ashuffmyer/SymPortal/lib/python3.7/site-packages:$PYTHONPATH
 
@@ -292,19 +326,26 @@ export PATH=/data/putnamlab/ashuffmyer/SymPortal/:/data/putnamlab/ashuffmyer/Sym
 ./main.py --display_data_sets
 
 # Running analysis
-./main.py --analyse 8 --name MCAPdevelop_analysis --num_proc $SLURM_CPUS_ON_NODE
+./main.py --analyse 5 --name MCAPdevelop_analysis --num_proc $SLURM_CPUS_ON_NODE
 
 # Checking data analysis instances
 ./main.py --display_analyses
 ```
+At first this script did not work, so I ran the script only with the #checking dataset number part first. In the slurm output file, this showed that I had 5 datasets. I then replaced the number in the #running analysis step with 5 and the script then worked. Then I ran the whole script again for the analysis.  
 
 ### 8. Export data  
 
 Export the data to your computer.  
 
-UPDATE WITH CORRECT SYMPORTAL FOLDER ID 
+Save and transfer the output files.  
+
 ```
-scp -r ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/SymPortal/outputs/analyses/3/20211216T114913/its2_type_profiles ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/ITS2
+scp -r ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/SymPortal/outputs ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/ITS2
 ```  
 
+### 9. Explore data  
+
+View the `type_abundance_stacked_bar_plot.png` and other `.png` files to view results. In this study, we saw a mix of C and D across life stages, which is expected for M. capitata. We can now do further exploration in R.  
+
+![its2](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/ITS2/its2_types.png)  
 
