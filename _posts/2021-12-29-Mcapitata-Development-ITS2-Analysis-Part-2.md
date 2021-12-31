@@ -349,3 +349,15 @@ View the `type_abundance_stacked_bar_plot.png` and other `.png` files to view re
 
 ![its2](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/ITS2/its2_types.png)  
 
+Next run the data in R to view profiles ordered by lifestage. Script located in the [ITS2.Rmd file here](INSERTHERE).   
+
+ITS2 clade C = C31
+ITS2 clade D = D1, associated species = S. glynnii and S. trenchii  
+
+Relative abundance by samples:  
+![its2](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/ITS2/relabund.png) 
+
+Relative abundance by lifestage:  
+![lifestages](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/ITS2/lifestageits2.png) 
+
+Anova analyses indicate significant differences in relative abundance of C and D between lifestages. It appears that C increases during development and D decreases.  
