@@ -106,18 +106,14 @@ appears to be corrupted. The path 'site-packages/django/views/generic/base.py'
 specified in the package manifest cannot be found.
 ```
 
-It appears that no package downloaded correctly.  
-
-
-
-
-
+However, when I tried to initiate download again it said that the environment already existed. Proceeding to see if analysis works.    
 
 ##### Create a reference database  
 
 Create a reference data base in our SymPortal environment. 
 
 ```
+cd SymPortal 
 interactive
 
 module load Miniconda3/4.9.2
@@ -125,7 +121,7 @@ module load Miniconda3/4.9.2
 eval "$(conda shell.bash hook)"
 conda activate symportal_env
 
-module load SymPortal
+module load SymPortal/0.3.21-foss-2020b
 
 python3 manage.py migrate
 
@@ -137,6 +133,15 @@ module unload SymPortal
 
 exit
 ```
+I had an issue with djano here (error loading django) when entering the `python3 manage.py migrate` function.    
+
+---> *AH Currently stuck here*
+
+
+
+
+
+
 
 ##### Test installation and reference database  
 
