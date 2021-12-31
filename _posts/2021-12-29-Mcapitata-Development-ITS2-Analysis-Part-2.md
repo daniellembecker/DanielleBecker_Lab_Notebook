@@ -337,7 +337,9 @@ At first this script did not work, so I ran the script only with the #checking d
 
 Export the data to your computer.  
 
-Save and transfer the output files.  
+Save and transfer the output files. 
+
+All data can be found in [GitHub here](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/tree/master/Mcap2020/Data/ITS2). 
 
 ```
 scp -r ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/SymPortal/outputs ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/ITS2
@@ -349,7 +351,7 @@ View the `type_abundance_stacked_bar_plot.png` and other `.png` files to view re
 
 ![its2](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/ITS2/its2_types.png)  
 
-Next run the data in R to view profiles ordered by lifestage. Script located in the [ITS2.Rmd file here](INSERTHERE).   
+Next run the data in R to view profiles ordered by lifestage. Script located in the [ITS2.Rmd file here](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/tree/master/Mcap2020/Scripts/ITS2).   
 
 ITS2 clade C = C31
 ITS2 clade D = D1, associated species = S. glynnii and S. trenchii  
