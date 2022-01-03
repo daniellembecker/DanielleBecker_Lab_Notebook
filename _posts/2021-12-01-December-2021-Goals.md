@@ -7,7 +7,7 @@ tags: Goals
 ---
 ### Publications 
 1. Revise and submit intraspecific diversity paper   
-2. ~~Finish revisions~~ and submit larval thermal conditioning paper  
+2. ~~Finish revisions and submit larval thermal conditioning paper~~    
 3. Outline revisions for Life History energetics perspective paper  
 
 ### Data analysis    
