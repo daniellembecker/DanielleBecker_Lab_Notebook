@@ -22,8 +22,8 @@ I am a marine biologist and eco-physiologist working to understand the role of t
 
 Time|Position| Affiliation
 --|--|--
-2020-Present	| Postdoctoral Researcher | University of Rhode Island (URI), Department of Biological Sciences
-2014-2020	| Graduate Research and Teaching Assistant | University of Hawaii at Manoa (UH), Hawaii Institute of Marine Biology (HIMB)
+2020-Present	| Postdoctoral Researcher | University of Rhode Island (URI), Department of Biological Sciences | University of Washington, School of Aquatic and Fisheries Sciences  
+2014-2020	| Graduate Research and Teaching  Assistant | University of Hawaii at Manoa (UH), Hawaii Institute of Marine Biology (HIMB)  
 
 ### EDUCATION
 
@@ -38,6 +38,8 @@ Date|Position| Affiliation
 
 [Google Scholar Profile](https://scholar.google.com/citations?user=_dw3pYEAAAAJ&hl=en)
 
+
+11. Matsuda SB, LJ Chakravarti, R Cunning, **AS Huffmyer**, CE Nelson, RD Gates, MJH van Oppen. 2022. Temperature mediated acquisition of rare heterologous symbionts promotes survival of coral larvae under ocean warming. Global Change Biology. https://doi.org/10.1111/gcb.16057  
 10. **Huffmyer AS**, CJ Johnson, AM Epps, JD Lemus, RD Gates. Feeding and thermal conditioning enhance coral temperature tolerance in juvenile Pocillopora acuta. Royal Society Open Science 8: 210644.  
 9. Barott KL, **AS Huffmyer**, J Davidson, EA Lenz, SB Matsuda, J Hancock, T Innis, B Glazer, C Drury, H Putnam, RD Gates. Fitness of thermally tolerant corals following transplantation supports utility of assisted gene flow for climate change remediation of coral reefs. PNAS 118: e2025435118.  
 8. Innis T, L Allen-Waller, KT Brown, W Sparagon, C Carlson, E Kruse, **AS Huffmyer**, CE Nelson, HM Putnam, KL Barott. Marine heatwaves depress metabolic activity and impair cellular acid-base homeostasis in reef-building corals regardless of bleaching susceptibility. Global Change Biology 27: 2728-2743.  
@@ -71,6 +73,8 @@ Date|Position| Affiliation
 
 #### *Oral Presentations*  
 
+18. **Huffmyer AS**. How do dynamic environmental conditions shape coral symbiosis and metabolism and drive energetic-epigenetic linkages? Moorea Coral Reef LTER All Investigators Meeting. Virtual presentation. November 2021.  
+17. **Huffmyer AS** and K Wong. Pathway analyses for metabolomic data. E5 Rules of Life – Epigenetics Annual Meeting. Virtual presentation. October 2021.   
 16. **Huffmyer AS**. Metabolomics in coral early life history and application of stable isotope tracing. E5 Rules of Life – Epigenetics Annual Meeting. Virtual presentation. April 2021.
 15. **Huffmyer AS**. Early life history nutritional exchange in the reef coral-Symbiodiniaceae symbiosis. E5 Rules of Life – Epigenetics Annual Meeting. Virtual presentation. December 2020.
 14. **Huffmyer AS**, T O’Neill, JD Lemus. Supporting professional science identity for science students. STEMS2 Symposium. Virtual presentation. June 2020.
