@@ -33,7 +33,7 @@ P-trim values are based on primer length:
 - p-trim-left-r 20 (reverse is 20 bp long)
 - p-trim-left-f 19 (forward is 19 bp long)
 
-Primer information for our sequencing run [is here](https://emmastrand.github.io/EmmaStrand_Notebook/16s-Sequencing-HoloInt/).  
+Primer information for our sequencing run [is here](https://emmastrand.github.io/EmmaStrand_Notebook/16s-Sequencing-HoloInt/). We used the V4 primer region.   
 
 P-truncate values are based on where the mean quality scores of R1 and R2 files start to decrease seen in the MultiQC report:    
 
