@@ -21,6 +21,22 @@ The associated R project for this data can be found on [GitHub here](https://git
 
 This pipeline details 16S analysis of MiSeq sequencing data of the bacterial V4 16S region.   
 
+General Workflow:  
+1. [Prepare directory](#1.-Prepare-Directory)   
+2. [Start mothur](#2.-Start-mothur)    
+3. Preparing sequences  
+4. QC sequences  
+5. Unique sequences  
+6. Aligning  
+7. Preclustering  
+8. Identify chimeras  
+9. Classify sequences   
+10. Cluster OTU's  
+11. Subsampling  
+12. Calculate ecological statistics  
+13. Popluation analyses  
+14. Output data for R analysis   
+
 ## **1. Prepare Directory**  
 
 First, prepare a directory that will contain all mothur analyses. This is located within the `AH_MCAP_16S` directory in the URI Andromeda HPCC.  
@@ -1811,4 +1827,4 @@ Outside Andromeda do the following for each file:
 ```
 scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/mothur/mcap.opti_mcc.shared ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/mothur
 
-``
+```
