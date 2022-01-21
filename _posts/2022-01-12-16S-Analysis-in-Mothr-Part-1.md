@@ -22,22 +22,22 @@ The associated R project for this data can be found on [GitHub here](https://git
 This pipeline details 16S analysis of MiSeq sequencing data of the bacterial V4 16S region.   
 
 General Workflow:  
-1. [Prepare directory](#Prepare-Directory)   
-2. [Start mothur](#Start-Mothur)    
-3. Preparing sequences  
-4. QC sequences  
-5. Unique sequences  
-6. Aligning  
-7. Preclustering  
-8. Identify chimeras  
-9. Classify sequences   
-10. Cluster OTU's  
-11. Subsampling  
-12. Calculate ecological statistics  
-13. Popluation analyses  
-14. Output data for R analysis   
+1. [Prepare directory](#Directory)   
+2. [Start mothur](#Start)    
+3. [Preparing sequences](#Prepare)   
+4. [QC sequences](#QC)    
+5. [Unique sequences](#Unique)    
+6. [Aligning](#Align)    
+7. [Preclustering](#Precluster)    
+8. [Identify chimeras](#Chimera)  
+9. [Classify sequences](#Classify)     
+10. [Cluster OTU's](#Cluster)    
+11. [Subsampling](#Subsample)  
+12. [Calculate ecological statistics](#Statistics)  
+13. [Popluation analyses](#Population)  
+14. [Output data for R analysis](#Output)   
 
-## **1. Prepare Directory**  
+## <a name="Directory"></a> **1. Prepare Directory**  
 
 First, prepare a directory that will contain all mothur analyses. This is located within the `AH_MCAP_16S` directory in the URI Andromeda HPCC.  
 
@@ -55,7 +55,7 @@ The current mothur module available is: Mothur/1.46.1-foss-2020b
 
 As of 21 January 2022, this is the current version of Mothur available.  
 
-## **2. Start Mothur**  
+## <a name="Start"></a> **2. Start Mothur**  
 
 Start in interactive mode to see how we can get mothur to run and test that the module is working.  
 
@@ -79,7 +79,7 @@ You can use interactive mode to run computationally small commands.
 
 *In this file, I show each command that will be used and then in each section I show how these commands are run in one bash script. If you want, you can test run each step and then combine all steps into a single bash file to run the job one at a time. However, I recommend running each step separately so that you can view and use information from each step to inform the next analysis.*      
 
-## **3. Preparing Sequences: make.file, make.contig, and summary.seq**  
+## <a name="Prepare"></a> **3. Preparing Sequences: make.file, make.contig, and summary.seq**  
 
 First, we need to prepare files and sequences to be analyzed.  
 
@@ -273,7 +273,7 @@ GTGCCAACCGCCGCGGGAAAAAGGGAGGGGCAAGCGTTATNCGGCATAACTGGGCGTAAAGAGTNCGTAGACGGTAAAGT
 It looks like the primers were removed successfully.  
 
 
-### **4. QC'ing sequences with screen.seqs**    
+### <a name="QC"></a> **4. QC'ing sequences with screen.seqs**    
 
 Now, based on the output above, we need to remove "bad" sequences from the dataset. In the `screen.seqs()` function, we will specify the fasta file of the contigs generated in the previous step and remove any sequence with an ambiguous call ("N"). We will also remove sequences >300 nt. We will also set a minimum size amount (250). These parameters could be adjusted based on specific experiment and variable region.  
 
@@ -347,7 +347,7 @@ Mean:   1	295     295     0	4
 
 We now see that we have removed all sequences with ambigous calls and the max sequence length is <300. Note that in this dataset we have sequences longer than expected for V4. In steps below we will align to a reference V4.  
 
-### **5. Determining and counting unique sequences**  
+### <a name="Unique"></a> **5. Determining and counting unique sequences**  
 
 Next, determine the number of unique sequences. The code will look like this: 
 
@@ -452,7 +452,7 @@ Now we can align just the unique sequences, which will be much faster than align
 
 *From this, we have our unique sequences identified and can proceed with further cleaning and polishing of the data. Next we will look at alignment, error rate, chimeras, classification and further analysis.*  
 
-### **6. Aligning to reference database**
+### <a name="Align"></a> **6. Aligning to reference database**
 
 #### Prepare the reference sequences  
 
@@ -799,7 +799,7 @@ total # of seqs:        245183
 
 From this summary we see that the alignment window spans ~500 bp and the length of our sequences is about 254 nt. We have a maximum polymer of 8 as specified in our settings above.  
 
-### **7. Polish the data with pre clustering**     
+### <a name="Precluster"></a> **7. Polish the data with pre clustering**     
 
 Now we need to further polish and cluster the data with pre.cluster. In Mothur, pre-clustering is done to obtain ASV, or amplicon sequence variants. This will serve as the input for identifying OTUs in future steps. 
 
@@ -947,7 +947,7 @@ Mean:   1	512     254     0	4
 total # of seqs:        245183
 ```
 
-### **8. Identify chimeras**  
+### <a name="Chimera"></a> **8. Identify chimeras**  
 
 Now we will remove chimeras using the dereplicate method. In this method, we are again using the assumption that the highest abundance sequences are most trustworthy. Chimeras are sequences that did not extend during PCR and then served as templates for other PCR products, forming sequences that are partially from one PCR product and partially from another. This program looks for chimeras by comparing each sequences to the next highest abundance sequences to determine if a sequence is a chimera of the more abundance sequences.  
 
@@ -1099,7 +1099,7 @@ Size of smallest group: 106.
 
 The smallest group has 106 sequences. We will later use this number to rarefy our sampling or we can decide to remove low sample groups. 
 
-### **9. Classifying sequences**  
+### <a name="Classify"></a> **9. Classifying sequences**  
 
 Now our sequences are clean and ready for classification!  
 
@@ -1217,7 +1217,7 @@ M00763_26_000000000-K4TML_1_2115_16042_18480	Bacteria(100);"Proteobacteria"(100)
 M00763_26_000000000-K4TML_1_2105_21419_16982	Bacteria(100);"Proteobacteria"(99);Deltaproteobacteria(99);Bdellovibrionales(99);Bacteriovoracaceae(99);Bacteriovorax(99);
 ```
 
-### **10. Cluster for OTUs**  
+### <a name="Cluster"></a> **10. Cluster for OTUs**  
 
 First, we will calculate the pairwise distances between sequences.  
 
@@ -1420,7 +1420,7 @@ Total seqs: 197674.
 *Now we have classified taxonomic data and we are ready to look at ecological statistics!*  
 
 
-### **11. Subsampling for Sequencing Depth**   
+### <a name="Subsample"></a> **11. Subsampling for Sequencing Depth**   
 
 **The remaining commands can all be run in interactive mode. In Andromeda, use the following commands:**   
 
@@ -1514,7 +1514,7 @@ For now, we can proceed without subsampling and then re run analyses with differ
 
 *I recommend running iterations of these analyses with different thresholds for the commands above to see how our data filtering is changed. Then we can make data-driven decisions.*    
 
-### **12. Calculate Ecological Statistics**  
+### <a name="Statistics"></a> **12. Calculate Ecological Statistics**  
 
 Alpha diversity = diversity within a sample 
 Beta diversity = diversity between samples
@@ -1766,7 +1766,7 @@ Note there are NA's due to removal of egg and embryo groups.
 
 There is a significant difference in variation in microbiomes between lifestages with subsampling as well.  
 
-### **13. Population Level Analyses**    
+### <a name="Population"></a> **13. Population Level Analyses**    
 
 There are several tools in mothur we can use to run further analyses on OTU's. Note that we can also do these steps in R, which is what I do with this data.  
 
@@ -1796,7 +1796,7 @@ lefse(shared=mcap.opti_mcc.0.03.subsample.shared, design=mcap_design.txt)
 ```
 
 
-### **14. Output data for analysis in R**  
+### <a name="Output"></a> **14. Output data for analysis in R**  
 
 We can now move some files into R for further analysis. These are the primary files we will be using - the bray curtis distance matrix (distances between samples), the taxonomy file (taxonomy of each otu), and the shared file (otu abundance in each sample). From these we can run PCoA, NMDS, and statistical testing in R (as done above in mothur, but I prefer working in R).   
 
