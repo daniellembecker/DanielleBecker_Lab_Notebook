@@ -22,8 +22,8 @@ The associated R project for this data can be found on [GitHub here](https://git
 This pipeline details 16S analysis of MiSeq sequencing data of the bacterial V4 16S region.   
 
 General Workflow:  
-1. [Prepare directory](#1.-Prepare-Directory)   
-2. [Start mothur](#2.-Start-mothur)    
+1. [Prepare directory](#Prepare-Directory)   
+2. [Start mothur](#Start-Mothur)    
 3. Preparing sequences  
 4. QC sequences  
 5. Unique sequences  
@@ -55,7 +55,7 @@ The current mothur module available is: Mothur/1.46.1-foss-2020b
 
 As of 21 January 2022, this is the current version of Mothur available.  
 
-## **2. Start mothur**  
+## **2. Start Mothur**  
 
 Start in interactive mode to see how we can get mothur to run and test that the module is working.  
 
