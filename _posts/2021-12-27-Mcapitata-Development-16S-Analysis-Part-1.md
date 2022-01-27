@@ -175,7 +175,7 @@ Copy the report to home desktop. Open a terminal session outside of Andromeda an
 
 `scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/fastqc_results/16S_raw_qc_multiqc_report_AH.html ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S`
  
-Initial [MultiQC report ran on 20211227](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/blob/master/Mcap2020/Data/16S/16S_raw_qc_multiqc_report_AH.html) shows several areas that we need to address. MultiQC report including:   
+Initial [MultiQC report ran on 20211227](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/blob/master/Mcap2020/Output/16S/16S_raw_qc_multiqc_report_AH.html) shows several areas that we need to address. MultiQC report including:   
 
 ![counts](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/rawQC/sequencecounts.png)  
 
