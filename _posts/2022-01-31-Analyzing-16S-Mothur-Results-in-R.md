@@ -38,4 +38,23 @@ From these files we will be comparing results from rarefying and therefore remov
 
 I opened these files in Excel and resaved as .txt tab delimited files. 
 
+# Initial visualizations  
+
+I conducted some initial visualizations in R that can be found in scripts in my [GitHub here](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/blob/master/Mcap2020/Scripts/16S/16S_Mothur.Rmd). 
+
+Today, I used the `phyloseq` package to run some preliminary visualizations of data obtained through the mothur pipeline. I followed tutorials on the [Phyloseq wiki](joey711.github.io/phyloseq/) to gain familiarity with the program. 
+
+I generated NMDS plots for both the "full" dataset (no rarefication or subsampling) and the "rare" dataset (with rarefication and therefore reduction in number of samples due to some being low count).  
+
+Here is an NMDS showing lifestage groupings in the "full" dataset:  
+
+![full nmds](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/nmds_prelim_full.png)
+
+
+Here is an NMDS showing lifestage groupings in the "rare" dataset:  
+
+![full nmds](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/nmds_prelim_rare.png)
+
+Right off the bat we notice that there is clear separation in lifestages with a gradient across development (arc from early to late stages). This is very exciting! We will likely find differences in the taxonomic and diversity analyses between these two datasets. But from this preliminary analysis we know that we do see similar groupings by lifestages.  
+
 
