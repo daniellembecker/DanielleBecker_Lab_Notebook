@@ -1,11 +1,11 @@
 ---
 layout: post
-title: 16S Analysis in Mothr Part 1
+title: 16S Analysis in Mothr
 date: '2022-01-12'
 categories: Analysis Mcapitata_EarlyLifeHistory_2020
 tags: 16S Mcapitata Molecular Protocol R
 ---
-This post details 16S data analysis using the Mothur pipeline.  
+This post details 16S data analysis using the Mothur pipeline for the 2020 *Montipora capitata* developmental time series.  
 
 # **Pipeline: 16S analysis in Mothur using HPC**  
 
@@ -104,6 +104,8 @@ Then we will align sequences together for R1 and R2 to generate contigs.
 We will write a bash script to run the `make.contigs()` command and make contigs of forward and reverse reads for each sample. This will assemble contigs for each pair of files and use R1 and R2 quality information to correct any sequencing errors in locations where there is overlap and the quality of the complementary sequence is sufficient. 
 
 We also need to create an "oligos.txt" file in a text editor that has the primer information so that the primer sequences can be removed. Our primers are 515F and 806RB for V4 region. The file for this data has one line and looks like the below. If you have barcodes, you can look at the MiSeq SOP (link above) to view formatting requirements for the oligos file.    
+
+Primer information for these samples is [here](https://emmastrand.github.io/EmmaStrand_Notebook/16s-Sequencing-HoloInt/).  
 
 ```
 nano oligos.oligos 
@@ -247,7 +249,7 @@ This table shows quantile values about the distribution of sequences for a few t
 We should now check that the primers were removed in the `make.contigs` step. 
 
 ```
-head(mcap.trim.contigs.fasta)
+head mcap.trim.contigs.fasta 
 ```
 
 The primers we are looking for are:  
@@ -630,7 +632,7 @@ Mean:   35      13394   290     0	4
 
 ```
 
-From this, we see that 176,417 sequences aligned to the reference, which matches the number of sequences that we had after the unique.sh step (176,417). It looks like we have a funny sequene at the beginning that we will take out. Most sequences are 292 bp in length.  
+From this, we see that 176,417 sequences aligned to the reference, which matches the number of sequences that we had after the unique.sh step (176,417). In the next steps we will filter out any sequences that don't meeting alignment settings. It looks like we have a funny sequene at the beginning that we will take out. Most sequences are 292 bp in length.  
 
 #### QC sequences according to alignment to the reference  
 
@@ -713,7 +715,7 @@ Mean:   1	13424   292     0	4
 total # of seqs:        245183
 ```
 
-We have now removed sequences outside of the window of interest in our alignment to the Silva reference 16S V4 region.    
+We have now "tagged" sequences outside of the window of interest in our alignment to the Silva reference 16S V4 region. In the next step we will actually remove them.     
 
 #### Filter sequences  
 
@@ -1155,6 +1157,8 @@ mothur
 mothur "#classify.seqs(fasta=mcap.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta, count=mcap.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.count_table, reference=trainset9_032012.pds.fasta, taxonomy=trainset9_032012.pds.tax)"
 
 mothur "#remove.lineage(fasta=mcap.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta, count=mcap.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.count_table, taxonomy=mcap.trim.contigs.good.unique.good.filter.unique.precluster.pick.pds.wang.taxonomy, taxon=Chloroplast-Mitochondria-unknown-Archaea-Eukaryota)"
+
+mothur "#summary.seqs(fasta=mcap.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.fasta, count=mcap.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.count_table)"
 ```
 
 ```
@@ -1185,6 +1189,23 @@ The remove.lineage command will remove sequences and provide a report in the out
 Removed 1197 sequences from your fasta file.
 Removed 44556 sequences from your count file.
 
+We also can see the following summary:  
+
+```
+		Start	End	NBases	Ambigs	Polymer	NumSeqs
+Minimum:	1	511	242	0	3	1
+2.5%-tile:	1	513	254	0	3	4943
+25%-tile:	1	513	254	0	4	49423
+Median: 	1	513	254	0	4	98846
+75%-tile:	1	513	254	0	4	148269
+97.5%-tile:	1	513	254	0	6	192749
+Maximum:	1	513	272	0	8	197691
+Mean:	1	512	254	0	4
+# of unique seqs:	7847
+total # of seqs:	197691
+```
+
+We now have 197691 total sequences and 7847 unique sequences.  
 
 The script will then output the following files: 
 
@@ -1202,7 +1223,7 @@ mcap.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.fasta
 
 Now we have the taxon removed that we do not want in our dataset.  
 
-This is the end of the pipeline for curating our sequencing - we have corrected for pcr errors, removed chimeras, and removed sequences outside of taxon of interest. Now we can move onto OTU clustering!
+This is the end of the pipeline for curating our sequencing - we have corrected for pcr errors, removed chimeras, and removed sequences outside of taxon of interest. These are ASV's. Now we can move onto OTU clustering!
 
 View a sample of the taxonomy summary dataset. 
  

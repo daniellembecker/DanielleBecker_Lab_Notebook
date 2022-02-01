@@ -569,6 +569,8 @@ scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processe
 scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/*.qza ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/
 
 scp -r ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/core-metrics-results ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/
+
+scp -r ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/ ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/
 ```
 
 Based on the QIIME2 visualizations (above) we appear to have differences in microbial communities between samples/lifestages. From here, we can visualize results in R.  
