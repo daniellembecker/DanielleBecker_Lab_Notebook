@@ -132,7 +132,7 @@ CRM Accuracy Data
 
 | Date     | CRM value   | Batch value | % off        | Batch # | Notes               |
 |----------|-------------|-------------|--------------|---------|---------------------|
-| 20220131 | 2228.256467 | 2224.47    |  0.170218852 | 180     | CRM opened 20220127 |
+| 20220201 | 2228.256467 | 2224.47    |  0.170218852 | 180     | CRM opened 20220127 |
 
 
 Total Alkalinity Output
@@ -148,3 +148,32 @@ Total Alkalinity Output
 | QT1      | 2817.80180338956 | 59.907 | 35.33    |
 | QT2      | 2818.26455996811 | 59.878 | 35.33    |
 
+
+#### **Data for samples run on 20220203**
+---
+
+**Notes**
+- Before the titration run, salinity was measured following the [conductivity calibration protocol](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resourses/Equipment_Protocols/Orion_MultiParameter_Sensor_Protocol.md#Conductivity).
+- Samples for header tank taken at 12:00 pm for Trident curve.
+
+**Data**
+
+CRM Accuracy Data
+
+| Date     | CRM value   | Batch value | % off        | Batch # | Notes               |
+|----------|-------------|-------------|--------------|---------|---------------------|
+| 20220203 | 2226.157639 | 2224.47    |  0.075867023 | 180     | CRM opened 20220127 |
+
+
+Total Alkalinity Output
+
+| SampleID | TA               | Mass   | Salinity |
+|----------|------------------|--------|----------|
+| JUNK1    | 2652.01868843782 | 60.252 | 35       |
+| HT1      | 2686.50589379584 | 59.991 | 35.61    |
+| HT2      | 2683.72029072224 | 60.372 | 35.61    |
+| BT1      | 2688.06190840313 | 60.247 | 35.2     |
+| BT2      | 2690.26497313937 | 60.139 | 35.2     |
+| BT3      | 2688.90731610684 | 60.408 | 35.2     |
+| QT1      | 2823.76279986172 | 60.342 | 34.84    |
+| QT2      | 2818.53715332585 | 59.842 | 34.84    |
