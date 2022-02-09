@@ -58,3 +58,4 @@ Here is an NMDS showing lifestage groupings in the "rare" dataset:
 Right off the bat we notice that there is clear separation in lifestages with a gradient across development (arc from early to late stages). This is very exciting! We will likely find differences in the taxonomic and diversity analyses between these two datasets. But from this preliminary analysis we know that we do see similar groupings by lifestages.  
 
 
+
