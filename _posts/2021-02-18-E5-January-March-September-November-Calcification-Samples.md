@@ -1,13 +1,18 @@
 ---
 layout: post
-title: E5 Timepoint 1, 2, and 3 Instantaneous Calcification Sample Processing (Samples Collected in 2020)
+title: E5 Timepoint 1, 2, 3, and 4 Instantaneous Calcification Sample Processing (Samples Collected in 2020)
 category: [ Processing, Protocol ]
 tag: [ Physiology, Calcification Samples, Mercuric Chloride Fixed Samples ]
 ---
-## Processing the E5 January, March, September 2020 Instantaneous Calcification Samples
+## Processing the E5 January, March, September, and November 2020 Instantaneous Calcification Samples
 
 ### **Goal**
-Process calcification samples collected for the [E5 uROL Epigenetics Project](https://urol-e5.github.io) from January, March, and September 2020 (timepoints 1, 2, and 3). The samples were collected in January (n = 146), March (n = 151), and September 2020 (n = 51) and fixed with 75uL of saturated mercuric chloride for transportation back to URI on November, 22nd 2020. All samples were brought back from the January and March timepoints, but only 51 bottles could fit in the containers from the September timepoint. The remaining samples for the September and November 2020 timepoints are in Mo'orea in the LTER back lab. The Silbiger lab brought back the remaining samples from Mo'orea for the September 2020 timepoint in August 2021 and processed them on their titrator in October 2021 followint the [Silbiger Lab Titrator Protocols](https://github.com/SilbigerLab/Titrator).
+Process calcification samples collected for the [E5 uROL Epigenetics Project](https://urol-e5.github.io) from January, March, September, and November 2020 (timepoints 1, 2, 3, and 4). The samples were collected in January (n = 146), March (n = 151), September 2020 (n = 114), and November 2020 (n = 145) and fixed with 75uL of saturated mercuric chloride for transportation back to URI on November, 22nd 2020. All samples were brought back from the January and March timepoints November 2020, but only 51 bottles could fit in the containers from the September timepoint. The remaining samples for the September and November 2020 timepoints are as follows: the Silbiger lab brought back the remaining samples from Mo'orea for the September 2020 timepoint in August 2021 and processed them on their titrator in October 2021 following the [Silbiger Lab Titrator Protocols](https://github.com/SilbigerLab/Titrator). The November 2020 samples were brought back to URI by Hollie and Ariana in November 2021. All remaining samples are in the URI CBLS 180 Environmental Room.
+
+### **Samples Remaining**
+- January 2020, 146 samples remaining
+- September 2020, 51 samples remaining
+- November 2020, 145 samples remaining
 
 ### **Process**
 
@@ -18,6 +23,20 @@ Upon the return to URI, we wanted to test the total alkalinity signal we would r
 All samples will be processed following the established [Putnam Lab Titrator Protocol](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resourses/Equipment_Protocols/Titrator_Protocols/Titrator_Protocol.md).
 
 All data processed and collected on the Putnam Lab Titrator will be available on the [Putnam Lab Titrator GitHub Repository](https://github.com/Putnam-Lab/Titrator).
+
+### **Titration Data Entry Process**
+- After uploading titration data to the [Putnam Lab Titrator Repository](https://github.com/Putnam-Lab/Titrator) from the CBLS lab computer, you will need to enter this into the [E5 uROL Epigenetics Project Timeseries Data](https://github.com/urol-e5/timeseries).
+- First, copy the titrator TA outputs for each sample into the respective [TP1](https://github.com/urol-e5/timeseries/blob/master/timepoint_1/data/1_calcification/1_TA_data.csv), [TP2](https://github.com/urol-e5/timeseries/blob/master/timepoint_2/data/2_calcification/2_TA_data.csv), [TP3](https://github.com/urol-e5/timeseries/blob/master/timepoint_3/data/3_calcification/3_TA_data.csv), and [TP4](https://github.com/urol-e5/timeseries/blob/master/timepoint_4/data/4_calcification/4_TA_data.csv) data sheets found in the [E5 uROL Epigenetics Project Timeseries Data Page](https://github.com/urol-e5/timeseries).
+
+**You can find the information highlighted in green from the labels on the bottles, and the rest of the information can be found using the instructions below**
+
+![](https://raw.githubusercontent.com/urol-e5/protocols/master/images/example.E5.TA.datasheet.png)
+
+- Second, you will need to match the corresponding Mo'orea measurements (i.e. lab pH, volume, salinity, and temperature in Mo'orea) and information into these data sheets as well.
+  - The information for this can be found in each individual timeseries 1, 2, 3, and 4 folders on the [E5 uROL Epigenetics Project Timeseries Data Page](https://github.com/urol-e5/timeseries).
+  - To find this corresponding information for specific samples and blanks, you will look at the [1_DeltaTA_metadata.csv](https://github.com/urol-e5/timeseries/blob/master/timepoint_1/data/1_calcification/1_DeltaTA_metadata.csv), [2_DeltaTA_metadata.csv](https://github.com/urol-e5/timeseries/blob/master/timepoint_2/data/2_calcification/2_DeltaTA_metadata.csv), [3_DeltaTA_metadata.csv](https://github.com/urol-e5/timeseries/blob/master/timepoint_3/data/3_calcification/3_DeltaTA_metadata.csv), and [4_DeltaTA_metadata.csv](https://github.com/urol-e5/timeseries/blob/master/timepoint_4/data/4_calcification/4_DeltaTA_metadata.csv) data sheets.
+  - To find this information for the initial water samples, you will look at the [2_initial_TA_samples.csv](https://github.com/urol-e5/timeseries/blob/master/timepoint_2/data/2_calcification/2_initial_TA_samples.csv), [3_initial_TA_samples.csv](https://github.com/urol-e5/timeseries/blob/master/timepoint_3/data/3_calcification/3_initial_TA_samples.csv), and [4_initial_TA_samples.csv](https://github.com/urol-e5/timeseries/blob/master/timepoint_4/data/4_calcification/4_initial_TA_samples.csv) data sheets. I have not been able to find the initial sample data sheet for TP1 so you may need to ask Ariana and/or Hollie.
+- I have completed all of the samples for timepoint 2 (March 2020) so if you want to see data examples for comparison that is a good place to look.
 
 
 #### **Data and notes for testing pH probe and buffers on 20210221**
@@ -564,3 +583,35 @@ Total Alkalinity Output
 | BK-12     | 2328.61428528263 | 60.067 | 39.43    |
 | POR-76    | 2155.56493361319 | 60.179 | 39.53    |
 | ACR-140   | 2277.19768756345 | 59.914 | 39.75    |
+
+#### **Data and notes for processing E5 samples TP2, Run 12 samples (5), Run 13 samples (8) 20220210**
+
+**Notes**
+- All samples looked good. Updated timeseries data to urol-e5 GitHub.
+
+**Data**
+
+CRM Accuracy Data
+
+| Date     | CRM value | Batch value | % off    | Batch # | Notes               |
+|----------|-----------|-------------|----------|---------|---------------------|
+| 20220210 | 2228.61 | 2224.47     | 0.186111748	 | 180     | CRM OPENED 20220118 |
+
+
+Total Alkalinity Output
+
+| SampleID   | TA               | Mass   | Salinity | Run |
+|------------|------------------|--------|----------|-----|
+| POR_82     | 2274.19295228573 | 60.378 | 40.55    | 12  |
+| POC_57     | 2319.26422775354 | 59.96  | 40.76    | 12  |
+| INITIAL2   | 2340.15165922546 | 60.448 | 40.73    | 12  |
+| POC_43     | 2318.78430225776 | 60.445 | 40.78    | 12  |
+| ACR_51     | 2280.9306575261  | 60.203 | 40.76    | 12  |
+| INITIAL2.1 | 2330.66583042499 | 60.354 | 40.55    | 13  |
+| INITIAL1   | 2335.34615075794 | 59.857 | 40.69    | 13  |
+| BK_13      | 2334.90676472687 | 59.544 | 40.72    | 13  |
+| POC-53 | 2318.41849540092 | 60.117 | 40.65 | 13 |
+| POR-83 | 2239.15805644992 | 59.85  | 40.61 | 13 |
+| POR-72 | 2310.663725872   | 59.733 | 40.65 | 13 |
+| POR-75 | 2227.34385113541 | 60.328 | 40.63 | 13 |
+| POC-52 | 2171.03862117238 | 60.093 | 40.65 | 13 |
