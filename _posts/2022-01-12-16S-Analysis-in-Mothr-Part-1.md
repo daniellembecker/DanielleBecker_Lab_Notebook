@@ -1906,3 +1906,5 @@ Outside Andromeda do the following for each file:
 scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/mothur/mcap.opti_mcc.shared ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/mothur
 
 ```
+
+After copying to the computer, I resave these files at tab delimited (.txt). In the taxonomy file, I also separate the taxa by ";" in Excel before saving at a .txt. We need to finalize these steps in R.  
