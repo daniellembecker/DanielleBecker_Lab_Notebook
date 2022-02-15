@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 16S Pipeline in Mothr
+title: 16S Pipeline in Mothur
 date: '2022-01-12'
 categories: Analysis Mcapitata_EarlyLifeHistory_2020
 tags: 16S Mcapitata Molecular Protocol R
@@ -1907,4 +1907,4 @@ scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/mothur/mc
 
 ```
 
-After copying to the computer, I resave these files at tab delimited (.txt). In the taxonomy file, I also separate the taxa by ";" in Excel before saving at a .txt. We need to finalize these steps in R.  
+After copying to the computer, I resave these files at tab delimited (.txt). In the taxonomy file, I also separate the taxa by ";" in Excel before saving at a .txt. I then add "Domain, Phylum, Class, Order, Family" headings in the taxonomy file.  We need to finalize these steps in R.  
