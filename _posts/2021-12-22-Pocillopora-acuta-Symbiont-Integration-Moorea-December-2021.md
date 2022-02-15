@@ -3,7 +3,7 @@ layout: post
 title: Pocillopora acuta Symbiont Integration Moorea December 2021
 date: '2021-12-22'
 categories: Pocillopora_Integration_Moorea_2021
-tags: Pacuta Protocol Reproduction Sampling ExperimentalDesign StableIsotopes
+tags: Pacuta Protocol Reproduction Sampling ExperimentalDesign StableIsotopes Respirometry
 ---
 This post details all activities in Moorea in December 2021 for Symbiont Integration project for the study species *Pocillopora acuta*.  
 

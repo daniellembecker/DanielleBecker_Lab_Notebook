@@ -3,7 +3,7 @@ layout: post
 title: ITS2 and 16s Extractions
 date: '2021-12-22'
 categories: Mcapitata_EarlyLifeHistory_2020
-tags: Mcapitata Processing Protocol Molecular
+tags: Mcapitata Processing 16S ITS2 Protocol Molecular
 ---
 This posts describes extraction protocols for ITS2 and 16s sequencing for the 2020 *Montipora capitata* developmental time series.  
 
