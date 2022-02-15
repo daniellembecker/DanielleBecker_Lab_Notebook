@@ -6,11 +6,11 @@ categories: Monthly_Goals
 tags: Goals
 ---
 ### Writing 
-1. Finish methods of *Montipora capitata* development manuscript  
+1. ~~Finish methods of *Montipora capitata* development manuscript~~    
 2. Write results of *Montipora capitata* development manuscript  
 3. Start discussion of *Montipora capitata* development manuscript  
 
-*Publications in progress*: Science education (revision in review), larval thermal conditioning (in review), urchin climate change (in revision).    
+*Publications in progress*: Science education (needs a revision), larval thermal conditioning (accepted!), urchin climate change (in revision).    
 
 ### Data analysis     
 1. Finalize *Montipora capitata* gene expression WGCNA and GOMWU + write notebook post 
