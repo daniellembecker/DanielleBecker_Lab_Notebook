@@ -406,6 +406,7 @@ scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processe
 
 scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/*.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/analysis_Feb16
 
+scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/metadata/sample_metadata.txt ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/analysis_Feb16
 
 ```
 
