@@ -150,11 +150,10 @@ From the table visualization (table.qzv), we get information on the number of fe
 Classifier: classify-sklearn. This was recommended by QIIME2.
 database: silva-138-99-515-806-nb-classifier.qza. This was most relevant to the primers used.
 
-Download the classifier database  
-
 ```
 cd metadata  
-wget https://data.qiime2.org/2021.4/common/silva-138-99-515-806-nb-classifier.qza
+
+wget https://data.qiime2.org/2021.11/common/silva-138-99-515-806-nb-classifier.qza
 ```  
 
 First run "unfiltered", we will use the output of this analysis to inform a "filtered" analysis next.  
@@ -164,7 +163,7 @@ cd ../scripts
 nano taxonomic_id.sh
 ```
 
-Create the script.  
+Create the script. 
 
 ```
 #!/bin/bash
@@ -253,10 +252,12 @@ qiime metadata tabulate \
     --o-visualization tabulated-feature-metadata.qzv
 ```
 
-Move all visualization files to the desktop.  
+Move relevant visualization files to the desktop. We will move all files over in the next steps.   
 
 ```
-scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/*.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/
+scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/taxa-bar-plots.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/analysis_Feb16
+
+scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/taxa-bar-plots-filtered.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/analysis_Feb16
 
 ```
 Before filtering, our taxonomy (level 1) looks like this: 
@@ -315,16 +316,11 @@ qiime phylogeny midpoint-root \
   --o-rooted-tree rooted-tree.qza
 ```
 
-Move all files to the desktop.  
-
-```
-scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/rooted-tree.qza ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/
-
-scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/unrooted-tree.qza ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/
-
-```
-
 ### 11. Calculate Diversity Metrics     
+
+In these scripts, we set the subsampling to 5570, which is the lowest sequence count in our samples. Visualizing sample depth in table.qzv shows that if we subsample to 5570 we retained 217,230 (30.64%) features in 39 (100.00%) samples.  
+
+Note that if you are re-running results, you'll need to `rm -r core-metrics-results`. The script will not overwrite the output directory if it already exists.  
 
 ```
 cd scripts
@@ -340,8 +336,8 @@ nano diversity.sh
 #SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
 #SBATCH --mail-user=ashuffmyer@uri.edu #your email to send notifications
 #SBATCH --account=putnamlab                 
-#SBATCH --error="idfiltered_script_error" #if your job fails, the error report will be put in this file
-#SBATCH --output="idfiltered_output_script" #once your job is completed, any final job report comments will be put in this file
+#SBATCH --error="diversity_script_error" #if your job fails, the error report will be put in this file
+#SBATCH --output="diversity_output_script" #once your job is completed, any final job report comments will be put in this file
 
 source /usr/share/Modules/init/sh # load the module function
 module load QIIME2/2021.8
@@ -354,7 +350,7 @@ METADATA="../metadata/sample_metadata.txt"
 qiime diversity core-metrics-phylogenetic \
   --i-phylogeny rooted-tree.qza \
   --i-table table-filtered.qza \
-  --p-sampling-depth 95 \
+  --p-sampling-depth 5570 \
   --m-metadata-file $METADATA \
   --output-dir core-metrics-results
 
@@ -370,13 +366,13 @@ qiime diversity alpha-group-significance \
 qiime diversity beta-group-significance \
   --i-distance-matrix core-metrics-results/unweighted_unifrac_distance_matrix.qza \
   --m-metadata-file $METADATA \
-  --m-metadata-column Timepoint \
+  --m-metadata-column lifestage \
   --o-visualization core-metrics-results/unweighted-unifrac-station-significance.qzv \
   --p-pairwise
 qiime diversity beta-group-significance \
   --i-distance-matrix core-metrics-results/unweighted_unifrac_distance_matrix.qza \
   --m-metadata-file $METADATA  \
-  --m-metadata-column Treatment \
+  --m-metadata-column lifestage \
   --o-visualization core-metrics-results/unweighted-unifrac-group-significance.qzv \
   --p-pairwise
 
@@ -384,194 +380,50 @@ qiime diversity beta-group-significance \
   qiime diversity alpha-rarefaction \
     --i-table table-filtered.qza \
     --i-phylogeny rooted-tree.qza \
-    --p-max-depth 800 \
+    --p-max-depth 5570 \
     --m-metadata-file $METADATA \
     --o-visualization alpha-rarefaction.qzv
 ```
 
-Move all visualization files to the desktop.  
+Move all data files to the desktop.  
 
 ```
-scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/*.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/
+scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/alpha-rarefaction.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/analysis_Feb16
 
-scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/*.qza ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/
+scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/tabulated-feature-metadata.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/analysis_Feb16
 
-scp -r ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/core-metrics-results ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/
+scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/taxonomy.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/analysis_Feb16
+
+scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/table.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/analysis_Feb16
+
+scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/denoising-stats.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/analysis_Feb16
+
+scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/core-metrics-results/*.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/analysis_Feb16
+
+scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/core-metrics-results/*.qza ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/analysis_Feb16
+
+scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/*.qza ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/analysis_Feb16
+
+scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/*.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/analysis_Feb16
+
 
 ```
 
+Rarefaction curve at the sampling depth we used:  
 ![rarefraction](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/rarefraction.png) 
 
-![bray](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/bray_emperor.png) 
+Faith's Phylogenetic Diversity:   
+![alpha](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/alpha_diversity.png) 
+
+Unifrac PERMANOVA group distances:  
+![unifrac](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/group_unifrac.png)  
 
 
-![unifrac](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/unifrac.png)  
+We can now build other visualizations in R.  
 
 Based on these preliminary analyses, it looks as though we have some interesting groupings by lifestage.  
 
-All data can be found on [GitHub here](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/tree/master/Mcap2020/Data/16S).  
-
-### Bonus! Assembled script from start to finish in QIIME2 analysis.  
-
-This script includes all commands required for analysis once data is loaded into QIIME2. If filtering parameters need to be changed, this is a good option for running everything at once rather than individually.  
-
-This script is written to run after all the above has been run (it does not include wget commands for example). Once your directories and environment are set up, this will run. 
-
-```
-cd scripts
-nano qiime.sh
-```  
-
-```
-#!/bin/bash
-#SBATCH -t 500:00:00
-#SBATCH --nodes=1 --ntasks-per-node=1
-#SBATCH --export=NONE
-#SBATCH --mem=500GB
-#SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
-#SBATCH --mail-user=ashuffmyer@uri.edu #your email to send notifications
-#SBATCH --account=putnamlab                 
-#SBATCH --error="qiime_script_error" #if your job fails, the error report will be put in this file
-#SBATCH --output="qiime_output_script" #once your job is completed, any final job report comments will be put in this file
-
-
-source /usr/share/Modules/init/sh # load the module function
-module load QIIME2/2021.8
-
-cd ../processed_data
-
-# Metadata path
-METADATA="../metadata/sample_metadata.txt"
-
-### DENOISING
-qiime dada2 denoise-paired --verbose --i-demultiplexed-seqs ../raw_data/AH-MCAP-16S-paired-end-sequences1.qza \
-  --p-trunc-len-r 192 --p-trunc-len-f 245 \
-  --p-trim-left-r 20 --p-trim-left-f 19 \
-  --o-table table.qza \
-  --o-representative-sequences rep-seqs.qza \
-  --o-denoising-stats denoising-stats.qza \
-  --p-n-threads 20
-
-# Summarize feature table and sequences
-  qiime metadata tabulate \
-    --m-input-file denoising-stats.qza \
-    --o-visualization denoising-stats.qzv
-  qiime feature-table summarize \
-    --i-table table.qza \
-    --o-visualization table.qzv \
-    --m-sample-metadata-file $METADATA
-  qiime feature-table tabulate-seqs \
-    --i-data rep-seqs.qza \
-    --o-visualization rep-seqs.qzv
-
-### TAXONOMIC IDENTIFICATION  
-qiime feature-classifier classify-sklearn \
-  --i-classifier ../metadata/silva-138-99-515-806-nb-classifier.qza \
-  --i-reads rep-seqs.qza \
-  --o-classification taxonomy.qza
-
-qiime metadata tabulate \
-    --m-input-file taxonomy.qza \
-    --o-visualization taxonomy.qzv
-qiime taxa barplot \
-    --i-table table.qza \
-    --i-taxonomy taxonomy.qza \
-    --m-metadata-file $METADATA \
-    --o-visualization taxa-bar-plots.qzv
-qiime metadata tabulate \
-    --m-input-file rep-seqs.qza \
-    --m-input-file taxonomy.qza \
-    --o-visualization tabulated-feature-metadata.qzv
-
-qiime taxa filter-table \
-     --i-table table.qza \
-     --i-taxonomy taxonomy.qza \
-     --p-mode contains \
-     --p-exclude "Unassigned","Chloroplast","Eukaryota" \
-     --o-filtered-table table-filtered.qza
-
-qiime metadata tabulate \
-    --m-input-file taxonomy.qza \
-    --o-visualization taxonomy.qzv
-qiime taxa barplot \
-    --i-table table-filtered.qza \
-    --i-taxonomy taxonomy.qza \
-    --m-metadata-file $METADATA \
-    --o-visualization taxa-bar-plots-filtered.qzv
-qiime metadata tabulate \
-    --m-input-file rep-seqs.qza \
-    --m-input-file taxonomy.qza \
-    --o-visualization tabulated-feature-metadata.qzv
-    
-### PHYLOGENETIC TREES  
-# align and mask sequences
-qiime alignment mafft \
-  --i-sequences rep-seqs.qza \
-  --o-alignment aligned-rep-seqs.qza
-qiime alignment mask \
-  --i-alignment aligned-rep-seqs.qza \
-  --o-masked-alignment masked-aligned-rep-seqs.qza
-
-# calculate tree
-qiime phylogeny fasttree \
-  --i-alignment masked-aligned-rep-seqs.qza \
-  --o-tree unrooted-tree.qza
-qiime phylogeny midpoint-root \
-  --i-tree unrooted-tree.qza \
-  --o-rooted-tree rooted-tree.qza
-
-### CALCULATE DIVERSITY
-qiime diversity core-metrics-phylogenetic \
-  --i-phylogeny rooted-tree.qza \
-  --i-table table-filtered.qza \
-  --p-sampling-depth 95 \
-  --m-metadata-file $METADATA \
-  --output-dir core-metrics-results
-
-qiime diversity alpha-group-significance \
-  --i-alpha-diversity core-metrics-results/faith_pd_vector.qza \
-  --m-metadata-file $METADATA \
-  --o-visualization core-metrics-results/faith-pd-group-significance.qzv
-qiime diversity alpha-group-significance \
-  --i-alpha-diversity core-metrics-results/evenness_vector.qza \
-  --m-metadata-file $METADATA \
-  --o-visualization core-metrics-results/evenness-group-significance.qzv
-
-qiime diversity beta-group-significance \
-  --i-distance-matrix core-metrics-results/unweighted_unifrac_distance_matrix.qza \
-  --m-metadata-file $METADATA \
-  --m-metadata-column Timepoint \
-  --o-visualization core-metrics-results/unweighted-unifrac-station-significance.qzv \
-  --p-pairwise
-qiime diversity beta-group-significance \
-  --i-distance-matrix core-metrics-results/unweighted_unifrac_distance_matrix.qza \
-  --m-metadata-file $METADATA  \
-  --m-metadata-column Treatment \
-  --o-visualization core-metrics-results/unweighted-unifrac-group-significance.qzv \
-  --p-pairwise
-
-# This script calculates the rarefaction curve for the data
-  qiime diversity alpha-rarefaction \
-    --i-table table-filtered.qza \
-    --i-phylogeny rooted-tree.qza \
-    --p-max-depth 800 \
-    --m-metadata-file $METADATA \
-    --o-visualization alpha-rarefaction.qzv
-    
-echo "Mission complete!" $(date)  
-```
-
-Move all visualization files to desktop.  
-
-```
-scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/*.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/
-
-scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/*.qza ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/
-
-scp -r ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/core-metrics-results ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/
-
-scp -r ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/ ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/
-```
+All data can be found on [GitHub here](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/tree/master/Mcap2020/Output/16S).  
 
 Based on the QIIME2 visualizations (above) we appear to have differences in microbial communities between samples/lifestages. From here, we can visualize results in R.  
 
