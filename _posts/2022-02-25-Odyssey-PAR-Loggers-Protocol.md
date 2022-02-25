@@ -51,6 +51,8 @@ Contents
 
  - Two Odyssey RS232 cables were received on February 23rd 2022.
  - One Odyssey light logger opener was received on February 23rd 2022.
+ 
+ ![](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/Odyssey_RS232_cables.jpg)
 
 
 ###  <a name="Light_cal"></a> **Light Calibration Protocol**
