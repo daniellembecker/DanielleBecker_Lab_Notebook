@@ -19,6 +19,7 @@ To determine the light fluctuations and number of lights you need to set up, you
 Contents
 - [**Materials**](#Materials)
 - [**Inventory**](#Inventory)
+- [**Odyssey PAR Logger Set Up**](#set_up)
 - [**Light Calibration Protocol**](#Light_cal)
 - [**Deployment Protocol**](#Deployment)
 - [**Manuals**](#Manuals)
@@ -31,7 +32,7 @@ Contents
  - [Odyssey Windows software](http://odysseydatarecording.com/index.php?route=product/category&path=66)
  - [RS232 Interface Cable](http://odysseydatarecording.com/index.php?route=product/product&product_id=56)
  - [USB to RS232 connection cable with FTDI Chipset](https://www.amazon.com/Adapter-Chipset，DB9-Serial-Converter-Windows/dp/B0759HSLP1/ref=sr_1_3?crid=2EWXCCFMD2UE8&keywords=USB-to-RS-232+FTDI+chipset+adapter+cable&qid=1645647165&sprefix=usb-to-rs-232+ftdi+chipset+adapter+cable%2Caps%2C68&sr=8-3)
- - Allen wrench (included in shipment from Odyssey)
+ - Allen wrench (included in shipment from Odyssey; also called hex key)
  - Windows computer
  - 4-5 [Aqua Illumination lights](https://www.aquaillumination.com/products/prime)
  - 4-5 [Aqua Illumination light prime flex arms](https://www.aquaillumination.com/accessories)
@@ -57,6 +58,22 @@ Contents
  - One Odyssey light logger opener was received on February 23rd 2022.
 
  ![](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/Odyssey_RS232_cables.jpg)
+
+
+###  <a name="set_up"></a> **Odyssey PAR Logger Set Up**
+
+**Protocol Steps**
+1. Before using the Odyssey PAR loggers, you must remove the **red washer** that is placed under the positive battery port before being able to connect. It is located on the top left side in the photo below.
+
+![](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/Odyssey_red_washer.jpg)
+
+2. Remove the cap of the loggers and use the hex key to carefully remove the screw, metal washer, and red plastic washer next to the red wire on the positive battery port.
+
+![](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/Odyssey_red_washer_screw_removed.jpg)
+
+3. Carefully put back in the metal washer and screw into the positive battery port. I suggest turning the logger over and placing the washer and screw in and holding it in place with the hex key before turning it over and screwing it in. It will look like the photo below.
+
+![](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/Odyssey_red_washer_removed.jpg)
 
 
 ###  <a name="Light_cal"></a> **Light Calibration Protocol**
