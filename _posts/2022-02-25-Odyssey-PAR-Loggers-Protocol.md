@@ -12,6 +12,10 @@ tag: [ Light Logger, PAR, Odyssey ]
 ### Goal:
 Use an integrating light source (LICOR LI-1500) to properly calibrate the four Odyssey PAR light loggers to be used in Mo'orea, French Polynesia.
 
+### Considerations:
+To determine the light fluctuations and number of lights you need to set up, you need to plan the light flux from zero to the highest light levels they could possibly see in the field at your field site.
+  - For example, Jill Ashey was using light levels distinct to Rhode Island and saw light flux from 0 to ~500 photon flux density. While, I had to plan for light flux in Mo'orea, French Polynesia which can range from 0 to ~3,000 photon flux density. So while Jill used two lights in her set up, I needed to have five lights to get the range I needed.
+
 Contents
 - [**Materials**](#Materials)
 - [**Inventory**](#Inventory)
@@ -51,11 +55,13 @@ Contents
 
  - Two Odyssey RS232 cables were received on February 23rd 2022.
  - One Odyssey light logger opener was received on February 23rd 2022.
- 
+
  ![](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/Odyssey_RS232_cables.jpg)
 
 
 ###  <a name="Light_cal"></a> **Light Calibration Protocol**
+
+**For specific set-up instructions, follow the LICOR_Logger_Calibration Protocol [here](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resources/Equipment_Protocols/LICOR_logger_calibration.md).**
 
 **Protocol Steps**
 1.
