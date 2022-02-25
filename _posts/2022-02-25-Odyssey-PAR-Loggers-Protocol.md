@@ -81,7 +81,13 @@ Contents
 **For specific set-up instructions, follow the LICOR_Logger_Calibration Protocol [here](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resources/Equipment_Protocols/LICOR_logger_calibration.md).**
 
 **Protocol Steps**
-1.
+1. See below for my example set up, make sure the Odyssey PAR loggers and LICOR sensor are upright and directly in the line of full light.
+
+![](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/Odyssey_cooler_setup.jpg)
+
+![](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/Odyssey_par_logger_setup.jpg)
+
+
 
 ###  <a name="Deployment"></a> **Deployment Protocol**
 
