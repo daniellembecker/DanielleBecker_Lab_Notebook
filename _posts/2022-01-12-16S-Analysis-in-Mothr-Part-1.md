@@ -207,6 +207,28 @@ Descriptions of contig files:
 *Groups file* = what group each sequence belongs to map sequence to each sample from the trimmed sequence file.  
 *Contigs report file* = information on sequences that were aligned and paired together. 
 
+We can then download and blast the "scrap" files to see what these are identified as. We can view more information in the report.   
+
+```
+scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/mothur/mcap.scrap.contigs.fasta ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/mothur/QC
+
+scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/mothur/mcap.scrap.contigs.fasta ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/mothur/QC
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 If you have barcodes, you can use the `oligos` command to direct to a file that has the primer and barcode information during the contig step. [See more information here](https://mothur.org/wiki/oligos_file/#).  
 
 The following files were output from the make.contigs() step:  
@@ -1924,3 +1946,12 @@ scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/mothur/mc
 ```
 
 After copying to the computer, I resave these files at tab delimited (.txt). In the taxonomy file, I also separate the taxa by ";" in Excel before saving at a .txt. I then add "Domain, Phylum, Class, Order, Family" headings in the taxonomy file.  We need to finalize these steps in R.  
+
+Finally, move sequences to personal computer. 
+
+```
+scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/raw_data/*.gz ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/Sequences
+
+scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/raw_data/*.txt ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/16S/Sequences
+
+```

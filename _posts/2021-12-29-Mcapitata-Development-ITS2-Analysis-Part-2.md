@@ -363,3 +363,10 @@ Relative abundance by lifestage:
 ![lifestages](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/ITS2/lifestageits2.png) 
 
 Anova analyses indicate significant differences in relative abundance of C and D between lifestages. It appears that C increases during development and D decreases.  
+
+Finally, move sequences to personal computer. 
+
+```
+scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_ITS2/raw_data/*.gz ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Data/ITS2/Sequences
+
+``` 
