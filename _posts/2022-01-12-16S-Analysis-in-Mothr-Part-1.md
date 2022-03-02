@@ -1871,6 +1871,11 @@ mcap.opti_mcc.0.03.subsample.shared
 mcap.opti_mcc.shared
 ```
 
+Rarefaction file:  
+```
+mcap.opti_mcc.groups.rarefaction
+```
+
 Outside Andromeda do the following for each file:  
 
 ```
@@ -1879,6 +1884,7 @@ scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/mothur/mc
 scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/mothur/mcap.taxonomy ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/mothur
 scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/mothur/mcap.opti_mcc.0.03.subsample.shared ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/mothur
 scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/mothur/mcap.opti_mcc.shared ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/mothur
+scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/mothur/mcap.opti_mcc.groups.rarefaction ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/mothur
 ```
 
 After copying to the computer, I resave these files at tab delimited (.txt). In the taxonomy file, I also separate the taxa by ";" in Excel before saving at a .txt. I then add "Domain, Phylum, Class, Order, Family" headings in the taxonomy file.  We need to finalize these steps in R.  
