@@ -1211,7 +1211,7 @@ mothur
 
 mothur "#classify.seqs(fasta=mcap.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta, count=mcap.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.count_table, reference=trainset9_032012.pds.fasta, taxonomy=trainset9_032012.pds.tax)"
 
-mothur "#remove.lineage(fasta=mcap.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta, count=mcap.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.count_table, taxonomy=mcap.trim.contigs.good.unique.good.filter.unique.precluster.pick.pds.wang.taxonomy, taxon=Cyanobacteria_Chloroplast)"
+mothur "#remove.lineage(fasta=mcap.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta, count=mcap.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.count_table, taxonomy=mcap.trim.contigs.good.unique.good.filter.unique.precluster.pick.pds.wang.taxonomy, taxon=Cyanobacteria_Chloroplast-Chloroplast-Mitochondria-unknown-Archaea-Eukaryota)"
 
 mothur "#summary.seqs(fasta=mcap.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.fasta, count=mcap.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.count_table)"
 ``` 
@@ -1263,31 +1263,31 @@ Removed 59 sequences from your count file.
 No contaminants to remove. This is expected since we aligned to the bacterial database.  
 
 *Removing Cyanobacteria_Chloroplast*  
-Removed 1186 sequences from your fasta file.  
-Removed 50976 sequences from your count file.  
+Removed 1186 sequences from your fasta file.    
+Removed 50976 sequences from your count file.    
+Note that this is largely what is removed in the Chloroplast step, so the Chloroplast and Cyanobacteria chloroplast overlap in sequences.  
 
 *Removing all lineages*   
-Removed 1155 sequences from your fasta file.  
-Removed 46312 sequences from your count file.    
+Removed 1286 sequences from your fasta file.  
+Removed 51758 sequences from your count file.    
 
 We also can see the following summary:  
 
 ```
                 Start   End     NBases  Ambigs  Polymer NumSeqs
 Minimum:        1	527     250     0	3	1
-2.5%-tile:	1	528     262     0	3	5016
-25%-tile:	1	528     262     0	4	50156
-Median:         1	528     262     0	4	100311
-75%-tile:	1	528     262     0	5	150466
-97.5%-tile:     1	528     262     0	6	195606
-Maximum:        2	528     280     0	8	200621
+2.5%-tile:	1	528     262     0	3	4996
+25%-tile:	1	528     262     0	4	49960
+Median:         1	528     262     0	4	99920
+75%-tile:	1	528     262     0	5	149880
+97.5%-tile:     1	528     262     0	6	194844
+Maximum:        2	528     280     0	8	199839
 Mean:   1	527     262     0	4
-# of unique seqs:	7632
-total # of seqs:        200621
-
+# of unique seqs:	7532
+total # of seqs:        199839
 ```
 
-We now have 200,621 total sequences and 7,632 unique sequences.  
+We now have 199,839 total sequences and 7,532 unique sequences.  
 
 The script will then output the following files: 
 
@@ -1475,45 +1475,45 @@ count=mcap.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch
 The count of sequences in each file are:  
 
 ```
-WSH174 contains 9471.
-WSH175 contains 1324.
-WSH176 contains 5410.
-WSH177 contains 26935.
-WSH178 contains 4450.
-WSH179 contains 25016.
+WSH174 contains 9448.
+WSH175 contains 1319.
+WSH176 contains 5407.
+WSH177 contains 26867.
+WSH178 contains 4433.
+WSH179 contains 24988.
 WSH180 contains 835.
-WSH181 contains 517.
-WSH182 contains 270.
+WSH181 contains 513.
+WSH182 contains 266.
 WSH183 contains 121.
-WSH184 contains 310.
-WSH185 contains 12940.
-WSH186 contains 1114.
-WSH187 contains 4027.
-WSH188 contains 1686.
+WSH184 contains 309.
+WSH185 contains 12908.
+WSH186 contains 1111.
+WSH187 contains 4007.
+WSH188 contains 1678.
 WSH189 contains 172.
-WSH190 contains 622.
+WSH190 contains 621.
 WSH191 contains 278.
 WSH192 contains 186.
-WSH193 contains 3244.
+WSH193 contains 3236.
 WSH194 contains 234.
-WSH195 contains 3540.
+WSH195 contains 3536.
 WSH196 contains 286.
-WSH201 contains 428.
-WSH202 contains 450.
-WSH203 contains 2424.
-WSH204 contains 1929.
-WSH205 contains 3168.
-WSH206 contains 4999.
-WSH207 contains 6684.
-WSH208 contains 13514.
-WSH209 contains 10770.
-WSH210 contains 9070.
-WSH211 contains 14186.
-WSH212 contains 5830.
-WSH213 contains 4513.
-WSH214 contains 13337.
-WSH215 contains 1658.
-WSH216 contains 4673.
+WSH201 contains 426.
+WSH202 contains 449.
+WSH203 contains 2381.
+WSH204 contains 1927.
+WSH205 contains 3156.
+WSH206 contains 4987.
+WSH207 contains 6619.
+WSH208 contains 13451.
+WSH209 contains 10739.
+WSH210 contains 8992.
+WSH211 contains 14019.
+WSH212 contains 5805.
+WSH213 contains 4498.
+WSH214 contains 13313.
+WSH215 contains 1656.
+WSH216 contains 4662.
 
 Size of smallest group: 121.
 ```
@@ -1552,18 +1552,18 @@ It may be helpful to run this with multiple iterations. If you do not include a 
 
 ```
 WSH180 contains 835. Eliminating.
-WSH181 contains 517. Eliminating.
-WSH182 contains 270. Eliminating.
+WSH181 contains 513. Eliminating.
+WSH182 contains 266. Eliminating.
 WSH183 contains 121. Eliminating.
-WSH184 contains 310. Eliminating.
+WSH184 contains 309. Eliminating.
 WSH189 contains 172. Eliminating.
-WSH190 contains 622. Eliminating.
+WSH190 contains 621. Eliminating.
 WSH191 contains 278. Eliminating.
 WSH192 contains 186. Eliminating.
 WSH194 contains 234. Eliminating.
 WSH196 contains 286. Eliminating.
-WSH201 contains 428. Eliminating.
-WSH202 contains 450. Eliminating.
+WSH201 contains 426. Eliminating.
+WSH202 contains 449. Eliminating.
 Sampling 1000 from each group.
 ```  
 
@@ -1616,9 +1616,9 @@ I am going to use subsample=1000 to remove the low sequence count stages.
 summary.single(shared=mcap.opti_mcc.shared, calc=nseqs-sobs-chao-shannon-invsimpson, subsample=1000)
 ```
 
+In a new Andromeda window (outside mothur).  
 ```
-Output File Names: 
-mcap.opti_mcc.groups.ave-std.summary
+less mcap.opti_mcc.groups.ave-std.summary
 ```
 
 Open this file to view statistics for each sample. The method column has ave (average of each of the metrics across the 1000 iteractions) or std (this is the std deviation of the average calculation).  
@@ -1681,9 +1681,9 @@ pcoa(phylip=mcap.opti_mcc.braycurtis.0.03.lt.dist)
 
 ```
 Processing...
-Rsq 1 axis: 0.412775
-Rsq 2 axis: 0.650434
-Rsq 3 axis: 0.631163
+Rsq 1 axis: 0.419531
+Rsq 2 axis: 0.661573
+Rsq 3 axis: 0.645606
 
 Output File Names: 
 mcap.opti_mcc.braycurtis.0.03.lt.pcoa.axes
@@ -1698,9 +1698,9 @@ pcoa(phylip=mcap.opti_mcc.braycurtis.0.03.lt.ave.dist)
 
 ```
 Processing...
-Rsq 1 axis: 0.486885
-Rsq 2 axis: 0.507452
-Rsq 3 axis: 0.70816
+Rsq 1 axis: 0.48495
+Rsq 2 axis: 0.512541
+Rsq 3 axis: 0.71141
 
 Output File Names: 
 mcap.opti_mcc.braycurtis.0.03.lt.ave.pcoa.axes
@@ -1719,8 +1719,8 @@ nmds(phylip=mcap.opti_mcc.braycurtis.0.03.lt.dist)
 
 ```
 Number of dimensions:	2
-Lowest stress :	0.309502
-R-squared for configuration:	0.7069
+Lowest stress :	0.308031
+R-squared for configuration:	0.71123
 
 Output File Names: 
 mcap.opti_mcc.braycurtis.0.03.lt.nmds.iters
@@ -1736,8 +1736,8 @@ nmds(phylip=mcap.opti_mcc.braycurtis.0.03.lt.ave.dist)
 
 ```
 Number of dimensions:	2
-Lowest stress :	0.282946
-R-squared for configuration:	0.698997
+Lowest stress :	0.281742
+R-squared for configuration:	0.703092
 
 Output File Names: 
 mcap.opti_mcc.braycurtis.0.03.lt.ave.nmds.iters
@@ -1746,8 +1746,6 @@ mcap.opti_mcc.braycurtis.0.03.lt.ave.nmds.axes
 ``` 
 
 If you run NMDS each time, you will get the same clustering/points but they might be rotated on different axes.  
-
-Stress value was <1 so that is good and lower in the subsampled dataset. 
 
 The iters file will also have information on stress values for each time it ran the tests.
 
@@ -1775,11 +1773,11 @@ This outputs pairwise comparisons between stages. There is a significant effect 
 
 ```
 EggFertilized-Embryo1-Larvae1-Larvae2-Larvae3-Larvae4-Larvae6-Recruit1-Recruit1plug-Recruit2-Recruit2plug	Among	Within	Total
-SS	8.2217	6.47099	14.6927
+SS	8.24943	6.40084	14.6503
 df	10	28	38
-MS	0.82217	0.231107
+MS	0.824943	0.228602
 
-Fs:	3.55753
+Fs:	3.60865
 p-value: <0.001*
 ```
 
@@ -1797,11 +1795,11 @@ amova(phylip=mcap.opti_mcc.braycurtis.0.03.lt.ave.dist, design=mcap_design.txt, 
 
 ```
 Larvae1-Larvae2-Larvae3-Larvae4-Larvae6-Recruit1-Recruit1plug-Recruit2-Recruit2plug	Among	Within	Total
-SS	5.28413	2.74365	8.02778
+SS	5.26248	2.72787	7.99034
 df	8	17	25
-MS	0.660516	0.161391
+MS	0.65781	0.160463
 
-Fs:	4.09264
+Fs:	4.09946
 p-value: <0.001*
 
 ```
@@ -1824,7 +1822,9 @@ homova(phylip=mcap.opti_mcc.braycurtis.0.03.lt.dist, design=mcap_design.txt)
 ```
 
 ```
-EggFertilized-Embryo1-Larvae1-Larvae2-Larvae3-Larvae4-Larvae6-Recruit1-Recruit1plug-Recruit2-Recruit2plug	-nan	<0.001*	0.229638	0.172451	0.298745	0.219668	0.127439	0.0707176	0.286395	-nan	0.323709	0.25479	0.387563
+HOMOVA	BValue	P-value	SSwithin/(Ni-1)_values
+EggFertilized-Embryo1-Larvae1-Larvae2-Larvae3-Larvae4-Larvae6-Recruit1-Recruit1plug-Recruit2-Recruit2plug	-nan	<0.001*	0.212107	0.171277	0.298598	0.218722	0.127314	0.0710606	0.286777	-nan	0.324554	0.254493	0.380313
+
 
 mcap.opti_mcc.braycurtis.0.03.lt.homova
 ```
@@ -1840,7 +1840,7 @@ homova(phylip=mcap.opti_mcc.braycurtis.0.03.lt.ave.dist, design=mcap_design.txt)
 
 ```
 HOMOVA	BValue	P-value	SSwithin/(Ni-1)_values
-Larvae1-Larvae2-Larvae3-Larvae4-Larvae6-Recruit1-Recruit1plug-Recruit2-Recruit2plug	-nan	<0.001*	0.0623914	0.0546469	0.0644869	0.0725424	0.254826	-nan	0.259015	0.220974	0.232055
+Larvae1-Larvae2-Larvae3-Larvae4-Larvae6-Recruit1-Recruit1plug-Recruit2-Recruit2plug	-nan	<0.001*	0.062777	0.0539804	0.0634763	0.0732464	0.25485	-nan	0.260393	0.219021	0.21717
 
 mcap.opti_mcc.braycurtis.0.03.lt.ave.homova
 ```
