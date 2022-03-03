@@ -1181,7 +1181,7 @@ The tax.summary file has the taxonimc level, the name of the taxonomic group, an
 We will also remove sequences that are classified to Chloroplast, Mitochondria, Unknown (not bacteria, archaea, or eukaryotes), Archaea, and Eukaryotes. 
 
 ```
-remove.lineage(fasta=mcap.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta, count=mcap.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.count_table, taxonomy=mcap.trim.contigs.good.unique.good.filter.unique.precluster.pick.pds.wang.taxonomy, taxon=Chloroplast-Mitochondria-unknown-Archaea-Eukaryota)
+remove.lineage(fasta=mcap.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta, count=mcap.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.count_table, taxonomy=mcap.trim.contigs.good.unique.good.filter.unique.precluster.pick.pds.wang.taxonomy, taxon=Cyanobacteria_Chloroplast-Chloroplast-Mitochondria-unknown-Archaea-Eukaryota)
 ```
 
 Write a script to classify and remove lineages. 
@@ -1211,7 +1211,7 @@ mothur
 
 mothur "#classify.seqs(fasta=mcap.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta, count=mcap.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.count_table, reference=trainset9_032012.pds.fasta, taxonomy=trainset9_032012.pds.tax)"
 
-mothur "#remove.lineage(fasta=mcap.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta, count=mcap.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.count_table, taxonomy=mcap.trim.contigs.good.unique.good.filter.unique.precluster.pick.pds.wang.taxonomy, taxon=Chloroplast-Mitochondria-unknown-Archaea-Eukaryota)"
+mothur "#remove.lineage(fasta=mcap.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta, count=mcap.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.count_table, taxonomy=mcap.trim.contigs.good.unique.good.filter.unique.precluster.pick.pds.wang.taxonomy, taxon=Cyanobacteria_Chloroplast)"
 
 mothur "#summary.seqs(fasta=mcap.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.fasta, count=mcap.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.count_table)"
 ``` 
@@ -1262,6 +1262,10 @@ Removed 59 sequences from your count file.
 *Removing only Eukaryotes* 
 No contaminants to remove. This is expected since we aligned to the bacterial database.  
 
+*Removing Cyanobacteria_Chloroplast*  
+Removed 1186 sequences from your fasta file.  
+Removed 50976 sequences from your count file.  
+
 *Removing all lineages*   
 Removed 1155 sequences from your fasta file.  
 Removed 46312 sequences from your count file.    
@@ -1271,19 +1275,19 @@ We also can see the following summary:
 ```
                 Start   End     NBases  Ambigs  Polymer NumSeqs
 Minimum:        1	527     250     0	3	1
-2.5%-tile:	1	528     262     0	3	5133
-25%-tile:	1	528     262     0	4	51322
-Median:         1	528     262     0	4	102643
-75%-tile:	1	528     262     0	4	153964
-97.5%-tile:     1	528     262     0	6	200153
-Maximum:        2	528     280     0	8	205285
+2.5%-tile:	1	528     262     0	3	5016
+25%-tile:	1	528     262     0	4	50156
+Median:         1	528     262     0	4	100311
+75%-tile:	1	528     262     0	5	150466
+97.5%-tile:     1	528     262     0	6	195606
+Maximum:        2	528     280     0	8	200621
 Mean:   1	527     262     0	4
-# of unique seqs:	7663
-total # of seqs:        205285
+# of unique seqs:	7632
+total # of seqs:        200621
 
 ```
 
-We now have 205,285 total sequences and 7,663 unique sequences.  
+We now have 200,621 total sequences and 7,632 unique sequences.  
 
 The script will then output the following files: 
 
@@ -1471,45 +1475,45 @@ count=mcap.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch
 The count of sequences in each file are:  
 
 ```
-WSH174 contains 9551.
-WSH175 contains 1331.
-WSH176 contains 5623.
-WSH177 contains 27210.
-WSH178 contains 4518.
-WSH179 contains 29197.
-WSH180 contains 843.
-WSH181 contains 649.
-WSH182 contains 267.
+WSH174 contains 9471.
+WSH175 contains 1324.
+WSH176 contains 5410.
+WSH177 contains 26935.
+WSH178 contains 4450.
+WSH179 contains 25016.
+WSH180 contains 835.
+WSH181 contains 517.
+WSH182 contains 270.
 WSH183 contains 121.
-WSH184 contains 312.
-WSH185 contains 13056.
-WSH186 contains 1142.
-WSH187 contains 4051.
-WSH188 contains 1690.
+WSH184 contains 310.
+WSH185 contains 12940.
+WSH186 contains 1114.
+WSH187 contains 4027.
+WSH188 contains 1686.
 WSH189 contains 172.
-WSH190 contains 625.
+WSH190 contains 622.
 WSH191 contains 278.
-WSH192 contains 192.
-WSH193 contains 3246.
-WSH194 contains 237.
-WSH195 contains 3536.
+WSH192 contains 186.
+WSH193 contains 3244.
+WSH194 contains 234.
+WSH195 contains 3540.
 WSH196 contains 286.
-WSH201 contains 432.
-WSH202 contains 456.
-WSH203 contains 2382.
-WSH204 contains 1927.
-WSH205 contains 3156.
-WSH206 contains 4993.
-WSH207 contains 6626.
-WSH208 contains 13451.
-WSH209 contains 10739.
-WSH210 contains 8993.
-WSH211 contains 14019.
-WSH212 contains 5805.
-WSH213 contains 4507.
-WSH214 contains 13331.
-WSH215 contains 1664.
-WSH216 contains 4671.
+WSH201 contains 428.
+WSH202 contains 450.
+WSH203 contains 2424.
+WSH204 contains 1929.
+WSH205 contains 3168.
+WSH206 contains 4999.
+WSH207 contains 6684.
+WSH208 contains 13514.
+WSH209 contains 10770.
+WSH210 contains 9070.
+WSH211 contains 14186.
+WSH212 contains 5830.
+WSH213 contains 4513.
+WSH214 contains 13337.
+WSH215 contains 1658.
+WSH216 contains 4673.
 
 Size of smallest group: 121.
 ```
@@ -1547,19 +1551,19 @@ mcap.opti_mcc.0.03.subsample.shared
 It may be helpful to run this with multiple iterations. If you do not include a size=# argument, then mothur will automatically set to the lowest sequence. If I set this to 1000, for example the output shows that several samples are removed because there are <1000 samples: 
 
 ```
-WSH180 contains 843. Eliminating.
-WSH181 contains 649. Eliminating.
-WSH182 contains 267. Eliminating.
+WSH180 contains 835. Eliminating.
+WSH181 contains 517. Eliminating.
+WSH182 contains 270. Eliminating.
 WSH183 contains 121. Eliminating.
-WSH184 contains 312. Eliminating.
+WSH184 contains 310. Eliminating.
 WSH189 contains 172. Eliminating.
-WSH190 contains 625. Eliminating.
+WSH190 contains 622. Eliminating.
 WSH191 contains 278. Eliminating.
-WSH192 contains 192. Eliminating.
-WSH194 contains 237. Eliminating.
+WSH192 contains 186. Eliminating.
+WSH194 contains 234. Eliminating.
 WSH196 contains 286. Eliminating.
-WSH201 contains 432. Eliminating.
-WSH202 contains 456. Eliminating.
+WSH201 contains 428. Eliminating.
+WSH202 contains 450. Eliminating.
 Sampling 1000 from each group.
 ```  
 
@@ -1880,10 +1884,15 @@ Outside Andromeda do the following for each file:
 
 ```
 scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/mothur/mcap.opti_mcc.braycurtis.0.03.lt.dist ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/mothur
+
 scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/mothur/mcap.opti_mcc.braycurtis.0.03.lt.ave.dist ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/mothur
+
 scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/mothur/mcap.taxonomy ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/mothur
+
 scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/mothur/mcap.opti_mcc.0.03.subsample.shared ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/mothur
+
 scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/mothur/mcap.opti_mcc.shared ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/mothur
+
 scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/mothur/mcap.opti_mcc.groups.rarefaction ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/mothur
 ```
 
