@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Mcapitata Development 16S Analysis Part 3
+title: Mcapitata Development 16S Analysis in QIIME2
 date: '2021-12-30'
 categories: Mcapitata_EarlyLifeHistory_2020
 tags: 16S Mcapitata Molecular Protocol
@@ -33,12 +33,16 @@ P-trim values are based on primer length:
 - p-trim-left-r 20 (reverse is 20 bp long)
 - p-trim-left-f 19 (forward is 19 bp long)
 
-Primer information for our sequencing run [is here](https://emmastrand.github.io/EmmaStrand_Notebook/16s-Sequencing-HoloInt/). We used the V4 primer region.   
+`  --p-trim-left-r 20 --p-trim-left-f 19 \`
+
+*The code does not include these primer trimming parameters because our sequences were returned without primers*   
+
+Information for our sequencing run [is here](https://emmastrand.github.io/EmmaStrand_Notebook/16s-Sequencing-HoloInt/). We used the V4 primer region.   
 
 P-truncate values are based on where the mean quality scores of R1 and R2 files start to decrease seen in the MultiQC report:    
 
-- p-trunc-len-r 192
-- p-trunc-len-f 245
+- p-trunc-len-r 282  
+- p-trunc-len-f 282  
 
 Forward sequences: 
 ![forward](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/forwardquality.png)  
@@ -68,6 +72,8 @@ Other commands used in the script are as follows:
 
 This script will also generate qiime metadata table, feature-table summarized and feature-table tabulated. This will be output in the `processed_data` directory and the script lives in the `script` directory.   
 
+`nano denoise.sh`  
+
 ```
 #!/bin/bash
 #SBATCH -t 24:00:00
@@ -89,8 +95,8 @@ cd ../processed_data
 METADATA="../metadata/sample_metadata.txt"
 
 qiime dada2 denoise-paired --verbose --i-demultiplexed-seqs ../raw_data/AH-MCAP-16S-paired-end-sequences1.qza \
-  --p-trunc-len-r 192 --p-trunc-len-f 245 \
-  --p-trim-left-r 20 --p-trim-left-f 19 \
+  --p-trunc-len-r 192 --p-trunc-len-f 247 \
+  --p-trim-left-r 0 --p-trim-left-f 0 \
   --o-table table.qza \
   --o-representative-sequences rep-seqs.qza \
   --o-denoising-stats denoising-stats.qza \
@@ -129,7 +135,7 @@ We get the following metadata table:
 
 ![denoise](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/16S/denoise_meta.png) 
 
-Approx. 70-75% of sequence input passed the filters set in the script above. 
+Approx. 65-70% of sequence input passed the filters set in the script above. 
 
 Percentage of non-chimeric is approx. 40-50%.  
 
@@ -252,12 +258,20 @@ qiime metadata tabulate \
     --o-visualization tabulated-feature-metadata.qzv
 ```
 
+
+
+
+
+
+
+
+
 Move relevant visualization files to the desktop. We will move all files over in the next steps.   
 
 ```
-scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/taxa-bar-plots.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/analysis_Feb16
+scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/taxa-bar-plots.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/
 
-scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/taxa-bar-plots-filtered.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/analysis_Feb16
+scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/taxa-bar-plots-filtered.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/
 
 ```
 Before filtering, our taxonomy (level 1) looks like this: 
@@ -385,28 +399,39 @@ qiime diversity beta-group-significance \
     --o-visualization alpha-rarefaction.qzv
 ```
 
+
+
+
+
+
+
+
+
+
+
+
 Move all data files to the desktop.  
 
 ```
-scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/alpha-rarefaction.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/analysis_Feb16
+scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/alpha-rarefaction.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/
 
-scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/tabulated-feature-metadata.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/analysis_Feb16
+scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/tabulated-feature-metadata.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/
 
-scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/taxonomy.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/analysis_Feb16
+scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/taxonomy.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/
 
-scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/table.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/analysis_Feb16
+scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/table.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/
 
-scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/denoising-stats.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/analysis_Feb16
+scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/denoising-stats.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/
 
-scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/core-metrics-results/*.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/analysis_Feb16
+scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/core-metrics-results/*.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/
 
-scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/core-metrics-results/*.qza ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/analysis_Feb16
+scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/core-metrics-results/*.qza ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/
 
-scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/*.qza ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/analysis_Feb16
+scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/*.qza ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/
 
-scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/*.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/analysis_Feb16
+scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/processed_data/*.qzv ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/
 
-scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/metadata/sample_metadata.txt ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/analysis_Feb16
+scp ashuffmyer@bluewaves.uri.edu:/data/putnamlab/ashuffmyer/AH_MCAP_16S/metadata/sample_metadata.txt ~/MyProjects/EarlyLifeHistory_Energetics/Mcap2020/Output/16S/qiime/
 
 ```
 
