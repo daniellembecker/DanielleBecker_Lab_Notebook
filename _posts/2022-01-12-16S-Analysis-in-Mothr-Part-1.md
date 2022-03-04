@@ -102,13 +102,12 @@ Then we will align sequences together for R1 and R2 to generate contigs.
 
 We will write a bash script to run the `make.contigs()` command and make contigs of forward and reverse reads for each sample. This will assemble contigs for each pair of files and use R1 and R2 quality information to correct any sequencing errors in locations where there is overlap and the quality of the complementary sequence is sufficient. 
 
-We also need to create an "oligos.txt" file in a text editor that has the primer information so that the primer sequences can be removed. Our primers are 515F and 806RB for V4 region. The file for this data has one line and looks like the below. If you have barcodes, you can look at the MiSeq SOP (link above) to view formatting requirements for the oligos file.    
+We can also create an "oligos.txt" file in a text editor that has the primer and barcode information if we need to demultiplex. We do not need to do this here. If you have barcodes, you can look at the MiSeq SOP (link above) to view formatting requirements for the oligos file.    
 
 Primer information for these samples is [here](https://emmastrand.github.io/EmmaStrand_Notebook/16s-Sequencing-HoloInt/).  
 
+The format would look like this:  
 ```
-nano oligos.oligos 
-
 primer GTGCCAGCMGCCGCGGTAA GGACTACNVGGGTWTCTAAT
 ```
 
