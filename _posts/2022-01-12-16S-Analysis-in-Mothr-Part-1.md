@@ -102,22 +102,26 @@ Then we will align sequences together for R1 and R2 to generate contigs.
 
 We will write a bash script to run the `make.contigs()` command and make contigs of forward and reverse reads for each sample. This will assemble contigs for each pair of files and use R1 and R2 quality information to correct any sequencing errors in locations where there is overlap and the quality of the complementary sequence is sufficient. 
 
-We can also create an "oligos.txt" file in a text editor that has the primer and barcode information if we need to demultiplex. We do not need to do this here. If you have barcodes, you can look at the MiSeq SOP (link above) to view formatting requirements for the oligos file.    
+We can also create an "oligos.txt" file in a text editor that has the primer and barcode information if we need to demultiplex. We have primers to remove, so we will use an oligo file for the primers. If you have barcodes, you can look at the MiSeq SOP (link above) to view formatting requirements for the oligos file.    
 
 Primer information for these samples is [here](https://emmastrand.github.io/EmmaStrand_Notebook/16s-Sequencing-HoloInt/).  
 
-The format would look like this:  
+The format looks like this:  
 ```
 primer GTGCCAGCMGCCGCGGTAA GGACTACNVGGGTWTCTAAT
 ```
+
+We will allow for pdiffs=2 (primer differences=2). Degenerate primers can be used in our oligos file. We are also using check orient to allow Mothur to "flip" the reverse primer if it is not found.  
 
 In the make.contigs step, we need to use trimoverlap=T because we used 2x300 bp sequences that is longer than our amplicon length. 
 
 The code will look like this:  
 
 ```
-make.contigs(inputdir=., outputdir=., file=mcap.files, oligos=oligos.oligos, trimoverlap=T)
+make.contigs(inputdir=., outputdir=., file=mcap.files, trimoverlap=T, oligos=oligos.oligos, pdiffs=2, checkorient=t)
 ```
+
+Because we added an oligos file, make.contigs will remove the primers on these sequences.  
 
 #### summary.seqs()  
 
@@ -156,7 +160,7 @@ mothur
 
 mothur "#make.file(inputdir=., type=gz, prefix=mcap)"
 
-mothur "#make.contigs(inputdir=., outputdir=., file=mcap.files, trimoverlap=T)"
+mothur "#make.contigs(inputdir=., outputdir=., file=mcap.files, trimoverlap=T, oligos=oligos.oligos, pdiffs=2, checkorient=t)"
 
 mothur "#summary.seqs(fasta=mcap.trim.contigs.fasta)"
 
@@ -210,11 +214,11 @@ grep -c "^>" mcap.trim.contigs.fasta
 grep -c "^>" mcap.scrap.contigs.fasta
 ```
 
-I repeated the repeat contigs step with a few settings to try to troubleshoot the loss of sequences at this step. I suspect we are not treating our primers appropriately. Here are the results: 
+I repeated the repeat contigs step with a few settings to try to troubleshoot the loss of sequences at this step. Here are the results: 
 
 317,884 sequences were kept and 1,194,315 were removed.  *with trimoverlap=T*    
 317,884 sequences were kept and 1,194,315 were removed.  *with trimoverlap=T+checkorient=T*   
-1,131,991 sequences were kept and 337,769 were removed.  *with trimoverlap=T+checkorient=T+pdiffs=2*   
+1,165,947 sequences were kept and 346,252 were removed.  *with trimoverlap=T+checkorient=T+pdiffs=2*   
 
 ```
 #make.contigs(inputdir=., outputdir=., file=mcap.files, oligos=oligos.oligos, trimoverlap=T, checkorient=T, pdiffs=2)"
@@ -226,36 +230,13 @@ I repeated the repeat contigs step with a few settings to try to troubleshoot th
 #make.contigs(inputdir=., outputdir=., file=mcap.files, trimoverlap=T)"
 ```
 
+Since we have primers, we will use trimoverlap=T, checkorient=T, and pdiffs=2.  
+
 View the scrap file to see what error codes are included for the sequences that were removed.  
 
 ```
 head -100 mcap.scrap.contigs.fasta
 ```
-
-*We get very different amounts of sequences kept depending on if we use an oligos file and what our pdiff value is. I keep way more sequences if I have pdiffs=2 and even more without an oligos file. But I think the oligos file is for when we need to demultiplex - which we dont.*  
-
-View the kept sequences and search (command+F) for the primer sequences: 
-
-```
-head -1000 mcap.trim.contigs.fasta
-```
-
-The primers we are looking for are: 
-
-`F GTGCCAGCMGCCGCGGTAA R GGACTACNVGGGTWTCTAAT`
-
-When I search for the primer sequences in this file they do not show up. Grep to count for any total number of primer sequences.  
-
-```
-grep -c "GTGCCAGCMGCCGCGGTAA" mcap.trim.contigs.fasta
-grep -c "GGACTACNVGGGTWTCTAAT" mcap.trim.contigs.fasta
-
-grep -c "GTGCCAGCMGCCGCGGTAA" mcap.scrap.contigs.fasta
-grep -c "GGACTACNVGGGTWTCTAAT" mcap.scrap.contigs.fasta
-```
-The primers show up 0 times in the kept contigs and scrap sequences. The primers are not present. Therefore, we do not need an oligos file.  
-
-Results below are from running `make.contigs` with `trimoverlap=T` and no oligos file.  
 
 View the contigs report.  
 
@@ -280,14 +261,14 @@ Scroll to the bottom to find the summary information.
 ``` 
                 Start   End     NBases  Ambigs  Polymer NumSeqs
 Minimum:        1	1	1	0	1	1
-2.5%-tile:	1	35	35	0	3	37550
-25%-tile:	1	247     247     0	5	375495
-Median:         1	247     247     0	7	750989
-75%-tile:	1	247     247     1	7	1126483
-97.5%-tile:     1	292     292     35	35	1464428
-Maximum:        1	305     305     137     35	1501977
-Mean:   1	214     214     6	10
-# of Seqs:	1501977
+2.5%-tile:	1	206     206     0	4	29149
+25%-tile:	1	207     207     0	5	291487
+Median:         1	207     207     0	7	582974
+75%-tile:	1	253     253     0	7	874461
+97.5%-tile:     1	253     253     3	7	1136799
+Maximum:        1	281     281     56	15	1165947
+Mean:   1	218     218     0	6
+# of Seqs:	1165947
 ``` 
 
 
@@ -299,6 +280,58 @@ This table shows quantile values about the distribution of sequences for a few t
 - *Ambigs*: Number of ambiguous calls in sequences. Here there are a few that have ambiguous base calls. We will remove any sequence with an ambiguous call or any longer than we would expect for V4 region.   
 - *Polymer*: Length of polymer repeats.    
 - *NumSeqs*: Number of sequences.  
+
+
+#### Check for primers     
+
+The primers we are looking for are: 
+
+`F GTGCCAGCMGCCGCGGTAA R GGACTACNVGGGTWTCTAAT`
+
+View the file to see if the primers are on our sequences: 
+
+```
+head -1000 mcap.trim.contigs.fasta
+```
+
+Search for the primers in our contigs.    
+
+We have M, W, N, V in our primers (degenerate bases). Generate multiple possibilities for each primer to search for.    
+
+Here is the key for degenerate bases:  
+R=A+G
+Y=C+T
+M=A+C
+K=G+T
+S=G+C
+W=A+T
+H=A+T+C
+B=G+T+C
+D=G+A+T
+V=G+A+C
+N=A+C+G+T (remove if on the end)  
+
+
+Search for forward primers: 
+```
+grep -c "GTGCCAGCAGCCGCGGTAA" mcap.trim.contigs.fasta
+grep -c "GTGCCAGCCGCCGCGGTAA" mcap.trim.contigs.fasta
+```
+
+These primers show up <1 time in our file. 
+
+Search for a couple examples of the reverse primers: 
+
+```
+grep -c "GGACTACAGGGGTATCTAAT" mcap.trim.contigs.fasta
+grep -c "GGACTACCAGGGTTTCTAAT" mcap.trim.contigs.fasta
+grep -c "GGACTACGCGGGTATCTAAT" mcap.trim.contigs.fasta
+grep -c "GGACTACTGGGGTTTCTAAT" mcap.trim.contigs.fasta
+```
+
+These primers show up 0 times in our files. 
+
+Success! Our primers are removed.  
 
 ### <a name="QC"></a> **4. QC'ing sequences with screen.seqs**    
 
@@ -354,6 +387,14 @@ This generates the following output files:
 
 "good" seqs satisfied criteria and "bad" seqs did not meet criteria. 
 
+
+
+
+
+
+
+
+
 Count the number of "good" and "bad" sequences.  
 
 ```
@@ -361,9 +402,9 @@ grep -c "^>" mcap.trim.contigs.good.fasta
 grep -c ".*" mcap.trim.contigs.bad.accnos
 ```
 
-950,129 sequences were kept and 551,848 were removed. 
+952,592 sequences were kept and 213,355 were removed. 
 
-This removed ~35% of sequences due to length and ambiguous bases.  
+This removed ~18% of sequences due to length and ambiguous bases.  
 
 You can also view the `bad.accnos` file to see why sequences were removed.  
 
@@ -375,15 +416,15 @@ The summary output as viewed by `nano screen_output_script` file now reads:
 
 ```
                 Start   End     NBases  Ambigs  Polymer NumSeqs
-Minimum:        1	200     200     0	3	1
-2.5%-tile:	1	247     247     0	4	23754
-25%-tile:	1	247     247     0	5	237533
-Median:         1	247     247     0	7	475065
-75%-tile:	1	292     292     0	7	712597
-97.5%-tile:     1	292     292     0	7	926376
-Maximum:        1	300     300     0	19	950129
-Mean:   1	258     258     0	6
-# of Seqs:	950129
+Minimum:        1       200     200     0       3       1
+2.5%-tile:      1       207     207     0       4       23815
+25%-tile:       1       207     207     0       5       238149
+Median:         1       207     207     0       7       476297
+75%-tile:       1       253     253     0       7       714445
+97.5%-tile:     1       253     253     0       7       928778
+Maximum:        1       281     281     0       13      952592
+Mean:   		   1       219     219     0       6
+# of Seqs:      952592
 
 ```
 
@@ -470,23 +511,22 @@ mcap.trim.contigs.good.count_table
 nano unique_output_script
 ``` 
 
-In this run, there were 950,129 sequences and 109,985 were unique = ~11%.  
+In this run, there were 952,592 sequences and 29,967 were unique = ~3%.  
 
 The output table from summary.seqs looks like this and shows the number of unique and the total: 
 
 ```
-
                 Start   End     NBases  Ambigs  Polymer NumSeqs
 Minimum:        1	200     200     0	3	1
-2.5%-tile:	1	247     247     0	4	23754
-25%-tile:	1	247     247     0	5	237533
-Median:         1	247     247     0	7	475065
-75%-tile:	1	292     292     0	7	712597
-97.5%-tile:     1	292     292     0	7	926376
-Maximum:        1	300     300     0	19	950129
-Mean:   1	258     258     0	6
-# of unique seqs:	109985
-total # of seqs:        950129
+2.5%-tile:	1	207     207     0	4	23815
+25%-tile:       1       207     207     0	5	238149
+Median:         1	207     207     0	7	476297
+75%-tile:       1       253     253     0	7	714445
+97.5%-tile:     1	253     253     0	7	928778
+Maximum:        1 	281     281     0	13	952592
+Mean:   1	219     219     0	6
+# of unique seqs:       29967
+total # of seqs:        952592
 
 ```
 
@@ -674,19 +714,19 @@ nano align_output_script
 
 ```
                 Start   End     NBases  Ambigs  Polymer NumSeqs
-Minimum:        1	3	1	0	1	1
-2.5%-tile:	1	1258    8	0	2	2750
-25%-tile:	1	13424   22	0	3	27497
-Median:         1	13424   292     0	4	54993
-75%-tile:	1	13424   292     0	5	82489
-97.5%-tile:     13398   13425   293     0	6	107236
-Maximum:        13425   13425   300     0	13	109985
-Mean:   1769    11409   206     0	3
-# of Seqs:	109985
+Minimum:        1	3	2	0	1	1
+2.5%-tile:	1	1250    11	0	3	750
+25%-tile:	1968    11550   253     0	4	7492
+Median:         1968    11550   253     0	4	14984
+75%-tile:	1968    11550   253     0	4	22476
+97.5%-tile:     13389   13425   254     0	6	29218
+Maximum:        13424   13425   273     0	13	29967
+Mean:   2036    10385   218     0	4
+# of Seqs:	29967
 
 ```
 
-From this, we see that 109,985 sequences aligned to the reference, which matches the number of sequences that we had after the unique.sh step (109,985). In the next steps we will filter out any sequences that don't meet alignment settings.  
+From this, we see that 29,967 sequences aligned to the reference, which matches the number of sequences that we had after the unique.sh step (29,967). In the next steps we will filter out any sequences that don't meet alignment settings.  
 
 #### QC sequences according to alignment to the reference  
 
@@ -758,7 +798,7 @@ head mcap.trim.contigs.good.unique.bad.accnos
 grep -c ".*" mcap.trim.contigs.good.unique.bad.accnos
 ``` 
 
-34,704 uniques are tagged to be removed due to filtering at this step. This totals to 695,380 total sequences removed (this number is in the output file). 
+4,933 uniques are tagged to be removed due to filtering at this step. This totals to 691,034 total sequences removed (this number is in the output file) out of the 952,592 total.  
 
 *We therefore have a large portion (~73%) of our sequences that do not align to the bacterial V4 region and therefore may be from the host.*     
 
@@ -766,16 +806,16 @@ The summary looks like this:
 
 ```
                 Start   End     NBases  Ambigs  Polymer NumSeqs
-Minimum:        1	11552   274     0	3	1
-2.5%-tile:	1	13424   292     0	4	6369
-25%-tile:	1	13424   292     0	4	63688
-Median:         1	13424   292     0	4	127375
-75%-tile:	1	13424   292     0	5	191062
-97.5%-tile:     1	13424   292     0	6	248381
-Maximum:        1253    13425   300     0	8	254749
-Mean:   2	13423   291     0	4
-# of unique seqs:	75281
-total # of seqs:        254749
+Minimum:        1	11550   243     0	3	1
+2.5%-tile:	1968    11550   253     0	3	6539
+25%-tile:	1968    11550   253     0	4	65390
+Median:         1968    11550   253     0	4	130780
+75%-tile:	1968    11550   253     0	4	196169
+97.5%-tile:     1968    11550   253     0	6	255020
+Maximum:        1968    13396   273     0	8	261558
+Mean:   1967    11550   253     0	4
+# of unique seqs:	25034
+total # of seqs:        261558
 ```
 
 #### Filter sequences  
@@ -834,26 +874,26 @@ mcap.trim.contigs.good.unique.good.filter.fasta
 We get a report on the filtering in the script output file that looks like this: 
 
 ```
-Length of filtered alignment: 528
-Number of columns removed: 12897
+Length of filtered alignment: 490
+Number of columns removed: 12935
 Length of the original alignment: 13425
-Number of sequences used to construct filter: 75281
+Number of sequences used to construct filter: 25034
 ```
 
 We also get a new summary that looks like this:  
 
 ```
                 Start   End     NBases  Ambigs  Polymer NumSeqs
-Minimum:        1	526     250     0	3	1
-2.5%-tile:	1	528     262     0	3	6369
-25%-tile:	1	528     262     0	4	63688
-Median:         1	528     262     0	4	127375
-75%-tile:	1	528     262     0	4	191062
-97.5%-tile:     1	528     262     0	6	248381
-Maximum:        2	528     280     0	8	254749
-Mean:   1	527     262     0	4
-# of unique seqs:	75281
-total # of seqs:        254749
+Minimum:        1	489     243     0	3	1
+2.5%-tile:	1	490     253     0	3	6539
+25%-tile:	1	490     253     0	4	65390
+Median:         1	490     253     0	4	130780
+75%-tile:	1	490     253     0	4	196169
+97.5%-tile:     1	490     253     0	6	255020
+Maximum:        1	490     269     0	8	261558
+Mean:   1	489     252     0	4
+# of unique seqs:	25034
+total # of seqs:        261558
 
 ```
 
@@ -990,19 +1030,19 @@ Finally, we get the output from the summary:
 
 ```
                 Start   End     NBases  Ambigs  Polymer NumSeqs
-Minimum:        1	527     250     0	3	1
-2.5%-tile:	1	528     262     0	3	6369
-25%-tile:	1	528     262     0	4	63688
-Median:         1	528     262     0	4	127375
-75%-tile:       1 	528     262     0	4	191062
-97.5%-tile:     1	528     262     0	6	248381
-Maximum:        2       528     280     0	8	254749
-Mean:   1	527     262     0	4
-# of unique seqs:       10774
-total # of seqs:        254749
+Minimum:        1	489     243     0	3	1
+2.5%-tile:	1	490     253     0	3	6539
+25%-tile:	1	490     253     0	4	65390
+Median:         1	490     253     0	4	130780
+75%-tile:	1	490     253     0	4	196169
+97.5%-tile:     1	490     253     0	6	255020
+Maximum:        1	490     269     0	8	261558
+Mean:   1	489     253     0	4
+# of unique seqs:       10573
+total # of seqs:        261558
 ```
 
-Note that the number of unique sequences has decreased from 75,281 to 10,774 as expected since we are clustering sequences that are within 1 nt difference from each other. 
+Note that the number of unique sequences has decreased from 25,034 to 10,574 as expected since we are clustering sequences that are within 1 nt difference from each other. 
 
 ### <a name="Chimera"></a> **8. Identify chimeras**  
 
@@ -1093,16 +1133,16 @@ The new summary looks like this:
 
 ```
                 Start   End     NBases  Ambigs  Polymer NumSeqs
-Minimum:        1	527     250     0	3	1
-2.5%-tile:	1	528     262     0	3	6290
-25%-tile:	1	528     262     0	4	62900
-Median:         1	528     262     0	4	125799
-75%-tile:	1	528     262     0	4	188698
-97.5%-tile:     1	528     262     0	6	245308
-Maximum:        2	528     280     0	8	251597
-Mean:   1	527     262     0	4
-# of unique seqs:	8818
-total # of seqs:        251597
+Minimum:        1	489     243     0	3	1
+2.5%-tile:	1	490     253     0	3	6459
+25%-tile:	1	490     253     0	4	64582
+Median:         1	490     253     0	4	129163
+75%-tile:	1	490     253     0	4	193744
+97.5%-tile:     1	490     253     0	6	251866
+Maximum:        1	490     269     0	8	258324
+Mean:   1	489     253     0	4
+# of unique seqs:	8622
+total # of seqs:        258324
 ```
 
 The program identified and removed ~3% chimeras.    
@@ -1110,50 +1150,50 @@ The program identified and removed ~3% chimeras.
 We can look at a count of the number of sequences per sample: 
 
 ```
-WSH174 contains 11208.
-WSH175 contains 1700.
-WSH176 contains 7455.
-WSH177 contains 28911.
-WSH178 contains 6786.
-WSH179 contains 46658.
-WSH180 contains 922.
-WSH181 contains 682.
-WSH182 contains 279.
-WSH183 contains 128.
-WSH184 contains 318.
-WSH185 contains 23303.
-WSH186 contains 1534.
-WSH187 contains 9333.
-WSH188 contains 4071.
-WSH189 contains 194.
-WSH190 contains 630.
-WSH191 contains 278.
-WSH192 contains 192.
-WSH193 contains 3254.
+WSH174 contains 11589.
+WSH175 contains 1712.
+WSH176 contains 7665.
+WSH177 contains 29718.
+WSH178 contains 6954.
+WSH179 contains 48253.
+WSH180 contains 882.
+WSH181 contains 669.
+WSH182 contains 213.
+WSH183 contains 118.
+WSH184 contains 314.
+WSH185 contains 23976.
+WSH186 contains 1350.
+WSH187 contains 9564.
+WSH188 contains 4093.
+WSH189 contains 170.
+WSH190 contains 611.
+WSH191 contains 267.
+WSH192 contains 153.
+WSH193 contains 3365.
 WSH194 contains 237.
-WSH195 contains 3540.
-WSH196 contains 286.
-WSH201 contains 434.
-WSH202 contains 457.
-WSH203 contains 2426.
-WSH204 contains 1931.
-WSH205 contains 3171.
-WSH206 contains 5005.
-WSH207 contains 6691.
-WSH208 contains 13514.
-WSH209 contains 10770.
-WSH210 contains 9071.
-WSH211 contains 14187.
-WSH212 contains 5830.
-WSH213 contains 4578.
-WSH214 contains 14119.
-WSH215 contains 1786.
-WSH216 contains 5728.
+WSH195 contains 3672.
+WSH196 contains 289.
+WSH201 contains 449.
+WSH202 contains 471.
+WSH203 contains 2498.
+WSH204 contains 1994.
+WSH205 contains 3278.
+WSH206 contains 5179.
+WSH207 contains 7006.
+WSH208 contains 13933.
+WSH209 contains 11096.
+WSH210 contains 9264.
+WSH211 contains 14302.
+WSH212 contains 5932.
+WSH213 contains 4736.
+WSH214 contains 14589.
+WSH215 contains 1851.
+WSH216 contains 5912.
 
-Size of smallest group: 128.
+Size of smallest group: 118.
 ```
 
-The smallest group has 128 sequences and we have 13 samples with <1,000 sequences. We will further look at this sampling depth.  
+The smallest group has 118 sequences and we have 13 samples with <1,000 sequences. We will further look at this sampling depth.  
 
 ### <a name="Classify"></a> **9. Classifying sequences**  
 
@@ -1267,26 +1307,26 @@ Removed 50976 sequences from your count file.
 Note that this is largely what is removed in the Chloroplast step, so the Chloroplast and Cyanobacteria chloroplast overlap in sequences.  
 
 *Removing all lineages*   
-Removed 1286 sequences from your fasta file.  
-Removed 51758 sequences from your count file.    
+Removed 1276 sequences from your fasta file.
+Removed 53512 sequences from your count file..    
 
 We also can see the following summary:  
 
 ```
                 Start   End     NBases  Ambigs  Polymer NumSeqs
-Minimum:        1	527     250     0	3	1
-2.5%-tile:	1	528     262     0	3	4996
-25%-tile:	1	528     262     0	4	49960
-Median:         1	528     262     0	4	99920
-75%-tile:	1	528     262     0	5	149880
-97.5%-tile:     1	528     262     0	6	194844
-Maximum:        2	528     280     0	8	199839
-Mean:   1	527     262     0	4
-# of unique seqs:	7532
-total # of seqs:        199839
+Minimum:        1	489     244     0	3	1
+2.5%-tile:	1	490     253     0	3	5121
+25%-tile:	1	490     253     0	4	51204
+Median:         1	490     253     0	4	102407
+75%-tile:	1	490     253     0	5	153610
+97.5%-tile:     1	490     253     0	6	199692
+Maximum:        1	490     269     0	8	204812
+Mean:   1	489     252     0	4
+# of unique seqs:	7346
+total # of seqs:        204812
 ```
 
-We now have 199,839 total sequences and 7,532 unique sequences.  
+We now have 204,812 total sequences and 7,346 unique sequences.  
 
 The script will then output the following files: 
 
@@ -1474,47 +1514,47 @@ count=mcap.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch
 The count of sequences in each file are:  
 
 ```
-WSH174 contains 9448.
-WSH175 contains 1319.
-WSH176 contains 5407.
-WSH177 contains 26867.
-WSH178 contains 4433.
-WSH179 contains 24988.
-WSH180 contains 835.
-WSH181 contains 513.
-WSH182 contains 266.
-WSH183 contains 121.
-WSH184 contains 309.
-WSH185 contains 12908.
-WSH186 contains 1111.
-WSH187 contains 4007.
-WSH188 contains 1678.
-WSH189 contains 172.
-WSH190 contains 621.
-WSH191 contains 278.
-WSH192 contains 186.
-WSH193 contains 3236.
+WSH174 contains 9778.
+WSH175 contains 1316.
+WSH176 contains 5550.
+WSH177 contains 27598.
+WSH178 contains 4507.
+WSH179 contains 25810.
+WSH180 contains 784.
+WSH181 contains 496.
+WSH182 contains 199.
+WSH183 contains 111.
+WSH184 contains 303.
+WSH185 contains 13236.
+WSH186 contains 916.
+WSH187 contains 4071.
+WSH188 contains 1648.
+WSH189 contains 148.
+WSH190 contains 599.
+WSH191 contains 267.
+WSH192 contains 147.
+WSH193 contains 3345.
 WSH194 contains 234.
-WSH195 contains 3536.
-WSH196 contains 286.
-WSH201 contains 426.
-WSH202 contains 449.
-WSH203 contains 2381.
-WSH204 contains 1927.
-WSH205 contains 3156.
-WSH206 contains 4987.
-WSH207 contains 6619.
-WSH208 contains 13451.
-WSH209 contains 10739.
-WSH210 contains 8992.
-WSH211 contains 14019.
-WSH212 contains 5805.
-WSH213 contains 4498.
-WSH214 contains 13313.
-WSH215 contains 1656.
-WSH216 contains 4662.
+WSH195 contains 3668.
+WSH196 contains 289.
+WSH201 contains 441.
+WSH202 contains 463.
+WSH203 contains 2451.
+WSH204 contains 1990.
+WSH205 contains 3264.
+WSH206 contains 5161.
+WSH207 contains 6931.
+WSH208 contains 13870.
+WSH209 contains 11066.
+WSH210 contains 9184.
+WSH211 contains 14128.
+WSH212 contains 5907.
+WSH213 contains 4658.
+WSH214 contains 13755.
+WSH215 contains 1715.
+WSH216 contains 4808.
 
-Size of smallest group: 121.
+Size of smallest group: 111.
 ```
 
 *Now we have classified taxonomic data and we are ready to move onto subsampling and calculating statistics*  
@@ -1536,10 +1576,10 @@ This will open the interactive mothur terminal.  In order to use any bash comman
 
 As we can see in rarefaction curves, we know that OTU discovery is a function of sequencing depth. Therefore, we need to account for sequencing depth in our analysis.  
 
-With the count table above, we see that the sample with the smallest number of groups is 95. To account for uneven sampling depth, we will need to rarify our samples. We can do this with the `sub.sample` command that will automatically use the smallest group size or we can manually set a cut off. If we set a threshold higher than the number of samples, those samples are removed from the group.  
+With the count table above, we see that the sample with the smallest number of groups is 118. To account for uneven sampling depth, we will need to rarify our samples. We can do this with the `sub.sample` command that will automatically use the smallest group size or we can manually set a cut off. If we set a threshold higher than the number of samples, those samples are removed from the group.  
 
 ```
-sub.sample(shared=mcap.opti_mcc.shared, size=1000) 
+sub.sample(shared=mcap.opti_mcc.shared, size=900) 
 ```
 
 ```
@@ -1550,20 +1590,20 @@ mcap.opti_mcc.0.03.subsample.shared
 It may be helpful to run this with multiple iterations. If you do not include a size=# argument, then mothur will automatically set to the lowest sequence. If I set this to 1000, for example the output shows that several samples are removed because there are <1000 samples: 
 
 ```
-WSH180 contains 835. Eliminating.
-WSH181 contains 513. Eliminating.
-WSH182 contains 266. Eliminating.
-WSH183 contains 121. Eliminating.
-WSH184 contains 309. Eliminating.
-WSH189 contains 172. Eliminating.
-WSH190 contains 621. Eliminating.
-WSH191 contains 278. Eliminating.
-WSH192 contains 186. Eliminating.
+WSH180 contains 784. Eliminating.
+WSH181 contains 496. Eliminating.
+WSH182 contains 199. Eliminating.
+WSH183 contains 111. Eliminating.
+WSH184 contains 303. Eliminating.
+WSH189 contains 148. Eliminating.
+WSH190 contains 599. Eliminating.
+WSH191 contains 267. Eliminating.
+WSH192 contains 147. Eliminating.
 WSH194 contains 234. Eliminating.
-WSH196 contains 286. Eliminating.
-WSH201 contains 426. Eliminating.
-WSH202 contains 449. Eliminating.
-Sampling 1000 from each group.
+WSH196 contains 289. Eliminating.
+WSH201 contains 441. Eliminating.
+WSH202 contains 463. Eliminating.
+Sampling 900 from each group.
 ```  
 
 Sample names are found in the [spreadsheet here](https://docs.google.com/spreadsheets/d/1lLvCp-RoRiBSGZ4NBPwi6cmZuozmfS20OJ7hBIueldU/edit#gid=0). QC information from extraction can be found in the [spreadsheet here](https://docs.google.com/spreadsheets/d/1Ew0AOs88n1i6wEyuqbv3tsRXwMjhqyYEeZX5sACFdDY/edit#gid=0).   
@@ -1582,7 +1622,7 @@ WSH196 = TP3
 WSH201 = TP4  
 WSH202 = TP4  
 
-This sub-sampling to 1000 sequences removes all of TP1 (eggs) and TP2 (embryos 5 hpf). We remove 2/4 of TP3 and TP4 (embryos 38 hpf and embryos 65 hpf). We also remove  one attached recruit sample.  
+This sub-sampling to 900 sequences removes all of TP1 (eggs) and TP2 (embryos 5 hpf). We remove 2/4 of TP3 and TP4 (embryos 38 hpf and embryos 65 hpf). We also remove  one attached recruit sample.  
 
 We know that DNA concentrations were very low for the TP1-TP3 samples so we may need to remove them from the analysis or would have to consider that the microbial communities will be different due to sequencing depth and DNA extraction artifacts.    
 
@@ -1590,7 +1630,7 @@ If we need to standardized sampling depth for all of our samples, then we would 
 
 #### Subsampling the sample set  
 
-We are going to generate a rarefaction curve and subsample to 1000 sequences. Calculating the observed number of OTUs using the Sobs metric (observed number of taxa) with a freq=100 to output the data for every 100 sequences samples - if you did every single sample that would be way too much data to output.  
+We are going to generate a rarefaction curve and subsample to 900 sequences. Calculating the observed number of OTUs using the Sobs metric (observed number of taxa) with a freq=100 to output the data for every 100 sequences samples - if you did every single sample that would be way too much data to output.  
 
 ```
 rarefaction.single(shared=mcap.opti_mcc.shared, calc=sobs, freq=100)
@@ -1609,10 +1649,10 @@ Next, rarefy the data to the minimum number of sequences, then the next command 
 
 All of the available metric calculations (calc) are [found here](https://mothur.org/wiki/calculators/).  
 
-I am going to use subsample=1000 to remove the low sequence count stages.  
+I am going to use subsample=900 to remove the low sequence count stages.  
 
 ```
-summary.single(shared=mcap.opti_mcc.shared, calc=nseqs-sobs-chao-shannon-invsimpson, subsample=1000)
+summary.single(shared=mcap.opti_mcc.shared, calc=nseqs-sobs-chao-shannon-invsimpson, subsample=900)
 ```
 
 In a new Andromeda window (outside mothur).  
@@ -1637,7 +1677,7 @@ We will calculate beta diversity metrics which will then be used for ecological 
 
 We will use the `dist.shared` function to calculate distances between samples. Here we are going to use Bray-Curtis distances. Many different metrics can be used (e.g., Theta YC). All of the available metric calculations (calc) are [found here](https://mothur.org/wiki/calculators/).  
 
-We can use this function with or without `subsample=1000` or `subsample=T`. We will use the bray-curtis distances for this calculation. This step is important for generating files that we will use later in R. 
+We can use this function with or without `subsample=900` or `subsample=T`. We will use the bray-curtis distances for this calculation. This step is important for generating files that we will use later in R. 
 
 Run without subsampling: 
 
@@ -1650,10 +1690,10 @@ Output File Names:
 mcap.opti_mcc.braycurtis.0.03.lt.dist
 ```
 
-If we run a command with subsample=1000, then the following files are output: 
+If we run a command with subsample=900, then the following files are output: 
 
 ```
-dist.shared(shared=mcap.opti_mcc.shared, calc=braycurtis, subsample=1000)
+dist.shared(shared=mcap.opti_mcc.shared, calc=braycurtis, subsample=900)
 ```
 
 ```
@@ -1680,9 +1720,9 @@ pcoa(phylip=mcap.opti_mcc.braycurtis.0.03.lt.dist)
 
 ```
 Processing...
-Rsq 1 axis: 0.419531
-Rsq 2 axis: 0.661573
-Rsq 3 axis: 0.645606
+Rsq 1 axis: 0.414865
+Rsq 2 axis: 0.641955
+Rsq 3 axis: 0.629561
 
 Output File Names: 
 mcap.opti_mcc.braycurtis.0.03.lt.pcoa.axes
@@ -1697,9 +1737,9 @@ pcoa(phylip=mcap.opti_mcc.braycurtis.0.03.lt.ave.dist)
 
 ```
 Processing...
-Rsq 1 axis: 0.48495
-Rsq 2 axis: 0.512541
-Rsq 3 axis: 0.71141
+Rsq 1 axis: 0.492562
+Rsq 2 axis: 0.519025
+Rsq 3 axis: 0.713346
 
 Output File Names: 
 mcap.opti_mcc.braycurtis.0.03.lt.ave.pcoa.axes
@@ -1718,8 +1758,8 @@ nmds(phylip=mcap.opti_mcc.braycurtis.0.03.lt.dist)
 
 ```
 Number of dimensions:	2
-Lowest stress :	0.308031
-R-squared for configuration:	0.71123
+Lowest stress :	0.310847
+R-squared for configuration:	0.698305
 
 Output File Names: 
 mcap.opti_mcc.braycurtis.0.03.lt.nmds.iters
@@ -1735,8 +1775,8 @@ nmds(phylip=mcap.opti_mcc.braycurtis.0.03.lt.ave.dist)
 
 ```
 Number of dimensions:	2
-Lowest stress :	0.281742
-R-squared for configuration:	0.703092
+Lowest stress :	0.282352
+R-squared for configuration:	0.701641
 
 Output File Names: 
 mcap.opti_mcc.braycurtis.0.03.lt.ave.nmds.iters
@@ -1793,12 +1833,12 @@ amova(phylip=mcap.opti_mcc.braycurtis.0.03.lt.ave.dist, design=mcap_design.txt, 
 ```
 
 ```
-Larvae1-Larvae2-Larvae3-Larvae4-Larvae6-Recruit1-Recruit1plug-Recruit2-Recruit2plug	Among	Within	Total
-SS	5.26248	2.72787	7.99034
+Larvae1-Larvae2-Larvae3-Larvae4-Larvae6-Recruit1-Recruit1plug-Recruit2-Recruit2plug	Among	WithinTotal
+SS	5.26825	2.72086	7.98911
 df	8	17	25
-MS	0.65781	0.160463
+MS	0.658532	0.16005
 
-Fs:	4.09946
+Fs:	4.11453
 p-value: <0.001*
 
 ```
