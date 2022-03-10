@@ -9,6 +9,8 @@ This post details 16S analysis of the Putnam Lab oyster project using the Mothur
 
 # **16S analysis workflow in mothur**  
 
+This workflow details the analysis of the V6 region data set incorporating all sample types and subsetting the target samples (gut) after the pipeline.  
+
 General Workflow:  
 1. [Prepare directory](#Directory)   
 2. [Start mothur](#Start)    
@@ -34,21 +36,22 @@ I tried to create a shared folder for our analysis but did not have permission. 
 ssh -l ashuffmyer ssh3.hac.uri.edu
 cd /data/putnamlab/ashuffmyer/
 mkdir oyster_16S
-cd oyster_16S
+mkdir v6
+cd v6
 ```  
 
 Give permissions for all to read, write, and execute.   
 
-`chmod u=rwx,g=rwx,o=r -R oyster_16S`  
+`chmod u=rwx,g=rwx,o=rwx,a=rwx -R v6`  
 
 Next, create symlinks to the files that we will need for analysis.  
 
 ```
-ln -s /data/putnamlab/shared/PointJudithData_Rebecca/amplicons16s/gut_v4v5/*.txt /data/putnamlab/ashuffmyer/oyster_16S/
+ln -s /data/putnamlab/shared/PointJudithData_Rebecca/amplicons16s/allsamples_V6/*.txt /data/putnamlab/ashuffmyer/oyster_16S/v6
 
-ln -s /data/putnamlab/shared/PointJudithData_Rebecca/amplicons16s/gut_v4v5/*.csv /data/putnamlab/ashuffmyer/oyster_16S/
+ln -s /data/putnamlab/shared/PointJudithData_Rebecca/amplicons16s/allsamples_V6/*.csv /data/putnamlab/ashuffmyer/oyster_16S/v6
 
-ln -s /data/putnamlab/shared/PointJudithData_Rebecca/amplicons16s/gut_v4v5/00_RAW_gz/*.fastq.gz /data/putnamlab/ashuffmyer/oyster_16S/
+ln -s /data/putnamlab/shared/PointJudithData_Rebecca/amplicons16s/allsamples_V6/00_RAW_gz/*.fastq.gz /data/putnamlab/ashuffmyer/oyster_16S/v6
 ```
 
 This creates links to the original location of the data without the need to copy/download the data.  
@@ -95,15 +98,74 @@ We will write a bash script to run the `make.contigs()` command and make contigs
 
 We use `trimoverlap=T` in the `make.contigs` step. The region is ~55bp in length and we used 2x75bp sequencing to obtain overlap.   
 
+We will also use and oligos file to remove primers `oligos=oligos.oligos` specifying `pdiffs=2` and `checkorient=T`.  
+
 We will also run the `summary.seqs()` command with the `make.file()` and `make.contig()` steps. This generates summary information about the sequences from the files we made above.  
 
-Within the `oyster_16S` directory, create a script. Everything will live within this directory - I did not make any subfolders.  
+Within the `v6` directory, create a script. Everything will live within this directory - I did not make any subfolders.  
+
+Before we run the script we need to make an `oligos` file. This file contains the primers for our sequences. Mothur will remove these primers while building the contigs.  
+
+The primers that we have are:  
+
+```
+Huber et al. 2007
+
+967F: TCGTCGGCAGCGTCAGATGTGTATAAGAGACAG CTAACCGANGAACCTYACC
+      TCGTCGGCAGCGTCAGATGTGTATAAGAGACAG CNACGCGAAGAACCTTANC
+      TCGTCGGCAGCGTCAGATGTGTATAAGAGACAG CAACGCGMARAACCTTACC
+      TCGTCGGCAGCGTCAGATGTGTATAAGAGACAG ATACGCGARGAACCTTACC
+      
+1046R:GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAG CGACRRCCATGCANCACCT
+```
+
+The illumina adapter forward sequence is `TCGTCGGCAGCGTCAGATGTGTATAAGAGACAG`. The last 19 nt's of the forward primers are the primers we need to remove. The reverse adapter sequence is `GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAG`. The last 19 nt's is the reverse primer.   
+
+Our primers are:  
+```
+FORWARD
+CTAACCGANGAACCTYACC
+CNACGCGAAGAACCTTANC
+CAACGCGMARAACCTTACC
+ATACGCGARGAACCTTACC
+
+REVERSE
+CGACRRCCATGCANCACCT
+```
+
+For example, search for primers in a forward sequence file using the following:     
+`zcat RS181_S11_L001_R1_001.fastq.gz | grep -c "NNNN"`    
+
+*Need to replace degenerate bases with complement*  
+* Y = C or T  
+* N = Remove if on the end - if in the middle, replace with ACTG   
+* R = A or G 
+* M = A or C  
+
+`zcat RS181_S11_L001_R1_001.fastq.gz | grep -c "CTAACCGAAGAACCTTACC"` 
+Found 1991 times.  
+
+`zcat RS181_S11_L001_R1_001.fastq.gz | grep -c "CAACGCGAAGAACCTTACC"`
+Found 4638 times.  
+
+We will check for these primers at the end of our contigs step.  
+
+```
+nano oligos.oligos
+```
+
+```
+primer CTAACCGANGAACCTYACC CGACRRCCATGCANCACCT
+primer CNACGCGAAGAACCTTANC CGACRRCCATGCANCACCT
+primer CAACGCGMARAACCTTACC CGACRRCCATGCANCACCT
+primer ATACGCGARGAACCTTACC CGACRRCCATGCANCACCT
+
+```
+
 
 ```
 nano contigs.sh
-```
-
-*CURRENTLY RE RUNNING WITH TRIM OVERLAP = F*  
+``` 
 
 ```
 #!/bin/bash
@@ -116,16 +178,23 @@ nano contigs.sh
 #SBATCH --mail-user=ashuffmyer@uri.edu #your email to send notifications                
 #SBATCH --error="contigs_error_script" #if your job fails, the error report will be put in this file
 #SBATCH --output="contigs_output_script" #once your job is completed, any final job report comments will be put in this file
+#SBATCH --account=putnamlab  
+
+echo "Job started" $(date)  
 
 module load Mothur/1.46.1-foss-2020b
+
+module list
 
 mothur
 
 mothur "#make.file(inputdir=., type=gz, prefix=oyster)"
 
-mothur "#make.contigs(inputdir=., outputdir=., file=oyster.files, trimoverlap=F)"
+mothur "#make.contigs(inputdir=., outputdir=., file=oyster.files, trimoverlap=T, oligos=oligos.oligos, pdiffs=2, checkorient=T)"
 
 mothur "#summary.seqs(fasta=oyster.trim.contigs.fasta)"
+
+echo "Job ended" $(date)  
 
 ```
 
@@ -168,34 +237,37 @@ Descriptions of contig files:
 *Groups file* = what group each sequence belongs to map sequence to each sample from the trimmed sequence file.  
 *Contigs report file* = information on sequences that were aligned and paired together. 
 
-Count the number of sequences that were removed and the number that were kept by counting sequences in each fasta file.  
+Count the number of sequences that were removed and the number that were kept by counting sequences in the output fasta files.  
 
 ```
 grep -c "^>" oyster.trim.contigs.fasta
 grep -c "^>" oyster.scrap.contigs.fasta
 ```
-4,800,906 sequences were kept and 8,128 were removed.  
+X sequences were kept and X were removed.  
 
-Next, check whether we need to remove primers.  
+*To count number of sequences in original files*  
 
-The primers we are looking for are: 
+`for f in *.gz; do echo $(cat $f|wc -l)/4|bc; done`
 
-Quince et al. 2011
 
-518F: 5’ TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGCCAGCAGCYGCGGTAAN
-926R: 5’ GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAGCCGTCAATTCNTTTRAGT 
-      5’ GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAGCCGTCAATTTCTTTGAGT
-      5’ GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAGCCGTCTATTCCTTTGANT
+XXXXXX
 
-When I search for the primer sequences in this file they do not show up. Grep to count for any total number of primer sequences.  
+Next, check for the presence of primers in the output.  
 
-```
-grep -c "TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGCCAGCAGCYGCGGTAAN" oyster.trim.contigs.fasta
-grep -c "GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAGCCGTCAATTCNTTTRAGT" oyster.trim.contigs.fasta
-grep -c "GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAGCCGTCAATTTCTTTGAGT" oyster.trim.contigs.fasta
-grep -c "GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAGCCGTCTATTCCTTTGANT" oyster.trim.contigs.fasta
-```
-The primers show up 0 times in the sequences.  
+For example, check for a couple combinations of primers: 
+
+`zcat RS181_S11_L001_R1_001.fastq.gz | grep -c "CTAACCGAAGAACCTTACC"` 
+Found X times.  
+
+`zcat RS181_S11_L001_R1_001.fastq.gz | grep -c "CAACGCGAAGAACCTTACC"`
+Found X times. 
+
+
+
+
+
+
+The primers show up X times in the sequences.  
 
 You will get an output table like the one below and it will output a file with this summary information.  
 
@@ -208,16 +280,7 @@ Scroll to the bottom to find the summary information.
 
 
 ``` 
-                Start   End     NBases  Ambigs  Polymer NumSeqs
-Minimum:        1       1       1       0       1       1
-2.5%-tile:      1       4       4       0       2       120023
-25%-tile:       1       9       9       1       2       1200227
-Median:         1       10      10      1       2       2400454
-75%-tile:       1       10      10      3       2       3600680
-97.5%-tile:     1       94      94      8       5       4680884
-Maximum:        1       251     251     59      35      4800906
-Mean:   1       15      15      2       2
-# of Seqs:      4800906
+XXXXX 
 ``` 
 
 This table shows quantile values about the distribution of sequences for a few things:  
