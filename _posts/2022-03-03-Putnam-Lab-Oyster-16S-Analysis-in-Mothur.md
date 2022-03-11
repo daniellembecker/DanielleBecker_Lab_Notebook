@@ -880,7 +880,7 @@ From this summary we see that the alignment window spans ~140 bp and the length 
 
 ### <a name="Precluster"></a> **7. Pre cluster the sequences**     
 
-Now we need to further polish and cluster the data with pre.cluster. The purpose of this step is to remove noise due to sequencing error. The rational behind this step assumes that the most abundant sequences are the most trustworthy and likely do not have sequencing errors. Pre-clustering then looks at the relationship between abundant and rare sequences - rare sequences that are "close" (e.g., 1 nt difference) to highly abundant sequences are likely due to sequencing error. This step will pool sequences and look at the maximum differences between sequences within this group to form ASV groupings. 
+Now we need to further polish and cluster the data with pre.cluster. The purpose of this step is to remove noise due to sequencing error. The rational behind this step assumes that the most abundant sequences are the most trustworthy and likely do not have sequencing errors. Pre-clustering then looks at the relationship between abundant and rare sequences - rare sequences that are "close" (e.g., 0 nt difference) to highly abundant sequences are likely due to sequencing error. We chose to precluster to 0 nt difference because with a short sequence we want to keep as much information as possible before we cluster to similarity by OTU. This step will pool sequences and look at the maximum differences between sequences within this group to form ASV groupings. 
 
 In this step, the number of sequences is not reduced, but they are grouped into amplicon sequence variants ASV's which reduces the error rate.  
 
@@ -931,7 +931,7 @@ mothur
 
 mothur "#unique.seqs(fasta=oyster.trim.contigs.good.unique.good.filter.fasta, count=oyster.trim.contigs.good.good.count_table)"
 
-mothur "#pre.cluster(fasta=oyster.trim.contigs.good.unique.good.filter.unique.fasta, count=oyster.trim.contigs.good.unique.good.filter.count_table, diffs=1)"
+mothur "#pre.cluster(fasta=oyster.trim.contigs.good.unique.good.filter.unique.fasta, count=oyster.trim.contigs.good.unique.good.filter.count_table, diffs=0)"
 
 mothur "#summary.seqs(fasta=oyster.trim.contigs.good.unique.good.filter.unique.precluster.fasta, count=oyster.trim.contigs.good.unique.good.filter.unique.precluster.count_table)"
 ```
@@ -961,20 +961,20 @@ Finally, we get the output from the summary:
 
 ```
                 Start   End     NBases  Ambigs  Polymer NumSeqs
-Minimum:        1	125     38	0	2	1
-2.5%-tile:	1	132     43	0	3	94896
-25%-tile:	1	135     44	0	3	948954
-Median:         1	140     46	0	3	1897908
-75%-tile:	1	140     46	0	4	2846862
-97.5%-tile:     1	140     47	0	6	3700920
-Maximum:        5	140     54	0	8	3795815
-Mean:   1	137     45	0	3
-# of unique seqs:	38972
+Minimum:        1       125     38      0       2       1
+2.5%-tile:      1       132     43      0       3       94896
+25%-tile:       1       135     44      0       3       948954
+Median:         1       140     46      0       3       1897908
+75%-tile:       1       140     46      0       4       2846862
+97.5%-tile:     1       140     47      0       6       3700920
+Maximum:        5       140     54      0       8       3795815
+Mean:   1       137     45      0       3
+# of unique seqs:       62039
 total # of seqs:        3795815
 
 ```
 
-Note that the number of unique sequences has decreased from 90,301 to 38,972 as expected since we are clustering sequences that are within 1 nt difference from each other. 
+Note that the number of unique sequences has decreased from 90,301 to 62,039 as expected since we are clustering sequences that are within 0 nt difference from each other (similar to ASV).  
 
 ### <a name="Chimera"></a> **8. Identify chimeras**  
 
@@ -1065,65 +1065,81 @@ The new summary looks like this:
 
 ```
                 Start   End     NBases  Ambigs  Polymer NumSeqs
-Minimum:        1	125     38	0	2	1
-2.5%-tile:	1	132     43	0	3	94520
-25%-tile:	1	135     44	0	3	945192
-Median:         1	140     46	0	3	1890383
-75%-tile:	1	140     46	0	4	2835574
-97.5%-tile:     1	140     47	0	6	3686245
-Maximum:        5	140     54	0	8	3780764
-Mean:   1	137     45	0	3
-# of unique seqs:	38439
-total # of seqs:        3780764
+Minimum:        1       125     38      0       2       1
+2.5%-tile:      1       132     43      0       3       94517
+25%-tile:       1       135     44      0       3       945169
+Median:         1       140     46      0       3       1890337
+75%-tile:       1       140     46      0       4       2835505
+97.5%-tile:     1       140     47      0       6       3686157
+Maximum:        5       140     54      0       8       3780673
+Mean:   1       137     45      0       3
+# of unique seqs:       61489
+total # of seqs:        3780673
 ```
 
-The program identified and removed ~1% chimeras.    
+The program identified and removed <1% chimeras.    
 
 We can look at a count of the number of sequences per sample: 
 
 ```
-RS203 contains 62466.
-RS204 contains 43198.
-RS205 contains 36015.
-RS206 contains 48102.
-RS207 contains 31906.
-RS208 contains 34714.
-RS209 contains 27091.
-RS210 contains 32016.
-RS211 contains 41439.
-RS212 contains 45129.
-RS213 contains 30832.
-RS214 contains 37677.
-RS215 contains 38622.
-RS216 contains 34206.
-RS217 contains 43192.
-RS218 contains 41874.
-RS219 contains 44556.
-RS220 contains 38900.
-RS221 contains 31682.
-RS222 contains 32992.
-RS223 contains 20859.
-RS224 contains 24796.
-RS225 contains 9474.
-RS226 contains 39372.
-RS227 contains 39242.
-RS228 contains 39484.
-RS229 contains 37083.
-RS230 contains 37117.
-RS231 contains 43072.
-RS232 contains 33467.
-RS233 contains 42203.
-RS234 contains 31134.
-RS235 contains 36748.
+RS187 contains 19215.
+RS188 contains 28278.
+RS189 contains 35919.
+RS190 contains 38396.
+RS191 contains 29307.
+RS192 contains 48023.
+RS193 contains 35852.
+RS194 contains 31030.
+RS195 contains 25906.
+RS196 contains 29962.
+RS197 contains 46391.
+RS198 contains 38682.
+RS199 contains 37317.
+RS200 contains 31466.
+RS201 contains 45964.
+RS202 contains 24889.
+RS203 contains 62435.
+RS204 contains 43186.
+RS205 contains 36019.
+RS206 contains 48068.
+RS207 contains 31736.
+RS208 contains 34733.
+RS209 contains 27081.
+RS210 contains 32014.
+RS211 contains 41452.
+RS212 contains 45103.
+RS213 contains 30833.
+RS214 contains 37673.
+RS215 contains 38619.
+RS216 contains 34170.
+RS217 contains 43151.
+RS218 contains 41897.
+RS219 contains 44560.
+RS220 contains 38910.
+RS221 contains 31660.
+RS222 contains 32908.
+RS223 contains 20861.
+RS224 contains 24804.
+RS225 contains 9477.
+RS226 contains 39385.
+RS227 contains 39599.
+RS228 contains 39530.
+RS229 contains 37025.
+RS230 contains 37139.
+RS231 contains 43080.
+RS232 contains 33468.
+RS233 contains 42194.
+RS234 contains 31141.
+RS235 contains 36737.
 RS246 contains 38049.
-RS247 contains 24966.
+RS247 contains 24967.
 
-Size of smallest group: 9474.
+Size of smallest group: 9477.
 
-Total seqs: 3780764.
+Total seqs: 3780673.
 ```
 
-The smallest group has 9,474 sequences. We will further look at this sampling depth and use this number for subsampling.  
+The smallest group has 9,477 sequences. We will further look at this sampling depth and use this number for subsampling.  
 
 
 
