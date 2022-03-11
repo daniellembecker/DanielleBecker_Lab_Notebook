@@ -39,6 +39,10 @@ Notebook posts detailing extractions can be found at the links below:
 QC information for extractions can be found here: 
 [Extraction QC](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/blob/master/Mcap2020/Data/TagSeq/QC_Mcap2020_Extractions.csv) 
 
+Library Prep information can be found here:   
+[Library Prep](https://meschedl.github.io/MESPutnam_Open_Lab_Notebook/TagSeq-Attemp-1/)  
+
+
 # Symbiont cell densities 
 
 Symbiont cell densities processed by Danielle Becker.  
