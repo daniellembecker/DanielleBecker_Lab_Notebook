@@ -17,15 +17,14 @@ General Workflow:
 3. [Preparing sequences](#Prepare)   
 4. [QC sequences](#QC)    
 5. [Unique sequences](#Unique)   
-6. [Create a V6 database](#V6)   
-7. [Aligning](#Align)    
-8. [Preclustering](#Precluster)    
-9. [Identify chimeras](#Chimera)  
-10. [Classify sequences](#Classify)     
-11. [Cluster OTU's](#Cluster)    
-12. [Subsampling](#Subsample)  
-13. [Calculate ecological statistics](#Statistics)  
-14. [Output data for R analysis](#Output)   
+6. [Aligning](#Align)    
+7. [Preclustering](#Precluster)    
+8. [Identify chimeras](#Chimera)  
+9. [Classify sequences](#Classify)     
+10. [Cluster OTU's](#Cluster)    
+11. [Subsampling](#Subsample)  
+12. [Calculate ecological statistics](#Statistics)  
+13. [Output data for R analysis](#Output)   
 
 ## <a name="Directory"></a> **1. Prepare Directory**  
 
@@ -457,7 +456,7 @@ Now we can align just the unique sequences, which will be much faster than align
 
 *From this, we have our unique sequences identified and can proceed with further cleaning and polishing of the data. Next we will look at alignment, error rate, chimeras, classification and further analysis.*  
 
-### <a name="V6"></a> **6. Generate a reference for the V6 region** 
+### <a name="Align"></a> **6. Align our sequences to a reference database** 
 
 #### Optimize the reference for the V6 region  
 
@@ -879,8 +878,256 @@ total # of seqs:        3795815
 
 From this summary we see that the alignment window spans ~140 bp and the length of our sequences is about ~50 nt. We have a maximum polymer of 8 as specified in our settings above.  
 
+### <a name="Precluster"></a> **7. Pre cluster the sequences**     
 
-  
+Now we need to further polish and cluster the data with pre.cluster. The purpose of this step is to remove noise due to sequencing error. The rational behind this step assumes that the most abundant sequences are the most trustworthy and likely do not have sequencing errors. Pre-clustering then looks at the relationship between abundant and rare sequences - rare sequences that are "close" (e.g., 1 nt difference) to highly abundant sequences are likely due to sequencing error. This step will pool sequences and look at the maximum differences between sequences within this group to form ASV groupings. 
+
+In this step, the number of sequences is not reduced, but they are grouped into amplicon sequence variants ASV's which reduces the error rate.  
+
+Other programs that conduct this "denoising" are DADA2, UNOISE, and DEBLUR. However, these programs remove the rare sequences, which can distort the relative abundance of remaining sequences. DADA2 also removes all sigletons (sequences with single representation) which disproportionately affects the sequence relative abundance. Mothur avoids the removal of rare sequences for this reason. 
+
+We will first add code to identify unique sequences after the filtering steps above.  
+
+```
+unique.seqs(fasta=oyster.trim.contigs.good.unique.good.filter.fasta, count=oyster.trim.contigs.good.good.count_table)
+```
+
+We will then perform the pre-clustering a default of 1 nt difference. Diffs can be changed according to your requirements.  
+
+```
+pre.cluster(fasta=oyster.trim.contigs.good.unique.good.filter.unique.fasta, count=oyster.trim.contigs.good.unique.good.filter.count_table, diffs=1) 
+```
+
+Finally, we will run another summary.  
+
+```
+summary.seqs(fasta=oyster.trim.contigs.good.unique.good.filter.unique.precluster.fasta, count=oyster.trim.contigs.good.unique.good.filter.unique.precluster.count_table)
+```
+
+Write and run the script.  
+
+```
+nano precluster.sh
+```
+
+```
+#!/bin/bash
+#SBATCH --job-name="precluster"
+#SBATCH -t 24:00:00
+#SBATCH --nodes=1 --ntasks-per-node=1
+#SBATCH --export=NONE
+#SBATCH --mem=100GB
+#SBATCH --account=putnamlab
+#SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
+#SBATCH --mail-user=ashuffmyer@uri.edu #your email to send notifications
+#SBATCH --account=putnamlab                  
+#SBATCH --error="precluster_error_script" #if your job fails, the error report will be put in this file
+#SBATCH --output="precluster_output_script" #once your job is completed, any final job report comments will be put in this file
+#SBATCH -q putnamlab
+
+module load Mothur/1.46.1-foss-2020b
+
+mothur
+
+mothur "#unique.seqs(fasta=oyster.trim.contigs.good.unique.good.filter.fasta, count=oyster.trim.contigs.good.good.count_table)"
+
+mothur "#pre.cluster(fasta=oyster.trim.contigs.good.unique.good.filter.unique.fasta, count=oyster.trim.contigs.good.unique.good.filter.count_table, diffs=1)"
+
+mothur "#summary.seqs(fasta=oyster.trim.contigs.good.unique.good.filter.unique.precluster.fasta, count=oyster.trim.contigs.good.unique.good.filter.unique.precluster.count_table)"
+```
+
+```
+sbatch precluster.sh
+```
+
+Mothur output the following files:   
+
+```
+Output File Names: 
+oyster.trim.contigs.good.unique.good.filter.count_table
+oyster.trim.contigs.good.unique.good.filter.unique.fasta
+```
+
+Then, the pre-clustering step outputs a file for each sample. The two most important files are:  
+
+```
+oyster.trim.contigs.good.unique.good.filter.unique.precluster.fasta
+oyster.trim.contigs.good.unique.good.filter.unique.precluster.count_table
+``` 
+
+The other files have text for maps of sequence name, errors, abundance, differences, and the filtered sequence for each sample.   
+
+Finally, we get the output from the summary:   
+
+```
+                Start   End     NBases  Ambigs  Polymer NumSeqs
+Minimum:        1	125     38	0	2	1
+2.5%-tile:	1	132     43	0	3	94896
+25%-tile:	1	135     44	0	3	948954
+Median:         1	140     46	0	3	1897908
+75%-tile:	1	140     46	0	4	2846862
+97.5%-tile:     1	140     47	0	6	3700920
+Maximum:        5	140     54	0	8	3795815
+Mean:   1	137     45	0	3
+# of unique seqs:	38972
+total # of seqs:        3795815
+
+```
+
+Note that the number of unique sequences has decreased from 90,301 to 38,972 as expected since we are clustering sequences that are within 1 nt difference from each other. 
+
+### <a name="Chimera"></a> **8. Identify chimeras**  
+
+Now we will remove chimeras using the dereplicate method. In this method, we are again using the assumption that the highest abundance sequences are most trustworthy. Chimeras are sequences that did not extend during PCR and then served as templates for other PCR products, forming sequences that are partially from one PCR product and partially from another. This program looks for chimeras by comparing each sequences to the next highest abundance sequences to determine if a sequence is a chimera of the more abundance sequences.  
+
+We will use the `chimera.vsearch` function to identify chimeras: 
+
+```
+chimera.vsearch(fasta=oyster.trim.contigs.good.unique.good.filter.unique.precluster.fasta, count=oyster.trim.contigs.good.unique.good.filter.unique.precluster.count_table, dereplicate=T)
+``` 
+
+We will then remove the identified chimeras with `remove.seqs`:  
+
+```
+remove.seqs(fasta=oyster.trim.contigs.good.unique.good.filter.unique.precluster.fasta, accnos=oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.accnos)
+```
+
+Finally, we will run a new summary:  
+
+```
+summary.seqs(fasta=oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta, count=oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.count_table)
+```
+
+This step requires an executable program called "vsearch". This is now available as a module on Andromeda. If you are working in Andromeda, we will load the module.  If the module is not available or you are working on a different system, you can install vsearch in your working directory with the following commands: 
+
+```
+wget https://github.com/torognes/vsearch/archive/v2.21.0.tar.gz
+tar xzf v2.21.0.tar.gz
+cd vsearch-2.21.0
+./autogen.sh
+./configure CFLAGS="-O3" CXXFLAGS="-O3"
+make
+make install  # as root or sudo make install
+```
+
+Write and run a script to do these steps.  
+
+```
+nano chimera.sh
+```
+
+```
+#!/bin/bash
+#SBATCH --job-name="chimera"
+#SBATCH -t 24:00:00
+#SBATCH --nodes=1 --ntasks-per-node=1
+#SBATCH --export=NONE
+#SBATCH --mem=100GB
+#SBATCH --account=putnamlab
+#SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
+#SBATCH --mail-user=ashuffmyer@uri.edu #your email to send notifications
+#SBATCH --account=putnamlab                  
+#SBATCH --error="chimera_error_script" #if your job fails, the error report will be put in this file
+#SBATCH --output="chimera_output_script" #once your job is completed, any final job report comments will be put in this file
+#SBATCH -q putnamlab
+
+module load Mothur/1.46.1-foss-2020b
+
+module load VSEARCH/2.18.0-GCC-10.2.0
+
+mothur
+
+mothur "#chimera.vsearch(fasta=oyster.trim.contigs.good.unique.good.filter.unique.precluster.fasta, count=oyster.trim.contigs.good.unique.good.filter.unique.precluster.count_table, dereplicate=T)"
+
+mothur "#remove.seqs(fasta=oyster.trim.contigs.good.unique.good.filter.unique.precluster.fasta, accnos=oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.accnos)"
+
+mothur "#summary.seqs(fasta=oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta, count=oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.count_table)"
+
+mothur "#count.groups(count=oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.count_table)"
+
+```
+
+```
+sbatch chimera.sh
+```
+
+
+This script outputs the following files: 
+
+```
+Output File Names:
+oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.count_table
+oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.chimeras
+oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.accnos
+```
+
+The new summary looks like this:
+
+```
+                Start   End     NBases  Ambigs  Polymer NumSeqs
+Minimum:        1	125     38	0	2	1
+2.5%-tile:	1	132     43	0	3	94520
+25%-tile:	1	135     44	0	3	945192
+Median:         1	140     46	0	3	1890383
+75%-tile:	1	140     46	0	4	2835574
+97.5%-tile:     1	140     47	0	6	3686245
+Maximum:        5	140     54	0	8	3780764
+Mean:   1	137     45	0	3
+# of unique seqs:	38439
+total # of seqs:        3780764
+```
+
+The program identified and removed ~1% chimeras.    
+
+We can look at a count of the number of sequences per sample: 
+
+```
+RS203 contains 62466.
+RS204 contains 43198.
+RS205 contains 36015.
+RS206 contains 48102.
+RS207 contains 31906.
+RS208 contains 34714.
+RS209 contains 27091.
+RS210 contains 32016.
+RS211 contains 41439.
+RS212 contains 45129.
+RS213 contains 30832.
+RS214 contains 37677.
+RS215 contains 38622.
+RS216 contains 34206.
+RS217 contains 43192.
+RS218 contains 41874.
+RS219 contains 44556.
+RS220 contains 38900.
+RS221 contains 31682.
+RS222 contains 32992.
+RS223 contains 20859.
+RS224 contains 24796.
+RS225 contains 9474.
+RS226 contains 39372.
+RS227 contains 39242.
+RS228 contains 39484.
+RS229 contains 37083.
+RS230 contains 37117.
+RS231 contains 43072.
+RS232 contains 33467.
+RS233 contains 42203.
+RS234 contains 31134.
+RS235 contains 36748.
+RS246 contains 38049.
+RS247 contains 24966.
+
+Size of smallest group: 9474.
+
+Total seqs: 3780764.
+```
+
+The smallest group has 9,474 sequences. We will further look at this sampling depth and use this number for subsampling.  
+
+
+
+ 
 
 
 
