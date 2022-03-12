@@ -1142,6 +1142,384 @@ Total seqs: 3780673.
 The smallest group has 9,477 sequences. We will further look at this sampling depth and use this number for subsampling.  
 
 
+### <a name="Classify"></a> **9. Classifying sequences**  
+
+Now our sequences are clean and ready for classification!  
+
+We will use the training set downloaded above from the silva database through the [Mothur wiki](https://mothur.org/wiki/classify.seqs/). 
+
+#### Classify sequences  
+
+We will use the `classify.seqs` command: 
+
+```
+classify.seqs(fasta=oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta, count=oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.count_table, reference=trainset9_032012.pds.fasta, taxonomy=trainset9_032012.pds.tax)
+```
+
+The training and taxonomy files were from downloads. The mothur [classify.seq wiki page](https://mothur.org/wiki/classify.seqs/) has the reference and training sets that you can download and put into the directory to use for analyzing data. These sets include adding chlorophyll, mitchondria, etc to identify and remove these.     
+
+The output file from `classify.seqs()` ending in .taxonomy has the name of sequence and the classification with % confidence in parentheses for each level. It will end at the level that is has confidence.  
+
+The tax.summary file has the taxonimc level, the name of the taxonomic group, and the number of sequences in that group for each sample.  
+
+We will also remove sequences that are classified to Chloroplast, Mitochondria, Unknown (not bacteria, archaea, or eukaryotes), Archaea, and Eukaryotes. 
+
+```
+remove.lineage(fasta=oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta, count=oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.count_table, taxonomy=oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pds.wang.taxonomy, taxon=Chloroplast-Mitochondria-unknown-Archaea-Eukaryota)
+```
+
+Write a script to classify and remove lineages. 
+
+```
+nano classify.sh
+```
+
+```
+#!/bin/bash
+#SBATCH --job-name="classify"
+#SBATCH -t 24:00:00
+#SBATCH --nodes=1 --ntasks-per-node=1
+#SBATCH --export=NONE
+#SBATCH --mem=100GB
+#SBATCH --account=putnamlab
+#SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
+#SBATCH --mail-user=ashuffmyer@uri.edu #your email to send notifications
+#SBATCH --account=putnamlab                  
+#SBATCH --error="classify_error_script" #if your job fails, the error report will be put in this file
+#SBATCH --output="classify_output_script" #once your job is completed, any final job report comments will be put in this file
+#SBATCH -q putnamlab
+
+module load Mothur/1.46.1-foss-2020b
+
+mothur
+
+mothur "#classify.seqs(fasta=oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta, count=oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.count_table, reference=trainset9_032012.pds.fasta, taxonomy=trainset9_032012.pds.tax)"
+
+mothur "#remove.lineage(fasta=oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta, count=oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.count_table, taxonomy=oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pds.wang.taxonomy, taxon=Chloroplast-Mitochondria-unknown-Archaea-Eukaryota)"
+
+mothur "#summary.seqs(fasta=oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.fasta, count=oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.count_table)"
+``` 
+
+```
+sbatch classify.sh
+```
+
+Classify.seqs will output the following files: 
+
+```
+Output File Names: 
+
+oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pds.wang.taxonomy
+oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pds.wang.tax.summary
+
+```
+
+The output file .taxonomy has name of sequence and the classification with % confidence in parentheses for each level.  
+
+The tax.summary file has the taxonimc level, the name of the taxonomic group, and the number of sequences in that group for each sample.  
+
+```
+head oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pds.wang.taxonomy
+
+head oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pds.wang.tax.summary
+```
+
+The remove.lineage command will remove sequences and provide a report in the output file. The fasta file is removing unique sequences, the count file is removing individual sequences.   
+
+I altered the script to only pull out each lineage individually and ran for each lineage to get the individual stats. I then ran the final script with removing all lineages together to proceed with analysis.  
+
+*Removing only Chloroplast*     
+Removed 352 sequences from your fasta file.  
+Removed 173441 sequences from your count file.   
+
+*Removing only Mitochondria*     
+Removed 1 sequences from your fasta file.  
+Removed 6 sequences from your count file.     
+
+*Removing only unknown domain*     
+Removed 1598 sequences from your fasta file.  
+Removed 43456 sequences from your count file.      
+
+*Removing only Archaea*   
+No contaminants to remove.   
+
+*Removing only Eukaryotes*  
+Removed 27 sequences from your fasta file.  
+Removed 129 sequences from your count file.   
+
+*Removing all lineages*   
+Removed 1978 sequences from your fasta file.  
+Removed 217032 sequences from your count file.     
+
+We also can see the following summary:  
+
+```
+                Start   End     NBases  Ambigs  Polymer NumSeqs
+Minimum:        1       125     38      0       2       1
+2.5%-tile:      1       132     43      0       3       89092
+25%-tile:       1       135     44      0       3       890911
+Median:         1       140     46      0       3       1781821
+75%-tile:       1       140     46      0       4       2672731
+97.5%-tile:     1       140     47      0       6       3474550
+Maximum:        5       140     54      0       8       3563641
+Mean:   1       137     45      0       3
+# of unique seqs:       59511
+total # of seqs:        3563641
+```
+
+We now have 3,563,641 total sequences and 59,511 unique sequences.  
+
+The script will then output the following files: 
+
+```
+Output File Names:
+
+oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.fasta
+oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.count_table
+oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pds.wang.pick.taxonomy
+oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pds.wang.accnos
+oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.count_table
+oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.fasta
+
+```
+
+Now we have the taxon removed that we do not want in our dataset.    
+
+This is the end of the pipeline for curating our sequencing - we have corrected for pcr errors, removed chimeras, and removed sequences outside of taxon of interest. Now we can move onto OTU clustering!  
+
+View a sample of the taxonomy summary dataset.   
+ 
+```
+head oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pds.wang.pick.taxonomy
+```
+
+```
+M00763_298_000000000-CBVP7_1_2108_14435_14093	Bacteria(94);Bacteria_unclassified(94);Bacteria_unclassified(94);Bacteria_unclassified(94);Bacteria_unclassified(94);Bacteria_unclassified(94);
+M00763_298_000000000-CBVP7_1_2108_26527_14323	Bacteria(97);Bacteria_unclassified(97);Bacteria_unclassified(97);Bacteria_unclassified(97);Bacteria_unclassified(97);Bacteria_unclassified(97);
+M00763_298_000000000-CBVP7_1_2103_18671_12758	Bacteria(95);Bacteria_unclassified(95);Bacteria_unclassified(95);Bacteria_unclassified(95);Bacteria_unclassified(95);Bacteria_unclassified(95);
+M00763_298_000000000-CBVP7_1_2103_15136_12835	Bacteria(100);"Proteobacteria"(100);Gammaproteobacteria(100);Xanthomonadales(87);Xanthomonadaceae(87);Xanthomonadaceae_unclassified(87);
+M00763_298_000000000-CBVP7_1_2109_28108_15591	Bacteria(95);Bacteria_unclassified(95);Bacteria_unclassified(95);Bacteria_unclassified(95);Bacteria_unclassified(95);Bacteria_unclassified(95);
+M00763_298_000000000-CBVP7_1_2109_22001_15763	Bacteria(100);Bacteria_unclassified(100);Bacteria_unclassified(100);Bacteria_unclassified(100);Bacteria_unclassified(100);Bacteria_unclassified(100);
+M00763_298_000000000-CBVP7_1_2108_9895_14769	Bacteria(100);"Proteobacteria"(96);Gammaproteobacteria(94);Gammaproteobacteria_unclassified(94);Gammaproteobacteria_unclassified(94);Gammaproteobacteria_unclassified(94);
+M00763_298_000000000-CBVP7_1_2109_9770_16354	Bacteria(97);Bacteria_unclassified(97);Bacteria_unclassified(97);Bacteria_unclassified(97);Bacteria_unclassified(97);Bacteria_unclassified(97);
+M00763_298_000000000-CBVP7_1_2109_25533_16525	Bacteria(100);Bacteria_unclassified(100);Bacteria_unclassified(100);Bacteria_unclassified(100);Bacteria_unclassified(100);Bacteria_unclassified(100);
+M00763_298_000000000-CBVP7_1_2117_14902_17205	Bacteria(99);Bacteria_unclassified(99);Bacteria_unclassified(99);Bacteria_unclassified(99);Bacteria_unclassified(99);Bacteria_unclassified(99);
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### <a name="Cluster"></a> **10. Cluster for OTUs**  
+
+*In this analysis, we will cluster to OTU level (cutoff=0.03). For ASV clustering, you can move directly to the make.shared step, skipping the dist.seqs and cluster steps because mothur pre-clustering occurs as the ASV level.*  
+
+First, we will calculate the pairwise distances between sequences.  
+
+We will first use the `dist.seqs` command.  
+
+```
+dist.seqs(fasta=oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.fasta)
+```
+
+We will then `cluster` using the following command: 
+
+```
+cluster(column=oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.dist, count=oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.count_table, cutoff=0.03)
+```
+
+This will run a line for each iteration of clustering. This is run until the Matthews correlation coefficient (MCC) value is maximized. A high MCC = high confidence in clustering. MCC is optimized by randomly aligning sequences to OTU's and calculating the correlation coefficient. Then sequences are moved between OTU's to see if the MCC is improved. This is repeated many times until the MCC is maximized. This method is fast and RAM efficient. AKA Opticlust.  
+
+We would move directly to the make.shared step (below) if you want to use ASV since the distance and clustering steps do not need to be completed for ASVs.  
+
+Next we will make a shared file. This .shared file has the label for the OTU, sample name, the number of OTU's and then the number of time each OTU appears in each sample. 
+
+This file will be the basis of what we will do to measure richness of communities compared to each other.  
+
+We want to keep the shared file and a consensus taxonomy file. 
+
+```
+make.shared(list=oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.opti_mcc.list, count=oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.count_table)
+```
+
+The classify.otu command will then output a concensus cons.taxonomy file that has the taxonomic information for each OTU. Use label=ASV to specify ASV in taxonomy names if starting from the make.shared step for ASV's.    
+
+```
+classify.otu(list=oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.opti_mcc.list, count=oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.count_table, taxonomy=oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pds.wang.pick.taxonomy)
+```
+
+Then we can rename the files to something more useful.  
+
+```
+rename.file(taxonomy=oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.opti_mcc.0.03.cons.taxonomy, shared=oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.opti_mcc.shared)
+```
+
+Finally, view a count of the number of sequences in each sample.  
+
+```
+count.groups(shared=oyster.opti_mcc.shared)
+``` 
+
+Generate a script to run these commands.    
+
+```
+nano cluster.sh
+```
+
+```
+#!/bin/bash
+#SBATCH --job-name="cluster"
+#SBATCH -t 24:00:00
+#SBATCH --nodes=1 --ntasks-per-node=1
+#SBATCH --export=NONE
+#SBATCH --mem=100GB
+#SBATCH --account=putnamlab
+#SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
+#SBATCH --mail-user=ashuffmyer@uri.edu #your email to send notifications
+#SBATCH --account=putnamlab                  
+#SBATCH --error="cluster_error_script" #if your job fails, the error report will be put in this file
+#SBATCH --output="cluster_output_script" #once your job is completed, any final job report comments will be put in this file
+#SBATCH -q putnamlab
+
+module load Mothur/1.46.1-foss-2020b
+
+mothur
+
+mothur "#dist.seqs(fasta=oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.fasta)"
+
+mothur "#cluster(column=oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.dist, count=oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.count_table, cutoff=0.03)"
+
+mothur "#make.shared(list=oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.opti_mcc.list, count=oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.count_table)"
+
+mothur "#classify.otu(list=oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.opti_mcc.list, count=oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.count_table, taxonomy=oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pds.wang.pick.taxonomy)"
+
+mothur "#rename.file(taxonomy=oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.opti_mcc.0.03.cons.taxonomy, shared=oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.opti_mcc.shared)"
+
+mothur "#count.groups(shared=oyster.opti_mcc.shared)"
+```
+
+```
+sbatch cluster.sh
+```
+
+Dist.seqs outputs the following files: 
+
+```
+Output File Names:
+oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.dist
+
+```
+
+Cluster outputs the following files:  
+
+```
+Output File Names:
+oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.opti_mcc.list
+oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.opti_mcc.steps
+oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.opti_mcc.sensspec
+
+```
+
+Make.shared outputs the following file: 
+
+```
+Output File Names:
+oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.opti_mcc.shared
+```
+
+Finally, classify.otu outputs the following file:  
+
+```
+Output File Names:
+oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.opti_mcc.0.03.cons.taxonomy
+oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.opti_mcc.0.03.cons.tax.summary
+```
+
+The rename function at the end will rename our files to something more useful. We now have a "taxonomy" file and a "shared" file.  
+
+The files we now care about are: 
+
+```
+Current files saved by mothur:
+list=oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.opti_mcc.list
+shared=oyster.opti_mcc.shared
+taxonomy=oyster.taxonomy
+
+constaxonomy=oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.opti_mcc.0.03.cons.taxonomy
+count=oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.count_table
+
+```
+
+The count of sequences in each file are:  
+
+```
+RS192 contains 47045.
+RS193 contains 35197.
+RS194 contains 30503.
+RS195 contains 25633.
+RS196 contains 29556.
+RS197 contains 45666.
+RS198 contains 34972.
+RS199 contains 35204.
+RS200 contains 26415.
+RS201 contains 44030.
+RS202 contains 22521.
+RS203 contains 57790.
+RS204 contains 36876.
+RS205 contains 33721.
+RS206 contains 45922.
+RS207 contains 29156.
+RS208 contains 31886.
+RS209 contains 15011.
+RS210 contains 29306.
+RS211 contains 37072.
+RS212 contains 42098.
+RS213 contains 29690.
+RS214 contains 34229.
+RS215 contains 37034.
+RS216 contains 31320.
+RS217 contains 41697.
+RS218 contains 41084.
+RS219 contains 41901.
+RS220 contains 37663.
+RS221 contains 31146.
+RS222 contains 31936.
+RS223 contains 19927.
+RS224 contains 24245.
+RS225 contains 9082.
+RS226 contains 38262.
+RS227 contains 38422.
+RS228 contains 38152.
+RS229 contains 34276.
+RS230 contains 35053.
+RS231 contains 38347.
+RS232 contains 32695.
+RS233 contains 41450.
+RS234 contains 30628.
+RS235 contains 36436.
+RS246 contains 38049.
+RS247 contains 23102.
+
+Size of smallest group: 9082.
+
+Total seqs: 3563641.
+```
+
+*Now we have classified taxonomic data and we are ready to move onto subsampling and calculating statistics. First, we need to subset our sequences for samples that we are interested in (gut samples).*  
+
+
 
  
 
