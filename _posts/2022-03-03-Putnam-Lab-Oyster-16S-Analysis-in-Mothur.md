@@ -1465,6 +1465,72 @@ count=oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsear
 The count of sequences in each file are:  
 
 ```
+RS126 contains 26537.
+RS127 contains 31369.
+RS128 contains 27263.
+RS129 contains 35508.
+RS130 contains 33024.
+RS131 contains 25644.
+RS132 contains 29424.
+RS133 contains 31335.
+RS134 contains 32259.
+RS135 contains 28863.
+RS136 contains 23133.
+RS137 contains 30410.
+RS138 contains 30809.
+RS139 contains 34207.
+RS140 contains 31989.
+RS141 contains 42299.
+RS142 contains 28037.
+RS143 contains 36516.
+RS144 contains 37232.
+RS145 contains 34310.
+RS146 contains 25838.
+RS147 contains 21026.
+RS148 contains 31533.
+RS149 contains 30380.
+RS150 contains 27386.
+RS151 contains 36060.
+RS152 contains 19564.
+RS153 contains 38932.
+RS154 contains 28522.
+RS155 contains 34888.
+RS156 contains 30309.
+RS157 contains 27190.
+RS158 contains 27565.
+RS159 contains 28632.
+RS160 contains 38897.
+RS161 contains 24631.
+RS162 contains 20522.
+RS163 contains 31028.
+RS164 contains 37334.
+RS165 contains 41914.
+RS166 contains 27834.
+RS167 contains 22934.
+RS168 contains 21993.
+RS169 contains 38077.
+RS170 contains 30631.
+RS171 contains 28954.
+RS172 contains 26484.
+RS173 contains 26953.
+RS174 contains 26065.
+RS175 contains 28324.
+RS176 contains 33790.
+RS177 contains 33733.
+RS178 contains 29406.
+RS179 contains 30546.
+RS180 contains 41806.
+RS181 contains 29137.
+RS182 contains 27364.
+RS183 contains 28041.
+RS184 contains 26525.
+RS185 contains 27731.
+RS186 contains 24950.
+RS187 contains 18869.
+RS188 contains 27609.
+RS189 contains 35365.
+RS190 contains 37965.
+RS191 contains 28830.
 RS192 contains 47045.
 RS193 contains 35197.
 RS194 contains 30503.
@@ -1517,7 +1583,204 @@ Size of smallest group: 9082.
 Total seqs: 3563641.
 ```
 
-*Now we have classified taxonomic data and we are ready to move onto subsampling and calculating statistics. First, we need to subset our sequences for samples that we are interested in (gut samples).*  
+*Now we have classified taxonomic data and we are ready to move onto subsampling and calculating statistics.*    
+
+### <a name="Subsample"></a> **11. Subsampling for Sequencing Depth**   
+
+**The remaining commands can all be run in interactive mode. In Andromeda, use the following commands. These commands could also be combined into a script. I am using interactive mode for now.**   
+
+```
+interactive 
+module load Mothur/1.46.1-foss-2020b
+mothur
+```
+
+This will open the interactive mothur terminal.  In order to use any bash commands like `nano`, you have to first `quit` in mothur. Once you want to return to mothur, use the `mothur` command.  
+
+#### Subsampling for sequencing depth 
+
+As we can see in rarefaction curves, we know that OTU discovery is a function of sequencing depth. Therefore, we need to account for sequencing depth in our analysis.  
+
+To account for uneven sampling depth, we will need to rarify our samples. We can do this with the `sub.sample` command that will automatically use the smallest group size or we can manually set a cut off. If we set a threshold higher than the number of samples, those samples are removed from the group.  
+
+We will base this number on the smallest sequence number from our target samples - the gut samples.    
+
+The samples we want are:  
+```
+RS126
+RS127
+RS128
+RS129
+RS130
+RS131
+RS132
+RS133
+RS134
+RS135
+RS136
+RS137
+RS138
+RS139
+RS140
+RS141
+RS142
+RS143
+RS144
+RS145
+RS146
+RS147
+RS148
+RS149
+RS150
+RS151
+RS152
+RS153
+RS154
+RS155
+RS156
+RS157
+RS158
+RS159
+RS160
+RS161
+
+RS247 (negative control)  
+RS246 (mock community)  
+```
+
+From this sample list, the smallest sequence per sample was RS152 with 19,564 sequences.  Therefore, we will subset to this value. If other samples are dropped from the list because they are lower than this value that is ok, we are targetting the gut samples because we will only be analyzing this data set.  
+
+
+*NOTE FOR AH: ADD IN MOCK COMMUNITY ANALYSIS*  
+
+```
+sub.sample(shared=oyster.opti_mcc.shared, size=19564) 
+```
+
+```
+Output files: 
+oyster.opti_mcc.0.03.subsample.shared
+```
+
+It may be helpful to run this with multiple iterations. If you do not include a size=# argument, then mothur will automatically set to the lowest sequence. If I set this to 19564, for example the output shows samples are removed because there are <19564 sequences: 
+
+```
+RS187 contains 18869. Eliminating.
+RS209 contains 15011. Eliminating.
+RS225 contains 9082. Eliminating.
+Sampling 19564 from each group.
+```  
+
+THere are three samples below our subsampling threshold. But again these are not in our target dataset, so that is OK.  
+
+#### Subsampling the sample set  
+
+We are going to generate a rarefaction curve and subsample to 19564 sequences. Calculating the observed number of OTUs using the Sobs metric (observed number of taxa) with a freq=100 to output the data for every 100 sequences samples - if you did every single sample that would be way too much data to output.  
+
+```
+rarefaction.single(shared=oyster.opti_mcc.shared, calc=sobs, freq=100)
+```
+
+```
+Output File Names: 
+oyster.opti_mcc.groups.rarefaction
+```
+
+We will want to keep this rarefaction file for our final output.  
+
+You can look at this file with `nano oyster.opti_mcc.groups.rarefaction`. It contains the number of OTUs detected for every 100 sequences for each sample. Remember OTU = 0.03 cut off here, so that is the OTU distinction. Series will be trucated after the number of sequences available in the sample.  
+
+Next, rarefy the data to the minimum number of sequences, then the next command will rarefy and pull out that many sequences from each sample. If you want to sample a specific number, use subsample=#. You would want to do this if you have a super small sequence number in one group and you dont want to truncate the data for all groups by that much. If you leave subsample=T, mothur will calculate to the minimum size by default (we want to manually set the level in this case). Subsamples 1000 times and calculates the metrics we want with the number of otus. Sampling is random.   
+
+All of the available metric calculations (calc) are [found here](https://mothur.org/wiki/calculators/).  
+
+I am going to use subsample=19564 to remove the low sequence count stages.  
+
+```
+summary.single(shared=oyster.opti_mcc.shared, calc=nseqs-sobs-chao-shannon-invsimpson, subsample=19564)
+```
+
+In a new Andromeda window (outside mothur).  
+```
+less oyster.opti_mcc.groups.ave-std.summary
+```
+
+Open this file to view statistics for each sample. The method column has ave (average of each of the metrics across the 1000 iteractions) or std (this is the std deviation of the average calculation).    
+
+### <a name="Statistics"></a> **12. Calculate Ecological Statistics**  
+
+Alpha diversity = diversity within a sample 
+Beta diversity = diversity between samples
+
+We will calculate beta diversity metrics which can then be used for ecological analyses.  
+
+#### Calculate Beta Diversity  
+
+We will use the `dist.shared` function to calculate distances between samples. Here we are going to use Bray-Curtis distances. Many different metrics can be used (e.g., Theta YC). All of the available metric calculations (calc) are [found here](https://mothur.org/wiki/calculators/).  
+
+We can use this function with `subsample=19564`. We will use the bray-curtis distances for this calculation. This step is important for generating files that we will use later in R. 
+
+If we run a command with subsample=19564, then the following files are output: 
+
+```
+dist.shared(shared=oyster.opti_mcc.shared, calc=braycurtis, subsample=19564)
+```
+
+```
+Output File Names: 
+oyster.opti_mcc.braycurtis.0.03.lt.ave.dist
+oyster.opti_mcc.braycurtis.0.03.lt.std.dist
+``` 
+
+We have average and std files because the function is run over 1000 iterations generating ave and std.         
+
+*After this point, analyses can be run in R. See the bottom of this document for transferring files to your computer.*    
+
+### <a name="Output"></a> **13. Output data for analysis in R**  
+
+We can now move some files into R for further analysis. These are the primary files we will be using - the bray curtis distance matrix (distances between samples), the taxonomy file (taxonomy of each otu), and the shared file (otu abundance in each sample). From these we can run PCoA, NMDS, and statistical testing in R.    
+
+Bray-Curtis matrices:     
+
+```
+oyster.opti_mcc.braycurtis.0.03.lt.ave.dist
+```
+
+Taxonomy file:  
+
+```
+oyster.taxonomy
+```
+
+Shared file:  
+
+```
+oyster.opti_mcc.0.03.subsample.shared
+```
+
+Rarefaction file:  
+```
+oyster.opti_mcc.groups.rarefaction
+```
+
+Outside Andromeda do the following for each file:  
+
+```
+scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/oyster_16S/v6/oyster.opti_mcc.braycurtis.0.03.lt.ave.dist ~/Desktop/oyster_16s
+
+scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/oyster_16S/v6/oyster.taxonomy ~/Desktop/oyster_16s
+
+scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/oyster_16S/v6/oyster.opti_mcc.0.03.subsample.shared ~/Desktop/oyster_16s
+
+scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/oyster_16S/v6/oyster.opti_mcc.groups.rarefaction ~/Desktop/oyster_16s
+
+scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/oyster_16S/v6/*.txt ~/Desktop/oyster_16s
+
+scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/oyster_16S/v6/*.csv ~/Desktop/oyster_16s
+```
+
+After copying to the computer, I resave these files at tab delimited (.txt) before loading into R.  
+
 
 
 
