@@ -6,4 +6,6 @@ categories: Protocol
 tags: Protocol CellDensity Physiology
 ---
 
-Copy from Danielle protocol
+https://github.com/urol-e5/protocols/blob/master/2020-01-07-Cell_Density-Protocol.md
+
+Separations: https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Montipora-capitata-2021-larval-temperature-experiment-sample-processing/

@@ -53,7 +53,7 @@ Store at 4°C in a non-flammable fridge.
 
 # Separating Host, Holobiont, and Symbiont fractions  
 
-Prior to metabolite extraction, separate host, symbiont, and holobiont fractions for further extraction. 
+Prior to metabolite extraction, separate host, symbiont, and holobiont fractions for further extraction as [described in our protocol here](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Montipora-capitata-2021-larval-temperature-experiment-sample-processing/). 
 
 Before starting, label the desired tubes. For each biological sample (indicated by #), you will need to label one of each of the following tubes: 
 

@@ -31,7 +31,7 @@ Contents
 
 **Sample Preparation for Soluble Protein**  
 
-Separate fractions of sample (host, symbiont, holobiont fractions) using the separation protocols [described here]().  
+Separate fractions of sample (host, symbiont, holobiont fractions) using the separation protocols [described here](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Montipora-capitata-2021-larval-temperature-experiment-sample-processing/).  
 
 After separations are complete, thaw desired sample fractions.  
 

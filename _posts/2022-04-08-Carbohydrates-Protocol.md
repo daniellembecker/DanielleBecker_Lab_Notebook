@@ -56,7 +56,7 @@ Vortex and store in 4°C fridge.
 
 # Protocol  
 
-1. Homogenize and separate fractions of each sample [as described here]().  
+1. Homogenize and separate fractions of each sample [as described here](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Montipora-capitata-2021-larval-temperature-experiment-sample-processing/).  
 2. Take out samples and thaw at room temperature. Samples are run in triplicates, so you can do 22 samples per plate in addition to the standards. You can process samples for multiple plates at once and then read out the plates at the end of the protocol. I recommend doing no more than 2 plates at a time due to the number of samples and time to pipette.  
 3. Label one tube per sample (e.g., one tube for host fraction, one tube for holobiont fraction, and one tube for symbiont fraction for each biological sample if desired).  
 4. Label tubes for standard curve (see table below).  

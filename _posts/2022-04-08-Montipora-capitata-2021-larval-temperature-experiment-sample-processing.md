@@ -44,7 +44,7 @@ Using this protocol, we noticed that the symbiont pellet contained a layer of li
 
 We processed a host and holobiont fraction sample for each of the 24 samples (N=48) for total carbohydrates. 
 
-The protocol was modified from [C. Bove protocol HERE](). 
+Our [carbohydrate assay protocol](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Carbohydrates-Protocol/) was modified from the [Bove Baumann protocol](https://www.protocols.io/view/coral-carbohydrate-assay-for-96-well-plates-j8nlk4ro1g5r/v1).   
 
 Briefly, 25 uL of respective fractioned samples were added to 975 uL of DI water in 5mL tubes. We also generated a gradient of standards including a blank using L-(-)-Glucose as a standard. 44uL of phenol and 2.5mL of sulfuric acid was then added to each tube and allowed to incubate for 30 minutes. Following the incubation, 200uL of samples and standards were then added to a 96-well plate in triplicates. Absorbance was then read on a plate reader at 485nm.  
 
@@ -52,19 +52,17 @@ Briefly, 25 uL of respective fractioned samples were added to 975 uL of DI water
 We first ran a plate with samples to optimize sample volume. First, we added 100uL of test samples ("B" tubes) to 900uL of DI water at the initial step of the protocol, which is the volume used for adult coral tissue. We also ran a set of test samples at 25uL of sample and 975uL of DI water as a test for dilution. We then read the plate. We found that the diluted samples were within the range of the standard curve while the 100uL samples were far greater than the standards. Moving forward we selected 25uL as our volume of sample for both host and holobiont fractions. 
 
 **Plates 1-3 (6 April 2022)**:  
-We then ran 3 plates for Mcap2021 samples with a standard curve run on each plate. Following our [modified protocol](). We also included n=4 samples from Jill Ashey's *Astrangia* samples.  
+We then ran 3 plates for Mcap2021 samples with a standard curve run on each plate. Following our [modified protocol](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Carbohydrates-Protocol/). We also included n=4 samples from Jill Ashey's *Astrangia* samples.  
 
 Assays were completed with all values within the standard curve. Preliminary data analysis shows that holobiont fraction carbohydrate content was higher than host, as expected.  
 
 These data will be normalized to soluble protein for analysis.  
 
-![INSERT CARB PICTURES HERE]()
-
-Data and scripts for carbohydrates can be found [on the GitHub repository here]().  
+Data and scripts for carbohydrates can be found [on the GitHub repository here](https://github.com/AHuffmyer/SymbioticIntegration).  
 
 # Protein Assays  
 
-We measured soluble protein content in the host and holobiont fractions of all samples using the Pierce BCA protein assay kit (Thermo Fischer) following The [Putnam Lab and E5 Coral protein protocol here]().  
+We measured soluble protein content in the host and holobiont fractions of all samples using the Pierce BCA protein assay kit (Thermo Fischer) using a [modified protocol](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Protein-Protocol/).  
 
 As conducted for the carbohydrate assay above, we modified the protocol for the sample volume used to test whether dilutions are necessary. The protocol specifies that 25uL of sample is used for adult coral tissues. We tested 25uL of sample as well as diluted 10uL sample with 15uL of DI water.  
 
@@ -74,25 +72,21 @@ Briefly, we generated a standard curve using bovine albumin as specified in the 
 We ran test samples on an initial plate to check whether dilution of samples was required. Samples that were diluted (10uL sample with 15uL DI water) were within the range of the standard curve, while samples that were not diluted (25uL of sample) were outside the range of the curve. Sample volume was modified for the protocol with no other modifications made.  
 
 **Plates 1-3 (7 April 2022)**:  
-We then ran 3 plates for Mcap2021 samples with a standard curve run on each plate. Following our [modified protocol](). We also included samples from Jill Ashey's *Astrangia* samples.  
+We then ran 3 plates for Mcap2021 samples with a standard curve run on each plate. Following our [modified protocol](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Protein-Protocol/). We also included samples from Jill Ashey's *Astrangia* samples.  
 
 These data will be used to normalize other physiological assays.  
 
-![INSERT PROTEIN PICTURES HERE]()
-
-Data and scripts for protein can be found [on the GitHub repository here]().  
+Data and scripts for protein can be found [on the GitHub repository here](https://github.com/AHuffmyer/SymbioticIntegration).  
 
 # Stable Isotope Metabolomic Extractions  
 
 Stable isotope metabolomic samples processed here included n=10 samples collected in *M. capitata* larval stable isotope incubations over a 24 hr time series. These samples will allow us to better understand the timing of isotopic label incorporation. We also processed n=8 samples collected from incubations of *P. acuta* larvae from Moorea in December 2021. These samples will include host, symbiont, and holobiont fractions to examine our capacity to detect the isotopic label in each fraction and ensure our separations and extractions are working correctly. 
 
-We followed a modified protocol from Kevin Wong's [metabolomic extraction protocol here](). Briefly, we separated fractions as specified above, ensuring that all materials were washed with bleach, ethanol, and water between each use to avoid isotope contamination. Samples were then added to extraction buffer in a glass dounce, with samples kept on ice throughout the entire protocol. After extraction, samples were centrifuged and the supernatant was removed, buffered with ammonium bicarbonate, and transferred to autosampler vials and stored at -80°C.  
+We followed a modified protocol from Kevin Wong's [metabolomic extraction protocol here](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Stable-Isotope-Metabolomics-Extraction-Protocol/). Briefly, we separated fractions as specified above, ensuring that all materials were washed with bleach, ethanol, and water between each use to avoid isotope contamination. Samples were then added to extraction buffer in a glass dounce, with samples kept on ice throughout the entire protocol. After extraction, samples were centrifuged and the supernatant was removed, buffered with ammonium bicarbonate, and transferred to autosampler vials and stored at -80°C.  
 
 These vials will be sent to Rutgers Metabolomics Shared Resource for analysis of isotopic labeling in metabolomic profiles at positive and negative polarities.  
 
 Following results of these test samples, Mcap2021 and Moorea Pocillopora samples will be further processed by Kevin Wong and Jill Ashey.   
-
-![INSERT METABOLOMICS PICTURES HERE]()
 
 # Additional Processing 
 
