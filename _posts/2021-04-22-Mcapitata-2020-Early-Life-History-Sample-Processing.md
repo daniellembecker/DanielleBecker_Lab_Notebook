@@ -3,7 +3,7 @@ layout: post
 title: Mcapitata 2020 Early Life History Sample Processing
 date: '2021-04-22'
 categories: Mcapitata_EarlyLifeHistory_2020
-tags: Mcapitata Protocol Processing
+tags: Mcapitata Protocol Processing Metabolomics Physiology GeneExpression Molecular
 ---
 This entry details sample processing for Mcapitata 2020 early life history samples for metabolomics, larval size and symbiont cell densitites, and RNA excxtraction for TagSeq.  
 

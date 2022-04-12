@@ -8,6 +8,8 @@ tags: GitHub R OpenScience Workflow
 
 This post details my personal workflow for open science and sharing data in my research projects. This document will continually be updated as I learn more tips and tricks for open science! 
 
+**This post is currently in progress and will be updated soon!**  
+
 # Open Science Workflow  
 
 #### My general workflow for open science in research projects includes:   
@@ -28,7 +30,6 @@ Example of published repositories on Zenodo: [Juvenile coral fusion](https://zen
 
 
 # 2. Data analysis and collaboration in GitHub, RStudio, open notebooks, and high performance computing centers   
-
 
 
 # 3. Manuscript writing    
