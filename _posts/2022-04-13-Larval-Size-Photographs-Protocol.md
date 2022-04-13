@@ -32,8 +32,8 @@ Protocols developed by Danielle Becker and modified by Ariana Huffmyer.
 
 **See an example photograph below.**  
 
-[!image]()
+![image](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/PhysProtocols/size_example1.jpg)
   
-[!image]()
+![image](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/PhysProtocols/size_example2.jpg)
 
 
