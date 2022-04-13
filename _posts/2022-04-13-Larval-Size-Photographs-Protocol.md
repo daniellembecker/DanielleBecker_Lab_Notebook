@@ -30,4 +30,10 @@ Protocols developed by Danielle Becker and modified by Ariana Huffmyer.
 6. Repeat for each sample   
 7. Samples can then be analyzed for size or volume in ImageJ/Fiji software.  
 
+**See an example photograph below.**  
+
+[!image]()
+  
+[!image]()
+
 
