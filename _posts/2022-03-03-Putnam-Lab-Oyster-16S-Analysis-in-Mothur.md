@@ -1306,25 +1306,9 @@ M00763_298_000000000-CBVP7_1_2109_25533_16525	Bacteria(100);Bacteria_unclassifie
 M00763_298_000000000-CBVP7_1_2117_14902_17205	Bacteria(99);Bacteria_unclassified(99);Bacteria_unclassified(99);Bacteria_unclassified(99);Bacteria_unclassified(99);Bacteria_unclassified(99);
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### <a name="Cluster"></a> **10. Cluster for OTUs**  
 
-*In this analysis, we will cluster to OTU level (cutoff=0.03). For ASV clustering, you can move directly to the make.shared step, skipping the dist.seqs and cluster steps because mothur pre-clustering occurs as the ASV level.*  
+*In this analysis, we will cluster to OTU level (cutoff=0.03). For ASV clustering, we will move directly to the make.shared step, skipping the dist.seqs and cluster steps because mothur pre-clustering occurs at the ASV level.*  
 
 First, we will calculate the pairwise distances between sequences.  
 
@@ -1372,7 +1356,7 @@ Finally, view a count of the number of sequences in each sample.
 count.groups(shared=oyster.opti_mcc.shared)
 ``` 
 
-Generate a script to run these commands.    
+Generate a script to run these commands to cluster for OTUs.    
 
 ```
 nano cluster.sh
@@ -1449,7 +1433,7 @@ oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.opti_mcc
 
 The rename function at the end will rename our files to something more useful. We now have a "taxonomy" file and a "shared" file.  
 
-The files we now care about are: 
+The files we now care about are (OTUs): 
 
 ```
 Current files saved by mothur:
@@ -1462,7 +1446,75 @@ count=oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsear
 
 ```
 
-The count of sequences in each file are:  
+If you wish to instead cluster to ASV level, use the following script:  
+
+```
+nano cluster_asv.sh
+``` 
+
+```
+#!/bin/bash
+#SBATCH --job-name="cluster_asv"
+#SBATCH -t 24:00:00
+#SBATCH --nodes=1 --ntasks-per-node=1
+#SBATCH --export=NONE
+#SBATCH --mem=100GB
+#SBATCH --account=putnamlab
+#SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
+#SBATCH --mail-user=ashuffmyer@uri.edu #your email to send notifications
+#SBATCH --account=putnamlab                  
+#SBATCH --error="cluster_error_script" #if your job fails, the error report will be put in this file
+#SBATCH --output="cluster_output_script" #once your job is completed, any final job report comments will be put in this file
+#SBATCH -q putnamlab
+
+module load Mothur/1.46.1-foss-2020b
+
+mothur
+
+mothur "#make.shared(count=oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.count_table)"
+
+mothur "#classify.otu(list=oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.asv.list, count=oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.count_table, taxonomy=oyster.trim.contigs.good.unique.good.filter.unique.precluster.pick.pds.wang.pick.taxonomy, label=ASV)"
+
+mothur "#rename.file(taxonomy=oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.asv.ASV.cons.taxonomy, shared=oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.asv.shared)"
+
+mothur "#count.groups(shared=oyster.shared)"
+```
+
+```
+sbatch cluster_asv.sh
+``` 
+
+make.shared outputs the following files:  
+
+```
+Output File Names:
+oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.asv.list
+oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.asv.shared
+```
+
+classify.otu outputs the following files:  
+
+```
+oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.asv.ASV.cons.taxonomy
+oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.asv.ASV.cons.tax.summary
+```  
+
+The files we now care about are (if analyzed using the ASV script): 
+
+Rename file outputs the following files:   
+
+```
+Current files saved by mothur:
+list=oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.asv.list
+shared=oyster.shared
+taxonomy=oyster.taxonomy
+
+constaxonomy=oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.asv.ASV.cons.taxonomy
+count=oyster.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.count_table
+
+```
+
+After clustering (either by ASV or OTU), the count of sequences in each file are:  
 
 ```
 RS126 contains 26537.
@@ -1587,7 +1639,9 @@ Total seqs: 3563641.
 
 ### <a name="Subsample"></a> **11. Subsampling for Sequencing Depth**   
 
-**The remaining commands can all be run in interactive mode. In Andromeda, use the following commands. These commands could also be combined into a script. I am using interactive mode for now.**   
+**The remaining commands can all be run in interactive mode. In Andromeda, use the following commands. These commands could also be combined into a script. I am using interactive mode for now.**  
+
+*All analyses from this point forward are for ASV level analysis. If using OTU's, revise file names in these scripts accordingly.*   
 
 ```
 interactive 
@@ -1654,12 +1708,12 @@ From this sample list, the smallest sequence per sample was RS152 with 19,564 se
 *NOTE FOR AH: ADD IN MOCK COMMUNITY ANALYSIS*  
 
 ```
-sub.sample(shared=oyster.opti_mcc.shared, size=19564) 
+sub.sample(shared=oyster.shared, size=19564) 
 ```
 
 ```
 Output files: 
-oyster.opti_mcc.0.03.subsample.shared
+oyster.ASV.subsample.shared
 ```
 
 It may be helpful to run this with multiple iterations. If you do not include a size=# argument, then mothur will automatically set to the lowest sequence. If I set this to 19564, for example the output shows samples are removed because there are <19564 sequences: 
@@ -1678,17 +1732,17 @@ THere are three samples below our subsampling threshold. But again these are not
 We are going to generate a rarefaction curve and subsample to 19564 sequences. Calculating the observed number of OTUs using the Sobs metric (observed number of taxa) with a freq=100 to output the data for every 100 sequences samples - if you did every single sample that would be way too much data to output.  
 
 ```
-rarefaction.single(shared=oyster.opti_mcc.shared, calc=sobs, freq=100)
+rarefaction.single(shared=oyster.shared, calc=sobs, freq=100)
 ```
 
 ```
 Output File Names: 
-oyster.opti_mcc.groups.rarefaction
+oyster.groups.rarefaction
 ```
 
 We will want to keep this rarefaction file for our final output.  
 
-You can look at this file with `nano oyster.opti_mcc.groups.rarefaction`. It contains the number of OTUs detected for every 100 sequences for each sample. Remember OTU = 0.03 cut off here, so that is the OTU distinction. Series will be trucated after the number of sequences available in the sample.  
+You can look at this file with `nano oyster.groups.rarefaction`. It contains the number of ASVs detected for every 100 sequences for each sample. Series will be trucated after the number of sequences available in the sample.  
 
 Next, rarefy the data to the minimum number of sequences, then the next command will rarefy and pull out that many sequences from each sample. If you want to sample a specific number, use subsample=#. You would want to do this if you have a super small sequence number in one group and you dont want to truncate the data for all groups by that much. If you leave subsample=T, mothur will calculate to the minimum size by default (we want to manually set the level in this case). Subsamples 1000 times and calculates the metrics we want with the number of otus. Sampling is random.   
 
@@ -1697,12 +1751,12 @@ All of the available metric calculations (calc) are [found here](https://mothur.
 I am going to use subsample=19564 to remove the low sequence count stages.  
 
 ```
-summary.single(shared=oyster.opti_mcc.shared, calc=nseqs-sobs-chao-shannon-invsimpson, subsample=19564)
+summary.single(shared=oyster.shared, calc=nseqs-sobs-chao-shannon-invsimpson, subsample=19564)
 ```
 
 In a new Andromeda window (outside mothur).  
 ```
-less oyster.opti_mcc.groups.ave-std.summary
+less oyster.groups.ave-std.summary
 ```
 
 Open this file to view statistics for each sample. The method column has ave (average of each of the metrics across the 1000 iteractions) or std (this is the std deviation of the average calculation).    
@@ -1723,13 +1777,13 @@ We can use this function with `subsample=19564`. We will use the bray-curtis dis
 If we run a command with subsample=19564, then the following files are output: 
 
 ```
-dist.shared(shared=oyster.opti_mcc.shared, calc=braycurtis, subsample=19564)
+dist.shared(shared=oyster.shared, calc=braycurtis, subsample=19564)
 ```
 
 ```
 Output File Names: 
-oyster.opti_mcc.braycurtis.0.03.lt.ave.dist
-oyster.opti_mcc.braycurtis.0.03.lt.std.dist
+oyster.braycurtis.lt.ave.dist
+oyster.braycurtis.lt.std.dist
 ``` 
 
 We have average and std files because the function is run over 1000 iterations generating ave and std.         
@@ -1743,7 +1797,7 @@ We can now move some files into R for further analysis. These are the primary fi
 Bray-Curtis matrices:     
 
 ```
-oyster.opti_mcc.braycurtis.0.03.lt.ave.dist
+oyster.braycurtis.lt.ave.dist
 ```
 
 Taxonomy file:  
@@ -1755,28 +1809,28 @@ oyster.taxonomy
 Shared file:  
 
 ```
-oyster.opti_mcc.0.03.subsample.shared
+oyster.ASV.subsample.shared
 ```
 
 Rarefaction file:  
 ```
-oyster.opti_mcc.groups.rarefaction
+oyster.groups.rarefaction
 ```
 
 Outside Andromeda do the following for each file:  
 
 ```
-scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/oyster_16S/v6/oyster.opti_mcc.braycurtis.0.03.lt.ave.dist ~/Desktop/oyster_16s
+scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/oyster_16S/v6/oyster.braycurtis.lt.ave.dist ~/MyProjects/Cvir_Nut_Int/output/16S_allv6/mothur
 
-scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/oyster_16S/v6/oyster.taxonomy ~/Desktop/oyster_16s
+scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/oyster_16S/v6/oyster.taxonomy ~/MyProjects/Cvir_Nut_Int/output/16S_allv6/mothur
 
-scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/oyster_16S/v6/oyster.opti_mcc.0.03.subsample.shared ~/Desktop/oyster_16s
+scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/oyster_16S/v6/oyster.ASV.subsample.shared ~/MyProjects/Cvir_Nut_Int/output/16S_allv6/mothur
 
-scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/oyster_16S/v6/oyster.opti_mcc.groups.rarefaction ~/Desktop/oyster_16s
+scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/oyster_16S/v6/oyster.groups.rarefaction ~/MyProjects/Cvir_Nut_Int/output/16S_allv6/mothur
 
-scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/oyster_16S/v6/*.txt ~/Desktop/oyster_16s
+scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/oyster_16S/v6/*.txt ~/MyProjects/Cvir_Nut_Int/output/16S_allv6/mothur
 
-scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/oyster_16S/v6/*.csv ~/Desktop/oyster_16s
+scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/oyster_16S/v6/*.csv ~/MyProjects/Cvir_Nut_Int/output/16S_allv6/mothur
 ```
 
 After copying to the computer, I resave these files at tab delimited (.txt) before loading into R.  
