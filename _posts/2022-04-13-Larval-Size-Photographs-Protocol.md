@@ -42,11 +42,10 @@ Protocols developed by Danielle Becker and modified by Ariana Huffmyer.
 1. Open ImageJ or Fiji software
 2. Open the first photograph 
 3. Set scale for each picture individually using the stage micrometer in the picture. Write down the units used for the scale (mm, cm, etc). 
-4. Click “set measurements” and check “area” in ImageJ/Fiji
-5. We will measure size for n=20 larvae per photograph (if there are less than 20 larvae, measure all that are in the picture). 
-6. For each larvae, use the line tool to measure the longest length. Record in data sheet. 
-7. Then, on that same larvae, measure the perpendicular width to the length you just measured. Record on data sheet. 
-8. Larval volume will then automatically calculate in the datasheet.  
+4. We will measure size for n=20 larvae per photograph (if there are less than 20 larvae, measure all that are in the picture). 
+5. For each larvae, use the line tool to measure the longest length. Record in data sheet. 
+6. Then, on that same larvae, measure the perpendicular width to the length you just measured. Record on data sheet. 
+7. Larval volume will then automatically calculate in the datasheet.  
 8. Repeat for all larvae (n=20 per photo). 
 9. On data sheet, record necessary metadata such as photograph ID, date, and any notes.  
 
