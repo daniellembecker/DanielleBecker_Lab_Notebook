@@ -177,3 +177,36 @@ Total Alkalinity Output
 | BT3      | 2688.90731610684 | 60.408 | 35.2     |
 | QT1      | 2823.76279986172 | 60.342 | 34.84    |
 | QT2      | 2818.53715332585 | 59.842 | 34.84    |
+
+
+#### **Our undergraduate, Kristen, took over titration responsibilities between 20220209 till 20220518**
+
+#### **Data for samples run on 20220608**
+---
+
+**Notes**
+- Before the titration run, salinity was measured following the [conductivity calibration protocol](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resourses/Equipment_Protocols/Orion_MultiParameter_Sensor_Protocol.md#Conductivity).
+- When I looked back at the CRM accuracy data ran in the past three weeks, I noticed that the values were <1% off in terms of accuracy after troubleshooting and checking that there were no bubbles in the acid line and the pH values were good. I also opened a new CRM bottle because I thought maybe the CRM had just sat too long. Once I noticed that the second CRM I ran was still off, I knew that there was probably some contamination with the acid titrant. I then swithced out the acid titrant with a new bottle of the same batch number (A22) and ran another round of CRMs to find that that was the issue. I think that the issue was we use the purge HCl cup underneath the stirrer when the titrator is not in use some build-up of acid precipitate occurs in the cup. Moving forward, when you do the acid purge we need to make sure to first clean this cup with DI water into the waste containers because I think what was happening was the purged HCl we normally put back into the bottle was mixing with this precipitate causing contamination in the acid titrant. 
+- I also trained Lauren on the titrator today and she will be taking over the CBLS titrations from now on.
+
+**Data**
+
+CRM Accuracy Data
+
+| Date     | CRM value   | Batch value | % off        | Batch # | Notes               |
+|----------|-------------|-------------|--------------|---------|---------------------|
+| 20220608 | 2228.8510392502 | 2224.47    |  0.196947554 | 180     | CRM opened 20220427 |
+
+
+Total Alkalinity Output
+
+| SampleID | TA               | Mass   | Salinity |
+|----------|------------------|--------|----------|
+| JUNK1    | 2002.77352735714 | 59.812 | 35       |
+| HT1      | 1736.27119513021 | 60.086 | 36.92    |
+| HT2      | 1735.46572189237 | 60.32  | 36.92    |
+| BT1      | 1738.99063457413 | 59.802 | 36.93    |
+| BT2      | 1735.76800715807 | 59.786 | 36.93    |
+| BT3      | 1739.75677216614 | 60.267 | 36.93    |
+| QT1      | 2485.31826306165 | 59.888 | 40.43    |
+| QT2      | 2487.98454750446 | 59.786 | 40.43    |
