@@ -6,9 +6,9 @@ categories: Protocol
 tags: Respirometry Protocol
 ---
 
-This protocol details the step-by-step use of the PreSens/Loligo Microplate respiration system for coral larvae. 
+This protocol details the step-by-step use of PreSens/Loligo Microplate respiration system for coral larvae. 
 
-# **Larval photosynthesis and respirometry protocol using SDR microplate**  
+# **Larval photosynthesis and respirometry protocol using SDR microplate**   
 
 [Original protocol](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Mcapitata-Early-Life-History-Respirometry-Protocol/) written by Ariana Huffmyer and modified by Jill Ashey and Federica Scucchia (Hawai’i June 2022) 
 

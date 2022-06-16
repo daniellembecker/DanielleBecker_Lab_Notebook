@@ -6,7 +6,7 @@ categories: Protocol
 tags: Protocol StableIsotopes Metabolomics
 ---
 
-This protocol details the step-by-step process for incubations for stable isotope metabolomics in coral larvae.  
+This protocol details the step-by-step process for incubations for stable isotope metabolomics for coral larvae.  
 
 # **Larval stable isotope metabolomics incubation protocol**  
 
