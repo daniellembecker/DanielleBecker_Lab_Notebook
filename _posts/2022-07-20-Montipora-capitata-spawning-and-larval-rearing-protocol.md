@@ -6,9 +6,11 @@ categories: Protocol
 tags: Mcapitata Reproduction Protocol Husbandry Settlement
 ---
 
+This protocol details the methods for collecting *Montipora capitata* bundles during spawning, fertilizing gametes, and rearing and settling larvae in Hawai’i during the summer months.  
+
 # **Best practices for spawning and larval collection in Montipora capitata corals in Hawai’i**  
 
-This protocol details the methods for collecting Montipora capitata bundles during spawning, fertilizing gametes, and rearing and settling larvae in Hawai’i during the summer months. These methods are modified from those developed by the [Coral Resilience Lab at HIMB](https://www.coralresiliencelab.com/). 
+These methods are modified from those developed by the [Coral Resilience Lab at HIMB](https://www.coralresiliencelab.com/). 
 
 ## 1. Collection  
 - Gametes can be collected using two methods: direct collection from colonies in buckets or scooping gametes from the surface of the water in Kaneohe Bay (“wildtype”). 
