@@ -5,13 +5,6 @@ date: '2022-07-20'
 categories: Protocol
 tags: Mcapitata Reproduction Protocol Husbandry Settlement
 ---
----
-layout: post
-title: Montipora capitata spawning 
-date: '2022-06-21'
-categories: Protocol
-tags: Larval collection
----
 
 # **Best practices for spawning and larval collection in Montipora capitata corals in Hawai’i**  
 
