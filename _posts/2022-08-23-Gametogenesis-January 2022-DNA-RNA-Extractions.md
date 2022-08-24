@@ -68,7 +68,7 @@ Process DNA-RNA extractions for the 12-month [Gametogenesis time series project]
 
 ### Proteinase K Addition  
 
-1. Place 300 uL of that aliquoted supernatant into a new 1.5 mL microcentrifuge tube for extractions.    
+1. Place 300 uL of the DNA-RNA shield aliquot into a new 1.5 mL microcentrifuge tube for extractions.    
 2. Add 30 µl of PK digestion buffer to each sample tube (1:10 ratio of PK Digestion Buffer:Sample).  
 3. Add 15 µl Proteinase K to each sample tube (1:2 ratio of Proteinase K:PK Digestion Buffer).  
 4. Vortex for 5-10 seconds and spin down.
