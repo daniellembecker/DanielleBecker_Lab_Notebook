@@ -139,8 +139,41 @@ Process DNA-RNA extractions for the 12-month [Gametogenesis time series project]
 
 These steps analyze the quantity and quality of the DNA/RNA extracted and may be done on a separate day from the extraction.
 
-### RNA/DNA Quantity  
+### DNA/RNA Quantity  
 Follow Broad Range dsDNA and RNA Qubit [protocol](https://meschedl.github.io/MESPutnam_Open_Lab_Notebook/Qubit-Protocol/) to analyze sample ++quantity++. Read all samples twice.
+
+### DNA/RNA Quantity - 12 January 2022 Samples
+
+| tube.number    | colony.ID | qubit.reading.1 | qubit.reading.2 | sample.type |
+|----------------|-----------|-----------------|-----------------|-------------|
+| DNA_standard_1 | NA        | 200.58          | NA              | DNA.STD     |
+| DNA_standard_2 | NA        | 24151           | NA              | DNA.STD     |
+| 1              | ACR-418   | 25.6            | 25.4            | DNA         |
+| 2              | ACR-422   | 24              | 23.4            | DNA         |
+| 4              | ACR-431   | 25.4            | 24.8            | DNA         |
+| 3              | ACR-428   | 19.8            | 19.3            | DNA         |
+| 5              | ACR-432   | 15.1            | 14.8            | DNA         |
+| 6              | ACR-438   | 25              | 24.4            | DNA         |
+| 7              | ACR-457   | 27.6            | 27              | DNA         |
+| 8              | ACR-458   | 29.8            | 29              | DNA         |
+| 9              | ACR-459   | 13.1            | 13              | DNA         |
+| 10             | ACR-460   | 15.6            | 15.1            | DNA         |
+| 11             | ACR-464   | 19.2            | 18.8            | DNA         |
+| 12             | ACR-465   | 14              | 13.5            | DNA         |
+| RNA_standard_1 | NA        | 422.43          | NA              | RNA.STD     |
+| RNA_standard_2 | NA        | 9892.36         | NA              | RNA.STD     |
+| 1              | ACR-418   | 31.6            | 31.6            | RNA         |
+| 2              | ACR-422   | 21.6            | 22              | RNA         |
+| 3              | ACR-428   | 27.6            | 27.6            | RNA         |
+| 4              | ACR-431   | NA              | NA              | RNA         |
+| 5              | ACR-432   | 16.8            | 16.4            | RNA         |
+| 6              | ACR-438   | 15.2            | 14.4            | RNA         |
+| 7              | ACR-457   | 18.4            | 18.2            | RNA         |
+| 8              | ACR-458   | 15.2            | 15.2            | RNA         |
+| 9              | ACR-459   | 17.4            | 16.6            | RNA         |
+| 10             | ACR-460   | 20.4            | 20.6            | RNA         |
+| 11             | ACR-464   | 13.8            | 13.8            | RNA         |
+| 12             | ACR-465   | 13.2            | 13              | RNA         |
 
 ### DNA Quality  
 If DNA quantity is sufficient (typically >10 ng/µL) follow the PPP Agarose Gel [Protocol](https://meschedl.github.io/MESPutnam_Open_Lab_Notebook/Gel-Protocol/) to determine DNA quality. "Good" DNA should form a distinct band a the very top of the gel. See example below:
