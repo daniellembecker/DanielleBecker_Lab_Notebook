@@ -71,8 +71,9 @@ Process DNA-RNA extractions for the 12-month [Gametogenesis time series project]
 1. Place 300 uL of that aliquoted supernatant into a new 1.5 mL microcentrifuge tube for extractions.    
 2. Add 30 µl of PK digestion buffer to each sample tube (1:10 ratio of PK Digestion Buffer:Sample).  
 3. Add 15 µl Proteinase K to each sample tube (1:2 ratio of Proteinase K:PK Digestion Buffer).  
-4. Vortex for 5-10 seconds and spin down.    
-5. Proceed to extraction steps.    
+4. Vortex for 5-10 seconds and spin down.
+5. Set timer for 15 minutes and let samples sit. Start labeling other tubes and organizing on tube racks.
+6. After 15 minutes, proceed to extraction steps.
 
 ## DNA Extraction
 1. Set up yellow DNA spin columns and collection tubes, label appropriately
@@ -80,7 +81,7 @@ Process DNA-RNA extractions for the 12-month [Gametogenesis time series project]
 3. Add equal volume (345 µl) DNA/RNA lysis buffer to each sample tube
 4. Finger flick to mix tubes
 5. Add 700 µl (total volume) of sample gently to the yellow DNA spin column
-6. Centrifuge at 16,000 rcf (g) for 1 minute
+6. Centrifuge at 16,000 rcf (g) for 3 minutes
 7. **Important** Save the flow through from this step: transfer to a new 1.5mL tube labeled for RNA
 8. Add 400µl DNA/RNA Prep Buffer gently to the yellow DNA spin columns
 9. Centrifuge at 16,000 rcf (g) for 1 minute
@@ -88,7 +89,7 @@ Process DNA-RNA extractions for the 12-month [Gametogenesis time series project]
 11. Add 700 µl DNA/RNA Wash Buffer gently to the yellow DNA spin columns
 12. Centrifuge at 16,000 rcf (g) for 1 minute
 13. Discard flow through (Zymo kit waste)
-14. Add 400 µl DNA/RNA Wash Buffer genetly to the yellow DNA spin columns
+14. Add 400 µl DNA/RNA Wash Buffer gently to the yellow DNA spin columns
 15. Centrifuge at 16,000 rcf (g) for **2 minutes 30 seconds**
 16. Discard flow through (Zymo kit waste)
 17. Transfer yellow columns to new 1.5mL microcentrifuge tubes
