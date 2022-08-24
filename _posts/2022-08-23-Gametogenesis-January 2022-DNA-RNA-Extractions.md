@@ -175,6 +175,8 @@ Follow Broad Range dsDNA and RNA Qubit [protocol](https://meschedl.github.io/MES
 | 11             | ACR-464   | 13.8            | 13.8            | RNA         |
 | 12             | ACR-465   | 13.2            | 13              | RNA         |
 
+**We noticed that the RNA quantity for sample 431 was not detected, this could mean that there was possible contamination during the extraction process, or prior issues when the sample was taken that may have caused this. This sample will need to re-extracted and troubleshooted.**
+
 ### DNA Quality  
 If DNA quantity is sufficient (typically >10 ng/µL) follow the PPP Agarose Gel [Protocol](https://meschedl.github.io/MESPutnam_Open_Lab_Notebook/Gel-Protocol/) to determine DNA quality. "Good" DNA should form a distinct band a the very top of the gel. See example below:
 
@@ -195,3 +197,5 @@ If RNA quantity is sufficient follow the Tape Station [Protocol](https://mesched
 You can also run RNA quality with a gel, which was done for our samples.
 
 ![image of gel](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/images/20220823_extractions_gel.jpg)
+
+**We noticed that the RNA quality for sample 431 was not detected, this could mean that there was possible contamination during the extraction process, or prior issues when the sample was taken that may have caused this. This sample will need to re-extracted and troubleshooted.**
