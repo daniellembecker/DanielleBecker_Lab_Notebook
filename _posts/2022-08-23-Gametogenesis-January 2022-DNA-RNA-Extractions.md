@@ -36,13 +36,15 @@ Process DNA-RNA extractions for the 12-month [Gametogenesis time series project]
 
 ### **Process**
 
-- Samples were collected and preserved in DNA-RNA shield in Mo'orea, French Polynesia following the [Sample Collection Protocol](https://github.com/daniellembecker/Gametogenesis/blob/main/protocols/2021-12-26-Sample_Same_Day_Processing_Protocol.md).**
-
+- Samples were collected and preserved in DNA-RNA shield in Mo'orea, French Polynesia following the [Sample Collection Protocol](https://github.com/daniellembecker/Gametogenesis/blob/main/protocols/2021-12-26-Sample_Same_Day_Processing_Protocol.md).
 
 
 # **Zymo Duet DNA/RNA Extraction Protocol**
 
-## **January 2022 samples processed 20220823**
+## **12 January 2022 samples processed 20220823**
+
+
+![image](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/images/20220823_extractions.jpeg)
 
 ### Reagent Preparation
 
