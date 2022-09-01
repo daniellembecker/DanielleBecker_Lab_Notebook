@@ -14,8 +14,12 @@ I am a marine biologist and eco-physiologist working to understand the role of t
 [UW Roberts Lab website](https://faculty.washington.edu/sr320/)    
 
 ## <center>ARIANA S. HUFFMYER, PHD</center>
+<center>National Science Foundation Ocean Sciences Postdoctoral Fellow</center>
+<center>UW Data Science Postdoctoral Fellow</center>
+
 <center>Department of Biological Sciences | University of Rhode Island</center>
 <center>School of Aquatic and Fisheries Sciences | University of Washington</center>
+
 <center>ashuffmyer@uri.edu</center>
 
 ### POSITIONS HELD
@@ -38,7 +42,7 @@ Date|Position| Affiliation
 
 [Google Scholar Profile](https://scholar.google.com/citations?user=_dw3pYEAAAAJ&hl=en)
 
-
+12. Alexander G, J Hancock, **AS Huffmyer**, SB Matsuda. 2022. Larval thermal pre-exposure does not improve post-settlement thermal tolerance in a dominant reef-building coral, Montipora capitata. Coral Reefs 10.1007/s00338-022-02234-x
 11. Matsuda SB, LJ Chakravarti, R Cunning, **AS Huffmyer**, CE Nelson, RD Gates, MJH van Oppen. 2022. Temperature mediated acquisition of rare heterologous symbionts promotes survival of coral larvae under ocean warming. Global Change Biology. https://doi.org/10.1111/gcb.16057  
 10. **Huffmyer AS**, CJ Johnson, AM Epps, JD Lemus, RD Gates. Feeding and thermal conditioning enhance coral temperature tolerance in juvenile Pocillopora acuta. Royal Society Open Science 8: 210644.  
 9. Barott KL, **AS Huffmyer**, J Davidson, EA Lenz, SB Matsuda, J Hancock, T Innis, B Glazer, C Drury, H Putnam, RD Gates. Fitness of thermally tolerant corals following transplantation supports utility of assisted gene flow for climate change remediation of coral reefs. PNAS 118: e2025435118.  
@@ -55,6 +59,10 @@ Date|Position| Affiliation
 ### RESEARCH GRANTS
 
 ##### Funded
+
+2022-2024 National Science Foundation Ocean Sciences Postdoctoral Fellowship ($370,100) 
+
+2022-2023 UW eScience Data Science Postdoctoral Fellowship ($7,000) 
 
 2016-2020	National Science Foundation Graduate Research Fellow ($114,000)  
 
@@ -102,6 +110,7 @@ Date|Position| Affiliation
 
 #### *Invited Lectures and Presentations*  
 
+7. **Huffmyer AS**. Physiological and multi-omic signatures of shifts in symbiotic nutritional exchange in reef-building coral early life history. Benthic Ecology Conference. Portsmouth, NH, USA. March 2022.
 6. **Huffmyer AS** and HG Reich. Coral symbiosis and application of ‘omics to answer emerging questions in marine invertebrate ecophysiology. University of Rhode Island - Marine Environmental Physiology course. Virtual invited lecture. April 2021. 
 5. **Huffmyer AS** and EA Lenz. Coral reef resiliency and recovery in the face of global climate change. ARCS Honolulu Chapter. Invited presentation. Honolulu, Hawaiʻi, USA. February 2019.
 4. **Huffmyer AS**. Early life history of reef building corals. University of Hawaiʻi at Mānoa - Corals and Coral Reefs course. Invited lecture. Honolulu, Hawaiʻi, USA. April 2018.
