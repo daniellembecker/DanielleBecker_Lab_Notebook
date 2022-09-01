@@ -12,7 +12,7 @@ All code used in this post can be found in the [E5 GitHub repository](https://gi
 
 # Overview  
 
-The E5 physiological time series project includes data on coral and symbiont physiology in colonies of **Acropora**, **Pocillopora**, and **Porites** corals in Moorea, French Polynesia. Samples of individual colonies were collected at four timepoints in the year of 2020: Jan, Mar, Sep, and Nov.  
+The E5 physiological time series project includes data on coral and symbiont physiology in colonies of *Acropora*, *Pocillopora*, and *Porites* corals in Moorea, French Polynesia. Samples of individual colonies were collected at four timepoints in the year of 2020: Jan, Mar, Sep, and Nov.  
 
 For the physiological responses collected (e.g., biomass, symbiont density, calcification, protein, antioxidant capacity), we have analyzed to investigate the influence of species, site, and time on physiology. We have found that physiological response of corals is influenced by environmental variability both across space (site) and seasons (time point).  
 
