@@ -59,7 +59,7 @@ These colonies will be used to collect wildtype gametes to rear to larval stages
 
 ### *Launching loggers*  
 
-temperature loggers were launched to track temperature in the adult parent tanks (n=2 tanks for Danielle and n=2 tanks for Ariana; N=4 loggers) and larval conicals (n=4 conicals per blue tank; N=16 loggers).  
+Temperature loggers were launched to track temperature in the adult parent tanks (n=2 tanks for Danielle and n=2 tanks for Ariana; N=4 loggers) and larval conicals (n=4 conicals per blue tank; N=16 loggers).  
 
 Black Onset Hobo loggers were launched in each parent tank at 1900. Pendant Onset Hobo loggers were launched in larval conicals at 2200. Loggers are set to collect data every 10 minutes. At the end of the experiment we will need to do a group calibration to calculate offsets for the loggers.  The loggers and location are as follows:  
 
