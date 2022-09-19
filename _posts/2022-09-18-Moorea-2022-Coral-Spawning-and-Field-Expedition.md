@@ -25,6 +25,152 @@ Ariana Huffmyer
 Pierrick Harnay  
 Danielle Becker-Polinski  
 
+# 18 September 2022  
+
+### *Setting up temperature control*  
+
+Ariana added heaters to the cooler systems in tanks A and C for high temperature control and connected to the Apex Neptune system. Temperatures programmed to be +4°C to see if the system can give us a high degree of elevated temperature without electrical limitations.  
+
+![heaters](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/heaters.jpeg)  
+
+![heaters2](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/heaters2.jpeg)  
+
+![heaters2](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/tanks2.jpeg)  
+
+The script in the Apex program follows this temperature profile for each virtual stage.  
+
+29C - 30.4C (with 1.5C daily fluctuation)   
+Stage 1 = 29  
+Stage 2 = 29.2  
+Stage 3 = 29.4  
+Stage 4 = 29.6  
+Stage 5 = 29.8  
+Stage 6 = 30.0  
+Stage 7 = 30.2  
+Stage 8 = 30.4    
+
+This profile will be revised based on the diel fluctuation and the ambient temperature in Moorea. This profile is a test. The peak temperature occurs between 1500 and 1715 daily with this profile.  
+
+The script in the Apex system is as follows:  
+
+```
+All master outlets 
+Set OFF 
+If Outlet High_Stage1 = ON Then ON 
+If Outlet High_Stage2 = ON Then ON 
+If Outlet High_Stage3 = ON Then ON 
+If Outlet High_Stage4 = ON Then ON 
+If Outlet High_Stage5 = ON Then ON 
+If Outlet High_Stage6 = ON Then ON 
+If Outlet High_Stage7 = ON Then ON 
+If Outlet High_Stage8 = ON Then ON 
+
+High_Stage1
+Set OFF 
+If High_1 < 29 Then ON 
+If High_1 > 29 Then OFF 
+If Time 01:00 to 04:30 Then OFF 
+If Time 06:45 to 00:59 Then OFF
+
+High_Stage2
+Set OFF 
+If High_1 < 29.2 Then ON 
+If High_1 > 29.2 Then OFF 
+If Time 01:00 to 03:00 Then OFF 
+If Time 04:30 to 06:45 Then OFF
+If Time 08:15 to 00:59 Then OFF 
+
+High_Stage3
+Set OFF 
+If High_1 < 29.4 Then ON 
+If High_1 > 29.4 Then OFF 
+If Time 01:00 to 02:00 Then OFF 
+If Time 03:00 to 08:15 Then OFF 
+If Time 09:45 to 00:59 Then OFF 
+
+High_Stage4
+Set OFF 
+If High_1 < 29.6 Then ON 
+If High_1 > 29.6 Then OFF 
+If Time 02:00 to 09:45 Then OFF 
+If Time 11:15 to 00:30 Then OFF 
+
+High_Stage5
+Set OFF 
+If High_1 < 29.8 Then ON 
+If High_1 > 29.8 Then OFF 
+If Time 01:00 to 11:15 Then OFF 
+If Time 12:15 to 23:00 Then OFF 
+If Time 00:30 to 00:59 Then OFF 
+
+High_Stage6
+Set OFF 
+If High_1 < 30 Then ON 
+If High_1 > 30 Then OFF 
+If Time 01:00 to 12:15 Then OFF 
+If Time 13:30 to 19:45 Then OFF 
+If Time 23:00 to 00:59 Then OFF
+
+High_Stage7
+Set OFF 
+If High_1 < 30.2 Then ON
+If High_1 > 30.2 Then OFF 
+If Time 01:00 to 13:30 Then OFF 
+If Time 15:00 to 17:15 Then OFF 
+If Time 19:45 to 00:59 Then OFF 
+
+High_Stage8
+Set OFF 
+If High_1 < 30.4 Then ON 
+If High_1 > 30.4 Then OFF 
+If Time 01:00 to 15:00 Then OFF 
+If Time 17:15 to 00:59 Then OFF
+
+```
+
+The temperature treatment was initiated at 1530 today. By 1800 the temperatures were at the desired level. We will let the profiles run for 24 h to view performance. Tomorrow we will look at the Apex data and download loggers.  
+
+### *Setting up SDR and lights*  
+
+Ariana set up the incubators, SDR, and lights that will be required for respirometry and stable isotope incubations.  
+
+![incubators](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/incubators.jpeg) 
+
+Aqua Illumination Prime 16HD reef lights are used to provide light in the incubators for photosynthesis measurements and stable isotope incubations. 
+
+Light settings were set to 40% intensity on all channels (UV, violet, royal, blue, green, deep red, cool white; no moonlight) positioned 25 cm above surface of the bottom of the incubator and 22 cm above the surface of the SDR plate. The goal is to obtain light at approx. 500 PAR at the level of the SDR plate.  
+
+Light was measured at 6 positions at the level of the SDR plate. This measurement should be conducted at the start of every day of measurement.  
+
+Incubators were labeled Incubator 1 and Incubator 2. Associated SDR 1 and 2 will be placed in the same number incubator. 
+
+Light measurements were recorded in Google Drive datasheet. Average light intensity was 494 PAR in Incubator 1 and 487 PAR in Incubator 2.   
+
+A HOBO Onset Pendant logger is placed in each incubator that can be launched at each respiration run to record temperature every 1 min. 
+
+Logger 21002976 is in Incubator 1 and logger 2133598 is in Incubator 2.  
+
+![resp1](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/resp1.jpeg) 
+
+![resp2](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/resp2.jpeg) 
+
+### *Calibrating SDR*  
+
+We replaced oxygen sensor spots on the SDR microplates and need to calibrate since there are new spots from different batches than the old spots. This will also correct any drift of the spots.  
+
+SDR systems were assembled and set up and connected to the PreSens SDR software. To calibrate we followed the following steps:  
+
+1. Mixed solution of 100% oxygen seawater by bubbling filtered seawater and made 0% oxygen seawater by adding sodium sulfite.  
+2. Set oxygen unit to % O2 and record every 3 minutes. Select batch PSt5-1624.  
+3. Select log measurement to create data for calibration labeled with Date and "calibration". Saved on PC desktop in Moorea 2022 spawning folder. Will be uploaded to Google Drive and GitHub.  
+4. Load half of wells with 0% solution and half with 100% oxygen solution in each plate. Record locations. Alternating wells with 0 and 100% water.  
+5. Start measurements and let record for 2-3 h until stabilized recording every 3 min. 
+6. Measure temperature with probe and loggers throughout.  
+7. Export the data and calculate mean values. We will create a new calibration dataset from these measurements.  
+
+INSERT OTHER STEPS HERE WHEN WE DO IT  
+
+
 # 17 September 2022  
 
 ### *Histology time series sampling*  
@@ -54,6 +200,8 @@ We then collected n=25 colonies (approx. 15-30cm in diameter) from large patches
 Ariana and Danielle used a hammer and chisel to remove large fragments (15-30cm diameter) from these patches. Ariana Danielle and Pierrick transported them back to the boat where they were kept in coolers and buckets filled with seawater. Colonies were then transported back to Gump station at 1230 and placed in 2 flow through seawater tanks (n=12-13 colonies per tank). Tanks are equipped with 3 small recirculating pumps for water flow and had high water flow.   
 
 ![parents tank](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/colonies_tank.jpeg) 
+
+![parents tank 2](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/parent_tank.jpeg) 
 
 These colonies will be used to collect wildtype gametes to rear to larval stages for Ariana's project. Spawn will be collected from each of the 2 tanks with wildtype colonies.  
 
