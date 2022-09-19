@@ -5,7 +5,7 @@ date: '2022-09-18'
 categories: Acropora_Integration_Moorea_2022
 tags: Acropora Husbandry Reproduction ExperimentalDesign
 ---
-This post includes the full notebook for Sept-Oct 2022 *Acropora* coral spawning and field expedition in Moorea, French Polynesia. These notebook posts are updated in order of most recent to oldest. 
+This post includes the full notebook for Sept-Oct 2022 *Acropora* coral spawning and field expedition in Moorea, French Polynesia. These notebook posts by A. Huffmyer are updated in order of most recent to oldest. 
 
 # Project Overview  
 
@@ -173,13 +173,13 @@ INSERT OTHER STEPS HERE WHEN WE DO IT
 
 # 17 September 2022  
 
-### *Histology time series sampling*  
+### *Histology time series sampling - backreef Acropora and Pocillopora*  
 
-We conducted the September time point of histology time series sampling at Mahana for *Acropora pulchra* and *Pocillopora* sp. Protocols and more information on this project can be found on [GitHub](https://github.com/daniellembecker/Gametogenesis/tree/main/protocols) and on the [E5 public notebook](https://urol-e5.github.io/).  
+We conducted the September time point of histology time series sampling at Mahana (17°29'12.5"S 149°53'16.1"W) for *Acropora pulchra* and *Pocillopora* sp. Protocols and more information on this project can be found on [GitHub](https://github.com/daniellembecker/Gametogenesis/tree/main/protocols) and on the [E5 public notebook](https://urol-e5.github.io/).  
 
 This time series tracks gametogenesis through histology associated with Danielle's PhD research. For this sampling we collected fragments of n=40 *A. pulchra* and n=10 *Pocillopora* tagged colonies at Mahana site. We collected fragments from 0900-1300. 
 
-Fragments were then processed from 1400-1600 in the lab. Clippings of each fragment were preserved for histology, molecular samples (flash frozen and in DNA RNA shield), and physiology.  
+Fragments were then processed from 1400-1600 in the lab. After collecting the samples, Danielle, Ariana, and Pierrick followed the [Same Day Sample Processing Protocol](https://github.com/daniellembecker/Gametogenesis/blob/main/protocols/2021-12-26-Sample_Same_Day_Processing_Protocol.md) to prepare samples for histological analysis, molecular and physiological downstream processing. Clippings of each fragment were preserved for histology, molecular samples (flash frozen and in DNA RNA shield), and physiology.  
 
 ### *Sampling*  
 
@@ -189,11 +189,11 @@ We again checked for spawning by stopping the water and pumps in all tanks at 20
 
 ### *Colony collection*    
 
-Parent colonies were collected from the Mahana site on Moorea's north shore.  
+Parent colonies were collected from the Mahana site on Moorea's north shore (17°29'12.5"S 149°53'16.1"W).  
 
 ![field site](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/mahana.png) 
 
-We first collected n=24 colonies for Danielle's project at 0800-0900 at the Mahana field site. We transported these colonies back to Gump station at 1000. 
+We first collected n=24 *Acropora. pulchra* colonies for Danielle's project at 0800-0900 at the Mahana field site. We transported these colonies back to Gump station at 1000. Parental colonies had previously experienced a marine heatwave scenario or ambient diel conditions in March-April 2022. All information on the heatwave experiment and data can be found [here](https://github.com/daniellembecker/Gametogenesis/tree/main/heatwave). 
 
 We then collected n=25 colonies (approx. 15-30cm in diameter) from large patches of *Acropora pulchra* from the Mahana field site between 1000-1200. We have a year-long project that has been tracking histology and physiology of colonies (Danielle's project) at this site and therefore we have temperature and light data from this site as environmental context. The colonies collected are considered "wildtype" and were not taken from tagged colonies. Colonies were collected from different patches to obtain a genetically diverse sample. 
 
