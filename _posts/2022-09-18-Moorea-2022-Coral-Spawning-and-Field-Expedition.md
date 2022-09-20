@@ -37,15 +37,15 @@ October Full Moon = Oct 9 10:55am Tahiti time
 
 We are going to move forward with the following projects.    
 
-1. **Histological time series high frequency sampling**  
+**Histological time series high frequency sampling**  
 
 Danielle, Ariana, and Pierrick will conduct high frequency histology sampling of the *A. pulchra* histology time series of colonies at Mahana. We will collect samples from a subset of colonies (N=20 colonies, n=4 colonies per patch) every 5 days to characterize the final stages of gametogenesis in October.   
 
-2. **Processing histology time series physiology and histology samples**  
+**Processing histology time series physiology and histology samples**  
 
 Danielle will train Pierrick how to process physiology and histology samples taken from the *A. pulchra* histology time series in September.  
 
-3. **E5 adult repeat stressor experiment**  
+**E5 adult repeat stressor experiment**  
 
 Ariana will plan and start an experiement under the E5 project to conduct a repeat stressor in adult corals. This project will expose fragments of collected wildtype *A. pulchra* to two light treatments. This will be conducted at Gump using bins that will either be covered with shade cloth or under natural light conditions.  
 
@@ -53,13 +53,13 @@ The purpose of this project is to manipulate the metabolic condition of the cora
 
 Throughout the adult exposure, we will characterize physiology, metabolism, and use stable isotope metabolomics to trace symbiotic nutritional exchange.  
 
-4. **October larval symbiont integration experiment**  
+**October larval symbiont integration experiment**  
 
 Ariana will conduct an experiment in october using the same experimental plan as described for September. Briefly, we will rear *A. hyacinthus* embryos to the larval stage, allow larvae to acquire symbionts, and expose the larvae to either ambient or elevated temperature conditions. Ariana will measure metabolism, survival, and nutritional exchange. A schematic is included below.  
 
 ![project](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/project.png) 
 
-5. **Pocillopora population characterization**  
+**Pocillopora population characterization**  
 
 Pierrick will continue his project characterizing the haplotypes of *Pocillopora* spp. around Moorea. We will conduct additional sampling on transects at the Mahana and Hilton sites in September.  
 
