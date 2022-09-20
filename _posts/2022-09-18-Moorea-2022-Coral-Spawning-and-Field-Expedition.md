@@ -63,6 +63,10 @@ Ariana will conduct an experiment in october using the same experimental plan as
 
 Pierrick will continue his project characterizing the haplotypes of *Pocillopora* spp. around Moorea. We will conduct additional sampling on transects at the Mahana and Hilton sites in September.  
 
+### *Spawning*  
+
+We watched for spawning and no colonies spawned tonight. We will continue watching through Wednesday.  
+
 # 18 September 2022  
 
 ### *Setting up temperature control*  
@@ -208,6 +212,9 @@ SDR systems were assembled and set up and connected to the PreSens SDR software.
 
 It is not clear yet how we perform a calibration for each well. We will look into this and try to do a well specific calibration this week.  
 
+### *Spawning*  
+
+We watched for spawning and no colonies spawned tonight. We will continue watching through Wednesday.  
 
 # 17 September 2022  
 
@@ -219,7 +226,7 @@ This time series tracks gametogenesis through histology associated with Danielle
 
 Fragments were then processed from 1400-1600 in the lab. After collecting the samples, Danielle, Ariana, and Pierrick followed the [Same Day Sample Processing Protocol](https://github.com/daniellembecker/Gametogenesis/blob/main/protocols/2021-12-26-Sample_Same_Day_Processing_Protocol.md) to prepare samples for histological analysis, molecular and physiological downstream processing. Clippings of each fragment were preserved for histology, molecular samples (flash frozen and in DNA RNA shield), and physiology.  
 
-### *Sampling*  
+### *Spawning*  
 
 We again checked for spawning by stopping the water and pumps in all tanks at 2000 to watch for setting in collected colonies. We did not see setting by 2300. There was no spawning. 
 
