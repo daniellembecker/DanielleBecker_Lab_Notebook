@@ -13,17 +13,55 @@ The goal of this field expedition for A. Huffmyer is to conduct field work to in
 
 ![NSF Overview](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/NSF_OCE/NSF_overview.png)  
 
-The goal for this expedition is to answer all or some of the following questions dependent on material, spawning success, and timing:   
-1. How does thermal stress impact the timing and content of symbiotic nutritional exchange in early life history of *Acropora* sp.?   
-2. How does parental exposure to elevated temperature impact the initiation of symbiotic nutritional exchange in offspring in *Acropora* sp.?   
-3. How does exposure to elevated temperature impact metabolic exchange in *Acropora* sp. prior to and during reproduction?   
+The goal for this expedition is to answer the following question dependent on material, spawning success, and timing: 
+  
+*How does thermal stress impact the timing and content of symbiotic nutritional exchange in early life history of Acropora sp.?*     
 
 We will also continue in situ monitoring of *Acropora* and *Pocillopora* colonies on the reef in Moorea (Putnam Lab and E5 projects). 
 
-*Field expedition members:*     
+**Field expedition members:**     
 Ariana Huffmyer  
 Pierrick Harnay  
 Danielle Becker-Polinski  
+
+# 19 September 2022  
+
+### *Project planning*  
+
+Today we talked about project planning for the next few weeks in case the *Acropora pulchra* colonies do not spawn this month. If this is the case, spawning will occur at the following times:  
+
+October Full Moon = Oct 9 10:55am Tahiti time   
+
+*A. pulchra*: 9 nights after the full moon (Oct 18)  
+*A. cytherea, A. retusa, A. hyacinthus*: 6-9 nights after the full moon (Oct 15-18)    
+
+We are going to move forward with the following projects.    
+
+1. **Histological time series high frequency sampling**  
+
+Danielle, Ariana, and Pierrick will conduct high frequency histology sampling of the *A. pulchra* histology time series of colonies at Mahana. We will collect samples from a subset of colonies (N=20 colonies, n=4 colonies per patch) every 5 days to characterize the final stages of gametogenesis in October.   
+
+2. **Processing histology time series physiology and histology samples**  
+
+Danielle will train Pierrick how to process physiology and histology samples taken from the *A. pulchra* histology time series in September.  
+
+3. **E5 adult repeat stressor experiment**  
+
+Ariana will plan and start an experiement under the E5 project to conduct a repeat stressor in adult corals. This project will expose fragments of collected wildtype *A. pulchra* to two light treatments. This will be conducted at Gump using bins that will either be covered with shade cloth or under natural light conditions.  
+
+The purpose of this project is to manipulate the metabolic condition of the coral holobiont and understand how metabolic changes influence stress response. A thermal stress test will be conducted in December with Ross Cunning and Shayle Matsuda using the CBASS system. This project will help us understand how metabolic condition influences stress response.   
+
+Throughout the adult exposure, we will characterize physiology, metabolism, and use stable isotope metabolomics to trace symbiotic nutritional exchange.  
+
+4. **October larval symbiont integration experiment**  
+
+Ariana will conduct an experiment in october using the same experimental plan as described for September. Briefly, we will rear *A. hyacinthus* embryos to the larval stage, allow larvae to acquire symbionts, and expose the larvae to either ambient or elevated temperature conditions. Ariana will measure metabolism, survival, and nutritional exchange. A schematic is included below.  
+
+![project](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/project.png) 
+
+5. **Pocillopora population characterization**  
+
+Pierrick will continue his project characterizing the haplotypes of *Pocillopora* spp. around Moorea. We will conduct additional sampling on transects at the Mahana and Hilton sites in September.  
 
 # 18 September 2022  
 
@@ -168,7 +206,7 @@ SDR systems were assembled and set up and connected to the PreSens SDR software.
 6. Measure temperature with probe and loggers throughout.  
 7. Export the data and calculate mean values. We will create a new calibration dataset from these measurements.  
 
-INSERT OTHER STEPS HERE WHEN WE DO IT  
+It is not clear yet how we perform a calibration for each well. We will look into this and try to do a well specific calibration this week.  
 
 
 # 17 September 2022  
