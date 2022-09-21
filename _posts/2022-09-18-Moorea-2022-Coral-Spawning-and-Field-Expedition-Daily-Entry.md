@@ -44,7 +44,28 @@ Overall, this project will expose coral colonies to ambient (450-600 PAR) and re
 
 ### *Tank cleaning*  
 
-We cleaned all tanks and larval conicals and stored for use in the next spawning event.  
+Ariana cleaned all tanks and larval conicals and stored for use in the next spawning event.  
+
+### *SDR calibration*  
+
+We revised our approach to calibrating the SDR because we need to conduct calibrations at the level of individual wells. We can do this with a user-defined one point adjustment as specified in the SDR user manual and [online resources](https://www.presens.de/support-services/faqs/question/what-is-the-difference-between-user-defined-calibration-and-one-point-adjustment-for-the-sdr-when-do-i-apply-which-one-545).  
+
+The protocl is as follows and **must be completed at the beginning of each measurement set (i.e., at the beginning of each day) at the temperature of measurement**. If the plate will measure multiple temperatures, the one point adjustment will need to be conducted at that temperature. As long as the software remains open, multiple runs can be conducted with one set of calibrations.  
+
+Proceedure:  
+
+1. Aerate filtered seawater to generate 100% air saturated seawater (21% oxygen). Allow to fully aerate for 10-15 minutes.  
+2. Set the incubators at the desired temperature. 
+3. Load the SDR plate with the fully aerated seawater in each well ensuring there are no bubbles. Seal the wells with cover slips. 
+4. Place the plates on SDRs in each incubator. Allow to come to temperature for 10 min. 
+5. At this point, conduct the one point adjustment. 
+6. Enter the correct measurement temperature and batch number in the software (PtS6-1624) and salinity.  
+7. Select Calibration / One Point Adjustment
+8. The calibration will scan all wells. 
+9. Enter  pO2 (% Air Sat) = 100. 
+10. Press OK
+11. The adjustment has been performed. 
+12. Repeat at the start of each batch of measurements and at each respective temperature prior to measurement.  
 
 ### *Loggers*  
 
