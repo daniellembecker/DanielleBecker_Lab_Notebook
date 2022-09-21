@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Moorea 2022 Coral Spawning and Field Expedition
+title: Moorea 2022 Coral Spawning and Field Expedition Daily Entry
 date: '2022-09-18'
 categories: Acropora_Integration_Moorea_2022
 tags: Acropora Husbandry Reproduction ExperimentalDesign
@@ -19,10 +19,36 @@ The goal for this expedition is to answer the following question dependent on ma
 
 We will also continue in situ monitoring of *Acropora* and *Pocillopora* colonies on the reef in Moorea (Putnam Lab and E5 projects). 
 
+We are also conducting an adult coral experiment within the E5 framework to answer the question:  
+
+*How does altered metabolic and symbiotic state impact response to thermal stress in Acropora pulchra*?  
+
+**Separate posts will be created for specific projects while daily overviews and entries will be reported in this post.**  
+
+[See this post for details and daily entries for the E5 adult experiment](). 
+
 **Field expedition members:**     
 Ariana Huffmyer  
 Pierrick Harnay  
 Danielle Becker-Polinski  
+
+# 20 September 2022  
+
+### *Project planning*  
+
+Ariana developed a draft experimental design for the adult coral E5 repeat stressor experiment. [A separate notebook post has been created here with all details and daily entries for this project in the E5 notebook](). Ariana conducted planning and sourcing materials for this project today. 
+
+Overall, this project will expose coral colonies to ambient (450-600 PAR) and reduced (100-200 PAR) light conditions. A draft design is included below. This experiment will run until December. Monthly, fragments will be sampled for molecular, metabolomic, and physiological metrics. In December, S. Matsuda and R. Cunning will measure thermal phenotypes using the CBASS system.  
+
+![E5 project](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/E5project.png) 
+
+### *Tank cleaning*  
+
+We cleaned all tanks and larval conicals and stored for use in the next spawning event.  
+
+### *Loggers*  
+
+Ariana downloaded all Hobo loggers from the larval tanks to test that loggers are recording data at correct intervals. Tomorrow we will conduct a calibration and offsets for all loggers.  
 
 # 19 September 2022  
 
