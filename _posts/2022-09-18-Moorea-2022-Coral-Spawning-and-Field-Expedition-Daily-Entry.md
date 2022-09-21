@@ -25,7 +25,7 @@ We are also conducting an adult coral experiment within the E5 framework to answ
 
 **Separate posts will be created for specific projects while daily overviews and entries will be reported in this post.**  
 
-[See this post for details and daily entries for the E5 adult experiment](). 
+[See this post for details and daily entries for the E5 adult experiment](https://urol-e5.github.io/2022/09/20/E5-Moorea-Adult-Stressor-Experiment.html). 
 
 **Field expedition members:**     
 Ariana Huffmyer  
@@ -36,7 +36,7 @@ Danielle Becker-Polinski
 
 ### *Project planning*  
 
-Ariana developed a draft experimental design for the adult coral E5 repeat stressor experiment. [A separate notebook post has been created here with all details and daily entries for this project in the E5 notebook](). Ariana conducted planning and sourcing materials for this project today. 
+Ariana developed a draft experimental design for the adult coral E5 repeat stressor experiment. [A separate notebook post has been created here with all details and daily entries for this project in the E5 notebook](https://urol-e5.github.io/2022/09/20/E5-Moorea-Adult-Stressor-Experiment.html). Ariana conducted planning and sourcing materials for this project today. 
 
 Overall, this project will expose coral colonies to ambient (450-600 PAR) and reduced (100-200 PAR) light conditions. A draft design is included below. This experiment will run until December. Monthly, fragments will be sampled for molecular, metabolomic, and physiological metrics. In December, S. Matsuda and R. Cunning will measure thermal phenotypes using the CBASS system.  
 
