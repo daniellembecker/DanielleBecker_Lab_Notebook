@@ -32,6 +32,20 @@ Ariana Huffmyer
 Pierrick Harnay  
 Danielle Becker-Polinski  
 
+# 21 September 2022  
+
+### *Project set up*  
+
+Ariana, Pierrick, and Danielle sourced materials for the E5 adult project including buying tank bins, finding shade cloth, and cleaning water tables. Light levels in the high light treatment will be 500-700 PAR peaking during the day and the low light treatment will reduce by 65% to approx. 100-300 PAR. [See details on this project here](https://urol-e5.github.io/2022/09/20/E5-Moorea-Adult-Stressor-Experiment.html).  
+
+Ariana also discussed experimental design with the E5 team and we have revised the experimental approach to include two sampling time points with fragments sourced from 10 colonies/genotypes. 
+
+Ariana will finish set up for this project this week and then move forward with fragging and starting the experiment once design is finalized.   
+
+### *Boating*  
+
+Danielle gave the team an orientation to driving the LTER boat (509) at Gump. Ariana took 4 trips as captain driving in the channels to learn navigation on the north shore. Ariana and Pierrick will work on obtaining their authorization for driving Gump boats.  
+
 # 20 September 2022  
 
 ### *Project planning*  
