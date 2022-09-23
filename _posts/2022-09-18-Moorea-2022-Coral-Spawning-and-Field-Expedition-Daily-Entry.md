@@ -32,6 +32,26 @@ Ariana Huffmyer
 Pierrick Harnay  
 Danielle Becker-Polinski  
 
+# 22 September 2022  
+
+### *Histology time series*   
+
+We completed a sampling time point for the *A. pulchra* histology time series at the Mahana site (see details beow from 16 September 2022) for the high frequencing sampling. The purpose of this sampling is to acquire higher resolution histology from this species through the last month until spawning. This will occur every 5 days.  
+
+We sampled n=20 colonies (n=4 from each patch). We sampled between 0930 and 1100. We returned to the lab and processed the samples as described on 17 September 2022 between 1100 and 1230.  
+
+### *E5 project set up*   
+
+Ariana continued setting up materials for the E5 adult stressor project. We purchased 6 bins that will be tanks for this experiment. Ariana prepared the bins by drilling drain holes and securing wire at the top of each tank to hang fragments.  
+
+### *Tetiaroa spawning preparations*  
+
+The team met with collaborators in the Padilla-Gamino lab from the University of Washington to assist with preparations for a collaborative spawning expedition that will occur in October. The Padilla-Gamino lab will conduct spawning in Tetiaroa in October with parallel measurements in Moorea to characterize reproduction in *Acropora* corals. We shared protocols with their lab for spawning and measuring response variables of interest.  
+
+### *Gamete dissection*  
+
+Danielle trialed methods for dissecting gametes from live *A. pulchra* fragments. During our field expedition today, we noticed that gametes were visible in *A. pulchra* fragments and Danielle dissected and sampled these gametes.  
+
 # 21 September 2022  
 
 ### *Project set up*  
