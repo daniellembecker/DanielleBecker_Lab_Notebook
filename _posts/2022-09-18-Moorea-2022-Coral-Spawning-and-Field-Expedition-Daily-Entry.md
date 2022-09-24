@@ -90,9 +90,10 @@ Loggers were arranged as pictured below in one tank with running water at a low 
 
 ![loggers](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/loggers.jpeg)  
 
-LOCATION, Time put in tank,
-
 ### *Daily measurement loggers*  
+
+
+
 
 
 
