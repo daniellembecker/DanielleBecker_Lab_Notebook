@@ -25,12 +25,76 @@ We are also conducting an adult coral experiment within the E5 framework to answ
 
 **Separate posts will be created for specific projects while daily overviews and entries will be reported in this post.**  
 
-[See this post for details and daily entries for the E5 adult experiment](https://urol-e5.github.io/2022/09/20/E5-Moorea-Adult-Stressor-Experiment.html). 
+[See this post for details and daily entries for the E5 adult experiment](https://urol-e5.github.io/2022/09/20/E5-Moorea-Adult-Stressor-Experiment.html) and see this [GitHub repo here](https://github.com/urol-e5/apulchra_metabolism).  
 
 **Field expedition members:**     
 Ariana Huffmyer  
 Pierrick Harnay  
 Danielle Becker-Polinski  
+
+# 23 September 2022  
+
+### *Heatwave colony return*  
+
+The team returned the heatwave *A. pulchra* colonies from Danielle's project to the Mahana site from 0900-1100. We will collect them again before the next spawning. Colonies were zip tied to cinder blocks on Patch 3 at Mahana.  
+
+![adult return](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/adultreturn.jpeg) 
+
+### *Adult E5 experiment set up*  
+
+Ariana cleaned water lines and started water in n=6 tanks in preparation for the adult experiment.  
+
+Ariana started a [GitHub repo for this project here](https://github.com/urol-e5/apulchra_metabolism).  
+
+### *Logger offload and calibration*  
+
+Loggers were read off for the wildtype parent tanks and Danielle's parent tanks. Files were labeled with SSN and date and saved in the Apulchra_metabolism E5  GitHub repository. Loggers read off were: 
+
+20719656 (Wildtype Tank 2)  
+20946644 (Danielle Tank 1)  
+20444033 (Wildtype Tank 1) 
+20444040 (Danielle Tank 2)
+
+Ariana started a calibration of all temperature and light loggers that will run over the next 24-48 h. This will allow us to convert Lux to PAR from the Hobo Pendant loggers and to calculate temperature offsets from the temperature logging on the Hobo Pendants.  
+
+The following loggers were launched:  
+
+| Logger   | Interval | Type          | Time Deployed  |
+|----------|----------|---------------|----------------|
+| 20719656 | 10 min   | Hobo Temp     | 1635           |
+| 20946644 | 10 min   | Hobo Temp     | 1635           |
+| 20444033 | 10 min   | Hobo Temp     | 1635           |
+| 20444040 | 10 min   | Hobo Temp     | 1635           |
+| 21335986 | 10 min   | Pendant       | 1635           |
+| 21002981 | 10 min   | Pendant       | 1635           |
+| 21002972 | 10 min   | Pendant       | 1635           |
+| 20937872 | 10 min   | Pendant       | 1635           |
+| 21002975 | 10 min   | Pendant       | 1635           |
+| 21335980 | 10 min   | Pendant       | 1635           |
+| 21335987 | 10 min   | Pendant       | 1635           |
+| 21002980 | 10 min   | Pendant       | 1635           |
+| 21002977 | 10 min   | Pendant       | 1635           |
+| 21002974 | 10 min   | Pendant       | 1635           |
+| 21335982 | 10 min   | Pendant       | 1635           |
+| 21002982 | 10 min   | Pendant       | 1635           |
+| 20937873 | 10 min   | Pendant       | 1635           |
+| 21335983 | 10 min   | Pendant       | 1635           |
+| 21335984 | 10 min   | Pendant       | 1635           |
+| 21002979 | 10 min   | Pendant       | 1635           |
+| 15643    | 10 min   | Odyssey Light | 1635           
+
+
+The Odyssey logger was previously calibrated by Danielle Becker-Polinski [with this protocol](https://daniellembecker.github.io/DanielleBecker_Lab_Notebook/Odyssey-PAR-Loggers-Protocol/).  
+
+Loggers were arranged as pictured below in one tank with running water at a low flow to avoid surface disturbance. These loggers will run for 24-48 h to conduct the calibration for light and temperature data.  
+
+![loggers](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/loggers.jpeg)  
+
+LOCATION, Time put in tank,
+
+### *Daily measurement loggers*  
+
+
 
 # 22 September 2022  
 
