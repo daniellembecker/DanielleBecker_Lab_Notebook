@@ -38,7 +38,7 @@ Danielle Becker-Polinski
 
 The team returned the heatwave *A. pulchra* colonies from Danielle's project to the Mahana site from 0900-1100. We will collect them again before the next spawning. Colonies were zip tied to cinder blocks on Patch 3 at Mahana.  
 
-![adult return](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/adultreturn.jpeg) 
+![adult return](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/adultreturn.jpeg)   
 
 ### *Adult E5 experiment set up*  
 
@@ -51,9 +51,9 @@ Ariana started a [GitHub repo for this project here](https://github.com/urol-e5/
 Loggers were read off for the wildtype parent tanks and Danielle's parent tanks. Files were labeled with SSN and date and saved in the Apulchra_metabolism E5  GitHub repository. Loggers read off were: 
 
 20719656 (Wildtype Tank 2)  
-20946644 (Danielle Tank 1)  
-20444033 (Wildtype Tank 1) 
-20444040 (Danielle Tank 2)
+20946644 (Danielle Tank 1)    
+20444033 (Wildtype Tank 1)   
+20444040 (Danielle Tank 2)  
 
 Ariana started a calibration of all temperature and light loggers that will run over the next 24-48 h. This will allow us to convert Lux to PAR from the Hobo Pendant loggers and to calculate temperature offsets from the temperature logging on the Hobo Pendants.  
 
@@ -88,7 +88,7 @@ The Odyssey logger was previously calibrated by Danielle Becker-Polinski [with t
 
 Loggers were arranged as pictured below in one tank with running water at a low flow to avoid surface disturbance. These loggers will run for 24-48 h to conduct the calibration for light and temperature data.  
 
-![loggers](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/loggers.jpeg)  
+![loggers](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/loggers.jpeg)    
 
 ### *Daily measurement loggers*  
 
