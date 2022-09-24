@@ -88,14 +88,7 @@ The Odyssey logger was previously calibrated by Danielle Becker-Polinski [with t
 
 Loggers were arranged as pictured below in one tank with running water at a low flow to avoid surface disturbance. These loggers will run for 24-48 h to conduct the calibration for light and temperature data.  
 
-![loggers](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/loggers.jpeg)    
-
-### *Daily measurement loggers*  
-
-
-
-
-	
+![loggers](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/loggers.jpeg)    	
 
 # 22 September 2022  
 
