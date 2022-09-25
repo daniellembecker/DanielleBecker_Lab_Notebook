@@ -31,6 +31,66 @@ We are also conducting an adult coral experiment within the E5 framework to answ
 Ariana Huffmyer  
 Pierrick Harnay  
 Danielle Becker-Polinski  
+Hollie Putnam  
+
+# 24 September 2022  
+
+### *Logger calibration*  
+
+Ariana added the two pendant loggers from the incubators into the calibration tank that were missed yesterday.  
+
+Logger 21335989 - logging every 10 min  
+Logger 21002976 - logging every 10 min  
+
+Added to calibration tank at 0900. Note that data from 0700-0830 may need to be removed from the calibration. At this time the morning sun is causing shadows in the tank that may make the calibration in accurate.  
+
+### *Daily measurement probe set up*  
+
+Daily measurements for larval and the E5 adult project should include:  
+
+1. **Flow rate (mL / 10 sec)**: Use a graduated clyinder to measure the amount of water from the input tube in a 10 sec period.    
+2. **Temperature (C)**: Measurement of temperature in the center of each tank.   
+3. **Light (PAR)**: Measurement of light at the center of the tank and in the center of each of 4 quadrants (total of 5 measurements per tank).    
+4. **pH and salinity**: Measure pH and salinity with the Orion probe at the center of each tank.  
+
+Time of day, tank number, and notes regarding weather or other conditions should be noted.  
+
+For Ariana's larval project, daily measurements will be recorded in [Google Drive here](https://docs.google.com/spreadsheets/u/1/d/1wYqONrAvGfsWG7UNqLmtOYiIFESSJR6olzfFf_IhgYg/edit?usp=drive_web&ouid=110285914417149495351).   
+
+For the E5 adult project, daily pH, temperature, and flow measurements will be recorded in [GitHub here](https://github.com/urol-e5/apulchra_metabolism/blob/main/data/environmental/daily_measurements/daily_pH_temp_flow.xlsx) and daily light measurements will be recorded in [GitHub here](https://github.com/urol-e5/apulchra_metabolism/blob/main/data/environmental/daily_measurements/daily_light.xlsx).  
+
+The protocol for taking daily measurements was written by Ariana available here in the [E5 protocols repository](https://github.com/urol-e5/protocols/blob/master/2022-09-24-Moorea-Daily-Measurement-Protocol.md) based on the [Putnam Lab protocol](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resources/GSO_Wetlab_Protocols/GSO_Wetlab_Protocols.md#II-Tris-Calibration).  
+
+Ariana prepared all probes and measured a standard curve for the pH probe across a range of temperature with Tris using the [Putnam Lab protocol](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resources/GSO_Wetlab_Protocols/GSO_Wetlab_Protocols.md#II-Tris-Calibration). 15 mL of Tris was added to a falcon tube and placed in the fridge for ~20 min. The temperature and pH probe were then submerged into the falcon tube on the bench top. The calibration started at 11°C and slowly warmed to room temperature with measurements of temperature and Tris every ~1°C. Once the Tris reached room temperature the Tris and probes were moved into a benchtop incubator (MyTemp Mini) and warmed to the upper temperature used in the calibration (~35C).  
+
+This data is below and was recorded in Ariana's [Google Drive here](https://docs.google.com/spreadsheets/d/1wYqONrAvGfsWG7UNqLmtOYiIFESSJR6olzfFf_IhgYg/edit#gid=1109057105) and in the [E5 repository here](https://github.com/urol-e5/apulchra_metabolism/blob/main/data/environmental/20220924_Tris_Calibration.csv).  
+
+| Date     | Time | Temp.Tris | mV.Tris |
+|----------|------|-----------|---------|
+| 20220924 | 1013 |     11.18 |     -73 |
+| 20220924 | 1016 |     13.31 |     -72 |
+| 20220924 | 1020 |     14.66 |   -70.3 |
+| 20220924 | 1025 |     16.18 |   -68.3 |
+| 20220924 | 1030 |     17.28 |   -66.7 |
+| 20220924 | 1049 |     18.75 |   -64.9 |
+| 20220924 | 1057 |     19.48 |   -64.1 |
+| 20220924 | 1102 |     20.18 |   -63.1 |
+| 20220924 | 1106 |     21.08 |   -61.9 |
+| 20220924 | 1111 |     22.19 |   -60.6 |
+| 20220924 | 1115 |     23.07 |   -59.4 |
+| 20220924 | 1120 |     24.04 |     -58 |
+| 20220924 | 1125 |     25.03 |   -56.7 |
+| 20220924 | 1130 |     26.06 |   -55.4 |
+| 20220924 | 1135 |     27.27 |   -53.9 |
+| 20220924 | 1140 |        28 |   -52.8 |
+| 20220924 | 1145 |     28.96 |   -51.8 |
+| 20220924 | 1150 |     30.42 |   -49.6 |
+| 20220924 | 1153 |     31.06 |   -48.6 |
+| 20220924 | 1159 |     32.27 |   -47.1 |
+| 20220924 | 1204 |     33.35 |   -45.6 |
+| 20220924 | 1210 |        34 |   -44.8 |
+| 20220924 | 1215 |     35.12 |   -43.1 |
+| 20220924 | 1220 |     36.22 |   -41.6 |
 
 # 23 September 2022  
 
