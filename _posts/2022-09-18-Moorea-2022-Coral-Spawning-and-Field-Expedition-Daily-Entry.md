@@ -45,7 +45,20 @@ Ariana set up the E5 tanks to have hanging wires for each fragment when fragment
 
 ![tanks 1](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/e5_tank1.jpeg)
 
-![tanks 2](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/e5_tank2.jpeg)
+![tanks 2](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/e5_tank2.jpeg)  
+
+### *Planning for tomorrow*  
+
+Tomorrow Ariana will fragment the *A. pulchra* corals. These are the steps we will follow to fragment:  
+
+1. Select corals with the most fragments/branches (n=10 preferred).  
+2. Place the first colony in a holding tank on the water table.  
+3. Use bone cutters and a frag saw to cut as many fragments as possible approx. 3-4 in long at the branches.  
+4. Label the fragments by attaching to a paperclip with a tape label using fishing line. Label with a colony letter and number (e.g., A1-A30, B1-B30, etc.).  
+5. Place the fragments in the tanks randomly distrubted between the tanks.  
+6. Return the remaining colony to the holding tank.  
+
+This fragmentation will be followed by baseline sampling at the start of the treatment period depending on the number of fragments available.  
 
 # 24 September 2022  
 
