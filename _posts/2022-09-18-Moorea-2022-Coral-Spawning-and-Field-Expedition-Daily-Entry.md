@@ -33,6 +33,20 @@ Pierrick Harnay
 Danielle Becker-Polinski  
 Hollie Putnam  
 
+# 25 September 2022  
+
+### *Logger calibration*  
+
+Ariana removed loggers from tanks at 1030 and downloaded all logger files at 1200 and began writing a script to calulate the offsets for each logger.  
+
+### *Tank set up*  
+
+Ariana set up the E5 tanks to have hanging wires for each fragment when fragmentation occurs tomorrow.  
+
+![tanks 1](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/e5_tank1.jpeg)
+
+![tanks 2](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/e5_tank2.jpeg)
+
 # 24 September 2022  
 
 ### *Logger calibration*  
