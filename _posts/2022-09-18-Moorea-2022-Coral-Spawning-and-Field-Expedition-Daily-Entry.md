@@ -52,9 +52,7 @@ Ariana deployed pendant loggers for the E5 adult project. The following loggers 
 | 20937873 | 10 min |     1115 |     Tank 5 |
 | 21002976 | 10 min |     1115 |     Tank 6 |
 | 20444033 | 10 min |     1115 |     Wild parent tank 1 |
-| 20719656 | 10 min |     1115 |     Wild parent tank 2 |
-
-### *E5 project planning*  
+| 20719656 | 10 min |     1115 |     Wild parent tank 2 | 
 
 ### *Fragmentation*  
 
@@ -72,7 +70,7 @@ All treatment tanks were cleaned and pumps were added into each tank. Hobo penda
 
 ![tanks 2](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/frags_tank3.jpeg)
 
-Fragments were then allocated to tanks with tank number recorded in [GitHub here]().  
+Fragments were then allocated to tanks with tank number recorded in [GitHub here](https://github.com/urol-e5/apulchra_metabolism/blob/main/data/metadata/fragments.csv). Each tank has 5-6 fragments per colony and will have equal numbers of fragments.  
 
 A total of 3 genotypes/colonies were fragmented today and the team pre-labelled strings and paperclips for tomorrow. Ariana will finish fragmenting tomorrow and baseline sampling wll take place on Thurs/Friday of this week. 
 
@@ -85,6 +83,40 @@ Colony C: Fragments C1-C25
 Note that A fragments have some mortality. Ariana may switch out colony A for a different colony tomorrow. Water quality and flow was poor in this tank today that may have led to some of the mortality.  
 
 Tomorrow we will fragment colonies D, E, F.    
+
+*Tank assignments*  
+
+The tanks for each fragment are listed below and recorded in GitHub (see link above).  
+
+Tank 1: 
+- A1-5
+- B1-5
+- C1-6
+
+Tank 2: 
+- A6-11
+- B6-11
+- C7-11
+
+Tank 3:  
+- A12-17
+- B12-17
+- C12-17
+
+Tank 4:  
+- A18-23
+- B18-23
+- C18-23
+
+Tank 5:  
+- A24-29
+- B24-29
+- C24-29
+
+Tank 6:  
+- A30-35  
+- B30-35
+- C30-35  
 
 ### *Revised E5 design*  
 
