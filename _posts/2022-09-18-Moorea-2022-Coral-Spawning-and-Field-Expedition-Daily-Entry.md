@@ -33,6 +33,74 @@ Pierrick Harnay
 Danielle Becker-Polinski  
 Hollie Putnam  
 
+# 26 September 2022  
+
+### *Pocillopora spawning*  
+
+Ariana and Pierrick snorkeled to the Manava field site at 5:30-7:00am to observe potential *Pocillopora* spp. spawning. No spawning was observed. This site has 100m squared area with POC tags that Pierrick is observing and sampling for his project. Tomorrow we will stay in the water longer. We will observe for spawning in Oct - Dec on nights 0, 1, and 2 after the full and new moons for 45min-2h after sunrise.  
+
+### *Logger deployment*  
+
+Ariana deployed pendant loggers for the E5 adult project. The following loggers were deployed. Tanks were numbered as 1-6 for simplicity.   
+
+| SSN     | Interval | Time in Tanks | Tank |
+|----------|------|-----------|---------|
+| 21335989 | 10 min |     1115 |     Tank 1 |
+| 21002980 | 10 min |     1115 |     Tank 2 |
+| 21002972 | 10 min |     1115 |     Tank 3 |
+| 21335984 | 10 min |     1115 |     Tank 4 |
+| 20937873 | 10 min |     1115 |     Tank 5 |
+| 21002976 | 10 min |     1115 |     Tank 6 |
+| 20444033 | 10 min |     1115 |     Wild parent tank 1 |
+| 20719656 | 10 min |     1115 |     Wild parent tank 2 |
+
+### *E5 project planning*  
+
+### *Fragmentation*  
+
+Today the team started the process of fragmenting adult *A. pulchra* corals for the E5 project to investigate the effects of altered metabolic state on epigenetic state and thermal performance.  
+
+To fragment, the team made and labeled strings (fishing line) attached to paper clips with lab tape as a label on the paper clip. These were then tied to coral fragments on the upper part of the branch such that the branch was oriented up right. The fragments were then clipped onto the wire using the paper clips.  Fragments were suspended 15-18 cm below the water surface.    
+
+Coral fragments (~4-8 cm) were cut using bone clippers from larger colonies. Fragmentation was done in a water table from 1100-1900.    
+
+![frags](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/frags.jpeg)
+ 
+All treatment tanks were cleaned and pumps were added into each tank. Hobo pendant loggers are on the bottom center of each tank. Flow is high for these tanks to help corals recover from fragmentation. Note that no treatments have started yet, after fragmentation there will be a recovery period.  
+
+![tanks 1](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/frags_tank1.jpeg)
+
+![tanks 2](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/frags_tank3.jpeg)
+
+Fragments were then allocated to tanks with tank number recorded in [GitHub here]().  
+
+A total of 3 genotypes/colonies were fragmented today and the team pre-labelled strings and paperclips for tomorrow. Ariana will finish fragmenting tomorrow and baseline sampling wll take place on Thurs/Friday of this week. 
+
+*Fragmented today:*  
+
+Colony A: Fragments A1-A35  
+Colony B: Fragments B1-B35   
+Colony C: Fragments C1-C25  
+
+Note that A fragments have some mortality. Ariana may switch out colony A for a different colony tomorrow. Water quality and flow was poor in this tank today that may have led to some of the mortality.  
+
+Tomorrow we will fragment colonies D, E, F.    
+
+### *Revised E5 design*  
+
+Given the amount of space in each tank and the number of fragments we could get per colony, Ariana re calculated our E5 design numbers. The changes are:  
+
+- Removing mid November time point. Since we want to know about how metabolic state influences stress response, it makes the most sense to keep our replication/samples for the time point in which we plan to do CBASS. 
+- Changed treatments to include autotrophy (light, no food), auto/hetero (light, added food), and heterotrophy (shaded, no food) as suggested by R. Cunning. This will provide nutritional treatments to shift metabolic state. Given our current design, we can do n=2 tanks per treatment.  
+- tanks will now include 5-6 fragments per colony. This will provide enough samples to take baseline samples this week as well as have 1 fragment for physiology and molecular and 3-4 fragments for CBASS. We can destructively sample following CBASS. The temperatures for CBASS will be chosen to represent a control, moderate heating, and high heating tempratures.  
+- Colony number has been reduced from 10 down to 6. There is not enough room in the tanks for all 10 colonies.  
+
+![e5 design](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/e5design3.png)
+
+### *Boating*  
+
+Over the last few days, Ariana has completed the required boating trips and CA online boating course. Ariana will work with Katherine to check out on the Gump boats (509).  
+
 # 25 September 2022  
 
 ### *Logger calibration*  
