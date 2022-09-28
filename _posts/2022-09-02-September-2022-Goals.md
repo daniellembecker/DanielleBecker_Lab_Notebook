@@ -29,4 +29,7 @@ Week of Sept 9-16:
 - Full draft of E5 results section
 
 Week of Sept 16-25: 
-- No writing goals, conduct coral spawning work    
+- No writing goals, conduct coral spawning work   
+
+Week of Sept 26-30: 
+- Run Mcap symbiont mapping for gene expression data  
