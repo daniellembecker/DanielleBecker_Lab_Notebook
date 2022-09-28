@@ -33,7 +33,6 @@ Pierrick Harnay
 Danielle Becker-Polinski  
 Hollie Putnam  
 
-
 # 27 September 2022  
 
 ### *Pocillopora spawning*  
