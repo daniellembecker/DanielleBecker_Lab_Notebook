@@ -60,6 +60,7 @@ The experimental design has been finalized for this project as is as follows:
 ![e5design](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/e5design4.png)
 
 This updated design includes a final processing for all fragments that includes the following responses:  
+
 1. All fragments (5 per colony/genotype per tank) undergo CBASS testing at 5 temperatures including 27C, 29C, 31C, 32C, 33C (or something similar). 
 2. We will take molecular samples from all fragments after CBASS. 
 3. The fragment at the control temperature will then be used for molecular, metabolomic, and physiology responses.  
