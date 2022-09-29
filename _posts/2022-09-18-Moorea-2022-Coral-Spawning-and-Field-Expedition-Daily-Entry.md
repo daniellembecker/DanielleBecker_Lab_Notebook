@@ -119,7 +119,7 @@ In the case that another genotype experiences mortality, there are 2 extra genot
 
 Ariana cleaned all treatment tanks by removing fragments and placing them in the water table with running water. Tanks were wiped clean and rinsed and re filled. Strings on fragments were cleaned to remove algae.  
 
-Ariana made notches in the hanging wires to prevent clips from moving around and the corals from getting too close to each other.  
+Ariana made notches in the hanging wires to prevent clips from moving around and the corals from getting too close to each other. These have worked well today.   
 
 In the next week, we will switch the paper clips to plastic clips to prevent rusting. 
 
