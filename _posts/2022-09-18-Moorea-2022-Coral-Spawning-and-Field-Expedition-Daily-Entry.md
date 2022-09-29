@@ -33,6 +33,108 @@ Pierrick Harnay
 Danielle Becker-Polinski  
 Hollie Putnam  
 
+# 28 September 2022 
+
+### *Pocillopora spawning*  
+
+Ariana and Pierrick snorkeled to observe potential *Pocillopora* spp. coral spawning from 0530-0800 at Manava site. No spawning was observed.  
+
+### *Cleaning tanks*  
+
+The team cleaned all large blue tanks today. Due to a clog in the line, water flow was cut off to one blue tank earlier this week resulting in some coral mortality. Dead portions of colonies were cut off of colonies and removed from tanks. All tanks were scrubbed and cleaned and filled with new water. Colonies will be taken back to the reef on Friday now that E5 fragmentation is complete (see below).  
+
+### *E5 adult coral metabolism experiment*  
+
+Ariana cleaned all tanks, cleaned all fragments, secured clips to wire hangers, and finished labeling and fragmenting corals. Danielle assisted with fragmentation and labeling. These are described in more detail below.  
+
+Ariana has also started documents for [entering data while tracking daily environmental measurements](https://github.com/urol-e5/apulchra_metabolism/tree/main/data/environmental/daily_measurements), [conducting daily measurements and weekly cleanings](https://github.com/urol-e5/apulchra_metabolism/blob/main/schedule.xlsx), and tracking fragment survival in the [GitHub repository](https://github.com/urol-e5/apulchra_metabolism/blob/main/data/fragments.csv). Ariana will write and post links to [protocols here](https://github.com/urol-e5/apulchra_metabolism/tree/main/protocols).   
+
+#### *Fragmentation*  
+
+Ariana finished fragmenting corals today for this project. There was high mortality of fragments for genotype C that was fragmented on 26 September 2022 (8 fragments showed mortality). Therefore, all C fragments were removed and replaced with a new genotype. This was also done for genotype A in which >80% of fragments showed signs of mortality. There was no other observed mortality in fragments from genotypes B, D, and E.  
+
+New genotypes for A and C fragments and for F fragments were fragmented at 1600-1800. 35 fragments were obtained from each genotype and were fragmented as previously described below. Fragments were attached to labels and added to tanks by 2100. The fragments varied in size from 2 cm to 6 cm in length depending on the available fragments from the morphology of the parent colony.  
+
+The final list of tank fragment locations is available on [GitHub](https://github.com/urol-e5/apulchra_metabolism/blob/main/data/fragments.csv) and listed below.   
+
+Tank 1: 
+
+- A1-A5
+- B1-B5
+- C1-C6
+- D1-D6
+- E1-E6
+- F1-F6
+
+Tank 2: 
+
+- A6-A11
+- B6-B11
+- C7-C11
+- D7-D11
+- E7-E12
+- F7-F12
+
+Tank 3: 
+
+- A12-A17
+- B12-B17
+- C12-C17
+- D12-D17
+- E13-E17
+- F13-F18
+
+Tank 4: 
+
+- A18-A23
+- B18-B23
+- C18-C23
+- D18-D23
+- E18-E23
+- F19-F24
+
+Tank 5: 
+
+- A24-A29
+- B24-B29
+- C24-C29
+- D24-D29
+- E24-E29
+- F24-F29
+
+Tank 6: 
+
+- A30-A35
+- B30-B35
+- C30-C35
+- D30-D35
+- E30-E35
+- F30-F35  
+
+In the case that another genotype experiences mortality, there are 2 extra genotypes that were fragmented and will be held in the water tables.  
+
+![extras](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/extrafrags.jpeg)  
+
+#### *Cleaning and tank set up*  
+
+Ariana cleaned all treatment tanks by removing fragments and placing them in the water table with running water. Tanks were wiped clean and rinsed and re filled. Strings on fragments were cleaned to remove algae.  
+
+Ariana made notches in the hanging wires to prevent clips from moving around and the corals from getting too close to each other.  
+
+In the next week, we will switch the paper clips to plastic clips to prevent rusting. 
+
+![finalfrags](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/finalfrags1.jpeg)  
+
+![finalfrags](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/finalfrags2.jpeg) 
+
+#### *Feeding treatments*  
+
+In 27 September 2022 post, Ariana described potential feeding treatments using artificial food. Ariana measured tank dimensions today for the E5 project  - 40 cm W x 55 cm L x 30 cm H = ~66 liters. This is equivalent to about 18 gallons.  
+
+[Reef Chili](https://www.bulkreefsupply.com/brs-reef-chili-coral-food.html#:~:text=Reef%20Chili%20has%20been%20tested,and%20colorful%20in%20one%20food.): Manufacturer recommends 1 scoop per 20 gallons. We would use 1 scoop per feeding per tank = 4 scoops per feeding total. If we assume 1 scoop = 1 gram, then we would have approx. 40 feedings per jar of reef chili (40 g per jar). If we feed 3x per week from mid-October to mid-December we will have 24 feedings. This will require One 1.4oz container has approximately 100 scoops. We should order 5 jars of reef chili to be safe. It can be stored in the fridge for up to a year if we do not use it. *It looks like this item is currently out of stock.*  
+
+[Reef Roids](https://www.bulkreefsupply.com/brs-reef-chili-coral-food.html#:~:text=Reef%20Chili%20has%20been%20tested,and%20colorful%20in%20one%20food.): Manufacturer recommends 1 teaspoon per 100 gallons. We would therefore use 0.2 teaspoons per tank x 4 tanks = 0.8 teaspoons per feeding. With a total of 24 feedings, we would need ~20 teaspoons of Reef Roids. The bags are sold in units of 75 g or 150 g. On the website, it says "On average, the 30-gram bag of Reef-Roids will last roughly three months in a typical 50-gallon reef tank with bi-weekly feeding.". If we calculate this out, bi weekly feeding of a 50 gallon tank for 3 months would use 0.5 teaspoons per feeding x 2 feedings x 12 weeks = 12 teaspoons in a 30 gram bag. If we need 20 teaspoons minimum, we would need to order the 75 g bag. To have extra, we should order the 150 g size. It can be refrigerated to last longer if we do not use it.    
+
 # 27 September 2022  
 
 ### *Pocillopora spawning*  
