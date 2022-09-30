@@ -33,6 +33,20 @@ Pierrick Harnay
 Danielle Becker-Polinski  
 Hollie Putnam  
 
+# 29 September 2022 
+
+### *E5 adult coral metabolism project - daily measurements*  
+
+Ariana took daily measurements of the adult corals. The protocol for daily measurements [can be found here](https://github.com/urol-e5/protocols/blob/master/2022-09-24-Moorea-Daily-Measurement-Protocol.md).  
+
+TABLE HERE 
+
+All tanks and fragments looked good today and no mortality was observed. Ariana is going to start making materials to replace the paperclips with coated wire. After about 1 week they will be rusting.  
+
+### *Physiology processing*  
+
+Danielle processed physiological samples for ash free dry weight and chlorophyll content.  
+
 # 28 September 2022 
 
 ### *Pocillopora spawning*  
