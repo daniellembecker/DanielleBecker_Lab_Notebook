@@ -3,7 +3,7 @@ layout: post
 title: Comparing TagSeq between genome assembly V1 and V2
 date: '2022-02-09'
 categories: Mcapitata_EarlyLifeHistory_2020 Analysis
-tags: Mcapitata Molecular R GeneExpression
+tags: Mcapitata Molecular R GeneExpression Bioinformatics
 ---
 
 This post details analysis of TagSeq data from previous alignment to *M. capitata* [version 1 assembly](http://cyanophora.rutgers.edu/montipora/) and [version 2 assembly](http://cyanophora.rutgers.edu/montipora/). 

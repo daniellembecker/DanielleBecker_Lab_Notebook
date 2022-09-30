@@ -3,7 +3,7 @@ layout: post
 title: 16S Pipeline in Mothur
 date: '2022-01-12'
 categories: Analysis Mcapitata_EarlyLifeHistory_2020
-tags: 16S Mcapitata Molecular Protocol R
+tags: 16S Mcapitata Molecular Protocol R Bioinformatics
 ---
 This post details 16S data analysis using the Mothur pipeline for the 2020 *Montipora capitata* developmental time series.  
 

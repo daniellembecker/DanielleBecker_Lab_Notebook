@@ -3,7 +3,7 @@ layout: post
 title: Putnam Lab Oyster 16S Analysis in Mothur
 date: '2022-03-03'
 categories: PutnamLab_Oysters
-tags: 16S Molecular
+tags: 16S Molecular Bioinformatics
 ---
 This post details 16S analysis of the Putnam Lab oyster project using the Mothur pipeline based on [A. Huffmyer's pipeline here](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/16S-Analysis-in-Mothr-Part-1/).   
 

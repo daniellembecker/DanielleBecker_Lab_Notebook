@@ -3,7 +3,7 @@ layout: post
 title: Mcapitata Development 16S Analysis Part 1
 date: '2021-12-27'
 categories: Mcapitata_EarlyLifeHistory_2020
-tags: Mcapitata Molecular Protocol 16S
+tags: Mcapitata Molecular Protocol 16S Bioinformatics
 ---
 This post details MultiQC for the 16S analysis pipeline adapted from the pipeline [developed by Emma Strand](https://github.com/emmastrand/EmmaStrand_Notebook/blob/master/_posts/2021-06-21-16s-Analysis-Pipeline.md). In this post there is information for moving/managing ITS2 sequences, but this post details preliminary analysis of 16S. ITS2 files will be analyzed in a separate post.   
 

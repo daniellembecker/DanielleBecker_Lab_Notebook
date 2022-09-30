@@ -3,7 +3,7 @@ layout: post
 title: Comparing QIIME2 and Mothur 16S QC and Filtering
 date: '2022-01-31'
 categories: Analysis Mcapitata_EarlyLifeHistory_2020
-tags: 16S Molecular
+tags: 16S Molecular Bioinformatics
 ---
 
 This post details QC and filtering steps that were done in both Mothur and QIIME2 to compare the sequence QC results.  

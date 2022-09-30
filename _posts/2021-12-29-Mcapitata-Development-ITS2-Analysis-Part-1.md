@@ -3,7 +3,7 @@ layout: post
 title: Mcapitata Development ITS2 Analysis Part 1
 date: '2021-12-29'
 categories: Mcapitata_EarlyLifeHistory_2020
-tags: ITS2 Molecular Protocol Mcapitata
+tags: ITS2 Molecular Protocol Mcapitata Bioinformatics
 ---
 This post details MultiQC for the ITS2 analysis pipeline. 16S files are analyzed in a separate post.   
 

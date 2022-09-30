@@ -3,7 +3,7 @@ layout: post
 title: Mcapitata Development 16S Analysis in QIIME2
 date: '2021-12-30'
 categories: Mcapitata_EarlyLifeHistory_2020
-tags: 16S Mcapitata Molecular Protocol
+tags: 16S Mcapitata Molecular Protocol Bioinformatics
 ---
 This post details QC and QIIME analysis for the 16S analysis adapted from the pipeline [developed by Emma Strand](https://github.com/emmastrand/EmmaStrand_Notebook/blob/master/_posts/2021-06-21-16s-Analysis-Pipeline.md). 
 
