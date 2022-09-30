@@ -35,11 +35,19 @@ Hollie Putnam
 
 # 29 September 2022 
 
-### *E5 adult coral metabolism project - daily measurements*  
+### *E5 adult coral metabolism project*  
 
 Ariana took daily measurements of the adult corals. The protocol for daily measurements [can be found here](https://github.com/urol-e5/protocols/blob/master/2022-09-24-Moorea-Daily-Measurement-Protocol.md).  
 
-TABLE HERE 
+The daily probe set up looks like the photo below. We take measurements of water flow, temperature (C), pH (mV), conductivity (psu), and light (PAR). Daily measurements except for light (see below) are taken at the center of each tank simultaneously.  
+
+![probes](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/dailyprobes.jpeg)
+
+Light is taken in the following locations in each tank:  
+
+![light locations](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/lightquads.png)  
+
+Daily measurements for today were recorded in [GitHub here](https://github.com/urol-e5/apulchra_metabolism/tree/main/data/environmental/daily_measurements).    
 
 All tanks and fragments looked good today and no mortality was observed. Ariana is going to start making materials to replace the paperclips with coated wire. After about 1 week they will be rusting.  
 
