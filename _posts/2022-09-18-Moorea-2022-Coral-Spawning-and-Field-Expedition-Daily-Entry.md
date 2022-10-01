@@ -33,6 +33,54 @@ Pierrick Harnay
 Danielle Becker-Polinski  
 Hollie Putnam  
 
+# 30 September 2022 
+
+### *E5 adult coral metabolism project*  
+
+#### Daily measurements  
+
+Ariana took daily measurements at 0945-1020. Fragments look clean and healthy, no mortality observed. Flow adjusted to be between 350 and 400 mL per 5 sec in all tanks.  
+
+Daily measurements for today were recorded in [GitHub here](https://github.com/urol-e5/apulchra_metabolism/tree/main/data/environmental/daily_measurements).  
+
+#### Preparing adult sampling  
+
+In the next couple of days Ariana will sample n=4 randomly selected fragments of each genotype to characterize baseline values of our responses of interest including DNA methylation and chromatin structure, gene expression, metabolomics, microbial communities, and physiology. Fragments were selected by randomly selecting n=4 per genotype such that each fragment was from a different tank and sampling from each tank was balanced to keep fragment density consistent.   
+
+Today, Ariana identified the fragments to be sampled and prepared and labeled all tubes, whirlpacks, and equipment that will be used. 
+
+Baseline sampling will be conducted following the protocol written by Ariana today. The [baseline sampling protocol](https://github.com/urol-e5/protocols/blob/master/2022-09-30-Moorea-E5-Apulchra-Metabolism-Baseline-Sampling-Protocol.md) details procedures taking photographs of selected fragments for gene expression, microbial communities (16S and ITS2), chromatin structure and DNA methylation, metabolomics, and physiology. 
+
+**The fragments that will be sampled are:**  
+A7, 16, 20, 31  
+B9, 20, 25, 34  
+C1, 19, 26, 30    
+D4, 13, 26, 30  
+E5, 8, 20, 31  
+F2, 9, 17, 22  
+
+**Labeling equipment**  
+
+2 mL screw cap cryo tubes were labeled in preparation for sampling as nubmers 1-96. The number was written on the top cap of each tube as well as on the side. "E5 Metab. 2022" was also added on the side of each tube to identify the project. To see details on organization and labeling for baseline sampling, [see the detailed protocol here](https://github.com/urol-e5/protocols/blob/master/2022-09-30-Moorea-E5-Apulchra-Metabolism-Baseline-Sampling-Protocol.md).  
+
+Tubes #1-48 were filled with 1 mL of RNA DNA Shield. All tube ID's and associated fragment and method of preservation were planned and recorded in the [sample inventory](https://github.com/urol-e5/apulchra_metabolism/blob/main/data/baseline_sampling/sample.id.csv). 
+
+Ariana also created a [fragment tracking datasheet](https://github.com/urol-e5/apulchra_metabolism/blob/main/data/fragments.csv) and  [baseline sampling checklist](https://github.com/urol-e5/apulchra_metabolism/blob/main/data/baseline_sampling/baseline_sampling_checklist.csv) that will be used to track sampling and metadata for this project.  
+
+Two tube boxes were labeled as well with one box for RNA DNA shield samples (Tubes 1-48) and snap frozen samples (Tubes 49-96).  
+
+Finally, n=24 whirlpacks were labeled with fragment number as well as project information ("E5 Apul metabolism; Oct 2022 baseline; Putnam").  
+
+Documents referenced in this post are all found below:  
+
+[Fragment tracking](https://github.com/urol-e5/apulchra_metabolism/blob/main/data/fragments.csv)  
+
+[Baseline sampling checklist](https://github.com/urol-e5/apulchra_metabolism/blob/main/data/baseline_sampling/baseline_sampling_checklist.csv)   
+
+[Sample inventory](https://github.com/urol-e5/apulchra_metabolism/blob/main/data/baseline_sampling/sample.id.csv)  
+
+[Baseline sampling protocol](https://github.com/urol-e5/protocols/blob/master/2022-09-30-Moorea-E5-Apulchra-Metabolism-Baseline-Sampling-Protocol.md)
+
 # 29 September 2022 
 
 ### *E5 adult coral metabolism project*  
