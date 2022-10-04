@@ -29,6 +29,63 @@ Pierrick Harnay
 Danielle Becker-Polinski  
 Hollie Putnam  
 
+# 3 October 2022  
+
+### *E5 adult coral metabolism project*  
+
+#### Tank cleaning 
+
+Ariana cleaned the E5 tanks today between 1100-1400. Tanks were cleaned by first removing the wire lines with frags attached from 1-2 tanks at a time and placing in the water table. The tanks were then removed and wiped with microfiber towels and rinsed with fresh water. 
+
+Fishing line of each fragment was cleaned and algae removed. Tanks were refilled and frags were added back in along with loggers and pumps. Ariana also cleaned the water lines. 
+
+During cleaning, tank position within each water table was rearranged. All tanks are in a new location. Frags were also returned such that each wire was put back in a different position to shuffle the fragments. 
+
+No mortality was observed in fragments. Water flow was adjusted to return to previous levels (350-400 mL per 5 sec).  
+
+![clean tanks](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/clean_tanks.jpeg)  
+
+#### Daily measurements  
+
+Daily measurements were taken between 1400 and 1500 and recorded in [GitHub here](https://github.com/urol-e5/apulchra_metabolism/tree/main/data/environmental/daily_measurements). Conditions were cloudy and rainy today so light levels were low (<200 PAR).  
+
+### *Preparing for coral spawning - symbiont integration project*   
+
+#### Symbiont density and innoculation trials 
+
+Ariana conducted symbiont isolation and counting trials to estimate how many fragments will be needed to innoculate and dose larvae with symbionts to allow for symbiont acquisition. 
+
+Ariana followed this procedure:  
+
+1. Colelcted 3 test fragments from water table. 
+2. Airbrushed coral fragment using PBS to remove tissue and pour into 50 mL falcon tube. Volumes were 10-15 mL of slurry after airbrushing.   
+3. Homogenize - today this was done with pipetting and shaking the tube. In the full protocol use the microtip homogenizer for full homogenization. 
+4. Spin to generate a symbiont pellet. Spun today in a 50 mL centrifuge (accuSpin 3R). For future protocols, convert or set in g force. Spun at 3500 rpm for 3 min.  
+5. Pour out the supernatant and add 10 mL of PBS. Shake and homogenize. In innoculations, use filtered seawater rather than PBS. 
+6. Spin again. 
+7. Pour out supernatant and add 10-15 mL of PBS. Homogenize to resuspend symbionts. The symbiont slurry is now ready for counting cell density. 
+8. Note total volume in each tube.  
+9. Take 8 uL samples and load onto the hemocytometer. Today, four replicates were counted for each sample. 
+10. Imaged hemocytometer at 10X and counted cells until reaching 100 cells. Only 1 square needed to be counted. The counts for each sample are shown below.  
+
+| Date     | Time | Colony  | Total Volume mL  | Squares Counted | Count1 | Count2 | Count3 | Count4 | Mean Count | Cells per mL | Cells total  |
+|----------|------|---------|------------------|-----------------|--------|--------|--------|--------|------------|--------------|--------------|
+| 20221003 | 1600 | Test1   |               15 |               1 |    133 |    136 |    111 |    134 |      128.5 |      1285000 |     19275000 |
+| 20221003 | 1600 | Test2   |               10 |               1 |    150 |    153 |    165 |    180 |        162 |      1620000 |     16200000 |
+| 20221003 | 1600 | Test3   |               10 |               1 |    113 |    112 |    133 |     98 |        114 |      1140000 |     11400000 |
+
+11. Use C1 * V1 = C2 * V2 to solve for the volume of symbiont slurry that would be needed to dose symbionts at 3 x 10^4 as described in previous publications (e.g., Bay et al. 2011, Hartmann et al. 2018).  
+
+| Date     | Tank           | Symbiont Density (C1)  | Target Density (C2) | Volume Symbionts (V1) | Tank volume (V2) | Time Added/Water Off | Time Water On  | Notes         |
+|----------|----------------|------------------------|---------------------|-----------------------|------------------|----------------------|----------------|---------------|
+| 20221003 | Test - frag 1  |               19275000 |               30000 |            28.0155642 |            18000 | NA                   | NA             | Test density  |
+| 20221003 | Test - frag 2  |               16200000 |               30000 |           33.33333333 |            18000 | NA                   | NA             | Test density  |
+| 20221003 | Test - frag 3  |               11400000 |               30000 |           47.36842105 |            18000 | NA                   | NA             | Test density  | 
+
+From these calculations, we will need more than 1 fragment if fragments are the same size as today per squarical. We have 12 squaricals to innoculate. In the experiment, we will therefore use larger fragments and use 1-1.5 fragments per squarical for innoculation at the target density. The innoculation period will be 3 days with once daily innoculations, so we will need 36-52 total fragments from our parent population of approx. 20-30 colonies.  
+
+All test data recorded in [Ariana's Google Drive here](https://docs.google.com/spreadsheets/d/10LOBGkS0FsoXoTwlWjNvM0OPfD-PripuGoMooJDn7DM/edit#gid=1990542219).   
+
 # 2 October 2022  
 
 ### *E5 adult coral metabolism project*    
