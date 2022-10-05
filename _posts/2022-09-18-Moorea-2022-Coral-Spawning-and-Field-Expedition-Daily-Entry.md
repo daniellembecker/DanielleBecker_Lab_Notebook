@@ -29,6 +29,34 @@ Pierrick Harnay
 Danielle Becker-Polinski  
 Hollie Putnam  
 
+# 4 October 2022  
+
+### *E5 adult coral metabolism project*  
+
+#### Daily measurements  
+
+Ariana took daily measurements of E5 tanks between 1230 and 1300. Conditions were cloudy so light levels in all tanks were low (<200 PAR). The paper clips are continuing to rust, so these will need to be replaced soon with permanent coated wire clips. Ariana is working on making these permanent clips. No mortality is observed. Daily measurements are recorded in [GitHub here](https://github.com/urol-e5/apulchra_metabolism/tree/main/data/environmental/daily_measurements).    
+
+#### Airbrushing baseline fragments   
+
+All fragments sampled during the baseline sampling on 2 October 2022 were airbrushed today between 1630 and 1830. Ariana airbrushed with the following proceedure:  
+
+1. Remove 4 frags at a time from the freezer and store them in a cooler on frozen beads. Label 50 mL falcon tubes for each fragment. Falcon tubes were labeled with "E5 Apul Metabolism; Oct 2022 Baseline; Airbrushed; Putnam; Frag ID".   
+2. Each fragment was airbrushed with chilled PBS buffer into a zip bag. The tissue slurry in the bag was then poured into the respective falcon tube. The homogenate volume was recorded in [GitHub here](https://github.com/urol-e5/apulchra_metabolism/blob/main/data/baseline_sampling/homog_vols.xlsx) and written on the falcon tube. 
+3. The homogenate was placed on ice until all 4 frags were completed. 
+4. After airbrushing, the homogenate was put in the -40C freezer. 
+5. The process was repeated for all 24 fragments. 
+6. After airbrushing, all equipment was cleaned with DI water and alcohol wipes.  
+7. Airbrushed skeletons were placed in plastic cups with 10% bleach overnight to clean the skeletons. These will be kept at room temperature until wax dipping to determine surface area.  
+
+*Notes*: Note that before aliquoting for assays, the homogenate will need to be homogenized after thawing. Additionally, some of the fragments were quite small, so homogenate volume was low (4-7 mL). We will need to decide which physiology metrics we would like to measure first to make sure we have enough homogenate.  
+
+### *Logger calibration*  
+
+Ariana wrote a script to read the light and temperature logger calibration files from 25 September 2022. [The script can be found here on GitHub](https://github.com/urol-e5/apulchra_metabolism/blob/main/scripts/logger_calibrations.Rmd). This script reads in files in a loop and then conducts a linear model for each logger to the standard. For temperature, we used the standard as the average of all black Hobo loggers. These loggers are higher resolution than the Hobo pendants. By using the average value of these loggers we can calibrate any offset between loggers as well as calibrate the pendant loggers to a standard. For light, the Hobo pendant loggers (measuring light in Lux) are calibrated to the Odyssey light logger (measuring light in PAR) to allow us to convert Lux to PAR for analysis.  
+
+This script [outputs files](https://github.com/urol-e5/apulchra_metabolism/tree/main/output/environmental) with the logger serial number, coefficient, and intercept values. These files can then be read in when analyzing light and temperature data to conduct calibrations in later analyses.  
+
 # 3 October 2022  
 
 ### *E5 adult coral metabolism project*  
@@ -66,7 +94,7 @@ Ariana followed this procedure:
 7. Pour out supernatant and add 10-15 mL of PBS. Homogenize to resuspend symbionts. The symbiont slurry is now ready for counting cell density. 
 8. Note total volume in each tube.  
 9. Take 8 uL samples and load onto the hemocytometer. Today, four replicates were counted for each sample. 
-10. Imaged hemocytometer at 10X and counted cells until reaching 100 cells. Only 1 square needed to be counted. The counts for each sample are shown below.  
+10. Imaged hemocytometer at 10X on Leica DM500 compound scope and counted cells until reaching 100 cells. Only 1 square needed to be counted. The counts for each sample are shown below. Hemocytometer is a Neubauer improved bright-line (0.100mm; 0.0025mm2).  
 
 | Date     | Time | Colony  | Total Volume mL  | Squares Counted | Count1 | Count2 | Count3 | Count4 | Mean Count | Cells per mL | Cells total  |
 |----------|------|---------|------------------|-----------------|--------|--------|--------|--------|------------|--------------|--------------|
