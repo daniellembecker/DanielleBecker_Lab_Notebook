@@ -29,6 +29,18 @@ Pierrick Harnay
 Danielle Becker-Polinski  
 Hollie Putnam  
 
+# 6 October 2022  
+
+### *E5 adult coral metabolism project*  
+
+#### Daily measurements  
+
+Ariana and Danielle took daily measurements of E5 tanks between 1000 and 1030. No mortality was observed. Daily measurements are recorded in [GitHub here](https://github.com/urol-e5/apulchra_metabolism/tree/main/data/environmental/daily_measurements).       
+
+### *Pocillopora population transects*  
+
+Today the team completed 3 more (6 out of 7 completed) transects at the Manava site for Pierrick Harnay's PhD project on the genetic population of Pocillopora spp. corals in Mo'orea. More information can be [found in his notebook here](https://pierrickharnay.github.io/PierrickHarnay_Notebook/). The last transect will be completed tomorrow morning during early morning observation for *Pocillopora* spawning.   
+
 # 5 October 2022  
 
 ### *E5 adult coral metabolism project*  
@@ -43,7 +55,7 @@ Fragments that were airbrushed yesterday were removed from 10% bleach cups. Skel
 
 ### *Pocillopora population transects*  
 
-Today the team completed transects at the Manava site for Pierrick Harnay's PhD project on the genetic population of Pocillopora spp. corals in Mo'orea. More information can be [found in his notebook here](https://pierrickharnay.github.io/PierrickHarnay_Notebook/).   
+Today the team completed 3 out of 7 transects at the Manava site for Pierrick Harnay's PhD project on the genetic population of Pocillopora spp. corals in Mo'orea. More information can be [found in his notebook here](https://pierrickharnay.github.io/PierrickHarnay_Notebook/).   
 
 # 4 October 2022  
 
