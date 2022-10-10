@@ -29,6 +29,26 @@ Pierrick Harnay
 Danielle Becker-Polinski  
 Hollie Putnam  
 
+# 9 October 2022  
+
+### *E5 adult coral metabolism project*  
+
+#### Daily measurements  
+
+Ariana took daily measurements of E5 tanks between 1600 and 1630. No mortality was observed. Light values were low in the afternoon due to cloud cover. Daily measurements are recorded in [GitHub here](https://github.com/urol-e5/apulchra_metabolism/tree/main/data/environmental/daily_measurements).  
+
+#### New coral tags
+
+Ariana started replacing paper clips with coated wire tags. These will be replaced over the course of the next week. 
+
+### *Pocillopora spawning observation* 
+
+The team snorkeled at Manava (Ariana and Pierrick) and Hilton (Danielle and Noam) from 0800-1000. Another researcher potentially observed Pocillopora spawning at around 9am at the Hilton site. We decided to snorkel at this later time to see if spawning would occur. We did not see evidence of spawning today. 
+
+### *Histology time series sampling*  
+
+Danielle and the team sampled a subset of the high frequency time series *A. pulchra* colonies today for Danielle to do gamete dissections.  
+
 # 7 October 2022  
 
 ### *E5 adult coral metabolism project*  
