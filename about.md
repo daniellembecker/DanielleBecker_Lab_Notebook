@@ -42,8 +42,8 @@ Date|Position| Affiliation
 
 [Google Scholar Profile](https://scholar.google.com/citations?user=_dw3pYEAAAAJ&hl=en)
 
-13. **Huffmyer AS**, T O’Neill, JD Lemus. 2022. Supporting professional science identity development is an important component of research internships for community college women in science. CBE – Life Sciences Education 21(4): ar76.    
-12. Alexander G, J Hancock, **AS Huffmyer**, SB Matsuda. 2022. Larval thermal pre-exposure does not improve post-settlement thermal tolerance in a dominant reef-building coral, *Montipora capitata*. Coral Reefs 41:333-342.  
+13. **Huffmyer AS**, T O’Neill, JD Lemus. 2022. Evidence for professional conceptualization in science as an important component of science identity. CBE – Life Sciences Education 21(4): ar76      
+12. Alexander G, J Hancock, **AS Huffmyer**, SB Matsuda. 2022. Larval thermal pre-exposure does not improve post-settlement thermal tolerance in a dominant reef-building coral, *Montipora capitata*. Coral Reefs 41:333-342    
 11. Matsuda SB, LJ Chakravarti, R Cunning, **AS Huffmyer**, CE Nelson, RD Gates, MJH van Oppen. 2022. Temperature mediated acquisition of rare heterologous symbionts promotes survival of coral larvae under ocean warming. Global Change Biology 28:2006-2025    
 10. **Huffmyer AS**, CJ Johnson, AM Epps, JD Lemus, RD Gates. Feeding and thermal conditioning enhance coral temperature tolerance in juvenile *Pocillopora acuta*. Royal Society Open Science 8: 210644.  
 9. Barott KL, **AS Huffmyer**, J Davidson, EA Lenz, SB Matsuda, J Hancock, T Innis, B Glazer, C Drury, H Putnam, RD Gates. Fitness of thermally tolerant corals following transplantation supports utility of assisted gene flow for climate change remediation of coral reefs. PNAS 118: e2025435118.  
