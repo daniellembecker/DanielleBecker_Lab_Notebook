@@ -29,6 +29,34 @@ Pierrick Harnay
 Danielle Becker-Polinski  
 Hollie Putnam  
 
+# 10 October 2022  
+
+Today Terava Atger began working with us supported by Danielle's NSF GRFP funding. Terava will work with us on all projects over the next 3 weeks including the E5 *A. pulchra* metabolism experiment, histology time series, and coral spawning.  
+
+### *E5 adult coral metabolism project*  
+
+#### Daily measurements  
+
+Ariana and Teravatook daily measurements of E5 tanks between 1000 and 1045. No mortality was observed. Light values were variable during measurements due to passing clouds. Daily measurements are recorded in [GitHub here](https://github.com/urol-e5/apulchra_metabolism/tree/main/data/environmental/daily_measurements).  
+
+#### New coral tags
+
+Ariana continued replacing coral tags for the E5 tanks.  
+
+#### Aliquoting tissue  
+
+Ariana and Terava aliquoted coral tissue slurries for future analysis of symbiont cell counts and total protein. This was completed between 1300-1430. This is the process we followed:  
+
+1. Thaw a subset of 50mL falcon tubes with frozen tissue slurry, keeping slurry on frozen beads to thaw slowly.  
+2. All homogenate transferred to a labeled 15mL tube. This is used due to low slurry volume in order to homogenize slurry. All 50mL falcon tubes will be cleaned and re used.  
+3. Tissue homogenized for 10-12 sec with the ProScientific PRO200 microtip homogenizer.  
+4. 4 aliquots of 1 mL slurry were added into n=4 snap cap tubes labeled with the fragment ID. In cases where there was not enough to fill all 4 tubes, volumes were noted on data sheet.
+5. Aliquots were frozen at -40C in a box labeled with "E5 A. pulchra metabolism; Putnam; aliquot tissue slurry; N=24 fragments; n=4 aliquots per fragment". There are two boxes (Box #3, Box #4).  
+6. This process was repeated for N=24 fragment slurries, with n=96 total tubes with 1 mL aliquots. All remaining slurry in 15 mL tubes was kept in black mesh bag at -40C.  
+7. All equipment was cleaned and sterilized.    
+
+The sample tracking sheet can be [found here with information on aliquoting sample locations](https://github.com/urol-e5/apulchra_metabolism/blob/main/data/baseline_sampling/baseline_sampling_checklist.csv).    
+
 # 9 October 2022  
 
 ### *E5 adult coral metabolism project*  
