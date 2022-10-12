@@ -29,6 +29,48 @@ Pierrick Harnay
 Danielle Becker-Polinski  
 Hollie Putnam  
 
+# 11 October 2022   
+
+### *E5 adult coral metabolism project*  
+
+#### Daily measurements  
+
+Ariana and Danielle took daily measurements of E5 tanks between 1500 and 1530. No mortality was observed. Daily measurements are recorded in [GitHub here](https://github.com/urol-e5/apulchra_metabolism/tree/main/data/environmental/daily_measurements). Ariana analyzed the daily measurement data in [this R script](https://github.com/urol-e5/apulchra_metabolism/blob/main/scripts/environmental_analysis.Rmd). Total pH was calculating using the Tris calibration from 09/24/22 following the [Silbiger Lab protocol and scripts](https://github.com/SilbigerLab/Protocols/blob/master/Probe_and_Logger_Protocols/Orion_Multiparameter_Sensor/Scripts/Tris_pH_Slope.R). The data looks like this:   
+
+![daily measurements](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/daily_measurements.png)  
+
+We used one-way ANOVA tests to test for differences in each of these metrics between tanks. There were no significant differences detected.   
+
+#### New coral tags
+
+Ariana continued replacing coral tags for the E5 tanks. All tags were replaced.  
+
+#### Tank cleaning  
+
+Ariana and Danielle cleaned all E5 tanks and all corals. Tanks 1, 2, and 3 were moved to a water table further under the shade structure. In the mornings, tanks 1, 2, and 3 have been getting intense morning light at sunrise. Moving the tanks further under the building will make the light more even.   
+
+![clean tanks](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/clean_tanks_oct11.jpeg) 
+
+#### Loggers  
+
+Ariana downloaded all Hobo pendant loggers and conducted a preliminary analysis of logger data. We saw that tanks 1, 2, and 3 were getting higher light and temperature peaks in the morning just after sunrise due to the angle of the sun on these tanks. Because of this, we rearranged the tanks to move them under the building structure as described above. The logger data for the E5 tanks is shown below:   
+
+![temperature loggers](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/pendant_temp.png)  
+
+![light loggers](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/pendants_light.png)  
+
+Ariana will continue to trouble shoot some of the logger data. Specifically, the calibration of light values from the pendant loggers (lux) to the Odyssey PAR loggers results in higher than expected PAR values. We may need to re-do the light logger calibration. For now, we will display the light values in lux to monitor tank by tank variation.  
+
+We also plotted the temperatures from the heatwave and wildtype *A. pulchra* parent colonies.  
+
+![parent loggers](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/parent_temp.png) 
+
+### *Spawning preparations*  
+
+Ariana and Danielle cleaned and set up the coolers and squaricals in preparation for another round of spawning in the next week. We also filled and cleaned the large blue tanks in preparation for collecting adult colonies tomorrow from the field.  
+
+![set up tanks](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/coolers_setup.jpeg)  
+
 # 10 October 2022  
 
 Today Terava Atger began working with us supported by Danielle's NSF GRFP funding. Terava will work with us on all projects over the next 3 weeks including the E5 *A. pulchra* metabolism experiment, histology time series, and coral spawning.  
@@ -37,7 +79,7 @@ Today Terava Atger began working with us supported by Danielle's NSF GRFP fundin
 
 #### Daily measurements  
 
-Ariana and Teravatook daily measurements of E5 tanks between 1000 and 1045. No mortality was observed. Light values were variable during measurements due to passing clouds. Daily measurements are recorded in [GitHub here](https://github.com/urol-e5/apulchra_metabolism/tree/main/data/environmental/daily_measurements).  
+Ariana and Terava took daily measurements of E5 tanks between 1000 and 1045. No mortality was observed. Light values were variable during measurements due to passing clouds. Daily measurements are recorded in [GitHub here](https://github.com/urol-e5/apulchra_metabolism/tree/main/data/environmental/daily_measurements).  
 
 #### New coral tags
 
