@@ -29,6 +29,46 @@ Pierrick Harnay
 Danielle Becker-Polinski  
 Hollie Putnam  
 
+# 12 October 2022  
+
+### *Collecting parent colonies* 
+
+Danielle and Ariana spent the day collecting parent colonies in preparation for spawning. The following coral colonies were collected:  
+
+- 24 experimental heatwave *A. pulchra* colonies for Danielle's project collected from Mahana from 0900-1100.  
+- 20 wildtype *A. pulchra* colonies for Ariana's project and collaborative projects collected from Mahana from 1100-1200.  
+- 16 wildtype *A. hyacinthus* colonies for Ariana's project and collaborative projects collected from Manava near the E5 site and Pierrick's tagged *Pocillopora* site from 1200-1330.  
+
+Wildtype colonies were sampled using a hammer and chisel. *A. hyacinthus* colonies had a tendency to break in to multiple pieces, these were placed next to each other in the tanks. Collections were across a range of colony sizes from different patches/locations within each species.  
+
+Colonies were placed in n=2 tanks for Danielle's colonies with n=1 tank for each wildtype species. Water flow was kept very high with n=3 recirculating pumps in each tank.  
+
+
+### *High frequency histology time series sampling*  
+
+Ariana and Danielle collected samples for the high frequency *A. pulchra* time series from Mahana from 1500-1600. Danielle processed the fragments in the lab for sampling.  
+
+### *Spawning preparations*  
+
+Danielle prepared all the spawning supplies required for her project using the same set up and workflow that was used in September.  
+
+Ariana set up all squaricals, coolers, and Apex systems as described for the September spawning. All systems ran smoothly today with sufficient water flow.  
+
+The Putnam Lab and Correa Lab teams met together to talk about coral spawning and do an orientation to the current workflows and tank set up. 
+
+Ariana repaired mesh on plastic tupperware containers that will be extra containers to rear larvae if we have an excess of spawning material.  
+
+### *Loggers*   
+
+Ariana launched Hobo at 0900, logging every 10 min in the parent tanks prior to colony collection:  
+
+- Wildtype parent 2 SSN 20719656 
+- DBP Parent 2 SSN 20444040 
+- DBP Parent 1 SSN 20946644 
+- Wildtype parent 1 SSN 20444033
+
+Hobo pendants for the larval containers were also launched at 2100 logging every 10 min. Loggers were launched for A1-3, B1-3, C1-3, and D1-3 tanks with the same SSN assignments as on September 16 2022.  
+
 # 11 October 2022   
 
 ### *E5 adult coral metabolism project*  
