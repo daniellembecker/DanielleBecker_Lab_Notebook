@@ -29,6 +29,70 @@ Pierrick Harnay
 Danielle Becker-Polinski  
 Hollie Putnam  
 
+# 13 October 2022  
+
+### *Daily measurements*   
+
+Ariana took daily measurements in the E5 experimental tanks as well as the tanks holding adult colonies between 1030 and 1100. Daily measurements are recorded in [GitHub here](https://github.com/urol-e5/apulchra_metabolism/tree/main/data/environmental/daily_measurements). 
+
+### *E5 experiment - total protein*  
+
+Ariana, Danielle, and Terava conducted total soluble protein assays (Pierce BCA protein assay) for host and holobiont fractions for Danielle's histology time series samples and the E5 adult baseline samples following the [E5 total protein protocol](https://github.com/urol-e5/protocols/blob/master/2020-01-01-Total-Protein-Protocol.md).   
+
+The summary of the protocol process for Ariana's samples was as follows. Danielle and Ariana followed the same protocol with an added step for host-symbiont fraction separation for Ariana's samples. 2 plates were run for host samples and 2 plates were run for holobiont samples in total.    
+
+1. Thaw two 1mL tube samples for each E5 fragment. 
+2. For one of the tubes, we separated host and symbiont fraction. The second tube will have the holobiont fraction. 
+3. One tube per fragment was thawed and centrifuged at 3500 rpm for 3 min using the Fisher centrifuge as used during symbiont isolation trials on 3 Oct 2022.  
+4. The supernatant (host fraction) was transfered to a new tube labeled with the fragment ID and "H" for "host". The tube with the symbiont pellet was labeled with an "S" for "symbiont". 
+5. For each sample, this resulted in one tube with holobiont tissue, one tube with host tissue, and one tube with symbiont pellet. 
+6. The symbiont fraction was returned to the freezer at -40C for symbiont counting tomorrow. 
+7. Standards and working solution were generated as described in the total protein protocol. 
+8. First, host fraction samples were run by loading 25 uL of each sample in duplicates in a 96 well plate along with duplicates of each standard. The plate map for host samples is below.  
+9. The plate was gently rocked by hand to mix for 30 sec and then incubated at 37°C for 30 minutes. 
+10. After incubation, the plate was allowed to cool at room temperature for 6 min. 
+11. The absorbance of the plate was read on the microplate spectophotometer reader at 562 nm and saved. 
+12. In the next plate, holobiont samples were added in duplicates with 25 uL of each sample and each standard. The plate map is included below.  
+13. The plate was incubated and read in the same way as described above. 
+14. All plates and supplies were cleaned following plate reading.  
+
+Host samples were added to the incubator at 1313 and read at 1351. Holobiont samples were added to the incubator at 1356 and read at 1430. 
+
+A host and holobiont plate was run prior to these samples by Danielle for the gametogenesis time series.  
+
+The data was saved and added to [GitHub here](https://github.com/urol-e5/apulchra_metabolism/tree/main/data/baseline_sampling/protein). 
+
+#### Plate Map Host (E5 samples):  
+
+| Row | 1      | 2      | 3      | 4      | 5      | 6      | 7      | 8      | 9      | 10     | 11     | 12     |
+|-----|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
+| A   | STND-A | STND-A | STND-B | STND-B | STND-C | STND-C | STND-D | STND-D | STND-E | STND-E | STND-F | STND-F |
+| B   | STND-G | STND-G | STND-H | STND-H | STND-I | STND-I | A7     | A7     | A16    | A16    | A20    | A20    |
+| C   | A31    | A31    | B9     | B9     | B20    | B20    | B25    | B25    | B34    | B34    | C1     | C1     |
+| D   | C19    | C19    | C26    | C26    | C30    | C30    | D4     | D4     | D13    | D13    | D26    | D26    |
+| E   | D30    | D30    | E5     | E5     | E8     | E8     | E20    | E20    | E31    | E31    | F2     | F2     |
+| F   | F9     | F9     | F17    | F17    | F22    | F22    | ACR465 | ACR465 | -      | -      | -      | -      |
+| G   | -      | -      | -      | -      | -      | -      | -      | -      | -      | -      | -      | -      |
+| H   | -      | -      | -      | -      | -      | -      | -      | -      | -      | -      | -      | -      |
+
+#### Plate Map Holobiont (E5 samples):  
+
+| Row | 1      | 2      | 3      | 4      | 5      | 6      | 7      | 8      | 9      | 10     | 11     | 12     |
+|-----|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
+| A   | STND-A | STND-A | STND-B | STND-B | STND-C | STND-C | STND-D | STND-D | STND-E | STND-E | STND-F | STND-F |
+| B   | STND-G | STND-G | STND-H | STND-H | STND-I | STND-I | A7     | A7     | A16    | A16    | A20    | A20    |
+| C   | A31    | A31    | B9     | B9     | B20    | B20    | B25    | B25    | B34    | B34    | C1     | C1     |
+| D   | C19    | C19    | C26    | C26    | C30    | C30    | D4     | D4     | D13    | D13    | D26    | D26    |
+| E   | D30    | D30    | E5     | E5     | E8     | E8     | E20    | E20    | E31    | E31    | F2     | F2     |
+| F   | F9     | F9     | F17    | F17    | F22    | F22    | ACR465 | ACR465 | -      | -      | -      | -      |
+| G   | -      | -      | -      | -      | -      | -      | -      | -      | -      | -      | -      | -      |
+| H   | -      | -      | -      | -      | -      | -      | -      | -      | -      | -      | -      | -      |
+
+
+### *Spawning*  
+
+We started water in the spawning systems at 1900 and prepared equipment for possible spawning. We did not observe any setting or spawning in either *A. hyacinthus* or *A. pulchra*.  
+
 # 12 October 2022  
 
 ### *Collecting parent colonies* 
@@ -42,7 +106,6 @@ Danielle and Ariana spent the day collecting parent colonies in preparation for 
 Wildtype colonies were sampled using a hammer and chisel. *A. hyacinthus* colonies had a tendency to break in to multiple pieces, these were placed next to each other in the tanks. Collections were across a range of colony sizes from different patches/locations within each species.  
 
 Colonies were placed in n=2 tanks for Danielle's colonies with n=1 tank for each wildtype species. Water flow was kept very high with n=3 recirculating pumps in each tank.  
-
 
 ### *High frequency histology time series sampling*  
 
