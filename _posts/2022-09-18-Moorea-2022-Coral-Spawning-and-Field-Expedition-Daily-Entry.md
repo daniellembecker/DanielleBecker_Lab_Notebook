@@ -29,6 +29,40 @@ Pierrick Harnay
 Danielle Becker-Polinski  
 Hollie Putnam  
 
+# 14 October 2022  
+
+### *Daily measurements*   
+
+Ariana and Teravatook daily measurements in the E5 experimental tanks as well as the tanks holding adult colonies between 1000 and 1100. Daily measurements are recorded in [GitHub here](https://github.com/urol-e5/apulchra_metabolism/tree/main/data/environmental/daily_measurements). 
+
+### *E5 experiment - symbiont counts*  
+
+Ariana and Terava started symbiont cell density measurements on the symbiont fraction of samples that were separated yesterday. [The proceedure followed the protocol for E5 processing with no modifications](https://github.com/urol-e5/protocols/blob/master/2020-01-07-Cell_Density-Protocol.md). 
+
+[Data is recorded in GitHub](https://github.com/urol-e5/apulchra_metabolism/blob/main/data/baseline_sampling/sym_counts/sym_counts.xlsx). Five samples were analyzed today. The remaining samples will be processed over the next few days.   
+
+### *E5 experiment - analyzing data*  
+
+Ariana wrote scripts to analyze protein and surface area for the baseline E5 adult measurements. [The scripts are located on GitHub](https://github.com/urol-e5/apulchra_metabolism/tree/main/scripts/baseline).  
+
+Protein measurements from yesterday were briefly analyzed. These are the protein values for each colony/genotype in the host and holobiont fraction in the figure below.  
+
+![protein](https://raw.githubusercontent.com/urol-e5/apulchra_metabolism/main/figures/baseline/protein.png)
+
+A linear mixed model testing differences in protein by genotype show a significant difference in both host and holobiont protein by genotype.  
+
+`lmer(protein_ug.cm2~colony + (1|tank), data=protein)`  
+ 
+### *Labeling adult colonies*    
+
+Adult colonies were labeled with orange cattle tags attached with zip ties. *A. pulchra* tags were no. 061-080. *A. hyacinthus* tags were no. 081-096.    
+
+### *Spawning*     
+
+Ariana prepared tubes labeled no. 1-96 (egg and sperm samples)and prepared 24-well plates (eggs per bundle) and scintillation vials (fertilization success) for potential spawning for individual characterization of wild colonies.  
+
+No spawning was observed in either species tonight.   
+
 # 13 October 2022  
 
 ### *Daily measurements*   
