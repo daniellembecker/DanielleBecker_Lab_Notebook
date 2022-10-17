@@ -29,6 +29,22 @@ Pierrick Harnay
 Danielle Becker-Polinski  
 Hollie Putnam  
 
+# 16 October 2022  
+
+Hollie arrived today and joined our field team!  
+
+### *Daily measurements*   
+
+Ariana and Danielle took daily measurements in the E5 experimental tanks as well as the tanks holding adult colonies between 1345 and 1415. Daily measurements are recorded in [GitHub here](https://github.com/urol-e5/apulchra_metabolism/tree/main/data/environmental/daily_measurements).    
+
+### *Tank cleaning*  
+
+All coolers and squaricals were cleaned and rinsed with fresh water today. The system was restarted before we prepared for spawning tonight.   
+
+### *Spawning* 
+
+We watched for spawning in *A. hyacinthus* and *A. pulchra* from 2000-2330. No spawning was observed.  
+
 # 15 October 2022  
 
 ### *Daily measurements*   
