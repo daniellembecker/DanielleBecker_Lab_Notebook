@@ -29,6 +29,49 @@ Pierrick Harnay
 Danielle Becker-Polinski  
 Hollie Putnam  
 
+# 17 October 2022   
+
+### *Daily measurements*   
+
+
+
+### *E5 experiment - symbiont counts* 
+
+Ariana and Terava counted symbiont density in more samples today. [The proceedure followed the protocol for E5 processing](https://github.com/urol-e5/protocols/blob/master/2020-01-07-Cell_Density-Protocol.md) with no modifications. [Data is recorded in GitHub](https://github.com/urol-e5/apulchra_metabolism/blob/main/data/baseline_sampling/sym_counts/sym_counts.xlsx).  
+
+Ariana also [ran the data using R scripts](https://github.com/urol-e5/apulchra_metabolism/blob/main/scripts/baseline/sym_density.Rmd) to analyze data as we go based on the [E5 timeseries project scripts](https://github.com/urol-e5/timeseries).  
+
+Data shows that symbiont densities (~1e+06) are in the range seen in the E5 timeseries project. 
+
+![symcounts](https://raw.githubusercontent.com/urol-e5/apulchra_metabolism/main/figures/baseline/symbiont_density.png)  
+
+The remaining samples will be processed over the next few days. 
+
+Symbionts were counted if they were in the squares or touching a bordering line.  
+
+### *E5 experiment - starting treatment*  
+
+Feeding protocol - add X g, shut off water 1 h, start water again let flush 
+Pictures of shade 
+Table of tank numbers with treatment 
+Food description 
+
+#### **Calculating the amount of food needed **  
+
+Volume of tanks: 29 cm x 60 cm x 42 cm = 73,080 cc = 73.080 L = 19.3 gallons 
+
+For Coral Max, the manufacturers instructions suggest 1/2 teaspoon per 50 gallons of tank water. Therefore, we would need 0.368 of a 1/2 teaspoon dose (19.3 / 50 gallons). 
+
+The mass of 1/2 teaspoon (2.464 mL) dose is 1.148 g. This was measured out in a 5 mL tube to the 2.5 mL mark and weighed on a balance. 1.148 g * 0.368 = 0.422 g. We will round up. For each tank, we will add 0.5 g of food at each feeding.  
+
+Sample; grams
+A = 1.147 
+B = 1.180
+C = 1.117
+Mean = 1.148 g per 1/2 teaspoon
+
+If we feed 3 times per week in each of 4 tanks (those that have food in the treatment), then we will use 6 g per week. If we run the experiment for 8 weeks, we will need a total of 48 g.  We have >200 g, so we have plenty for this experiment.  
+
 # 16 October 2022  
 
 Hollie arrived today and joined our field team!  
