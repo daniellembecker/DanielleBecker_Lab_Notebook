@@ -33,44 +33,107 @@ Hollie Putnam
 
 ### *Daily measurements*   
 
-
+Ariana and Terava took daily measurements today between 12:45 and 13:15. Daily measurements are recorded in [GitHub here](https://github.com/urol-e5/apulchra_metabolism/tree/main/data/environmental/daily_measurements). Tanks will be cleaned tomorrow.     
 
 ### *E5 experiment - symbiont counts* 
 
-Ariana and Terava counted symbiont density in more samples today. [The proceedure followed the protocol for E5 processing](https://github.com/urol-e5/protocols/blob/master/2020-01-07-Cell_Density-Protocol.md) with no modifications. [Data is recorded in GitHub](https://github.com/urol-e5/apulchra_metabolism/blob/main/data/baseline_sampling/sym_counts/sym_counts.xlsx).  
+Ariana and Terava finished the symbiont density measurements today. [The proceedure followed the protocol for E5 processing](https://github.com/urol-e5/protocols/blob/master/2020-01-07-Cell_Density-Protocol.md) with no modifications. [Data is recorded in GitHub](https://github.com/urol-e5/apulchra_metabolism/blob/main/data/baseline_sampling/sym_counts/sym_counts.xlsx).  
 
 Ariana also [ran the data using R scripts](https://github.com/urol-e5/apulchra_metabolism/blob/main/scripts/baseline/sym_density.Rmd) to analyze data as we go based on the [E5 timeseries project scripts](https://github.com/urol-e5/timeseries).  
 
-Data shows that symbiont densities (~1e+06) are in the range seen in the E5 timeseries project. 
+The symbiont cell density data by colony/genotype looks like this:  
 
 ![symcounts](https://raw.githubusercontent.com/urol-e5/apulchra_metabolism/main/figures/baseline/symbiont_density.png)  
 
-The remaining samples will be processed over the next few days. 
+There is a significant difference in symbiont density between colonies.  
 
-Symbionts were counted if they were in the squares or touching a bordering line.  
+`lmer(cells.cm2~colony + (1|tank), data=.)`  
+
+p<0.001  
 
 ### *E5 experiment - starting treatment*  
 
-Feeding protocol - add X g, shut off water 1 h, start water again let flush 
-Pictures of shade 
-Table of tank numbers with treatment 
-Food description 
+Today we are starting treatments in our E5 *A. pulchra* metabolism experiment. The treatments for each tank are as follows:  
 
-#### **Calculating the amount of food needed **  
+| Tank | Light Treatment | Food Treament |
+|------|-----------------|---------------|
+| 1    | Full light      | Added food    |
+| 2    | Full light      | No food       |
+| 3    | Shaded          | Added food    |
+| 4    | Full light      | Added food    |
+| 5    | Shaded          | Added food    |
+| 6    | Full light      | No food       |
 
-Volume of tanks: 29 cm x 60 cm x 42 cm = 73,080 cc = 73.080 L = 19.3 gallons 
+#### **Calculating the amount of food needed**   
 
-For Coral Max, the manufacturers instructions suggest 1/2 teaspoon per 50 gallons of tank water. Therefore, we would need 0.368 of a 1/2 teaspoon dose (19.3 / 50 gallons). 
+For [Coral Max food](https://www.maxoutaquatics.com/product/coral-max/), the manufacturers instructions suggest 1/2 teaspoon per 50 gallons of tank water. Our tanks are 19.3 gallons (29 cm x 60 cm x 42 cm). Therefore, we would need 0.368 of a 1/2 teaspoon dose (19.3 / 50 gallons). 
 
-The mass of 1/2 teaspoon (2.464 mL) dose is 1.148 g. This was measured out in a 5 mL tube to the 2.5 mL mark and weighed on a balance. 1.148 g * 0.368 = 0.422 g. We will round up. For each tank, we will add 0.5 g of food at each feeding.  
-
-Sample; grams
-A = 1.147 
-B = 1.180
-C = 1.117
-Mean = 1.148 g per 1/2 teaspoon
+The mass of 1/2 teaspoon (converted to volume of 2.464 mL) dose is 1.148 g. 1.148 g * 0.368 = 0.422 g. 0.422 g is the amount we need for the size of our tanks. We will round up. For each tank, we will add 0.5 g of food at each feeding.  
 
 If we feed 3 times per week in each of 4 tanks (those that have food in the treatment), then we will use 6 g per week. If we run the experiment for 8 weeks, we will need a total of 48 g.  We have >200 g, so we have plenty for this experiment.  
+
+We then weighed 0.5g into a 5 mL tube and marked the level that the food was at. 0.5g of food is exactly at the 1 mL mark on the white cap 5mL tubes.  
+
+We labeled 4 5mL tubes with the tank number for all tanks that recieve food (1, 3, 4, and 5) and marked with a sharpie the 1mL mark to fill food. At each feeding, the person feeding will fill tube to this mark and then add to the tank. See the feeding section below for a protocol on feeding.   
+
+![coral food](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/coralmax.jpeg)  
+
+#### **E5 experiment - adding shade**  
+
+We added shade cloth to tanks 3 and 5 at 13:09 with one layer of shade cloth. We recorded light in the tanks after shade cloth was added. Daily measurements were taken before shade cloth was added. The values of light are included below that show the comparison of light before and after shading in each tank.  
+
+*Light before adding shade:*   
+
+| Tank | Time | Center | Q1  | Q2  | Q3  | Q4  |
+|------|------|--------|-----|-----|-----|-----|
+| 3    | 1249 | 96     | 120 | 118 | 116 | 115 |
+| 5    | 1252 | 116    | 103 | 102 | 83  | 90  |
+
+*Light after adding shade:*   
+
+| Tank | Time | Center | Q1 | Q2 | Q3 | Q4 |
+|------|------|--------|----|----|----|----|
+| 3    | 1309 | 59     | 65 | 56 | 65 | 53 |
+| 5    | 1310 | 38     | 36 | 31 | 38 | 32 |
+
+Light is reduced by approx. 35-55% after adding shade.   
+
+![coral shade](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/treatments_start.jpeg)  
+
+#### **E5 experiment - feeding**    
+
+The process for feeding is as follows and is described in the [E5 A. pulchra metabolism feeding protocol here](https://github.com/urol-e5/protocols/blob/master/2022-10-17-Moorea-E5-Feeding-Protocol.md). The overview of the steps are as follows:  
+
+1. Measure out food as described above into labeled 5 mL tubes to the marked 1 mL mark with Coral Max. 
+2. Turn off water on the main line to all tanks.  
+3. Use the nalgene bottle or a tri pour to take ~ 1 L water out of the tanks to ensure the food doesn't overflow.  
+4. Add the food to each respective tank (tanks 1, 3, 4, 5) and stir and break up the chunks with a transfer pipette.  
+5. Start a timer for 1 h. 
+6. After 1 h, turn the water flow back on.  
+
+Repeat this process 3 times per week (e.g., Mon, Wed, Fri).  
+
+Record the timing and notes about feeding in the [schedule tracking document here](https://github.com/urol-e5/apulchra_metabolism/blob/main/schedule.xlsx).  
+
+Today coral feeding started at 13:53 and water was turned on at 14:55.  
+
+### *Spawning* 
+
+We watched for spawning in *A. hyacinthus* and *A. pulchra*. We observed several of our *A. pulchra* colonies spawning tonight (3-4 wildtype and 5-6 of Danielle's heatwave colonies). Spawning started at 21:10. Bundles broke apart very quickly - we did not observe many bundles in the wildtype collection, they rapidly broke apart and we collected eggs from the tank. We did not notice any obvious setting in the colonies before hand. 
+
+Interestingly, several fragments from the E5 tank experiment showed setting and spawning! 
+
+We added ~1-2 mL of bundles/eggs to n=6 falcon tubes. We had a limited amount of material. Gametes were scooped from the water using gravy separators. The separators were then allowed to sit for 1-2 min to allow the bundles to come up to the surface. Water was then drained from the bottom and the gametes were mixed together in a 5 gallon bucket for the pooled wildtype fertilization. 
+
+Gametes were finished being added to falcon tubes at 00:30. This took longer than we would have liked as the amount of material was low and it took a long time to individually pipette embryos to try to get as much material as possible. 
+
+During this time in the large tank, the embryos fertilized. At 13:00 we observed 2-cell and 4-cell stages under the microscope. After this, Ariana added one of each of the falcon tubes to n=6 squaricals. These were added to the squarials at 02:00. These are low density and we will check on them regularly.   
+
+![spawning](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/bucket.jpeg) 
+
+![embryos](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/embryos.jpeg) 
+
+![squarical](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/embryos_squarical.jpeg) 
 
 # 16 October 2022  
 
@@ -106,8 +169,6 @@ Ariana also [wrote scripts](https://github.com/urol-e5/apulchra_metabolism/blob/
 
 Preliminary data shows that symbiont densities (~1e+06) are in the range seen in the E5 timeseries project. 
 
-![symcounts](https://raw.githubusercontent.com/urol-e5/apulchra_metabolism/main/figures/baseline/symbiont_density.png)  
-
 The remaining samples will be processed over the next few days.  
 
 ### *Spawning* 
@@ -126,7 +187,7 @@ Ariana and Terava took daily measurements in the E5 experimental tanks as well a
 
 ### *E5 experiment - symbiont counts*  
 
-Ariana and Terava started symbiont cell density measurements on the symbiont fraction of samples that were separated yesterday. [The proceedure followed the protocol for E5 processing with no modifications](https://github.com/urol-e5/protocols/blob/master/2020-01-07-Cell_Density-Protocol.md). 
+Ariana and Terava started symbiont cell density measurements on the symbiont fraction of samples that were separated yesterday. [The proceedure followed the protocol for E5 processing with no modifications](https://github.com/urol-e5/protocols/blob/master/2020-01-07-Cell_Density-Protocol.md). Symbionts were counted if they were in the squares or touching a bordering line.  
 
 [Data is recorded in GitHub](https://github.com/urol-e5/apulchra_metabolism/blob/main/data/baseline_sampling/sym_counts/sym_counts.xlsx). Five samples were analyzed today. The remaining samples will be processed over the next few days.   
 
