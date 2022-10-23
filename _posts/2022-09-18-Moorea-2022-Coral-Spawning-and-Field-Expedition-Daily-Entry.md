@@ -29,6 +29,236 @@ Pierrick Harnay
 Danielle Becker-Polinski  
 Hollie Putnam  
 
+# 22 October 2022 
+
+### *Embryo rearing* 
+
+Buckets and coolers were cleaned today with water changes by pouring water through a mesh container and rinsing back into the clean tank.
+
+At 1600 we looked at larvae under the compound microscope from 10/17. We could clearly see an oral pore.  
+
+### *Sampling - pool and distribute*  
+
+Today Ariana pooled and distributed all larvae for the symbiont integration project. Squaricals will have n=6 from 10/18 and n=6 from 10/19 for a total of 12 squaricals. The process was as follows.  
+
+- Pour water from each squarical through a mesh bottom container in a water bath using a tripour. Take out the mesh and rinse into a Nalgene bottle with volume marks. This is the pool. 
+- This was done for 10/18 cohort (A1-5, B1-5) and 10/19 cohort (A6, B6, C5, C6, D6). This created two pools of larvae. 
+- All tanks A1-A6 and B1-B6 were cleaned. 
+- The concentration of larvae was calculated for each pool at 1230. 
+
+**For cohort 10/18:** 
+
+Total volume = 1000 mL of pool. Larvae in 0.5 mL samples of this pool = 12, 15, 22, 20, 18, 16 = 30 larvae per mL. In total this equals about 30,000 in the 10/18 pool. 
+
+30,000/6 = approx. 5,000 larvae will be in each squarical
+
+166 mL of the pool will be added to each squarical  
+
+Added at 1306. 
+
+**For cohort 10/19:** 
+
+Total volume = 1000 mL of pool. Larvae in 0.5 mL samples of this pool = 20, 13, 20, 16, 20, 21 = 36 larvae per mL. In total this equals about 36,000 in the 10/19 pool. 
+
+36,000/6 = approx. 6,000 larvae will be in each squarical
+
+166 mL of the pool will be added to each squarical  
+
+Added at 1312. 
+
+The density of larvae will th3refore be approx. 5,000-6,000 per squarical across cohorts. 
+
+**Calculating sample needs:**  
+
+Sampling will use the following amounts of larvae at each sampling from each squarical:  
+
+- DNA/RNA = 150 larvae (n=3 reps of 50 larvae) 
+- Metabolomics = 300 larvae (n=3 reps of 100 larvae)  
+- P and R = 50 larvae 
+- Cell density counts = 10 larvae
+
+In total, each sampling will take 510 larvae. Sampling timeline will be described in more detail tomorrow. 
+
+At the end of the experiment, we will take samples for stable isotope metabolomics. 
+
+- Stable isotope metabolomics = 300 larvae (n=3 reps of 100 larvae)  
+
+We will re assess the sampling time line tomorrow with these numbers to decide on sampling time points.  
+
+### *Symbiont innoculations*  
+
+We conducted a trial of symbiont infections following the protocol from 3 October 2022. We airbrushed one fragment and did 2 cycles of rinsing in 0.02 um FSW and centrifuging in a 50 mL falcon tube at 3500 rpm for 2 min. Ariana then counted cells on the hemocytometer and calculated the volume of symbiont pool to add to one 5 gallon bucket to achieve a density of 3 x 10^4. This volume was 2 mL of slurry. Ariana added this to the 10/17 embryo bucket at 1515. We will look at the larvae tomorrow to see if any mortality occurs or if symbiont uptake occurs. We will use these results to inform our innoculations for Ariana's project.  
+
+### *Daily measurements* 
+
+Hollie and Danielle completed daily measurements and cleaned the strings for all of the fragments. During spawning we are also taking daily measurements of squaricals and buckets for reference.  
+
+Daily measurements are recorded in [GitHub here](https://github.com/urol-e5/apulchra_metabolism/tree/main/data/environmental/daily_measurements)
+
+### *Loggers* 
+
+Ariana downloaded A1-3 and B1-3 pendant loggers at 1230-1300. These were relaunched in new tanks at 1315 as follows:  
+
+| SSN      | Tank | Notes       |
+|----------|------|-------------|
+| 21002982 | A1   |             |
+| 21002979 | A3   |             |
+| 21002974 | A5   | Formerly A2 |
+| 21002981 | B2   | Formerly B1 |
+| 21335980 | B4   | Formerly B2 |
+| 21335987 | B6   | Formerly B3 |  
+
+Ariana will analyze these in R the next few days and make scripts to analyze separate from E5.   
+
+### *Spawning* 
+
+There was much less spawning tonight with 2-4 wildtype in a smaller pool. The pool was fertilized from 2200-2330 and then added to 1 squarical (C5) at 2345. 
+
+# 21 October 2022   
+
+### *High frequency time series* 
+
+We sampled in the field today for the last high frequency sampling time point (post spawning) at Mahana from 1100-1300. On the trip we also visited the coral restoration tables from the Hay lab. These are great tables that we may consider placing fragments or plugs on in the future. Danielle processed the samples back at the lab.  
+
+### *Embryo rearing* 
+
+We conducted maintenance of the cultures every 2-3 hours throughout the day and night as previously described for earlier days. We also did water changes in all buckets, coolers, and bins. 
+
+We also observed swimming behavior in 10/17 and 10/18 larvae today! 
+
+In line water filters were rinsed three times today. 
+
+### *Daily measurements and feeding* 
+
+Daily measurements were taken in E5 tanks, parent tanks, and larval tanks today between 1530-1630. Daily measurements are recorded in [GitHub here](https://github.com/urol-e5/apulchra_metabolism/tree/main/data/environmental/daily_measurements). We fed the E5 corals today following the [E5 A. pulchra metabolism feeding protocol here](https://github.com/urol-e5/protocols/blob/master/2022-10-17-Moorea-E5-Feeding-Protocol.md). Feeding occurred from 1545-1645.  
+
+### *Sampling prep* 
+
+Ariana prepared materials and equipment in anticipation of sampling and starting the symbiont integration experiment. Supplies were prepared for: 
+
+- Pooling and allocating larvae to treatment tanks
+- Symbiont infections/dosing
+- Sampling gene expression and metabolomics
+- Sampling for symbiont density 
+- Sampling for respirometry (photosynthesis and respiration) 
+
+Sampling will be described in detail when it is completed. The goal is to conduct daily sampling throughout the 1) symbiont infection phase and 2) thermal stress phase.  
+
+### *Spawning* 
+
+Wildtype colonies 71, 63, and 2 others in the large tank that were not identified produce bundles. The *A. hyacinthus* colonies do not look good and are experiencing mortality - they need to go back in the field soon. 
+
+Spawning for tonight was less than the night before. The largest spawn for wildtype pulchra was 10/19 and 10/20. To make space for Danielle's fertilization, squaricals A5 and Ay were combined as well as B5 and B6. Then C3 was moved to A6 and D5 was moved to B6 to open space in Danielle's tanks at 2330. Water changes were done for all buckets and coolers and bins at 2230-2300. 
+
+Fertilization and adding embryos to squaricals occured at 0000. 
+
+# 20 October 2022   
+
+### *Embryo rearing* 
+
+Today we did water changes in all squaricals, buckets, and cultures from 1200-1800. Water was poured through a 153 um large seive. The tanks were cleaned and then the embryos were rinsed back into the tank. 
+
+Minimal mortality was observed from last night's spawning - we did not see much dead material or lipid slick on the surface of the water. 
+
+We have noticed that mortailty/degradation of unfertilized eggs occurs between 1200-1400 the day after spawning. This is a time to keep an eye on the cultures and clean if needed. If fertilization success is high, there is very low early mortality.  
+
+Coolers were cleaned today and water filter lines were cleaned. 
+
+### *Daily measurements* 
+
+Daily measurements were taken in E5 tanks, parent tanks, and larval tanks today between 1600 and 1700. Daily measurements are recorded in [GitHub here](https://github.com/urol-e5/apulchra_metabolism/tree/main/data/environmental/daily_measurements).  
+
+### *Spawning* 
+
+Wildtype parents that set and released bundles were 74, 75, 77, 72, 64, 71, 80, and 63. Bundles were gathered and fertilized in a pool as described for the previous few days of spawning. Falcon tubes from wildtyp were allocated with 1.5-2 mL of embryos at 2300-0000. In order to make free space in squaricals for Danielle's fertilization, D3 and D6 squaricals from 10/19 were combined and C4 and C5 were also combined from 10/19. 
+
+Wildtype embryos were added to D4 at 2350. There was a lot of extra material, so we found other types of containers to use. We added 0.5-1 mL of bundles to small mesh bins and added 5-8 mL to each of 4 large coolers. Water was changed in all bins in the water table at 2300. Total larvae at this point: 26 squaricals, 6 buckets, 13 bins, 6 tupperware, 4 coolers.  
+
+Adult tanks were cleaned at 2100-2200. 
+
+# 19 October 2022   
+
+### *Embryo rearing* 
+
+Embryos from 10/18 spawning were checked and stirred every 2-3 hours today. We also frequently check the fill level of the coolers. Due to high water flow and limitaitons in rate of filtering in the filter line, the coolers will sometimes drain which risks damaging the pump and stopping water flow. We closely monitor the level of the coolers every 2-3 hours. 50 um in line filters were rinsed and cleaned every 4-7 hours. The coolers were also cleaned today. 
+
+Overall, embryos from 10/17 and 10/18 spawning are doing well with minimal mortality. 
+
+![squarical](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/squarical.jpeg) 
+
+### *E5 experiment - feeding* 
+
+We fed the E5 corals today following the [E5 A. pulchra metabolism feeding protocol here](https://github.com/urol-e5/protocols/blob/master/2022-10-17-Moorea-E5-Feeding-Protocol.md). Feeding occurred from 16:35-17:35.  
+
+### *Daily measurements* 
+
+Daily measurements were taken in E5 tanks, parent tanks, and larval tanks today between 1430 and 1500. Daily measurements are recorded in [GitHub here](https://github.com/urol-e5/apulchra_metabolism/tree/main/data/environmental/daily_measurements).  
+
+In Tank 6, C31 is showing high partial mortality (~90%) with algal overgrowth. 
+
+### *Maintaining water systems* 
+
+Water lines were flushed and cleaned today and the filters were washed regularly. The Gump header tank is draining, so this caused clogging and low water pressure. This is helped by cleaning the lines and using minimal water flow.  
+
+### *Spawning* 
+ 
+We did not observe *A. hyacinthus* spawning. *A. pulchra* parents numbers 63, 61, 60, 79, and 65 set and produced bundles that went into the pool for fertilization. Colonies were moved into buckets at 2040 and spawning started at 2100. We collected bundles from colonies and let sit in the bucket to fertilize in the poo. until 2214=5. 
+
+Using protocols described on 18 October 2022, we rinsed and allocated 1.5-2 mL of embryos into each squarical numbered C3-6 and D3-6. We also set up 2 extra static squaricals in water baths/water tables as extra material. We also put 1.5-2 mL of embryos into each of 3 5-gallon buckets surrounded by a water bath. We also added embryos into mesh-sided bins (the size of a shoebox) as well as 6 statis tupperware containers. These extra larvae will be used for the Correa group to conduct their larval experiments.  
+
+All embryos were added to containers at 0030-0130. High fertilization success was observed at 0240.  
+
+# 18 October 2022   
+
+### *Embryo rearing*   
+
+Embryos from last night's spawning were alive and developing this morning at 0630. There was a mixture of fertilized and developing embryos and unfertilized eggs. The unfertilized eggs degraded by 1300. The water quality in the squaricals stayed clean and the systems ran well. Prawn chip stages were observed by 1200.  
+
+At 1600 all embryos were removed from the squaricals in preparation for tonight's spawning. They were poured through a seive and all pooled into one 5 gallon bucket filled with seawater and contained in a water bath in a small blue tank. The bucket was marked with the date of spawning (10/17) and more water was added at 1700 to refresh the culture.    
+
+### *E5 experiment - cleaning tanks*   
+
+We cleaned all tanks for the E5 experiment today. All fragments look healthy and no mortality was observed.  
+
+### *E5 experiment - loggers*  
+
+All E5 loggers were downloaded between 1200 and 1400. The logger data was ran using the [logger R script in the GitHub repo](https://github.com/urol-e5/apulchra_metabolism/blob/main/scripts/environmental_analysis.Rmd). Our environmental data looks like this:  
+
+![loggers](https://raw.githubusercontent.com/urol-e5/apulchra_metabolism/main/figures/environmental/loggers.png)   
+
+### *Preparing spawning - cleaning tanks*   
+
+We prepared for spawning by cleaning all coolers, squaricals, tanks, and water lines. We did this twice today due to poor water quality from rain and low water pressure. We will keep a close eye on tanks and lines tonight.  
+
+### *Spawning*   
+
+Gamete collection for Ariana's project will follow this [spawning protocol adapted from work in Montipora capitata](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Montipora-capitata-spawning-and-larval-rearing-protocol/). From last night's spawning, we learned that *A. pulchra* bundles break apart quickly, within about 20-30 min from release. Therefore, we will modify this spawning protocol to not do fertilization in the falcon tubes, but rather do fertilization in a 5 gallon bucket in the pool of all collected gametes. After fertilization in this pool, we will use falcon tubes to allocate to squaricals. 
+
+The corals started spawning at 2100 with 7 wildtype colonies spawning. Colonies 80, 79, 77, and 61 were individually isolated and sampled for reproductive characteristics by Hollie including eggs per bundle and bundle-bundle crosses. Bundles that were not used for this study were added to bulk fertilization in a bucket pool as described from 17 October 2022 spawning. Bundles from other colonies were collected from the large wildtype tank. 
+
+We collected bundles from 2100-2200. The bundles started to break apart after 2120-2130. We prioritized collecting bundles prior to breaking to ensure that we had sperm from each parent in the bucket pool. 7 parents contributed to the pool tonight including 80, 79, 77, 61, 65, 63, and 60. The pool of eggs and sperm were mixed every 10-15 minutes and allowed to sit and fertilized until 2300. The bucket contained a high concentration of sperm (very milky water) and eggs that covered the surface of the bucket.  
+
+![bucket](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/bucket2.jpeg) 
+
+Fertilized eggs were then added to falcon tubes at 2300-0000 for rinsing and allocating into squaricals. 1.5-2 mL of eggs were added to each falcon tube and allowed to sit so the eggs rose to the top. A seriological pipette was then used to take out as much of the sperm water underneath the eggs as possible. Then 40 mL of 50 um filtered seawater was added as a rinse. Finally, water was removed one more time and the clean embryos were poured into squaricals at 0030. 1 falcon tube was added to each squarical in numbers A1-A6 and B1-B6.  
+
+![tubes](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/falcontubes.jpeg) 
+
+Flow is set at 25-30 mL per 5 seconds in these tanks. Cultures were checked and cleaned every 2-3 hours throughout the night by stirring with a pipette and washing off the banjo filter with the water input hose. Flow was set at 25-30 mL per 5 seconds.  
+
+Fertilization was checked at 0215 and we saw 16 and 32 cell stages with low unfertilized eggs, indicates high fertilization success.  
+
+![fert](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/embryos2.jpeg) 
+
+At 0130 we collected 1 fragment per parent colony (#61-80) and froze at -40C in whirlpacks. These will be used for parent molecular samples.  
+
+Maintenance of larvae every 2-3 hours includes: 
+ 
+- Checking the water level of the coolers and cleaning the in line 50 um filters 
+- Using the water line to move embryos off of edges and banjo filter 
+- Stirring the embryos using a transfer pipette 
+- Removing any dead material with a pipette 
+
 # 17 October 2022   
 
 ### *Daily measurements*   
@@ -134,6 +364,8 @@ During this time in the large tank, the embryos fertilized. At 13:00 we observed
 ![embryos](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/embryos.jpeg) 
 
 ![squarical](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/embryos_squarical.jpeg) 
+
+During spawning it rained heavily. We had poor water quality at the start of spawning in our adult tanks. The water quality improved over the night.  
 
 # 16 October 2022  
 
