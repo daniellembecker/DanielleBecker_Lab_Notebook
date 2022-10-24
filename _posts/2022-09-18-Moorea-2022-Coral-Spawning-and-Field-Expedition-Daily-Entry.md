@@ -29,6 +29,55 @@ Pierrick Harnay
 Danielle Becker-Polinski  
 Hollie Putnam  
 
+
+# 23 October 2022 
+
+### *Embryo rearing* 
+
+Today we maintained larval cultures and Danielle cleaned all her squaricals. All of Ariana's squaricals were also cleaned during pooling/allocating (see below). Filter lines were cleaned three times throughout the day. 
+
+We noticed that starting yesterday larvae from 10/18 were starting to settle and stick to the squarical walls at the water line. We are using a pipette to gently brush them off regularly to prevent settling. This is interesting for future experiments to know that this species can settle rapidly.  
+
+### *Symbiont innoculation test*  
+
+We checked larvae under the microscope by 1) viewing larvae on a scope and 2) squishing larvae under a cover slip to look for cells. No cells were seen in larvae that were exposed to symbionts yesterday. 
+
+### *Experimental design*  
+
+Due to settlement and no uptake of symbionts, we re-assessed our experimental plan and will proceed with the following design:  
+
+All squaricals will be from one cohort. Within eacn large blue tank bath we will have n=3 cultures with symbiont dosing and n=3 cultures without dosing (aposymbiotic vs symbiotic). There will be one blue tank at high temperature (+2C) and one at ambient. We will expose larvae to heat starting tomorrow and sample every other day (Mon, Wed, Fri) in the mornings for 1) metabolomics; 2) gene expression; 3) cell density; and 4) photosynthesis and respiration. At the end of the 5 days, we will proceed with stable isotope labelling incubations for metabolomics if cells are present in the larvae. 
+
+This design ensures that even if we do not have larvae take up symbionts, we will investigate a metabolic time series. We will then take the cohort that wasn't used in the squaricals and place them in settlement bins with settlement plugs. 
+
+We will conduct daily symbiont innoculations as described yesterday in the symbiotic tanks (n=6). This design will allow us to test how elevated temperatures impact symbiotic initiation and metabolism.  
+
+Today, to move foward with this plan, Ariana pooled and allocated larvae from the 10/19 cohort into 12 squaricals as described yesterday. The 10/18 cohort was added to n=6 settlement bins with 50 aragonite plugs. Settlement bins were mesh bottom bins with the plugs oriented upside down. 
+
+Larvae were added at 1730-1745. For 10/18 larvae, there was an average of 27.6 larvae per mL, which resulted in ~4600 larvae in each of the 6 settlement bins. Three bins were kept in tank A and three in tank B partially submerged. Larvae from 10/19 had an average density of 32.3 larvae per mL, which resulted in ~2,691 larvae in each squarical. This number would allow for ~50% mortality and still have enough for sampling.  
+
+![tank](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/tank_setup.jpeg) 
+
+Here is the expected sampling size for this study:  
+
+- Metabolomics: n=50 larvae per sample, n=3 samples per squarical; n=3 timepoints; N=450 per squarical
+- DNA/RNA: n=50 larvae per sample, n=3 samples per squarical; n=3 timepoints; N=450 per squarical
+- Cell density: n=8 larvae per squarical; n=3 timepoints; N=24 per squarical
+- Labelling and stable isotopes: n=50 larvae per sample; n=4 samples per squarical; n=1 time point (end); N=200 larvae 
+- Labelled lipids/MALDI: n=15 larvae per sample; n=3 per squarical; n=1 time point (end) 
+
+### *Daily measurements* 
+
+Danielle and Hollie took daily measurements today of the E5 tanks and the squaricals between 1500 and 1700.  
+
+### *Spawning* 
+
+Tonight was a large spawn! It is interesting that the coral's spawning schedule is not what we expected. It seems the peak is later as it is the 14 night after the full moon. 10-12 of Danielle's colonies spawned and a large amount of bundles was on the surface of the tank for wildtype. Danielle generated cultures for her project.  
+
+### *Preparing for sampling*  
+
+Ariana labelled well plates for counting and tube boxes for sampling. Tomorrow Ariana will sample for the initial/first time point in the morning.  
+
 # 22 October 2022 
 
 ### *Embryo rearing* 
