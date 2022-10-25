@@ -1660,7 +1660,17 @@ Danielle gathered supplies needed for her gametogenesis spawning. The protocol f
 
 See a detailed post on this [protocol here](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Montipora-capitata-spawning-and-larval-rearing-protocol/).
 
- 
+1. At ~19:30, Danielle and team start to move individual colonies into their labeled tanks before spawning. 9 tanks are not under the water tables and have static water so colonies assigned to those tanks are not put in until ~20:30.
+2. Between 19:30 and 20:30 the spawning team is monitoring colonies for possible setting, setting up the spawning stations, and finishing putting corals in their assigned tanks.
+3. Once setting is observed, a pair of bone cutters is cleaned with 10% bleach, DI water, and alcohol wipes. A ~4inch fragment that is observing setting is removed and put in ~30-40 mL of seawater from the assigned colonies bin for **FECUNDITY**.
+4. At 20:45, the final colonies are moved to their static tanks and the team shuts off the water and removes access water from each tank to be below the tank outflow to ensure all bundles remain in the tank.
+5. Once a colony is identified to be spawning, the designated 24-well plate and pipette for that colony is used to collect one bundle per well in a 24-well plate for **EGGS per BUNDLE**. Once finished, the plate is moved to the microscope room with its cover on.
+6. If the colony continues to spawn, the designated falcon tube, sieve, bowl, and pipette for each individual colony is used to sieve and pipette all the egg bundles into the falcon tube while minimizing the amount of water into the falcon tube to keep a concentrated amount of sperm.
+7. Once ~3mLs of egg bundles are concentrated in the falcon tube, the individual at that colony can start to monitor other colonies and come back if necessary.
+8. As corals begin to slow down their spawning at around 21:45, Danielle begins to separate the eggs and sperm by pouring the contents of the falcon tube slowly through the sieve and then allowing the sperm water to pool in the bowl below.
+9. Place extra material if available into the 5 gallon buckets with filtered seawater using the same proceedure.
+10. Check the concial cultures every hour. Remove dead material with a pipette, gently mix, and use kim wipes to remove lipid films.  
+11. Gently increase the water flow the next morning and continue hourly checks and cleaning.  
 
 We stopped the water and pumps in all tanks at 2000 to watch for setting in collected colonies. We did not see setting by 2300. There was no spawning. Red lights only were used to look at colonies.   
 
