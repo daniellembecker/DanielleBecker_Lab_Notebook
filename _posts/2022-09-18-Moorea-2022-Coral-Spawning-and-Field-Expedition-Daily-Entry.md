@@ -1720,4 +1720,4 @@ We will be constructing portable spawning systems developed in the Putnam Lab by
 
 To prepare for spawning we cleaned and prepared tanks and started seawater flow. We will be using 4 large tanks to hold adult/parent colonies and 4 smaller tanks to hold the spawning systems. Ariana and Pierrick cleaned and filled tanks and constructed drain PVC systems for each tank. Danielle prepared the bins and tanks in water tables that she is using for her project. We unpacked an organized the lab equipment.  
 
-![tanks]()
+![tanks](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/Moorea_Spawning_2022/white%20tanks.jpg)
