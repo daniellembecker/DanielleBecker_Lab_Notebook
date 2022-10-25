@@ -11,15 +11,14 @@ This post includes the full notebook for Sept-Oct 2022 *Acropora* coral spawning
 
 The goal of this field expedition for DM. Becker-Polinski is to conduct field work to invesigate maternal provisioning, epigenetic inheritance, and cross-generational impacts of thermal stress on *Acropora pulchra* throughout gametogenesis and early development (i.e., embryo, larval development).
 
-![NSF Overview](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/NSF_OCE/NSF_overview.png)  
-
 The goal for this expedition is to answer the following question dependent on material, spawning success, and timing - *How does parental thermal stress impact maternal provisioning and epigenetic inheritance in early life history?*     
 
-We will also continue *in situ* monitoring of *Acropora* and *Pocillopora* colonies on the reef in Moorea (Putnam Lab and E5 projects).
+We will continue the histological and physiological processing for Danielle's monthly Gametogenesis timeseries for September, October, and November 2022 timepoints. We will also conduct a high frequency histological timeseries every five days before and after October 2022 spawning. We will also continue *in situ* monitoring of *Acropora* and *Pocillopora* colonies on the reef in Moorea (Putnam Lab and E5 projects).
 
 **Separate posts will be created for specific projects while daily overviews and entries will be reported in this post.**  
 
-[See this post for details and daily entries for the E5 adult experiment](https://urol-e5.github.io/2022/09/20/E5-Moorea-Adult-Stressor-Experiment.html) and see this [GitHub repo here](https://github.com/urol-e5/apulchra_metabolism).  
+[See this post for details and daily entries for the E5 adult experiment and Gametogenesis timeseries](https://urol-e5.github.io/2022/09/20/E5-Moorea-Adult-Stressor-Experiment.html) and see this [GitHub repo here for the E5 experiment](https://github.com/urol-e5/apulchra_metabolism) and see this [Github repo here for the Gametogenesis timeseries](https://github.com/daniellembecker/Gametogenesis/tree/main/gametogenesis_timeseries).  
+
 
 **Field expedition members:**     
 Danielle Becker-Polinski  
@@ -1668,9 +1667,13 @@ See a detailed post on this [protocol here](https://ahuffmyer.github.io/ASH_Putn
 6. If the colony continues to spawn, the designated falcon tube, sieve, bowl, and pipette for each individual colony is used to sieve and pipette all the egg bundles into the falcon tube while minimizing the amount of water into the falcon tube to keep a concentrated amount of sperm.
 7. Once ~3mLs of egg bundles are concentrated in the falcon tube, the individual at that colony can start to monitor other colonies and come back if necessary.
 8. As corals begin to slow down their spawning at around 21:45, Danielle begins to separate the eggs and sperm by pouring the contents of the falcon tube slowly through the sieve and then allowing the sperm water to pool in the bowl below.
-9. Place extra material if available into the 5 gallon buckets with filtered seawater using the same proceedure.
-10. Check the concial cultures every hour. Remove dead material with a pipette, gently mix, and use kim wipes to remove lipid films.  
-11. Gently increase the water flow the next morning and continue hourly checks and cleaning.  
+9. Once separated, Danielle took an 250 uL of eggs (n=3) and 1 mL of sperm (n=3) for each colony with enough material for **Egg and sperm molecular sampling**.
+10. For **EGG SIZE**, 250 uL of eggs were sampled and fixed in a 4% formalin solution for each colony.
+11. After all molecular samples were collected, the spectrophotometer was used to read sperm concentration (750nm) per adult per treatment that would be contributing to each treatment pool.
+12. Equal portions of eggs were also added to the treatment pool and the eggs and sperm were combined in individual falcon tubes designated to the corresponding squarical.
+13. Once equal portions of eggs and sperms were added, the falcon tube was left for one hour on its side so that the eggs and sperm could fertilize.
+14. After one hour, the fertilized embryos were gently added to the designated squarical.
+15. Three hours after fertilization, Danielle took a 50 uL sample (n=3) that would usually contain ~for each squarical 
 
 We stopped the water and pumps in all tanks at 2000 to watch for setting in collected colonies. We did not see setting by 2300. There was no spawning. Red lights only were used to look at colonies.   
 
