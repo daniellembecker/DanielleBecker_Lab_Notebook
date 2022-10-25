@@ -37,6 +37,8 @@ We noticed that starting yesterday larvae from 10/18 were starting to settle and
 
 ### *Experimental design*   
 
+Danielle, Ariana, and Hollie discussed thermal performance experimental design for a temperate ramp expeirment and survival for Danielle's heatwave larvae cohorts. They discussed that using a ramp instead of two set temperatures is more informative and ecologically relevant approach to assess the differences in larval thermal performance between heatwave histories. Since certain cohorts only had one representative treatment from either the heatwave or ambient history in certain daily cohorts, we also decided to include comparisons with wildtype for the cohorts that did not have a comparison on that day to use as a control or comparison to experimental influence vs. wildtype.
+
 
 
 Here is the expected sampling size for this study:  
@@ -1413,12 +1415,6 @@ The purpose of this project is to manipulate the metabolic condition of the cora
 
 Throughout the adult exposure, we will characterize physiology, metabolism, and use stable isotope metabolomics to trace symbiotic nutritional exchange.  
 
-**October larval symbiont integration experiment**  
-
-Ariana will conduct an experiment in october using the same experimental plan as described for September. Briefly, we will rear *A. hyacinthus* embryos to the larval stage, allow larvae to acquire symbionts, and expose the larvae to either ambient or elevated temperature conditions. Ariana will measure metabolism, survival, and nutritional exchange. A schematic is included below.  
-
-![project](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/project.png)
-
 **Pocillopora population characterization**  
 
 Pierrick will continue his project characterizing the haplotypes of *Pocillopora* spp. around Moorea. We will conduct additional sampling on transects at the Mahana and Hilton sites in September.  
@@ -1673,7 +1669,7 @@ See a detailed post on this [protocol here](https://ahuffmyer.github.io/ASH_Putn
 12. Equal portions of eggs were also added to the treatment pool and the eggs and sperm were combined in individual falcon tubes designated to the corresponding squarical.
 13. Once equal portions of eggs and sperms were added, the falcon tube was left for one hour on its side so that the eggs and sperm could fertilize.
 14. After one hour, the fertilized embryos were gently added to the designated squarical.
-15. Three hours after fertilization, Danielle took a 50 uL sample (n=3) that would usually contain ~for each squarical 
+15. Three hours after fertilization, Danielle took a 50 uL sample (n=3) that would usually contain ~30 to 40 embryos from each squarical that was fertilized for **FERTILIZATION SUCCESS**.
 
 We stopped the water and pumps in all tanks at 2000 to watch for setting in collected colonies. We did not see setting by 2300. There was no spawning. Red lights only were used to look at colonies.   
 
