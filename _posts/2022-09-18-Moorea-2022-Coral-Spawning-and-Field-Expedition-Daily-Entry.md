@@ -26,24 +26,151 @@ Ariana Huffmyer
 Pierrick Harnay  
 Hollie Putnam  
 
+# 24 October 2022
+
+### *Embryo rearing*
+
+Today we maintained larval cultures. Filter lines were cleaned three times throughout the day.
+
+Danielle noticed some settlement from her 10/19 larvae but very insignificant amount.
+
+### *Experimental design*  
+
+Danielle set up her ambient and ramping tank for her larval exposure. She put two heaters in the ramping tank, low flow, a small pump to circulate water and set up the Apex system on a ramp cycle. See settings below:
+
+AMBIENT: 26.8 - 34 (0.6 C hourly variability over 12 hours)
+
+Outlet1
+Set OFF
+If Output HIGH_STAGE1 = ON Then ON
+If Output HIGH_STAGE2 = ON Then ON
+If Output HIGH_STAGE3 = ON Then ON
+If Output HIGH_STAGE4 = ON Then ON
+If Output HIGH_STAGE5 = ON Then ON
+If Output HIGH_STAGE6 = ON Then ON
+If Output HIGH_STAGE7 = ON Then ON
+If Output HIGH_STAGE8 = ON Then ON
+If Output HIGH_STAGE9 = ON Then ON
+If Output HIGH_STAGE10 = ON Then ON
+If Output HIGH_STAGE11 = ON Then ON
+If Output HIGH_STAGE12 = ON Then ON
+If Output HIGH_STAGE13 = ON Then ON
+
+
+Stage1
+Set OFF
+If HIGH_1 < 26.8 Then ON
+If HIGH_1 > 26.8 Then OFF
+If Time 01:00 to 07:00 Then OFF
+If Time 08:00 to 00:59 Then OFF
+
+Stage2
+Set OFF
+If HIGH_1 < 27.4 Then ON
+If HIGH_1 > 27.4 Then OFF
+If Time 01:00 to 08:00 Then OFF
+If Time 09:00 to 00:59 Then OFF
+
+Stage3
+Set OFF
+If HIGH_1 < 28.0 Then ON
+If HIGH_1 > 28.0 Then OFF
+If Time 01:00 to 09:00 Then OFF
+If Time 10:00 to 00:59 Then OFF
+
+Stage4
+Set OFF
+If HIGH_1 < 28.6 Then ON
+If HIGH_1 > 28.6 Then OFF
+If Time 021:00 to 10:00 Then OFF
+If Time 11:00 to 00:59 Then OFF
+
+
+Stage5
+Set OFF
+Set OFF
+If HIGH_1 < 29.2 Then ON
+If HIGH_1 > 29.2 Then OFF
+If Time 01:00 to 11:00 Then OFF
+If Time 12:00 to 00:59 Then OFF
+
+
+Stage6
+Set OFF
+If HIGH_1 < 29.8 Then ON
+If HIGH_1 > 29.8 Then OFF
+If Time 01:00 to 12:00 Then OFF
+If Time 13:00 to 00:59 Then OFF
+
+
+Stage7
+Set OFF
+If HIGH_1 < 30.4 Then ON
+If HIGH_1 > 30.4 Then OFF
+If Time 01:00 to 13:00 Then OFF
+If Time 14:00 to 00:59 Then OFF
+
+
+Stage8
+Set OFF
+If HIGH_1 < 31 Then ON
+If HIGH_1 > 31 Then OFF
+If Time 01:00 to 14:00 Then OFF
+If Time 15:00 to 00:59 Then OFF
+
+
+Stage9
+Set OFF
+If HIGH_1 < 31.6 Then ON
+If HIGH_1 > 31.6 Then OFF
+If Time 01:00 to 15:00 Then OFF
+If Time 16:00 to 00:59 Then OFF
+
+Stage10
+Set OFF
+If HIGH_1 < 32.2 Then ON
+If HIGH_1 > 32.2 Then OFF
+If Time 01:00 to 16:00 Then OFF
+If Time 17:00 to 00:59 Then OFF
+
+Stage11
+Set OFF
+If HIGH_1 < 32.8 Then ON
+If HIGH_1 > 32.8 Then OFF
+If Time 01:00 to 17:00 Then OFF
+If Time 18:00 to 00:59 Then OFF
+
+Stage12
+Set OFF
+If HIGH_1 < 33.4 Then ON
+If HIGH_1 > 33.4 Then OFF
+If Time 01:00 to 18:00 Then OFF
+If Time 19:00 to 00:59 Then OFF
+
+Stage13
+Set OFF
+If HIGH_1 < 34 Then ON
+If HIGH_1 > 34 Then OFF
+If Time 01:00 to 19:00 Then OFF
+If Time 20:00 to 00:59 Then OFF
 
 # 23 October 2022
 
 ### *Embryo rearing*
 
-Today we maintained larval cultures and Danielle cleaned all her squaricals. All of Ariana's squaricals were also cleaned during pooling/allocating (see below). Filter lines were cleaned three times throughout the day.
+Today we maintained larval cultures and Danielle cleaned all her squaricals and coolers. All of Ariana's squaricals were also cleaned during pooling/allocating (see below). Filter lines were cleaned three times throughout the day.
 
 We noticed that starting yesterday larvae from 10/18 were starting to settle and stick to the squarical walls at the water line. We are using a pipette to gently brush them off regularly to prevent settling. This is interesting for future experiments to know that this species can settle rapidly.  
 
 ### *Experimental design*   
 
-Danielle, Ariana, and Hollie discussed thermal performance experimental design for a temperate ramp expeirment and survival for Danielle's heatwave larvae cohorts. They discussed that using a ramp instead of two set temperatures is more informative and ecologically relevant approach to assess the differences in larval thermal performance between heatwave histories. Since certain cohorts only had one representative treatment from either the heatwave or ambient history in certain daily cohorts, we also decided to include comparisons with wildtype for the cohorts that did not have a comparison on that day to use as a control or comparison to experimental influence vs. wildtype.
+Danielle, Ariana, and Hollie discussed thermal performance experimental design for a temperate ramp experiment and survival for Danielle's heatwave larvae cohorts. They discussed that using a ramp instead of two set temperatures is more informative and ecologically relevant approach to assess the differences in larval thermal performance between heatwave histories. Since certain cohorts only had one representative treatment from either the heatwave or ambient history in certain daily cohorts, we also decided to include comparisons with wildtype for the cohorts that did not have a comparison on that day to use as a control or comparison to experimental influence vs. wildtype.
 
-
+Larvae will undergo a ramping period from 26.8 C to 34 C (dependent on mortality) over a 12 hour period and then stay at max temperature for 40 hours (or until mortality) with nine timepoints of survivorship and water chances from 0 to 40 hours every ~6 to 8 hours.
 
 Here is the expected sampling size for this study:  
 
-- Survivorship: timepoints will be taken
+- Survivorship: count total larvae in each vial every 6-8 hours
 
 ### *Daily measurements*
 
@@ -417,9 +544,15 @@ We watched for spawning in *A. hyacinthus* and *A. pulchra* from 2000-2330. No s
 
 Ariana took daily measurements in the E5 experimental tanks as well as the tanks holding adult colonies between 1400 and 1430. Daily measurements are recorded in [GitHub here](https://github.com/urol-e5/apulchra_metabolism/tree/main/data/environmental/daily_measurements).  
 
-### *Histology monthly timepoint sampling*  
+### *October 2022 Field Day Sampling - Backreef Acropora and Pocillopora*
 
-Ariana and Danielle collected n=40 *A. pulchra* and n=10 *Pocillopora* from the Mahana site for the monthly sampling time point.  
+Danielle, Ariana, and Pierrick conducted monthly timepoint sampling at the Mahana field site (17°29'12.5"S 149°53'16.1"W). Following the [Field Sampling Protocol](https://github.com/daniellembecker/Gametogenesis/blob/main/protocols/2021-12-26-Field-Sampling-Protocol.md), we collected 40 ~5 inch *Acropora pulchra* fragments from the five patches located on the site.  Additionally, 10 4-5 inch fragments of *Pocillopora* were collected and brought back to Gump Station as well for same day processing. For all sampling locations, a close up photo with the tag was taken. Additionally, a bleaching score photo was taken at each sampling location. If a tag was not found, we sampled from the same colony that the tag should have been located on.
+
+After collecting the samples, Danielle, Ariana, and Pierrick followed the [Same Day Sample Processing Protocol](https://github.com/daniellembecker/Gametogenesis/blob/main/protocols/2021-12-26-Sample_Same_Day_Processing_Protocol.md) to prepare samples for histological analysis, molecular and physiological downstream processing.
+
+All bleaching score photos were downloaded off of the Arianas camera and uploaded to [Pocillopora_Sampling_Colony_Photos](https://drive.google.com/drive/u/0/folders/1203vZyktuA_R3KwnG9uSV3JXkkiTA-um) and [Acropora_Sampling_Colony_Photos](https://drive.google.com/drive/u/0/folders/19YCW-KpNBIq2hraZCzva5vsIAdVH9cLC) for the October 2022 timepoint.
+
+All timepoint and tracking data sheets for the October 2022 timepoint for both [*Pocillopora*](https://drive.google.com/drive/u/0/folders/1w3KdwBZaaAFh8UdbOXM3KZCofldOC53i) and [*Acropora*](https://drive.google.com/drive/u/0/folders/1YSVr335RNhZXcJyI0TOSr_edmDsTy4zw) were updated.   
 
 ### *E5 experiment - symbiont counts*
 
@@ -440,6 +573,10 @@ We watched for spawning in *A. hyacinthus* and *A. pulchra* from 2000-2330. No s
 We cleaned all larval coolers and flushed all water lines to improve water flow at 2100.  
 
 # 14 October 2022  
+
+### *A. pulchra high frequency sampling dissections*   
+
+Danielle finished processing the *A. pulchra* samples from the sixth high frequency sampling (20221012) for dissections. The fragments from this timepoint had many more distinct gonads.
 
 ### *Daily measurements*   
 
@@ -479,7 +616,7 @@ No spawning was observed in either species tonight.
 
 Ariana took daily measurements in the E5 experimental tanks as well as the tanks holding adult colonies between 1030 and 1100. Daily measurements are recorded in [GitHub here](https://github.com/urol-e5/apulchra_metabolism/tree/main/data/environmental/daily_measurements).
 
-### *E5 experiment - total protein*  
+### *E5 experiment and September Gametogenesis- total protein*  
 
 Ariana, Danielle, and Terava conducted total soluble protein assays (Pierce BCA protein assay) for host and holobiont fractions for Danielle's histology time series samples and the E5 adult baseline samples following the [E5 total protein protocol](https://github.com/urol-e5/protocols/blob/master/2020-01-01-Total-Protein-Protocol.md).   
 
@@ -504,7 +641,210 @@ Host samples were added to the incubator at 1313 and read at 1351. Holobiont sam
 
 A host and holobiont plate was run prior to these samples by Danielle for the gametogenesis time series.  
 
-The data was saved and added to [GitHub here](https://github.com/urol-e5/apulchra_metabolism/tree/main/data/baseline_sampling/protein).
+The data was saved and added to [E5 GitHub here](https://github.com/urol-e5/apulchra_metabolism/tree/main/data/baseline_sampling/protein) and the [Gametogenesis Github here](https://github.com/daniellembecker/Gametogenesis/tree/main/gametogenesis_timeseries).
+
+#### Plate Map Host (September Gametogenesis 2022)
+
+| well | colony_id |   |   |   |
+|------|-----------|---|---|---|
+| A1   | StandardA |   |   |   |
+| A2   | StandardA |   |   |   |
+| A3   | StandardB |   |   |   |
+| A4   | StandardB |   |   |   |
+| A5   | StandardC |   |   |   |
+| A6   | StandardC |   |   |   |
+| A7   | StandardD |   |   |   |
+| A8   | StandardD |   |   |   |
+| A9   | StandardE |   |   |   |
+| A10  | StandardE |   |   |   |
+| A11  | StandardF |   |   |   |
+| A12  | StandardF |   |   |   |
+| B1   | StandardG |   |   |   |
+| B2   | StandardG |   |   |   |
+| B3   | StandardH |   |   |   |
+| B4   | StandardH |   |   |   |
+| B5   | StandardI |   |   |   |
+| B6   | StandardI |   |   |   |
+| B7   | ACR-414   |   |   |   |
+| B8   | ACR-414   |   |   |   |
+| B9   | ACR-415   |   |   |   |
+| B10  | ACR-415   |   |   |   |
+| B11  | ACR-416   |   |   |   |
+| B12  | ACR-416   |   |   |   |
+| C1   | ACR-417   |   |   |   |
+| C2   | ACR-417   |   |   |   |
+| C3   | ACR-418   |   |   |   |
+| C4   | ACR-418   |   |   |   |
+| C5   | ACR-420   |   |   |   |
+| C6   | ACR-420   |   |   |   |
+| C7   | ACR-421   |   |   |   |
+| C8   | ACR-421   |   |   |   |
+| C9   | ACR-422   |   |   |   |
+| C10  | ACR-422   |   |   |   |
+| C11  | ACR-423   |   |   |   |
+| C12  | ACR-423   |   |   |   |
+| D1   | ACR-424   |   |   |   |
+| D2   | ACR-424   |   |   |   |
+| D3   | ACR-425   |   |   |   |
+| D4   | ACR-425   |   |   |   |
+| D5   | ACR-426   |   |   |   |
+| D6   | ACR-426   |   |   |   |
+| D7   | ACR-427   |   |   |   |
+| D8   | ACR-427   |   |   |   |
+| D9   | ACR-428   |   |   |   |
+| D10  | ACR-428   |   |   |   |
+| D11  | ACR-429   |   |   |   |
+| D12  | ACR-429   |   |   |   |
+| E1   | ACR-430   |   |   |   |
+| E2   | ACR-430   |   |   |   |
+| E3   | ACR-431   |   |   |   |
+| E4   | ACR-431   |   |   |   |
+| E5   | ACR-432   |   |   |   |
+| E6   | ACR-432   |   |   |   |
+| E7   | ACR-433   |   |   |   |
+| E8   | ACR-433   |   |   |   |
+| E9   | ACR-434   |   |   |   |
+| E10  | ACR-434   |   |   |   |
+| E11  | ACR-435   |   |   |   |
+| E12  | ACR-435   |   |   |   |
+| F1   | ACR-436   |   |   |   |
+| F2   | ACR-436   |   |   |   |
+| F3   | ACR-437   |   |   |   |
+| F4   | ACR-437   |   |   |   |
+| F5   | ACR-438   |   |   |   |
+| F6   | ACR-438   |   |   |   |
+| F7   | ACR-439   |   |   |   |
+| F8   | ACR-439   |   |   |   |
+| F9   | ACR-446   |   |   |   |
+| F10  | ACR-446   |   |   |   |
+| F11  | ACR-447   |   |   |   |
+| F12  | ACR-447   |   |   |   |
+| G1   | ACR-448   |   |   |   |
+| G2   | ACR-448   |   |   |   |
+| G3   | ACR-449   |   |   |   |
+| G4   | ACR-449   |   |   |   |
+| G5   | ACR-451   |   |   |   |
+| G6   | ACR-451   |   |   |   |
+| G7   | ACR-456   |   |   |   |
+| G8   | ACR-456   |   |   |   |
+| G9   | ACR-457   |   |   |   |
+| G10  | ACR-457   |   |   |   |
+| G11  | ACR-458   |   |   |   |
+| G12  | ACR-458   |   |   |   |
+| H1   | ACR-459   |   |   |   |
+| H2   | ACR-459   |   |   |   |
+| H3   | ACR-460   |   |   |   |
+| H4   | ACR-460   |   |   |   |
+| H5   | ACR-461   |   |   |   |
+| H6   | ACR-461   |   |   |   |
+| H7   | ACR-462   |   |   |   |
+| H8   | ACR-462   |   |   |   |
+| H9   | ACR-463   |   |   |   |
+| H10  | ACR-463   |   |   |   |
+| H11  | ACR-464   |   |   |   |
+| H12  | ACR-464   |   |   |   |
+
+#### Plate Map Holobiont (September Gametogenesis 2022):
+
+| well | colony_id |   |   |   |
+|------|-----------|---|---|---|
+| A1   | StandardA |   |   |   |
+| A2   | StandardA |   |   |   |
+| A3   | StandardB |   |   |   |
+| A4   | StandardB |   |   |   |
+| A5   | StandardC |   |   |   |
+| A6   | StandardC |   |   |   |
+| A7   | StandardD |   |   |   |
+| A8   | StandardD |   |   |   |
+| A9   | StandardE |   |   |   |
+| A10  | StandardE |   |   |   |
+| A11  | StandardF |   |   |   |
+| A12  | StandardF |   |   |   |
+| B1   | StandardG |   |   |   |
+| B2   | StandardG |   |   |   |
+| B3   | StandardH |   |   |   |
+| B4   | StandardH |   |   |   |
+| B5   | StandardI |   |   |   |
+| B6   | StandardI |   |   |   |
+| B7   | ACR-414   |   |   |   |
+| B8   | ACR-414   |   |   |   |
+| B9   | ACR-415   |   |   |   |
+| B10  | ACR-415   |   |   |   |
+| B11  | ACR-416   |   |   |   |
+| B12  | ACR-416   |   |   |   |
+| C1   | ACR-417   |   |   |   |
+| C2   | ACR-417   |   |   |   |
+| C3   | ACR-418   |   |   |   |
+| C4   | ACR-418   |   |   |   |
+| C5   | ACR-420   |   |   |   |
+| C6   | ACR-420   |   |   |   |
+| C7   | ACR-421   |   |   |   |
+| C8   | ACR-421   |   |   |   |
+| C9   | ACR-422   |   |   |   |
+| C10  | ACR-422   |   |   |   |
+| C11  | ACR-423   |   |   |   |
+| C12  | ACR-423   |   |   |   |
+| D1   | ACR-424   |   |   |   |
+| D2   | ACR-424   |   |   |   |
+| D3   | ACR-425   |   |   |   |
+| D4   | ACR-425   |   |   |   |
+| D5   | ACR-426   |   |   |   |
+| D6   | ACR-426   |   |   |   |
+| D7   | ACR-427   |   |   |   |
+| D8   | ACR-427   |   |   |   |
+| D9   | ACR-428   |   |   |   |
+| D10  | ACR-428   |   |   |   |
+| D11  | ACR-429   |   |   |   |
+| D12  | ACR-429   |   |   |   |
+| E1   | ACR-430   |   |   |   |
+| E2   | ACR-430   |   |   |   |
+| E3   | ACR-431   |   |   |   |
+| E4   | ACR-431   |   |   |   |
+| E5   | ACR-432   |   |   |   |
+| E6   | ACR-432   |   |   |   |
+| E7   | ACR-433   |   |   |   |
+| E8   | ACR-433   |   |   |   |
+| E9   | ACR-434   |   |   |   |
+| E10  | ACR-434   |   |   |   |
+| E11  | ACR-435   |   |   |   |
+| E12  | ACR-435   |   |   |   |
+| F1   | ACR-436   |   |   |   |
+| F2   | ACR-436   |   |   |   |
+| F3   | ACR-437   |   |   |   |
+| F4   | ACR-437   |   |   |   |
+| F5   | ACR-438   |   |   |   |
+| F6   | ACR-438   |   |   |   |
+| F7   | ACR-439   |   |   |   |
+| F8   | ACR-439   |   |   |   |
+| F9   | ACR-446   |   |   |   |
+| F10  | ACR-446   |   |   |   |
+| F11  | ACR-447   |   |   |   |
+| F12  | ACR-447   |   |   |   |
+| G1   | ACR-448   |   |   |   |
+| G2   | ACR-448   |   |   |   |
+| G3   | ACR-449   |   |   |   |
+| G4   | ACR-449   |   |   |   |
+| G5   | ACR-451   |   |   |   |
+| G6   | ACR-451   |   |   |   |
+| G7   | ACR-456   |   |   |   |
+| G8   | ACR-456   |   |   |   |
+| G9   | ACR-457   |   |   |   |
+| G10  | ACR-457   |   |   |   |
+| G11  | ACR-458   |   |   |   |
+| G12  | ACR-458   |   |   |   |
+| H1   | ACR-459   |   |   |   |
+| H2   | ACR-459   |   |   |   |
+| H3   | ACR-460   |   |   |   |
+| H4   | ACR-460   |   |   |   |
+| H5   | ACR-461   |   |   |   |
+| H6   | ACR-461   |   |   |   |
+| H7   | ACR-462   |   |   |   |
+| H8   | ACR-462   |   |   |   |
+| H9   | ACR-463   |   |   |   |
+| H10  | ACR-463   |   |   |   |
+| H11  | ACR-464   |   |   |   |
+| H12  | ACR-464   |   |   |   |
+
 
 #### Plate Map Host (E5 samples):  
 
@@ -551,9 +891,40 @@ Wildtype colonies were sampled using a hammer and chisel. *A. hyacinthus* coloni
 
 Colonies were placed in n=2 tanks for Danielle's colonies with n=1 tank for each wildtype species. Water flow was kept very high with n=3 recirculating pumps in each tank.  
 
-### *High frequency histology time series sampling*  
+### *A. pulchra high frequency sampling - 20221012*  
 
-Ariana and Danielle collected samples for the high frequency *A. pulchra* time series from Mahana from 1500-1600. Danielle processed the fragments in the lab for sampling.  
+Completed the sixth timepoint for the high frequency project for *A. pulchra* on the samples below. Went in the field at 15:00 to collect 20 fragments from the five patches.
+
+Metadata:
+
+| Species    | Site   | OrderbyPatch | Original.Tag.Num | Patch | Latitude.S | Longitude.W | GPS.Point.Name | Timestamp |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|------------|--------|--------------|------------------|-------|------------|-------------|----------------|-----------|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| A. pulchra | Mahana | P1.3         |              414 | P1    | 17°29.234' | 149°53.264' | P1             |  12:59 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P2.5         |              416 | P2    | 17°29.232' | 149°53.253' | P2             |   1:11 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P3.4         |              424 | P3    | 17°29.223' | 149°53.249' | P3             |   1:17 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P5.1         |              426 | P5    | 17°29.220' | 149°53.236' | P5             |   1:49 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P2.1         |              429 | P2    | 17°29.232' | 149°53.253' | P2             |   1:05 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P2.4         |              430 | P2    | 17°29.232' | 149°53.253' | P2             |   1:10 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P4.9         |              431 | P4    | 17°29.231' | 149°53.242' | P4             |   1:46 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P1.5         |              433 | P1    | 17°29.234' | 149°53.264' | P1             |   1:02 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P1.4         |              434 | P1    | 17°29.234' | 149°53.264' | P1             |   1:00 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P3.10        |              436 | P3    | 17°29.223' | 149°53.249' | P3             |   1:29 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P5.2         |              437 | P5    | 17°29.220' | 149°53.236' | P5             |   1:50 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P4.10        |              439 | P4    | 17°29.231' | 149°53.242' | P4             |   1:47 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P4.1         |              448 | P4    | 17°29.231' | 149°53.242' | P4             |   1:35 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P2.2         |              449 | P2    | 17°29.232' | 149°53.253' | P2             |   1:07 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P5.8         |              451 | P5    | 17°29.220' | 149°53.236' | P5             |   2:00 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P5.6         |              458 | P5    | 17°29.220' | 149°53.236' | P5             |   1:56 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P3.11        |              461 | P3    | 17°29.223' | 149°53.249' | P3             |   1:30 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P1.1         |              462 | P1    | 17°29.234' | 149°53.264' | P1             |  12:56 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P4.6         |              464 | P4    | 17°29.231' | 149°53.242' | P4             |   1:41 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P3.6         |              465 | P3    | 17°29.223' | 149°53.249' | P3             |   1:22 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+
+
+### *A. pulchra high frequency sampling protocol*  
+
+Danielle followed the [same day sample processing protocol](https://github.com/daniellembecker/Gametogenesis/blob/main/protocols/2021-12-26-Sample_Same_Day_Processing_Protocol.md) for the 20 collected high frequency samples. Danielle also set aside 10 fragments to be dissected and preserved in DNA/RNA shield.
+
 
 ### *Spawning preparations*  
 
@@ -644,7 +1015,11 @@ Ariana and Terava aliquoted coral tissue slurries for future analysis of symbion
 6. This process was repeated for N=24 fragment slurries, with n=96 total tubes with 1 mL aliquots. All remaining slurry in 15 mL tubes was kept in black mesh bag at -40C.  
 7. All equipment was cleaned and sterilized.    
 
-The sample tracking sheet can be [found here with information on aliquoting sample locations](https://github.com/urol-e5/apulchra_metabolism/blob/main/data/baseline_sampling/baseline_sampling_checklist.csv).    
+The sample tracking sheet can be [found here with information on aliquoting sample locations](https://github.com/urol-e5/apulchra_metabolism/blob/main/data/baseline_sampling/baseline_sampling_checklist.csv).  
+
+### *A. pulchra high frequency sampling dissections*   
+
+Danielle finished processing the *A. pulchra* samples from the fifth high frequency sampling (20221007) for dissections. The fragments from this timepoint had many more distinct gonads.  
 
 # 9 October 2022  
 
@@ -667,6 +1042,40 @@ The team snorkeled at Manava (Ariana and Pierrick) and Hilton (Danielle and Noam
 Danielle and the team sampled a subset of the high frequency time series *A. pulchra* colonies today for Danielle to do gamete dissections.  
 
 # 7 October 2022  
+
+### *A. pulchra high frequency sampling - 20221007*  
+
+Completed the fifth timepoint for the high frequency project for *A. pulchra* on the samples below. Went in the field at 09:00 to collect 20 fragments from the five patches.
+
+Metadata:
+
+| Species    | Site   | OrderbyPatch | Original.Tag.Num | Patch | Latitude.S | Longitude.W | GPS.Point.Name | Timestamp |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|------------|--------|--------------|------------------|-------|------------|-------------|----------------|-----------|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| A. pulchra | Mahana | P1.3         |              414 | P1    | 17°29.234' | 149°53.264' | P1             |  12:59 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P2.5         |              416 | P2    | 17°29.232' | 149°53.253' | P2             |   1:11 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P3.4         |              424 | P3    | 17°29.223' | 149°53.249' | P3             |   1:17 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P5.1         |              426 | P5    | 17°29.220' | 149°53.236' | P5             |   1:49 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P2.1         |              429 | P2    | 17°29.232' | 149°53.253' | P2             |   1:05 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P2.4         |              430 | P2    | 17°29.232' | 149°53.253' | P2             |   1:10 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P4.9         |              431 | P4    | 17°29.231' | 149°53.242' | P4             |   1:46 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P1.5         |              433 | P1    | 17°29.234' | 149°53.264' | P1             |   1:02 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P1.4         |              434 | P1    | 17°29.234' | 149°53.264' | P1             |   1:00 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P3.10        |              436 | P3    | 17°29.223' | 149°53.249' | P3             |   1:29 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P5.2         |              437 | P5    | 17°29.220' | 149°53.236' | P5             |   1:50 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P4.10        |              439 | P4    | 17°29.231' | 149°53.242' | P4             |   1:47 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P4.1         |              448 | P4    | 17°29.231' | 149°53.242' | P4             |   1:35 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P2.2         |              449 | P2    | 17°29.232' | 149°53.253' | P2             |   1:07 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P5.8         |              451 | P5    | 17°29.220' | 149°53.236' | P5             |   2:00 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P5.6         |              458 | P5    | 17°29.220' | 149°53.236' | P5             |   1:56 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P3.11        |              461 | P3    | 17°29.223' | 149°53.249' | P3             |   1:30 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P1.1         |              462 | P1    | 17°29.234' | 149°53.264' | P1             |  12:56 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P4.6         |              464 | P4    | 17°29.231' | 149°53.242' | P4             |   1:41 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P3.6         |              465 | P3    | 17°29.223' | 149°53.249' | P3             |   1:22 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+
+
+### *A. pulchra high frequency sampling protocol*  
+
+Danielle followed the [same day sample processing protocol](https://github.com/daniellembecker/Gametogenesis/blob/main/protocols/2021-12-26-Sample_Same_Day_Processing_Protocol.md) for the 20 collected high frequency samples. Danielle also set aside 10 fragments to be dissected and preserved in DNA/RNA shield.
 
 ### *E5 adult coral metabolism project*  
 
@@ -705,6 +1114,10 @@ Ariana and Danielle took daily measurements of E5 tanks between 1000 and 1030. N
 Today the team completed 3 more (6 out of 7 completed) transects at the Manava site for Pierrick Harnay's PhD project on the genetic population of Pocillopora spp. corals in Mo'orea. More information can be [found in his notebook here](https://pierrickharnay.github.io/PierrickHarnay_Notebook/). The last transect will be completed tomorrow morning during early morning observation for *Pocillopora* spawning.   
 
 # 5 October 2022  
+
+### *A. pulchra high frequency sampling dissections*   
+
+Danielle finished processing the *A. pulchra* samples from the fourth high frequency sampling (20221002) for dissections. The fragments from this timepoint had many more distinct gonads.
 
 ### *E5 adult coral metabolism project*  
 
@@ -749,6 +1162,14 @@ Ariana wrote a script to read the light and temperature logger calibration files
 This script [outputs files](https://github.com/urol-e5/apulchra_metabolism/tree/main/output/environmental) with the logger serial number, coefficient, and intercept values. These files can then be read in when analyzing light and temperature data to conduct calibrations in later analyses.  
 
 # 3 October 2022  
+
+### *Histological decalcification*  
+
+Following the [histological processing protocol](https://github.com/daniellembecker/Gametogenesis/blob/main/protocols/2022-04-16-Histological-Processing.md) Danielle taught Pierrick how to check  the decalcification process for the September 2022 samples. Almost all of the samples besides 5 of them were ready to be resuspended in their original formalin tubes.
+
+### *A. pulchra high frequency sampling dissections*   
+
+Danielle finished processing the *A. pulchra* samples from the fourth high frequency sampling (20221002) for dissections. The fragments from this timepoint had many more distinct gonads.
 
 ### *E5 adult coral metabolism project*  
 
@@ -807,6 +1228,44 @@ All test data recorded in [Ariana's Google Drive here](https://docs.google.com/s
 
 # 2 October 2022  
 
+### *A. pulchra high frequency sampling - 20221002*  
+
+Completed the fourth timepoint for the high frequency project for *A. pulchra* on the samples below. Went in the field at 09:00 to collect 20 fragments from the five patches.
+
+Metadata:
+
+| Species    | Site   | OrderbyPatch | Original.Tag.Num | Patch | Latitude.S | Longitude.W | GPS.Point.Name | Timestamp |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|------------|--------|--------------|------------------|-------|------------|-------------|----------------|-----------|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| A. pulchra | Mahana | P1.3         |              414 | P1    | 17°29.234' | 149°53.264' | P1             |  12:59 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P2.5         |              416 | P2    | 17°29.232' | 149°53.253' | P2             |   1:11 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P3.4         |              424 | P3    | 17°29.223' | 149°53.249' | P3             |   1:17 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P5.1         |              426 | P5    | 17°29.220' | 149°53.236' | P5             |   1:49 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P2.1         |              429 | P2    | 17°29.232' | 149°53.253' | P2             |   1:05 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P2.4         |              430 | P2    | 17°29.232' | 149°53.253' | P2             |   1:10 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P4.9         |              431 | P4    | 17°29.231' | 149°53.242' | P4             |   1:46 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P1.5         |              433 | P1    | 17°29.234' | 149°53.264' | P1             |   1:02 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P1.4         |              434 | P1    | 17°29.234' | 149°53.264' | P1             |   1:00 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P3.10        |              436 | P3    | 17°29.223' | 149°53.249' | P3             |   1:29 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P5.2         |              437 | P5    | 17°29.220' | 149°53.236' | P5             |   1:50 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P4.10        |              439 | P4    | 17°29.231' | 149°53.242' | P4             |   1:47 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P4.1         |              448 | P4    | 17°29.231' | 149°53.242' | P4             |   1:35 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P2.2         |              449 | P2    | 17°29.232' | 149°53.253' | P2             |   1:07 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P5.8         |              451 | P5    | 17°29.220' | 149°53.236' | P5             |   2:00 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P5.6         |              458 | P5    | 17°29.220' | 149°53.236' | P5             |   1:56 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P3.11        |              461 | P3    | 17°29.223' | 149°53.249' | P3             |   1:30 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P1.1         |              462 | P1    | 17°29.234' | 149°53.264' | P1             |  12:56 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P4.6         |              464 | P4    | 17°29.231' | 149°53.242' | P4             |   1:41 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P3.6         |              465 | P3    | 17°29.223' | 149°53.249' | P3             |   1:22 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+
+
+### *A. pulchra high frequency sampling protocol*  
+
+Danielle followed the [same day sample processing protocol](https://github.com/daniellembecker/Gametogenesis/blob/main/protocols/2021-12-26-Sample_Same_Day_Processing_Protocol.md) for the 20 collected high frequency samples. Danielle also set aside 10 fragments to be dissected and preserved in DNA/RNA shield.
+
+### *Dissections*   
+
+Danielle started processing the *A. pulchra* samples from the fourth high frequency sampling (20221002) for dissections. The fragments from this timepoint had many more distinct gonads.
+
 ### *E5 adult coral metabolism project*    
 
 #### Daily measurements    
@@ -833,9 +1292,52 @@ Sampling of all fragments took 1.5-2 hours. Sampling of fragments was conducted 
 
 HOBO Pendant loggers from the six E5 tanks were downloaded at 1220. Loggers were kept logging in the tanks. Black HOBO loggers from the wildtype parent tanks (n=2) were removed from tanks, stopped, and downloaded at 1030. Logger files can be [found here](https://github.com/urol-e5/apulchra_metabolism/tree/main/data/environmental/loggers/E5_tanks/20221002).    
 
-### *Histology time series*    
+### *Histological decalcification*  
 
-The team conducted sampling of n=20 high frequency *A. pulchra* tagged colonies at Mahana.  
+Following the [histological processing protocol](https://github.com/daniellembecker/Gametogenesis/blob/main/protocols/2022-04-16-Histological-Processing.md) Danielle taught Pierrick how to preserve and decalcify his *Pocillopora* spp. samples and she began the decalcification process for the September 2022 samples. They were put into the pre-labeled March and June cups.
+
+### *A. pulchra high frequency sampling - 20220927*  
+
+Completed the third timepoint for the high frequency project for *A. pulchra* on the samples below. Went in the field at 09:00 to collect 20 fragments from the five patches.
+
+Metadata:
+
+| Species    | Site   | OrderbyPatch | Original.Tag.Num | Patch | Latitude.S | Longitude.W | GPS.Point.Name | Timestamp |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|------------|--------|--------------|------------------|-------|------------|-------------|----------------|-----------|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| A. pulchra | Mahana | P1.3         |              414 | P1    | 17°29.234' | 149°53.264' | P1             |  12:59 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P2.5         |              416 | P2    | 17°29.232' | 149°53.253' | P2             |   1:11 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P3.4         |              424 | P3    | 17°29.223' | 149°53.249' | P3             |   1:17 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P5.1         |              426 | P5    | 17°29.220' | 149°53.236' | P5             |   1:49 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P2.1         |              429 | P2    | 17°29.232' | 149°53.253' | P2             |   1:05 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P2.4         |              430 | P2    | 17°29.232' | 149°53.253' | P2             |   1:10 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P4.9         |              431 | P4    | 17°29.231' | 149°53.242' | P4             |   1:46 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P1.5         |              433 | P1    | 17°29.234' | 149°53.264' | P1             |   1:02 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P1.4         |              434 | P1    | 17°29.234' | 149°53.264' | P1             |   1:00 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P3.10        |              436 | P3    | 17°29.223' | 149°53.249' | P3             |   1:29 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P5.2         |              437 | P5    | 17°29.220' | 149°53.236' | P5             |   1:50 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P4.10        |              439 | P4    | 17°29.231' | 149°53.242' | P4             |   1:47 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P4.1         |              448 | P4    | 17°29.231' | 149°53.242' | P4             |   1:35 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P2.2         |              449 | P2    | 17°29.232' | 149°53.253' | P2             |   1:07 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P5.8         |              451 | P5    | 17°29.220' | 149°53.236' | P5             |   2:00 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P5.6         |              458 | P5    | 17°29.220' | 149°53.236' | P5             |   1:56 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P3.11        |              461 | P3    | 17°29.223' | 149°53.249' | P3             |   1:30 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P1.1         |              462 | P1    | 17°29.234' | 149°53.264' | P1             |  12:56 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P4.6         |              464 | P4    | 17°29.231' | 149°53.242' | P4             |   1:41 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P3.6         |              465 | P3    | 17°29.223' | 149°53.249' | P3             |   1:22 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+
+
+### *A. pulchra high frequency sampling protocol*  
+
+Danielle followed the [same day sample processing protocol](https://github.com/daniellembecker/Gametogenesis/blob/main/protocols/2021-12-26-Sample_Same_Day_Processing_Protocol.md) for the 20 collected high frequency samples. Danielle also set aside 10 fragments to be dissected and preserved in DNA/RNA shield.
+
+### *Dissections*   
+
+Danielle continued processing the *A. pulchra* samples from the second high frequency sampling for dissections. Danielle and Pierrick began to work on the *Pocillopora* spp. dissections and found where the eggs/gonads should be in the *Pocillopora* spp. tissue (right below the polyps). Since they are so small (~60um) they began the fixing and decalcification process for a subset of samples to see if any reproductive tissue can be seen in a scope after decalcification.
+
+### *Tissue biomass completion - September 2022 gametogenesis project*  
+
+Danielle taught Pierrick the final step in the [tissue biomass protocol](https://github.com/daniellembecker/Gametogenesis/blob/main/protocols/2020-01-01-Ash-Free-Dry-Weight-Protocol.md) and weighed the ash pans of the host and symbiont portions of each of the September 2022 gametogenesis timeseries samples (n=40) with 4 mL for host and 1 mL for symbionts in the pans.
+
 
 # 1 October 2022
 
@@ -848,6 +1350,19 @@ The team took the day off today for some fun snorkeling at Temae!
 Ariana took daily measurements of all tanks at 1630-1645. Sunlight was limited today and it was cloudy/rainy. Light measurements were all low during measurements (<25 PAR). Recorded in [GitHub here](https://github.com/urol-e5/apulchra_metabolism/tree/main/data/environmental/daily_measurements). Flow was even across tanks (325-375 mL per 5 sec) in each tank and did not need to be adjusted. Ariana will check the outflows tomorrow and flush the lines to prevent lines clogging after sampling the adult baseline fragments.  
 
 # 30 September 2022
+
+### *Gamete dissection*  
+
+Danielle continued her methods for dissecting gametes from live *A. pulchra* fragments.   
+
+Danielle used a bone saw to cut ~10 individual <1 cm pieces from each individual fragment and submerged them into a microscope dish under a microscope light to identify if any gonads were present. She then used fine tipped tweezers to hold the fragment place and used a 1mL pipette to lightly dislodge the gonads. She then used a glass pipette to apply pressure and suction to the gonad until it finally released from the tissue. She then preserved the gonads she was able to collect from 5 separate fragments into 250 uL of DNA/RNA shield in a sterile o-ring micro-centrifuge tube. She was also able to identify gonads from other parts of tissue as they float when dislodged.
+
+![gonad123](https://raw.githubusercontent.com/urol-e5/urol-e5.github.io/master/images/Moorea2022/gonads_test1.jpeg)
+
+![gonad23](https://raw.githubusercontent.com/urol-e5/urol-e5.github.io/master/images/Moorea2022/gonads_test2.jpeg)
+
+![gonad32](https://raw.githubusercontent.com/urol-e5/urol-e5.github.io/master/images/Moorea2022/gonads_test3.jpeg)
+
 
 ### *E5 adult coral metabolism project*  
 
@@ -897,6 +1412,15 @@ Documents referenced in this post are all found below:
 
 # 29 September 2022
 
+
+### *Chlorophyll - September 2022 gametogenesis project*
+
+Danielle taught Pierrick the final steps in the [chlorophyll protocol](https://github.com/daniellembecker/Gametogenesis/blob/main/protocols/2020-01-01-Chlorophyll-Protocol.md) and completed the 40 September 2022 gametogenesis timeseries samples chlorophyll analysis.
+
+### *Tissue biomass preparation - September 2022 gametogenesis project*  
+
+Danielle taught Pierrick the second step in the [tissue biomass protocol](https://github.com/daniellembecker/Gametogenesis/blob/main/protocols/2020-01-01-Ash-Free-Dry-Weight-Protocol.md) and weighed the pre-burned pans and filled the host and symbiont portions of each of the September 2022 gametogenesis timeseries samples (n=40) with 4 mL for host and 1 mL for symbionts in the pans. They put the aluminum pans in the drying overn for >24 hours.
+
 ### *E5 adult coral metabolism project*  
 
 Ariana took daily measurements of the adult corals. The protocol for daily measurements [can be found here](https://github.com/urol-e5/protocols/blob/master/2022-09-24-Moorea-Daily-Measurement-Protocol.md).  
@@ -918,6 +1442,14 @@ All tanks and fragments looked good today and no mortality was observed. Ariana 
 Danielle processed physiological samples for ash free dry weight and chlorophyll content.  
 
 # 28 September 2022
+
+### *Chlorophyll preparation - September 2022 gametogenesis project*
+
+Danielle taught Pierrick the first step in the [chlorophyll protocol](https://github.com/daniellembecker/Gametogenesis/blob/main/protocols/2020-01-01-Chlorophyll-Protocol.md) and prepped the 40 September 2022 gametogenesis timeseries samples with acetone. All samples put in dark fridge in molecular at 09:05.
+
+### *Tissue biomass preparation - September 2022 gametogenesis project*  
+
+Danielle taught Pierrick the first step in the [tissue biomass protocol](https://github.com/daniellembecker/Gametogenesis/blob/main/protocols/2020-01-01-Ash-Free-Dry-Weight-Protocol.md) and labeled and prepped 80 aluminum pans labeled 1-80 for the two host and symbiont portions of each of the September 2022 gametogenesis timeseries samples (n=40). She also put the aluminum pans in the muffle furnace for the pre-burning step in the protocol.
 
 ### *Pocillopora spawning*  
 
@@ -1021,6 +1553,40 @@ In 27 September 2022 post, Ariana described potential feeding treatments using a
 
 # 27 September 2022  
 
+### *A. pulchra high frequency sampling - 20220927*  
+
+Completed the second timepoint for the high frequency project for *A. pulchra* on the samples below.
+
+Metadata:
+
+| Species    | Site   | OrderbyPatch | Original.Tag.Num | Patch | Latitude.S | Longitude.W | GPS.Point.Name | Timestamp |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|------------|--------|--------------|------------------|-------|------------|-------------|----------------|-----------|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| A. pulchra | Mahana | P1.3         |              414 | P1    | 17°29.234' | 149°53.264' | P1             |  12:59 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P2.5         |              416 | P2    | 17°29.232' | 149°53.253' | P2             |   1:11 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P3.4         |              424 | P3    | 17°29.223' | 149°53.249' | P3             |   1:17 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P5.1         |              426 | P5    | 17°29.220' | 149°53.236' | P5             |   1:49 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P2.1         |              429 | P2    | 17°29.232' | 149°53.253' | P2             |   1:05 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P2.4         |              430 | P2    | 17°29.232' | 149°53.253' | P2             |   1:10 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P4.9         |              431 | P4    | 17°29.231' | 149°53.242' | P4             |   1:46 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P1.5         |              433 | P1    | 17°29.234' | 149°53.264' | P1             |   1:02 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P1.4         |              434 | P1    | 17°29.234' | 149°53.264' | P1             |   1:00 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P3.10        |              436 | P3    | 17°29.223' | 149°53.249' | P3             |   1:29 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P5.2         |              437 | P5    | 17°29.220' | 149°53.236' | P5             |   1:50 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P4.10        |              439 | P4    | 17°29.231' | 149°53.242' | P4             |   1:47 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P4.1         |              448 | P4    | 17°29.231' | 149°53.242' | P4             |   1:35 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P2.2         |              449 | P2    | 17°29.232' | 149°53.253' | P2             |   1:07 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P5.8         |              451 | P5    | 17°29.220' | 149°53.236' | P5             |   2:00 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P5.6         |              458 | P5    | 17°29.220' | 149°53.236' | P5             |   1:56 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P3.11        |              461 | P3    | 17°29.223' | 149°53.249' | P3             |   1:30 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P1.1         |              462 | P1    | 17°29.234' | 149°53.264' | P1             |  12:56 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P4.6         |              464 | P4    | 17°29.231' | 149°53.242' | P4             |   1:41 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| A. pulchra | Mahana | P3.6         |              465 | P3    | 17°29.223' | 149°53.249' | P3             |   1:22 PM |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+
+
+### *A. pulchra high frequency sampling protocol*  
+
+Danielle and Pierrick followed the [same day sample processing protocol](https://github.com/daniellembecker/Gametogenesis/blob/main/protocols/2021-12-26-Sample_Same_Day_Processing_Protocol.md) for the 20 collected high frequency samples. Danielle also set aside 10 fragments to be dissected and preserved in DNA/RNA shield.
+
 ### *Pocillopora spawning*  
 
 Danielle and Pierrick snorkeled to observe *Pocillopora* spp. coral spawning at Manava from 0530-0730. No spawning was observed.  
@@ -1070,6 +1636,15 @@ For feeding in this experiment, Ariana suggests that we purchase either Reef Roi
 - Order coral food  
 
 # 26 September 2022  
+
+### *Aliquoting gametogenesis project - September 2022*
+
+Danielle taught Pierrick the [aliquoting protocol](https://github.com/daniellembecker/Gametogenesis/blob/main/protocols/2020-01-01-Airbrushing.md) for Mo'orea and also aliquoted 40 of the September 2022 monthly sampling *A. pulchra* fragments following the protocol and stored the remaining tissue homogenate and samples in the Molecular -40 freezer in a mesh bag.
+
+### *Surface area gametogenesis project - September 2022*
+
+Danielle taught Pierrick the [coral surface area protocol](https://github.com/daniellembecker/Gametogenesis/blob/main/protocols/2021-02-17-Surface-Area-Protocol.md) for Mo'orea and also completed the standard curve for surface area and measured surface area 40 of the September 2022 monthly sampling *A. pulchra* fragments following the protocol and stored the wax dipped skeletons in the molecular lab in a zip lock bag.
+
 
 ### *Pocillopora spawning*  
 
@@ -1197,6 +1772,11 @@ Tomorrow Ariana will fragment the *A. pulchra* corals. These are the steps we wi
 This fragmentation will be followed by baseline sampling at the start of the treatment period depending on the number of fragments available.  
 
 # 24 September 2022  
+
+### *Airbrushing gametogenesis project - September 2022*
+
+Danielle taught Pierrick the [airbrushing protocol](https://github.com/daniellembecker/Gametogenesis/blob/main/protocols/2020-01-01-Airbrushing.md) for Mo'orea and also airbrushed 40 of the September 2022 monthly sampling *A. pulchra* fragments following the protocol and stored the tissue homogenate in the Molecular -40 freezer in a mesh bag.
+
 
 ### *Logger calibration*  
 
