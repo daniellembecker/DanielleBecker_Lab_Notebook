@@ -69,7 +69,7 @@ Contents
 
     14. If not dissolving, carefully pour half of the 10% HCl solution holding the coral into a designated bucket holding dead coral rubble to further neutralize the HCl solution.
     15. Add another 40 mL of the HCl solution to any samples that need it and check back every six hours.
-    16. Once all coral pieces are decalcified, put dead coral rubble and skeletons into a designated bucket outsie and dispose of the remaining HCl into the bucket. The coral rubble will dissolve and neutralize the acid so that we do not have any leftover waste. 
+    16. Once all coral pieces are decalcified, put dead coral rubble and skeletons into a designated bucket outside and dispose of the remaining HCl into the bucket. The coral rubble will dissolve and neutralize the acid so that we do not have any leftover waste. 
     17. Check pH level in the bucket with pH strips over the next two days to make sure the solution is around 7 before discarding the waste. 
 
 3. <a name="References"></a> **References**  
