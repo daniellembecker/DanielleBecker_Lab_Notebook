@@ -27,8 +27,54 @@ We are also conducting an adult coral experiment within the E5 framework to answ
 Ariana Huffmyer  
 Pierrick Harnay  
 Danielle Becker-Polinski  
-Hollie Putnam  
+Hollie Putnam    
 
+# 28 October 2022  
+
+### *Final sampling - day 3 of experiment*  
+
+# 27 October 2022  
+
+# 26 October 2022  
+
+### *Sampling - day 3 of experiment*  
+
+# 25 October 2022  
+
+# 24 October 2022   
+
+### *Initial sampling - day 1 of experiment*  
+
+Today is the first day of our *A. pulchra* larval temperature experiment! We are going to conduct sampling today prior to the initiation of temperature exposure. After sampling is complete, we will start temperature treatment. Larvae will be exposed to temperature treatment (elevated ~1.5°C above ambient) for 5 days (through Friday) with sampling on days 3 and 5. 
+
+Details of sampling are described below for today in the order listed.      
+
+- **Obtain larvae from each squarical**: We need to have ~400 larvae from each squarical (n=12 squaricals). This will be used for RNA/DNA sampling (n=50 larvae per squarical), metabolomics sampling (n=50 larvae per squarical), respirometry (n=30 larvae per squarical), and cell density measurements (n=8 larvae per squarical). Larvae were obtained by scooping water out of each squarical through a seive (153 µm mesh bottom bin) and then pipetted/rinsed into a 50 mL falcon tube labeled for each squarical. These falcon tubes were then kept in the treatment tanks during sampling and brought to the lab in turn for each to be sampled in random order.  
+
+- **Respirometry**: Respirometry measurements followed Ariana's [larval respirometry protocol](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/SDR-Microplate-Respirometry-Protocol/). 
+    - Both the 710 and the 641 SDR plates were hydrated and then loaded with 100% air saturated 0.02 µm filtered seawater bubbled for 3-5 min (FSW). We allowed the plates to come to treatment temperature (27°C for the 641 plate and 30°C for the 710 plate) in benchtop MyTemp incubators. The plates were then calibrated (one point calibration in SDR software) at the treatment temperature using 100% air saturated FSW as the calibration standard. One point calibration at 0815. 
+    - A digital thermometer was used to continuously monitor temperature throughout all respiration runs.   
+    - Hollie and Ariana counted larvae into groups of 5 larvae per well. The measurements followed the plate maps listed below.  
+    - Temperature, plate maps, and light measurements were recorded in a [Google Drive spreadsheet](https://docs.google.com/spreadsheets/d/10LOBGkS0FsoXoTwlWjNvM0OPfD-PripuGoMooJDn7DM/edit#gid=1817731860).  
+    - AquaIllumination Hydra 16 HD lights were set to 30% intensity on all channels to generate light at ~500 PAR at the level of the respirometry plate. At the beginning of each day, light was measured in the center and in each corner of the plate and recorded in the Google Drive spreadsheet linked above.  
+
+**Plate maps for respirometry**   
+
+ 
+
+- **Sampling for metabolomics and RNA/DNA**:  
+
+
+
+
+### *Starting temperature treatment*  
+
+
+### *Larval rearing*  
+
+Daily measurements
+Cleaning and mixing 
+Filter cleaning  
 
 # 23 October 2022 
 
