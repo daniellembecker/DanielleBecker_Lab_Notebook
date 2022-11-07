@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Moorea 2022 Coral Spawning and Field Expedition Daily Entry
-date: '2022-09-18'
+date: '2022-10-31'
 categories: Acropora_Integration_Moorea_2022
 tags: Acropora Husbandry Reproduction ExperimentalDesign
 ---
