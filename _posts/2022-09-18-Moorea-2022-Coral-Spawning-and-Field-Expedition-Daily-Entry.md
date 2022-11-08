@@ -29,18 +29,6 @@ Pierrick Harnay
 Danielle Becker-Polinski  
 Hollie Putnam    
 
-# 28 October 2022  
-
-### *Final sampling - day 3 of experiment*  
-
-# 27 October 2022  
-
-# 26 October 2022  
-
-### *Sampling - day 3 of experiment*  
-
-# 25 October 2022  
-
 # 24 October 2022   
 
 ### *Initial sampling - day 1 of experiment*  
@@ -49,32 +37,249 @@ Today is the first day of our *A. pulchra* larval temperature experiment! We are
 
 Details of sampling are described below for today in the order listed.      
 
-- **Obtain larvae from each squarical**: We need to have ~400 larvae from each squarical (n=12 squaricals). This will be used for RNA/DNA sampling (n=50 larvae per squarical), metabolomics sampling (n=50 larvae per squarical), respirometry (n=30 larvae per squarical), and cell density measurements (n=8 larvae per squarical). Larvae were obtained by scooping water out of each squarical through a seive (153 µm mesh bottom bin) and then pipetted/rinsed into a 50 mL falcon tube labeled for each squarical. These falcon tubes were then kept in the treatment tanks during sampling and brought to the lab in turn for each to be sampled in random order.  
+- **1. Obtain larvae from each squarical**: We need to have ~400 larvae from each squarical (n=12 squaricals). This will be used for RNA/DNA sampling (n=50 larvae per squarical), metabolomics sampling (n=50 larvae per squarical), respirometry (n=30 larvae per squarical), and cell density measurements (n=8 larvae per squarical). Larvae were obtained by scooping water out of each squarical through a seive (153 µm mesh bottom bin) and then pipetted/rinsed into a 50 mL falcon tube labeled for each squarical. These falcon tubes were then kept in the treatment tanks during sampling and brought to the lab in turn for each to be sampled in random order.  
 
-- **Respirometry**: Respirometry measurements followed Ariana's [larval respirometry protocol](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/SDR-Microplate-Respirometry-Protocol/). 
-    - Both the 710 and the 641 SDR plates were hydrated and then loaded with 100% air saturated 0.02 µm filtered seawater bubbled for 3-5 min (FSW). We allowed the plates to come to treatment temperature (27°C for the 641 plate and 30°C for the 710 plate) in benchtop MyTemp incubators. The plates were then calibrated (one point calibration in SDR software) at the treatment temperature using 100% air saturated FSW as the calibration standard. One point calibration at 0815. 
+- **2. Respirometry**: Respirometry measurements followed Ariana's [larval respirometry protocol](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/SDR-Microplate-Respirometry-Protocol/). 
+    - Both the 710 (SDR 2) and the 641 (SDR 1) plates were hydrated and then loaded with 100% air saturated 0.02 µm filtered seawater bubbled for 3-5 min (FSW). We allowed the plates to come to treatment temperature (27°C for the 641 plate and 30°C for the 710 plate) in benchtop MyTemp incubators. The plates were then calibrated (one point calibration in SDR software) at the treatment temperature using 100% air saturated FSW as the calibration standard. One point calibration at 0815. 
     - A digital thermometer was used to continuously monitor temperature throughout all respiration runs.   
     - Hollie and Ariana counted larvae into groups of 5 larvae per well. The measurements followed the plate maps listed below.  
-    - Temperature, plate maps, and light measurements were recorded in a [Google Drive spreadsheet](https://docs.google.com/spreadsheets/d/10LOBGkS0FsoXoTwlWjNvM0OPfD-PripuGoMooJDn7DM/edit#gid=1817731860).  
+    - Temperature, plate maps, and light measurements were recorded in a [Google Drive spreadsheet](https://docs.google.com/spreadsheets/d/10LOBGkS0FsoXoTwlWjNvM0OPfD-PripuGoMooJDn7DM/edit#gid=1817731860). This data will be moved to GitHub in the coming weeks.   
     - AquaIllumination Hydra 16 HD lights were set to 30% intensity on all channels to generate light at ~500 PAR at the level of the respirometry plate. At the beginning of each day, light was measured in the center and in each corner of the plate and recorded in the Google Drive spreadsheet linked above.  
+    - In between runs, falcon tubes of larvae were kept in the treatment tanks to avoid effects of changing temperature indoors. All larvae were kept in the lab for the same amount of time during the counting process before each run.  
+    - After counting into groups of 5 larvae, larvae were loaded into the SDR wells at the specified positions. Wells were filled with 0.02 µm FSW and sealed with glass coverslips as described in the respirometry [protocol](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/SDR-Microplate-Respirometry-Protocol/). If larvae escaped during the sealing process the number of larvae remaining in each well was noted in the [Google Drive spreadsheet](https://docs.google.com/spreadsheets/d/10LOBGkS0FsoXoTwlWjNvM0OPfD-PripuGoMooJDn7DM/edit#gid=1817731860).  
+    - After loading, SDR 1 (641) and SDR 2 (710) were added into incubators at 27°C or 30°C, respectively. The data collection was then started in the software. Measurements were collected every 15 sec (salinity = 36, pressure = 965, batch = PSt 1624, units = % air saturation) for 20-25 minutes under the light (photosynthesis, if photosynthesis is active), and in the dark (light-enhanced respiration).  
+    - The light measurements are run first to standardize the light environment prior to respiration measurements. Light measurements were made to monitor photosynthesis, because a treatment in this experiment is symbiont infection (see information from 23 October 2022 on experimental design).  
 
-**Plate maps for respirometry**   
+**Plate maps for respirometry today**  
 
+The plate maps are included below along with information on plate run times and temperature treatments. In all plate maps, 5 larvae were loaded into each well. The information inside each well indicates the squarical tank that the larvae came from. "A" tanks are high temperature and "B" tanks are ambient. Tanks 1-3 will be dosed with symbionts whereas tanks 4-6 will not be dosed with symbionts.  
+
+*Plate 1: SDR 1 - 641; 27°C; 20221024*  
+Time start: 8:53  
+Time respiration start: 9:18  
+Time respiration ends: 9:33  
+
+|       | **1** | **2** | **3** | **4** | **5** | **6** |
+|-------|------:|------:|------:|------:|------:|------:|
+| **A** | BLANK | BLANK | BLANK | BLANK | BLANK | BLANK |
+| **B** |    A1 |    A2 |    A3 |    B1 |    B2 |    B3 |
+| **C** |    A1 |    A2 |    A3 |    B1 |    B2 |    B3 |
+| **D** |    A1 |    A2 |    A3 |    B1 |    B2 |    B3 |
  
+Well D1: 6 larvae  
 
-- **Sampling for metabolomics and RNA/DNA**:  
+*Plate 2: SDR 2 - 710; 30°C; 20221024*  
+Time start: 8:53  
+Time respiration start: 9:18  
+Time respiration ends: 9:33  
 
+|       | **1** | **2** | **3** | **4** | **5** | **6** |
+|-------|------:|------:|------:|------:|------:|------:|
+| **A** |    A1 |    A2 |    A3 |    B1 |    B2 |    B3 |
+| **B** |    A1 |    A2 |    A3 |    B1 |    B2 |    B3 |
+| **C** |    A1 |    A2 |    A3 |    B1 |    B2 |    B3 |
+| **D** | BLANK | BLANK | BLANK | BLANK | BLANK | BLANK |
 
+Well B1: 4 larvae  
+Well B2: 4 larvae  
 
+*Plate 3: SDR 1 - 641; 27°C; 20221024*  
+Time start: 10:25  
+Time respiration start: 10:50    
+Time respiration ends: 11:05  
+
+|       | **1** | **2** | **3** | **4** | **5** | **6** |
+|-------|------:|------:|------:|------:|------:|------:|
+| **A** |    A4 |    A5 |    A6 |    B4 |    B5 |    B6 |
+| **B** |    A4 |    A5 |    A6 |    B4 |    B5 |    B6 |
+| **C** | BLANK | BLANK | BLANK | BLANK | BLANK | BLANK |
+| **D** |    A4 |    A5 |    A6 |    B4 |    B5 |    B6 |
+
+Well A6: 4 larvae  
+
+*Plate 4: SDR 2 - 710; 30°C; 20221024*  
+Time start: 10:25    
+Time respiration start: 10:50      
+Time respiration ends: 11:05   
+
+|       | **1** | **2** | **3** | **4** | **5** | **6** |
+|-------|------:|------:|------:|------:|------:|------:|
+| **A** |    A4 |    A5 |    A6 |    B4 |    B5 |    B6 |
+| **B** | BLANK | BLANK | BLANK | BLANK | BLANK | BLANK |
+| **C** |    A4 |    A5 |    A6 |    B4 |    B5 |    B6 |
+| **D** |    A4 |    A5 |    A6 |    B4 |    B5 |    B6 |
+
+Well C3: 3 larvae  
+Well D3: 4 larvae  
+
+During all measurements blanks appeared to have minimal slope as expected. We also noticed that during the light phase there were no positive slopes indicating no photosynthesis. This is expected with aposymbiotic larvae. Respiration slopes during the dark phase were negative as expected with oxygen consumption.  
+
+Each day of sampling, we will alternate the order of which tanks are run in the first set of plates to avoid any timing effects.  
+
+- **3. Sampling for metabolomics and RNA/DNA**:  
+
+	- After respiration measurements were completed, we sampled larvae for metabolomics (untargetted) and RNA/DNA (gene expression). Sampling followed this protocol:  
+    - All falcon tubes with larvae were kept in the treatment tanks until brought in for counting. We randomly selected one falcon tube (i.e., larvae from one tank) of the 12 tubes (12 tanks) to bring into the lab at a time. Hollie then counted n=6 groups of 50 larvae and placed in a 6-well plate. 
+    - To standardize the environment prior to sampling after counting, larvae were then kept in an incubator at ~200 PAR (10% all channels) for 10-15 minutes at the treatment temperature (either 27°C for B tanks or 30°C for A tanks) prior to sampling.      
+    - After incubation, the larvae were then put into 2 mL screw top cryo vials by Ariana with a pipette and sampled.
+    - Larvae were sampled either for metabolomics ("M" tubes) or RNA/DNA ("R" tubes). Tubes were pre-labeled with the letter prefix followed by a number. 
+    - For each larval tank, n=3 samples of 50 larvae were taken for metabolomics and n=3 samples were taken for RNA/DNA. 
+    - Sample ID's were recorded [in Google Drive](https://docs.google.com/spreadsheets/d/10LOBGkS0FsoXoTwlWjNvM0OPfD-PripuGoMooJDn7DM/edit#gid=879693771). Date and time of sampling were recorded in the Google Drive sheet. 
+    - To sample, larvae were taken out of the 6- well plate with a glass pipette and added into labeled tubes. Each well of n=50 larvae was added into one tube. Tubes were then spun in a bench top centrifuge for 1.5 min at 13,000g. 
+    - Three tubes were spun at a time (e.g., all M tubes then all R tubes for each tank).  
+    - After spinning, as much seawater was removed as possible with a glass pipette. 
+    - M tubes were then directly flash frozen in liquid nitrogen and then stored in a box labeled with A. Huffmyer and project information and kept at -40°C in the molecular lab freezer. 
+    - R tubes were sampled by adding 600 µL of RNA DNA Shield directly to the tube. After all tubes were sampled, the R tubes were placed in the -40°C freezer in a box at the end of the day.  
+
+*The tubes sampled today were:*  
+R1-R36 (n=3 tubes per tank, n=50 larvae per tube)   
+M1-M36 (n=3 tubes per tank, n=50 larvae per tube)  
+
+During sampling we noticed that about half of the larvae were metamorphosing into the disc/stage 2 phase. Samples contain a mix of swimming and metamorphosed larvae due to limitations in the number of larvae.  
+
+Sampling occured between 1229 and 1559.  
+
+After sampling all unused larvae were poured back into larval tanks.  
 
 ### *Starting temperature treatment*  
 
+The treatment breakdown for all tanks is below.  
+
+| **Tank** | **Symbiont Treatment** | **Temperature Treatment** |
+|------|--------------------|-----------------------|
+| A1   | Added symbionts    | High (+2-2.5°C)       |
+| A2   | Added symbionts    | High (+2-2.5°C)       |
+| A3   | Added symbionts    | High (+2-2.5°C)       |
+| A4   | No symbionts       | High (+2-2.5°C)       |
+| A5   | No symbionts       | High (+2-2.5°C)       |
+| A6   | No symbionts       | High (+2-2.5°C)       |
+| B1   | Added symbionts    | Ambient               |
+| B2   | Added symbionts    | Ambient               |
+| B3   | Added symbionts    | Ambient               |
+| B4   | No symbionts       | Ambient               |
+| B5   | No symbionts       | Ambient               |
+| B6   | No symbionts       | Ambient               |
+
+
+**Temperature treatment profiles**  
+
+Temperature treatment was started at 1723 with target temperature reached by 1900. The treatment was programmed to approximate a 2-2.5°C increase in temperature above ambient conditions. Ambient conditions currently range between 26.75 and 28.0°C daily fluctuation. The target temperature treatment will raise this 2°C to reach a daily fluctuation of 28.75-30.0°C.  
+
+In the Apex system, virtual outlet scripts are programmed to turn on 2 800W finnex titanium heaters in the cooler/sump to reach a target temperature for chunks of time during the day to generate a daily cycle in temperature. The full script can be found below.  
+
+```
+High temperature treatment profile 
+
+28.6C - 30.0C  (with 1.5C daily fluctuation) 
+Stage 1 = 28.6
+Stage 2 = 28.8
+Stage 3 = 29.0
+Stage 4 = 29.2
+Stage 5 = 29.4
+Stage 6 = 29.6
+Stage 7 = 29.8
+Stage 8 = 30.0
+
+For high treatment probe with 8 stages
+
+Set OFF 
+If Outlet High_Stage1 = ON Then ON 
+If Outlet High_Stage2 = ON Then ON 
+If Outlet High_Stage3 = ON Then ON 
+If Outlet High_Stage4 = ON Then ON 
+If Outlet High_Stage5 = ON Then ON 
+If Outlet High_Stage6 = ON Then ON 
+If Outlet High_Stage7 = ON Then ON 
+If Outlet High_Stage8 = ON Then ON 
+
+High_Stage1
+Set OFF 
+If High_1 < 28.6 Then ON 
+If High_1 > 28.6 Then OFF 
+If Time 01:00 to 04:30 Then OFF 
+If Time 06:45 to 00:59 Then OFF
+
+High_Stage2
+Set OFF 
+If High_1 < 28.8 Then ON 
+If High_1 > 28.8 Then OFF 
+If Time 01:00 to 03:00 Then OFF 
+If Time 04:30 to 06:45 Then OFF
+If Time 08:15 to 00:59 Then OFF 
+
+High_Stage3
+Set OFF 
+If High_1 < 29.0 Then ON 
+If High_1 > 29.0 Then OFF 
+If Time 01:00 to 02:00 Then OFF 
+If Time 03:00 to 08:15 Then OFF 
+If Time 09:45 to 00:59 Then OFF 
+
+High_Stage4
+Set OFF 
+If High_1 < 29.2 Then ON 
+If High_1 > 29.2 Then OFF 
+If Time 02:00 to 09:45 Then OFF 
+If Time 11:15 to 00:30 Then OFF 
+
+High_Stage5
+Set OFF 
+If High_1 < 29.4 Then ON 
+If High_1 > 29.4 Then OFF 
+If Time 01:00 to 11:15 Then OFF 
+If Time 12:15 to 23:00 Then OFF 
+If Time 00:30 to 00:59 Then OFF 
+
+High_Stage6
+Set OFF 
+If High_1 < 29.6 Then ON 
+If High_1 > 29.6 Then OFF 
+If Time 01:00 to 12:15 Then OFF 
+If Time 13:30 to 19:45 Then OFF 
+If Time 23:00 to 00:59 Then OFF
+
+High_Stage7
+Set OFF 
+If High_1 < 29.8 Then ON
+If High_1 > 29.8 Then OFF 
+If Time 01:00 to 13:30 Then OFF 
+If Time 15:00 to 17:15 Then OFF 
+If Time 19:45 to 00:59 Then OFF 
+
+High_Stage8
+Set OFF 
+If High_1 < 30.0 Then ON 
+If High_1 > 30.0 Then OFF 
+If Time 01:00 to 15:00 Then OFF 
+If Time 17:15 to 00:59 Then OFF
+```  
+
+The 800W heaters heat the cooler to the temperature necessary to achieve the desired temperature profile in the larval tanks. Three apex temperature probes were placed in A tanks and B tanks with the temperature profile registering feedback and monitoring one of the larval A tanks. The location of the probes was randomized each day so that the temperature profile is even throughout all the tanks. 
+
+The Neptune Apex units used to control this system with high temperature manipulation in A tanks included:   
+1 Apex base unit (WiFi model)  
+1 Apex EB832 energy bar  
+5 PM1 modules  
+6 Apex temperature probes  
+Apex aquabus cables between each unit/module  
+
+The manipulated header tank then delivered heated water to each larval tank through the manifold delivery system. For more information on the tank systems, refer to the [SMILE systems parts list and protocol](https://docs.google.com/document/d/13hQXY1mEwzKhxbFFZCw6-jbcCd6CUVb2G1M6lSuEELI/edit).   
+
+There were no problems with temperature treatment today. The temperature reached the target temperature within ~2 hours and stayed at the correct temperature overnight.  
+
+Temperature is monitored in n=3 pendant loggers in A tanks and n=3 pendant loggers in B tanks (A1, A3, A5 and B2, B4, and B6) with logging every 10 min. These loggers were previously calibrated on 25 September 2022. Temperature is monitored live in the Apex Neptune system regularly.  
+
+### *Sampling for cell counts*   
+
+Larvae were sampled at 17:50 today to measure symbiont cell densities as an initial time point to see whether larvae had already acquired symbionts in our rearing systems. 8 larvae from each larval tank were collected directly from the tank and loaded into a 96-well plate (n=8 wells per tank). These were kept in an incubator in 0.02 µm FSW at 27°C overnight and will be counted tomorrow morning.  
 
 ### *Larval rearing*  
 
-Daily measurements
-Cleaning and mixing 
-Filter cleaning  
+We collected daily measurements (temperature, pH, salinity, flow) on all larval tanks at 17:07 by Ariana and Danielle. Apex probes were calibrated at 17:00. 
+
+Throughout the day, larvae were mixed and tanks were checked every 2-3 hours. Filters were cleaned every 5-7 hours during the day and night. Tanks were checked every 3-4 hours at night. 
+
+We noticed continued settlement behavior in larvae. This will impact how many larvae we have at the end of the experiment and will confound larval density measurements for survival.  
 
 # 23 October 2022 
 
