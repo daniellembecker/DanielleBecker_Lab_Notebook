@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Moorea 2022 Coral Spawning and Field Expedition Daily Entry
-date: '2022-10-31'
+date: '2022-11-09'
 categories: Acropora_Integration_Moorea_2022
-tags: Acropora Husbandry Reproduction ExperimentalDesign
+tags: Acropora Husbandry Reproduction ExperimentalDesign Protocol CellDensity Environmental ExperimentalDesign Metabolomics Microscopy Molecular Protocol Sampling Settlement 
 ---
 This post includes the full notebook for Sept-Oct 2022 *Acropora* coral spawning and field expedition in Moorea, French Polynesia. These notebook posts by A. Huffmyer are updated in order of most recent to oldest. 
 
@@ -19,9 +19,7 @@ We will also continue in situ monitoring of *Acropora* and *Pocillopora* colonie
 
 We are also conducting an adult coral experiment within the E5 framework to answer the question, *How does altered metabolic and symbiotic state impact response to thermal stress in Acropora pulchra*?  
 
-**Separate posts will be created for specific projects while daily overviews and entries will be reported in this post.**  
-
-[See this post for details and daily entries for the E5 adult experiment](https://urol-e5.github.io/2022/09/20/E5-Moorea-Adult-Stressor-Experiment.html) and see this [GitHub repo here](https://github.com/urol-e5/apulchra_metabolism).  
+[See this post for details and daily entries for the E5 adult experiment](https://urol-e5.github.io/2022/09/20/E5-Moorea-Adult-Stressor-Experiment.html) and see this [E5 GitHub repo here](https://github.com/urol-e5/apulchra_metabolism).  
 
 **Field expedition members:**     
 Ariana Huffmyer  
@@ -31,7 +29,7 @@ Hollie Putnam
 
 # 28 October 2022 
 
-Today is the last day of sampling. Notebook posts regarding future data analyses will be found in [Ariana's GitHub Notebook](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/).   
+Today is the last day of sampling for Ariana's project. Notebook posts regarding future data analyses will be found in [Ariana's GitHub Notebook](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/). [See this post for details and daily entries for the ongoing E5 adult experiment](https://urol-e5.github.io/2022/09/20/E5-Moorea-Adult-Stressor-Experiment.html).   
 
 ### *Final sampling - day 5 of experiment*  
 
