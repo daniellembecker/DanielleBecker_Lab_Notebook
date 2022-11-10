@@ -29,6 +29,827 @@ Pierrick Harnay
 Danielle Becker-Polinski  
 Hollie Putnam    
 
+# 28 October 2022 
+
+Today is the last day of sampling. Notebook posts regarding future data analyses will be found in [Ariana's GitHub Notebook](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/).   
+
+### *Final sampling - day 5 of experiment*  
+
+Today is the final day of sampling in our experiment! This sampling will be on day 5 of the experiment after the larvae have experienced 3.5 days of temperature stress (temperature started Monday PM). We have been dosing symbionts into the tank systems for 72 hours (Tues, Wed, and Thurs). As a reminder, these are our treatments:  
+
+| **Tank** | **Symbiont Treatment** | **Temperature Treatment** |
+|------|--------------------|-----------------------|
+| A1   | Added symbionts    | High (+2-2.5°C)       |
+| A2   | Added symbionts    | High (+2-2.5°C)       |
+| A3   | Added symbionts    | High (+2-2.5°C)       |
+| A4   | No symbionts       | High (+2-2.5°C)       |
+| A5   | No symbionts       | High (+2-2.5°C)       |
+| A6   | No symbionts       | High (+2-2.5°C)       |
+| B1   | Added symbionts    | Ambient               |
+| B2   | Added symbionts    | Ambient               |
+| B3   | Added symbionts    | Ambient               |
+| B4   | No symbionts       | Ambient               |
+| B5   | No symbionts       | Ambient               |
+| B6   | No symbionts       | Ambient               |
+
+Sampling protocols followed those described from 24 October 2022.  
+
+- **1. Obtain larvae**: Larvae were collected from each tank by pouring all water from each tank through a seive to collect all larvae. Larvae were added to labeled falcon tubes and brought in right before that tank needed to be sampled. We first brought in larvae for respirometry measurements. At the time of taking larvae out of tanks we measured larval density to estimate the number of larvae that we had for the day.
+
+| Tank | Time | Pool Volume | Rep 1 | Rep 2 | Rep 3 | Rep 4 | Rep 5 | Rep 6 | Rep Volume mL | Larvae per mL | Total Larvae  |
+|------|------|-------------|-------|-------|-------|-------|-------|-------|---------------|---------------|---------------|
+| A1   | 645  | 310         | 1     | 3     | 2     | 0     | 1     | 3     | 1             | 1.6           | 500           |
+| A2   |      | 325         | 4     | 2     | 2     | 4     | 4     | 2     | 1             | 3             | 975           |
+| A3   |      | 375         | 1     | 1     | 3     | 3     | 2     | 2     | 1             | 2             | 750           |
+| A4   |      | 400         | 1     | 2     | 2     | 5     | 1     | 2     | 1             | 2.16          | 866           |
+| A5   |      | 300         | 4     | 1     | 4     | 3     | 2     | 3     | 1             | 2.8           | 850           |
+| A6   |      | 300         | 1     | 0     | 1     | 2     | 1     | 2     | 1             | 1             | 300           |
+| B1   |      | 400         | 2     | 1     | 2     | 1     | 1     | 0     | 1             | 1.16          | 366           |
+| B2   |      | 175         | 2     | 3     | 4     | 3     | 1     | 1     | 1             | 2.3           | 408           |
+| B3   |      | 280         | 1     | 0     | 1     | 1     | 1     | 2     | 1             | 1.16          | 326           |
+| B4   |      | 400         | 0     | 1     | 0     | 1     | 2     | 1     | 1             | 0.83          | 333           |
+| B5   |      | 350         | 5     | 1     | 1     | 3     | 4     | 1     | 1             | 2.5           | 875           |
+| B6   | 745  | 300         | 2     | 3     | 2     | 4     | 2     | 4     | 1             | 2.83          | 850           |
+
+We have limited larvae especially in tanks A6, B1, B3, and B4. We will look at symbiont cell density next to decide if we have enough larvae with symbionts to do stable isotope incubations. We will have enough to do the standard sampling that we have done the last two time points.  
+
+The larvae were divided into two falcon tubes so that one at a time could be brought into the lab for counting and the other can stay in the treatment tank. The falcon tubes also contained some algae and debris from emptying the entire tank, so this gave more water to each falcon tube so that the larvae weren't overly stocked. 
+
+- **2. Cell counts**: We first sampled n=8 larvae from each tank at 0800 during the pooling process to look at cell densities. There were 0 cells in all larvae that we looked at. Because of this, we will not do stable isotope incubations today. We will sample for respirometry, metabolomics, and RNA/DNA as we have done on 24 and 26 October 2022. This will provide data on a time series of metabolism in larvae under elevated temperature prior to symbiont uptake.    
+
+- **3. Respirometry**: We ran a total of 2 runs of respirometry (4 total plates) today. We did not run the additional 2 runs that we did on 26 October 2022 because we had limited larvae to work with. The plate maps and information for each run are below. Protocols followed 24 October 2022. Plate maps, temperature, and light data were recorded [on Google Drive](https://docs.google.com/spreadsheets/d/10LOBGkS0FsoXoTwlWjNvM0OPfD-PripuGoMooJDn7DM/edit#gid=1817731860). All wells have 5 larvae unless noted below.       
+
+*Plate 13; SDR 1; SDR 641; 27°C; 20221028*  
+Time start: 9:15  
+Time R start: 9:35  
+Time end: 9:50  
+
+|       | **1** | **2** | **3** | **4** | **5** | **6** |
+|-------|------:|------:|------:|------:|------:|------:|
+| **A** |    A1 |    A2 |    A3 |    B1 |    B2 |    B3 |
+| **B** | BLANK | BLANK | BLANK | BLANK | BLANK | BLANK |
+| **C** |    A1 |    A2 |    A3 |    B1 |    B2 |    B3 |
+| **D** |    A1 |    A2 |    A3 |    B1 |    B2 |    B3 |
+
+Well D6: 4 larvae 
+
+| Temperature measurements |       |
+|--------------------------|-------|
+| Time                     | Temp  |
+|                      915 | 27.72 |
+|                      920 | 27.53 |
+|                      930 | 28.72 |
+|                      940 |  28.7 |
+
+| Light measurements |       |
+|--------------------|-------|
+| Position           | Light |
+| Center             |   519 |
+| Q1                 |   507 |
+| Q2                 |   488 |
+| Q3                 |   471 |
+| Q4                 |   506 |
+
+*Plate 14; SDR 2; SDR 710; 30°C; 20221028*  
+Time start: 9:15  
+Time R start: 9:35  
+Time end: 9:50  
+
+|       | **1** | **2** | **3** | **4** | **5** | **6** |
+|-------|------:|------:|------:|------:|------:|------:|
+| **A** |    A1 |    A2 |    A3 |    B1 |    B2 |    B3 |
+| **B** |    A1 |    A2 |    A3 |    B1 |    B2 |    B3 |
+| **C** | BLANK | BLANK | BLANK | BLANK | BLANK | BLANK |
+| **D** |    A1 |    A2 |    A3 |    B1 |    B2 |    B3 |
+
+Well B1: 4 larvae
+Well D4: 4 larvae  
+
+| Temperature measurements |       |
+|--------------------------|-------|
+| Time                     | Temp  |
+|                      915 | 30.71 |
+|                      920 | 30.89 |
+|                      930 | 31.42 |
+|                      938 | 31.62 |
+
+| Light measurements |       |
+|--------------------|-------|
+| Position           | Light |
+| Center             |   484 |
+| Q1                 |   517 |
+| Q2                 |   488 |
+| Q3                 |   485 |
+| Q4                 |   505 |
+
+*Plate 15; SDR 1; SDR 641; 27°C; 20221028*  
+
+Time start: 10:35    
+Time R start: 10:55    
+Time end: 11:10    
+
+|       | **1** | **2** | **3** | **4** | **5** | **6** |
+|-------|------:|------:|------:|------:|------:|------:|
+| **A** |    A4 |    A5 |    A6 |    B4 |    B5 |    B6 |
+| **B** |    A4 |    A5 |    A6 |    B4 |    B5 |    B6 |
+| **C** |    A4 |    A5 |    A6 |    B4 |    B5 |    B6 |
+| **D** | BLANK | BLANK | BLANK | BLANK | BLANK | BLANK |
+
+Well B4: 4 larvae  
+Well B5: 4 larvae  
+
+| Temperature measurements |       |
+|--------------------------|-------|
+| Time                     | Temp  |
+|                     1033 | 28.07 |
+|                     1040 | 28.83 |
+|                     1050 | 28.24 |
+|                     1102 | 27.97 |
+
+*Plate 16; SDR 2; SDR 710; 30°C; 20221028*  
+Time start: 10:35    
+Time R start: 10:55    
+Time end: 11:10  
+
+|       | **1** | **2** | **3** | **4** | **5** | **6** |
+|-------|------:|------:|------:|------:|------:|------:|
+| **A** |    A4 |    A5 |    A6 |    B4 |    B5 |    B6 |
+| **B** |    A4 |    A5 |    A6 |    B4 |    B5 |    B6 |
+| **C** | BLANK | BLANK | BLANK | BLANK | BLANK | BLANK |
+| **D** |    A4 |    A5 |    A6 |    B4 |    B5 |    B6 |
+
+Well D5: 4 larvae  
+Well D4: 4 larvae  
+
+| Temperature measurements |       |
+|--------------------------|-------|
+| Time                     | Temp  |
+|                     1033 | 32.14 |
+|                     1040 | 30.97 |
+|                     1050 | 29.33 |
+|                     1102 | 30.92 |
+
+- **4. Sampling for metabolomics and RNA/DNA**: Larvae were sampled today using the same protocol as on 24 October 2022. Larvae were counted from tanks in random order and placed in an incubator at the treatment temperature (either 27°C or 30°C) for 10-15 minutes prior to sampling. Larvae in falcon tubes were kept in the treatment tanks (i.e., a water bath) until counted.   
+
+*The tubes sampled today were:*  
+R73-R108 (n=3 tubes per tank, n=50 larvae per tube)     
+M73-M108 (n=3 tubes per tank, n=50 larvae per tube)  
+
+| Tube ID | Date     | Time | Tank | Number larvae | Sample method        | Storage |
+|---------|----------|------|------|---------------|----------------------|---------|
+| R73     | 20221028 | 1346 | A1   |            50 | RNA DNA Shield 600uL | -40C    |
+| R74     | 20221028 | 1346 | A1   |            50 | RNA DNA Shield 600uL | -40C    |
+| R75     | 20221028 | 1346 | A1   |            50 | RNA DNA Shield 600uL | -40C    |
+| R76     | 20221028 | 1410 | A2   |            50 | RNA DNA Shield 600uL | -40C    |
+| R77     | 20221028 | 1410 | A2   |            50 | RNA DNA Shield 600uL | -40C    |
+| R78     | 20221028 | 1410 | A2   |            50 | RNA DNA Shield 600uL | -40C    |
+| R79     | 20221028 | 1539 | A3   |            50 | RNA DNA Shield 600uL | -40C    |
+| R80     | 20221028 | 1539 | A3   |            50 | RNA DNA Shield 600uL | -40C    |
+| R81     | 20221028 | 1539 | A3   |            50 | RNA DNA Shield 600uL | -40C    |
+| R82     | 20221028 | 1440 | A4   |            50 | RNA DNA Shield 600uL | -40C    |
+| R83     | 20221028 | 1440 | A4   |            50 | RNA DNA Shield 600uL | -40C    |
+| R84     | 20221028 | 1440 | A4   |            50 | RNA DNA Shield 600uL | -40C    |
+| R85     | 20221028 | 1208 | A5   |            50 | RNA DNA Shield 600uL | -40C    |
+| R86     | 20221028 | 1208 | A5   |            50 | RNA DNA Shield 600uL | -40C    |
+| R87     | 20221028 | 1208 | A5   |            50 | RNA DNA Shield 600uL | -40C    |
+| R88     | 20221028 | 1505 | A6   |            50 | RNA DNA Shield 600uL | -40C    |
+| R89     | 20221028 | 1505 | A6   |            50 | RNA DNA Shield 600uL | -40C    |
+| R90     | 20221028 | 1505 | A6   |            50 | RNA DNA Shield 600uL | -40C    |
+| R91     | 20221028 | 1500 | B1   |            50 | RNA DNA Shield 600uL | -40C    |
+| R92     | 20221028 | 1500 | B1   |            50 | RNA DNA Shield 600uL | -40C    |
+| R93     | 20221028 | 1500 | B1   |            50 | RNA DNA Shield 600uL | -40C    |
+| R94     | 20221028 | 1555 | B2   |            50 | RNA DNA Shield 600uL | -40C    |
+| R95     | 20221028 | 1555 | B2   |            50 | RNA DNA Shield 600uL | -40C    |
+| R96     | 20221028 | 1555 | B2   |            50 | RNA DNA Shield 600uL | -40C    |
+| R97     | 20221028 | 1450 | B3   |            50 | RNA DNA Shield 600uL | -40C    |
+| R98     | 20221028 | 1450 | B3   |            50 | RNA DNA Shield 600uL | -40C    |
+| R99     | 20221028 | 1450 | B3   |            50 | RNA DNA Shield 600uL | -40C    |
+| R100    | 20221028 | 1426 | B4   |            50 | RNA DNA Shield 600uL | -40C    |
+| R101    | 20221028 | 1426 | B4   |            50 | RNA DNA Shield 600uL | -40C    |
+| R102    | 20221028 | 1426 | B4   |            50 | RNA DNA Shield 600uL | -40C    |
+| R103    | 20221028 | 1215 | B5   |            50 | RNA DNA Shield 600uL | -40C    |
+| R104    | 20221028 | 1215 | B5   |            50 | RNA DNA Shield 600uL | -40C    |
+| R105    | 20221028 | 1215 | B5   |            50 | RNA DNA Shield 600uL | -40C    |
+| R106    | 20221028 | 1535 | B6   |            50 | RNA DNA Shield 600uL | -40C    |
+| R107    | 20221028 | 1535 | B6   |            50 | RNA DNA Shield 600uL | -40C    |
+| R108    | 20221028 | 1535 | B6   |            50 | RNA DNA Shield 600uL | -40C    |
+
+| Tube ID | Date     | Time | Tank | Number larvae | Sample method | Storage |
+|---------|----------|------|------|---------------|---------------|---------|
+| M73     | 20221028 | 1346 | A1   |            50 | Flash frozen  | -40C    |
+| M74     | 20221028 | 1346 | A1   |            50 | Flash frozen  | -40C    |
+| M75     | 20221028 | 1346 | A1   |            50 | Flash frozen  | -40C    |
+| M76     | 20221028 | 1410 | A2   |            50 | Flash frozen  | -40C    |
+| M77     | 20221028 | 1410 | A2   |            50 | Flash frozen  | -40C    |
+| M78     | 20221028 | 1410 | A2   |            50 | Flash frozen  | -40C    |
+| M79     | 20221028 | 1539 | A3   |            50 | Flash frozen  | -40C    |
+| M80     | 20221028 | 1539 | A3   |            50 | Flash frozen  | -40C    |
+| M81     | 20221028 | 1539 | A3   |            50 | Flash frozen  | -40C    |
+| M82     | 20221028 | 1440 | A4   |            50 | Flash frozen  | -40C    |
+| M83     | 20221028 | 1440 | A4   |            50 | Flash frozen  | -40C    |
+| M84     | 20221028 | 1440 | A4   |            50 | Flash frozen  | -40C    |
+| M85     | 20221028 | 1208 | A5   |            50 | Flash frozen  | -40C    |
+| M86     | 20221028 | 1208 | A5   |            50 | Flash frozen  | -40C    |
+| M87     | 20221028 | 1208 | A5   |            50 | Flash frozen  | -40C    |
+| M88     | 20221028 | 1505 | A6   |            50 | Flash frozen  | -40C    |
+| M89     | 20221028 | 1505 | A6   |            50 | Flash frozen  | -40C    |
+| M90     | 20221028 | 1505 | A6   |            50 | Flash frozen  | -40C    |
+| M91     | 20221028 | 1500 | B1   |            50 | Flash frozen  | -40C    |
+| M92     | 20221028 | 1500 | B1   |            50 | Flash frozen  | -40C    |
+| M93     | 20221028 | 1500 | B1   |            50 | Flash frozen  | -40C    |
+| M94     | 20221028 | 1555 | B2   |            50 | Flash frozen  | -40C    |
+| M95     | 20221028 | 1555 | B2   |            50 | Flash frozen  | -40C    |
+| M96     | 20221028 | 1555 | B2   |            50 | Flash frozen  | -40C    |
+| M97     | 20221028 | 1450 | B3   |            50 | Flash frozen  | -40C    |
+| M98     | 20221028 | 1450 | B3   |            50 | Flash frozen  | -40C    |
+| M99     | 20221028 | 1450 | B3   |            50 | Flash frozen  | -40C    |
+| M100    | 20221028 | 1426 | B4   |            50 | Flash frozen  | -40C    |
+| M101    | 20221028 | 1426 | B4   |            50 | Flash frozen  | -40C    |
+| M102    | 20221028 | 1426 | B4   |            50 | Flash frozen  | -40C    |
+| M103    | 20221028 | 1215 | B5   |            50 | Flash frozen  | -40C    |
+| M104    | 20221028 | 1215 | B5   |            50 | Flash frozen  | -40C    |
+| M105    | 20221028 | 1215 | B5   |            50 | Flash frozen  | -40C    |
+| M106    | 20221028 | 1535 | B6   |            50 | Flash frozen  | -40C    |
+| M107    | 20221028 | 1535 | B6   |            50 | Flash frozen  | -40C    |
+| M108    | 20221028 | 1535 | B6   |            50 | Flash frozen  | -40C    |
+
+After sampling, there were not enough larvae left to sample for physiological metrics. This is the end of larval sampling!  
+
+Larval samples are stored at -40°C in the molecular freezer at Gump until transport to the US (approved by CITES) in December 2022.  
+
+### *Downloading loggers*  
+
+All Hobo pendant loggers were downloaded from larval tanks at 1600.  
+
+### *Cleaning tanks*  
+
+All tanks were cleaned at 1700-1800.  
+
+The experiment is complete!  
+
+# 27 October 2022 
+
+### *Symbiont innoculation*  
+
+Symbionts were isolated from 6 parent fragments following protocols from 24 October 2022. The calculations were as follows:  
+
+| Date     | Time | Total Volume mL  | Squares Counted | Count1 | Count2 | Count3 | Count4 | Count5 | Count6 | Mean Count | Cells per mL | Cells total  | Notes |   | Date     | Pool      | Symbiont Density (C1)  | Target Density (C2) | Volume Symbionts (V1) | Tank volume (V2) | Time Added/Water Off | Time Water On  |
+|----------|------|------------------|-----------------|--------|--------|--------|--------|--------|--------|------------|--------------|--------------|-------|---|----------|-----------|------------------------|---------------------|-----------------------|------------------|----------------------|----------------|
+| 20221027 |  745 |               45 |               1 |    200 |    190 |    185 |    172 |        |        |     186.75 |     18675000 |    840375000 |       |   | 20221027 | 5 parents |              840375000 |               30000 |          0.6425702811 |            18000 |                  745 |            845 |
+| 20221027 | 1540 |               45 |               1 |    200 |    190 |    185 |    172 |        |        |     186.75 |     18675000 |    840375000 |       |   | 20221027 | 5 parents |              840375000 |               30000 |          0.6425702811 |            18000 |                 1540 |           1640 |
+
+0.9 mL of symbiont isolate was added to each symbiont addition tank (A1-3, B1-3) at 0745 with water turned off until 0845.  
+
+The remaining symbiont isolate was stored at 4°C until the evening dosing. The evening dosing was added at 1540 with water turned off until 1640 with 0.9 mL per tank.  
+
+### *Returning colonies*  
+
+We returned all parent colonies to the Mahana field site from 0800-1100 with Hollie and Danielle and Tony.  
+
+![](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/colony_return.JPG)  
+
+### *Taking extra samples*  
+
+Ariana and Terava collected extra larval samples to optimize and practice extraction protocols without sacrificing experimental samples. These were sampled using the same methods as described on 24 October 2022. The following samples were collected across a gradient of the number of larvae from 1-100. These larvae were taken from the 20 October 2022 cohort that had been reared in coolers since spawning with water changes every 2 days by the Correa Lab.   
+
+| Tube ID | Date     | Time | Tank  | Number larvae | Sample method | Storage |
+|---------|----------|------|-------|---------------|---------------|---------|
+| M109    | 20221027 | 1509 | Extra |             1 | Flash frozen  | -40C    |
+| M110    | 20221027 | 1509 | Extra |             1 | Flash frozen  | -40C    |
+| M111    | 20221027 | 1509 | Extra |             1 | Flash frozen  | -40C    |
+| M112    | 20221027 | 1512 | Extra |             5 | Flash frozen  | -40C    |
+| M113    | 20221027 | 1512 | Extra |             5 | Flash frozen  | -40C    |
+| M114    | 20221027 | 1512 | Extra |             5 | Flash frozen  | -40C    |
+| M115    | 20221027 | 1520 | Extra |            10 | Flash frozen  | -40C    |
+| M116    | 20221027 | 1520 | Extra |            10 | Flash frozen  | -40C    |
+| M117    | 20221027 | 1520 | Extra |            10 | Flash frozen  | -40C    |
+| M118    | 20221027 | 1530 | Extra |            30 | Flash frozen  | -40C    |
+| M119    | 20221027 | 1530 | Extra |            30 | Flash frozen  | -40C    |
+| M120    | 20221027 | 1530 | Extra |            30 | Flash frozen  | -40C    |
+| M121    | 20221027 | 1540 | Extra |            50 | Flash frozen  | -40C    |
+| M122    | 20221027 | 1540 | Extra |            50 | Flash frozen  | -40C    |
+| M123    | 20221027 | 1540 | Extra |            50 | Flash frozen  | -40C    |
+| M124    | 20221027 | 1550 | Extra |           100 | Flash frozen  | -40C    |
+| M125    | 20221027 | 1550 | Extra |           100 | Flash frozen  | -40C    |
+| M126    | 20221027 | 1550 | Extra |           100 | Flash frozen  | -40C    |
+
+| Tube ID | Date     | Time | Tank  | Number larvae | Sample method        | Storage |
+|---------|----------|------|-------|---------------|----------------------|---------|
+| R109    | 20221027 | 1345 | Extra |             1 | RNA DNA Shield 600uL | -40C    |
+| R110    | 20221027 | 1345 | Extra |             1 | RNA DNA Shield 600uL | -40C    |
+| R111    | 20221027 | 1345 | Extra |             1 | RNA DNA Shield 600uL | -40C    |
+| R112    | 20221027 | 1348 | Extra |             5 | RNA DNA Shield 600uL | -40C    |
+| R113    | 20221027 | 1348 | Extra |             5 | RNA DNA Shield 600uL | -40C    |
+| R114    | 20221027 | 1348 | Extra |             5 | RNA DNA Shield 600uL | -40C    |
+| R115    | 20221027 | 1358 | Extra |            10 | RNA DNA Shield 600uL | -40C    |
+| R116    | 20221027 | 1358 | Extra |            10 | RNA DNA Shield 600uL | -40C    |
+| R117    | 20221027 | 1358 | Extra |            10 | RNA DNA Shield 600uL | -40C    |
+| R118    | 20221027 | 1402 | Extra |            30 | RNA DNA Shield 600uL | -40C    |
+| R119    | 20221027 | 1402 | Extra |            30 | RNA DNA Shield 600uL | -40C    |
+| R120    | 20221027 | 1402 | Extra |            30 | RNA DNA Shield 600uL | -40C    |
+| R121    | 20221027 | 1420 | Extra |            50 | RNA DNA Shield 600uL | -40C    |
+| R122    | 20221027 | 1420 | Extra |            50 | RNA DNA Shield 600uL | -40C    |
+| R123    | 20221027 | 1420 | Extra |            50 | RNA DNA Shield 600uL | -40C    |
+| R124    | 20221027 | 1445 | Extra |           100 | RNA DNA Shield 600uL | -40C    |
+| R125    | 20221027 | 1445 | Extra |           100 | RNA DNA Shield 600uL | -40C    |
+| R126    | 20221027 | 1445 | Extra |           100 | RNA DNA Shield 600uL | -40C    |
+
+We also collected extra samples for physiology analyses. We can use these to test physiology assays that we may collect for in future projects.  
+
+| Tube ID | Date     | Time | Tank  | Volume larvae | Sample method | Storage |
+|---------|----------|------|-------|---------------|---------------|---------|
+| P37     | 20221027 | 1625 | Extra | 50 larvae     | Flash freeze  | -40C    |
+| P38     | 20221027 | 1625 | Extra | 50 larvae     | Flash freeze  | -40C    |
+| P39     | 20221027 | 1625 | Extra | 50 larvae     | Flash freeze  | -40C    |
+| P40     | 20221027 | 1625 | Extra | 50 larvae     | Flash freeze  | -40C    |
+| P41     | 20221027 | 1625 | Extra | 50 larvae     | Flash freeze  | -40C    |
+| P42     | 20221027 | 1625 | Extra | 50 larvae     | Flash freeze  | -40C    |
+
+Terava assisted with this sample collection today.  
+![](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/terava.jpeg) 
+
+### *Preparing isotope labeling and solutions*  
+
+Ariana prepared calculations and labels for stable isotope incubations in case we decide to move forward with this tomorrow. We will collect cell density samples tomorrow morning and if the larvae have symbionts, we will do the stable isotope incubations. If the larvae do not have symbionts, we will not do stable isotope metabolomics since this method is meant to detect nutritional exchange between host and symbiont. We will use Ariana's [larval stable isotope protocol](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Stable-Isotope-Metabolomics-Larval-Protocol/).   
+
+In the case that we decide to move forward, these are the replicates we will need. Note taht we are only going to do incubations in the symbiotic treatments if symbionts are present (tanks A1, 2, and 3 and tanks B1, 2, and 3).    
+
+- n=6 vials of 50 larvae from each tank incubated with C13 label at their respective treatment temperature (B tanks at 27°C; A tanks at 30°C); N=36 vials total 
+- n=2 vials of 50 larvae from a pool of each temperature treatment (pool of A and pool of B tanks) incubated with C12 sodium bicarbonate (no label) each at 27°C and 30°C; N=4 vials total  
+- n=2 vials of 50 larvae from a pool of each temperature treatment (pool of A and pool of B tanks) incubated with C13 label each at 27°C and 30°C in the dark (covered with aluminum foil); N=4 vials total  
+- n=3 vials of 15 larvae from a pool of each temperature treatment (pool of A and pool of B tanks) incubated with C13 label each at 27°C and 30°C that will be preserved for trial MALDI microscopy with J. Matthews at UT Sydney; N=6 vials total   
+- n=3 vials of 50 larvae from a pool of each temperature treatment (pool of A and pool of B tanks) incubated with C13 label each at 27°C and 30°C that will be preserved for trial lipid-protein-metabolite extractions with J. Matthews at UT Sydney; N=6 vials total  
+
+Total vials with C13 = 36 + 4 + 6 + 6 = 52 C13 vials 
+Total vials with C12 = 4  
+
+| Number of vials  |                 |
+|------------------|-----------------|
+| 27C              | 30 C            |
+| 6   of A1        | 6 of   B1       |
+| 6   of A2        | 6 of   B2       |
+| 6   of A3        | 6 of   B3       |
+| 2   C12          | 2 C12           |
+| 2   Dark C13     | 2   Dark C13    |
+| 3   MALDI        | 3   MALDI       |
+| 3   Tri Extract  | 3   Tri Extract |
+
+The solutions we will need are calculated below.  
+
+| Solution | Vials | Falcon tubes | Total volume needed (mL) | FSW  | C13 (mg)    | C12 (mg)    | Concentration  |
+|----------|-------|--------------|--------------------------|------|-------------|-------------|----------------|
+| C13      |    52 |            0 |                     1040 | 1200 | 462.8571429 |           0 | 4 mM solution  |
+| C12      |     4 |            0 |                       80 |  100 |           0 | 41.66666667 | 4 mM solution  |
+
+The solutions will be made by adding the required C13 or C12 to 0.02 µm filtered seawater with the water brought to treatment temperature before addition to the vials. Vials will then be incubated under the light at 200 PAR for 4-5 hours and sampled as described in the [larval stable isotope protocol](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Stable-Isotope-Metabolomics-Larval-Protocol/).  
+
+If needed we will also make a 3% sodium abscorbate solution to preserve the MALDI samples. The samples (n=15 larave each) will be submerged in the sodium abscorbate solution and then flash frozen in liquid nitrogen as required for this microscopy analysis. To make the solution we will add 0.15 g of sodium abscorbate to 5 mL of 0.02 µm FSW.  
+
+We will decide in the morning if we will move forward with the stable isotope work. Vials were prelabeled with tank ID in case we decide to use them.  
+
+### *Larval rearing*  
+
+Daily measurements were taken at 1800-1830 by Ariana. It was already dark, so light measurements were not taken.  
+Larvae were stirred and maintained, temperature treatments are on track, and filters were cleaned every 4-5 hours.  
+
+# 26 October 2022 
+
+### *Sampling - day 3 of experiment*  
+
+All sampling protocols follow what we did on 24 October 2022. Details of sampling are included below if they deviate from the standard protocol on 24 October 2022.  
+
+- **1. Obtain larvae**: Larvae were collected from each tank by pouring water through a seive until the number of larvae needed was obtained (~350-400). Larvae were added to labelled falcon tubes and brought in right before that tank needed to be sampled. We first brought in larvae for respirometry measurements.  
+- **2. Respirometry**: We ran a total of 4 runs of respirometry (8 total plates) today. The plate maps and information for each run are below. Protocols followed 24 October 2022. Plate maps, temperature, and light data were recorded [on Google Drive](https://docs.google.com/spreadsheets/d/10LOBGkS0FsoXoTwlWjNvM0OPfD-PripuGoMooJDn7DM/edit#gid=1817731860). All wells have 5 larvae.      
+
+*Plate 5: SDR 1; SDR 641; 27°C; 20221026*   
+Time start: 9:26  
+Time R start: 9:46  
+Time end: 10:04  
+
+|       | **1** | **2** | **3** | **4** | **5** | **6** |
+|-------|------:|------:|------:|------:|------:|------:|
+| **A** | BLANK | BLANK | BLANK | BLANK | BLANK | BLANK |
+| **B** |    A4 |    A5 |    A6 |    B4 |    B5 |    B6 |
+| **C** |    A4 |    A5 |    A6 |    B4 |    B5 |    B6 |
+| **D** |    A4 |    A5 |    A6 |    B4 |    B5 |    B6 |
+
+Well D1: 4 larvae  
+Well B3: 3 larvae  
+
+| Temperature measurements |       |
+|--------------------------|-------|
+| Time                     | Temp  |
+|                      943 | 28.03 |
+|                      950 | 27.95 |
+|                      958 | 27.88 |
+
+| Light measurements |       |
+|--------------------|-------|
+| Position           | Light |
+| Center             |   538 |
+| Q1                 |   610 |
+| Q2                 |   533 |
+| Q3                 |   487 |
+| Q4                 |   485 |
+
+
+*Plate 6: SDR 2; SDR 710; 30°C; 20221026*   
+Time start: 9:26  
+Time R start: 9:46  
+Time end: 10:04 
+
+|       | **1** | **2** | **3** | **4** | **5** | **6** |
+|-------|------:|------:|------:|------:|------:|------:|
+| **A** |    A4 |    A5 |    A6 |    B4 |    B5 |    B6 |
+| **B** |    A4 |    A5 |    A6 |    B4 |    B5 |    B6 |
+| **C** |    A4 |    A5 |    A6 |    B4 |    B5 |    B6 |
+| **D** | BLANK | BLANK | BLANK | BLANK | BLANK | BLANK |
+
+Well C6: 4 larvae  
+
+| Temperature measurements |       |
+|--------------------------|-------|
+| Time                     | Temp  |
+|                      943 | 30.22 |
+|                      950 | 30.45 |
+|                      958 | 31.03 |
+
+| Light measurements |       |
+|--------------------|-------|
+| Position           | Light |
+| Center             |   512 |
+| Q1                 |   506 |
+| Q2                 |   510 |
+| Q3                 |   462 |
+| Q4                 |   447 |
+
+*Plate 7: SDR 1; SDR 641; 27°C; 20221026*   
+Time start: 10:33    
+Time R start: 10:53    
+Time end: 11:08  
+
+|       | **1** | **2** | **3** | **4** | **5** | **6** |
+|-------|------:|------:|------:|------:|------:|------:|
+| **A** |    A1 |    A2 |    A3 |    B1 |    B2 |    B3 |
+| **B** | BLANK | BLANK | BLANK | BLANK | BLANK | BLANK |
+| **C** |    A1 |    A2 |    A3 |    B1 |    B2 |    B3 |
+| **D** |    A1 |    A2 |    A3 |    B1 |    B2 |    B3 |
+
+Well D4: 4 larvae   
+Well D1: 4 larvae   
+
+| Temperature measurements |       |
+|--------------------------|-------|
+| Time                     | Temp  |
+|                     1033 | 27.66 |
+|                     1043 | 27.53 |
+|                     1051 | 28.12 |
+|                     1055 |    27 |
+|                     1102 | 28.55 |
+
+*Plate 8: SDR 2; SDR 710; 30°C; 20221026*   
+Time start: 10:33    
+Time R start: 10:53    
+Time end: 11:08  
+
+|       | **1** | **2** | **3** | **4** | **5** | **6** |
+|-------|------:|------:|------:|------:|------:|------:|
+| **A** |    A1 |    A2 |    A3 |    B1 |    B2 |    B3 |
+| **B** |    A1 |    A2 |    A3 |    B1 |    B2 |    B3 |
+| **C** | BLANK | BLANK | BLANK | BLANK | BLANK | BLANK |
+| **D** |    A1 |    A2 |    A3 |    B1 |    B2 |    B3 |
+
+| Temperature measurements |       |
+|--------------------------|-------|
+| Time                     | Temp  |
+|                     1033 | 31.04 |
+|                     1045 |  31.4 |
+|                     1051 | 31.42 |
+|                     1055 | 26.91 |
+|                     1102 | 30.11 |
+
+*Plate 9: SDR 1; SDR 641; 27°C; 20221026*   
+Time start: 11:32      
+Time R start: 11:49      
+Time end: 12:04    
+
+|       | **1** | **2** | **3** | **4** | **5** | **6** |
+|-------|------:|------:|------:|------:|------:|------:|
+| **A** | BLANK | BLANK | BLANK | BLANK | BLANK | BLANK |
+| **B** |    B4 |    B5 |    B6 |    A4 |    A5 |    A6 |
+| **C** |    B4 |    B5 |    B6 |    A4 |    A5 |    A6 |
+| **D** |    B4 |    B5 |    B6 |    A4 |    A5 |    A6 |
+
+Well D4: 4 larvae
+Well C4: 4 larvae  
+
+| Temperature measurements |       |
+|--------------------------|-------|
+| Time                     | Temp  |
+|                     1137 | 28.88 |
+|                     1141 | 28.53 |
+|                     1145 | 28.31 |
+|                     1149 | 26.51 |
+|                     1159 |  27.4 |
+
+*Plate 10: SDR 2; SDR 710; 30°C; 20221026*   
+Time start: 11:32      
+Time R start: 11:49      
+Time end: 12:04  
+
+|       | **1** | **2** | **3** | **4** | **5** | **6** |
+|-------|------:|------:|------:|------:|------:|------:|
+| **A** |    B4 |    B5 |    B6 |    A4 |    A5 |    A6 |
+| **B** |    B4 |    B5 |    B6 |    A4 |    A5 |    A6 |
+| **C** |    B4 |    B5 |    B6 |    A4 |    A5 |    A6 |
+| **D** | BLANK | BLANK | BLANK | BLANK | BLANK | BLANK |
+
+Well C2: 4 larvae  
+Well B3: 4 larvae  
+Well B5: 3 larvae  
+
+| Temperature measurements |       |
+|--------------------------|-------|
+| Time                     | Temp  |
+|                     1137 | 30.66 |
+|                     1141 | 31.85 |
+|                     1145 | 30.37 |
+|                     1149 | 31.24 |
+|                     1159 | 31.34 |
+
+*Plate 11: SDR 1; SDR 641; 27°C; 20221026*   
+Time start: 12:29        
+Time R start: 12:49        
+Time end: 13:04   
+
+|       | **1** | **2** | **3** | **4** | **5** | **6** |
+|-------|------:|------:|------:|------:|------:|------:|
+| **A** |    B1 |    B2 |    B3 |    A1 |    A2 |    A3 |
+| **B** | BLANK | BLANK | BLANK | BLANK | BLANK | BLANK |
+| **C** |    B1 |    B2 |    B3 |    A1 |    A2 |    A3 |
+| **D** |    B1 |    B2 |    B3 |    A1 |    A2 |    A3 |
+
+Well A1: 4 larvae  
+Well A2: 4 larvae  
+Well C3: 3 larvae  
+Well D1: 4 larvae  
+
+At the end of this run, some larvae had escaped from the wells. We will fix this by sealing the coverslips more securely on the next run. The number of larvae escaped were:  
+
+1 out of A1  
+1 out of A3  
+1 out of C3   
+1 out of D1   
+1 out of D4  
+3 out of D5  
+3 out of D6   
+
+| Temperature measurements |       |
+|--------------------------|-------|
+| Time                     | Temp  |
+|                     1229 | 28.34 |
+|                     1251 | 28.26 |
+|                     1258 | 27.82 |
+
+*Plate 12: SDR 2; SDR 710; 30°C; 20221026*   
+Time start: 12:29        
+Time R start: 12:49        
+Time end: 13:04   
+
+|       | **1** | **2** | **3** | **4** | **5** | **6** |
+|-------|------:|------:|------:|------:|------:|------:|
+| **A** |    B1 |    B2 |    B3 |    A1 |    A2 |    A3 |
+| **B** |    B1 |    B2 |    B3 |    A1 |    A2 |    A3 |
+| **C** | BLANK | BLANK | BLANK | BLANK | BLANK | BLANK |
+| **D** |    B1 |    B2 |    B3 |    A1 |    A2 |    A3 |
+
+Well B3: 4 larvae  
+Well B6: 4 larvae  
+
+At the end of this run, some larvae had escaped from the wells. We will fix this by sealing the coverslips more securely on the next run. The number of larvae escaped were:  
+
+3 out of A3  
+3 out of A4   
+2 out of A5   
+1 out of B6  
+2 out of B2   
+1 out of D4   
+
+| Temperature measurements |       |
+|--------------------------|-------|
+| Time                     | Temp  |
+|                     1229 | 31.41 |
+|                     1251 | 29.99 |
+|                     1258 | 30.12 |
+
+- **3. Sampling for metabolomics and RNA/DNA**: Larvae were sampled today using the same protocol as on 24 October 2022. Larvae were counted from tanks in random order and placed in an incubator at the treatment temperature (either 27°C or 30°C) for 10-15 minutes prior to sampling. Larvae in falcon tubes were kept in the treatment tanks (i.e., a water bath) until counted. After counting, remaining larvae were poured back into the respective treatment tank.  
+
+*The tubes sampled today were:*  
+R37-R72 (n=3 tubes per tank, n=50 larvae per tube)   
+M37-M72 (n=3 tubes per tank, n=50 larvae per tube) 
+
+| Tube ID | Date     | Time | Tank | Number larvae | Sample method | Storage |
+|---------|----------|------|------|---------------|---------------|---------|
+| M37     | 20221026 | 1717 | A1   |            50 | Flash frozen  | -40C    |
+| M38     | 20221026 | 1717 | A1   |            50 | Flash frozen  | -40C    |
+| M39     | 20221026 | 1717 | A1   |            50 | Flash frozen  | -40C    |
+| M40     | 20221026 | 1406 | A2   |            50 | Flash frozen  | -40C    |
+| M41     | 20221026 | 1406 | A2   |            50 | Flash frozen  | -40C    |
+| M42     | 20221026 | 1406 | A2   |            50 | Flash frozen  | -40C    |
+| M43     | 20221026 | 1445 | A3   |            50 | Flash frozen  | -40C    |
+| M44     | 20221026 | 1445 | A3   |            50 | Flash frozen  | -40C    |
+| M45     | 20221026 | 1445 | A3   |            50 | Flash frozen  | -40C    |
+| M46     | 20221026 | 1630 | A4   |            50 | Flash frozen  | -40C    |
+| M47     | 20221026 | 1630 | A4   |            50 | Flash frozen  | -40C    |
+| M48     | 20221026 | 1630 | A4   |            50 | Flash frozen  | -40C    |
+| M49     | 20221026 | 1542 | A5   |            50 | Flash frozen  | -40C    |
+| M50     | 20221026 | 1542 | A5   |            50 | Flash frozen  | -40C    |
+| M51     | 20221026 | 1542 | A5   |            50 | Flash frozen  | -40C    |
+| M52     | 20221026 | 1655 | A6   |            50 | Flash frozen  | -40C    |
+| M53     | 20221026 | 1655 | A6   |            50 | Flash frozen  | -40C    |
+| M54     | 20221026 | 1655 | A6   |            50 | Flash frozen  | -40C    |
+| M55     | 20221026 | 1705 | B1   |            50 | Flash frozen  | -40C    |
+| M56     | 20221026 | 1705 | B1   |            50 | Flash frozen  | -40C    |
+| M57     | 20221026 | 1705 | B1   |            50 | Flash frozen  | -40C    |
+| M58     | 20221026 | 1350 | B2   |            50 | Flash frozen  | -40C    |
+| M59     | 20221026 | 1350 | B2   |            50 | Flash frozen  | -40C    |
+| M60     | 20221026 | 1350 | B2   |            50 | Flash frozen  | -40C    |
+| M61     | 20221026 | 1530 | B3   |            50 | Flash frozen  | -40C    |
+| M62     | 20221026 | 1530 | B3   |            50 | Flash frozen  | -40C    |
+| M63     | 20221026 | 1530 | B3   |            50 | Flash frozen  | -40C    |
+| M64     | 20221026 | 1435 | B4   |            50 | Flash frozen  | -40C    |
+| M65     | 20221026 | 1435 | B4   |            50 | Flash frozen  | -40C    |
+| M66     | 20221026 | 1435 | B4   |            50 | Flash frozen  | -40C    |
+| M67     | 20221026 | 1606 | B5   |            50 | Flash frozen  | -40C    |
+| M68     | 20221026 | 1606 | B5   |            50 | Flash frozen  | -40C    |
+| M69     | 20221026 | 1606 | B5   |            50 | Flash frozen  | -40C    |
+| M70     | 20221026 | 1640 | B6   |            50 | Flash frozen  | -40C    |
+| M71     | 20221026 | 1640 | B6   |            50 | Flash frozen  | -40C    |
+| M72     | 20221026 | 1640 | B6   |            50 | Flash frozen  | -40C    |
+
+| Tube ID | Date     | Time | Tank | Number larvae | Sample method        | Storage |
+|---------|----------|------|------|---------------|----------------------|---------|
+| R37     | 20221026 | 1717 | A1   |            50 | RNA DNA Shield 600uL | -40C    |
+| R38     | 20221026 | 1717 | A1   |            50 | RNA DNA Shield 600uL | -40C    |
+| R39     | 20221026 | 1717 | A1   |            50 | RNA DNA Shield 600uL | -40C    |
+| R40     | 20221026 | 1406 | A2   |            50 | RNA DNA Shield 600uL | -40C    |
+| R41     | 20221026 | 1406 | A2   |            50 | RNA DNA Shield 600uL | -40C    |
+| R42     | 20221026 | 1406 | A2   |            50 | RNA DNA Shield 600uL | -40C    |
+| R43     | 20221026 | 1445 | A3   |            50 | RNA DNA Shield 600uL | -40C    |
+| R44     | 20221026 | 1445 | A3   |            50 | RNA DNA Shield 600uL | -40C    |
+| R45     | 20221026 | 1445 | A3   |            50 | RNA DNA Shield 600uL | -40C    |
+| R46     | 20221026 | 1630 | A4   |            50 | RNA DNA Shield 600uL | -40C    |
+| R47     | 20221026 | 1630 | A4   |            50 | RNA DNA Shield 600uL | -40C    |
+| R48     | 20221026 | 1630 | A4   |            50 | RNA DNA Shield 600uL | -40C    |
+| R49     | 20221026 | 1542 | A5   |            50 | RNA DNA Shield 600uL | -40C    |
+| R50     | 20221026 | 1542 | A5   |            50 | RNA DNA Shield 600uL | -40C    |
+| R51     | 20221026 | 1542 | A5   |            50 | RNA DNA Shield 600uL | -40C    |
+| R52     | 20221026 | 1655 | A6   |            50 | RNA DNA Shield 600uL | -40C    |
+| R53     | 20221026 | 1655 | A6   |            50 | RNA DNA Shield 600uL | -40C    |
+| R54     | 20221026 | 1655 | A6   |            50 | RNA DNA Shield 600uL | -40C    |
+| R55     | 20221026 | 1705 | B1   |            50 | RNA DNA Shield 600uL | -40C    |
+| R56     | 20221026 | 1705 | B1   |            50 | RNA DNA Shield 600uL | -40C    |
+| R57     | 20221026 | 1705 | B1   |            50 | RNA DNA Shield 600uL | -40C    |
+| R58     | 20221026 | 1350 | B2   |            50 | RNA DNA Shield 600uL | -40C    |
+| R59     | 20221026 | 1350 | B2   |            50 | RNA DNA Shield 600uL | -40C    |
+| R60     | 20221026 | 1350 | B2   |            50 | RNA DNA Shield 600uL | -40C    |
+| R61     | 20221026 | 1530 | B3   |            50 | RNA DNA Shield 600uL | -40C    |
+| R62     | 20221026 | 1530 | B3   |            50 | RNA DNA Shield 600uL | -40C    |
+| R63     | 20221026 | 1530 | B3   |            50 | RNA DNA Shield 600uL | -40C    |
+| R64     | 20221026 | 1435 | B4   |            50 | RNA DNA Shield 600uL | -40C    |
+| R65     | 20221026 | 1435 | B4   |            50 | RNA DNA Shield 600uL | -40C    |
+| R66     | 20221026 | 1435 | B4   |            50 | RNA DNA Shield 600uL | -40C    |
+| R67     | 20221026 | 1606 | B5   |            50 | RNA DNA Shield 600uL | -40C    |
+| R68     | 20221026 | 1606 | B5   |            50 | RNA DNA Shield 600uL | -40C    |
+| R69     | 20221026 | 1606 | B5   |            50 | RNA DNA Shield 600uL | -40C    |
+| R70     | 20221026 | 1640 | B6   |            50 | RNA DNA Shield 600uL | -40C    |
+| R71     | 20221026 | 1640 | B6   |            50 | RNA DNA Shield 600uL | -40C    |
+| R72     | 20221026 | 1640 | B6   |            50 | RNA DNA Shield 600uL | -40C    |
+
+- **4. Dosing symbionts**: We airbrushed 5 parent fragments and isolated symbionts as described on 25 October 2022. Half of the isolate was refrigerated for the evening dosing. The dosing information is as follows:  
+
+| Date     | Time | Total Volume mL  | Squares Counted | Count1 | Count2 | Count3 | Count4 | Count5 | Count6 | Mean Count | Cells per mL | Cells total  | Notes |   | Date     | Pool      | Symbiont Density (C1)  | Target Density (C2) | Volume Symbionts (V1) | Tank volume (V2) | Time Added/Water Off | Time Water On  |
+|----------|------|------------------|-----------------|--------|--------|--------|--------|--------|--------|------------|--------------|--------------|-------|---|----------|-----------|------------------------|---------------------|-----------------------|------------------|----------------------|----------------|
+| 20221026 | 1735 |               45 |               1 |    223 |    196 |    204 |    210 |        |        |     208.25 |     20825000 |    937125000 |       |   | 20221026 | 5 parents |              937125000 |               30000 |          0.5762304922 |            18000 |                 1740 |           1840 |
+| 20221026 | 2100 |               45 |               1 |    223 |    196 |    204 |    210 |        |        |     208.25 |     20825000 |    937125000 |       |   | 20221026 | 5 parents |              937125000 |               30000 |          0.5762304922 |            18000 |                 2100 |           2200 |
+
+0.57 mL of symbiont isolate was added to each symbiont addition tank at 1740 (water off 1740-1840) and at 2100 (water off 2100-2200).  
+
+- **5. Symbiont cell counts**: 8 larvae from each tank were collected at 2200. There were only a few larvae with 1-2 cells present. Three larvae had 1 cell each from tank A2 and 2 larvae from tank B3 had one cell. No other larvae had visible symbiont cells. In the future a fluorescent microscope would be ideal for this method.  
+
+### *Larval rearing*  
+
+Daily measurements in all squaricals were collected from 1800-1830.  
+
+Tanks were stirred and maintained throughout the day. Temperatures were on target as expected. Filters were cleaned every 4-6 hours. As the filters get dirtier, they need to be cleaned more often. Recommend that filters are replaced before the next month's spawning for the field team.  
+
+# 25 October 2022  
+
+### *Dosing symbionts - day 2 of experiment*   
+
+We will add symbionts twice daily to experimental tank systems for 3 days (72 hours) to provide symbionts and opportunity for symbiont uptake in larvae. Each day, we will freshly isolate symbionts from parent fragments in the morning and refrigerate the symbionts remaining after dosing to dose in the evening. Symbiont isolation and dosing followed this protocol daily:  
+
+- Gather 5-6 randomly selected fragements from different colonies of adult *A. pulchra* colonies (parental colonies).  
+- Airbrush the fragments into a single ziploc bag to pool and combine all tissue from all fragments.  
+- The tissue slurry was evenly divided into two 50 mL falcon tubes. One will be used for dosing in the morning and the other will be kept for dosing in the afternoon. 
+- The slurry was then cleaned to isolate the symbionts. The falcon tubes were spun in a 50 mL tube centrifuge at 4000 rmp for 4 minutes. 
+- The supernatant was poured off and 25 mL of 0.02 µm FSW was added. The slurry was then homogenized by shaking the tube for ~30 sec. 
+- Repeat this process 3 times. 
+- After the last spin and pouring off the supernatant, 40 mL of 0.02 µm FSW was added and the tube was homogenized by shaking. This is the isolated symbiont pool.  
+- Today, we will split the extra falcon tube into two falcon tubes (~20 mL symbionts per tube) and kept in 1) an incubator in the dark at 27°C and 2) in the dark at 4°C in the fridge. In the evening we will see which culture has remained the highest quality for dosing. 
+- Next, count symbiont cells to calculate cell density in the symbiont pool and calculate the amount required for dosing. We are aiming for 3 x 10^4 cells per mL as described in Bay et al. 2011 and Hartmann et al. 2018. 
+- We used a [Google Drive spreadsheet](https://docs.google.com/spreadsheets/d/10LOBGkS0FsoXoTwlWjNvM0OPfD-PripuGoMooJDn7DM/edit#gid=1990542219) to calculate the volume of pool required to achieve the target density. Today's calculations are as follows.  
+
+| Date     | Time | Total Volume mL  | Squares Counted | Count1 | Count2 | Count3 | Count4 | Count5 | Count6 | Mean Count | Cells per mL | Cells total  | Notes |   | Date     | Pool      | Symbiont Density (C1)  | Target Density (C2) | Volume Symbionts (V1) | Tank volume (V2) | Time Added/Water Off | Time Water On  | Notes |
+|----------|------|------------------|-----------------|--------|--------|--------|--------|--------|--------|------------|--------------|--------------|-------|---|----------|-----------|------------------------|---------------------|-----------------------|------------------|----------------------|----------------|-------|
+| 20221025 | 1000 |               40 |               1 |    151 |    159 |    171 |    183 |        |        |        166 |     16600000 |    664000000 |       |   | 20221025 | 5 parents |              664000000 |               30000 |           0.813253012 |            18000 |                 1015 |           1133 |       |
+| 20221025 | 2000 |               40 |               1 |    151 |    159 |    171 |    183 |        |        |        166 |     16600000 |    664000000 |       |   | 20221025 | 5 parents |              664000000 |               30000 |           0.813253012 |            18000 |                 1900 |           2000 |       |
+
+- Today we added 0.81 mL of symbiont pool to tanks A1-3 and B1-3. We also added symbionts to the extra settlement bins. Symbionts were added with a pipette and stirred in the tanks.   
+- We added symbionts at 1015 and turned water off at this time. Water was turned back on at 1133 to keep the concentration higher before returning flow through water supply.  
+- In the afternoon, symbionts in the fridge were better suited for infections. The symbionts in the incubators smelled stronger of tissue and to reduce risk of degradation and adding damaged tissue to the larvae, we selected the refrigerated pool to dose in the afternoon/evening. 
+- The same volume of symbionts was added to tanks at 1900 with water turned off until 2000.  
+
+### *Cell counts from 24 October 2022 larvae*  
+
+Ariana counted cell density in larvae collected yesterday for the initial time point between 1100 and 1300. The larvae all survived in the incubators at 27°C in the dark. The protocol for cell counts was as follows: 
+
+- Three larvae were added in a drop of water on a glass slide (load on the left, center, and right areas of the slide).  
+- A glass coverslip was added on top of each larvae and pressed down firmly to "squish" the larvae. 
+- The slide was loaded onto a compound microscope and visualized at 20 and 40X.  
+- Scroll through the tissue to look for symbionts. 
+- Once all cells are counted in the three larvae loaded, clean the slide with DI water followed by an alcohol wipe. 
+- Look at the slide under the scope to ensure any tissue symbiont cells are not present after cleaning. 
+- Repeat until all larvae are examined.  
+
+Today we obesrved 0 symbiont cells in all larvae (n=8 larvae per tank, N=96 larvae). We visualized larvae and cells on a stage micrometer (1 DIV = 0.01 mm) to understand the size and characteristics of symbiont cells to train ourselves.   
+
+Here is an example of one larave squished under a cover slip on a glass slide.    
+![](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/slide_larvae.jpeg)  
+
+On the compound microscope, this is what the squished larval tissue looks like. This sample had 0 symbiont cells.    
+![](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/larvae_squish.jpeg)   
+
+We also loaded some of the isolated symbionts onto the slide to visualize what the cells look like. The cells were 5-10 µm in diameter and had characteristic structure and coloration.   
+![](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/cells.jpeg)  
+
+We also loaded a slide with symbiont cells next to a live larvae for size comparison.  
+![](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/larvae_cells.jpeg)  
+
+We will take n=8 larave for cell counting on Wednesday afternoon (mid point) as well as Friday morning (day of final sampling).  
+
+### *Visualizing larvae under the microscope*  
+
+We took some time today to visualize larvae under the microscope. We observed clear swimming and cilia movement behavior and the oral pore was developed in all larvae that we looked at, consistent with our expectations of developmental time points.   
+![](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/larvae_scope.jpeg)   
+![](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/larvae_scope2.jpeg)   
+
+We also visualized larvae next to metamorphosed polyps. We noticed that about half of individuals are at the larval stage and half at the metamorphosed stage in all tanks.   
+![](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/larvae_meta.jpeg) 
+![](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/larvae_meta2.jpeg) 
+![](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/meta_scope.jpeg) 
+
+### *Larval rearing*   
+
+We cleaned all coolers and tubing between 1600 and 1730 today. We also cleaned all larval tanks and measured larval densities. We will not be able to use larval density to monitor survival due to high rates of settlement that confound density measurements. Rather, we will use density measurements to make sure we have enough larvae for each sampling time point.  
+
+We carefully rinsed all material between symbiont dosing and no dosing tanks to avoid any contamination of symbionts into the no dosing tanks.  
+
+Larvae from each tank were poured through a 153 µm seive and then rinsed into a tripour with volume markings. From this pool, 6 1 mL samples were taken and added into a 6-well plate. Larvae were counted in each well to generate larval density measurements in the table below for each tank. After pooling and measuring density, tanks were cleaned, refilled, and larvae were added back to each respective tank.  
+
+| Tank | Time | Pool Volume | Rep 1 | Rep 2 | Rep 3 | Rep 4 | Rep 5 | Rep 6 | Rep Volume mL | Larvae per mL | Total Larvae  |
+|------|------|-------------|-------|-------|-------|-------|-------|-------|---------------|---------------|---------------|
+| A1   | 1720 | 400         | 3     | 2     | 6     | 2     | 6     | 5     | 1             | 4             | 1600          |
+| A2   | 1730 | 350         | 8     | 9     | 10    | 11    | 9     | 4     | 1             | 8.5           | 2975          |
+| A3   | 1735 | 450         | 9     | 13    | 7     | 4     | 6     | 3     | 1             | 7             | 3150          |
+| A4   | 1746 | 550         | 8     | 10    | 3     | 7     | 8     | 3     | 1             | 6.5           | 3575          |
+| A5   | 1753 | 400         | 8     | 5     | 8     | 10    | 7     | 2     | 1             | 6.6           | 2666          |
+| A6   | 1759 | 400         | 5     | 7     | 3     | 2     | 5     | 6     | 1             | 4.6           | 1866          |
+| B1   | 1810 | 500         | 2     | 2     | 4     | 7     | 5     | 10    | 1             | 5             | 2500          |
+| B2   | 1818 | 620         | 4     | 4     | 2     | 0     | 5     | 4     | 1             | 2.5           | 1550          |
+| B3   | 1825 | 400         | 6     | 8     | 7     | 6     | 5     | 5     | 1             | 6.6           | 2666          |
+| B4   | 1835 | 520         | 4     | 2     | 7     | 5     | 4     | 6     | 1             | 4.6           | 2426          |
+| B5   | 1838 | 650         | 5     | 3     | 4     | 4     | 3     | 5     | 1             | 4.2           | 2704          |
+| B6   | 1843 | 300         | 5     | 13    | 4     | 3     | 5     | 3     | 1             | 5.5           | 1650          |
+
+On average, each tank had 2,444 larvae, which is reduced from 4,259 estimated as the starting density. There is still enough for sampling with some mortality or settlement. The lowest density is in tank B2 (1,550) and the highest was A4 (3,575).    
+
+### *Temperature treatments*  
+
+Temperature treatments are tracking as expected. Apex was monitored throughout the day and temperature loggers will be downloaded on Friday at the end of the experiment.  
+
+Water flow was increased to 20-25 mL per 5 seconds in each tank to help the temperature stabilize and reduce variability in each tank.  
+
+Daily measurements were taken by Ariana and Terava in all larval tanks at 1520-1540.    
+
+### *E5 experiment*  
+
+Daily measurements were taken by Terava and Ariana in the E5 tanks today.  
+
+### *Calibrating salinity probe*  
+
+We were able to successfully calibrate the salinity probe today. It has been reading high due to a bad calibration solution. Hollie calibrated to a 1000 µS/cm YSI solution successfully with tank measurements reading 35-36 psu as expected. THe average cell cal factor was 0.457 after calibration at 1413. We will need to apply a correction to all values before this date.   
+
 # 24 October 2022   
 
 ### *Initial sampling - day 1 of experiment*  
@@ -52,7 +873,7 @@ Details of sampling are described below for today in the order listed.
 
 **Plate maps for respirometry today**  
 
-The plate maps are included below along with information on plate run times and temperature treatments. In all plate maps, 5 larvae were loaded into each well. The information inside each well indicates the squarical tank that the larvae came from. "A" tanks are high temperature and "B" tanks are ambient. Tanks 1-3 will be dosed with symbionts whereas tanks 4-6 will not be dosed with symbionts.  
+- The plate maps are included below along with information on plate run times and temperature treatments. In all plate maps, 5 larvae were loaded into each well. The information inside each well indicates the squarical tank that the larvae came from. "A" tanks are high temperature and "B" tanks are ambient. Tanks 1-3 will be dosed with symbionts whereas tanks 4-6 will not be dosed with symbionts.  
 
 *Plate 1: SDR 1 - 641; 27°C; 20221024*  
 Time start: 8:53  
@@ -67,6 +888,24 @@ Time respiration ends: 9:33
 | **D** |    A1 |    A2 |    A3 |    B1 |    B2 |    B3 |
  
 Well D1: 6 larvae  
+
+| Temperature measurements |       |
+|--------------------------|-------|
+| Time                     | Temp  |
+|                      901 | 26.54 |
+|                      903 | 27.85 |
+|                      905 | 29.32 |
+|                      915 | 27.43 |
+|                      920 | 26.54 |
+
+| Light measurements |       |
+|--------------------|-------|
+| Position           | Light |
+| Center             |   640 |
+| Q1                 |   681 |
+| Q2                 |   583 |
+| Q3                 |   621 |
+| Q4                 |   618 |
 
 *Plate 2: SDR 2 - 710; 30°C; 20221024*  
 Time start: 8:53  
@@ -83,6 +922,24 @@ Time respiration ends: 9:33
 Well B1: 4 larvae  
 Well B2: 4 larvae  
 
+| Temperature measurements |       |
+|--------------------------|-------|
+| Time                     | Temp  |
+|                      904 |    30 |
+|                      903 | 31.24 |
+|                      905 | 29.67 |
+|                      915 | 30.41 |
+|                      920 | 30.89 |
+
+| Light measurements |       |
+|--------------------|-------|
+| Position           | Light |
+| Center             |   657 |
+| Q1                 |   650 |
+| Q2                 |   621 |
+| Q3                 |   602 |
+| Q4                 |   598 |
+
 *Plate 3: SDR 1 - 641; 27°C; 20221024*  
 Time start: 10:25  
 Time respiration start: 10:50    
@@ -96,6 +953,15 @@ Time respiration ends: 11:05
 | **D** |    A4 |    A5 |    A6 |    B4 |    B5 |    B6 |
 
 Well A6: 4 larvae  
+
+| Temperature measurements |       |
+|--------------------------|-------|
+| Time                     | Temp  |
+|                     1030 | 28.15 |
+|                     1040 | 26.94 |
+|                     1050 | 27.61 |
+|                     1100 |  26.7 |
+|                     1105 |  27.1 |
 
 *Plate 4: SDR 2 - 710; 30°C; 20221024*  
 Time start: 10:25    
@@ -112,9 +978,18 @@ Time respiration ends: 11:05
 Well C3: 3 larvae  
 Well D3: 4 larvae  
 
+| Temperature measurements |       |
+|--------------------------|-------|
+| Time                     | Temp  |
+|                     1030 | 32.56 |
+|                     1040 | 30.28 |
+|                     1050 | 32.77 |
+|                     1100 | 29.83 |
+|                     1105 |  30.1 |
+
 During all measurements blanks appeared to have minimal slope as expected. We also noticed that during the light phase there were no positive slopes indicating no photosynthesis. This is expected with aposymbiotic larvae. Respiration slopes during the dark phase were negative as expected with oxygen consumption.  
 
-Each day of sampling, we will alternate the order of which tanks are run in the first set of plates to avoid any timing effects.  
+Each day of sampling, we will alternate the order of which tanks are run in the first set of plates to avoid any timing effects. Light is recorded in the first set of plates and held constant for all others.   
 
 - **3. Sampling for metabolomics and RNA/DNA**:  
 
@@ -138,6 +1013,84 @@ M1-M36 (n=3 tubes per tank, n=50 larvae per tube)
 During sampling we noticed that about half of the larvae were metamorphosing into the disc/stage 2 phase. Samples contain a mix of swimming and metamorphosed larvae due to limitations in the number of larvae.  
 
 Sampling occured between 1229 and 1559.  
+
+| Tube ID | Date     | Time | Tank | Number larvae | Sample method | Storage |
+|---------|----------|------|------|---------------|---------------|---------|
+| M1      | 20221024 | 1229 | A1   |            50 | Flash frozen  | -40C    |
+| M2      | 20221024 | 1229 | A1   |            50 | Flash frozen  | -40C    |
+| M3      | 20221024 | 1229 | A1   |            50 | Flash frozen  | -40C    |
+| M4      | 20221024 | 1320 | A2   |            50 | Flash frozen  | -40C    |
+| M5      | 20221024 | 1320 | A2   |            50 | Flash frozen  | -40C    |
+| M6      | 20221024 | 1320 | A2   |            50 | Flash frozen  | -40C    |
+| M7      | 20221024 | 1350 | A3   |            50 | Flash frozen  | -40C    |
+| M8      | 20221024 | 1350 | A3   |            50 | Flash frozen  | -40C    |
+| M9      | 20221024 | 1350 | A3   |            50 | Flash frozen  | -40C    |
+| M10     | 20221024 | 1510 | A4   |            50 | Flash frozen  | -40C    |
+| M11     | 20221024 | 1510 | A4   |            50 | Flash frozen  | -40C    |
+| M12     | 20221024 | 1510 | A4   |            50 | Flash frozen  | -40C    |
+| M13     | 20221024 | 1544 | A5   |            50 | Flash frozen  | -40C    |
+| M14     | 20221024 | 1544 | A5   |            50 | Flash frozen  | -40C    |
+| M15     | 20221024 | 1544 | A5   |            50 | Flash frozen  | -40C    |
+| M16     | 20221024 | 1559 | A6   |            50 | Flash frozen  | -40C    |
+| M17     | 20221024 | 1559 | A6   |            50 | Flash frozen  | -40C    |
+| M18     | 20221024 | 1559 | A6   |            50 | Flash frozen  | -40C    |
+| M19     | 20221024 | 1420 | B1   |            50 | Flash frozen  | -40C    |
+| M20     | 20221024 | 1420 | B1   |            50 | Flash frozen  | -40C    |
+| M21     | 20221024 | 1420 | B1   |            50 | Flash frozen  | -40C    |
+| M22     | 20221024 | 1338 | B2   |            50 | Flash frozen  | -40C    |
+| M23     | 20221024 | 1338 | B2   |            50 | Flash frozen  | -40C    |
+| M24     | 20221024 | 1338 | B2   |            50 | Flash frozen  | -40C    |
+| M25     | 20221024 | 1420 | B3   |            50 | Flash frozen  | -40C    |
+| M26     | 20221024 | 1420 | B3   |            50 | Flash frozen  | -40C    |
+| M27     | 20221024 | 1420 | B3   |            50 | Flash frozen  | -40C    |
+| M28     | 20221024 | 1436 | B4   |            50 | Flash frozen  | -40C    |
+| M29     | 20221024 | 1436 | B4   |            50 | Flash frozen  | -40C    |
+| M30     | 20221024 | 1436 | B4   |            50 | Flash frozen  | -40C    |
+| M31     | 20221024 | 1448 | B5   |            50 | Flash frozen  | -40C    |
+| M32     | 20221024 | 1448 | B5   |            50 | Flash frozen  | -40C    |
+| M33     | 20221024 | 1448 | B5   |            50 | Flash frozen  | -40C    |
+| M34     | 20221024 | 1520 | B6   |            50 | Flash frozen  | -40C    |
+| M35     | 20221024 | 1520 | B6   |            50 | Flash frozen  | -40C    |
+| M36     | 20221024 | 1520 | B6   |            50 | Flash frozen  | -40C    |
+
+| Tube ID | Date     | Time | Tank | Number larvae | Sample method        | Storage |
+|---------|----------|------|------|---------------|----------------------|---------|
+| R1      | 20221024 | 1229 | A1   |            50 | RNA DNA Shield 600uL | -40C    |
+| R2      | 20221024 | 1229 | A1   |            50 | RNA DNA Shield 600uL | -40C    |
+| R3      | 20221024 | 1229 | A1   |            50 | RNA DNA Shield 600uL | -40C    |
+| R4      | 20221024 | 1320 | A2   |            50 | RNA DNA Shield 600uL | -40C    |
+| R5      | 20221024 | 1320 | A2   |            50 | RNA DNA Shield 600uL | -40C    |
+| R6      | 20221024 | 1320 | A2   |            50 | RNA DNA Shield 600uL | -40C    |
+| R7      | 20221024 | 1350 | A3   |            50 | RNA DNA Shield 600uL | -40C    |
+| R8      | 20221024 | 1350 | A3   |            50 | RNA DNA Shield 600uL | -40C    |
+| R9      | 20221024 | 1350 | A3   |            50 | RNA DNA Shield 600uL | -40C    |
+| R10     | 20221024 | 1508 | A4   |            50 | RNA DNA Shield 600uL | -40C    |
+| R11     | 20221024 | 1508 | A4   |            50 | RNA DNA Shield 600uL | -40C    |
+| R12     | 20221024 | 1508 | A4   |            50 | RNA DNA Shield 600uL | -40C    |
+| R13     | 20221024 | 1544 | A5   |            50 | RNA DNA Shield 600uL | -40C    |
+| R14     | 20221024 | 1544 | A5   |            50 | RNA DNA Shield 600uL | -40C    |
+| R15     | 20221024 | 1544 | A5   |            50 | RNA DNA Shield 600uL | -40C    |
+| R16     | 20221024 | 1559 | A6   |            50 | RNA DNA Shield 600uL | -40C    |
+| R17     | 20221024 | 1559 | A6   |            50 | RNA DNA Shield 600uL | -40C    |
+| R18     | 20221024 | 1559 | A6   |            50 | RNA DNA Shield 600uL | -40C    |
+| R19     | 20221024 | 1405 | B1   |            50 | RNA DNA Shield 600uL | -40C    |
+| R20     | 20221024 | 1405 | B1   |            50 | RNA DNA Shield 600uL | -40C    |
+| R21     | 20221024 | 1405 | B1   |            50 | RNA DNA Shield 600uL | -40C    |
+| R22     | 20221024 | 1338 | B2   |            50 | RNA DNA Shield 600uL | -40C    |
+| R23     | 20221024 | 1338 | B2   |            50 | RNA DNA Shield 600uL | -40C    |
+| R24     | 20221024 | 1338 | B2   |            50 | RNA DNA Shield 600uL | -40C    |
+| R25     | 20221024 | 1420 | B3   |            50 | RNA DNA Shield 600uL | -40C    |
+| R26     | 20221024 | 1420 | B3   |            50 | RNA DNA Shield 600uL | -40C    |
+| R27     | 20221024 | 1420 | B3   |            50 | RNA DNA Shield 600uL | -40C    |
+| R28     | 20221024 | 1430 | B4   |            50 | RNA DNA Shield 600uL | -40C    |
+| R29     | 20221024 | 1430 | B4   |            50 | RNA DNA Shield 600uL | -40C    |
+| R30     | 20221024 | 1430 | B4   |            50 | RNA DNA Shield 600uL | -40C    |
+| R31     | 20221024 | 1448 | B5   |            50 | RNA DNA Shield 600uL | -40C    |
+| R32     | 20221024 | 1448 | B5   |            50 | RNA DNA Shield 600uL | -40C    |
+| R33     | 20221024 | 1448 | B5   |            50 | RNA DNA Shield 600uL | -40C    |
+| R34     | 20221024 | 1520 | B6   |            50 | RNA DNA Shield 600uL | -40C    |
+| R35     | 20221024 | 1520 | B6   |            50 | RNA DNA Shield 600uL | -40C    |
+| R36     | 20221024 | 1520 | B6   |            50 | RNA DNA Shield 600uL | -40C    |
 
 After sampling all unused larvae were poured back into larval tanks.  
 
@@ -281,6 +1234,10 @@ Throughout the day, larvae were mixed and tanks were checked every 2-3 hours. Fi
 
 We noticed continued settlement behavior in larvae. This will impact how many larvae we have at the end of the experiment and will confound larval density measurements for survival.  
 
+### *E5 experiment*  
+
+Daily measurements were taken by Terava and Hollie in the E5 tanks today. Terava completed feeding for the E5 tanks.  
+
 # 23 October 2022 
 
 ### *Embryo rearing* 
@@ -293,7 +1250,7 @@ We noticed that starting yesterday larvae from 10/18 were starting to settle and
 
 We checked larvae under the microscope by 1) viewing larvae on a scope and 2) squishing larvae under a cover slip to look for cells. No cells were seen in larvae that were exposed to symbionts yesterday. 
 
-### *Experimental design*  
+### *Experimental design and pooling larvae*  
 
 Due to settlement and no uptake of symbionts, we re-assessed our experimental plan and will proceed with the following design:  
 
@@ -303,9 +1260,9 @@ This design ensures that even if we do not have larvae take up symbionts, we wil
 
 We will conduct daily symbiont innoculations as described yesterday in the symbiotic tanks (n=6). This design will allow us to test how elevated temperatures impact symbiotic initiation and metabolism.  
 
-Today, to move foward with this plan, Ariana pooled and allocated larvae from the 10/19 cohort into 12 squaricals as described yesterday. The 10/18 cohort was added to n=6 settlement bins with 50 aragonite plugs. Settlement bins were mesh bottom bins with the plugs oriented upside down. 
+Today, to move foward with this plan, Ariana pooled and allocated larvae from the 10/19 cohort into 12 squaricals as described yesterday. The 10/18 cohort was added to n=6 settlement bins with 50 aragonite plugs. Settlement bins were mesh bottom bins with the plugs oriented upside down.  
 
-Larvae were added at 1730-1745. For 10/18 larvae, there was an average of 27.6 larvae per mL, which resulted in ~4600 larvae in each of the 6 settlement bins. Three bins were kept in tank A and three in tank B partially submerged. Larvae from 10/19 had an average density of 32.3 larvae per mL, which resulted in ~2,691 larvae in each squarical. This number would allow for ~50% mortality and still have enough for sampling.  
+Larvae were added at 1730-1745. For 10/18 larvae, there was an average of 27.6 larvae per mL, which resulted in ~4600 larvae in each of the 6 settlement bins. Three bins were kept in tank A and three in tank B partially submerged. Larvae from 10/19 totalled to ~51108, which resulted in ~4,259 larvae in each squarical. This number would allow for ~75% mortality and still have enough for sampling.  
 
 ![tank](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/images/NotebookImages/Moorea2022/tank_setup.jpeg) 
 
