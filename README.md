@@ -1,6 +1,6 @@
 Website built by Jekyll on GitHub
 
-#Open Lab Notebook 
+# Open Lab Notebook 
 
 This notebook section of this website is organized with categories, dates, and tags for each post. 
 
