@@ -2,7 +2,7 @@
 layout: post
 title: Moorea 2022 Coral Spawning and Field Expedition Daily Entry
 date: '2022-11-09'
-categories: Acropora_Integration_Moorea_2022
+categories: Acropora_Larval_Metabolism_Moorea_2022
 tags: Acropora Husbandry Reproduction ExperimentalDesign Protocol CellDensity Environmental ExperimentalDesign Metabolomics Microscopy Molecular Protocol Sampling Settlement 
 ---
 This post includes the full notebook for Sept-Oct 2022 *Acropora* coral spawning and field expedition in Moorea, French Polynesia. These notebook posts by A. Huffmyer are updated in order of most recent to oldest. 
