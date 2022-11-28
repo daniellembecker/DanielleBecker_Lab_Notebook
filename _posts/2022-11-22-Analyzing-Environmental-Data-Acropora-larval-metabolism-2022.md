@@ -83,7 +83,7 @@ This is potentially due to increased water ionization at higher temperatures and
 A summary of variables measured is shown in this table. For each metric, mean and standard deviation (sd) is shown. Values are shown for parents, embryo/larval rearing, and larval exposure periods.  
   
 
-| period         | treatment | flow.L.min_mean | flow.L.min_sd | par_mean   | par_sd     | pH_mean    | pH_sd      | sal.psu.cor_mean | sal.psu.cor_sd | temp.C_mean | temp.C_sd  |
+| period         | treatment | flow mean | flow sd | par mean   | par sd     | pH mean    | pH sd      | sal mean | sal sd | temp mean | temp sd  |
 |----------------|-----------|-----------------|---------------|------------|------------|------------|------------|------------------|----------------|-------------|------------|
 | Spawning       | Parent    | NA              | NA            | 306        | 109.95 | 8.05 | 0.01 | 35.01       | 0.05      | 27.76       | 0.18 |
 | Embryo Rearing | Ambient   | 0.28           | 0.04    | 20.33 | 16.90 | 8.06 | 0.01 | 35.09       | 0.034     | 27.63  | 0.13 |
