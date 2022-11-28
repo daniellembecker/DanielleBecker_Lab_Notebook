@@ -4,7 +4,10 @@ title: About
 permalink: /about/
 ---
 
-I am a marine biologist and eco-physiologist working to understand the role of the physical environment and biological interactions in shaping the physiology, performance, and resilience of early life stages of reef-building corals.
+I am a marine biologist and eco-physiologist working to understand the role of the physical environment and biological interactions in shaping the physiology, performance, and resilience of early life stages of reef-building corals.  
+
+View more information on my LinkTree at the QR code below.  
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/BusinessCard.jpg)  
 
 ### Contact me
 
@@ -42,7 +45,7 @@ Date|Position| Affiliation
 
 [Google Scholar Profile](https://scholar.google.com/citations?user=_dw3pYEAAAAJ&hl=en)
 
-15. Chiles EN, **AS Huffmyer**, C Drury, HM Putnam, D Bhattacharya, X Su. Stable isotope tracing reveals compartmentalized nitrogen assimilation in scleractinian corals. Frontiers in Marine Science. *In press*. 
+15. Chiles EN, **AS Huffmyer**, C Drury, HM Putnam, D Bhattacharya, X Su. Stable isotope tracing reveals compartmentalized nitrogen assimilation in scleractinian corals. Frontiers in Marine Science. https://doi.org/10.3389/fmars.2022.1035523  
 14. **Huffmyer AS**, E Majerova, N Bean, C Harris, C Drury. 2022. Variable intraspecific diversity effects impact thermal tolerance in a reef-building coral. Coral Reefs. https://doi.org/10.1007/s00338-022-02320-0 
 13. **Huffmyer AS**, T O’Neill, JD Lemus. 2022. Evidence for professional conceptualization in science as an important component of science identity. CBE – Life Sciences Education 21(4): ar76      
 12. Alexander G, J Hancock, **AS Huffmyer**, SB Matsuda. 2022. Larval thermal pre-exposure does not improve post-settlement thermal tolerance in a dominant reef-building coral, *Montipora capitata*. Coral Reefs 41:333-342    
