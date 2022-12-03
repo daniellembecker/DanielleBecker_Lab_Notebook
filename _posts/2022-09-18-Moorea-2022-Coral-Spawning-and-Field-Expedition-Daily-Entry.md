@@ -19,7 +19,7 @@ We will also continue in situ monitoring of *Acropora* and *Pocillopora* colonie
 
 We are also conducting an adult coral experiment within the E5 framework to answer the question, *How does altered metabolic and symbiotic state impact response to thermal stress in Acropora pulchra*?  
 
-[See this post for details and daily entries for the E5 adult experiment](https://urol-e5.github.io/2022/09/20/E5-Moorea-Adult-Stressor-Experiment.html) and see this [E5 GitHub repo here](https://github.com/urol-e5/apulchra_metabolism).  
+[See this post for details and daily entries for the E5 adult experiment](https://urol-e5.github.io) and see this [E5 GitHub repo here](https://github.com/urol-e5/apulchra_metabolism).  
 
 **Field expedition members:**     
 Ariana Huffmyer  
@@ -29,7 +29,7 @@ Hollie Putnam
 
 # 28 October 2022 
 
-Today is the last day of sampling for Ariana's project. Notebook posts regarding future data analyses will be found in [Ariana's GitHub Notebook](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/). [See this post for details and daily entries for the ongoing E5 adult experiment](https://urol-e5.github.io/2022/09/20/E5-Moorea-Adult-Stressor-Experiment.html).   
+Today is the last day of sampling for Ariana's project. Notebook posts regarding future data analyses will be found in [Ariana's GitHub Notebook](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/). [See the E5 notebook post for details and daily entries for the ongoing E5 adult experiment](https://urol-e5.github.io).   
 
 ### *Final sampling - day 5 of experiment*  
 
@@ -2564,7 +2564,7 @@ Danielle trialed methods for dissecting gametes from live *A. pulchra* fragments
 
 ### *Project set up*  
 
-Ariana, Pierrick, and Danielle sourced materials for the E5 adult project including buying tank bins, finding shade cloth, and cleaning water tables. Light levels in the high light treatment will be 500-700 PAR peaking during the day and the low light treatment will reduce by 65% to approx. 100-300 PAR. [See details on this project here](https://urol-e5.github.io/2022/09/20/E5-Moorea-Adult-Stressor-Experiment.html).  
+Ariana, Pierrick, and Danielle sourced materials for the E5 adult project including buying tank bins, finding shade cloth, and cleaning water tables. Light levels in the high light treatment will be 500-700 PAR peaking during the day and the low light treatment will reduce by 65% to approx. 100-300 PAR. [See details on this project in the Adult Stressor notebook post](https://urol-e5.github.io/).  
 
 Ariana also discussed experimental design with the E5 team and we have revised the experimental approach to include two sampling time points with fragments sourced from 10 colonies/genotypes. 
 
@@ -2578,7 +2578,7 @@ Danielle gave the team an orientation to driving the LTER boat (509) at Gump. Ar
 
 ### *Project planning*  
 
-Ariana developed a draft experimental design for the adult coral E5 repeat stressor experiment. [A separate notebook post has been created here with all details and daily entries for this project in the E5 notebook](https://urol-e5.github.io/2022/09/20/E5-Moorea-Adult-Stressor-Experiment.html). Ariana conducted planning and sourcing materials for this project today. 
+Ariana developed a draft experimental design for the adult coral E5 repeat stressor experiment. [A separate notebook post has been created here with all details and daily entries for this project in the E5 notebook](https://urol-e5.github.io). Ariana conducted planning and sourcing materials for this project today. 
 
 Overall, this project will expose coral colonies to ambient (450-600 PAR) and reduced (100-200 PAR) light conditions. A draft design is included below. This experiment will run until December. Monthly, fragments will be sampled for molecular, metabolomic, and physiological metrics. In December, S. Matsuda and R. Cunning will measure thermal phenotypes using the CBASS system.  
 
