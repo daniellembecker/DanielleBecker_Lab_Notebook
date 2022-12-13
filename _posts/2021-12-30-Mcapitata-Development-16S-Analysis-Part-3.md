@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Mcapitata Development 16S Analysis in QIIME2
+title: Mcapitata Development 16S Analysis in QIIME2 (Part 3)
 date: '2021-12-30'
 categories: Mcapitata_EarlyLifeHistory_2020
 tags: 16S Mcapitata Molecular Protocol Bioinformatics
