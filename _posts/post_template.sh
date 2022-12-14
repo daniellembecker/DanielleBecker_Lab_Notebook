@@ -32,10 +32,10 @@ read PHRASE3
 echo "You entered $PHRASE3"
 
 # Remove spaces from PHRASE and replace with hyphens
-FORMATTED_PHRASE="$(echo -ne "${PHRASE}" | tr [:space:] '-')"
+FORMATTED_PHRASE="$(echo "${PHRASE}" | tr [:space:] '-' | rev | cut -c2- | rev)"
 
 # Save new filename using POST_DATE and FORMATTED_PHRASE variables.
-NEW_MD_FILE="$(echo -n "${POST_DATE}"-"${FORMATTED_PHRASE}")".md
+NEW_MD_FILE="$(echo "${POST_DATE}"-"${FORMATTED_PHRASE}")".md
 
 
 # Prints formatted Jekyll header utilizing POST_DATE and user-entered PHRASE.
@@ -44,10 +44,11 @@ printf "%s\n%s\n%s%s\n%s'%s'\n%s%s\n%s%s\n%s%s\n" "$MD_LINE" "$LAYOUT" "$TITLE" 
 "$NEW_MD_FILE"
 
 # Opens NEW_MD_FILE in nano text editor for editing.
-nano "$NEW_MD_FILE"
+#nano "$NEW_MD_FILE"
 
+echo "New post created titled $NEW_MD_FILE!"
 
 # Use git to stage, commit, and push NEW_MD_FILE to GitHub
-git add "$NEW_MD_FILE"
-git commit -m "created new post: $NEW_MD_FILE"
-git push origin master
+#git add "$NEW_MD_FILE"
+#git commit -m "created new post: $NEW_MD_FILE"
+#git push origin master
