@@ -160,11 +160,11 @@ This shows that there is variation in 16S profiles across developmental stages.
 
 Additionally, alpha diversity increases with development shows as Shannon and Inverse Simpson indices.  
 
-I then plotted relative abundance of taxa >1% relative abundance first by phylum:  
+I then plotted relative abundance of all taxa by phylum:  
 
 ![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/16S/heatmap_phylum.png)
 
-And then by genus:species.  
+And then by genus:species only for taxa >0.5 relative abundance.  
 
 ![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/16S/heatmap_genus.png)  
 
