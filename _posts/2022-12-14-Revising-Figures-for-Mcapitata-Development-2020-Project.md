@@ -166,7 +166,7 @@ I then plotted relative abundance of all taxa by phylum:
 
 And then by genus:species only for taxa >0.5 relative abundance.  
 
-![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/16S/heatmap_genus.png)  
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/16S/heatmap_genus.png)     
 
 **Main Takeaways**  
 
