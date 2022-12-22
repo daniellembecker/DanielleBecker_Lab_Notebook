@@ -493,19 +493,19 @@ To view patterns across ontogeny, I grouped modules into ontogenetic patterns. W
 
 I used the eigengene plot above to determine which modules fall into each pattern. 
 
-Increase over development = 12, 3, 5, 9
-Decrease over development = 1, 8 
-Peak in mid-development = 2, 6
+Increase over development = 12, 3, 5, 9  
+Decrease over development = 1, 8   
+Peak in mid-development = 2, 6  
 
 Module 7 only peaks in one stage so we won't include it here in the patterns.  
 
 When summarized, the expression of modules in these patterns looks like this. We can see that expression generally follows these three distinct patterns. There are some modules in early development that are high in some embryonic stages, but low in others, generating a few points that are low in early development in that pattern. I will be looking into this in more detail to see if we need to split up this pattern even more.    
 
-![](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/blob/master/Mcap2020/Figures/TagSeq/GenomeV3/ontogeny_patterns_expression.png)  
+![](https://raw.githubusercontent.com/AHuffmyer/EarlyLifeHistory_Energetics/master/Mcap2020/Figures/TagSeq/GenomeV3/ontogeny_patterns_expression.png)  
 
 I then took the same approach to run a loop to conduct GOSeq for each of these patterns, rather than at the module level.  
 
-```{r}
+```
 increase<-c("12", "3", "5", "9")
 decrease<-c("1", "8")
 mid<-c("2", "6")
@@ -649,7 +649,7 @@ carbs<-c("carbohydrate")
 ggsave(filename=paste0("Mcap2020/Figures/TagSeq/GenomeV3/GOSeq/GOenrich_AllPatterns_Carbohdyrate.png"), plot=GO.plot.carb, dpi=300, width=13, height=18, units="in")
 ```
 
-![](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/blob/master/Mcap2020/Figures/TagSeq/GenomeV3/GOSeq/GOenrich_AllPatterns_Carbohdyrate.png)
+![](https://raw.githubusercontent.com/AHuffmyer/EarlyLifeHistory_Energetics/master/Mcap2020/Figures/TagSeq/GenomeV3/GOSeq/GOenrich_AllPatterns_Carbohdyrate.png)
 
 *Interesting results*  
 - Carbohydrate derivative metabolism occurs across development. Interestingly amino sugar metabolism only occurs early in development. 
@@ -670,7 +670,7 @@ symbiosis<-c("regulation of cell communication", "transmembrane transport", "tra
 
 Lipid metabolism across these ontogenetic patterns looks like this:  
 
-![](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/blob/master/Mcap2020/Figures/TagSeq/GenomeV3/GOSeq/GOenrich_AllPatterns_Lipids.png) 
+![](https://raw.githubusercontent.com/AHuffmyer/EarlyLifeHistory_Energetics/master/Mcap2020/Figures/TagSeq/GenomeV3/GOSeq/GOenrich_AllPatterns_Lipids.png) 
 
 *Interesting results*  
 -  Sterol metabolism, regulation of lipid metabolism, phosphatidylinositol metabolism, lipid metabolism, glycerophospholipid metabolism, and cellular lipid metabolism occur throughout development. 
@@ -681,7 +681,7 @@ This suggests that there is increased metabolism of potential symbiont-derived f
 
 Finally, communication/transport terms look like this:  
 
-![](https://github.com/AHuffmyer/EarlyLifeHistory_Energetics/blob/master/Mcap2020/Figures/TagSeq/GenomeV3/GOSeq/GOenrich_AllPatterns_Symbiosis.png)  
+![](https://raw.githubusercontent.com/AHuffmyer/EarlyLifeHistory_Energetics/master/Mcap2020/Figures/TagSeq/GenomeV3/GOSeq/GOenrich_AllPatterns_Symbiosis.png)  
 
 *Interesting results*  
 - Throughout development, there is transport and cell communication pathways active. 
