@@ -5,7 +5,7 @@ date: '2022-12-16'
 categories: Mcapitata_EarlyLifeHistory_2020
 tags: Bioinformatics GeneExpression Mcapitata GenomeAnnotation R
 ---
-This post details genome annotation for *Montipora capitata* v2 and re-analyzing TagSeq data for the 2020 *M. capitata* developmental timeseries project to a more recent v3 genome with annotation.  
+This post details re-analyzing TagSeq data for the 2020 *M. capitata* developmental timeseries project to a more recent v3 genome with annotation.  
 
 # Analyzing TagSeq Data with revised genome 
 
