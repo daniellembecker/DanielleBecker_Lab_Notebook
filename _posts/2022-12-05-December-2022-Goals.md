@@ -16,6 +16,7 @@ tags: Goals
 	- Integration 
 2. Revise *Montipora capitata* 2020 time series text to PNAS short format  
 3. Work with Emma to revise results of E5 time series manuscript
+4. ~~Reanalyze TagSeq data to new *M. capitata* genome~~
 
 ### Data analysis  
    
