@@ -13,21 +13,21 @@ tags: Goals
 	- ~~Metabolomic~~
 	- ~~Gene Expression~~
 	- ~~Physiology~~ 
-	- Integration 
+	- ~~Integration~~ 
 2. Revise *Montipora capitata* 2020 time series text to PNAS short format  
 3. Work with Emma to revise results of E5 time series manuscript
 4. ~~Reanalyze TagSeq data to new *M. capitata* genome~~
 
 ### Data analysis  
    
-1. Organize/prep E5 adult metabolism data for analysis 
+1. ~~Organize/prep E5 adult metabolism data for analysis~~ 
 
 ### Sample processing  
 
-1. Work with Jill to process Mcap2021 stable isotope samples
-2. Decide on sample processing timeline for Mcap2021 and Apul2022 with Hollie  
+1. ~~Work with Jill to process Mcap2021 stable isotope samples~~
+2. ~~Decide on sample processing timeline for Mcap2021 and Apul2022 with Hollie~~  
 
 ### Project planning
 
-1. Send Hawaii 2023 proposal to collaborators 
+1. ~~Send Hawaii 2023 proposal to collaborators~~ 
 
