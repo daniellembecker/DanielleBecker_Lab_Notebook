@@ -36,7 +36,7 @@ Process DNA-RNA extractions for the 12-month [Gametogenesis time series project]
 
 ### **Process**
 
-- Samples were collected and preserved in DNA-RNA shield in Mo'orea, French Polynesia following the [Sample Collection Protocol](https://github.com/daniellembecker/Gametogenesis/blob/main/protocols/2021-12-26-Sample_Same_Day_Processing_Protocol.md).
+- Samples were collected and preserved in DNA-RNA shield in Mo'orea, French Polynesia following the [Sample Collection Protocol](https://github.com/daniellembecker/Gametogenesis/blob/main/protocols/2021-12-26-Sample_Same_Day_Processing_Protocol.md). Initial samples had 1-2 mL of DNA RNA shield added.
 
 
 # **Zymo Duet DNA/RNA Extraction Protocol**
@@ -73,13 +73,15 @@ Process DNA-RNA extractions for the 12-month [Gametogenesis time series project]
 3. Add 15 µl Proteinase K to each sample tube (1:2 ratio of Proteinase K:PK Digestion Buffer).  
 4. Vortex for 5-10 seconds and spin down.
 5. Set timer for 15 minutes and let samples sit. Start labeling other tubes and organizing on tube racks.
-6. After 15 minutes, proceed to extraction steps.
+6. After 15 minutes, spin the samples down for 3 minutes at 16k rcf.
+7. After samples are spun down, remove the liquid into new 1.5 mL tubes, be careful not to disturb the pellet.
+8. Proceed to extraction steps.
 
 ## DNA Extraction
 1. Set up yellow DNA spin columns and collection tubes, label appropriately
 2. Warm elution liquids to 70 degrees &deg;C (10mM Tris HCl pH. 8.0 and RNase free water)
-3. Add equal volume (345 µl) DNA/RNA lysis buffer to each sample tube
-4. Finger flick to mix tubes
+3. Add equal volume 1:1 (345 µl) DNA/RNA lysis buffer to each sample tube
+4. Spin samples down for 1 minute at 16k rcf.
 5. Add 700 µl (total volume) of sample gently to the yellow DNA spin column
 6. Centrifuge at 16,000 rcf (g) for 3 minutes
 7. **Important** Save the flow through from this step: transfer to a new 1.5mL tube labeled for RNA
@@ -97,10 +99,9 @@ Process DNA-RNA extractions for the 12-month [Gametogenesis time series project]
 19. Incubate at room temp for 5 minutes
 20. Centrifuge at 16,000 rcf (g) for 1 minute
 21. Repeat steps 18-20 for a final elution volume of 100 µl
-22. Label tubes, store at 4 &deg;C if quantifying the same day or the next, if waiting longer store in -20 &deg;C
+22. Label tubes, store at -20 &deg;C.
 
 ## RNA Extraction
-*Can do concurrently with DNA Extraction after DNA Extraction Step 7*
 1. Add equal volume (700 µl) 100% EtOH to the 1.5mL tubes labeled for RNA containing the original yellow column flow through
 2. Vortex and spin down to mix
 3. Add 700 µl of that liquid to the green RNA spin columns
@@ -144,36 +145,36 @@ Follow Broad Range dsDNA and RNA Qubit [protocol](https://meschedl.github.io/MES
 
 ### DNA/RNA Quantity - 12 January 2022 Samples
 
-| tube.number    | colony.ID | qubit.reading.1 | qubit.reading.2 | sample.type |
-|----------------|-----------|-----------------|-----------------|-------------|
-| DNA_standard_1 | NA        | 200.58          | NA              | DNA.STD     |
-| DNA_standard_2 | NA        | 24151           | NA              | DNA.STD     |
-| 1              | ACR-418   | 25.6            | 25.4            | DNA         |
-| 2              | ACR-422   | 24              | 23.4            | DNA         |
-| 4              | ACR-431   | 25.4            | 24.8            | DNA         |
-| 3              | ACR-428   | 19.8            | 19.3            | DNA         |
-| 5              | ACR-432   | 15.1            | 14.8            | DNA         |
-| 6              | ACR-438   | 25              | 24.4            | DNA         |
-| 7              | ACR-457   | 27.6            | 27              | DNA         |
-| 8              | ACR-458   | 29.8            | 29              | DNA         |
-| 9              | ACR-459   | 13.1            | 13              | DNA         |
-| 10             | ACR-460   | 15.6            | 15.1            | DNA         |
-| 11             | ACR-464   | 19.2            | 18.8            | DNA         |
-| 12             | ACR-465   | 14              | 13.5            | DNA         |
-| RNA_standard_1 | NA        | 422.43          | NA              | RNA.STD     |
-| RNA_standard_2 | NA        | 9892.36         | NA              | RNA.STD     |
-| 1              | ACR-418   | 31.6            | 31.6            | RNA         |
-| 2              | ACR-422   | 21.6            | 22              | RNA         |
-| 3              | ACR-428   | 27.6            | 27.6            | RNA         |
-| 4              | ACR-431   | NA              | NA              | RNA         |
-| 5              | ACR-432   | 16.8            | 16.4            | RNA         |
-| 6              | ACR-438   | 15.2            | 14.4            | RNA         |
-| 7              | ACR-457   | 18.4            | 18.2            | RNA         |
-| 8              | ACR-458   | 15.2            | 15.2            | RNA         |
-| 9              | ACR-459   | 17.4            | 16.6            | RNA         |
-| 10             | ACR-460   | 20.4            | 20.6            | RNA         |
-| 11             | ACR-464   | 13.8            | 13.8            | RNA         |
-| 12             | ACR-465   | 13.2            | 13              | RNA         |
+| tube.number    | colony.ID | qubit.reading.1 | qubit.reading.2 | quibit.average | sample.type | timepoint |
+|----------------|-----------|-----------------|-----------------|----------------|-------------|-----------|
+| DNA_standard_1 | NA        |          200.58 | NA              |         200.58 | DNA.STD     | NA        |
+| DNA_standard_2 | NA        |           24151 | NA              |          24151 | DNA.STD     | NA        |
+|              1 | ACR-418   |            25.6 |            25.4 |           25.5 | DNA         | JANUARY   |
+|              2 | ACR-422   |              24 |            23.4 |           23.7 | DNA         | JANUARY   |
+|              4 | ACR-431   |            25.4 |            24.8 |           25.1 | DNA         | JANUARY   |
+|              3 | ACR-428   |            19.8 |            19.3 |          19.55 | DNA         | JANUARY   |
+|              5 | ACR-432   |            15.1 |            14.8 |          14.95 | DNA         | JANUARY   |
+|              6 | ACR-438   |              25 |            24.4 |           24.7 | DNA         | JANUARY   |
+|              7 | ACR-457   |            27.6 |              27 |           27.3 | DNA         | JANUARY   |
+|              8 | ACR-458   |            29.8 |              29 |           29.4 | DNA         | JANUARY   |
+|              9 | ACR-459   |            13.1 |              13 |          13.05 | DNA         | JANUARY   |
+|             10 | ACR-460   |            15.6 |            15.1 |          15.35 | DNA         | JANUARY   |
+|             11 | ACR-464   |            19.2 |            18.8 |             19 | DNA         | JANUARY   |
+|             12 | ACR-465   |              14 |            13.5 |          13.75 | DNA         | JANUARY   |
+| RNA_standard_1 | NA        |          422.43 | NA              |         422.43 | RNA.STD     | NA        |
+| RNA_standard_2 | NA        |         9892.36 | NA              |        9892.36 | RNA.STD     | NA        |
+|              1 | ACR-418   |            31.6 |            31.6 |           31.6 | RNA         | JANUARY   |
+|              2 | ACR-422   |            21.6 |              22 |           21.8 | RNA         | JANUARY   |
+|              3 | ACR-428   |            27.6 |            27.6 |           27.6 | RNA         | JANUARY   |
+|              4 | ACR-431   | NA              | NA              | NA             | RNA         | JANUARY   |
+|              5 | ACR-432   |            16.8 |            16.4 |           16.6 | RNA         | JANUARY   |
+|              6 | ACR-438   |            15.2 |            14.4 |           14.8 | RNA         | JANUARY   |
+|              7 | ACR-457   |            18.4 |            18.2 |           18.3 | RNA         | JANUARY   |
+|              8 | ACR-458   |            15.2 |            15.2 |           15.2 | RNA         | JANUARY   |
+|              9 | ACR-459   |            17.4 |            16.6 |             17 | RNA         | JANUARY   |
+|             10 | ACR-460   |            20.4 |            20.6 |           20.5 | RNA         | JANUARY   |
+|             11 | ACR-464   |            13.8 |            13.8 |           13.8 | RNA         | JANUARY   |
+|             12 | ACR-465   |            13.2 |              13 |           13.1 | RNA         | JANUARY   |
 
 **We noticed that the RNA quantity for sample 431 was not detected, this could mean that there was possible contamination during the extraction process, or prior issues when the sample was taken that may have caused this. This sample will need to re-extracted and troubleshooted.**
 
@@ -196,6 +197,6 @@ If RNA quantity is sufficient follow the Tape Station [Protocol](https://mesched
 ### RNA Quality - 12 January 2022 Samples
 You can also run RNA quality with a gel, which was done for our samples.
 
-![image of gel](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/images/20220823_extractions_gel.jpg)
+![image of gel](https://raw.githubusercontent.com/daniellembecker/DanielleBecker_Lab_Notebook/master/images/20220823_extractions_gel.jpg)
 
 **We noticed that the RNA quality for sample 431 was not detected, this could mean that there was possible contamination during the extraction process, or prior issues when the sample was taken that may have caused this. This sample will need to re-extracted and troubleshooted.**
