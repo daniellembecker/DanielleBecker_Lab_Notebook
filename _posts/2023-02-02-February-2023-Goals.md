@@ -30,6 +30,12 @@ February goals and daily notebook entries.
 
 ## **Daily Log**   
 
+#### Friday February 3, 2023
+
+- Revised Mcap2020 draft
+- Prepared notes for Hawaii 2023 project meeting on Monday
+- All the meetings today! 
+
 #### Thursday February 2, 2023
 
 - Finished Mcap2020 draft
