@@ -22,4 +22,13 @@ projects: Molecular Underpinnings, Chronic Low-Level Nutrient Enrichment
 - module load GlobusConnectPersonal/3.2.0
 
 #### Step 3: Setup Globus collection
-- /data/putnamlab/globusconnectpersonal-3.1.4/globusconnectpersonal -setup --no-gui
+- Download Globus Connect Personal onto the putnamlab server folder:
+    - /data/putnamlab/
+    - $ wget https://downloads.globus.org/globus-connect-personal/linux/stable/globusconnectpersonal-latest.tgz
+- Extract the files from the downloaded tarball.
+    - $ tar xzf globusconnectpersonal-latest.tgz
+    - this will produce a versioned globusconnectpersonal directory
+    - replace `x.y.z` in the line below with the version number you see
+    - $ cd globusconnectpersonal-x.y.z
+- Start Globus Connect Personal. Since this is the first time you are running it, you must complete setup before you can run the full application.
+    - $ ./globusconnectpersonal
