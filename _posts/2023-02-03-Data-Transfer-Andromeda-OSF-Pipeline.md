@@ -32,3 +32,5 @@ projects: Molecular Underpinnings, Chronic Low-Level Nutrient Enrichment
     - $ cd globusconnectpersonal-x.y.z
 - Start Globus Connect Personal. Since this is the first time you are running it, you must complete setup before you can run the full application.
     - $ ./globusconnectpersonal
+
+## stopped here because I have to get an authentication code for setup
