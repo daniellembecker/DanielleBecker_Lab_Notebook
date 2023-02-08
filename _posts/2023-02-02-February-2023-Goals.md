@@ -22,13 +22,33 @@ February goals and daily notebook entries.
 ### Data processing  
 
 1. Process stable isotope metabolomics data from Rutgers after processing
-2. Meet with Ferdi to talk about E5 model and phys data integration for E5 time series project 
+2. ~~Meet with Ferdi to talk about E5 model and phys data integration for E5 time series project~~
+3. Prepare E5 data for Ferdi's modeling project.  
 
 ### Project planning 
 
 1. Outline project timelines and budgets for Hawaii 2023 and Moorea 2023  
 
 ## **Daily Log**   
+
+#### Wednesday February 8, 2023
+
+- Revised Mcap2020 draft
+- Met with Ferdi about E5 modeling 
+- Met with Shayle about 2023 Hawaii plans 
+
+#### Tuesday February 7, 2023
+
+- Revised Mcap2020 draft
+- Met with Jill about 2023 Hawaii projects
+- Writing hour with Danielle 
+
+#### Monday February 6, 2023
+
+- Revised Mcap2020 draft
+- Putnam Lab journal club
+- Roberts Lab lab meeting 
+- Met with Ford and Hollie for 2023 Hawaii collaboration planning
 
 #### Friday February 3, 2023
 
