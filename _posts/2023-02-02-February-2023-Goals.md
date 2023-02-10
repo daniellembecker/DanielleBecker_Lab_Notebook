@@ -31,6 +31,25 @@ February goals and daily notebook entries.
 
 ## **Daily Log**   
 
+#### Friday February 10, 2023
+
+- Revised Mcap2020 draft
+- Met with Hollie about manuscripts and project planning
+- E5 molecular working group meeting
+- Roberts Lab TidyTuesday exercise 
+- Project planning and organizing priorities
+- Putnam Lab meeting
+
+#### Thursday February 9, 2023
+
+- Revised Mcap2020 draft
+- Project and budget planning
+- Was on UW campus today! 
+- Attended eScience seminar
+- Attended Roberts Lab Pubathon
+- Met with NOAA contact about career information 
+- Worked on Roberts Lab TidyTuesday exercise 
+
 #### Wednesday February 8, 2023
 
 - Revised Mcap2020 draft
