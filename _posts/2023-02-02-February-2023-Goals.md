@@ -31,6 +31,14 @@ February goals and daily notebook entries.
 
 ## **Daily Log**   
 
+#### Monday February 13, 2023
+
+- Revised Mcap2020 draft to send to collaborator for friendly review
+- Uploaded files to OSF for Mcap2020 project 
+- Submitted UW eScience postdoc funding application 
+- Putnam Lab journal club - checking out cool research AI tools! 
+- Roberts Lab meeting to go over TidyTuesday exercise 
+
 #### Friday February 10, 2023
 
 - Revised Mcap2020 draft
