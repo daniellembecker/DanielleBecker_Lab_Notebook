@@ -31,6 +31,18 @@ February goals and daily notebook entries.
 
 ## **Daily Log**   
 
+#### Wednesday February 15, 2023
+
+- Planning experimental design and logistics for Hawaii 2023 work 
+- Project overview planning and budgeting 
+- E5 Team meeting 
+
+#### Tuesday February 14, 2023
+
+- Sent Mcap2020 manuscript to collaborator for friendly review 
+- Writing hour with Danielle 
+- Wrote letters of recommendation  
+
 #### Monday February 13, 2023
 
 - Revised Mcap2020 draft to send to collaborator for friendly review
