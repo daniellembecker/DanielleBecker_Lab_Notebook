@@ -45,7 +45,7 @@ projects: Molecular Underpinnings, Chronic Low-Level Nutrient Enrichment
   - Login to your Globus Connect Personal using your ORC-ID, SSH for URI, or your email.
   - Click allow from the options seen below.
 
-  ![globus](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/images/Globusconnect.png)
+  ![globus](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/images/globusconnect.png)
 
   - You will then be directed to your Native App Authorization Code which is ~30 characters long.
   - Copy and paste this into your terminal window where the prompt says enter the auth code.
