@@ -23,13 +23,22 @@ February goals and daily notebook entries.
 
 1. Process stable isotope metabolomics data from Rutgers after processing
 2. ~~Meet with Ferdi to talk about E5 model and phys data integration for E5 time series project~~
-3. Prepare E5 data for Ferdi's modeling project.  
+3. Prepare E5 data for Ferdi's modeling project    
 
 ### Project planning 
 
 1. Outline project timelines and budgets for Hawaii 2023 and Moorea 2023  
 
 ## **Daily Log**   
+
+#### Thursday February 15, 2023
+
+- Planning experimental design and logistics for Hawaii 2023 work 
+- Roberts Lab pubathon - on campus today!
+- eScience postdoc seminar DVC data workshop 
+- NOAA Hawaii webinar on indigenous science and language
+- Read Ferdi's paper to provide feedback 
+- Uploaded files to OSF
 
 #### Wednesday February 15, 2023
 
