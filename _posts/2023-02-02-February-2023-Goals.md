@@ -31,6 +31,12 @@ February goals and daily notebook entries.
 
 ## **Daily Log**   
 
+#### Friday February 16, 2023
+
+- Planning experimental design and logistics for Hawaii 2023 work 
+- Revising code for Mcap2021
+- NSF review
+
 #### Thursday February 15, 2023
 
 - Planning experimental design and logistics for Hawaii 2023 work 
