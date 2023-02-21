@@ -31,6 +31,13 @@ February goals and daily notebook entries.
 
 ## **Daily Log**   
 
+#### Tuesday February 21, 2023
+
+- Revise Mcap 2020 manuscript
+- Writing hour with Danielle
+- Roberts Lab meeting 
+- Processing/preparing E5 evironmental data for Ferdi
+
 #### Friday February 16, 2023
 
 - Planning experimental design and logistics for Hawaii 2023 work 
