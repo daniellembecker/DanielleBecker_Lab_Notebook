@@ -31,12 +31,17 @@ February goals and daily notebook entries.
 
 ## **Daily Log**   
 
+#### Wednesday February 22, 2023
+
+- Revise Mcap 2020 manuscript
+- Collaborator meeting for Hawaii 2023 work 
+- Assembled resources for UW curriculum
+
 #### Tuesday February 21, 2023
 
 - Revise Mcap 2020 manuscript
 - Writing hour with Danielle
 - Roberts Lab meeting 
-- Processing/preparing E5 evironmental data for Ferdi
 
 #### Friday February 16, 2023
 
