@@ -1,7 +1,7 @@
 ---
 layout: post
 title: February 2023 Goals
-date: '2023-02-02'
+date: '2023-02-25'
 categories: Monthly_Goals
 tags: Goals
 ---
@@ -27,9 +27,24 @@ February goals and daily notebook entries.
 
 ### Project planning 
 
-1. Outline project timelines and budgets for Hawaii 2023 and Moorea 2023  
+1. ~~Outline project timelines and budgets for Hawaii 2023 and Moorea 2023~~  
 
 ## **Daily Log**   
+
+#### Friday February 24, 2023
+
+- E5 Molecular Mechanisms meeting
+- Putnam Lab meeting 
+- Mcap 2021 revised physiology script and figures
+- Assembled data for Ferdi for E5
+
+#### Thursday February 23, 2023
+
+- Project planning for Hawaii 2023
+- Revised Mcap2020 
+- Roberts Lab pubathon
+- Data Science postdoc seminar
+- Read 2 new papers
 
 #### Wednesday February 22, 2023
 
