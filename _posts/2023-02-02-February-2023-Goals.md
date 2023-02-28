@@ -31,6 +31,12 @@ February goals and daily notebook entries.
 
 ## **Daily Log**   
 
+#### Monday February 27, 2023  
+
+- UW Data Science Software Carpentry workshop
+- Sent Mcap2020 manuscript to final co author for comments 
+- Prepared UW curriculum materials 
+
 #### Friday February 24, 2023
 
 - E5 Molecular Mechanisms meeting
