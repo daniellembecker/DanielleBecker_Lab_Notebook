@@ -8,7 +8,9 @@ tags: R GitHub
 
 # Workshop: Software Carpentry in R - Terminal, GitHub, and R 
 
-## Day 1: Terminal and Git 
+Workshop lessons for Terminal, GitHub, and R from UW Data Science Software Carpentry workshop.  
+
+## Day 1: Terminal  
 
 ### Links for today and set up
 
@@ -345,6 +347,127 @@ grep "searching" $(find . -name "*.txt")
 ```
 
 This will return lines containing the word "searching" in each file.  
+
+## Day 2: Git  
+
+### Links for today and set up  
+
+[Lesson plan for today](https://swcarpentry.github.io/git-novice/)  
+
+We will also use GitHub today, which I already have installed and set up on my computer and online account.   
+
+### What is GitHub and Git? 
+
+- Git is a program for automated version control and GitHub is a platform/server that hosts Git to version control repositories. 
+- Provides permanent backup and storage location for files that are openly accessible
+- GitHub is the most commonly used Git server  
+
+### Configuring and Setting Up Git  
+
+*Note: I'm not doing these steps because its already set up on my computer*  
+
+Set up Git configurations on your computer: 
+
+- First, configure Git with `git config --global user.name "My Name"`, followed by `git config --global user.email "email@email.com"`. 
+- The double dashes `--global` indicate to Git that you are making these settings for every time you use Git.  
+- Then, use `git config --global core.autocrlf input`. This setting has to do with line returns, which is different between mac/windows.  
+- Use `git config --global core.editor "nano -w"` to set nano as the text editor. 
+- Finally, `git config --global init.defaultBranch main` to set branches default name as "main". 
+- You only need to run these commands once on your computer. 
+- Use `git config --help` for more information. 
+
+We next need to tell Git how to communicate with GitHub. Passwords aren't very secure, so we can set up SSH authentication. Set this up with the following commands: 
+
+- Create a public and private key: 
+- `ssh-keygen -t ed25519 -C "email@email.com"`
+- `-t` specifies the type of key to create, in this case we are using ed25519. 
+- Save the file with `enter`. 
+- Leave the passphrase empty. As long as you are the only one accessing the computer, this file will only be readable by you anyways. You can use a passphrase if there is someone else that uses the computer. 
+- Basically, messages are encrypted with the public key, and it can only be decrypted with your private key. 
+- Then navigate to `cd ~/.ssh` and use `ls` to view files. `cat id_ed25519.pub` and copy the entire line that comes up. 
+- In your GitHub account, go to settings and SSH/GPG keys. Create a new key with whatever title you want. Then paste in the line that you copied. Now the key is stored in GitHub. 
+- Now you can log into GitHub when you need to push and pull. 
+
+### Set up a Repository  
+
+- Create a repository in GitHub.com. 
+- You can now copy the SSH repository link. 
+- In Terminal, navigate to the directory you want the repository to go into. 
+- Type `git clone <insert link>` to clone the respository to the current directory on your computer. 
+- Use `ls -a` to view all files that start with a . (hidden files). 
+- You can now add files into your repository. 
+
+### Using Git to track and commit files 
+
+- `git status` shows the status of your repository and changes made that have not been committeed 
+- `git add <file>` adds a specific file or directory, `git add -A` adds all changes. This file is now added to the queue to be committed. 
+- Commits are taking the work you have done and permanently move it to the Git repository. It will track these changes. 
+- `git commit -m <message or description>` will commit the added files/changes 
+- `git log` will show you recent activity with author, date, and message of commits. 
+- `git diff <file>` will show the changes in one file comparing what is currently in GitHub vs the local copy. `git diff` without a file will show all changes. 
+- `git restore <file>` will pull the original file from the repository (we will talk about this more later) 
+- You can add as many changes as you want into a single commit 
+- `git log --oneline` shows you the history with each commit on a single line! Super useful. 
+- Git will not track a new folder/directory until there is something in it. It tracks files, not directories. 
+- Use `git diff <time> <file>` to compare two states. For example, you can enter `git diff HEAD file.txt` will compare the file to the current state of the respository. You can also use `git diff commit# file.txt` to compare this file to a previous commit state. 
+- `git diff HEAD~1 file.txt` compares the file to two commits ago. 
+- `HEAD` just means the current repository state. 
+- `git log` gives a longer form list of previous commits 
+- Commit ID's are long, you will often see shorter alias commit ID's and you can use these for comparing commits 
+
+### What if we make a mistake? 
+
+- If we save a file with a mistake, we can use `git checkout` to replace a local file with the most recent one from the repository. This is useful to pull whatever is current in the repository and replace the local version. 
+- E.g., `git checkout file.txt`
+- To go back to the state of a previous commit (2 ago in this case), you would use, `git checkout HEAD~2 file.txt`. This will replace the file with the version from 2 commits ago. 
+- You will then need to commit this change, since it is different from the current state. 
+
+### How do we ignore files? 
+
+- Its ok to have files that Git isn't tracking if not needed 
+- You can tell Git that its ok to ignore files 
+- You create a new file (in nano or other editor) called `.gitignore` 
+- Each line of this file is a file you want it to ignore. Enter files or patterns (e.g., *.csv) to have it ignore files. You MUST do this before you commit and track a file. If you want to ignore files that have already been tracked or added, you have to delete those files then add them to ignore before adding them back in (e.g., DS_Store objects are notorious for this). 
+- Commit and push this file. 
+
+### Sending files to/from GitHub
+
+- Once you have committed changes, use `git push` to send things up to GitHub. 
+- This will now be reflected on your GitHub webpage. 
+- Use `git pull` to pull any changes that have been sent to GitHub either from webpage or from a collaborator. 
+- Commit and push at the end of major sessions or you accomplish a task/step that you want recorded. 
+
+### Collaborating on GitHub - Forking and Pull Requests
+
+- You can add collaborators to allow them to push and pull to your repository. Then will accept an invitation and clone the respositorty to their computer. 
+- Another way is for the other user to go to your GitHub repository on GitHub.com. They can see files since its public, but they wont have permission to edit and commit. 
+- In order to contribute, the user can "fork" the repository. 
+- This will copy the respository to your own account. 
+- Then use `git clone <linked to your forked repo>` to clone this repository fork. 
+- The user can then edit contents of the respository in their forked repo. 
+- You can see the number of forks on the original repository. 
+- When changes are pushed, they are pushed to your forked repository. 
+- You can then have your collaborator with the original repository pull changes from your fork. 
+- You can do this with "Pull Requests" and "new pull request". 
+- At the top there is a bar with the arrow showing the direction of the changes to be made. For example, you would want the change from the forked repo to be pulled into the original repo. 
+- At the bottom, it will show you the difference between the repositories. 
+- You can then add a more detailed comment and create the request. 
+- Now, in the original repo, the original user will then go to Pull Requests and you will see the active requests. 
+- The user can then confirm the request, which will pull those changes into the repository. 
+- But in some cases if there are multiple edits to the same file, it will create a conflict. 
+- You can use the "resolve conflicts" button to resolve them. You can then delete anything you don't want, or edit the file and then commit the merge. 
+- It is called a pull request because the owner is pulling from your repo into theirs. 
+- Users can then pull these changes down into their fork by using "Sync Fork" button. You will then update the branch and it will sync all changes.
+
+
+
+
+
+
+
+ 
+
+
 
 
 

@@ -31,6 +31,11 @@ February goals and daily notebook entries.
 
 ## **Daily Log**   
 
+#### Tuesday February 28, 2023  
+
+- UW Data Science Software Carpentry workshop
+- Mcap2021 data analysis 
+
 #### Monday February 27, 2023  
 
 - UW Data Science Software Carpentry workshop
