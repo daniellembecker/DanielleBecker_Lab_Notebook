@@ -459,15 +459,612 @@ We next need to tell Git how to communicate with GitHub. Passwords aren't very s
 - It is called a pull request because the owner is pulling from your repo into theirs. 
 - Users can then pull these changes down into their fork by using "Sync Fork" button. You will then update the branch and it will sync all changes.
 
+## Day 3 & 4: R 
 
+### Basics of using R 
 
+Lesson plans for today are [here](http://swcarpentry.github.io/r-novice-inflammation/) and [here](https://preview.carpentries.org/R-ecology-lesson/01-intro-to-r.html). 
 
+- String = anything enclosed in quotes
+- `print("string of things")` prints the string into the output
+- To glue strings together, you can use `paste("string1", "string2")`
+- Use hashtags to make notes as in Terminal 
+- In `paste`, you can also set the `sep` argument to paste things together with anything other than a space. E.g., `paste("banana", "apple", "orange", sep="/")` returns `banana/apple/orange`
+- A variable is anything assigned a value with a `<-`. You can also use `=`, but this can be tricky because we often use `=` for other tasks. 
+- You can use the `args` function to display arguments that the function requires. For example `args(round)`. The `round` function is used to round numbers (`round(1.2345, digits=2` returns 1.23). 
+- Create a vector or list of multiple things with `vector <- c(1,2,3,4)`. You can add new things to the front (`vector<-c(5, vector)`) or end (vector<-c(vector, 10)`) of a vector as well. 
+- Boolean logical values are `TRUE` and `FALSE`. These can be used to filter data later on. 
+- Summarize variables and view structure with `str()`. 
+- `vector[2]` pulls out the second value of the vectorand `vector[c(3,2)]` pulls out the third and second values. 
+- Square values = retrieve something, parentheses = do something. 
+- All values are coerced to strings if there is at least one string in the vector. 
+- You can also subset in a vector format using `vector_new<-vector[vector<5]`. A `==` will evaluate if two things are equal.
+- `!=` means "is not equal to" and you can combine <= or >= to mean less than/greater than or equal to. Combine these with `|` to mean "or". So you can filter by `vector <=  5 | vector ==10`. And `&` will look for both conditions to be met. 
+- To subset by things in a list, you would filter by `vector %in% list`. Where you create a list to be `list<-c(1,2,3)`. 
+- NA's can make things tricky. For example when calculating a mean, you have to use `mean(data, na.rm=TRUE)` if you have NA's. We can use `!is.na(vector)` to remove them. 
 
+### Working with data 
 
+Below, I'll paste in the code from our practice session.  **You can copy and paste this code into an R script and follow along!**   
 
+To download data from a URL and store it on your computer, use this function: 
+
+```
+download.file(url = "https://ndownloader.figshare.com/files/2292169", destfile = "data_raw/portal_data_joined.csv")
+``` 
+
+This is a helpful function! 
+
+We are going to use `tidyverse` for the data today using `library(tidyverse)` after you `install.packages("tidyverse")`. 
+
+To read in a file after downloading, use `read_csv(path/file.csv)`. 
+
+Set up
+
+```
+library(tidyverse)
+```
+
+Download data
+
+```
+download.file(url = "https://ndownloader.figshare.com/files/2292169", destfile = "data_raw/portal_data_joined.csv")
+```
+
+Read data 
+
+```
+surveys<-read_csv("data_raw/portal_data_joined.csv")
+```
+
+Examine and practice subsetting data
  
+```
+str(surveys) #view structure of dataframe
+names(surveys) #column names
+summary(surveys) #summary stats
+head(surveys,3) #view first 3 rows
+surveys[1,] #gives first row
+surveys[,2] #gives second column
+surveys[1:3, c("month", "day", "year")] #how month/day/year columns for rows 1 to 3
+surveys[,-1] #select all rows but not the first column
+surveys$species #view all species column entries
+surveys[surveys["sex"]=="F",] #select all rows where sex is female
+surveys[!is.na(surveys["sex"]) & surveys["sex"]=="F",] #select rows where there isn't an NA and sex is female 
+na.omit(surveys[surveys["sex"]=="F",]) #omit NAs and return all rows where sex is female
+```
 
+Summarizing data and using factors 
 
+```
+summary(surveys) #this doesn't work to summarize any non-numeric/integer variable 
 
+#factors are categorical and R has knowledge that data points belong to these categories 
+surveys$sex #as character strings
+factor(surveys$sex) #as factors
 
+surveys$sex<-factor(surveys$sex) #save as factor
+levels(surveys$sex) #shows the levels/order of the factor 
+nlevels(surveys$sex) #shows number of categories 
+surveys$sex<-factor(surveys$sex, levels=c("M", "F")) # order levels manually
+levels(surveys$sex) #M is now first 
+```
 
+Plot data 
+
+```
+plot(surveys$sex) #shows counts of observations in each level of factor 
+surveys$sex<-addNA(surveys$sex) #include NA's in factor levels
+plot(surveys$sex) #shows the count of NA's
+levels(surveys$sex)
+levels(surveys$sex)[3]<-"undetermined" #rename NA's as "undetermined" - a good way to rename a level of a factor 
+levels(surveys$sex) #shows this change
+plot(surveys$sex) #now the plot shows M and F and undetermined 
+```
+
+Formatting dates
+
+We will use the lubridate package for formatting dates. 
+
+```
+library(lubridate)
+```
+
+Working with dates
+
+```
+my_date<-ymd("2015-01-01") #specifies string as date from YYYY-MM-DD format
+str(my_date)
+
+my_date<-ymd(paste("2015", "1", "1", sep="-")) #this is another way we could format a date string into an R date object
+str(my_date) #same result as above
+
+surveys$date <- ymd(paste(surveys$year, surveys$month, surveys$day, sep = "-")) #we can format a new column as dates by pasting together separate year month day columns
+str(surveys)
+summary(surveys$date) #we can see there are 129 NA's from the date we made above
+
+#investigate the missing dates
+missing_dates <- surveys[is.na(surveys$date), c("year", "month", "day")] #extract NAs and only show year month day columns
+head(missing_dates)
+
+#the reason these dates are NA is because September and April do not have 31 days, only 30. This is an example of QC'ing your data
+```
+
+### Manipulating data 
+
+Cheat sheets for tidyverse can be found [here](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf) and [here](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-import.pdf). 
+
+Manipulating data  
+
+```
+select(surveys, plot_id, species_id, weight) #keeps only plot, species, and weight columns
+select(surveys, -record_id, -species_id) #keeps all variables except record and species
+filter(surveys, year == 1995) #this will filter the dataset by evaluating a condition
+```
+
+Using pipes to do multiple actions at the same time  
+
+```
+#here is an example of nesting functions
+surveys_sml <- select(filter(surveys, weight < 5), species_id, sex, weight) #keeps species sex and weight columns from the dataframe for rows with weight less than 5
+
+#the same way to do this with a pipe is: 
+surveys_sml <- surveys %>%
+  filter(weight < 5) %>%
+  select(species_id, sex, weight); surveys_sml
+```
+
+Hint: A shortcut for putting in a pipe is to use command + shift + m! 
+
+Create new columns with `mutate` 
+
+```
+# filter out na's and create a new column and display the top 5 rows
+surveys %>%
+  filter(!is.na(weight)) %>%
+  mutate(weight_kg = weight / 1000) %>%
+  head()
+
+#you can create multiple columns in one mutate command like this 
+surveys %>%
+  mutate(weight_kg = weight / 1000,
+         weight_lb = weight_kg * 2.2)
+```
+
+Summarise data with `summarize`
+
+```
+#summarize mean weights for each sex and display
+surveys %>%
+  group_by(sex) %>%
+  summarize(mean_weight = mean(weight, na.rm = TRUE))
+
+#summarize by two groups and remove na's before the calculation
+surveys %>%
+  filter(!is.na(weight)) %>%
+  group_by(sex, species_id) %>%
+  summarize(mean_weight = mean(weight))
+
+#summarize and then print 15 lines, use this to customize the output
+surveys %>%
+  filter(!is.na(weight)) %>%
+  group_by(sex, species_id) %>%
+  summarize(mean_weight = mean(weight)) %>%
+  print(n = 15)
+
+#summarize multiple metrics and arrange them in ascending order by weight
+surveys %>%
+  filter(!is.na(weight)) %>%
+  group_by(sex, species_id) %>%
+  summarize(mean_weight = mean(weight),
+            min_weight = min(weight)) %>%
+  arrange(min_weight)
+
+#now arrange in descending order 
+surveys %>%
+  filter(!is.na(weight)) %>%
+  group_by(sex, species_id) %>%
+  summarize(mean_weight = mean(weight),
+            min_weight = min(weight)) %>%
+  arrange(desc(mean_weight))
+```
+
+Counting data 
+
+```
+#we can use the count function to calculate the number of observations in our data 
+surveys %>%
+    count(sex)
+
+#this is also equivalent (but more streamlined) to: 
+surveys %>%
+    group_by(sex) %>%
+    summarise(count = n())
+
+#you can also sort within the count function
+surveys %>%
+    count(sex, sort = TRUE)
+
+#now calculate number of observations for a combination of two factors and arrange in descending order (alphabetical) by species
+surveys %>%
+  count(sex, species)%>%
+  arrange(species, desc(n))
+
+#example: what was the heaviest animal measured in each year? 
+surveys %>%
+    filter(!is.na(weight)) %>%
+    group_by(year) %>%
+    filter(weight == max(weight)) %>%
+    select(year, genus, species, weight) %>%
+    arrange(year)
+```
+
+Reshaping data with `pivot_longer` and `pivot_wider` (previously `gather` and `spread`). 
+
+What are the 4 rules of a "tidy" dataframe? 
+1. Each variable has its own column
+2. Each observatin has its own row
+3. Each value has its own cell
+4. Each type of observational unit forms a table 
+
+Pivoting tables helps with rule #4!
+
+Pivoting from wide to long
+
+```
+#pivot_wider needs three things:
+# data
+# names from (values will become new columns)
+# values from (values will fill the new columns)
+
+surveys_gw <- surveys %>%
+  filter(!is.na(weight)) %>%
+  group_by(plot_id, genus) %>%
+  summarize(mean_weight = mean(weight))
+str(surveys_gw)
+#this data frame has observations for each plot across multiple rows
+
+surveys_wide <- surveys_gw %>%
+  pivot_wider(names_from = genus, values_from = mean_weight) #convert from long to wide format
+
+head(surveys_wide)
+str(surveys_wide)
+#now each row is a plot and each column is a species populated by mean weight
+
+#for missing values, add a weight of 0 rather than NA
+surveys_gw %>%
+  pivot_wider(names_from = genus, values_from = mean_weight, values_fill = 0) %>%
+  head()
+
+```
+
+Pivoting from wide to long format 
+
+```
+#we would do this if we want to have the values in columns as a variable (e.g., genus rather a column for each genus)
+
+#pivot_longer needs 4 things
+# the data
+# the names_to column variable we wish to create from column names.
+# the values_to column variable we wish to create and fill with values.
+# cols are the name of the columns we use to make this pivot (or to drop).
+
+surveys_long <- surveys_wide %>%
+  pivot_longer(names_to = "genus", values_to = "mean_weight", cols = -plot_id) #column names now go into a new column called genus, the data goes into a new column called "mean weight", and the function ignores the plot column
+
+str(surveys_long)
+head(surveys_long) #now we are back to the wide version
+
+#another example: 
+surveys_wide_genera <- surveys %>%
+  group_by(plot_id, year) %>%
+  summarize(n_genera = n_distinct(genus)) %>%
+  pivot_wider(names_from = year, values_from = n_genera) #summarize the number of unique genera for each plot and year, then make into a wide format
+head(surveys_wide_genera)
+
+#now pivot so that each row is a unique plot and year combo in long format
+surveys_wide_genera %>%
+  pivot_longer(names_to = "year", values_to = "n_genera", cols = -plot_id)
+
+#here is an example of how you would pivot with multiple data columns and put the measurement type as a new column
+surveys_long2 <- surveys %>%
+  pivot_longer(names_to = "measurement", values_to = "value", cols = c(hindfoot_length, weight))
+head(surveys_long2)
+```
+
+Exporting data 
+
+```
+#obtain dataset with no NAs
+surveys_complete <- surveys %>%
+  filter(!is.na(weight),           # remove missing weight
+         !is.na(hindfoot_length),  # remove missing hindfoot_length
+         !is.na(sex))                # remove missing sex
+
+# Extract the most common species_id
+species_counts <- surveys_complete %>%
+    count(species_id) %>%
+    filter(n >= 50)
+
+# Only keep the most common species
+surveys_complete <- surveys_complete %>%
+  filter(species_id %in% species_counts$species_id)
+
+#write to csv 
+write_csv(surveys_complete, file = "data/surveys_complete.csv")
+```
+
+### Visualizing data  
+
+ggplot2 is the main package we will use for visualizations. It uses the following structure:  
+
+`ggplot(data = <DATA>, mapping = aes(<MAPPINGS>)) +  <GEOM_FUNCTION>()`
+
+Build a plot with points and try a hex plot 
+
+```
+#full plot
+ggplot(data = surveys_complete, aes(x = weight, y = hindfoot_length)) +
+  geom_point()
+
+# the + sign add layers to the plots and anything you add to the main plot header (data and aes) applies to all other functions in the plot unless otherwise specified  
+
+#you can also assign to a variable and then draw additional objects on that variable 
+# Assign plot to a variable
+surveys_plot <- ggplot(data = surveys_complete,
+                       mapping = aes(x = weight, y = hindfoot_length))
+
+# Draw the plot with points
+#geom_point, geom_line, geom_boxplot are common geoms to add 
+surveys_plot +
+    geom_point()
+
+# Draw with hex 
+install.packages("hexbin")
+library(hexbin)
+
+#draw a hex plot
+surveys_plot +
+ geom_hex()
+#the advantage of a hex plot is that you can see count frequency in addition to distribution, cool!
+
+#add point transparency
+ggplot(data = surveys_complete, aes(x = weight, y = hindfoot_length)) +
+    geom_point(alpha = 0.1)
+
+#add color
+ggplot(data = surveys_complete, mapping = aes(x = weight, y = hindfoot_length)) +
+    geom_point(alpha = 0.1, color = "blue")
+
+#vary color by species
+ggplot(data = surveys_complete, mapping = aes(x = weight, y = hindfoot_length)) +
+    geom_point(alpha = 0.1, aes(color = species_id))
+```
+
+Build a boxplot
+
+```
+#basic boxplot
+ggplot(data = surveys_complete, mapping = aes(x = species_id, y = weight)) +
+    geom_boxplot()
+
+#add data points over the box plot
+ggplot(data = surveys_complete, mapping = aes(x = species_id, y = weight)) +
+    geom_boxplot(alpha = 0) +
+    geom_jitter(alpha = 0.3, color = "tomato")
+
+#try a violin plot
+ggplot(data = surveys_complete, mapping = aes(x = species_id, y = weight)) +
+    geom_violin()
+
+#scale by log 10
+ggplot(data = surveys_complete, mapping = aes(x = species_id, y = weight)) +
+    geom_violin()+
+    scale_y_log10()
+
+```
+
+Plotting time series data 
+
+```
+#calculate the number of counts per year per genus
+yearly_counts <- surveys_complete %>%
+  count(year, genus)
+
+#plot this data
+ggplot(data = yearly_counts, aes(x = year, y = n)) +
+     geom_line()
+
+#tell the plot to group by genus
+ggplot(data = yearly_counts, aes(x = year, y = n, group = genus)) +
+    geom_line()
+
+#now add color
+ggplot(data = yearly_counts, aes(x = year, y = n, color = genus)) +
+    geom_line()
+```
+
+Piping in from other functions
+
+```
+#for simplicity, you can pipe in from other tidyverse functions
+yearly_counts %>%
+    ggplot(mapping = aes(x = year, y = n, color = genus)) +
+    geom_line()
+
+#link data manipulation functions
+yearly_counts_graph <- surveys_complete %>%
+    count(year, genus) %>%
+    ggplot(mapping = aes(x = year, y = n, color = genus)) +
+    geom_line();yearly_counts_graph
+
+```
+
+Faceting
+
+```
+#facet to show multiple plots side by side split by categories of choosing
+ggplot(data = yearly_counts, aes(x = year, y = n)) +
+    geom_line() +
+    facet_wrap(facets = vars(genus))
+
+#now split line in each plot by sex
+yearly_sex_counts <- surveys_complete %>%
+                      count(year, genus, sex)
+
+ggplot(data = yearly_sex_counts, mapping = aes(x = year, y = n, color = sex)) +
+  geom_line() +
+  facet_wrap(facets =  vars(genus))
+
+#set facets by rows and columns manually 
+ggplot(data = yearly_sex_counts,
+       mapping = aes(x = year, y = n, color = sex)) +
+  geom_line() +
+  facet_grid(rows = vars(sex), cols =  vars(genus))
+
+# One column, facet by rows
+ggplot(data = yearly_sex_counts,
+       mapping = aes(x = year, y = n, color = sex)) +
+  geom_line() +
+  facet_grid(rows = vars(genus))
+
+# One row, facet by column
+ggplot(data = yearly_sex_counts,
+       mapping = aes(x = year, y = n, color = sex)) +
+  geom_line() +
+  facet_grid(cols = vars(genus))
+```
+
+Plot themes
+
+```
+#black and white theme 
+ ggplot(data = yearly_sex_counts,
+        mapping = aes(x = year, y = n, color = sex)) +
+     geom_line() +
+     facet_wrap(vars(genus)) +
+     theme_bw()
+
+#minimal
+ ggplot(data = yearly_sex_counts,
+        mapping = aes(x = year, y = n, color = sex)) +
+     geom_line() +
+     facet_wrap(vars(genus)) +
+     theme_minimal()
+ 
+ #light
+ ggplot(data = yearly_sex_counts,
+        mapping = aes(x = year, y = n, color = sex)) +
+     geom_line() +
+     facet_wrap(vars(genus)) +
+     theme_light()
+ 
+ #void
+ ggplot(data = yearly_sex_counts,
+        mapping = aes(x = year, y = n, color = sex)) +
+     geom_line() +
+     facet_wrap(vars(genus)) +
+     theme_void()
+ 
+#classic
+ ggplot(data = yearly_sex_counts,
+        mapping = aes(x = year, y = n, color = sex)) +
+     geom_line() +
+     facet_wrap(vars(genus)) +
+     theme_classic()
+```
+
+Customizing plots
+
+```
+#change axis titles
+ggplot(data = yearly_sex_counts, aes(x = year, y = n, color = sex)) +
+    geom_line() +
+    facet_wrap(vars(genus)) +
+    labs(title = "Observed genera through time",
+         x = "Year of observation",
+         y = "Number of individuals") +
+    theme_bw()
+
+#change text size
+ggplot(data = yearly_sex_counts, mapping = aes(x = year, y = n, color = sex)) +
+    geom_line() +
+    facet_wrap(vars(genus)) +
+    labs(title = "Observed genera through time",
+        x = "Year of observation",
+        y = "Number of individuals") +
+    theme_bw() +
+    theme(text=element_text(size = 16))
+
+#change text orientation and face
+ggplot(data = yearly_sex_counts, mapping = aes(x = year, y = n, color = sex)) +
+    geom_line() +
+    facet_wrap(vars(genus)) +
+    labs(title = "Observed genera through time",
+        x = "Year of observation",
+        y = "Number of individuals") +
+    theme_bw() +
+    theme(axis.text.x = element_text(colour = "grey20", size = 12, angle = 90, hjust = 0.5, vjust = 0.5),
+                        axis.text.y = element_text(colour = "grey20", size = 12),
+                        strip.text = element_text(face = "italic"),
+                        text = element_text(size = 16))
+
+#create your own custom theme to reuse! 
+grey_theme <- theme(axis.text.x = element_text(colour="grey20", size = 12,
+                                               angle = 90, hjust = 0.5,
+                                               vjust = 0.5),
+                    axis.text.y = element_text(colour = "grey20", size = 12),
+                    text=element_text(size = 16))
+
+ggplot(surveys_complete, aes(x = species_id, y = hindfoot_length)) +
+    geom_boxplot() +
+    grey_theme
+```
+
+Arranging plots with `patchwork` package. In patchwork, you use `+` to put plots next to each other, `/` to arrange them vertically, and `plot_layout()` to determine the total space. More examples are here: https://patchwork.data-imaginist.com/. In patchwork you can add annotations and customize layouts or add labels. 
+
+```
+install.packages("patchwork")
+library(patchwork)
+
+plot_weight <- ggplot(data = surveys_complete, aes(x = species_id, y = weight)) +
+  geom_boxplot() +
+  labs(x = "Species", y = expression(log[10](Weight))) +
+  scale_y_log10()
+
+plot_count <- ggplot(data = yearly_counts, aes(x = year, y = n, color = genus)) +
+  geom_line() +
+  labs(x = "Year", y = "Abundance")
+
+plot_weight / plot_count + plot_layout(heights = c(3, 2))
+
+#examples of other layouts
+#(p1 | p2 | p3) /
+#      p4
+#this would create a plot with three plots on top and one plot on the bottom - super cool and easier than cowplot! 
+```
+
+Note: check out patchwork for arranging plots, it seems really useful! 
+
+Exporting plots
+
+```
+my_plot <- ggplot(data = yearly_sex_counts,
+                  aes(x = year, y = n, color = sex)) +
+    geom_line() +
+    facet_wrap(vars(genus)) +
+    labs(title = "Observed genera through time",
+        x = "Year of observation",
+        y = "Number of individuals") +
+    theme_bw() +
+    theme(axis.text.x = element_text(colour = "grey20", size = 12, angle = 90,
+                                     hjust = 0.5, vjust = 0.5),
+          axis.text.y = element_text(colour = "grey20", size = 12),
+          text = element_text(size = 16))
+
+ggsave("fig/plot.png", my_plot, width = 15, height = 10) #save to folder
+
+## This also works for plots combined with patchwork
+plot_combined <- plot_weight / plot_count + plot_layout(heights = c(3, 2))
+ggsave("fig/plot_combined.png", plot_combined, width = 10, dpi = 300)
+```
