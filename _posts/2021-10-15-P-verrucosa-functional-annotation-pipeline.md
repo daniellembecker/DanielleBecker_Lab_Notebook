@@ -61,7 +61,7 @@ All methods for this protocol were adapted following the workflows created by @e
 4. [Merge all information for full annotation](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/_posts/2021-09-24-P-verrucosa-functional-annotation-pipeline.md#step-4-merge-all-information-for-full-annotation)
 
 
-This project aims to develop a functional genomic annotation workflow for non-model organisms (ie corals). The goal of functional annotation is to identify and tag genes in a refernce genome with known functions of homologous genes in other organisms. The following document is intended as a tutorial in understanding functional annotation in non-model organisms. The genomic information from the coral *Pocillopora verrucosa* is used in this workflow.
+This project aims to develop a functional genomic annotation workflow for non-model organisms (ie corals). The goal of functional annotation is to identify and tag genes in a reference genome with known functions of homologous genes in other organisms. The following document is intended as a tutorial in understanding functional annotation in non-model organisms. The genomic information from the coral *Pocillopora verrucosa* is used in this workflow.
 
 For this functional annotation workflow tutorial, you will need:
 
@@ -78,7 +78,7 @@ For this functional annotation workflow tutorial, you will need:
 
 ### Step 1: Obtain sequences of interest.
 
-In order to conduct functional annotation steps, protein and transcript sequences are needed. There are two main hubs where coral genomic information is stored: [Reef Genomics](http://reefgenomics.org) and [NCBI](https://www.ncbi.nlm.nih.gov). Other researchers store their genomic infomation on their own personal webpages. Genomic information must be downloaded from one of these databases in order to proceed.
+In order to conduct functional annotation steps, protein and transcript sequences are needed. There are two main hubs where coral genomic information is stored: [Reef Genomics](http://reefgenomics.org) and [NCBI](https://www.ncbi.nlm.nih.gov). Other researchers store their genomic information on their own personal webpages. Genomic information must be downloaded from one of these databases in order to proceed.
 
 #### i) Identify species to work with.
 
@@ -615,7 +615,7 @@ In this analysis, Uniprot uses BLAST input to search against its protein databas
 
 ##### a) Make a list of identifiers found by DIAMOND BLAST.
 
-Uniprot uses the .tab file generated from DIAMOND BLAST as input. The column 'sseqid' is the primary input to Uniprot, as it can use that BLAST input to find protein matches. Because UniProt is a website and lacks proper storage and RAM, it cannot handle an entire .tab DIAMOND BLAST file. To ensure that UniProt reads all inputs, subset files so that a file only has ~2000-3000 lines per file in Terminal. 
+Uniprot uses the .tab file generated from DIAMOND BLAST as input. The column 'sseqid' is the primary input to Uniprot, as it can use that BLAST input to find protein matches. Because UniProt is a website and lacks proper storage and RAM, it cannot handle an entire .tab DIAMOND BLAST file. To ensure that UniProt reads all inputs, subset files so that a file only has ~2000-3000 lines per file in Terminal.
 
 ```
 # Check how many lines in the full file
@@ -623,7 +623,7 @@ wc -l Pver_annot.tab
     21606 Pver_annot.tab
 
 #https://kb.iu.edu/d/afar (for instructions on split command)
-#use split command to split into multiple files that have 2,000 designated lines each 
+#use split command to split into multiple files that have 2,000 designated lines each
 
 split -l 2000 Pver_annot.tab tab
 
