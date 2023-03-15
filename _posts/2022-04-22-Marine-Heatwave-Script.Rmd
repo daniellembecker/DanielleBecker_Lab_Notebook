@@ -1,0 +1,288 @@
+---
+title: "moorea_heatwave"
+author: "daniellembecker"
+date: "1/15/2022"
+output:
+  pdf_document: default
+  html_document: default
+adapted from: amandachiachi
+---
+
+#OISST_data
+#Adapted by Amanda Chiachi
+#11/13/2019
+
+#### Setup ##########
+
+#load libraries
+```{r}
+library(dplyr)
+library(ggplot2)
+library(heatwaveR)# The packages we will use
+library(dplyr) # A staple for modern data management in R
+library(lubridate) # Useful functions for dealing with dates
+library(ggplot2) # The preferred library for data visualisation
+library(tidync) # For easily dealing with NetCDF data
+library(rerddap) # For easily downloading subsets of data
+library(doParallel) # For parallel processing
+library(lubridate)
+library(scales)
+library(maps)
+
+```
+
+
+
+# The information for the NOAA OISST data
+```{r}
+rerddap::info(datasetid = "ncdcOisst21Agg_LonPM180", url = "https://coastwatch.pfeg.noaa.gov/erddap/")
+```
+
+
+# This function expects the user to provide it with a start and end date
+# It then downloads and prepares the data
+# we are downloading only the SST data out of several variables 
+# spatial extent of latitude -17.466987, -17.597282 & longitude -149.849395, -149.822959
+```{r}
+OISST_sub_dl <- function(time_df){
+  OISST_dat <- griddap(x = "ncdcOisst21Agg_LonPM180", 
+                       url = "https://coastwatch.pfeg.noaa.gov/erddap/", 
+                       time = c(time_df$start, time_df$end), 
+                       zlev = c(0, 0),
+                       latitude = c(-17.466987, -17.597282),
+                       longitude = c(-149.849395, -149.822959),
+                       fields = "sst")$data %>% 
+    mutate(time = as.Date(stringr::str_remove(time, "T00:00:00Z"))) %>% 
+    dplyr::rename(t = time, temp = sst) %>% 
+    select(lon, lat, t, temp) %>% 
+    na.omit()
+}
+
+```
+
+
+
+
+#server doesnt like more than 9 years of consecutive data 
+#creates a data frame to download multiple batches of the data 
+# allows us to automate the entire download 
+# Date download range by start and end dates per year
+```{r}
+moorea_years <- data.frame(date_index = 1,
+                                 start = as.Date(c("2002-01-01")),
+                                 end = as.Date(c("2021-11-01")))
+                    
+
+system.time(
+  OISST_data <- moorea_years %>% 
+    group_by(date_index) %>% 
+    group_modify(~OISST_sub_dl(.x)) %>% 
+    ungroup() %>% 
+    select(lon, lat, t, temp)
+)
+
+
+#format date and time, lubridate package format
+OISST_data$t <- ymd(OISST_data$t) 
+
+#subset temp data for March through April for 2019 and 2020
+
+heatwave.temps.OISST <- OISST_data %>%
+  filter(lubridate::month(t) %in% c(3:4)) 
+
+heatwave.temps_filter.OISST <- heatwave.temps.OISST %>%
+  filter(lubridate::year(t) %in% c(2019:2021)) 
+
+write.csv(heatwave.temps_filter.OISST, "../../RAnalysis/output/heatwave/moorea.heatwave.temps.OISST.csv")
+
+```
+
+
+
+# Detect the events in a time series
+# "...must be at least three years to calculate thresholds"
+# create your time series data 
+```{r}
+ts.OISST <- ts2clm(OISST_data, climatologyPeriod = c("2002-01-01", "2021-11-01"))
+mhw.OISST <- detect_event(ts.OISST)
+```
+
+
+# View just a few metrics
+# The function will return a line plot indicating the climatology, threshold and temperature, with the hot or cold events that meet the specifications of Hobday et al. (2016) shaded in as appropriate.
+# An anomalously warm event is considered to be a MHW if it lasts for five or more days, with temperatures warmer than the 90th percentile based on a 30-year historical baseline period.
+```{r}
+#make data frame with marine heatwave events over time in Mo'orea
+
+mhw.record.OISST <- mhw.OISST$event %>% 
+  dplyr::ungroup() %>%
+  dplyr::select(event_no, duration, date_start, date_end, date_peak, intensity_max, intensity_cumulative, intensity_mean, rate_onset, rate_decline) %>% 
+  dplyr::arrange(-intensity_max); mhw.record.OISST 
+
+write.csv(mhw.record.OISST, "RAnalysis/output/heatwave/marine.heatwave.record.OISST.csv")
+
+#format date and time
+mhw.OISST$Date<- mdy(mhw.OISST$Date) 
+
+
+#create a line plot of marine heatwave data, can change date range for more specific times
+#2019 heatwave scenarios
+event_line(mhw.OISST, spread = 50, metric = "intensity_max", 
+           start_date = "2019-03-01", end_date = "2019-05-01", x_axis_title = "Date") +
+    scale_x_date(date_breaks = "1 day", labels = date_format("%b-%d")) + 
+    theme_classic()+
+    theme(axis.text.x = element_text(angle = 90)) 
+
+
+```
+
+```{r}
+#2020 heatwave scenarios
+event_line(mhw.OISST, spread = 50, metric = "intensity_max", 
+           start_date = "2020-03-01", end_date = "2020-05-01", x_axis_title = "Date") +
+    scale_x_date(date_breaks = "2 days", labels = date_format("%b-%d")) + 
+    theme_classic()+
+    theme(axis.text.x = element_text(angle = 90)) 
+
+```
+
+```{r}
+#2021 heatwave scenarios
+event_line(mhw.OISST, spread = 50, metric = "intensity_max", 
+           start_date = "2021-03-01", end_date = "2021-05-01", x_axis_title = "Date") +
+    scale_x_date(date_breaks = "2 days", labels = date_format("%b-%d")) + 
+    theme_classic()+
+    theme(axis.text.x = element_text(angle = 90)) 
+```
+
+
+
+####Use heatwave package on LTER 02 backreef temperature data
+
+#format LTER2 dataframe to use for mhw scenario
+```{r}
+
+#load in LTER 02 backreef data from 2005 to 2021, delete first row
+LTER2 <- read.csv("RAnalysis/output/temperature/LTER_2_temp_backreef.csv", row.names = 1)
+
+#remove columns not needed for analysis (site,time,reef.type,and depth)
+
+LTER2.mhw <- LTER2[ -c(1,3:5) ]
+
+#rename date column to t
+
+LTER2.mhw <- rename(LTER2.mhw, t = Date)
+
+#need to get data point per day to match OISST processing
+
+LTER2.mhw.dat <- LTER2.mhw %>%
+  group_by(t) %>% #tells to group by treatment
+  summarise(mean=mean(temp, na.rm=TRUE)) #calculates mean and se
+LTER2.mhw.dat
+
+#add lat and lon columns to data frame 
+
+LTER2.mhw <- LTER2.mhw.dat %>%
+  mutate(lon = -149.8116849,)
+
+LTER2.mhw <- LTER2.mhw %>%
+  mutate(lat = -17.48131958)
+
+#rearrange columns in order for mhw scenario
+
+LTER2.mhw.reorder <- LTER2.mhw[, c(3,4, 1, 2)]
+
+LTER2.mhw.reorder
+
+#rename mean column to temp
+
+LTER2.mhw <- rename(LTER2.mhw.reorder, temp = mean)
+
+#format date and time, lubridate package format
+LTER2.mhw$t <- ymd(LTER2.mhw$t) 
+
+LTER2.mhw
+
+
+#subset temp data for March through April for 2019 and 2020
+
+heatwave.temps.lter <- LTER2.mhw %>%
+  filter(lubridate::month(t) %in% c(3:4)) 
+
+heatwave.temps_filter.lter <- heatwave.temps.lter %>%
+  filter(lubridate::year(t) %in% c(2019:2021)) 
+
+write.csv(heatwave.temps_filter.lter, "RAnalysis/output/heatwave//moorea.heatwave.temps.lter.csv")
+
+```
+
+# Detect the events in a time series
+# create your time series data 
+```{r}
+ts.lter <- ts2clm(LTER2.mhw, climatologyPeriod = c("2005-06-01", "2021-07-06"))
+mhw.lter <- detect_event(ts.lter)
+
+```
+
+
+# View just a few metrics
+# The function will return a line plot indicating the climatology, threshold and temperature, with the hot or cold events that meet the specifications of Hobday et al. (2016) shaded in as appropriate.
+# An anomalously warm event is considered to be a MHW if it lasts for five or more days, with temperatures warmer than the 90th percentile based on a 30-year historical baseline period.
+```{r}
+#make data frame with marine heatwave events over time in Mo'orea
+
+mhw.record.lter <- mhw.lter$event %>% 
+  dplyr::ungroup() %>%
+  dplyr::select(event_no, duration, date_start, date_end, date_peak, intensity_max, intensity_cumulative, intensity_mean, rate_onset, rate_decline) %>% 
+  dplyr::arrange(-intensity_max); mhw.record.lter 
+
+write.csv(mhw.record.lter, "RAnalysis/output/heatwave/marine.heatwave.record.lter.csv")
+
+
+
+#create a line plot of marine heatwave data, can change date range for more specific times
+#2019 heatwave scenarios
+event_line(mhw.lter, spread = 30, metric = "intensity_max", 
+           start_date = "2019-03-30", end_date = "2019-04-10", x_axis_title = "Date") +
+    scale_x_date(date_breaks = "1 day", labels = date_format("%b-%d")) + 
+    theme_classic()+
+    theme(axis.text.x = element_text(angle = 90)) 
+
+```
+```{r}
+
+#2020 heatwave scenarios
+event_line(mhw.lter, spread = 50, metric = "intensity_max", 
+           start_date = "2020-03-01", end_date = "2020-05-01", x_axis_title = "Date") +
+    scale_x_date(date_breaks = "2 days", labels = date_format("%b-%d")) + 
+    theme_classic()+
+    theme(axis.text.x = element_text(angle = 90)) 
+```
+
+```{r}
+
+#make dataframe and plot for sampling process
+
+sampling.dat <- read.csv("RAnalysis/data/temperature/sampling.plan.data.csv")
+
+#format date for lubridate
+sampling.dat$Date <- mdy(sampling.dat$Date) 
+
+#plot mean temp per day by date
+sampling.plot <- sampling.dat %>%
+  ggplot(aes(x=Date, y=Temperature, color = Sampling))+
+  geom_line() + 
+  geom_point() +
+  scale_x_date(date_breaks = "1 day", date_labels = "%m-%d") +
+  theme_classic()+
+  theme(axis.text.x = element_text(angle = 90)) +
+  ylab("Temperature (°C)")+
+  xlab("Date");sampling.plot
+
+
+ggsave(filename="RAnalysis/output/heatwave/sampling.plot.pdf", plot=sampling.plot, width=10, height=10, units="in")
+```
+
+
+
+        
