@@ -19,7 +19,42 @@ First, we needed to obtain RNAseq files from NCBI from the project [PRJNA744403]
 
 I then logged into Andromeda and created a folder for these files at `/data/putnamlab/ashuffmyer/e5-deepdive` with `raw`, `scripts`, and `refs` folders. Jill Ashey is also working on this project. 
 
-I then copied the SRR identifiers from the .txt file produced above into a file in the `raw` folder using `nano SraAccList.txt` and pasting the identifiers.  
+I then copied the SRR identifiers from the .txt file produced above into a file in the `raw` folder using `nano SraAccList.txt` and pasting the identifiers. The file looks like this:  
+
+```
+SRR15101688
+SRR15101689
+SRR15101690
+SRR15101691
+SRR15101692
+SRR15101693
+SRR15101694
+SRR15101695
+SRR15101696
+SRR15101697
+SRR15101699
+SRR15101700
+SRR15101701
+SRR15101702
+SRR15101703
+SRR15101704
+SRR15101705
+SRR15101706
+SRR15101707
+SRR15101708
+SRR15101710
+SRR15101711
+SRR15101712
+SRR15101713
+SRR15101715
+SRR15101718
+SRR15101719
+SRR15101720
+SRR15101721
+SRR15101722
+SRR15101723
+SRR15101724
+```
 
 Next, I downloaded the files using the [NCBI SRA Toolkit](https://github.com/ncbi/sra-tools) which is installed on Andromeda as module `SRA-Toolkit/2.10.9-gompi-2020b`.  
 
