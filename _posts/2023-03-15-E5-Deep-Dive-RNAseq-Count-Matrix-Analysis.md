@@ -55,8 +55,11 @@ done
 #Remove the SRR directories that are no longer needed
 rm -r ../raw/SRR*/
 
+#zip all files 
+gzip ../raw/*.fastq
+
 #Generate checksums 
-md5sum  ../raw/*.fastq > ../raw/md5.original.download.20230315
+md5sum  ../raw/*.fastq.gz > ../raw/md5.original.download.20230315
 ```
 
 `sbatch download_sra.sh`  
@@ -94,7 +97,7 @@ wget http://pver.reefgenomics.org/download/Pver_genome_assembly_v1.0.gff3.gz
 md5sum  *.gz > md5.original.refs.download.20230315
 ```
 
-Finally, I updated permissions after all files were downloaded.  
+Finally, I updated permissions after all files were downloaded so Jill can collaborate on this project.  
 
 `chmod u=rwx,g=rwx,o=rwx,a=rwx -R e5-deepdive`  
  
