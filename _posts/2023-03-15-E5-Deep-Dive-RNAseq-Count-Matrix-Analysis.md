@@ -491,4 +491,4 @@ echo "Alignment completed" $(date)
 
 This script will align the sequences to the references, generate `.bam` and `.sam` files, and then remove the unneeded and large `.sam` files. 
 
-This was started on 20230323 at 09:45 Pacific Time. 
+This was started on 20230323 at 09:45 Pacific Time job 244260. 
