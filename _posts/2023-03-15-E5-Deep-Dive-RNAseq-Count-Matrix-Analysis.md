@@ -137,3 +137,352 @@ Finally, I updated permissions after all files were downloaded so Jill can colla
 `chmod u=rwx,g=rwx,o=rwx,a=rwx -R e5-deepdive`  
  
 Additional steps will be added to this post as we move forward. 
+
+# 2. QC using FastQC and MultiQC 
+
+Make directories for fastqc data 
+
+`mkdir fastqc_raw`
+
+Write script for raw QC
+
+`nano fastqc_raw.sh`
+
+```
+#!/bin/bash
+#SBATCH -t 24:00:00
+#SBATCH --nodes=1 --ntasks-per-node=1
+#SBATCH --export=NONE
+#SBATCH --mem=100GB
+#SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
+#SBATCH --mail-user=jillashey@uri.edu #your email to send notifications
+#SBATCH --account=putnamlab
+#SBATCH -D /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/scripts              
+#SBATCH --error="fastqc_raw_error" #if your job fails, the error report will be put in this file
+#SBATCH --output="fastqc_raw_output" #once your job is completed, any final job report comments will be put in this file
+
+# Load modules needed 
+module load FastQC/0.11.8-Java-1.8
+module load MultiQC/1.9-intel-2020a-Python-3.8.2
+
+echo "Start raw QC" $(date)
+
+cd /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq
+
+for file in /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/*fastq.gz
+do 
+fastqc $file --outdir /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/fastqc_raw
+done
+
+echo "End raw QC" $(date)
+
+# Compile MultiQC report from fastQC files 
+cd /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/fastqc_raw
+multiqc --interactive ./
+
+echo "Cleaned MultiQC report generated." $(date)
+
+```
+
+Submitted batch job 243914. Script ran in ~4.5 hours.  
+
+
+## Raw sequence MultiQC summary: 
+
+The raw MultiQC report [can be found on the E5 Deep Dive GitHub repo here](https://github.com/urol-e5/deep-dive/blob/main/A-Pver/data/rna-seq/raw_multiqc_report.html). 
+
+There was high adapter content in these raw sequences.  
+
+PICTURE
+
+Overall, the quality score was high and there were no red flags in other metrics.  
+
+PICTURES 
+
+
+# 3. Trimming sequences with FastP
+
+Make a script to trim sequences with FastP. We will be removing adapters, trimming poly-g, and trimming by quality phred score with a cut off of 30. 
+
+`nano fastp.sh`
+
+```
+#!/bin/bash
+#SBATCH -t 24:00:00
+#SBATCH --nodes=1 --ntasks-per-node=1
+#SBATCH --export=NONE
+#SBATCH --mem=100GB
+#SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
+#SBATCH --mail-user=jillashey@uri.edu #your email to send notifications
+#SBATCH --account=putnamlab
+#SBATCH -D /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/scripts              
+#SBATCH --error="fastp_error" #if your job fails, the error report will be put in this file
+#SBATCH --output="fastp_output" #once your job is completed, any final job report comments will be put in this file
+
+# Load modules needed 
+module load fastp/0.19.7-foss-2018b
+
+echo "Start trimming with fastp" $(date)
+
+# Make array of sequences to trim 
+cd /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw
+array1=($(ls *1.fastq.gz))
+
+# fastq and fastqc loop
+for i in ${array1[@]}; do
+    fastp --in1 ${i} \
+        --in2 $(echo ${i}|sed s/_1/_2/)\
+        --out1 /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/trim/trim.${i} \
+        --out2 /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/trim/trim.$(echo ${i}|sed s/_1/_2/) \        
+        --detect_adapter_for_pe \
+        --qualified_quality_phred 30 \
+        --trim_poly_g 
+done
+
+echo "Read trimming of adapters complete." $(date)
+```
+
+Submitted batch job 244006. Took about 8 hrs to run 
+
+
+# 4. QC trimmed sequences 
+
+Now we will QC the trimmed sequences. Make a script. 
+
+`nano fastqc_trim.sh`
+
+```
+#!/bin/bash
+#SBATCH -t 24:00:00
+#SBATCH --nodes=1 --ntasks-per-node=1
+#SBATCH --export=NONE
+#SBATCH --mem=100GB
+#SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
+#SBATCH --mail-user=jillashey@uri.edu #your email to send notifications
+#SBATCH --account=putnamlab
+#SBATCH -D /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/scripts              
+#SBATCH --error="fastqc_trim_error" #if your job fails, the error report will be put in this file
+#SBATCH --output="fastqc_trim_output" #once your job is completed, any final job report comments will be put in this file
+
+# Load modules needed 
+module load FastQC/0.11.8-Java-1.8
+module load MultiQC/1.9-intel-2020a-Python-3.8.2
+
+echo "Start trimmed QC" $(date)
+
+cd /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq
+
+for file in /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/trim/*fastq.gz
+do 
+fastqc $file --outdir /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/fastqc_trim
+done
+
+echo "End trimmed QC" $(date)
+
+# Compile MultiQC report from fastQC files 
+cd /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/fastqc_trim
+multiqc --interactive ./
+
+echo "Trimmed MultiQC report generated." $(date)
+```
+
+Submitted batch job 244018.
+
+## Trimmed sequence MultiQC summary: 
+
+The trimmed MultiQC report [can be found on the E5 Deep Dive GitHub repo here](https://github.com/urol-e5/deep-dive/blob/main/A-Pver/data/rna-seq/trim_multiqc_report.html). 
+
+Trimming removed the adapter content in these sequences. 
+
+PICTURE
+
+The quality scores are very high across the sequence length, so we are not going to trim by length in this iteration. We can return to the trimming step in the future if we need to make changes.  
+
+PICTURE 
+
+## Calculate sequence length 
+
+We also ran a script to calculate sequence length of raw and trimmed sequences.
+
+Make a script. 
+
+`nano length.sh`
+
+```
+#!/bin/bash
+#SBATCH -t 24:00:00
+#SBATCH --nodes=1 --ntasks-per-node=1
+#SBATCH --export=NONE
+#SBATCH --mem=100GB
+#SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
+#SBATCH --mail-user=jillashey@uri.edu #your email to send notifications
+#SBATCH --account=putnamlab
+#SBATCH -D /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/scripts              
+#SBATCH --error="seq_length_error" #if your job fails, the error report will be put in this file
+#SBATCH --output="seq_length_output" #once your job is completed, any final job report comments will be put in this file
+
+echo "Start sequence length counts" $(date)
+
+cd /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq
+
+zgrep -c "@SRR" /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/*.gz > /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/raw_seq_counts.txt
+
+zgrep -c "@SRR" /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/trim/*.gz > /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/trim/trim_seq_counts.txt
+
+echo "End sequence length counts" $(date)
+```
+Submitted batch job 244020.
+
+The results are below. There are about 20-25 million sequences in each file.    
+
+```
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101688_1.fastq.gz:23396439
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101688_2.fastq.gz:23396439
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101689_1.fastq.gz:24990687
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101689_2.fastq.gz:24990687
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101690_1.fastq.gz:23267238
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101690_2.fastq.gz:23267238
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101691_1.fastq.gz:29417106
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101691_2.fastq.gz:29417106
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101692_1.fastq.gz:22578178
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101692_2.fastq.gz:22578178
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101693_1.fastq.gz:20905338
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101693_2.fastq.gz:20905338
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101694_1.fastq.gz:22990550
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101694_2.fastq.gz:22990550
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101695_1.fastq.gz:16484060
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101695_2.fastq.gz:16484060
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101696_1.fastq.gz:24030431
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101696_2.fastq.gz:24030431
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101697_1.fastq.gz:24846067
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101697_2.fastq.gz:24846067
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101699_1.fastq.gz:22733345
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101699_2.fastq.gz:22733345
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101700_1.fastq.gz:25158606
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101700_2.fastq.gz:25158606
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101701_1.fastq.gz:29523059
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101701_2.fastq.gz:29523059
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101702_1.fastq.gz:23796710
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101702_2.fastq.gz:23796710
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101703_1.fastq.gz:22630044
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101703_2.fastq.gz:22630044
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101704_1.fastq.gz:24455094
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101704_2.fastq.gz:24455094
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101705_1.fastq.gz:27805087
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101705_2.fastq.gz:27805087
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101706_1.fastq.gz:18568153
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101706_2.fastq.gz:18568153
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101707_1.fastq.gz:29131006
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101707_2.fastq.gz:29131006
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101708_1.fastq.gz:25068848
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101708_2.fastq.gz:25068848
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101710_1.fastq.gz:23675842
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101710_2.fastq.gz:23675842
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101711_1.fastq.gz:24020166
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101711_2.fastq.gz:24020166
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101712_1.fastq.gz:24937261
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101712_2.fastq.gz:24937261
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101713_1.fastq.gz:16381619
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101713_2.fastq.gz:16381619
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101715_1.fastq.gz:21751368
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101715_2.fastq.gz:21751368
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101718_1.fastq.gz:27076800
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101718_2.fastq.gz:27076800
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101719_1.fastq.gz:24642131
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101719_2.fastq.gz:24642131
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101720_1.fastq.gz:26361873
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101720_2.fastq.gz:26361873
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101721_1.fastq.gz:17900262
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101721_2.fastq.gz:17900262
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101722_1.fastq.gz:25641209
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101722_2.fastq.gz:25641209
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101723_1.fastq.gz:23770610
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101723_2.fastq.gz:23770610
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101724_1.fastq.gz:25368402
+/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/raw/SRR15101724_2.fastq.gz:25368402
+```
+
+
+# 5. Align sequences to the reference genome 
+
+We are using `HISAT2` and `samtools` to build the reference genome and align our sequences to this reference. See Step 1 above for reference genome information. 
+
+## Build reference genome  
+
+Create a script. 
+
+`nano build.sh`
+
+```
+#!/bin/bash
+#SBATCH -t 120:00:00
+#SBATCH --nodes=1 --ntasks-per-node=10
+#SBATCH --export=NONE
+#SBATCH --mem=100GB
+#SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
+#SBATCH --mail-user=jillashey@uri.edu #your email to send notifications
+#SBATCH --account=putnamlab
+#SBATCH -D /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/scripts              
+#SBATCH --error="build_error" #if your job fails, the error report will be put in this file
+#SBATCH --output="build_output" #once your job is completed, any final job report comments will be put in this file
+
+# load modules needed
+module load HISAT2/2.2.1-gompi-2021b #Alignment to reference genome: HISAT2
+
+# Unzip reference genome 
+#gunzip /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/refs/Pver_genome_assembly_v1.0.fasta.gz
+
+# Index reference genome 
+hisat2-build -f /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/refs/Pver_genome_assembly_v1.0.fasta Pver_ref
+echo "Reference genome indexed." $(date)
+```
+
+This built the reference genome we need to do the alignment. 
+
+## Align sequences  
+
+Create script. 
+
+`nano align.sh`
+
+```
+#!/bin/bash
+#SBATCH -t 24:00:00
+#SBATCH --nodes=1 --ntasks-per-node=1
+#SBATCH --export=NONE
+#SBATCH --mem=100GB
+#SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
+#SBATCH --mail-user=ashuffmyer@uri.edu #your email to send notifications
+#SBATCH --account=putnamlab  
+#SBATCH -D /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/trim/
+#SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
+#SBATCH --mail-user=ashuffmyer@uri.edu #your email to send notifications        
+#SBATCH --error="align_error" #if your job fails, the error report will be put in this file
+#SBATCH --output="align_output" #once your job is completed, any final job report comments will be put in this file
+
+# load modules needed
+module load HISAT2/2.2.1-foss-2019b #Alignment to reference genome: HISAT2
+module load SAMtools/1.9-foss-2018b #Preparation of alignment for assembly: SAMtools
+
+## Genome already referenced 
+
+echo "Start alignment" $(date)
+
+# Alignment of clean reads to the reference genome
+# Make array of sequences to trim 
+array1=($(ls /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/trim/*_1.fastq.gz | xargs -n 1 basename))
+
+for i in ${array1[@]}; do
+    hisat2 -p 8 --rna-strandness RF --dta -q -x /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/refs/Pver_ref -1 /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/trim/${i} -2 /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/trim/$(echo ${i}|sed s/_1/_2/) -S /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/mapped/${i}.sam
+    samtools sort -@ 8 -o /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/mapped/${i}.bam /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/mapped/${i}.sam
+    echo "${i} bam-ified!"
+    rm ${i}.sam
+done
+
+echo "Alignment completed" $(date)
+
+```
+
+This script will align the sequences to the references, generate `.bam` and `.sam` files, and then remove the unneeded and large `.sam` files. 
+
+This was started on 20230323 at 09:45 Pacific Time. 
