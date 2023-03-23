@@ -191,14 +191,16 @@ Submitted batch job 243914. Script ran in ~4.5 hours.
 
 The raw MultiQC report [can be found on the E5 Deep Dive GitHub repo here](https://github.com/urol-e5/deep-dive/blob/main/A-Pver/data/rna-seq/raw_multiqc_report.html). 
 
-There was high adapter content in these raw sequences.  
+There was high adapter content in these raw sequences. Overall, the quality score was high and there were no red flags in other metrics.
 
-PICTURE
-
-Overall, the quality score was high and there were no red flags in other metrics.  
-
-PICTURES 
-
+![fastqc_sequence_counts_plot](https://user-images.githubusercontent.com/32178010/227280396-e9fac75c-8357-451d-af84-6112455a3618.png)  
+![fastqc_per_base_sequence_quality_plot](https://user-images.githubusercontent.com/32178010/227280538-5fb9bccf-4551-46d3-92f3-dbf5078c9dfa.png)  
+![fastqc_per_sequence_quality_scores_plot](https://user-images.githubusercontent.com/32178010/227280588-f238d863-086b-4dcd-9df6-fdc6db386f82.png)  
+![fastqc_per_sequence_gc_content_plot](https://user-images.githubusercontent.com/32178010/227280634-384b948a-64c6-441d-9ca2-acbadd60e9ec.png)  
+![fastqc_per_base_n_content_plot](https://user-images.githubusercontent.com/32178010/227280664-8a297ea2-4310-4a5b-b349-598517cb6e00.png)  
+![fastqc_sequence_duplication_levels_plot](https://user-images.githubusercontent.com/32178010/227280709-f36ec7c2-d63c-46b5-b754-993e744006d5.png)  
+![fastqc_overrepresented_sequencesi_plot](https://user-images.githubusercontent.com/32178010/227280742-53d5d8ca-c216-4598-af5d-38fdfc38a243.png)  
+![fastqc_adapter_content_plot](https://user-images.githubusercontent.com/32178010/227280785-11c27c3f-d4f8-451e-a9a5-85e3b5021945.png)  
 
 # 3. Trimming sequences with FastP
 
@@ -208,6 +210,7 @@ Make a script to trim sequences with FastP. We will be removing adapters, trimmi
 
 ```
 #!/bin/bash
+
 #SBATCH -t 24:00:00
 #SBATCH --nodes=1 --ntasks-per-node=1
 #SBATCH --export=NONE
@@ -292,13 +295,16 @@ Submitted batch job 244018.
 
 The trimmed MultiQC report [can be found on the E5 Deep Dive GitHub repo here](https://github.com/urol-e5/deep-dive/blob/main/A-Pver/data/rna-seq/trim_multiqc_report.html). 
 
-Trimming removed the adapter content in these sequences. 
+Trimming removed the adapter content in these sequences. The quality scores are very high across the sequence length, so we are not going to trim by length in this iteration. We can return to the trimming step in the future if we need to make changes.  
 
-PICTURE
-
-The quality scores are very high across the sequence length, so we are not going to trim by length in this iteration. We can return to the trimming step in the future if we need to make changes.  
-
-PICTURE 
+![fastqc_adapter_content_plot](https://user-images.githubusercontent.com/32178010/227281183-0d57f77f-dbd0-4004-84ed-27eae50f53f3.png)
+![fastqc_sequence_duplication_levels_plot](https://user-images.githubusercontent.com/32178010/227281201-1625d008-0423-4eb2-b531-ba34c321914f.png)
+![fastqc_sequence_length_distribution_plot](https://user-images.githubusercontent.com/32178010/227281214-c92857af-effc-4207-887e-f28059b178f8.png)
+![fastqc_per_base_n_content_plot](https://user-images.githubusercontent.com/32178010/227281227-fa12fce3-c81f-4a62-888f-4b290601263c.png)
+![fastqc_per_sequence_gc_content_plot](https://user-images.githubusercontent.com/32178010/227281242-b3c6dc36-4d8d-45a3-bef5-83203b077c30.png)
+![fastqc_per_sequence_quality_scores_plot](https://user-images.githubusercontent.com/32178010/227281249-d675d5d9-c973-4882-bcc1-52953b2d030c.png)
+![fastqc_per_base_sequence_quality_plot](https://user-images.githubusercontent.com/32178010/227281259-08c420fe-2da8-4293-bb8c-b3ff48580798.png)
+![fastqc_sequence_counts_plot](https://user-images.githubusercontent.com/32178010/227281270-f3f72a60-e487-4c4c-b0be-8f994fecf15a.png)
 
 ## Calculate sequence length 
 
