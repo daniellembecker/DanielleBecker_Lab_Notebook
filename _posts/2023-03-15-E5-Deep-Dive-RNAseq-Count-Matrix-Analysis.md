@@ -5,6 +5,7 @@ date: '2023-03-15'
 categories: E5
 tags: Bioinformatics GeneExpression
 ---
+
 This post details analysis and bioinformatic steps to generate a gene count matrix from RNAseq data for the E5 Deep Dive Project. 
 
 More information on this project can be found on the [GitHub repo](https://github.com/urol-e5/deep-dive). 
