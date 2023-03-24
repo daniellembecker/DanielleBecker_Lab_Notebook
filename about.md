@@ -45,8 +45,9 @@ Date|Position| Affiliation
 
 [Google Scholar Profile](https://scholar.google.com/citations?user=_dw3pYEAAAAJ&hl=en)
 
-15. Chiles EN, **AS Huffmyer**, C Drury, HM Putnam, D Bhattacharya, X Su. Stable isotope tracing reveals compartmentalized nitrogen assimilation in scleractinian corals. Frontiers in Marine Science. https://doi.org/10.3389/fmars.2022.1035523  
-14. **Huffmyer AS**, E Majerova, N Bean, C Harris, C Drury. 2022. Variable intraspecific diversity effects impact thermal tolerance in a reef-building coral. Coral Reefs. https://doi.org/10.1007/s00338-022-02320-0 
+16. **AS Huffmyer**, KH Wong, DM Becker, E Strand, T Mass, HM Putnam. 2023. Multi-omic analysis of coral development elucidates the metabolic transitions from parental provisioning to endosymbiotic nutritional exchange. bioRxiv. https://www.biorxiv.org/content/10.1101/2023.03.20.533475v1 
+15. Chiles EN, **AS Huffmyer**, C Drury, HM Putnam, D Bhattacharya, X Su. 2022. Stable isotope tracing reveals compartmentalized nitrogen assimilation in scleractinian corals. Frontiers in Marine Science. https://doi.org/10.3389/fmars.2022.1035523  
+14. **Huffmyer AS**, E Majerova, N Bean, C Harris, C Drury. 2022. Variable intraspecific diversity effects impact thermal tolerance in a reef-building coral. Coral Reefs 42:119-129  
 13. **Huffmyer AS**, T O’Neill, JD Lemus. 2022. Evidence for professional conceptualization in science as an important component of science identity. CBE – Life Sciences Education 21(4): ar76      
 12. Alexander G, J Hancock, **AS Huffmyer**, SB Matsuda. 2022. Larval thermal pre-exposure does not improve post-settlement thermal tolerance in a dominant reef-building coral, *Montipora capitata*. Coral Reefs 41:333-342    
 11. Matsuda SB, LJ Chakravarti, R Cunning, **AS Huffmyer**, CE Nelson, RD Gates, MJH van Oppen. 2022. Temperature mediated acquisition of rare heterologous symbionts promotes survival of coral larvae under ocean warming. Global Change Biology 28:2006-2025    
@@ -92,6 +93,7 @@ Date|Position| Affiliation
 
 #### *Oral Presentations*  
 
+20. **Huffmyer AS**. Linking ‘omics and physiology through correlation network approaches. E5 Coral Rules of Life – Epigenetics Annual Meeting. Santa Barbara, CA, USA. January 2023. 
 19. **Huffmyer AS**. Physiological and multi-omic signatures of shifts in symbiotic nutritional exchange in reef-building coral early life history. Benthic Ecology Conference. Portsmouth, NH, USA. March 2022.
 18. **Huffmyer AS**. How do dynamic environmental conditions shape coral symbiosis and metabolism and drive energetic-epigenetic linkages? Moorea Coral Reef LTER All Investigators Meeting. Virtual presentation. November 2021.  
 17. **Huffmyer AS** and K Wong. Pathway analyses for metabolomic data. E5 Rules of Life – Epigenetics Annual Meeting. Virtual presentation. October 2021.   
@@ -114,6 +116,7 @@ Date|Position| Affiliation
 
 #### *Invited Lectures and Presentations*  
 
+9. **Huffmyer AS**. Understanding shifts in symbiotic and physiological state in reef-building corals across developmental and environmental gradients. Old Dominion University Biology Seminar Series. Virtual invited seminar speaker. December 2022.  
 8. **Huffmyer AS**. Multi-omic approaches to understand reef coral development and symbiosis. University of Washington eScience Postdoctoral Fellows seminar. Virtual invited seminar speaker. November 2022.    
 7. **Huffmyer AS**. Physiological and multi-omic signatures of shifts in symbiotic nutritional exchange in reef-building coral early life history. University of Technology Sydney Climate Change Cluster (C3). Virtual invited seminar speaker. June 2022.   
 6. **Huffmyer AS** and HG Reich. Coral symbiosis and application of ‘omics to answer emerging questions in marine invertebrate ecophysiology. University of Rhode Island - Marine Environmental Physiology course. Virtual invited lecture. April 2021. 
@@ -130,4 +133,27 @@ Date|Position| Affiliation
 3. **Huffmyer AS** and J Lemus. TA teaching styles impact student achievement in a research-based undergraduate science course. International Coral Reef Symposium. Honolulu, Hawaiʻi, USA. June 2016.
 2. **Huffmyer AS**. Utilizing heterotrophy: Nutritional provisioning for juvenile corals in climate change. UHM Albert L. Tester Symposium. Honolulu, Hawaiʻi, USA. April 2016.
 1. **Meltvedt AM**. Novel nematode characterization and phylogeny. Science Education Alliance Symposium. Janelia Farms, Virginia, USA. June 2011. 
+
+### TEACHING EXPERIENCE   
+
+#### *Teaching Assistantships and Course Instruction*  
+- 2023: Proposal writing and scientific messaging. University of Washington - Graduate student professional development course (FSH512). Invited lecture (22 students)  
+- 2021: Coral symbiosis and application of ‘omics to answer emerging questions in marine invertebrate ecophysiology. University of Rhode Island - Marine Environmental Physiology course. Virtual invited lecture (20 students)
+- 2018: Early life history of reef building corals. University of Hawaiʻi at Mānoa - Corals and Coral Reefs course. Invited lecture. Honolulu, HI, USA (30 students)
+- 2017: You are what you eat: Coral nutrition. University of Hawaiʻi at Mānoa - Corals and Coral Reefs course. Invited lecture. Honolulu, HI, USA (25 students)
+- 2015: University of Hawaiʻi at Manoa Biology 265 Laboratory Teaching Assistant (50 students)
+- 2014: University of Hawaiʻi at Manoa Biology 265 Laboratory Teaching Assistant (50 students)
+
+#### *Field Course Instruction*  
+
+- 2015: HIMB Summer Research Experience in Marine Biology for Hawaiʻi High School Students: Full-time instructor and research mentor (20 students)
+- 2013: HIMB Summer Research Experience in Marine Biology for Hawaiʻi High School Students: Undergraduate instruction assistant (20 students)
+
+#### *Curriculum Development and Teacher Education*  
+
+- 2023: Maritime High School, University of Washington curriculum unit: Coastal Erosion
+- 2018: Stanford Ignite educator curriculum development co-host		
+- 2016: Climate Science Teachers Institute co-coordinator, American Samoa & Marshall Islands
+- 2016: Connecting Culture and Coral Reefs: Hawaiʻi educator workshop coordinator
+- 2015: COSEE Island Earth Traditional Hawaiian Knowledge curriculum co-coordinator	
 
