@@ -454,8 +454,8 @@ Create script.
 
 ```
 #!/bin/bash
-#SBATCH -t 24:00:00
-#SBATCH --nodes=1 --ntasks-per-node=1
+#SBATCH -t 120:00:00
+#SBATCH --nodes=1 --ntasks-per-node=10
 #SBATCH --export=NONE
 #SBATCH --mem=100GB
 #SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
@@ -483,7 +483,7 @@ for i in ${array1[@]}; do
     hisat2 -p 8 --rna-strandness RF --dta -q -x /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/refs/Pver_ref -1 /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/trim/${i} -2 /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/trim/$(echo ${i}|sed s/_1/_2/) -S /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/mapped/${i}.sam
     samtools sort -@ 8 -o /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/mapped/${i}.bam /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/mapped/${i}.sam
     echo "${i} bam-ified!"
-    rm ${i}.sam
+    rm /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/mapped/${i}.sam
 done
 
 echo "Alignment completed" $(date)
