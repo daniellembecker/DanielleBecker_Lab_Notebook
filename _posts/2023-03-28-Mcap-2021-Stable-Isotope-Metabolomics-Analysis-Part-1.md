@@ -227,6 +227,17 @@ Chiles et al. 2022
 - Similar to our results, arginine, animoacyl, alanine/aspartate, and other peptide metabolism was enriched in thermal stress. 
 - Also saw accumulation of peptides under stress. 
 
+*What about accumulation of NAD+ and NADP+?* 
+
+- In high temperature there was a large accumulation of NAD+ and NADP+ and enrichment of nicotinate and nicotinamide metabolism in the C13 samples. 
+- [Xie et al. 2020](https://www.nature.com/articles/s41392-020-00311-7) provides a review of NAD+ metabolism. Here is a figure from the paper:  
+
+![](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41392-020-00311-7/MediaObjects/41392_2020_311_Fig1_HTML.png?as=webp)
+
+- Accumulation of NAD+ and NADP+ in our samples could result from antioxidant defence, anabolic reations, and signaling that uses NADPH and generates NADP+. If the Pentose phosphate pathway activity is reduced, then the pool of NADP+ would increase, as we see in our samples. We should look for metabolite evidence of the pentose phosphate pathway to see if we can infer rates of this pathway. 
+- Further, electron transport chain, lactic adic generation, and PUFA desaturation would use NADH and generate NAD+. If glycolysis, fatty acid oxidation, and the TCA cycle are slower or do not match the rate of accumulation, then the pool of NAD+ would increase. We can also look for metabolite information on rates of these pathways in our samples. 
+- Further, NAD+ is degraded through DNA repair, ER stress, RNA processing, metabolism, signaling, etc. If the pool is increased, then either the production of NAD+ increases, the degradation pathways decrease, or both are happening at the same time. 
+
 # Next steps 
 
 I need to address a few questions with the Rutgers team: 
@@ -236,5 +247,6 @@ I need to address a few questions with the Rutgers team:
 - Are there treatment differences in C13 labeling in the dark C13 samples and how do we need to correct for this? 
 
 As we test these hypotheses we can see if adding gene expression would be helpful (for example, to test GOGAT, GDH, GS enzyme expression). 
+We could also add positive polarity analysis using the duplicate extract if required to test hypotheses based on these data. 
 
 Next I will explore the label fraction datasets.  
