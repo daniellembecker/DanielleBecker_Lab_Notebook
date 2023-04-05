@@ -495,6 +495,260 @@ This was started on 20230323 at 09:45 Pacific Time job 244260.
 
 Alignment rates range from 69-75% as expected. 
 
-## next step   
+### Calculate the alignment rates  
+
+Next, run a script to output mapping and alignment statistics.  
+
+`nano mapping_rate.sh`  
+
+```
+#!/bin/bash
+#SBATCH -t 100:00:00
+#SBATCH --nodes=1 --ntasks-per-node=10
+#SBATCH --export=NONE
+#SBATCH --mem=100GB
+#SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
+#SBATCH --mail-user=jillashey@uri.edu #your email to send notifications
+#SBATCH --account=putnamlab  
+#SBATCH -D /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/scripts/
+#SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
+#SBATCH --mail-user=ashuffmyer@uri.edu #your email to send notifications        
+#SBATCH --error="mapping_rate_error" #if your job fails, the error report will be put in this file
+#SBATCH --output="mapping_rate_output" #once your job is completed, any final job report comments will be put in this file
+
+module load SAMtools/1.9-foss-2018b 
+
+echo "Start mapping rate calculations from .bam files" $(date)
+
+for i in /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/mapped/*.bam; do
+    echo "${i}" >> /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/mapped/mapped_reads_counts_Pverr
+    samtools flagstat ${i} | grep "mapped (" >> /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/mapped/mapped_reads_counts_Pverr
+done
+
+echo "Mapping rates completed" $(date)
+
+```
+
+## 6. Assemble and map sequences to the reference  
+
+### Fix GFF file formats 
+
+Before assembling reads, we must fix the GFF format to include transcript_id= and gene_id= in the information column using an R script. The R script is below and available on [GitHub here](https://github.com/urol-e5/deep-dive/blob/main/A-Pver/code/rna-seq/fix_Pverr_gff.Rmd).  
+
+```
+#This script add transcript and gene id into GFF file for alignment.  
+
+#Here, I'll be adding transcript_id= and gene_id= to 'gene' column in order to properly assemble our aligned data  
+
+#Load libraries and data. 
+
+#Load libraries
+library(tidyverse)
+library(R.utils)
+
+
+#Load gene gff file 
+
+gff <- read.csv(file = "~/Desktop/GFFs/pverr/Pver_genome_assembly_v1.0.gff3", header = F, sep = "\t", skip = 1)
+
+
+#Rename columns 
+
+colnames(gff) <- c("scaffold", "Gene.Predict", "id", "gene.start","gene.stop", "pos1", "pos2","pos3", "gene")
+
+# Remove all rows with "#" character - this gff has # denoting protein sequences. Since we don't need the protein sequences right now, I'm going to remove them 
+
+gff <- gff[!grepl("#", gff$scaffold),]
+
+
+#Create transcript ID
+
+gff$transcript_id <- sub(";.*", "", gff$gene)
+gff$transcript_id <- gsub("ID=", "", gff$transcript_id) #remove ID= 
+head(gff)
+
+
+#Create Parent ID
+
+gff$parent_id <- sub(".*Parent=", "", gff$gene)
+gff$parent_id <- sub(";.*", "", gff$parent_id)
+gff$parent_id <- gsub("ID=", "", gff$parent_id) #remove ID= 
+head(gff)
+
+
+#Add these values back into the gene column separated by semicolons
+
+gff <- gff %>% 
+  mutate(gene = ifelse(id != "gene", paste0(gene, ";transcript_id=", gff$transcript_id, ";gene_id=", gff$parent_id),  paste0(gene)))
+head(gff)
+
+## if this gff does not work in the stringtie script, go back and edit so that transcript_id=Pver_g1.t2 instead of transcript_id=Pver_g1.t2.utr5p1 or transcript_id=Pver_g1.t2.exon1, etc
+
+#Remove parent and transcript columns
+
+gff <- gff %>%
+  select(!transcript_id)%>%
+  select(!parent_id)
+
+#Save file 
+
+write.table(gff, file = "~/Desktop/GFFs/pverr/Pver_genome_assembly_v1_fixed.gff3", sep="\t", col.names = FALSE, row.names=FALSE, quote=FALSE)
+``` 
+
+Zip file and upload to HPC for bioinformatic use
+
+`gzip /Users/jillashey/Desktop/GFFs/pverr/Pver_genome_assembly_v1_fixed.gff3`
+
+`scp /Users/jillashey/Desktop/GFFs/pverr/Pver_genome_assembly_v1_fixed.gff3.gz jillashey@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/refs`
+
+Now we can assemble the reads via stringtie!
+
+### Assemble reads with StringTie  
+
+Prepare the directories.  
+
+```
+cd /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/refs
+gunzip Pver_genome_assembly_v1_fixed.gff3
+cd ../
+mkdir assembled
+cd scripts 
+```
+
+Make a new script.  
+
+`nano assemble.sh`  
+
+```
+#!/bin/bash
+#SBATCH -t 100:00:00
+#SBATCH --nodes=1 --ntasks-per-node=10
+#SBATCH --export=NONE
+#SBATCH --mem=100GB
+#SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
+#SBATCH --mail-user=jillashey@uri.edu #your email to send notifications
+#SBATCH --account=putnamlab  
+#SBATCH -D /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/scripts/
+#SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
+#SBATCH --mail-user=ashuffmyer@uri.edu #your email to send notifications        
+#SBATCH --error="assemble_error" #if your job fails, the error report will be put in this file
+#SBATCH --output="assemble_output" #once your job is completed, any final job report comments will be put in this file
+
+module load StringTie/2.2.1-GCC-11.2.0
+
+echo "StringTie assembly start" $(date)
+
+array=($(ls /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/mapped/*.bam)) #Make an array of sequences to assemble
+
+for i in ${array[@]}; do
+  stringtie -p 8 -e -B -G /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/refs/Pver_genome_assembly_v1_fixed.gff3 -A /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/assembled/${i}.gene_abund.tab -o /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/assembled/${i}.gtf ${i}
+  echo "StringTie assembly for seq file ${i}" $(date)
+done
+
+echo "StringTie assembly complete, starting assembly analysis" $(date)
+```
+
+We ran this script and it successfully generated .gtf files as expected. However, there was an error that we have not seen before. We will look at the data and see if it caused an issue in file formats. Preliminary investigations do not show any issues with the files.  
+
+```
+head assemble_error 
+
+Warning: invalid start coordinate at line:
+3_prime_partial true			NA	NA				;transcript_id=;gene_id=
+Warning: invalid start coordinate at line:
+5_prime_partial true			NA	NA				;transcript_id=;gene_id=
+Warning: invalid start coordinate at line:
+3_prime_partial true			NA	NA				;transcript_id=;gene_id=
+Warning: invalid start coordinate at line:
+5_prime_partial true			NA	NA				;transcript_id=;gene_id=
+Warning: invalid start coordinate at line:
+3_prime_partial true			NA	NA				;transcript_id=;gene_id=
+
+```
+
+### Merge GTF files  
+
+`nano merge.sh`  
+
+```
+#!/bin/bash
+#SBATCH -t 100:00:00
+#SBATCH --nodes=1 --ntasks-per-node=10
+#SBATCH --export=NONE
+#SBATCH --mem=100GB
+#SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
+#SBATCH --mail-user=jillashey@uri.edu #your email to send notifications
+#SBATCH --account=putnamlab  
+#SBATCH -D /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/scripts/
+#SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
+#SBATCH --mail-user=ashuffmyer@uri.edu #your email to send notifications        
+#SBATCH --error="merge_error" #if your job fails, the error report will be put in this file
+#SBATCH --output="merge_output" #once your job is completed, any final job report comments will be put in this file
+
+# Load modules 
+module load StringTie/2.2.1-GCC-11.2.0
+module load GffCompare/0.12.6-GCC-11.2.0 
+module load Python/3.9.6-GCCcore-11.2.0
+
+echo "StringTie merge start" $(date)
+
+# Make list of gtfs
+ls /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/assembled/*.gtf > gtf_list.txt 
+
+# Merge gtfs
+stringtie --merge -e -p 8 -G /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/refs/Pver_genome_assembly_v1_fixed.gff3 -o /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/assembled/Pverr_merged.gtf gtf_list.txt #Merge GTFs 
+echo "Stringtie merge complete" $(date)
+
+# Compare gtfs and compute accuracy 
+gffcompare -r /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/refs/Pver_genome_assembly_v1_fixed.gff3 -G -o /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/assembled/merged /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/assembled/Pverr_merged.gtf
+echo "GFFcompare complete, Starting gene count matrix assembly..." $(date)
+
+## Note from ZD code: 
+#Note: the merged part is actually redundant and unnecessary unless we perform the original stringtie step without the -e function and perform
+#re-estimation with -e after stringtie --merge, but will redo the pipeline later and confirm that I get equal results.
+
+```
+
+Assembly complete!  
+
+## 7. Generate gene count matrix with PrepDE
+
+Copy the prepDE.py into the scripts folder from recent project. This file can be directly downloaded from [StringTie GitHub here](https://github.com/gpertea/stringtie/blob/master/prepDE.py).     
+
+```
+cp /data/putnamlab/ashuffmyer/pairs-rnaseq/prepDE.py /data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/scripts  
+```
+
+Compile the gene count matrix by first generating a list of files and then applying the prepDE.py script. This was run in an interactive session.    
+
+```
+cd assembled/ 
+
+for filename in *bam.gtf; do echo $filename $PWD/$filename; done > listGTF.txt
+
+interactive
+
+module load Python/2.7.15-foss-2018b
+
+python prepDE.py -g Pverr_gene_count_matrix.csv -i ./listGTF.txt
+
+```
+
+Note that we had an error running this script with Python v3. We instead loaded a previous Python v2. This may not be an issue with more recent verions of the prepDE.py script.  
+
+Finally, add gene count matrix to E5 repository on GitHub. It is available [at this link here](https://github.com/urol-e5/deep-dive/blob/main/A-Pver/data/rna-seq/Pverr_gene_count_matrix.csv).  
+
+```
+scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/e5-deepdive/rna-seq/assembled/Pverr_gene_count_matrix.csv ~/MyProjects/E5/deep-dive/A-Pver/data/rna-seq
+
+```
+
+The next step will be to assemble metadata and run preliminary analyses.  
+
+
+
+
+
+
 
 
