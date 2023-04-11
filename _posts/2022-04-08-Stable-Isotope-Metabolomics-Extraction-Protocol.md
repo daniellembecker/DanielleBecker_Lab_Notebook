@@ -13,11 +13,11 @@ Protocol modified from Kevin Wong's [metabolite extraction protocol here](https:
 # Equipment Needed  
 
 - [2 mL glass dounces](https://www.sigmaaldrich.com/US/en/product/sigma/d8938)  
-- [11mm snap cap auto sampler vials](https://www.thermofisher.com/order/catalog/product/6ERV11-03PPC)  
-- [11mm snap cap auto sampler caps](https://www.fishersci.com/shop/products/thermo-scientific-sun-sri-11mm-snap-caps-5/p-2363726)  
-- Methanol
-- Acetonitrile
-- Formic Acid
+- 11mm snap cap auto sampler vials - Thermo Scientific 250 µL, No. C4011-13 
+- 11mm snap cap auto sampler caps = Thermo Scientific Part No. 501-313, Orange snap PTFE/SIL
+- LC-MS grade Methanol
+- LC-MS grade Acetonitrile
+- LC-MS grade Formic Acid
 - LC-MS grade water
 - Tissue Tearor or other probe homogenizer
 - 10% bleach
