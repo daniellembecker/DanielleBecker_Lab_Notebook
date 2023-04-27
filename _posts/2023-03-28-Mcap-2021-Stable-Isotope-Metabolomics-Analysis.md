@@ -187,11 +187,29 @@ These were also enriched in the C12 samples in addition to arginine biosynthesis
 
 # *3. Is metabolite atom enrichment different between dark and light treatments?*  
 
-INSERT HERE 
+In order to determine whether labeled carbon in metabolites was incorporated from translocated photosynthate products or from host incorporation of inorganic carbon. To do this, we will look at enrichment of metabolites in the light C13 (n=12) and the dark C13 treatments (n=4). 
 
-*Hillyer et al. 2017a:* [paper link](https://link.springer.com/article/10.1007/s11306-017-1306-8)
+First, I looked at enrichment for each metabolite between the dark and light samples.  
 
-- When we check for dark samples, we will look for something like the following statement, "No significant enrichment of either symbiont, or host pools was detected in the dark incubations, suggesting that label incorporation was via symbiont photosynthesis and translocation of organic products."
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Mcap2021/enrichment_darkvslight_all.jpg)   
+
+There are metabolties that have similar enrichment between dark and light samples and those that have much higher enrichment in the light. This indicates that metabolites with similar enrichment levels are due to host incorporation because they are enriched in the absence of photosynthesis. In contrast, metabolites that are only labeled in the light are those with carbon incorporated from fixed carbon from the symbiont.  
+
+It is important to note that even for metabolites that are highly enriched in light as compared to dark, there is some residual enrichment in the dark. This is because the samples were not dark adapted prior to adding the label and therefore the small labeling is due to residual photosynthetic and metabolic activity at the start of the incubation. This is expected. 
+
+I then isolated the metabolites that we expect to have carbon from photosynthesis.  
+
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Mcap2021/enrichment_darkvslight_photosynthesis.jpg) 
+
+This plot shows that, as expected, glucose photosynthates and derivatives are highly labeled in the light and not in the dark. This indicates that fixed carbon in these metabolites is from photosynthate translocation to the host tissue. 
+
+I also looked at metabolites that had elevated enrichment in the dark.  
+
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Mcap2021/enrichment_darkvslight_host.jpg) 
+
+This shows that there may be some metabolites that incorporate carbon from host uptake of inorganic carbon. These include methionine sulfoxide, an antioxidant, as well as several amino acids and nitrogen metabolism intermediates. 
+
+We will use this information to look at differentially enriched metabolites and hypothesize the origin of the carbon during biosynthesis in the context of our temperature treatments and symbiotic relationship.
 
 # *4. Is metabolite atom enrichment different between temperature treatments?* 
 
@@ -246,7 +264,29 @@ There are very different pathways that are differentially enriched in labeling a
 
 I next analyzed metabolite labeling proportion, which is the proportion of metabolites in the total pool that have at least one labeled carbon atom. 
 
-INSERT HERE 
+In order to determine whether labeled carbon in metabolites was incorporated from translocated photosynthate products or from host incorporation of inorganic carbon. As done above for enrichment, we will look at labeling of metabolites in the light C13 (n=12) and the dark C13 treatments (n=4). 
+
+First, I looked at labeling for each metabolite between the dark and light samples.  
+
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Mcap2021/labeling_darkvslight_all.jpg)   
+
+There are metabolties that have similar labeling between dark and light samples and those that have much higher labeling in the light. This indicates that metabolites with similar labeling levels are due to host incorporation because they are labeled in the absence of photosynthesis. In contrast, metabolites that are only labeled in the light are those with carbon incorporated from fixed carbon from the symbiont.  
+
+It is important to note that even for metabolites that are highly labeled in light as compared to dark, there is some residual enrichment in the dark. This is because the samples were not dark adapted prior to adding the label and therefore the small labeling is due to residual photosynthetic and metabolic activity at the start of the incubation. This is expected. 
+
+I then isolated the metabolites that we expect to have carbon from photosynthesis.  
+
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Mcap2021/labeling_darkvslight_photosynthesis.jpg) 
+
+This plot shows that, as expected, glucose photosynthates and derivatives are highly labeled in the light and not in the dark. This indicates that fixed carbon in these metabolites is from photosynthate translocation to the host tissue. 
+
+I also looked at metabolites that had elevated labeling in the dark.  
+
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Mcap2021/labeling_darkvslight_host.jpg) 
+
+This shows that there may be some metabolites that incorporate carbon from host uptake of inorganic carbon. These include methionine sulfoxide, an antioxidant, as well as several amino acids and nitrogen metabolism intermediates. These results are very similar to enrichment results above.  
+
+We will use this information to look at differentially labeled metabolites and hypothesize the origin of the carbon during biosynthesis in the context of our temperature treatments and symbiotic relationship.
 
 # *6. Is metabolite labeling proportion different between temperature treatments?* 
 
