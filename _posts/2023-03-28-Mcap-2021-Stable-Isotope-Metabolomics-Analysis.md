@@ -532,9 +532,9 @@ There are several metabolites that are different between treatments. Here are a 
 
 1. Is metabolite pool size different between isotope treatments? *Yes, in expected ways that pass our QC checks*
 2. Is metabolite pool size different between temperature treatments? *Yes*
-3. Is metabolite atom enrichment different between dark and light treatments? *INSERT HERE*
+3. Is metabolite atom enrichment different between dark and light treatments? *Yes, photosynthates are more highly enriched in light*
 4. Is metabolite atom enrichment different between temperature treatments? *Yes*
-5. Is metabolite labeling proportion different between dark and light treatments? *INSERT HERE* 
+5. Is metabolite labeling proportion different between dark and light treatments? *Yes, photosynthates are more highly labeled in light* 
 6. Is metabolite labeling proportion different between temperature treatments? *Yes*
 7. Does the location of carbon labeling differ for metabolites between treatments? *Yes for some metabolites*
 8. How does temperature treatment affect metabolite pool size and enrichment/labeling and what does this tell us about metabolic pathways? *Yes, there are some very interesting changes in carbon and nitrogen metabolism signaling the onset of dysbiosis* 
