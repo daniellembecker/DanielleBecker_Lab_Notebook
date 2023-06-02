@@ -56,4 +56,12 @@ We changed the N's here to T's!
 
 ![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/sanger/dyeblob_after.png?raw=true)
 
-We can also check this information with the reverse sequence. 
+We can also check this information with the reverse sequence. If you don't feel you can change it, you leave it as an N. 
+
+We also removed the noisy end of the sequence.
+ 
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/sanger/deleted_end.png?raw=true)
+
+Here is our edited sequence now. 
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/sanger/revised_sequence.png?raw=true)
