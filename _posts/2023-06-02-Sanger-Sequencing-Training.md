@@ -108,9 +108,11 @@ First you would align your sequences to the reference sequences and then generat
 
 If you don't see variation in those sections, they are conserved. You then truncate all sequences to have the same start and end position. 
 
-![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/sanger/tree_multiple_example.png?raw=true)
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/sanger/tree_multiple_example.png?raw=true)  
 
-# Sanger vs Next Gen sequencing (RAD-Seq)
+Sometimes you need a second marker to distinguish between species. 
+
+About 7 dollars for each sample including forward and reverse, not including the PCR, preparation, extraction. Probably 10 dollars per sample for all included. 
 
 
 
