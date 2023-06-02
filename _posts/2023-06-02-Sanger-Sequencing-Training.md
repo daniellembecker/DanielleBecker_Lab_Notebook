@@ -71,3 +71,12 @@ Repeat with other sequence files.
 As another example, see the revisions we made when the peak for G was overwhelming the signal of the T and A peaks.  
 
 ![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/sanger/revised_example.png?raw=true)
+
+# Aligning/generating concensus sequences  
+
+If we have both a forward and reverse, we need to align them into a consensus read. To do this, select both and perform a "pairwise" align. There are multiple methods for this, so look into the pros and cons of Geneious vs MUSCLE vs Clustal Omega, etc. We are using MUSCLE today. 
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/sanger/aligned_example.png?raw=true)
+
+If there is a color or dash, there are differences in the forward and reverse. We can QC these. If there are discrepancies, you can look back at the individual sequences and see what you feel most confident in. 
+
