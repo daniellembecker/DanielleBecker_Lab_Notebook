@@ -80,3 +80,27 @@ If we have both a forward and reverse, we need to align them into a consensus re
 
 If there is a color or dash, there are differences in the forward and reverse. We can QC these. If there are discrepancies, you can look back at the individual sequences and see what you feel most confident in. 
 
+Next, generate consensus sequence. You can select quality cut offs at this step. 
+
+Now we will compare other sequences to this one to compare against each other.  
+
+Remember, if we have a reverse sequence, we need to apply the reverse complement. You will see lots of gaps in the sequence alignment if your reverse is not complemented. 
+
+When you have multiple consensus sequences, you will do a "multiple align". 
+
+This will align all your samples together. We can then generate a family tree. You will also need to QC any of these differences. 
+
+# Generating a tree
+
+You can then generate a tree. You will need to select an outgroup (if applicable) and the algorithm. Here we just tried a default method. This will show a relatedness tree of your samples! 
+
+Here is an example from Hollie's tree. 
+
+The further the branch, the farther the genetic distance.  
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/sanger/tree_example.png?raw=true)
+
+# Sanger vs Next Gen sequencing (RAD-Seq)
+
+
+
