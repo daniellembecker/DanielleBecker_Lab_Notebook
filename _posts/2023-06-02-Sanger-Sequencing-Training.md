@@ -40,5 +40,20 @@ The colors show up as peaks on the chromatogram with the intensity of the fluore
 
 ![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/sanger/geneious_twoseqs.png?raw=true)
 
+We are using the "sequence view" and have "allow editing" enabled. 
 
+The sequencer has interpretted the chromatograms to make the "right" call. But we need to QC these calls and make sure that the base calls are correct. 
 
+We get a lot of noise at the beginning of the sequence in particular. There will be an N where a base call could not be made. 
+
+For example, we deleted the first 25 bp where there were many N's. 
+
+Sometimes, we can get "dye blobs" that result from the capillary of the sequencer. In that case, we may need to change the calls. 
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/sanger/dyeblob_before.png?raw=true)
+
+We changed the N's here to T's! 
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/sanger/dyeblob_after.png?raw=true)
+
+We can also check this information with the reverse sequence. 
