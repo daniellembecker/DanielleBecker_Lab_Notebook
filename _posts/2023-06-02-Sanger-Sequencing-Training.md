@@ -26,5 +26,19 @@ Next we move to Sanger sequencing, which uses fluorescent tagged nucleotides at 
 
 We then get a chromatogram to tell us what the sequence is! 
 
+# Looking at sequences 
+
+We have two files for each sequence. We are working through an example sample for this tutorial. 
+
+If the region of interest is longer than the sequencer can do in one run, we have to have both a forward and reverse for each to match them together to make a longer sequence. 
+
+Here is what this looks like in Geneious.   
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/sanger/geneious_snapshot.png?raw=true)
+
+The colors show up as peaks on the chromatogram with the intensity of the fluorescence of that color indicated as the height of the peak.  
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/sanger/geneious_twoseqs.png?raw=true)
+
 
 
