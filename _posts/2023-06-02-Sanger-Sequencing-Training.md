@@ -100,7 +100,18 @@ The further the branch, the farther the genetic distance.
 
 ![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/sanger/tree_example.png?raw=true)
 
+You can generate different kinds of trees. 
+
+It is also possible to bring in Sanger files from past literature from your species or location of interest to help you see where your samples cluster relative to previously identified samples. 
+
+First you would align your sequences to the reference sequences and then generate a new tree. 
+
+If you don't see variation in those sections, they are conserved. You then truncate all sequences to have the same start and end position. 
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/sanger/tree_multiple_example.png?raw=true)
+
 # Sanger vs Next Gen sequencing (RAD-Seq)
+
 
 
 
