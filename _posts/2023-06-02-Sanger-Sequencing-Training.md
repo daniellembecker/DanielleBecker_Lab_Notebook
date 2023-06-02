@@ -65,3 +65,9 @@ We also removed the noisy end of the sequence.
 Here is our edited sequence now. 
 
 ![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/sanger/revised_sequence.png?raw=true)
+
+Repeat with other sequence files. 
+
+As another example, see the revisions we made when the peak for G was overwhelming the signal of the T and A peaks.  
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/sanger/revised_example.png?raw=true)
