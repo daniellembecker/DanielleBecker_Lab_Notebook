@@ -97,12 +97,57 @@ Ariana recorded daily measurements in empty, clean larval conicals and in parent
 
 ## Spawning and embryo rearing 
 
-We 
+We netted the adult colonies at 18:45 as described for previous nights. 3 C colonies and 3 D colonies spawned with sufficient amount to use in pooled fertilization. 
 
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/tube_bundles.jpeg) 
+
+This picture shows how the gametes are captured in floating falcon tubes with stop valves. When there are 2-5 mL of gametes, the tubes are removed and capped and brought into the lab for pooling. Some parents produced more than others and their relative contribution to the pool is recorded below. Note that tonight the C dominated coral pool included two bleached phenotypes and one non-bleached phenotype.
+
+Ideally, we would have n=5 or more parents contribute to the pool in relatively equal proportions and we would not have a mix of bleaching phenotypes in the same symbiont phenotype. Tonight these were the only parents that produced enough for pooled fertilization. We will rear these embryos through tomorrow. If tomorrow's spawn is better we can replace them and if not we still have material for our experiment! 
+
+| Date     | Parent ID | Bleaching | Symbiont | Volume in Pool | Time Pooled |
+|----------|-----------|-----------|----------|----------------|-------------|
+| 20230617 |       632 | B         | C        |            20% |       21:15 |
+| 20230617 |       586 | NB        | C        |            60% |       21:15 |
+| 20230617 |      1213 | B         | C        |            20% |       21:15 |
+| 20230617 |       742 | NB        | D        |            33% |       21:15 |
+| 20230617 |        70 | NB        | D        |            33% |       21:15 |
+| 20230617 |       684 | NB        | D        |            33% |       21:15 |
+
+The gametes from parents were pooled at 21:15 after collection from spawning and distrubuted into falcon tubes with 5 mL of gametes of either C or D symbiont pools. These were then gently rocked by hand until 22:30-22:45 when all bundles were broken and sperm and egg had time to fertilize. 
+
+Interestingly, I noticed that the colors of bundles from C and D were distinctly different. C bundles were consistently dark brown and D bundles were a mix of light brown to dark brown. 
+
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/c_d_color_bundles.jpeg) 
+
+This was really interesting! 
+
+After fertilization, the sperm water was removed and embryos were rinsed with 1 µm FSW. Embryos were then added to n=3 conicals for each symbiont type: conicals C1, C2, C3, D1, D2, and D3. Embryos were divided approximately equally for each pool across the three conicals by FD at 22:00-22:30. 
+
+The conicals were then drained ~90% to provide an additional embryo rinse. Water was then turned on at ~7-8 mL per 5 seconds (84-96 mL per min) and allowed to fill. The banjo filters were placed in each conical. This was done between 22:40 and 22:55. 
+
+Note that due to the amount of gametes available the C coral conicals are more dense than the D corals. Tomorrow we will do a count estimate to see how many larvae are in each conical. 
+
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/conical1.jpeg) 
+
+Every 60 minutes or so Ariana will check the cultures, stir/swirl the embryos, check water flow, and bubble bump the embryos off of the banjo filter. Conicals were fully refilled by 00:15. 
 
 ## Environmental measurements
 
+Ariana and Jill recorded environmental measurements in the larval conicals. 
+
+| Date     | Time | Tank | pH (mV) | pH (nbs) | temp (C) | sal (psu) | flow (mL per 5 sec) | light (PAR) | Tris date | Notes                                          |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|----------|------|------|---------|----------|----------|-----------|---------------------|-------------|-----------|------------------------------------------------|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 20230618 | 0049 | C1   |   -50.1 |     8.03 |    26.68 |        34 |                   8 |           0 |  20230617 | Night measurement, no PAR; after embryos added |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 20230618 | 0051 | C2   |   -50.2 |     8.03 |    26.61 |        34 |                   7 |           0 |  20230617 |                                                |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 20230618 | 0052 | C3   |   -50.2 |     8.03 |    26.73 |        34 |                 7.5 |           0 |  20230617 |                                                |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 20230618 | 0047 | D1   |   -49.2 |     8.01 |    26.56 |        34 |                 7.5 |           0 |  20230617 |                                                |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 20230618 | 0050 | D2   |   -49.7 |     8.02 |    26.65 |        34 |                   6 |           0 |  20230617 |                                                |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 20230618 | 0052 | D3   |   -50.5 |     8.04 |    26.74 |        34 |                   8 |           0 |  20230617 |                                                |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+
 ## Developmental time series sampling 
+
+Jill and Ariana loaded tubes for Jill's project and conducted sampling of fertilized egg and 4 hour post fertilization time points. See Jill's notebook for details. 
 
 # 16 June 2023 
 
