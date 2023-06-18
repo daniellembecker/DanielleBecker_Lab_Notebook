@@ -28,6 +28,82 @@ We will address this question by measuring:
 - Larval lipidomics
 - Larval metabolomics   
 
+# 17 June 2023 - early morning 18 June 2023 
+
+## Checking Jill's developmental time series test samples 
+
+At 3:00am Jill checked the wildtype developmental time series samples. She observed that the ambient embryos were developing and looked healthy. The high temperature samples were more opaque and had more mortality. This is likely because they were on the top shelf of the incubator. We will check the temperature loggers to see what the temperatures were on that shelf. We may adjust the temperatures down a degree if needed for tonight. 
+
+At 8:00am we looked at the embryos again and did a practice sample protocol. The protocol we tested was pouring all larvae into a cell strainer from one falcon tube and then taking out all larvae in a known volume of water. This volume of larvae will then be split in half - one sample for molecular and one for physiology. If this protocol works, we will drastically reduce the number of falcon tubes we need which will help maintain air flow in the incubators and reduce loading time. 
+
+Full details are in Jill's notebook. 
+
+## Calibrating temperature and pH probes 
+
+Ariana calibrated the pH probe and set up probes for daily measurements. 
+
+Digital thermometer: Traceable 4000 NS 200390599  
+
+- no calibration needed   
+
+Apogee light sensor: Apogee Model MQ-510 SN 3706  
+
+- no calibration needed  
+
+Thermoscientific Orion Star: A221 pH meter SN K12290  
+
+- Calibrated pH with tris. Note that this probe does NOT measure conductivity. We will need to use a refractometer for salinity measurements. 
+
+Salinity refractometer: DD Aquarium Solutions H2Ocean precision equipment  
+
+- This refractometer is the CRL's and we will use it to check salinity daily. Records in ppt units.  
+
+Calibrated pH probe in Tris buffer (Batch T27 packaged 3/5/15 Dickson CO2 lab @ UCSD at 11:42.  
+
+| Date     | Temp.Tris | mV.Tris |
+|----------|-----------|---------|
+| 20230617 | 23.69     | -64.2   |
+| 20230617 | 25.03     | -62.6   |
+| 20230617 | 25.98     | -61.4   |
+| 20230617 | 26.64     | -60.4   |
+| 20230617 | 27.40     | -59.5   |
+| 20230617 | 28.24     | -58.4   |
+| 20230617 | 28.96     | -57.4   |
+| 20230617 | 29.73     | -56.4   |
+| 20230617 | 30.17     | -55.8   |
+| 20230617 | 30.57     | -55.5   |
+| 20230617 | 31.25     | -54.2   |
+| 20230617 | 31.74     | -53.6   |
+| 20230617 | 32.08     | -53.1   |
+| 20230617 | 32.40     | -52.5   |
+| 20230617 | 32.67     | -52.3   |
+
+## Daily measurements  
+
+Ariana recorded daily measurements in empty, clean larval conicals and in parent holding tanks at 1230-1300.   
+
+| Date     | Time | Tank       | pH (mV) | pH (nbs) | temp (C) | sal (psu) | flow (mL per 5 sec) | light (PAR) | Tris date | Notes                |
+|----------|------|------------|---------|----------|----------|-----------|---------------------|-------------|-----------|----------------------|
+| 20230617 | 1251 | C1         |     -52 |     8.06 |    26.12 |        34 |                  20 |           1 |  20230617 | Before embryos added |
+| 20230617 | 1253 | C2         |   -51.9 |     8.06 |       27 |        34 |                  24 |           0 |  20230617 | Before embryos added |
+| 20230617 | 1254 | C3         |     -52 |     8.06 |    26.46 |        34 |                  21 |           1 |  20230617 | Before embryos added |
+| 20230617 | 1255 | D1         |   -51.9 |     8.06 |    26.98 |        34 |                  25 |           2 |  20230617 | Before embryos added |
+| 20230617 | 1257 | D2         |   -51.8 |     8.06 |    26.56 |        34 |                  20 |           0 |  20230617 | Before embryos added |
+| 20230617 | 1258 | D3         |   -51.9 |     8.06 |    26.86 |        34 |                  22 |           1 |  20230617 | Before embryos added |
+| 20230617 | 1303 | Parent NB1 |   -57.1 |     8.15 |    27.86 |        33 |                 350 |         597 |  20230617 |                      |
+| 20230617 | 1304 | Parent NB2 |   -58.6 |     8.18 |    27.99 |        33 |                 400 |         574 |  20230617 |                      |
+| 20230617 | 1306 | Parent B1  |   -59.5 |     8.19 |    28.15 |        33 |                 375 |         564 |  20230617 |                      |
+| 20230617 | 1305 | Parent B2  |   -57.6 |     8.16 |    28.06 |        33 |                 350 |         610 |  20230617 |                      |
+
+## Spawning and embryo rearing 
+
+We 
+
+
+## Environmental measurements
+
+## Developmental time series sampling 
+
 # 16 June 2023 
 
 ## Set up 
@@ -42,9 +118,9 @@ We expect that spawning may occur tonight (June 16), tomorrow (June 17), or Sund
 
 We will first place nets over the parent colonies. The Coral Resilience Lab (CRL) has collected coral colonies with known symbiont communities and we will collect gametes from those that are dominated (>90%) by either *Cladocopium* or *Durusdinium* according to previous ITS2 sequencing in the CRL. Symbiont community of the parents is passed to the offspring as indicated by previous CRL data. These colonies are kept in flow through tanks until spawning. 
 
-Before spawning (about 8pm) we will place nets over the colonies with buoyant collection cups. During the spawning window (8:45pm-9:15pm), the colonies will release gametes that will float into the collection cups. Those cups will then be brought into the lab where we will pool gametes within parent symbiont type and allow for eggs and sperm to separate and fertilize. This will be conducted in falcon tubes with approximately 5 mL of gametes in 45 mL of filtered seawater (1 µm FSW). 
+Before spawning (about 8pm) we will place nets over the colonies with buoyant collection cups. During the spawning window (20:45-21:15), the colonies will release gametes that will float into the collection cups. Those cups will then be brought into the lab where we will pool gametes within parent symbiont type and allow for eggs and sperm to separate and fertilize. This will be conducted in falcon tubes with approximately 5 mL of gametes in 45 mL of filtered seawater (1 µm FSW). 
 
-After about 1 hour of fertilization (~11:00pm), one falcon tube of fertilized eggs will be added into 1 20 L conical rearing containers in the CRL. These conicals are equiped with flow through FSW (1 µm) and banjo filters (123 µm mesh). 
+After about 1 hour of fertilization (~23:00), one falcon tube of fertilized eggs will be added into 1 20 L conical rearing containers in the CRL. These conicals are equiped with flow through FSW (1 µm) and banjo filters (123 µm mesh). 
 
 Before adding to the conicals, the sperm and water will be removed with a seriological pipette and rinsed once with FSW. The fertilized eggs will then be gently poured into the conicals. 
   
@@ -56,7 +132,7 @@ If needed after a few days of development, we will evenly re distrubute the embr
 
 During spawning, we will record which parents contributed to each pool and in which proportions. 
 
-Jill Ashey will also be conducting spawning research and her notebook is available [here](). 
+Jill Ashey will also be conducting spawning research and will be collecting a developmental time series for molecular and physiological measurements. Full details will be recorded in her notebook.  
 
 ## Logger launch
 
@@ -68,7 +144,7 @@ Incubators were plugged in, set up,
 
 ## Jill's project - developmental time series 
 
-We prepared supplies for Jill's project today including labeling tubes and boxes, preparing falcon tubes, and discussing sampling protocols. Full details on her project can be found [in her notebook here]().  
+We prepared supplies for Jill's project today including labeling tubes and boxes, preparing falcon tubes, and discussing sampling protocols. Full details are recorded in her notebooks.  
 
 ## Spawning 
 
@@ -86,13 +162,13 @@ We will check these tubes at 4 hours post fertilization (3am) and 9 hours post f
 
 ### C and D colonies 
 
-For our project on symbiont community identity in larvae, we have n=15 parents dominated by Durusdinium (and are bleaching resistant - AKA non-bleached phenotype) and n=13 parents dominated by Cladocopium (and are bleaching sensitive - AKA bleached phenotype). We placed nets over the colonies at 6:45pm that are equipped with funnels and falcon tubes with stoppers that are made buoyant by foam attachments. 
+For our project on symbiont community identity in larvae, we have n=15 parents dominated by Durusdinium (and are bleaching resistant - AKA non-bleached phenotype) and n=13 parents dominated by Cladocopium (and are bleaching sensitive - AKA bleached phenotype). We placed nets over the colonies at 18:45pm that are equipped with funnels and falcon tubes with stoppers that are made buoyant by foam attachments. 
 
 ![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/corals1.jpeg) 
 
 ![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/corals2.jpeg) 
 
-We then monitored for spawning from 8:45pm-9:15pm. Two colonies released a light to moderate amount of bundles. We did not use any material from these colonies tonight. We will look for more spawning tomorrow!
+We then monitored for spawning from 20:45pm-21:15pm. Two colonies released a light to moderate amount of bundles. We did not use any material from these colonies tonight. We will look for more spawning tomorrow!
 
 
- 
+  
