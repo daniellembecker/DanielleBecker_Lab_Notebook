@@ -10,6 +10,8 @@ This post includes the full notebook for June-July 2023 *Montipora capitata* cor
 
 Field expedition team members: Jill Ashey (URI), Jennifer Matthews (UT Sydney), Andrei Herdean (UT Sydney), Crawford Drury and Coral Resilience Lab (HIMB).  
 
+The GitHub repository for this [project can be found here](https://github.com/AHuffmyer/larval_symbiont_TPC).
+
 # Project Overview  
 
 The goal of this field expedition is to conduct research on larval thermal tolerance in *Montipora capitata* larvae hosting different symbiont genera. *M. capitata* is a vertically transmitting coral and passes symbionts to offspring through the gametes. This work is funded in part through the National Science Foundation Ocean Sciences Postdoctoral Fellowship to AH and the University of Washington eScience Data Science Postdoctoral Fellowship to AH. More information on the abstract of the NSF OCE PRF award can be [found here](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2205966&HistoricalAwards=false). 
@@ -27,6 +29,56 @@ We will address this question by measuring:
 - Larval gene expression
 - Larval lipidomics
 - Larval metabolomics   
+
+# 18 June 2023 - early morning 19 June 2023 
+
+## Rearing embryos from 17 June spawning
+
+Cultures were checked frequently and were clean and healthy at 07:30. At 08:00 the cultures had some mortality and were goop-y. This has been seen before - it seems that ~08:00 is the time when unfertilized eggs degrade and cause declines in culture quality. 
+
+Ariana cleaned the cultures by removing the debris, wiping the surface with kimwipes, and bumping the embryos off the banjo filters. 
+
+Flow was increased to 15-20 mL per 5 sec at 08:00 to flush out cloudy water. 
+
+C3 had the most mortality and Ariana did an 80% water change. The conical was refilled after about 30 min. 
+
+Flow for all conicals was reduced back to 7-10 mL per 5 sec at 09:00.
+
+The D cultures had lower density and lower quality than the C cultures. 
+
+## Environmental measurements
+
+Morning measurements: 
+
+| Date     | Time | Tank       | pH (mV) | pH (nbs) | temp (C) | sal (psu) | flow (mL per 5 sec) | light (PAR) | Tris date |
+|----------|------|------------|---------|----------|----------|-----------|---------------------|-------------|-----------|
+| 20230618 |  920 | C1         |   -47.9 |     7.99 |    26.29 |        33 |                  11 |           3 |  20230617 |
+| 20230618 |  921 | C2         |   -47.4 |     7.98 |    26.39 |        33 |                  10 |           2 |  20230617 |
+| 20230618 |  922 | C3         |   -46.5 |     7.97 |    26.46 |        33 |                  14 |           3 |  20230617 |
+| 20230618 |  923 | D1         |   -47.9 |     7.99 |    26.35 |        33 |                  12 |           1 |  20230617 |
+| 20230618 |  924 | D2         |   -47.8 |     7.99 |    26.51 |        33 |                  14 |           2 |  20230617 |
+| 20230618 |  925 | D3         |   -47.5 |     7.99 |    26.48 |        33 |                  10 |           2 |  20230617 |
+| 20230618 |  945 | Parent NB1 |   -51.1 |     8.05 |    27.84 |        34 |                 400 |         196 |  20230617 |
+| 20230618 |  946 | Parent NB2 |   -50.5 |     8.03 |    27.43 |        34 |                 450 |         312 |  20230617 |
+| 20230618 |  947 | Parent B1  |   -50.7 |     8.03 |    27.52 |        34 |                 375 |         268 |  20230617 |
+| 20230618 |  948 | Parent B2  |   -53.4 |     8.09 |    27.99 |        34 |                 450 |         251 |  20230617 |
+
+
+Afternoon measurements: 
+
+| Date     | Time | Tank | pH (mV) | pH (nbs) | temp (C) | sal (psu) | flow (mL per 5 sec) | light (PAR) | Tris date |
+|----------|------|------|---------|----------|----------|-----------|---------------------|-------------|-----------|
+| 20230618 | 1709 | C1   |   -50.6 |     8.04 |    26.81 |        33 |                   1 |          12 |  20230617 |
+| 20230618 | 1710 | C2   |   -50.7 |     8.04 |    26.41 |        33 |                   2 |          10 |  20230617 |
+| 20230618 | 1711 | C3   |   -50.8 |     8.04 |    27.16 |        33 |                   3 |          11 |  20230617 |
+| 20230618 | 1712 | D1   |   -49.7 |     8.02 |    26.94 |        33 |                   0 |          12 |  20230617 |
+| 20230618 | 1713 | D2   |   -50.6 |     8.04 |    27.16 |        33 |                   1 |          14 |  20230617 |
+| 20230618 | 1715 | D3   |   -50.7 |     8.04 |    27.01 |        33 |                   3 |          11 |  20230617 |
+
+
+## Jill's developmental time series sampling 
+
+## Spawning night 
 
 # 17 June 2023 - early morning 18 June 2023 
 
@@ -131,6 +183,8 @@ Note that due to the amount of gametes available the C coral conicals are more d
 ![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/conical1.jpeg) 
 
 Every 60 minutes or so Ariana will check the cultures, stir/swirl the embryos, check water flow, and bubble bump the embryos off of the banjo filter. Conicals were fully refilled by 00:15. 
+
+Cultures looked clean and healthy all through the night and into the early morning.  
 
 ## Environmental measurements
 
