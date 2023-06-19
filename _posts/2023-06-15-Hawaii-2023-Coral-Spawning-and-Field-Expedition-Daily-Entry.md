@@ -46,6 +46,8 @@ Flow for all conicals was reduced back to 7-10 mL per 5 sec at 09:00.
 
 The D cultures had lower density and lower quality than the C cultures. 
 
+Cultures were cleaned every 1-2 hours. 
+
 ## Environmental measurements
 
 Morning measurements: 
@@ -78,7 +80,23 @@ Afternoon measurements:
 
 ## Jill's developmental time series sampling 
 
+We sampled for Jill's developmental time series project at 9am, 2pm, 8pm, and again at 3am. See Jill's notebook for details. 
+
 ## Spawning night 
+
+Corals were set up as described in the previous night with nets put on the colonies at 18:45. 
+
+Our options for tonight, if material are available, are: 
+
+- Consolidate yesterdays larvae into n=1 conical per symbiont type and fill n=2 conicals per symbiont type tonight 
+- Keep yesterdays larvae in buckets and fill n=3 conicals per symbiont type tonight
+- Dump yesterdays conicals and fill n=3 conicals per symbiont type tonight 
+
+We will make this decision once we see how spawning goes tonight. 
+
+
+
+
 
 # 17 June 2023 - early morning 18 June 2023 
 
