@@ -30,6 +30,43 @@ We will address this question by measuring:
 - Larval lipidomics
 - Larval metabolomics   
 
+# 19 June 2023 
+
+## Rearing embryos
+
+Embryos were maintained at night by CRL staff. At 07:30 Ariana came into lab and did a cleaning due to the morning mortality. The buckets of embryos from 6/17 were clean and only needed minimal care. C conicals looked good and also needed pretty minimal cleaning. The D conicals had higher mortality and are at lower density. These required a more thorough cleaning to remove the dead material. 
+
+Water flow was raised to 15-20 mL per 5 sec at 08:00. D1 has the lowest density, D2 and D3 are better, but still lower than optimal. We will require about 15,000 larvae of D and C. We will assess the conicals today and consider combining 6/17 and 6/18 cultures. Since we will be working with mature larvae, the one day developmental difference is not an issue. This will also add more parent colonies to the cultures. We would combine both the D and C cultures so that each symbiont type is treated equally. We will consider this as an option today. 
+
+## Environmental measurements  
+
+Morning environmental measurements: 
+
+| date    | time | tank      | group       | pH.mV | pH.nbs | temp.C | sal.psu | flow.mL.5s | par | tris.date | notes |
+|---------|------|-----------|-------------|-------|--------|--------|---------|------------|-----|-----------|-------|
+| 6/19/23 | 952  | C1        | Cladocopium | -47   | 7.98   | 26.67  | 33      | 2          | 15  | 20230617  |       |
+| 6/19/23 | 953  | C2        | Cladocopium | -47.9 | 7.99   | 26.64  | 33      | 1          | 15  | 20230617  |       |
+| 6/19/23 | 954  | C3        | Cladocopium | -48.1 | 8      | 26.8   | 33      | 3          | 18  | 20230617  |       |
+| 6/19/23 | 955  | D1        | Durusdinium | -48.1 | 8      | 26.86  | 33      | 1          | 20  | 20230617  |       |
+| 6/19/23 | 956  | D2        | Durusdinium | -48.3 | 8      | 26.8   | 33      | 0          | 17  | 20230617  |       |
+| 6/19/23 | 1000 | D3        | Durusdinium | -48.3 | 8      | 26.73  | 33      | 3          | 18  | 20230617  |       |
+| 6/19/23 | 1001 | Bucket D  | Bucket      | -46.3 | 9.96   | 26.05  | 33      | 0          | 0   | 20230617  |       |
+| 6/19/23 | 1002 | Bucket C1 | Bucket      | -48.1 | 8      | 26.14  | 33      | 0          | 0   | 20230617  |       |
+| 6/19/23 | 1003 | Bucket C2 | Bucket      | -48.4 | 8      | 26.23  | 33      | 0          | 0   | 20230617  |       |
+
+Buckets are at similar temperatures. We will monitor these to make sure they dont get too warm or deviate from the conicals. 
+
+Afternoon environmental measurements: 
+
+## Setting up equipment 
+
+
+
+
+
+
+
+
 # 18 June 2023 - early morning 19 June 2023 
 
 ## Rearing embryos from 17 June spawning
