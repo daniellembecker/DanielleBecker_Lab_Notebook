@@ -82,7 +82,7 @@ Afternoon measurements:
 
 We sampled for Jill's developmental time series project at 9am, 2pm, 8pm, and again at 3am. See Jill's notebook for details. 
 
-## Spawning night 
+## Spawning prep 
 
 Corals were set up as described in the previous night with nets put on the colonies at 18:45. 
 
@@ -94,9 +94,42 @@ Our options for tonight, if material are available, are:
 
 We will make this decision once we see how spawning goes tonight. 
 
+## Coral spawning! 
 
+The corals went bonkers tonight! We had a large and successful spawn. When we began to see many corals spawning we decided to move all of yesterday's larvae into 5 gallon buckets and clean and reset the conicals for new gametes. 
 
+The conicals were drained at 2100 through a seive into 5 gallon buckets. There was 1 bucket for the D conicals pooled together and 2 buckets for the C conicals pooled together. These were covered with a lid and left outside for the night. They will stay outside in shaded areas. 
 
+We had many parents spawn and contribute to the gamete pool tonight.  
+
+| Date     | Parent ID | Bleaching | Symbiont | Volume in Pool                           | Time Pooled |
+|----------|-----------|-----------|----------|------------------------------------------|-------------|
+| 20230618 |      1221 | B         | C        | Equal across parents, no dominant parent |       21:30 |
+| 20230618 |      1213 | B         | C        | Equal across parents, no dominant parent |       21:30 |
+| 20230618 |      1263 | B         | C        | Equal across parents, no dominant parent |       21:30 |
+| 20230618 |       141 | B         | C        | Equal across parents, no dominant parent |       21:30 |
+| 20230618 |        95 | B         | C        | Equal across parents, no dominant parent |       21:30 |
+| 20230618 |       258 | B         | C        | Equal across parents, no dominant parent |       21:30 |
+| 20230618 |       565 | B         | C        | Equal across parents, no dominant parent |       21:30 |
+| 20230618 |      1261 | B         | C        | Equal across parents, no dominant parent |       21:30 |
+| 20230618 |       127 | NB        | D        | Equal across parents, no dominant parent |       21:30 |
+| 20230618 |       497 | NB        | D        | Equal across parents, no dominant parent |       21:30 |
+| 20230618 |      1292 | NB        | D        | Equal across parents, no dominant parent |       21:30 |
+| 20230618 |       120 | NB        | D        | Equal across parents, no dominant parent |       21:30 |
+| 20230618 |       151 | NB        | D        | Equal across parents, no dominant parent |       21:30 |
+| 20230618 |       742 | NB        | D        | Equal across parents, no dominant parent |       21:30 |
+| 20230618 |       211 | NB        | D        | Equal across parents, no dominant parent |       21:30 |
+| 20230618 |        70 | NB        | D        | Equal across parents, no dominant parent |       21:30 |
+| 20230618 |       684 | NB        | D        | Equal across parents, no dominant parent |       21:30 |
+| 20230618 |       745 | NB        | D        | Equal across parents, no dominant parent |       21:30 |
+
+Gametes collected from these colonies were all pooled together at 21:30 and allocated into falcon tubes (3-5 mL per tube). Tubes were gently rocked from 21:30-22:30 until bundles had broken up. Sperm water was removed at 22:30-22:45 and the remaining eggs and sperm water were added to conicals without water flow. Embryos were then allowed to sit in conicals for about 20-30 minutes. This gives an additional rinse to the eggs and a final chance for bundles to break and fertilization to occur. 
+
+4 mL of gametes were added to C conicals (more material available) and 2.5 mL added to D conicals. 
+
+Between 23:00 and 23:30, 90% of water was drained from the conical to remove any sperm. The banjo filter was then put on the conical and the water turned on at ~7-9 mL per 5 sec and allowed to fill slowly. 
+
+After this point, embryos are gently stirred, debris removed, and bubble bumped every ~1 h throughout the night by CRL members and Ariana. 
 
 # 17 June 2023 - early morning 18 June 2023 
 
