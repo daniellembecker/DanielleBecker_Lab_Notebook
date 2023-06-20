@@ -80,14 +80,6 @@ Afternoon environmental measurements:
 | 6/19/23 | 1202 | Bucket C1 |   -48 |  7.99 |  27.05 |     33 |       0 |          0 | 20230617 | 20230617  |       |
 | 6/19/23 | 1204 | Bucket C2 |   -48 |  7.99 |  27.29 |     33 |       0 |          0 | 20230617 | 20230617  |       |
 
-## Setting up equipment 
-
-
-
-
-
-
-
 
 # 18 June 2023 - early morning 19 June 2023 
 
