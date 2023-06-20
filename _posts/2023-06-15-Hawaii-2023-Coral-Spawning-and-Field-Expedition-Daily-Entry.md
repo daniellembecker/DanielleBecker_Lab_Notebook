@@ -36,7 +36,17 @@ We will address this question by measuring:
 
 Embryos were maintained at night by CRL staff. At 07:30 Ariana came into lab and did a cleaning due to the morning mortality. The buckets of embryos from 6/17 were clean and only needed minimal care. C conicals looked good and also needed pretty minimal cleaning. The D conicals had higher mortality and are at lower density. These required a more thorough cleaning to remove the dead material. 
 
-Water flow was raised to 15-20 mL per 5 sec at 08:00. D1 has the lowest density, D2 and D3 are better, but still lower than optimal. We will require about 15,000 larvae of D and C. We will assess the conicals today and consider combining 6/17 and 6/18 cultures. Since we will be working with mature larvae, the one day developmental difference is not an issue. This will also add more parent colonies to the cultures. We would combine both the D and C cultures so that each symbiont type is treated equally. We will consider this as an option today. 
+Water flow was raised to 15-20 mL per 5 sec at 08:00. D1 has the lowest density, D2 and D3 are better, but still lower than optimal. We will require about 15,000 larvae of D and C. We will assess the conicals today and consider alternatives to make sure we have enough sample size. 
+
+One option is combining 6/17 and 6/18 cultures. Since we will be working with mature larvae, the one day developmental difference is not an issue. This will also add more parent colonies to the cultures. We would combine both the D and C cultures so that each symbiont type is treated equally. 
+
+The other option is to compare our bleached parents Cladocopium cultures with Ford's non-bleached mixed symbiont cultures. These cultures have a majority D with some C. These cultures have many larvae, so this is a good option. 
+
+We will keep all options open until the time we need to decide. 
+
+At 12:15 Ariana and Jill drained D1 since it had very few larvae (<500) and added these larvae to D2. We then drained the D bucket and added it to the D1 conical, providing a 6/17 D culture. We did water changes in the C buckets at 12:30. 
+
+All corals were babysat the rest of the day with mixing and cleaning if needed every hour. Cultures were stable. 
 
 ## Environmental measurements  
 
@@ -58,6 +68,18 @@ Buckets are at similar temperatures. We will monitor these to make sure they don
 
 Afternoon environmental measurements: 
 
+| date    | time | tank      | group | pH.mV | pH.nbs | temp.C | sal.psu | flow.mL.5s | par      | tris.date | notes |
+|---------|------|-----------|-------|-------|--------|--------|---------|------------|----------|-----------|-------|
+| 6/19/23 | 1147 | C1        | -44.8 |  7.93 |  27.12 |     33 |       2 |         15 | 20230617 | 20230617  |       |
+| 6/19/23 | 1153 | C2        |   -48 |  7.99 |  27.04 |     33 |       2 |         15 | 20230617 | 20230617  |       |
+| 6/19/23 | 1157 | C3        | -48.7 |  8.01 |  27.16 |     33 |       3 |         18 | 20230617 | 20230617  |       |
+| 6/19/23 | 1148 | D1        | -47.6 |  7.99 |  27.14 |     33 |       4 |         17 | 20230617 | 20230617  |       |
+| 6/19/23 | 1151 | D2        | -45.9 |  7.95 |  27.13 |     33 |       1 |         16 | 20230617 | 20230617  |       |
+| 6/19/23 | 1155 | D3        | -48.5 |     8 |  27.03 |     33 |       0 |         12 | 20230617 | 20230617  |       |
+| 6/19/23 | 1200 | Bucket D  | -46.9 |  7.97 |  26.96 |     33 |       0 |          0 | 20230617 | 20230617  |       |
+| 6/19/23 | 1202 | Bucket C1 |   -48 |  7.99 |  27.05 |     33 |       0 |          0 | 20230617 | 20230617  |       |
+| 6/19/23 | 1204 | Bucket C2 |   -48 |  7.99 |  27.29 |     33 |       0 |          0 | 20230617 | 20230617  |       |
+
 ## Setting up equipment 
 
 
@@ -71,7 +93,7 @@ Afternoon environmental measurements:
 
 ## Rearing embryos from 17 June spawning
 
-Cultures were checked frequently and were clean and healthy at 07:30. At 08:00 the cultures had some mortality and were goop-y. This has been seen before - it seems that ~08:00 is the time when unfertilized eggs degrade and cause declines in culture quality. 
+Cultures were checked frequently and were clean and healthy at 07:30. At 08:00 the cultures had some mortality and were goopey. This has been seen before - it seems that ~08:00 is the time when unfertilized eggs degrade and cause declines in culture quality. 
 
 Ariana cleaned the cultures by removing the debris, wiping the surface with kimwipes, and bumping the embryos off the banjo filters. 
 
