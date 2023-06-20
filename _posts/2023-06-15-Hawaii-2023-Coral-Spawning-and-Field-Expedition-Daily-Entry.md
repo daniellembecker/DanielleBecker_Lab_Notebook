@@ -48,6 +48,10 @@ At 12:15 Ariana and Jill drained D1 since it had very few larvae (<500) and adde
 
 All corals were babysat the rest of the day with mixing and cleaning if needed every hour. Cultures were stable. 
 
+Embryos were cared for every hour for the day and night. 
+
+At 2000, Ariana noticed that Ford's non-bleached mixed cultures were looking dirty. Ariana cleaned these with kim wipes and they looked good after cleaning. They will be babysat tonight too by CRL staff. 
+
 ## Environmental measurements  
 
 Morning environmental measurements: 
@@ -68,7 +72,7 @@ Buckets are at similar temperatures. We will monitor these to make sure they don
 
 Afternoon environmental measurements: 
 
-| date    | time | tank      | group | pH.mV | pH.nbs | temp.C | sal.psu | flow.mL.5s | par      | tris.date | notes |
+| date    | time | tank       | pH.mV | pH.nbs | temp.C | sal.psu | flow.mL.5s | par      | tris.date | 
 |---------|------|-----------|-------|-------|--------|--------|---------|------------|----------|-----------|-------|
 | 6/19/23 | 1147 | C1        | -44.8 |  7.93 |  27.12 |     33 |       2 |         15 | 20230617 | 20230617  |       |
 | 6/19/23 | 1153 | C2        |   -48 |  7.99 |  27.04 |     33 |       2 |         15 | 20230617 | 20230617  |       |
@@ -80,6 +84,24 @@ Afternoon environmental measurements:
 | 6/19/23 | 1202 | Bucket C1 |   -48 |  7.99 |  27.05 |     33 |       0 |          0 | 20230617 | 20230617  |       |
 | 6/19/23 | 1204 | Bucket C2 |   -48 |  7.99 |  27.29 |     33 |       0 |          0 | 20230617 | 20230617  |       |
 
+Evening environmental measurements:  
+
+| date    | time | tank | pH.mV | pH.nbs | temp.C | sal.psu | flow.mL.5s | par | tris.date |   |
+|---------|------|------|-------|--------|--------|---------|------------|-----|-----------|---|
+| 6/19/23 | 1940 | C1   | -49.2 |   8.01 |  26.83 |      33 |          0 |   0 |  20230617 |   |
+| 6/19/23 | 1942 | C2   | -49.5 |   8.02 |  26.87 |      33 |          0 |   0 |  20230617 |   |
+| 6/19/23 | 1943 | C3   | -49.4 |   8.02 |  26.88 |      33 |          0 |   0 |  20230617 |   |
+| 6/19/23 | 1945 | D1   | -46.8 |   7.97 |   26.8 |      33 |          0 |   0 |  20230617 |   |
+| 6/19/23 | 1946 | D2   | -49.3 |   8.02 |  26.97 |      33 |          0 |   0 |  20230617 |   |
+| 6/19/23 | 1947 | D3   | -49.6 |   8.02 |  26.73 |      33 |          0 |   0 |  20230617 |   |
+| 6/19/23 | 1948 | NB1  | -48.7 |      8 |  26.74 |      33 |          0 |   0 |  20230617 |   |
+| 6/19/23 | 1949 | NB2  | -49.1 |   8.01 |   26.9 |      33 |          0 |   0 |  20230617 |   |
+| 6/19/23 | 1950 | NB3  | -49.3 |   8.02 |  26.89 |      33 |          0 |   0 |  20230617 |   |
+| 6/19/23 | 1951 | NB4  | -49.3 |   8.02 |  26.69 |      33 |          0 |   0 |  20230617 |   |
+| 6/19/23 | 1953 | NB5  | -49.5 |   8.02 |  26.82 |      33 |          0 |   0 |  20230617 |   |
+| 6/19/23 | 1954 | NB6  | -49.4 |   8.02 |  26.71 |      33 |          0 |   0 |  20230617 |   |
+| 6/19/23 | 1955 | NB7  | -49.3 |   8.01 |  26.61 |      33 |          0 |   0 |  20230617 |   |
+| 6/19/23 | 1956 | NB8  | -49.6 |   8.02 |  26.76 |      33 |          0 |   0 |  20230617 |   |
 
 # 18 June 2023 - early morning 19 June 2023 
 
