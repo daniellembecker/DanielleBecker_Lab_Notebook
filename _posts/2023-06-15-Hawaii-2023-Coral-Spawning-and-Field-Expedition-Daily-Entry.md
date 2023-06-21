@@ -30,11 +30,118 @@ We will address this question by measuring:
 - Larval lipidomics
 - Larval metabolomics   
 
+# 20 June 2023 
+
+## Rearing embryos
+
+Embryos were cleaned and maintained all night and are looking good! No major mortality and cultures are staying clean. Checked every 1-2 hours throughout the day and evening. The cultures look great! 
+
+## Setting up SDR and respirometry equipment 
+
+We set up the SDR and lights in incubators. We did the following: 
+
+- Cut holes in the shelves so that we can set lights on the shelves and not have light be impacted
+- Determine light percentages for each desired light level for larval PI curves. These are percentages for all channels (but 0% moonlight) and PAR values measured with the Apogee.  
+
+| Light % | PAR  |
+|---------|------|
+| 0       | 0    |
+| 5       | 55   |
+| 10      | 138  |
+| 15      | 260  |
+| 25      | 468  |
+| 35      | 667  |
+| 50      | 924  |
+| 75      | 1286 |
+| 90      | 1456 |
+| 100     | 1548 |
+
+- Set up SDR equipment 
+- Conduct SDR calibration with 0% and 100% oxygen saturated seawater. We will need to do this again on the first run of each day. 
+- Run test round with n=5 larvae in a few wells  
+- Organize bench area 
+
+We also ran a test PI curve running 10 minute consecutive intervals at 0, 130, 450, and 900 PAR. P rates changed over light levels. If we can use the consecutive PI curve method, we can even try running PI curves at multiple temperatures (26-29-32-35) for example. 
+
+Ariana tested temperatures for the incubators with lights. With doors closed the incubators held temperature (26°C) with lights at 450 PAR just fine. The incubators went to 10°C without lights. Colder temperatures will require the door to be open if lights are on. 
+
+## Counting larvae in conicals 
+
+Ariana conducted estimated larval density counts for each C, D, and NB conical. To determine volume of each conical Ariana filled a test conicals with water. The conicals have 15 L total volume when filled. 
+
+Conicals were stirred well to homogenize larval density in the conical. Triplicate 5 mL samples were taken and the number of larvae were counted in the sample. I then calculated the total number of larvae in each conical to help us make decisions on which larval groups to use.  
+
+| Tank      | Total Vol | Sample Vol | Rep | Larvae | Mean  | Total Larvae |
+|-----------|-----------|------------|-----|--------|-------|--------------|
+| C1        | 15L       | 5mL        | 1   | 10     | 10    | 30000        |
+| C1        | 15L       | 5mL        | 2   | 6      |       |              |
+| C1        | 15L       | 5mL        | 3   | 14     |       |              |
+| C2        | 15L       | 5mL        | 1   | 16     | 17.7  | 53100        |
+| C2        | 15L       | 5mL        | 2   | 17     |       |              |
+| C2        | 15L       | 5mL        | 3   | 20     |       |              |
+| C3        | 15L       | 5mL        | 1   | 21     | 26.3  | 78900        |
+| C3        | 15L       | 5mL        | 2   | 28     |       |              |
+| C3        | 15L       | 5mL        | 3   | 30     |       |              |
+| D1        | 15L       | 5mL        | 1   | 10     | 14    | 42000        |
+| D1        | 15L       | 5mL        | 2   | 14     |       |              |
+| D1        | 15L       | 5mL        | 3   | 16     |       |              |
+| D2        | 15L       | 5mL        | 1   | 5      | 4     | 12000        |
+| D2        | 15L       | 5mL        | 2   | 4      |       |              |
+| D2        | 15L       | 5mL        | 3   | 3      |       |              |
+| D3        | 15L       | 5mL        | 1   | 3      | 3     | 9000         |
+| D3        | 15L       | 5mL        | 2   | 1      |       |              |
+| D3        | 15L       | 5mL        | 3   | 3      |       |              |
+| Bucket C1 | 15L       | 5mL        | 1   | 13     | 11    | 22000        |
+| Bucket C1 | 15L       | 5mL        | 2   | 8      |       |              |
+| Bucket C1 | 15L       | 5mL        | 3   | 12     |       |              |
+| Bucket C2 | 15L       | 5mL        | 1   | 12     | 11    | 22000        |
+| Bucket C2 | 15L       | 5mL        | 2   | 8      |       |              |
+| Bucket C2 | 15L       | 5mL        | 3   | 13     |       |              |
+
+Based on these numbers, we can proceed with using Durusdinium and Cladocopium larvae and not use the mixed non-bleached cultures. In order to do this, we need to combine the Durusdinium cultures and also combine the Cladocopium cultures across days to ensure the developmental time of C and D are the same. We will work on redistributing these cultures in the morning. For example, if we add 20% more larvae of Durusdinium from 6/17 to the 6/18 cultures, we will add the same proportion to the Cladocopium cultures. If there aren't enough in the morning we may still need to use the mixed NB cultures instead. 
+
+## Environmental measurements 
+
+| date       | time    | tank         | group          | pH.mV    | pH.nbs  | temp.C   | sal.psu | flow.mL.5s | par     | tris.date   | notes |
+|------------|---------|--------------|----------------|----------|---------|----------|---------|------------|---------|-------------|-------|
+|   6/20/23  |   1129  |   C1         |   Cladocopium  |   -48    |   7.99  |   26.6   |   33    |   3        |   15    |   20230617  |       |
+|   6/20/23  |   1130  |   C2         |   Cladocopium  |   -47.3  |   7.98  |   26.56  |   33    |   2        |   12    |   20230617  |       |
+|   6/20/23  |   1131  |   C3         |   Cladocopium  |   -47.9  |   7.99  |   26.63  |   33    |   3        |   16    |   20230617  |       |
+|   6/20/23  |   1132  |   D1         |   Durusdinium  |   -48    |   7.99  |   26.54  |   33    |   2        |   12.5  |   20230617  |       |
+|   6/20/23  |   1133  |   D2         |   Durusdinium  |   -48    |   7.99  |   26.46  |   33    |   1        |   17.5  |   20230617  |       |
+|   6/20/23  |   1135  |   D3         |   Durusdinium  |   -48.2  |   8     |   26.7   |   33    |   0        |   10    |   20230617  |       |
+|   6/20/23  |   1136  |   Bucket C1  |   Bucket       |   -44.4  |   7.93  |   26.99  |   33    |   0        |   0     |   20230617  |       |
+|   6/20/23  |   1137  |   Bucket C2  |   Bucket       |   -44.8  |   7.94  |   27.29  |   33    |   0        |   0     |   20230617  |       |
+
+## Taking extra samples 
+
+Ariana collected n=12 samples of approx. 30-40 larvae for extra or practice samples. These were taken from the bucket of extra Cladocopium larvae. Larvae were added to tubes, water was removed, and they were either snap frozen (n=6) or preserved in RNA/DNA shield (n=6). 
+
+| Date     | Time | Tube Number | Volume larvae | Symbiont    | Tank     | Preservation Method | Storage | Color  |
+|----------|------|-------------|---------------|-------------|----------|---------------------|---------|--------|
+| 20230620 | 1230 | E1          | 100uL         | Cladocopium | C Bucket | Snap frozen         | -80C    | Orange |
+| 20230620 | 1230 | E2          | 100uL         | Cladocopium | C Bucket | Snap frozen         | -80C    | Orange |
+| 20230620 | 1230 | E3          | 100uL         | Cladocopium | C Bucket | Snap frozen         | -80C    | Orange |
+| 20230620 | 1230 | E4          | 100uL         | Cladocopium | C Bucket | Snap frozen         | -80C    | Orange |
+| 20230620 | 1230 | E5          | 100uL         | Cladocopium | C Bucket | Snap frozen         | -80C    | Orange |
+| 20230620 | 1230 | E6          | 100uL         | Cladocopium | C Bucket | Snap frozen         | -80C    | Orange |
+| 20230620 | 1230 | E7          | 100uL         | Cladocopium | C Bucket | RNA/DNA shield      | -80C    | Orange |
+| 20230620 | 1230 | E8          | 100uL         | Cladocopium | C Bucket | RNA/DNA shield      | -80C    | Orange |
+| 20230620 | 1230 | E9          | 100uL         | Cladocopium | C Bucket | RNA/DNA shield      | -80C    | Orange |
+| 20230620 | 1230 | E10         | 100uL         | Cladocopium | C Bucket | RNA/DNA shield      | -80C    | Orange |
+| 20230620 | 1230 | E11         | 100uL         | Cladocopium | C Bucket | RNA/DNA shield      | -80C    | Orange |
+| 20230620 | 1230 | E12         | 100uL         | Cladocopium | C Bucket | RNA/DNA shield      | -80C    | Orange |
+
+
 # 19 June 2023 
 
 ## Rearing embryos
 
 Embryos were maintained at night by CRL staff. At 07:30 Ariana came into lab and did a cleaning due to the morning mortality. The buckets of embryos from 6/17 were clean and only needed minimal care. C conicals looked good and also needed pretty minimal cleaning. The D conicals had higher mortality and are at lower density. These required a more thorough cleaning to remove the dead material. 
+
+Embryos are at the blastula stage from the 6/17 cohort. There are some entering the planula stage too! We took some fun pictures today. 
+
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/larvae.jpeg)    
 
 Water flow was raised to 15-20 mL per 5 sec at 08:00. D1 has the lowest density, D2 and D3 are better, but still lower than optimal. We will require about 15,000 larvae of D and C. We will assess the conicals today and consider alternatives to make sure we have enough sample size. 
 
@@ -52,6 +159,10 @@ Embryos were cared for every hour for the day and night.
 
 At 2000, Ariana noticed that Ford's non-bleached mixed cultures were looking dirty. Ariana cleaned these with kim wipes and they looked good after cleaning. They will be babysat tonight too by CRL staff. 
 
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/conicals.jpeg)  
+
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/conical2.jpeg)  
+
 ## Environmental measurements  
 
 Morning environmental measurements: 
@@ -64,7 +175,7 @@ Morning environmental measurements:
 | 6/19/23 | 955  | D1        | Durusdinium | -48.1 | 8      | 26.86  | 33      | 1          | 20  | 20230617  |       |
 | 6/19/23 | 956  | D2        | Durusdinium | -48.3 | 8      | 26.8   | 33      | 0          | 17  | 20230617  |       |
 | 6/19/23 | 1000 | D3        | Durusdinium | -48.3 | 8      | 26.73  | 33      | 3          | 18  | 20230617  |       |
-| 6/19/23 | 1001 | Bucket D  | Bucket      | -46.3 | 9.96   | 26.05  | 33      | 0          | 0   | 20230617  |       |
+| 6/19/23 | 1001 | Bucket D  | Bucket      | -46.3 | 7.96   | 26.05  | 33      | 0          | 0   | 20230617  |       |
 | 6/19/23 | 1002 | Bucket C1 | Bucket      | -48.1 | 8      | 26.14  | 33      | 0          | 0   | 20230617  |       |
 | 6/19/23 | 1003 | Bucket C2 | Bucket      | -48.4 | 8      | 26.23  | 33      | 0          | 0   | 20230617  |       |
 
@@ -195,6 +306,8 @@ We had many parents spawn and contribute to the gamete pool tonight.
 | 20230618 |        70 | NB        | D        | Equal across parents, no dominant parent |       21:30 |
 | 20230618 |       684 | NB        | D        | Equal across parents, no dominant parent |       21:30 |
 | 20230618 |       745 | NB        | D        | Equal across parents, no dominant parent |       21:30 |
+
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/6_18_tubes.jpeg) 
 
 Gametes collected from these colonies were all pooled together at 21:30 and allocated into falcon tubes (3-5 mL per tube). Tubes were gently rocked from 21:30-22:30 until bundles had broken up. Sperm water was removed at 22:30-22:45 and the remaining eggs and sperm water were added to conicals without water flow. Embryos were then allowed to sit in conicals for about 20-30 minutes. This gives an additional rinse to the eggs and a final chance for bundles to break and fertilization to occur. 
 
