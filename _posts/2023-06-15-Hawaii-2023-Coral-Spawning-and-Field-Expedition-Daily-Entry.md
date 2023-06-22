@@ -30,6 +30,106 @@ We will address this question by measuring:
 - Larval lipidomics
 - Larval metabolomics   
 
+# 21 June 2023 
+
+Our collaborators from UT Sydney arrived today! Jennifer Matthews and Andrei Herdean will be helping us run photophysiology measurements.  
+
+## Rearing larvae 
+
+Larval cultures looked good today. They had occasional stirring and care from babysitters. 
+
+## Counting larvae 
+
+Ariana measured larval density in the morning to monitor density and make final decisions on which larval groups we will use. 
+
+| Tank | Total Volumee | Sample Volume | Count    | Average per mL | Total  |
+|------|---------------|---------------|----------|----------------|--------|
+| C1   | 15L           | 5mL           | 8,8,12   | 1.86           | 28000  |
+| C2   | 15L           | 5mL           | 23,20,17 | 4              | 60000  |
+| C3   | 15L           | 5mL           | 29,22,22 | 4.86           | 73000  |
+| D1   | 15L           | 5mL           | 8,14,9   | 2.06           | 31000  |
+| D2   | 15L           | 5mL           | 3,3,1    | 0.46           | 7000   |
+| D3   | 15L           | 5mL           | 4,2,1    | 0.46           | 7000   |
+| NB1  | 15L           | 5mL           | 27,35,40 | 0.8            | 102000 |
+| NB2  | 15L           | 5mL           | 17,22,22 | 4.06           | 61000  |
+| NB3  | 15L           | 5mL           | 45,43,38 | 8.4            | 126000 |
+| NB4  | 15L           | 5mL           | 24,32,20 | 5.06           | 76000  |
+| NB5  | 15L           | 5mL           | 11,22,30 | 4.2            | 63000  |
+| NB6  | 15L           | 5mL           | 22,24,21 | 4.4            | 67000  |
+| NB7  | 15L           | 5mL           | 17,20,32 | 4.6            | 69000  |
+| NB8  | 15L           | 5mL           | 8,17,7   | 2.1            | 30000  |
+
+We have plenty of C, but our density for D is low. We will use NB cultures, which are mixed C and D (but majority D). We will re-allocate larvae in the morning and settle anything that is left over.  
+
+## Test PI curves and respiration measurements 
+
+Jill ran test measurements for respiration and PI curves today. Metadata was recorded on Google Drive and GitHub. 
+
+Jill first ran test respiration measurements at three temperatures:  
+
+| Plate | Run | Temperature |
+|-------|-----|-------------|
+| 1     | 1   | 15          |
+| 2     | 1   | 15          |
+| 3     | 2   | 25          |
+| 4     | 2   | 25          |
+| 5     | 3   | 33          |
+| 6     | 3   | 33          |
+
+
+5 larvae were loaded in each well. Metatdata was recorded on Google Drive and GitHub. Jill noticed that we need to take the plate out inbetween runs when the temperature is reaching a new target to avoid condensation. The incubator temperature may also differ than the actual temperature, so we will check this using the temperature probe. In the dark the temperatures hit the target temperatures as indicated by temperatures from the SDR data. Ariana worked on preliminary analysis of this data on GitHub. 
+
+Jill also ran a test PI curve in which the larvae are exposed to consecutive increasing light levels. 
+
+| Date     | Run | Plate | SDR | Light_Level | Light_Value | TimeStart | TimeStop | TimeInterval | IntervalStart | IntervalStop | Temperature | Notes |
+|----------|-----|-------|-----|-------------|-------------|-----------|----------|--------------|---------------|--------------|-------------|-------|
+| 20230621 |   1 |     1 | 641 |           1 |           0 |     16:48 |    17:18 |         0:30 |             0 |           30 |          26 | Test  |
+| 20230621 |   1 |     1 | 641 |           2 |          50 |     17:20 |    17:52 |         1:02 |            33 |           62 |          26 | Test  |
+| 20230621 |   1 |     1 | 641 |           3 |         150 |     17:54 |    18:20 |         1:28 |            65 |           88 |          26 | Test  |
+| 20230621 |   1 |     1 | 641 |           4 |         500 |     18:24 |    18:50 |         1:54 |            91 |          114 |          26 | Test  |
+| 20230621 |   1 |     1 | 641 |           5 |         900 |     18:53 |    19:19 |         2:20 |           117 |          140 |          26 | Test  |
+| 20230621 |   1 |     1 | 641 |           6 |        1400 |     19:21 |    19:48 |         2:47 |           143 |          167 |          26 | Test  |
+| 20230621 |   1 |     2 | 710 |           1 |           0 |     16:48 |    17:18 |         0:30 |             0 |           30 |          26 | Test  |
+| 20230621 |   1 |     2 | 710 |           2 |          50 |     17:20 |    17:52 |         1:02 |            33 |           62 |          26 | Test  |
+| 20230621 |   1 |     2 | 710 |           3 |         150 |     17:54 |    18:20 |         1:28 |            65 |           88 |          26 | Test  |
+| 20230621 |   1 |     2 | 710 |           4 |         500 |     18:24 |    18:50 |         1:54 |            91 |          114 |          26 | Test  |
+| 20230621 |   1 |     2 | 710 |           5 |         900 |     18:53 |    19:19 |         2:20 |           117 |          140 |          26 | Test  |
+| 20230621 |   1 |     2 | 710 |           6 |        1400 |     19:21 |    19:48 |         2:47 |           143 |          167 |          26 | Test  |
+
+We observed that there was oxygen consumption in the dark and slow photosynthesis rates at low light levels that increased as light increased. At the highest level we could also see rates leveling off as expected! Ariana will work on analyzing this data to see if we need to adjust the light protocol. 
+
+## Labeling tubes 
+
+We labeled tubes in preparation for sampling. Each type of tube has a specific color and letter prefix to help us identify. We will be sampling cell density and ITS2 samples tomorrow and labeled tubes in preparation for these assays. Size/cell density samples will have red labels and ITS2 samples will have green labels. 
+
+For ITS2 and cell density, we will sample n=30 larvae per sample and sample n=3 tubes per tank/n=6 tubes per symbiont type. We will sample these metrics throughout our experiments. 
+
+## Environmental measurements 
+
+| 6/21/23 | 1726 | C1  | -49.8 | 8.03 | 27.24 | 33 | 14 | 3 | 20230617 |
+|--------:|-----:|-----|------:|-----:|------:|---:|---:|--:|---------:|
+| 6/21/23 | 1727 | C2  | -49.5 | 8.02 | 27.06 | 33 | 16 | 4 | 20230617 |
+| 6/21/23 | 1728 | C3  | -49.9 | 8.03 | 27.22 | 33 | 15 | 5 | 20230617 |
+| 6/21/23 | 1729 | D1  | -48.7 | 8.01 | 27.44 | 33 | 25 | 3 | 20230617 |
+| 6/21/23 | 1730 | D2  | -49.9 | 8.03 | 27.29 | 33 | 14 | 2 | 20230617 |
+| 6/21/23 | 1731 | D3  | -49.7 | 8.02 | 27.25 | 33 | 15 | 4 | 20230617 |
+| 6/21/23 | 1732 | NB1 | -49.7 | 8.02 | 27.38 | 33 | 20 | 3 | 20230617 |
+| 6/21/23 | 1733 | NB2 | -48.7 | 8.03 | 27.34 | 33 | 17 | 2 | 20230617 |
+| 6/21/23 | 1734 | NB3 | -49.8 | 8.02 | 27.33 | 33 | 18 | 1 | 20230617 |
+| 6/21/23 | 1735 | WT1 | -49.5 | 8.02 | 27.39 | 33 | 10 | 4 | 20230617 |
+| 6/21/23 | 1736 | WT2 |   -50 | 8.03 | 27.48 | 33 | 20 | 3 | 20230617 |
+| 6/21/23 | 1737 | WT3 |   -50 | 8.03 | 27.36 | 33 | 20 | 2 | 20230617 |
+
+## Experimental design 
+
+We will add Wildtype larvae into our experimental design as well! This will allow us to compare symbiont types and any differences between wild and selected parent groups. 
+
+We will also use non-bleached parent mixed symbiont groups in order to have sufficient sample size. 
+
+Ariana worked on updating metadata and sampling information.  
+
+We will likely make n=2 tanks per type: Wiltype 1-2, C 1-2, and Mixed 1-2
+
 # 20 June 2023 
 
 ## Rearing embryos
