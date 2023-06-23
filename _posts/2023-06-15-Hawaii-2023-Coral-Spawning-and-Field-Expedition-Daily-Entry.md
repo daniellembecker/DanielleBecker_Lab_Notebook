@@ -30,6 +30,109 @@ We will address this question by measuring:
 - Larval lipidomics
 - Larval metabolomics   
 
+# 22 June 2023 
+
+## Allocating experimental larvae and rearing 
+
+Today we allocated the larvae for our experiment. We have three groups: 
+
+- Nonbleached parents with a mix of C and D symbionts (likely majority D)
+- Bleached parents with C symbionts 
+- Wildtype 
+
+We now have n=2 conicals for each of these groups, which are technical replicates of the large fertilization pool for each type. We have at least 50,000 larvae of each type for our experiments. D conicals were mixed with mixed parents (same parents in each pool) and C3 tank was combined with C1 and C2. 6/17 cultures are left separate from our experiment 6/18 cultures. 
+
+The parents that contributed to the nonbleached mix pool are:  
+
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/mix_parents.jpeg)  
+
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/d_parents.jpeg)  
+
+These larvae will be checked and stirred a few times daily and during the night. 
+
+## PI Curves 
+
+Jill and Ariana ran larval PI curves today with mixed, wildtype, and C larvae. Plate maps and sample information dataframes are on [GitHub here](https://github.com/AHuffmyer/larval_symbiont_TPC/tree/main/data/larval_pi_curves) and a full protocol is on our Google Drive folder. Briefly, we loaded n=5 larave into n=7 wells per symbiont type per SDR plate. We are using both the 641 and 710 SDR with the plates in incubators. We are following this [general SDR protocol for general practices](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resources/Equipment_Protocols/Respirometry_Protocol/SDR-Respirometry-Protocol.md). 
+
+Jill completed optimization steps including calibration of the SDR to 0% and 100% air saturated oxygen. All calibrations and single measurements were satisfactory. Jill also completed measurements of the light field and centered the SDR in the incubator and secured the light. 
+
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/sdr_picurves.jpeg)  
+
+We ran two plates for the SDR today with symbiont type and blank location randomized within each plate with a different configuration for each plate. See the sample information in GitHub for a full sample list and plate locations. 
+
+We first dark adapted the larvae in an incubator at 26°C for 1 hour prior to measurements. 5 larvae of each type from duplicate conicals (half of the wells were from C1 and half from C2 tanks, etc) were added to the plates, sealed with coverslips, and measured. We used 3 1µm FSW blanks in each plate.  
+
+We first ran respiration at 0 PAR and then increased the PAR levels using AquaIllumination lights in 11 intervals with 15-20 minutes per interval. The intervals we used were:  
+
+| PAR  | Light %  |
+|------|----------|
+|    0 |        0 |
+|   16 |        2 |
+|   60 |        5 |
+|  120 |        8 |
+|  165 |       10 |
+|  275 |       15 |
+|  425 |       21 |
+|  700 |       33 |
+| 1100 |       54 |
+| 1500 |       84 |
+| 1660 |      100 |
+
+These intervals should encompass the entire PI curve and provide high frequency measurements at low light. Our larvae are acclimated to low light, so this appropriate for our use. PAR values were generated with a standard curve of light channel % and PAR values on [GitHub here](https://github.com/AHuffmyer/larval_symbiont_TPC/tree/main/data/larval_pi_curves). 
+
+Full run information can be found on GitHub. 
+
+The PI curve was conducted from ~14:30-17:30. We controlled and monitored temperature constantly in the incubators. Temperatures remained between 35.5 and 27°C on target until the lights reached 1500 PAR. At this point the lights generated too much heat and the temperature went to >30°C. We will look at the PI curves and likely remove these high light values from future PI curve measurements. 
+
+We also used separate pipettes for each symbiont type and washed plates with DI water between loading. 
+
+## Analyzing PI curve data
+
+Ariana wrote R scripts to extract and conduct preliminary analyses on PI curves. The scripts are on [GitHub here for extraction of rates](https://github.com/AHuffmyer/larval_symbiont_TPC/blob/main/scripts/larval_pi_curve_sdr_extraction.Rmd) and [here for analysis of PI curves](https://github.com/AHuffmyer/larval_symbiont_TPC/blob/main/scripts/larval_pi_curve_sdr_analysis.Rmd).  
+
+We found some very interesting results! 
+
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/nls_curves_all.png)
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/nls_curves_individual.png)
+
+These results show that the PI curve of Mix symbiont (C and D, mostly D) larvae are different from Cladocopium larvae and wildtype samples! The saturating irradiance (Ek) for WT and C larvae is approximately 100 PAR while this parameter is ~600 for Mixed larvae. This is very interesting. We will use these PI curves to set light levels for additional measurements and will be interested to compare this data with the photophysiological data with Jen and Andrei. 
+
+## ITS2 Sampling 
+
+Ariana sampled n=30 larvae per sample for n=6 samples from each symbiont type (n=3 per conical) at 1500-1600 for ITS2 amplicon sequencing. 18 total samples were collected by counting 30 larvae, spinning the larvae down in the tube for 1.5 min at 10,000 rcf (Eppindorf centrifuge 5415D model) and preserved with 500 µL RNA/DNA shield. Samples were stored in the -80°C freezer. 
+
+## Size/Symbiont Density Sampling
+
+Ariana sampled n=30 larvae per sample for n=6 samples from each symbiont type (n=3 per conical) at 1600-1700 for size and symbiont density. 18 total samples were collected by counting 30 larvae, spinning the larvae down in the tube for 1.5 min at 10,000 rcf (Eppindorf centrifuge 5415D model) and preserved with 200 µL 20% zinc buffered formalin in FSW. Samples were stored in the 4°C fridge. 
+
+## Preparing tubes and materials
+
+Jill labeled tubes and vials in preparation for incubations in two days. 
+
+## Photophysiology & phenoplate 
+
+Jen and Andrei conducted optimizations and calibrations today for the phenoplate and had success measuring fluorescence and oxygen in larvae! Test runs show that they can capture a full thermal performance curve and a full suite of photophysiological assays on *Montipora* larvae. Tomorrow we will run experimental samples. 
+
+Jen and Andrei's notes and protocols will be added to our Google Drive and uploaded to GitHub. 
+
+We also walked through our experimental design for phenoplate measurements, which will occur every 1-2 days. We will analyze the three symbiont groups with two plates (24 well plates across a light and temperature gradient) per group. The first plate will run a sequence of temperature exposures from 20-22-24-26-28-30°C and the second plate will run 31-32-33-34-36-38°C. Across these temperatures the phenoplate will collect oxygen data (respiration and photosynthesis; TPC's) and fluorescence (Fv/Fm, Ek, ETR, rapid light curves). These temperature profiles are chosen to provide high resolution data around thermal maxima and provide a wide range of temperatures to encompass a full PI curve. We will run a total of 6 plates per day with n=30 larvae per well. We will sample for ITS2 and symbiont cell density after these runs if needed to conserve larvae. 
+
+I will add links to more information, protocols, and data as they become available. 
+
+## Environmental measurements 
+
+Ariana took daily measurements. 
+
+|   date     |   time  |   tank  |   group        |   pH.mV  |   pH.nbs  |   temp.C  |   sal.psu  |   flow.mL.5s  |   par  |   tris.date  |   notes  |
+|------------|---------|---------|----------------|----------|-----------|-----------|------------|---------------|--------|--------------|----------|
+|   6/22/23  |   1709  |   C1    |   Cladocopium  |   -48.9  |   8.01    |   27.29   |   33       |   17          |   4    |   20230617   |          |
+|   6/22/23  |   1710  |   C2    |   Cladocopium  |   -49.2  |   8.02    |   27.28   |   33       |   17          |   3    |   20230617   |          |
+|   6/22/23  |   1712  |   MIX1  |   Mixed        |   -49.3  |   8.02    |   27.13   |   33       |   17          |   2    |   20230617   |          |
+|   6/22/23  |   1713  |   MIX2  |   Mixed        |   -49    |   8.01    |   27.21   |   33       |   20          |   4    |   20230617   |          |
+|   6/22/23  |   1714  |   WT1   |   Wildtype     |   -48.2  |   8       |   27.19   |   33       |   20          |   3    |   20230617   |          |
+|   6/22/23  |   1718  |   WT2   |   Wildtype     |   -48.9  |   8.01    |   26.91   |   33       |   17          |   1    |   20230617   |          |
+
+
 # 21 June 2023 
 
 Our collaborators from UT Sydney arrived today! Jennifer Matthews and Andrei Herdean will be helping us run photophysiology measurements.  
