@@ -30,6 +30,412 @@ We will address this question by measuring:
 - Larval lipidomics
 - Larval metabolomics   
 
+# 30 June 2023 
+
+## Inventory and packing
+
+Ariana and Jill worked on inventory and packing today and cleaning the upstairs inventory area. Everything is complete for the field season!! 
+
+# 29 June 2023 
+
+## Inventory and packing
+
+Ariana and Jill worked on inventory and packing today. We completed a master sample inventory and manifest and prepared boxes for shipment. The master sample list can be found on [GitHub here](https://github.com/AHuffmyer/larval_symbiont_TPC/blob/main/data/sample_metadata/MASTER_Hawaii2023_Sample_Inventory_20230630.xlsx). We will continue to track location of these boxes once they reach URI. 
+
+# 28 June 2023 
+
+## Settlement trails 
+
+Ariana started settlement trials for each symbiont type by putting n=20 larvae per type into 6 well plates (n=2 wells per type per plate; n=6 total plates) with type distributed randomly throughout each plate. Each well had 1 aragonite plug (no stem, just the puck) that was pre rinsed in FSW. Wells were filled with 1 µM FSW. Three of the plates were loaded into one incubator at ambient (27C) and the other three loaded at high temperature (33C). Lights in both incubators were set at a medium light of 100 PAR. 
+
+However, the next morning the larvae were dead and the trials were not completed. In the future we will need to use flow through systems for settlement. 
+
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/settlement1.jpeg) 
+
+## Cleaning tanks 
+
+Incubation tanks were cleaned and equipment was packed. 
+
+## Cleaning larval conicals 
+
+All conicals were drained and any leftover larvae of C and MIX types were consolidated into one conical each for the CRL to use. All wildtype were used in our experiments. 
+
+## Logger read outs
+
+Loggers were read out, downloaded, and analyzed. Data is on [GitHub here](https://github.com/AHuffmyer/larval_symbiont_TPC/tree/main/data/environmental) and figures produced are [here](https://github.com/AHuffmyer/larval_symbiont_TPC/tree/main/figures/environmental). 
+
+# 27 June 2023 
+
+## Rearing larvae
+
+Conicals were stirred and checked throughout the day, everything looks good! 
+
+## Environmental measurements
+
+Jill took daily measurements. 
+
+| Date     | Time | Tank | Temp  | pH.mV | pH.nbs | flow | par |
+|----------|------|------|-------|-------|--------|------|-----|
+| 20230627 | 9:00 | C1   | 26.26 | -48.9 | 8.01   | 23   | 5   |
+| 20230627 | 9:01 | C2   | 26.23 | -49.4 | 8.02   | 23   | 5   |
+| 20230627 | 9:02 | MIX1 | 26.21 | -49.5 | 8.02   | 20   | 5   |
+| 20230627 | 9:03 | MIX2 | 26.23 | -49.5 | 8.02   | 23   | 6   |
+| 20230627 | 9:04 | WT1  | 26.31 | -49.2 | 8.01   | 23   | 7   |
+| 20230627 | 9:05 | WT2  | 26.29 | 49.3  | 8.01   | 25   | 5   |
+
+
+## ITS2 and cell density sampling 
+
+ITS2 and cell density samples were collected from the cool phenoplate run. Samples were collected between 11:50 and 19:00. Sample metadata can be [found here](https://github.com/AHuffmyer/larval_symbiont_TPC/blob/main/data/sample_metadata/ITS2_sample_metadata.xlsx) and [here](https://github.com/AHuffmyer/larval_symbiont_TPC/blob/main/data/sample_metadata/cell_density_size_sample_metadata.xlsx). 
+
+## Pictures of larvae 
+
+Ariana took photos of larvae under the scope for reference. Here are some example photos. Notice how many larvae are elongated as expected by competent larvae exhibiting benthic swimming behavior. 
+
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/larvae2.jpg) 
+
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/larvae3.jpg) 
+
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/larvae4.jpg) 
+
+## Photophysiology and phenoplate measurements 
+
+Jen ran phenoplate measurements on larval groups all day today. We will have fluorescence and oxygen data from light and temperature profiles. Metadata and notes are recorded in Jen's notebook. 
+
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/phenoplate1.jpeg) 
+
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/phenoplate2.jpeg) 
+
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/phenoplate3.jpeg) 
+
+## Larval incubations 
+
+Larval incubations were run using the same protocols as on 24 June 2023 below. Incubations were run for exactly 4 h prior to sampling. Vials were stirred and rearranged at 11:15 and 14:00. Ariana loaded one blank vial into each tank to test temperatures inside the vials. Loading started at 08:25 and ended at 10:52. Symbiont groups were loaded in a different order than on 24 June 2023. Apex probes were calibrated at 07:40. Sampling occurred between 12:25 and 14:52. 
+
+MALDI samples were collected after incubations in an additional set of vials incubated for 4 h. Metadata for MALDI samples can be [found on GitHub here](https://github.com/AHuffmyer/larval_symbiont_TPC/blob/main/data/sample_metadata/MALDI_sample_metadata.xlsx). Jen gave Ariana CMC to use for future MALDI sampling. To do this, add 1 mL of CMC to a tube with 20 larvae. Remove the water before adding CMC. Gently rock and then snap freeze and store at -80C. 
+
+We monitored environmental conditions during the incubations. 
+
+| Date            | Tank | Time | PAR1 | PAR2 | PAR3 | PAR4 | PAR5 | Mean   PAR | Temp.C |
+|-----------------|------|------|------|------|------|------|------|------------|--------|
+|        20230627 | 1    | 830  | 570  | 528  | 517  | 460  | 468  | 508.6      | 27.28  |
+| 20230627        | 2    | 830  | 563  | 485  | 475  | 500  | 516  | 507.8      | 30.45  |
+| 20230627        | 3    | 830  | 523  | 513  | 506  | 421  | 450  | 482.6      | 32.48  |
+| 20230627        | 1    | 1006 | 576  | 483  | 537  | 502  | 472  | 514        | 27.05  |
+| 20230627        | 2    | 1006 | 580  | 527  | 522  | 524  | 527  | 536        | 30.45  |
+| 20230627        | 3    | 1006 | 523  | 537  | 538  | 508  | 503  | 521.8      | 32.84  |
+| 20230627        | 1    | 1115 | 500  | 480  | 515  | 530  | 499  | 504.8      | 27.55  |
+| 20230627        | 2    | 1115 | 555  | 510  | 475  | 420  | 518  | 495.6      | 30.45  |
+| 20230627        | 3    | 1115 | 523  | 500  | 501  | 480  | 495  | 499.8      | 32.71  |
+
+After incubations, Ariana estimated that we have ~15,000 WT larvae. Jen will use the remainder for phenoplate measurements.  
+
+## F1/F2 project
+
+We did one more run of F1/F2 NB and WT larvae for CRL today. We did one run 36C using the same protocol. The run was Run 3, plates 5 and 6.
+
+
+# 26 June 2023 
+
+## Rearing larvae
+
+Conicals were stirred and checked throughout the day, everything looks good! 
+
+## Environmental measurements
+
+Ariana took daily measurements. 
+
+| Date     | Time | Tank | Temp  | pH.mV | pH.nbs | flow | par |
+|----------|------|------|-------|-------|--------|------|-----|
+| 20230626 | 1820 | C1   | 26.73 | -49.3 | 8.02   | 19   | 0   |
+| 20230626 | 1821 | C2   | 26.71 | -49.1 | 8.01   | 18   | 0   |
+| 20230626 | 1822 | MIX1 | 26.78 | -48.3 | 8      | 20   | 0   |
+| 20230626 | 1823 | MIX2 | 26.76 | -49.2 | 8.02   | 19   | 0   |
+| 20230626 | 1824 | WT1  | 26.68 | -49.5 | 8.02   | 21   | 0   |
+| 20230626 | 1825 | WT2  | 26.73 | -49.2 | 8.01   | 20   | 0   |
+
+## P and R runs 
+
+Today we ran temp x PI curves to measure respiration and photosynthesis using the protocol from our F1/F2 measurements. All SDR measurements are based on the Putnam Lab SDR protocol [on GitHub here](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resources/Equipment_Protocols/Respirometry_Protocol/SDR-Respirometry-Protocol.md).  
+
+We will first dark adapt larvae in incubators and then expose them to 0 PAR (dark respiration), 50 PAR (low light photosynthesis), 100 PAR (medium light photosynthesis), and 500 PAR (high light photosynthesis), followed by another measurement at 0 PAR for light-enhanced respiration. This will provide us with the ability to capture dark respiration, light enhanced respiration, and photosynthesis across light levels. We will calculate gross photosynthesis and P:R ratios as well. 
+
+We dark adapted larvae for 15 minutes in falcon tubes in the incubators at 27C. Larvae were then counted onto loading plates and put back in the incubator to dark adapt for 10 more minutes. 
+
+We conducted measuremetns in 4 runs (8 plates) with one run at 27 (Run 3, plate 5 & 6), 30 (Run 1, plate 1 & 2), 33 (Run 4, plate 7 & 8), and 36C (Run 2, plate 3 & 4). 
+
+[Run metadata](https://github.com/AHuffmyer/larval_symbiont_TPC/blob/main/data/temp_pi_curves/Temp_PIcurves_SDR_Run_Info.csv) and [sample metadata](https://github.com/AHuffmyer/larval_symbiont_TPC/blob/main/data/temp_pi_curves/Temp_PIcurves_SDR_Sample_Info.csv) is on GitHub along with [data files](https://github.com/AHuffmyer/larval_symbiont_TPC/tree/main/data/temp_pi_curves/runs).
+
+Runs were conducted between 9:24 and 19:30 today. 
+
+Scripts to extract rates [are on GitHub here](https://github.com/AHuffmyer/larval_symbiont_TPC/blob/main/scripts/temp_PIcurve_sdr_extraction.Rmd) and scripts to analyze are [here](https://github.com/AHuffmyer/larval_symbiont_TPC/blob/main/scripts/temp_PIcurve_sdr_analysis.Rmd). Figures produced can be seen [here](https://github.com/AHuffmyer/larval_symbiont_TPC/tree/main/figures/temp_pi_curves). 
+
+Overall, this provides an effective protocol to gather many metabolic metrics and can be used to calculate PI curves at multiple temperatures.  
+
+## ITS2 and cell density sampling 
+
+ITS2 and cell density samples were collected from the larval pool. Samples were collected between 16:00 and 16:30. Sample metadata can be [found here](https://github.com/AHuffmyer/larval_symbiont_TPC/blob/main/data/sample_metadata/ITS2_sample_metadata.xlsx) and [here](https://github.com/AHuffmyer/larval_symbiont_TPC/blob/main/data/sample_metadata/cell_density_size_sample_metadata.xlsx). 
+
+
+# 25 June 2023 
+
+## Rearing larvae
+
+All conicals were cleaned at 09:00. Cleaning was done by mixing the larvae and wiping the edges with a kimwipe to remove any settlers to dead material. Cultures looked good today. 
+
+## Environmental measurements 
+
+Ariana took daily measurements. 
+
+| Date     | Time | Tank | Temp  | pH.mV | pH.nbs | flow | par |
+|----------|------|------|-------|-------|--------|------|-----|
+| 20230625 | 1930 | C1   | 26.71 | -49.1 | 8      | 15   | 0   |
+| 20230625 | 1931 | C2   | 26.6  | -50.6 | 8.04   | 17   | 0   |
+| 20230625 | 1932 | MIX1 | 26.59 | -49.4 | 8.01   | 16   | 0   |
+| 20230625 | 1933 | MIX2 | 26.63 | -50.6 | 8.04   | 15   | 0   |
+| 20230625 | 1934 | WT1  | 26.61 | -50.2 | 8.03   | 17   | 0   |
+| 20230625 | 1935 | WT2  | 26.69 | -50.1 | 8.04   | 15   | 0   |
+
+## F1/F2 project 
+
+The Coral Resilience lab successfully collected spawn and fertilized gametes from parents (F1 WT) of non-bleached corals and wildtype adults (F1 WT) as well as 5-year-old WT (F2 WT) and NB offspring (F2 NB). They are monitoring survival and settlement of these corals and we are collaborating with them to measure metabolic rates of these four groups. 
+
+Today we ran P and R measurements across a temperature x PI curve profile. We will first dark adapt larvae in incubators and then expose them to 0 PAR (dark respiration), 50 PAR (low light photosynthesis), 100 PAR (medium light photosynthesis), and 500 PAR (high light photosynthesis), followed by another measurement at 0 PAR for light-enhanced respiration. We will do one set of measurements at ambient (27C) and another at elevated temperature (30C). This will provide us with the ability to capture dark respiration, light enhanced respiration, and photosynthesis across light levels. We will calculate gross photosynthesis and P:R ratios as well. 
+
+We dark adapted larvae for 15 minutes in falcon tubes in the incubators at 27C. Larvae were then counted onto loading plates and put back in the incubator to dark adapt for 10 more minutes. 
+
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/sdr2.jpeg) 
+
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/sdr.jpeg) 
+
+The measurements looked great! Here is an example of the oxygen data from this run. You can clearly see the respiration and light phases. 
+
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/sdr3.jpeg) 
+
+Data and metadata can be found [on GitHub here](https://github.com/AHuffmyer/larval_symbiont_TPC/tree/main/data/F1F2_sdr). 
+
+Data analysis and figures can be found [on GitHub here](https://github.com/AHuffmyer/larval_symbiont_TPC/tree/main/figures/F1F2_sdr) and [scripts can be found here for rate extraction](https://github.com/AHuffmyer/larval_symbiont_TPC/blob/main/scripts/F1F2_sdr_extraction.Rmd) and [rate analysis here](https://github.com/AHuffmyer/larval_symbiont_TPC/blob/main/scripts/F1F2_sdr_analysis.Rmd).  
+
+All plates were calibrated with 100% air saturated FSW before each run at the respective temperature. 
+
+## Preparing for next round of measurements  
+
+We labeled vials and prepared tanks for the next round of incubations that will start on June 27th. We also prepared the SDR and plate maps for the next round of P and R measurements that will start on June 26th (tomorrow). We will use a temperature PI curve approach for tomorrow as we did for the F1/F2 project today. 
+
+# 24 June 2023 
+
+## Rearing larvae
+
+We checked larvae today and the cultures are looking good, densities are remaining high. Conical C1 was cleaned at 20:00. There were a mat of settlers on the conical that died and needed to be cleaned. The conical was drained through a 153 µM seive. The conical was wiped clean, refilled with FSW and the larvae were added back in. 
+
+## Environmental measurements 
+
+Ariana took daily measurements in the conical tanks. 
+
+| Date     | Time | Tank | Temp  | pH.mV | pH.nbs | flow | par |
+|----------|------|------|-------|-------|--------|------|-----|
+| 20230624 | 1938 | C1   | 26.91 | -50.1 | 8.03   | 17   | 0   |
+| 20230624 | 1939 | C2   | 26.98 | -50.2 | 8.03   | 16   | 0   |
+| 20230624 | 1940 | MIX1 | 27.01 | -50.1 | 8.03   | 18   | 0   |
+| 20230624 | 1941 | MIX2 | 26.95 | -50.4 | 8.04   | 17   | 0   |
+| 20230624 | 1942 | WT1  | 26.89 | -50.6 | 8.04   | 16   | 0   |
+| 20230624 | 1943 | WT2  | 27    | -50.4 | 8.04   | 16   | 0   |
+
+## P and R runs 
+
+We ran photosynthesis and respiration measurements today. For each run, we ran photosynthesis measurements at 100 PAR for ~15-20 minutes, then measurements at 500 PAR for ~15-20 minutes, followed by dark measurements with the lights off for ~10-15 minutes. This captures photosynthesis at low and high light levels as well as light-enhanced respiration. We will run these measurements at 27, 30, and 33°C to mirror the temperature treatments for our incubations. 
+
+Run information for these plates can be found on [GitHub here](https://github.com/AHuffmyer/larval_symbiont_TPC/blob/main/data/pr_sdr/PR_SDR_Run_Info.csv) and sample well information can be found on [GitHub here](https://github.com/AHuffmyer/larval_symbiont_TPC/blob/main/data/pr_sdr/PR_SDR_Sample_Info.csv). 
+
+We ran 3 runs with 6 total plates from 10:00-16:00. 
+
+| Run | Plate | Temperature |
+|-----|-------|-------------|
+| 1   | 1     | 27          |
+| 1   | 2     | 27          |
+| 2   | 3     | 33          |
+| 2   | 4     | 33          |
+| 3   | 5     | 30          |
+| 3   | 6     | 30          |
+
+In run 1, the lights were first turned to 500 before we decided to add a low light measurements. Lights were turned off, held in the dark for 2 minutes, then returned to 100 PAR. Remove the first 6 minutes of this run. 
+
+Data were downloaded to Drive and [GitHub here](https://github.com/AHuffmyer/larval_symbiont_TPC/tree/main/data/pr_sdr/runs).  
+ 
+## Larval incubations 
+
+We set up lights in the tanks in the morning and calibrated the Apex temperature probes at 09:07 prior to the start of incubations. Light was measured in the center and each of the four corners of the vial racks in the tank at the level of the vials. We are targeting 500 PAR light levels based on previous PI curve measurements that show saturating irradiance for mixed symbiont larvae around 500-600 PAR. This is to achieve saturating irradiance during the incubations. 
+
+We measured light in each tank at 5 positions in the tank. Light target was achieved at 95% intensity on all AI light channels with UV and moonlight set at 0%. Lights were 50 cm above the surface of the vials and the water level was 21.5 cm deep. The vials were about ~3 cm from the surface of the water. 
+
+The tanks act as a water bath for temperature for the incubations. 
+
+| Tank | Location | Treatment     | PAR  |
+|------|----------|---------------|------|
+| 1    | 1        | Ambient (27)  | 530  |
+| 1    | 2        | Ambient (27)  | 539  |
+| 1    | 3        | Ambient (27)  | 530  |
+| 1    | 4        | Ambient (27)  | 447  |
+| 1    | 5        | Ambient (27)  | 502  |
+| 2    | 1        | Moderate (30) | 539  |
+| 2    | 2        | Moderate (30) | 542  |
+| 2    | 3        | Moderate (30) | 530  |
+| 2    | 4        | Moderate (30) | 495  |
+| 2    | 5        | Moderate (30) | 473  |
+| 3    | 1        | High (31)     | 521  |
+| 3    | 2        | High (31)     | 516  |
+| 3    | 3        | High (31)     | 518  |
+| 3    | 4        | High (31)     | 448  |
+| 3    | 5        | High (31)     | 473  |
+
+Temperatures were stable using the Apex system at the target treatments. 
+
+Incubations were run by adding larvae using concentration estimates to each vial and staggered in start times in groups of 6 vials by 6-10 minutes. This will stagger the end sampling times to make it achievable to give all vials exactly 4 hours of incubation time. 
+
+We used 20 mL scintillation vials for these incubations labeled with R## or L##. R vials are for RNA sampling and L vials are for lipid sampling. Vials will be sampled into tubes with the same number on the label. 
+
+No vials were loaded in the center of the tank to avoid the highest light areas. Vials were randomly distributed around the rack. Halfway through the incubation, vials were redistributed and rotated to stir the larvae in the vial and account for any position effects. Vials were rearranged at 16:00. 
+
+During loading, larvae were out of the conical for the same amount of time before being added to the incubator. Larvae were pulled from the conical in the falcon tube and I used a concentration estimate to determine the volume of larvae to achieve the desired total number of larvae in each vial. I took 0.5 mL subsamples (n=5) from each falcon tube after gentle mixing to homogenize the tube. Larave in these subsamples were counted and then the density of the falcon tube was calculated. The R tubes were loaded with 50 larvae for RNA analyses and the L tubes were loaded with 100 larvae for lipid analyses. I used a density worksheet to calculate the volume of larvae requried for each vial. 
+
+The metadata and worksheets for incubations is on [GitHub here](https://github.com/AHuffmyer/larval_symbiont_TPC/blob/main/data/sample_metadata/larval_incubation_sample_metadata.xlsx).  
+
+Larvae were loaded by symbiont type in random order. Today, C larvae were loaded in all vials needing C larvae, followed by wildtype larvae and then mixed larvae. Loading started at 13:22 and finished at 15:22. Groups of 6 vials were loaded at a time and separated by 6-10 minutes. Time start and time sampled are recorded in the [sample metadata](https://github.com/AHuffmyer/larval_symbiont_TPC/blob/main/data/sample_metadata/larval_incubation_sample_metadata.xlsx). All vials were exposed to 4h 10min of incubation. 
+
+Once loaded, vials were filled with 20 mL 1 µM FSW, capped, and added to racks in tanks. 
+
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/tanks.jpeg) 
+
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/vials.jpeg) 
+
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/vials2.jpeg) 
+
+After the 4h incubations, samples were out of treatment for less than 1 minute before sampling. Vials were taken out in the order they were loaded one at a time. The water in the vial was then poured through a 70µM cell strainer. Larvae were then concentrated in the cell strainer in a 6-well plate with FSW using a glass pipette and removed and added into a labeled 1.5 mL screw top microcentrifuge tube. R tubes were preserved by adding 700 µL of RNA/DNA shield and the lipid tubes were snap frozen in liquid nitrogen. Tubes were out of treatment for less than 1 minute before preservation or freezing. After all vials were sampled, tubes were put in boxes in the -80C freezer. Sample inventory [can be found on GitHub here](https://github.com/AHuffmyer/larval_symbiont_TPC/blob/main/data/sample_metadata/MASTER_Hawaii2023_Sample_Inventory_20230630.xlsx). Each treatment group (temp x symbiont) had a separate pipette, cell strainer, and 6 well plate. Sampling took place from 17:33 to 19:32. 
+
+MALDI samples were collected after incubations in an additional set of vials incubated for 4 h. Metadata for MALDI samples can be [found on GitHub here](https://github.com/AHuffmyer/larval_symbiont_TPC/blob/main/data/sample_metadata/MALDI_sample_metadata.xlsx). 
+
+Light and temperature were monitored in each tank. 
+
+| Date     | Tank | Time | PAR1 | PAR2 | PAR3 | PAR4 | PAR5 | Mean PAR | Temp.C |
+|----------|------|------|------|------|------|------|------|----------|--------|
+| 20230624 | 1    | 1300 | 410  | 460  | 480  | 490  | 570  | 482      | 27.41  |
+| 20230624 | 2    | 1300 | 490  | 480  | 402  | 469  | 580  | 484.2    | 30.13  |
+| 20230624 | 3    | 1300 | 485  | 470  | 510  | 515  | 490  | 494      | 32.93  |
+| 20230624 | 1    | 1530 | 516  | 466  | 534  | 482  | 502  | 500      | 27.43  |
+| 20230624 | 2    | 1530 | 500  | 502  | 492  | 480  | 520  | 498.8    | 29.92  |
+| 20230624 | 3    | 1530 | 560  | 470  | 480  | 501  | 510  | 504.2    | 33.13  |
+| 20230624 | 1    | 1730 | 550  | 500  | 506  | 490  | 467  | 502.6    | 27.29  |
+| 20230624 | 2    | 1730 | 565  | 510  | 492  | 470  | 502  | 507.8    | 30.31  |
+| 20230624 | 3    | 1730 | 551  | 475  | 526  | 503  | 475  | 506      | 33.13  |
+
+Light achieved the target of 500 PAR and temperature held at target for the incubations. 
+
+
+## Sampling for ITS2 and cell density 
+
+ITS2 and cell density samples were collected after being run through the cool (20-30C) phenoplate run for each symbinot type. Samples were collected between 12:55 and 16:55. Sample metadata can be [found here](https://github.com/AHuffmyer/larval_symbiont_TPC/blob/main/data/sample_metadata/ITS2_sample_metadata.xlsx) and [here](https://github.com/AHuffmyer/larval_symbiont_TPC/blob/main/data/sample_metadata/cell_density_size_sample_metadata.xlsx). 
+
+# 23 June 2023 
+
+## Rearing larvae 
+
+Larval cultures looked good today! We stirred and tended them every 2-3 hours. 
+
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/conical3.jpeg)   
+
+## Thermal performance curves 
+
+Today we ran thermal performance curves (TPC). We brought a falcon tube of larvae from each tank and stored in the incubator in the dark at 26°C. Fresh larvae were brought to the lab every ~2 hours during the measurements. 
+
+The SDR was calibrated with 100% air saturated seawater before every run. 
+
+Tempratures were ran in duplicate plates with one plate in each incubator/SDR. There were 3 blank wells on each plate and the location of larvae from each group was randomized throughout each plate. This removes any position effects or SDR effects since treatment groups were randomized throughout. We ran temperatures in random order as well to avoid any time of day effects on metabolic rates. 
+
+Incubator 1 had SDR 641 (SDR 1) and incubator 2 had the SDR 710 (SDR2). 
+
+The plates that we ran were as follows:  
+
+| Run | Plate | SDR | Temp | Time Start | Time End  | Notes                                                                                                               |
+|-----|-------|-----|------|------------|-----------|---------------------------------------------------------------------------------------------------------------------|
+| 4   | 7     | 641 | 10   | 11:08      | 11:23     | We re did this run because the calibration failed on the first attempt,   after calibration everything looked good  |
+| 4   | 8     | 710 | 10   | 11:08      | 11:23     |                                                                                                                     |
+| 5   | 9     | 641 | 24   | 12:24      | 12:39     |                                                                                                                     |
+| 5   | 10    | 710 | 24   | 12:24      | 12:39     |                                                                                                                     |
+| 6   | 11    | 641 | 32   | 13:47      | 14:08     |                                                                                                                     |
+| 6   | 12    | 710 | 32   | 13:47      | 14:08     |                                                                                                                     |
+| 7   | 13    | 641 | 28   | 15:21      | 15:37     |                                                                                                                     |
+| 7   | 14    | 710 | 28   | 15:21      | 15:37     |                                                                                                                     |
+| 8   | 15    | 641 | 36   | 16:36      | 16:57     |                                                                                                                     |
+| 8   | 16    | 710 | 36   | 16:36      | 16:57     |                                                                                                                     |
+| 9   | 17    | 641 | 39   | 17:51      | 18:18     |                                                                                                                     |
+| 9   | 18    | 710 | 39   | 17:51      | 18:18     |                                                                                                                     |
+| 10  | 19    | 641 | 40   | 20:26      | 20:51     |                                                                                                                     |
+| 10  | 20    | 710 | 40   | 20:26      | 20:51     |                                                                                                                     |
+| 11  | 21    | 641 | 29   | 21:51      | 22:10     |                                                                                                                     |
+| 11  | 22    | 710 | 29   | 21:51      | 22:10     |                                                                                                                     |
+
+For run 4, we re did this run because the calibration failed on the first attempt, after calibration everything looked good. 
+
+Sample metadata for TPC is on [GitHub here](https://github.com/AHuffmyer/larval_symbiont_TPC/blob/main/data/tpc_sdr/TPC_SDR_Sample_Info.csv) and the datafiles for each run are on [GitHub here](https://github.com/AHuffmyer/larval_symbiont_TPC/tree/main/data/tpc_sdr/runs). 
+
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/sdr.jpeg) 
+
+## ITS2 and cell density sampling 
+
+We took n=6 samples per symbiont type for [ITS2 samples](https://github.com/AHuffmyer/larval_symbiont_TPC/blob/main/data/sample_metadata/ITS2_sample_metadata.xlsx) and [cell density/size samples](https://github.com/AHuffmyer/larval_symbiont_TPC/blob/main/data/sample_metadata/cell_density_size_sample_metadata.xlsx). Samples were spun for 30 sec at 10,000 rcf, water was removed, and samples were preserved. ITS2 samples were preserved with 500 µL RNA/DNA shield and cell density samples were preserved with 200µL 20% Zfix. ITS2 samples were stored in the -80C and cell density samples were kept in the 4C fridge. 
+
+A master sample list can be found [on GitHub here](https://github.com/AHuffmyer/larval_symbiont_TPC/blob/main/data/sample_metadata/MASTER_Hawaii2023_Sample_Inventory_20230630.xlsx). 
+
+## Environmental samples 
+
+Ariana took daily measurements. 
+
+| Date     | Time | Tank | Temp  | pH.mV | pH.nbs | flow |
+|----------|------|------|-------|-------|--------|------|
+| 20230623 | 1805 | C1   | 27.18 | -50.1 | 8.03   | 17   |
+| 20230623 | 1806 | C2   | 27    | -50.3 | 8.03   | 16   |
+| 20230623 | 1807 | MIX1 | 27.13 | -50.6 | 8.04   | 18   |
+| 20230623 | 1808 | MIX2 | 27.18 | -50.6 | 8.04   | 17   |
+| 20230623 | 1809 | WT1  | 27.21 | -50   | 8.03   | 18   |
+| 20230623 | 1810 | WT2  | 27.2  | -50.5 | 8.04   | 16   |
+
+PAR was 0 for all tanks. 
+
+All daily measurements are [on GitHub here](https://github.com/AHuffmyer/larval_symbiont_TPC/blob/main/data/environmental/daily_measurements.csv). 
+
+## Apex set up 
+
+Jill set up the Apex equipment today. 
+
+The Apex unit was names "HIMB 2023" on the Putnam Lab Apex Fusion account. We used the Apex Base SN 29428 and the Apex EB32 SN 117982. We have 3 tanks/treatments (ambient = 27; moderate = 30; high = 33). These will be static hold treatments for larval incubations for RNA and Lipid sampling. Jill set up 1 base unit with a temperature probe and two PM1's with two additional temperature probes. 
+
+The base unit was named TMPAMB (ambient), PM1_19 was named TMPMOD (moderate), and PM1_21 was named TMPHIG (high). 
+
+Heaters were plugged into outlets 1, 2, and 3 of the EB32. The heaters are 300W titanium Finnex submersible heaters. The outlets were controlled to hold static at 27, 30, and 33. 
+
+Tanks were up and running in the afternoon and equipped with AquaIllumination HD32 lights hung from the top of the tanks with zip ties. Apex and heaters were added to the tanks and we added a Hydor Pico recirculating pump to each tanks. Tanks were supplied with FSW. 
+
+Tank 1 will be ambient, Tank 2 will be moderate, and Tank 3 will be high. Tanks will be started tomorrow morning. 
+
+## Deploying loggers 
+
+Loggers were deployed (Hobo Tidbits) into each tank. Ambient = logger 21723474; Moderate = logger 21723473; High = logger 21723475. 
+
+## Estimating larval sample size 
+
+Ariana calculated expected larval sample size needed to make sure we have enough. Here are my estimates for each symbiont type: 
+
+1. PI curves: n=2 plates x 7 wells x 5 larvae = 70 per day x 2 days = 140 larvae  
+2. TPCs: n=16 plates x 7 wells x 5 larave = 560 per day x 2 days = 1,120 larvae  
+3. Phenoplate: n=48 wells x 150 larvae = 7200 per sym x 2 days = 14,400 larvae
+4. Incubations: n=18 x 100 larvae = 1800 per symbiont for lipids x 2 days = 3600 larvae for lipids + 3600/2 = 1800 larvae for RNA = 5,400 larvae
+5. Cell density and ITS2: n=5 time points x 6 reps per sym x 2 metrics x 30 larvae = 1800 larvae
+6. P and R measurements: n=6 plates x 7 wells x 5 larvae x 2 days = 420 larvae 
+
+This totals ~23,000 larvae per symbiont type. We should have enough given that we have approximately 50K larvae of each type. WT is the lowest density, so we may be close on WT samples. 
+
+Our plans may change going forward, but this provide a general estimate for our work. 
+
 # 22 June 2023 
 
 ## Allocating experimental larvae and rearing 
@@ -80,7 +486,7 @@ We first ran respiration at 0 PAR and then increased the PAR levels using AquaIl
 
 These intervals should encompass the entire PI curve and provide high frequency measurements at low light. Our larvae are acclimated to low light, so this appropriate for our use. PAR values were generated with a standard curve of light channel % and PAR values on [GitHub here](https://github.com/AHuffmyer/larval_symbiont_TPC/tree/main/data/larval_pi_curves). 
 
-Full run information can be found on GitHub. 
+Full run information can be found on [GitHub here](https://github.com/AHuffmyer/larval_symbiont_TPC/blob/main/data/larval_pi_curves/larval_PIcurve_SDR_Run_Info.csv). 
 
 The PI curve was conducted from ~14:30-17:30. We controlled and monitored temperature constantly in the incubators. Temperatures remained between 35.5 and 27°C on target until the lights reached 1500 PAR. At this point the lights generated too much heat and the temperature went to >30°C. We will look at the PI curves and likely remove these high light values from future PI curve measurements. 
 
