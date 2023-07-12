@@ -13,5 +13,13 @@ Use Acropora pulchra sperm samples to extract high molecular weight DNA for E5 p
 
 #### Protocols
 
-### Process
+https://meschedl.github.io/MESPutnam_Open_Lab_Notebook/HMW-Tip-Protocol/
+
+https://www.neb.com/monarch/high-molecular-weight-dna-extraction?gclid=Cj0KCQjwnrmlBhDHARIsADJ5b_kHBvc274KwNljTVwN6r2KJbjBQjnWFzkyJLI6GpmEZw7UNU-HPjmEaAt_tEALw_wcB
+
+https://meschedl.github.io/MESPutnam_Open_Lab_Notebook/firecoral-HMW/
+
+
+
+#### Process
 
