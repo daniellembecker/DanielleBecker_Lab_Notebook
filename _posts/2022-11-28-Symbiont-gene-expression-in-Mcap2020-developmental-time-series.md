@@ -129,11 +129,11 @@ With this gene count matrix, I ran an exploratory analysis using R scripts that 
 
 ## Filtering  
 
-First, I filtered our data based on gene counts. There were 102,507 genes in the concatenated genome. After removing those that were not in our dataset (row sums = 0), there were 3,489 genes in our gene count matrix.  
+First, I filtered our data based on gene counts. There were 102,507 genes in the concatenated genome (total number of genes in both genomes). After removing those that were not in our dataset (row sums = 0), there were 3,489 genes in our gene count matrix. We would expect a lower number of genes expressed than present in the genome because symbionts in symbiosis with the host are in only one life stage cycle.  
 
 PoverA specfies the minimum count for a proportion of samples for each gene. Here, we are using a pOverA of 0.07. This is because we have 38 samples with a minimum of n=3 samples per lifestage. Therefore, we will accept genes that are present in 3/38 = 0.07 of the samples because we expect different expression by life stage. We are further setting the minimum count of genes to 5, such that 7% of the samples must have a gene count of >5 in order for the gene to remain in the data set.   
 
-After PoverA filtering, we have 1,218 genes in our data set. This gene count is quite small given the number of genes that returned a sum of 0. This indicates that we have a low representation of gene expression in the symbiont. We will proceed with exploratory analysis, but it is likely that this data set is not sufficient for analysis in this project.  
+After PoverA filtering, we have 1,218 genes in our data set. [Kenkel & Matz 2017](https://www.nature.com/articles/s41559-016-0014) also looked at symbiont gene expression using TagSeq data. They found ~1,700 genes in their study in the symbiont and >7,000 in the host. They did not do any additional steps in RNA extraction to specifically target the symbiont. In this study they used a PoverA of (10, 0.9) and looked at adult samples. 
 
 ## Visualing differences by lifestage  
 
@@ -161,6 +161,8 @@ The number of genes from each module is shown below.
 |-----------------|-----|-----|----|----|----|----|----|----|
 | Number of genes | 625 | 362 | 98 | 34 | 30 | 25 | 24 | 20 |
 
+Kenkel & Matz 2017 also did a WGCNA and there is a similar range of the number of genes in each module (100-400). 
+
 ## Eigengene values  
 
 I then visualized the variance stabilization transformed expression of genes in each module across life stages.  
@@ -169,4 +171,4 @@ I then visualized the variance stabilization transformed expression of genes in 
 
 Tihs plot shows that there are a few modules with higher expression in metamorphosed polyps as seen in the WGCNA heatmap above. Gene expression patterns are not particularly distinct between lifestages.  
 
-Overall, this exploratory analysis shows that there may be variation in symbiont gene expression by life stage, but due to the low sequence alignment and low gene counts, this dataset is likely not reliable for further analysis. In the future, targetted extraction of symbiont RNA could provide interesting information.  
+Overall, this exploratory analysis shows that there may be variation in symbiont gene expression by life stage and in future studies we could look at analyzing gene expression in the symbiont.  
