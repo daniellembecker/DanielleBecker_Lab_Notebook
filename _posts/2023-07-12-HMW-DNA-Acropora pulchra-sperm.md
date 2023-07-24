@@ -154,7 +154,7 @@ Note: at this step should see DNA precipitate at bottom of tube
 
 Qubit results:
 
-| Sample.ID | Qubit Reading |
+| Sample.ID | Qubit Reading (ng/ul) |
 |-----------|---------------|
 | S1        | 214.67        |
 | S2        | 24040.78      |
@@ -194,7 +194,7 @@ Next steps: Since we wanted to homogenize the DNA more if possible, Zoe placed t
 
 Qubit results on 20230721 by ZD:
 
-| Sample.ID | Qubit Reading |
+| Sample.ID | Qubit Reading (ng/ul) |
 |-----------|---------------|
 | S1        | 221.02        |
 | S2        | 25790.01      |
