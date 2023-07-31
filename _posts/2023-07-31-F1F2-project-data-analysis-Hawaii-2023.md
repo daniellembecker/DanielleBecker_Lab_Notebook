@@ -137,7 +137,7 @@ model<-pr_data_calc%>%  filter(Metric=="ler_inverse")%>%  aov(Value~Group*Temp
 $Group                    diff          lwr           upr     p adjF1-WT-F1-NB -0.002383062 -0.010179240  0.0054131151 0.8553014F2-NB-F1-NB -0.009310296 -0.017173395 -0.0014471977 0.0133997F2-WT-F1-NB  0.001840431 -0.005955747  0.0096366084 0.9267442F2-NB-F1-WT -0.006927234 -0.014790333  0.0009358648 0.1046285F2-WT-F1-WT  0.004223493 -0.003572684  0.0120196708 0.4935361F2-WT-F2-NB  0.011150727  0.003287628  0.0190138261 0.0019109  
 ```
 
-Light enhanced respiration is different by larval group. From the plot we can see that F2 NB had the lowest LER. LER in F2 NB was lower than F1 NB and F2 WT. There is no effect of temperature on LER. This could indicate that F2 NB corals have lower energy demand to survive in the same conditions as other groups (AKA energy savings). We will look at other metrics to interpret this difference. 
+Light enhanced respiration is different by larval group. From the plot we can see that F2 NB had the lowest LER. LER in F2 NB was lower than F1 NB and F2 WT. There is no effect of temperature on LER. This could indicate that F2 NB corals have lower energy demand to survive in the same conditions as other groups. We will look at other metrics to interpret this difference. 
 
 Next I analyzed Rd (dark respiration): 
 
@@ -212,6 +212,7 @@ There are several interesting take homes to explore further with this data.
 
 1. Light enhanced resipration was lower in the F2 NB group and P gross was lower in the F2 NB group. This demonstrates that metabolic rates are strongly driven by lower symbiont productivity in the F2 NB group as compared to other groups. This suggests that there may be metabolic trade offs between photosynthetic activity and thermal tolerance in these larvae. 
 2. F2 NB corals maintained the same P:R ratios as other groups, indicating that even though symbiont productivity was lower, they are maintaining the same energy balance as other groups. This would suggest that the F2 NB experience energetic savings under ambient and stress conditions. 
+3. These metrics were lower in F2 NB corals than the same generation of WT (F2 WT) and the previous generation of NB (F1 NB). This suggests that there is a generational effect of bleaching history on metabolic rates and may have interesting implications for selective breeding. 
 
 In order to fully understand the implications of these differences in metabolic rates, we need to consider phenotypic and performance information. Do the F2 NB larvae have higher or lower survivorship than other groups? Do they experience differences in growth or energy content? Do they have greater thermal tolerance? This information is critical to determine whether the differences in metabolic rates outlined here are due to energetic savings and advantageous metabolic strategies or are a signal of metabolic dysfunction.   
 
