@@ -2,7 +2,7 @@
 layout: post
 title: Analyzing Acropora larval metabolism experiment respirometry data
 date: '2022-11-29'
-categories: Acropora_Laraval_Metabolism_Moorea_2022
+categories: Acropora_Larval_Metabolism_Moorea_2022
 tags: Acropora R Respirometry
 ---
 This post details analysis of respirometry data for the *Acropora pulchra* larval metabolism experiment in Moorea in Oct 2022.  
