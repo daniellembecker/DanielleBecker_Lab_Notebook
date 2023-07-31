@@ -16,11 +16,11 @@ See the [Coral Resilience Lab website](https://www.coralresiliencelab.com/) for 
 
 # Respirometry Protocol
 
-We examined metabolic rates using respirometry protocols used in our examination of larvae with different symbiont species in June 2023. The full notebook post from our work in this project can [be found on my notebook website here](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Hawaii-2023-Coral-Spawning-and-Field-Expedition-Daily-Entry/) and at the [GitHub repository for our project here] (https://github.com/AHuffmyer/larval_symbiont_TPC). 
+We examined metabolic rates using respirometry protocols used in our examination of larvae with different symbiont species in June 2023. The full notebook post from our work in this project can [be found on my notebook website here](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Hawaii-2023-Coral-Spawning-and-Field-Expedition-Daily-Entry/) and at the [GitHub repository for our project here](https://github.com/AHuffmyer/larval_symbiont_TPC). 
 
 This protocol is adapted from the [Putnam Lab SDR equipment and respirometry protocol](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resources/Equipment_Protocols/Respirometry_Protocol/SDR-Respirometry-Protocol.md). 
 
-The Coral Resilience lab successfully collected spawn and fertilized gametes from parents (F1 WT) of non-bleached corals and wildtype adults (F1 WT) as well as 5-year-old WT (F2 WT) and NB offspring (F2 NB). 
+The Coral Resilience lab successfully collected larvae from parent colonies (F1 WT) of non-bleached corals and wildtype adults (F1 WT) as well as larvae spawned from 5-year-old WT (F2 WT) and NB offspring (F2 NB). 
 
 Respirometry measurements were conducted with a dual Sensor Dish Reader (SDR, PreSens) in combination with a glass 24-well microplate (80 µL wells) in incubators with an AquaIllumination Prime 16HD light source. Oxygen concentration (µmol per litre) is read every 15 seconds in each well. Pools of 5 larvae of each type (F1/F2 WT/NB) are loaded into each well. Each plate contained 5 wells of each larval group along with 4 blanks. All runs were run on duplicate plates (n=10 per larval group per temperature). Blanks and larval wells were loaded with 1 µm filtered seawater. 
 
@@ -50,7 +50,7 @@ Oxygen concentration during each light phase of each run was extracted using the
 
 Here is an example of the code loop used to extract rates from each replicate in each run. This code reads in the oxygen data from the data file, splits the data into each light phase by a time stamp data frame, and then extracts a slope that is calculated as the metabolic rate. 
 
-The script for slope extraction can be found on [GitHub here](https://github.com/AHuffmyer/larval_symbiont_TPC/blob/main/scripts/F1F2_sdr_extraction.Rmd). 
+The script for slope extraction can be found on [GitHub here](https://github.com/AHuffmyer/larval_symbiont_TPC/blob/main/scripts/F1F2_sdr_extraction.Rmd).  
 
 ```
 for(file in 1:length(file.names)) { # for every file in list start at the first and run this following function    for (i in Light_Values) { #in every file, for each light value       Photo.Data <-read.table(file.path(path.p,file.names[file]), skip = 56, header=T, sep=",", na.string="NA", fill = TRUE, as.is=TRUE, fileEncoding="latin1") #reads in the data files  Photo.Data$Temp <- Photo.Data[,31] #assigns temp column  Photo.Data$Time.Min <- seq.int(from=0, to=((nrow(Photo.Data)*0.25)-0.25), by = 0.25) #set time in min    # extract start and end times for the respective plate     starttime<-Run.Info%>%    select(Plate, Light_Level, IntervalStart)%>%    filter(Plate==plate[file])%>%    filter(Light_Level==i)%>%    select(IntervalStart)%>%    as.data.frame()   starttime<-starttime[1,1]      endtime<-Run.Info%>%    select(Plate, Light_Level, IntervalStop)%>%    filter(Plate==plate[file])%>%    filter(Light_Level==i)%>%    select(IntervalStop)%>%    as.data.frame()   endtime<-endtime[1,1]     #filter by light interval   Photo.Data <- Photo.Data %>% #filters data by interval for light      filter(Time.Min > starttime)%>%     filter(Time.Min < endtime)     Photo.Data.N <- Photo.Data[,3:26] #subset desired columns    #add column names back in   Photo.Data.N<-as.data.frame(Photo.Data.N)    for(j in 1:(ncol(Photo.Data.N))){    model <- rankLocReg(      xall=Photo.Data$Time.Min, yall=as.numeric(Photo.Data.N[, j]),       alpha=0.4, method="pc", verbose=TRUE) #extract slopes, percentile rank method with minimum window size of 0.4. This means that in order to fit a slope, it has to encompass at least 40% of available datapoints.         pdf(paste0("output/F1F2_sdr/PhotosynthesisPlots/",date[file], "_Plate",plate[file],"_",rename[j],"_light", Light_Values[i],"_regression_trunc.pdf")) #generate output file names    plot(model)    dev.off()        Photo.Rb[j,1] <- as.character(date[file]) #stores the date    Photo.Rb[j,2] <- as.character(plate[file]) #stores the run number    Photo.Rb[j,3] <- as.character(samp[j+(i-1)*ncol(Photo.Data.N)]) #stores the sample ID    Photo.Rb[j,4] <- as.character(rename[j]) #stores the chamber ID    Photo.Rb[j,5] <- as.character(i) #stores the chamber ID    Photo.Rb[j,6:7] <- model$allRegs[i,c(4,5)] #inserts slope and intercept in the dataframe      }    Photo.R <- rbind(Photo.R, Photo.Rb) #bind final data frame  }  }
@@ -58,11 +58,11 @@ for(file in 1:length(file.names)) { # for every file in list start at the first 
 
 This script produces a PDF file that shows the statistics and slope extraction. Here is an example of respiration measurements in the dark: 
 
-![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/r_extract.png) 
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/F1F2/r_extract.png) 
 
 And here is an example of measurements from a light phase (photosynthesis): 
 
-![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/p_extract.png) 
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/F1F2/p_extract.png) 
 
 You can see the negative slope in the respiration data indicating oxygen consumption and a positive slope in the photosynthesis data indicating oxygen production. 
 
@@ -80,7 +80,7 @@ The script for data analysis can be found on [GitHub here](https://github.com/AH
 
 I first plotted metabolic rates across the light curve for each temperature. The plot below shows oxygen values across light levels. Note that the values below 0 are oxygen consumption (respiration) and values above 0 are oxygen production (photosynthesis). 
 
-![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/pr_dots.png) 
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/F1F2/pr_dots.png) 
 
 There are a few things to take away from this first look at the data: 
 
@@ -123,7 +123,7 @@ Note that for P gross, P net, and P:R ratio we will have values at 50 PAR (low l
 
 Here is a plot of LER and Rd. 
 
-![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/ler_rd.png) 
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/F1F2/ler_rd.png) 
 
 I ran an ANOVA to examine the effect of temperature and group on LER and RD. 
 
@@ -157,7 +157,7 @@ It is interesting that LER did not have the same decrease across temperature. Th
 
 I next looked at P net and P gross across light and temperature. 
 
-![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/pr_metrics.png) 
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/F1F2/pr_metrics.png) 
 
 I used an ANOVA to analyze the effect of light ("Metric"), temperature, and group for P gross. 
 ```
@@ -189,7 +189,7 @@ There were significant effects of light and temperature on P net, but no effect 
 
 Finally, I looked at P:R ratios. Note that a P:R of 1 indicates that LER equals gross photosynthesis. A value of >1 indicates gross photosynthesis produces more oxygen than consumed through LER.  
 
-![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/Hawaii2023/pr_metrics.png)
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/F1F2/pr_metrics.png)
 
 I used an ANOVA to test for effects of light ("Metric"), temperature, and group on P:R ratios. 
 
