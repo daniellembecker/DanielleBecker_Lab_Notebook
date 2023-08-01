@@ -189,7 +189,7 @@ There were significant effects of light and temperature on P net, but no effect 
 
 Finally, I looked at P:R ratios. Note that a P:R of 1 indicates that LER equals gross photosynthesis. A value of >1 indicates gross photosynthesis produces more oxygen than consumed through LER.  
 
-![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/F1F2/pr_metrics.png)
+![](https://raw.githubusercontent.com/AHuffmyer/ASH_Putnam_Lab_Notebook/master/images/NotebookImages/F1F2/pr_ratio.png)
 
 I used an ANOVA to test for effects of light ("Metric"), temperature, and group on P:R ratios. 
 
