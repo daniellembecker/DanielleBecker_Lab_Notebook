@@ -59,7 +59,7 @@ IMPORTANT NOTES BEFORE YOU BEGIN
 
 Protocol completed on Wednesday, July 19th 2023 by DMBP and ZD
 
-1. We used *A. pulchra* sperm preserved in Zymo DNA/RNA shield from October 2022 spawning in Mo'ore'a, French Polynesia. These samples were preserved by mixing 1 mL of sperm with 1 mL of DNA/RNA shield. The concentration of sperm used was 10^6 sperm/mL, so this 2mL volume of sperm + DNA/RNA shield should contain 10^6 sperm, or 500,000 cells/mL. The recommended input for this kit is 10^6 cells, so one full tube of sperm + DNA/RNA shield should be roughly the desired input. We need to figure out how to reduce the volume of this for the input.
+1. We used *A. pulchra* sperm sample (tube number: 207, ambient treatment) preserved in Zymo DNA/RNA shield from October 2022 spawning in Mo'ore'a, French Polynesia. These samples were preserved by mixing 1 mL of sperm with 1 mL of DNA/RNA shield. The concentration of sperm used was 10^6 sperm/mL, so this 2mL volume of sperm + DNA/RNA shield should contain 10^6 sperm, or 500,000 cells/mL. The recommended input for this kit is 10^6 cells, so one full tube of sperm + DNA/RNA shield should be roughly the desired input. We need to figure out how to reduce the volume of this for the input.
 
 2. According to the Monarch protocol, the cells (sperm) stored in DNA/RNA shield are already sufficiently lysed:
 
