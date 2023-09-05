@@ -17,6 +17,7 @@ Use *Acropora pulchra* sequence samples from X to create a de novo transcriptome
   - This approach is useful when a genome is unavailable, or when a reference-guided assembly is undesirable.
   - For instance, in opposition to a de novo assembler successfully producing a transcript, a reference-guided approach might not be able to reconstruct it correctly if it were to correspond to a region on the reference containing sequencing or assembly gaps [15, 16].
 
+![figure1](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/images/transcriptome.png)
 
 #### *Acropora* genomes
 
