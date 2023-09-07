@@ -30,6 +30,19 @@ September goals and daily notebook entries.
 
 ## **Daily Log**   
 
+### September 7
+
+- Read 12 papers
+- Moorea planning meeting with Hollie 
+- Organized RNA extractions for Jill 
+- Roberts Lab meetings 
+
+### September 6
+
+- Read 12 papers
+- Organized Moorea budget, schedule, and funding 
+- Placed Zymo order 
+
 ### September 5
 
 - Mcap2021 results 
