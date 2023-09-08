@@ -7,7 +7,7 @@ tag: [ Acropora pulchra, de novo transcriptome ]
 ## Designing a workflow to create a de novo transcriptome for Acropora pulchra
 
 #### Goal:
-Use *Acropora pulchra* sequence samples from X to create a de novo transcriptome for *A. pulchra*. Literature review of current *Acropora* de novo transcriptomes and genomes completed already.
+Use one *Acropora pulchra* [concentrated sequence sample]() from 11 colonies collected in Mo'orea, French Polynesia on January 15th 2022 from the north shore backreef site Mahana (17°29'13.9"S 149°53'14.7"W) part of a 12-month [Gametogenesis timeseries project]() and five sequence samples also collected from Mo'orea, French Polynesia part of the [E5 Rules of Life project]() to create a de novo transcriptome for *A. pulchra*. Literature review of current *Acropora* de novo transcriptomes and genomes completed already.
 
 **Important notes about de novo transcriptomes**
 
@@ -75,10 +75,12 @@ Use *Acropora pulchra* sequence samples from X to create a de novo transcriptome
   - Finally, contigs were translated into amino acid sequences using the longorf script [147] and clustered using CD-HIT with 95% identity. Completeness using the assembled sequences was assessed using BUSCO (bench-marking universal single-copy orthologs) version 3 [148, 149] in transcriptome mode. Reference E. ancora gonadal transcriptome contigs were annotated as follows: 1) BLAST searches against public protein databases: SWISS-PROT database (−evalue 1e-5) (Consortium 2011) (3/18/2019), 2) Identification of conserved protein domains with the Pfam database (−evalue 1e-5) [150, 151].
 
 
-#### *Acropora pulchra* transcriptome data files on URI andromeda:
+#### *Acropora pulchra* Gametogenesis transcriptome data files on URI andromeda:
 
 '/data/putnamlab/KITT/hputnam/20230825_Bermuda_Reference_Transcriptomes/'
 
 'ACRP_R1_001.fastq.gz
 ACRP_R2_001.fastq.gz
 ACRP_R2_001.fastq.gz.md5'
+
+#### *Acropora pulchra* E5 Rules of Life project transcriptome data files on
