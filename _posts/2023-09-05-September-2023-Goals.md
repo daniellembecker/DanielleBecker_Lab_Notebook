@@ -30,6 +30,15 @@ September goals and daily notebook entries.
 
 ## **Daily Log**   
 
+### September 8
+
+- Read 10 papers
+- E5 molecular meeting
+- Putnam Lab meeting 
+- RNA extraction meeting with Jill
+- Moorea experimental design
+- Writing Mcap2021 results 
+
 ### September 7
 
 - Read 12 papers
