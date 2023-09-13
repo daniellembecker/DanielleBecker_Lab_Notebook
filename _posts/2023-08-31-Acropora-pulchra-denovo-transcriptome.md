@@ -60,6 +60,19 @@ Use one *Acropora pulchra* [concentrated sequence sample](https://github.com/dan
   cd /data/putnamlab/KITT/hputnam/20230825_Bermuda_Reference_Transcriptomes/
 
   ACRP_R1_001.fastq.gz
+  ACRP_R1_001.fastq.gz.md5
+  ACRP_R2_001.fastq.gz
+  ACRP_R2_001.fastq.gz.md5
+  ```
+
+Copied all data files to new location on Andromeda
+
+  ```
+
+  cp -r /data/putnamlab/KITT/hputnam/20230825_Bermuda_Reference_Transcriptomes/ACRP* /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/raw
+
+  ACRP_R1_001.fastq.gz
+  ACRP_R1_001.fastq.gz.md5
   ACRP_R2_001.fastq.gz
   ACRP_R2_001.fastq.gz.md5
   ```
@@ -71,11 +84,37 @@ Use one *Acropora pulchra* [concentrated sequence sample](https://github.com/dan
   ```
   https://owl.fish.washington.edu/nightingales/A_pulchra/30-789513166/
 
-  ACR-140_TP2
-  ACR-145_TP2
-  ACR-150_TP2
-  ACR-173_TP2
-  ACR-178_TP2
+  ```
+
+Downloaded all files to Andromeda URI HPC location
+
+  ```
+  cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/raw/
+
+  wget -r -nd -A .fastq.gz https://owl.fish.washington.edu/nightingales/A_pulchra/30-789513166/
+  wget -r -nd -A .md5 https://owl.fish.washington.edu/nightingales/A_pulchra/30-789513166/
+
+  ACR-140_TP2_R1_001.fastq.gz
+  ACR-140_TP2_R2_001.fastq.gz
+  ACR-145_TP2_R1_001.fastq.gz
+  ACR-145_TP2_R2_001.fastq.gz
+  ACR-150_TP2_R1_001.fastq.gz
+  ACR-150_TP2_R2_001.fastq.gz
+  ACR-173_TP2_R1_001.fastq.gz
+  ACR-173_TP2_R2_001.fastq.gz
+  ACR-178_TP2_R1_001.fastq.gz
+  ACR-178_TP2_R2_001.fastq.gz
+  ACR-140_TP2_R1_001.fastq.gz.md5
+  ACR-140_TP2_R2_001.fastq.gz.md5
+  ACR-145_TP2_R1_001.fastq.gz.md5
+  ACR-145_TP2_R2_001.fastq.gz.md5
+  ACR-150_TP2_R1_001.fastq.gz.md5
+  ACR-150_TP2_R2_001.fastq.gz.md5
+  ACR-173_TP2_R1_001.fastq.gz.md5
+  ACR-173_TP2_R2_001.fastq.gz.md5
+  ACR-178_TP2_R1_001.fastq.gz.md5
+  ACR-178_TP2_R2_001.fastq.gz.md5
+
   ```
 
 #### Samples QC and Qubit Results
@@ -88,5 +127,6 @@ Use one *Acropora pulchra* [concentrated sequence sample](https://github.com/dan
   | ACR-173_TP2 | 11.4      | 87     | 0.9918 | https://kterpis.github.io/Putnam_Lab_Notebook/20211102-RNA-DNA-extractions-from-E5-project/                                                             |
   | ACR-178_TP2 | 12.2      | 87     | 1.0614 | https://github.com/Kterpis/Putnam_Lab_Notebook/blob/master/_posts/2021-09-02-20210902-RNA-DNA-extractions-from-E5-project.md                            |
   | ACRP-CON    | 43.2      | 24     | 1.0368 | https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/_posts/2023-04-25-Acropora-pulchra-transcriptome-extraction-concentration.md |
+
 
 #### Workflow Steps
