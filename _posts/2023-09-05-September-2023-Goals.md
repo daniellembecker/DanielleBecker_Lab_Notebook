@@ -30,6 +30,29 @@ September goals and daily notebook entries.
 
 ## **Daily Log**   
 
+### September 13
+
+- On UW campus
+- Meeting with Zach for WGCNA
+- GRFP mentor for workshop 
+- NSF IOS seminar Postdoc to PI 
+- Mcap2021 results
+- Finished transfering Google Drive 
+
+### September 12
+
+- Read papers
+- Worked on Mcap2021 results 
+- Writing meeting 
+- Budgeting and ordering for Moorea
+
+### September 11
+
+- Read papers 
+- Worked on Mcap2021 results 
+- Supply ordering and budgeting 
+- Putnam Lab writing group
+
 ### September 8
 
 - Read 10 papers
