@@ -30,6 +30,21 @@ September goals and daily notebook entries.
 
 ## **Daily Log**   
 
+### September 15
+
+- Mcap2021 results and writing
+- Putnam Lab meeting 
+- Writing hour with Zoe
+- Read 12 papers
+- Emails and slack catch up 
+
+### September 14
+
+- Mcap2021 results
+- NSF IOS Seminar
+- Roberts Lab Meeting
+- Moorea orders and supplies 
+
 ### September 13
 
 - On UW campus
