@@ -130,3 +130,296 @@ Downloaded all files to Andromeda URI HPC location
 
 
 #### Workflow Steps
+
+Trim ACRP-CON reads.
+
+Reads for samples ACR-140, ACR-145, ACR-150, ACR-173, and ACR-178 were trimmed using the built-in version of Trimmomatic with the default settings, following the 9FastQ QC and Trimming - E5 Coral RNA-seq Data for A.pulchra protocol)[https://robertslab.github.io/sams-notebook/2023/05/19/FastQ-QC-and-Trimming-E5-Coral-RNA-seq-Data-for-A.pulchra-P.evermanni-and-P.meandrina-Using-FastQC-fastp-and-MultiQC-on-Mox.html].
+
+Downloaded all files to Andromeda URI HPC location
+
+  ```
+cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed
+
+wget -r -nd -A .fastq.gz https://gannet.fish.washington.edu/Atumefaciens/20230519-E5_coral-fastqc-fastp-multiqc-RNAseq/A_pulchra/trimmed/
+
+RNA-ACR-140-S1-TP2_R1_001.fastp-trim.20230519.fastq.gz
+RNA-ACR-140-S1-TP2_R2_001.fastp-trim.20230519.fastq.gz
+RNA-ACR-145-S1-TP2_R1_001.fastp-trim.20230519.fastq.gz
+RNA-ACR-145-S1-TP2_R2_001.fastp-trim.20230519.fastq.gz
+RNA-ACR-150-S1-TP2_R1_001.fastp-trim.20230519.fastq.gz
+RNA-ACR-150-S1-TP2_R2_001.fastp-trim.20230519.fastq.gz
+RNA-ACR-173-S1-TP2_R1_001.fastp-trim.20230519.fastq.gz
+RNA-ACR-173-S1-TP2_R2_001.fastp-trim.20230519.fastq.gz
+RNA-ACR-178-S1-TP2_R1_001.fastp-trim.20230519.fastq.gz
+RNA-ACR-178-S1-TP2_R2_001.fastp-trim.20230519.fastq.gz
+
+  ```
+
+# 1) Run FastQC
+
+a) Make folders for raw FastQC results and scripts
+
+```
+cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/
+
+mkdir fastqc_results
+
+```
+
+b) Write script for checking quality with FastQC and submit as job on Andromeda
+
+```
+nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/fastqc_raw.sh
+```
+
+```  
+#!/bin/bash
+#SBATCH -t 24:00:00
+#SBATCH --nodes=1 --ntasks-per-node=1
+#SBATCH --export=NONE
+#SBATCH --mem=100GB
+#SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
+#SBATCH --mail-user=danielle_becker@uri.edu #your email to send notifications
+#SBATCH --account=putnamlab
+#SBATCH -D /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/raw
+#SBATCH --error="script_error" #if your job fails, the error report will be put in this file
+#SBATCH --output="output_script" #once your job is completed, any final job report comments will be put in this file
+
+module load FastQC/0.11.9-Java-11
+
+for file in /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/raw/*ACRP
+do
+fastqc $file --outdir /data/putnamlab/dbecks/DeNovo_transcriptxome/2023_A.pul/data/fastqc_results/
+done
+```
+
+```
+sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/fastqc_raw.sh
+
+Submitted batch job 281440
+```
+
+## Combined QC output into 1 file with MultiQC, do not need a script due to fast computational time
+
+```
+module load MultiQC/1.9-intel-2020a-Python-3.8.2
+
+multiqc /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/fastqc_results/*fastqc.zip -o /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/fastqc_results/multiqc/
+
+```
+
+c) Copy MultiQC and FastQC files to local computer
+
+```
+scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/fastqc_results/multiqc/multiqc_report.html /Users/Danielle/Desktop/Putnam_Lab/Gametogenesis/bioinformatics/transcriptome/original_fastqc
+
+scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/fastqc_results/*.html /Users/Danielle/Desktop/Putnam_Lab/Gametogenesis/bioinformatics/transcriptome/original_fastqc
+
+```
+
+# 4) Trim and clean reads
+
+a) Make trimmed reads folder in all other results folders
+
+```
+mkdir data/trimmed
+cd trimmed
+
+```
+
+c) Write script for Trimming and run on Andromeda
+
+#Run fastp on files
+#Trims 20bp from 5' end of all reads
+#Trims poly G, if present
+
+```
+nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/trim.sh
+```
+
+```
+#!/bin/bash
+#SBATCH -t 24:00:00
+#SBATCH --nodes=1 --ntasks-per-node=1
+#SBATCH --export=NONE
+#SBATCH --mem=100GB
+#SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
+#SBATCH --mail-user=danielle_becker@uri.edu #your email to send notifications
+#SBATCH --account=putnamlab
+#SBATCH -D /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/raw
+#SBATCH --error="script_error" #if your job fails, the error report will be put in this file
+#SBATCH --output="output_script" #once your job is completed, any final job report comments will be put in this file
+
+module load fastp/0.19.7-foss-2018b
+
+array1=($(ls *R1*.fastq.gz)) #Make an array of sequences to trim
+for i in ${array1[@]}; do
+fastp --in1 ${i} --in2 $(echo ${i}|sed s/_R1/_R2/) --detect_adapter_for_pe --trim_poly_g --trim_front1 20 --trim_front2 20 --out1 ../trimmed/${i} --out2 ../trimmed/$(echo ${i}|sed s/_R1/_R2/)  
+done
+
+```
+```
+sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/trim.sh
+
+
+```
+
+
+# 5) Check quality of trimmed files
+
+a) Check number of files in /trimmed directory
+
+```
+ls -1 | wc -l
+#64
+```
+
+
+b) Check number of reads in /trimmed directory
+
+```
+zgrep -c "@GWNJ" *.gz > trimmed_seq_counts
+
+```
+
+c) Run FastQC on trimmed data
+```
+mkdir trimmed_qc
+
+```
+```
+nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/fastqc_trimmed.sh
+```
+
+```  
+#!/bin/bash
+#SBATCH -t 24:00:00
+#SBATCH --nodes=1 --ntasks-per-node=1
+#SBATCH --export=NONE
+#SBATCH --mem=100GB
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=danielle_becker@uri.edu
+#SBATCH --account=putnamlab
+#SBATCH -D /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trimmed_qc
+#SBATCH --error="script_error"
+#SBATCH --output="output_script"
+
+module load FastQC/0.11.8-Java-1.8
+
+for file in /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/*.gz
+do
+fastqc $file --outdir /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trimmed_qc
+done
+```
+
+```
+sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/fastqc_trimmed.sh
+
+
+
+```
+
+
+d) Run MultiQC on trimmed data, Combined QC output into 1 file with MultiQC, do not need a script due to fast computational time
+
+```
+module load MultiQC/1.9-intel-2020a-Python-3.8.2
+
+multiqc /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trimmed_qc/*fastqc.zip -o /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trimmed_qc/trimmed_multiqc
+```
+
+e) Copy multiqc and fastqc to computer, use terminal window fro desktop not in server
+
+```
+scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trimmed_qc/trimmed_multiqc/multiqc_report.html /Users/Danielle/Desktop/Putnam_Lab/Gametogenesis/bioinformatics/transcriptome/trimmed_fastqc
+
+scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trimmed_qc/*.html /Users/Danielle/Desktop/Putnam_Lab/Gametogenesis/bioinformatics/transcriptome/trimmed_fastqc
+
+```
+
+Run Trinity with forward and reverse sequences
+
+  ```
+
+#!/bin/bash
+#SBATCH --job-name=20230923_trinity
+#SBATCH -t 24:00:00
+#SBATCH --nodes=1 --ntasks-per-node=1
+#SBATCH --export=NONE
+#SBATCH --mem=500GB
+#SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
+#SBATCH --mail-user=danielle_becker@uri.edu #your email to send notifications
+#SBATCH --account=putnamlab
+#SBATCH -D /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed
+#SBATCH --error="script_error" #if your job fails, the error report will be put in this file
+#SBATCH --output="output_script" #once your job is completed, any final job report comments will be put in this file
+
+
+  # Load Trinity module
+
+  module load Trinity/2.15.1-foss-2022a
+
+
+  # Document programs in PATH (primarily for program version ID)
+
+  date >> system_path.log
+  echo "" >> system_path.log
+  echo "System PATH for $SLURM_JOB_ID" >> system_path.log
+  echo "" >> system_path.log
+  printf "%0.s-" {1..10} >> system_path.log
+  echo ${PATH} | tr : \\n >> system_path.log
+
+
+  # Run Trinity
+  /gscratch/srlab/programs/trinityrnaseq-Trinity-v2.8.3/Trinity \
+  --trimmomatic \
+  --seqType fq \
+  --max_memory 500G \
+  --CPU 28 \
+  --left \
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-15_S7_L004_R1_0343.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-15_S7_L004_R1_0348.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-16_S8_L004_R1_0343.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-16_S8_L004_R1_0348.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-17_S9_L004_R1_0343.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-17_S9_L004_R1_0348.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-18_S10_L004_R1_0343.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-18_S10_L004_R1_0348.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-1_S1_L004_R1_0343.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-1_S1_L004_R1_0348.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-2_S2_L004_R1_0343.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-2_S2_L004_R1_0348.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-3_S3_L004_R1_0343.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-3_S3_L004_R1_0348.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-4_S4_L004_R1_0343.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-4_S4_L004_R1_0348.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-4Spl_S11_L004_R1_0343.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-4Spl_S11_L004_R1_0348.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-5_S5_L004_R1_0343.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-5_S5_L004_R1_0348.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-6_S6_L004_R1_0343.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-6_S6_L004_R1_0348.fastq.gz \
+  --right \
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-15_S7_L004_R2_0343.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-15_S7_L004_R2_0348.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-16_S8_L004_R2_0343.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-16_S8_L004_R2_0348.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-17_S9_L004_R2_0343.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-17_S9_L004_R2_0348.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-18_S10_L004_R2_0343.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-18_S10_L004_R2_0348.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-1_S1_L004_R2_0343.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-1_S1_L004_R2_0348.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-2_S2_L004_R2_0343.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-2_S2_L004_R2_0348.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-3_S3_L004_R2_0343.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-3_S3_L004_R2_0348.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-4_S4_L004_R2_0343.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-4_S4_L004_R2_0348.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-4Spl_S11_L004_R2_0343.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-4Spl_S11_L004_R2_0348.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-5_S5_L004_R2_0343.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-5_S5_L004_R2_0348.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-6_S6_L004_R2_0343.fastq.gz,\
+  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-6_S6_L004_R2_0348.fastq.gz
+  ```
