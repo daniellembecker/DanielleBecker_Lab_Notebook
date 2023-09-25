@@ -252,7 +252,7 @@ nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/trim.sh
 
 module load fastp/0.19.7-foss-2018b
 
-array1=($(ls *R1*.fastq.gz)) #Make an array of sequences to trim
+array1=($(ls *ACRP_R1*.fastq.gz)) #Make an array of sequences to trim
 for i in ${array1[@]}; do
 fastp --in1 ${i} --in2 $(echo ${i}|sed s/_R1/_R2/) --detect_adapter_for_pe --trim_poly_g --trim_front1 20 --trim_front2 20 --out1 ../trimmed/${i} --out2 ../trimmed/$(echo ${i}|sed s/_R1/_R2/)  
 done
@@ -260,7 +260,7 @@ done
 ```
 ```
 sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/trim.sh
-
+Submitted batch job 281915
 
 ```
 
@@ -271,7 +271,7 @@ a) Check number of files in /trimmed directory
 
 ```
 ls -1 | wc -l
-#64
+#12
 ```
 
 
@@ -306,7 +306,7 @@ nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/fastqc_trimm
 
 module load FastQC/0.11.8-Java-1.8
 
-for file in /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/*.gz
+for file in /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/ACRP*
 do
 fastqc $file --outdir /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trimmed_qc
 done
@@ -337,9 +337,18 @@ scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/DeNovo_transcript
 
 ```
 
-Run Trinity with forward and reverse sequences
+# 6) Run Trinity with forward and reverse sequences
 
-  ```
+Trinity commands as found on [Trinity vignette](https://www.broadinstitute.org/videos/introduction-de-novo-rna-seq-assembly-using-trinity) and [Roberts Lab Guide](https://robertslab.github.io/resources/bio_Transcriptome-assembly/):
+ -    Trinity  = runs trinity program
+ -    seqType fq  = specifys FASTQ file format
+ -    SS_lib_type RF  = Trinity has the option (--SS_lib_type) to specify whether or not the sequences you're assembly are      "stranded". User should specify this in the following fashion as on option in the Trinity command (example specifies typical stranded libraries): --SS_lib_type RF
+ -    max_memory 100G  = max memory for trinity 100G should not be changed, per communications with the developer
+ -    CPU 28  = match however many CPUs your computing cluster has access to, maximum number of parallel processes
+ -    left  = paired end reads filenames
+ -    right = paired end reads filenames
+
+```
 
 #!/bin/bash
 #SBATCH --job-name=20230923_trinity
@@ -359,67 +368,26 @@ Run Trinity with forward and reverse sequences
 
   module load Trinity/2.15.1-foss-2022a
 
-
-  # Document programs in PATH (primarily for program version ID)
-
-  date >> system_path.log
-  echo "" >> system_path.log
-  echo "System PATH for $SLURM_JOB_ID" >> system_path.log
-  echo "" >> system_path.log
-  printf "%0.s-" {1..10} >> system_path.log
-  echo ${PATH} | tr : \\n >> system_path.log
-
-
   # Run Trinity
-  /gscratch/srlab/programs/trinityrnaseq-Trinity-v2.8.3/Trinity \
-  --trimmomatic \
+  Trinity \
   --seqType fq \
-  --max_memory 500G \
+  --SS_lib_type RF \
+  --max_memory 100G \
   --CPU 28 \
   --left \
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-15_S7_L004_R1_0343.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-15_S7_L004_R1_0348.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-16_S8_L004_R1_0343.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-16_S8_L004_R1_0348.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-17_S9_L004_R1_0343.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-17_S9_L004_R1_0348.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-18_S10_L004_R1_0343.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-18_S10_L004_R1_0348.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-1_S1_L004_R1_0343.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-1_S1_L004_R1_0348.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-2_S2_L004_R1_0343.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-2_S2_L004_R1_0348.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-3_S3_L004_R1_0343.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-3_S3_L004_R1_0348.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-4_S4_L004_R1_0343.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-4_S4_L004_R1_0348.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-4Spl_S11_L004_R1_0343.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-4Spl_S11_L004_R1_0348.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-5_S5_L004_R1_0343.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-5_S5_L004_R1_0348.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-6_S6_L004_R1_0343.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-6_S6_L004_R1_0348.fastq.gz \
+  /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/ACRP_R1_001.fastq.gz,\
+  /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-140-S1-TP2_R1_001.fastp-trim.20230519.fastq.gz,\
+  /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-145-S1-TP2_R1_001.fastp-trim.20230519.fastq.gz,\
+  /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-150-S1-TP2_R1_001.fastp-trim.20230519.fastq.gz,\
+  /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-173-S1-TP2_R1_001.fastp-trim.20230519.fastq.gz,\
+  /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-178-S1-TP2_R1_001.fastp-trim.20230519.fastq.gz
+
   --right \
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-15_S7_L004_R2_0343.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-15_S7_L004_R2_0348.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-16_S8_L004_R2_0343.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-16_S8_L004_R2_0348.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-17_S9_L004_R2_0343.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-17_S9_L004_R2_0348.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-18_S10_L004_R2_0343.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-18_S10_L004_R2_0348.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-1_S1_L004_R2_0343.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-1_S1_L004_R2_0348.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-2_S2_L004_R2_0343.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-2_S2_L004_R2_0348.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-3_S3_L004_R2_0343.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-3_S3_L004_R2_0348.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-4_S4_L004_R2_0343.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-4_S4_L004_R2_0348.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-4Spl_S11_L004_R2_0343.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-4Spl_S11_L004_R2_0348.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-5_S5_L004_R2_0343.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-5_S5_L004_R2_0348.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-6_S6_L004_R2_0343.fastq.gz,\
-  /gscratch/scrubbed/samwhite/data/O_lurida/RNAseq/CP-6_S6_L004_R2_0348.fastq.gz
+  /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/ACRP_R2_001.fastq.gz,\
+  /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-140-S1-TP2_R2_001.fastp-trim.20230519.fastq.gz,\
+  /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-145-S1-TP2_R2_001.fastp-trim.20230519.fastq.gz,\
+  /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-150-S1-TP2_R2_001.fastp-trim.20230519.fastq.gz,\
+  /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-173-S1-TP2_R2_001.fastp-trim.20230519.fastq.gz,\
+  /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-178-S1-TP2_R2_001.fastp-trim.20230519.fastq.gz
+
   ```
