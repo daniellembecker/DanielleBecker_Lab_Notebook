@@ -355,7 +355,7 @@ Trinity commands as found on [Trinity vignette](https://www.broadinstitute.org/v
  -    seqType fq  = specifys FASTQ file format
  -    SS_lib_type RF  = Trinity has the option (--SS_lib_type) to specify whether or not the sequences you're assembly are      "stranded". User should specify this in the following fashion as on option in the Trinity command (example specifies typical stranded libraries): --SS_lib_type RF
  -    max_memory 100G  = max memory for trinity 100G should not be changed, per communications with the developer
- -    CPU 28  = match however many CPUs your computing cluster has access to, maximum number of parallel processes
+ -    CPU 36  = match however many CPUs your computing cluster has access to, maximum number of parallel processes (for andromeda the maximum number of cores is 36.  On Unity, the nodes in the uri-cpu partition can go up to 64, and in the cpu and cpu-preempt partitions it can go to 128)
  -    left  = paired end reads filenames
  -    right = paired end reads filenames
 
