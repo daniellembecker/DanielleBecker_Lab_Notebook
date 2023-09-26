@@ -11,7 +11,8 @@ September goals and daily notebook entries.
 
 ### Writing and manuscripts 
               
-1. Write methods for 2022 Acropora Moorea manuscript 
+1. ~~Write methods for 2022 Acropora Moorea manuscript~~ 
+2. Write methods for E5 Nom Nom project
 2. Write results for Mcap2021 manuscript
 3. Outline Life History Perspectives manuscript 
 4. Outline E5 physiology discussion
@@ -39,6 +40,7 @@ September goals and daily notebook entries.
 - Read papers 
 - Meeting with Jill
 - Moorea writing meeting 
+- E5 Nom Nom methods 
 
 ### September 25
 
