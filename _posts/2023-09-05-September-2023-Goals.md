@@ -24,11 +24,47 @@ September goals and daily notebook entries.
 
 ### Field work
 
-1. Plan Moorea 2023 design 
-2. Purchase Moorea 2023 supplies 
+1. ~~Plan Moorea 2023 design~~ 
+2. ~~Purchase Moorea 2023 supplies~~ 
 3. Book Moorea 2023 travel
+4. Plan dates with Jen for AUS travel in spring (April/May 2024) 
 
 ## **Daily Log**   
+
+### September 26
+
+- Hawaii 2023 coding
+- Budget planning
+- Travel planning
+- Read papers 
+- Meeting with Jill
+- Moorea writing meeting 
+
+### September 25
+
+- Putnam Lab writing meeting
+- Mcap2021 writing
+- Travel planning 
+
+### September 20
+
+- Mcap2021 results and writing
+- E5 lncRNA group meeting and discussion
+- Started vacation
+- Mcap2021 collaborator results discussion meeting
+
+### September 19
+
+- Meeting with Jill
+- Meeting with Danielle
+- Mcap2021 results and writing
+
+### September 18
+
+- Mcap2021 results and writing
+- Putnam Lab Journal Club 
+- Hawaii 2023 data meeting with Ford
+- Hawaii 2023 data meeting with Andrei and Jen 
 
 ### September 15
 
