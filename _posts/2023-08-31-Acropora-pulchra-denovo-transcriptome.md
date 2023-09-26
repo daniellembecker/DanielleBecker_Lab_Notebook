@@ -155,7 +155,7 @@ RNA-ACR-178-S1-TP2_R2_001.fastp-trim.20230519.fastq.gz
 
   ```
 
-# 1) Run FastQC
+# 1) Run FastQC on ACRP_R1 and ACRP_R2
 
 a) Make folders for raw FastQC results and scripts
 
@@ -274,11 +274,22 @@ ls -1 | wc -l
 #12
 ```
 
-
-b) Check number of reads in /trimmed directory
+b) Check number of reads in /trimmed directory and in /raw directory
 
 ```
-zgrep -c "@GWNJ" *.gz > trimmed_seq_counts
+# look at raw reads
+
+zgrep -c "@A01587" ACRP* > seq_counts
+
+ACRP_R1_001.fastq.gz:178057412
+ACRP_R2_001.fastq.gz:178057412
+
+# look at trimmed reads
+
+zgrep -c "@A01587" ACRP* > trimmed_seq_counts
+
+ACRP_R1_001.fastq.gz:173194930
+ACRP_R2_001.fastq.gz:173194930
 
 ```
 
@@ -315,7 +326,7 @@ done
 ```
 sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/fastqc_trimmed.sh
 
-
+Submitted batch job 281933
 
 ```
 
@@ -348,10 +359,17 @@ Trinity commands as found on [Trinity vignette](https://www.broadinstitute.org/v
  -    left  = paired end reads filenames
  -    right = paired end reads filenames
 
+
+a) Write Trinity script
+
+ ```
+ nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/trinity.sh
+ ```
+
 ```
 
 #!/bin/bash
-#SBATCH --job-name=20230923_trinity
+#SBATCH --job-name=20230925_trinity
 #SBATCH -t 24:00:00
 #SBATCH --nodes=1 --ntasks-per-node=1
 #SBATCH --export=NONE
@@ -364,30 +382,39 @@ Trinity commands as found on [Trinity vignette](https://www.broadinstitute.org/v
 #SBATCH --output="output_script" #once your job is completed, any final job report comments will be put in this file
 
 
-  # Load Trinity module
+# Load Trinity module
 
-  module load Trinity/2.15.1-foss-2022a
+module load Trinity/2.15.1-foss-2022a
 
-  # Run Trinity
-  Trinity \
-  --seqType fq \
-  --SS_lib_type RF \
-  --max_memory 100G \
-  --CPU 28 \
-  --left \
-  /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/ACRP_R1_001.fastq.gz,\
-  /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-140-S1-TP2_R1_001.fastp-trim.20230519.fastq.gz,\
-  /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-145-S1-TP2_R1_001.fastp-trim.20230519.fastq.gz,\
-  /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-150-S1-TP2_R1_001.fastp-trim.20230519.fastq.gz,\
-  /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-173-S1-TP2_R1_001.fastp-trim.20230519.fastq.gz,\
-  /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-178-S1-TP2_R1_001.fastp-trim.20230519.fastq.gz
+# Run Trinity
 
-  --right \
-  /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/ACRP_R2_001.fastq.gz,\
-  /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-140-S1-TP2_R2_001.fastp-trim.20230519.fastq.gz,\
-  /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-145-S1-TP2_R2_001.fastp-trim.20230519.fastq.gz,\
-  /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-150-S1-TP2_R2_001.fastp-trim.20230519.fastq.gz,\
-  /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-173-S1-TP2_R2_001.fastp-trim.20230519.fastq.gz,\
-  /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-178-S1-TP2_R2_001.fastp-trim.20230519.fastq.gz
+Trinity \
+--seqType fq \
+--SS_lib_type RF \
+--max_memory 100G \
+--CPU 36 \
+--left \
+/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/ACRP_R1_001.fastq.gz,\
+/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-140-S1-TP2_R1_001.fastp-trim.20230519.fastq.gz,\
+/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-145-S1-TP2_R1_001.fastp-trim.20230519.fastq.gz,\
+/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-150-S1-TP2_R1_001.fastp-trim.20230519.fastq.gz,\
+/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-173-S1-TP2_R1_001.fastp-trim.20230519.fastq.gz,\
+/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-178-S1-TP2_R1_001.fastp-trim.20230519.fastq.gz \
+--right \
+/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/ACRP_R2_001.fastq.gz,\
+/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-140-S1-TP2_R2_001.fastp-trim.20230519.fastq.gz,\
+/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-145-S1-TP2_R2_001.fastp-trim.20230519.fastq.gz,\
+/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-150-S1-TP2_R2_001.fastp-trim.20230519.fastq.gz,\
+/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-173-S1-TP2_R2_001.fastp-trim.20230519.fastq.gz,\
+/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-178-S1-TP2_R2_001.fastp-trim.20230519.fastq.gz
+
+  ```
+
+  b) Run trinity script
+
+  ```
+  sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/trinity.sh
+
+Submitted batch job 282120 on 20230926 at 11:52
 
   ```
