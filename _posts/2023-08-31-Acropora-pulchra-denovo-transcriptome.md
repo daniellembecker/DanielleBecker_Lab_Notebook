@@ -7,7 +7,7 @@ tag: [ Acropora pulchra, de novo transcriptome ]
 ## Designing a workflow to create a de novo transcriptome for *Acropora pulchra*
 
 #### Goal:
-Use one *Acropora pulchra* [concentrated sequence sample](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/_posts/2023-04-25-Acropora-pulchra-transcriptome-extraction-concentration.md) from 11 colonies collected in Mo'orea, French Polynesia on January 15th 2022 from the north shore backreef site Mahana (17°29'13.9"S 149°53'14.7"W) part of a 12-month [Gametogenesis timeseries project](https://github.com/daniellembecker/Gametogenesis) and five sequence samples also collected from Mo'orea, French Polynesia part of the [E5 Rules of Life project](https://github.com/urol-e5) to create a de novo transcriptome for *A. pulchra*. Literature review of current *Acropora* de novo transcriptomes and genomes completed already.
+Use samples from 11 *Acropora pulchra* colonies collected in Mo'orea, French Polynesia on January 15th 2022 from the north shore backreef site Mahana (17°29'13.9"S 149°53'14.7"W) part of a 12-month [Gametogenesis timeseries project](https://github.com/daniellembecker/Gametogenesis) that were than [concentrated into one sequenced sample](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/_posts/2023-04-25-Acropora-pulchra-transcriptome-extraction-concentration.md) using the [Zymo RNA Clean Concentrate Protocol](https://github.com/zdellaert/ZD_Putnam_Lab_Notebook/blob/master/protocols/Zymo_RNA_Clean_Concentrate.pdf) and five sequence samples also collected from Mo'orea, French Polynesia part of the [E5 Rules of Life project](https://github.com/urol-e5) to create a de novo transcriptome for *A. pulchra*. Literature review of current *Acropora* de novo transcriptomes and genomes completed already.
 
 **Important notes about de novo transcriptomes**
 
@@ -370,8 +370,9 @@ a) Write Trinity script
 
 #!/bin/bash
 #SBATCH --job-name=20230925_trinity
-#SBATCH -t 24:00:00
+#SBATCH --time=30-00:00:00
 #SBATCH --nodes=1 --ntasks-per-node=1
+#SBATCH --exclusive
 #SBATCH --export=NONE
 #SBATCH --mem=500GB
 #SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
