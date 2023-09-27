@@ -416,6 +416,6 @@ Trinity \
   ```
   sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/trinity.sh
 
-Submitted batch job 282120 on 20230926 at 11:52
+Submitted batch job 282369 on 20230927 at 15:56
 
   ```
