@@ -74,20 +74,22 @@ January 2022 samples were brought back with CITES permit 20220819 and stored at 
 
 For our desired sequence volume to submit to Genewiz for RNAseq for transcriptome analyses, we needed one sample with >50ng/uL. Using the 11 samples above to get a diverse range of genotypes and RNA form multiple individuals, we followed the [Zymo RNA Clean Concentrate Protocol](https://github.com/zdellaert/ZD_Putnam_Lab_Notebook/blob/master/protocols/Zymo_RNA_Clean_Concentrate.pdf) **based on the volume for each tube** for the Zymo Clean and Concentrate kit, eluting in 25 µL of DNAse/RNAse free water.
 
-Base volume: 10 uL
+10 uL of each sample (10 uL * 11 samples = 110 uL) was added to a 1.5 mL microcentrifuge tube 
 
-1. Since each sample is **10** uL, add **20** uL (2 x **10**) of RNA binding buffer.
-2. Add an equal volume (**30** uL (3 x **10**)) of 100% ethanol and mix.
+Base volume: 110 uL
+
+1. Since each sample is **110** uL, add **220** uL (2 x **110**) of RNA binding buffer.
+2. Add an equal volume (**330** uL (3 x **110**)) of 100% ethanol and mix.
 3. Transfer the sample to the Zymo-Spin™ IC Column in a Collection Tube and centrifuge. Discard the flow-through.
 4. Add 400 µl RNA Prep Buffer to the column and centrifuge. Discard the flow-through.
 5. Add 700 µl RNA Wash Buffer to the column and centrifuge. Discard the flow-through.
-6. Add 400 µl RNA Wash Buffer to the column and centrifuge for 1 minute ensure complete removal of the wash buffer. Carefully, transfer the column into a RNase-free tube (not provided).
+6. Add 400 µl RNA Wash Buffer to the column and centrifuge for 1 minute to ensure complete removal of the wash buffer. Carefully, transfer the column into a RNase-free tube (not provided).
 7. Add 25 µl DNase/RNase-Free Water directly to the column matrix and centrifuge.
 
 ## Qubit Results
 
 - Used High Sensitivity range dsDNA and RNA Qubit [Protocol](https://zdellaert.github.io/ZD_Putnam_Lab_Notebook/Qubit-Protocol/)
-- All samples read twice, standard only read once
+- The concentrated sample was read twice, the standards were only read once
 
  RNA Standards: 418.23 (S1) & 8244.21 (S2)
 
