@@ -12,8 +12,8 @@ September goals and daily notebook entries.
 ### Writing and manuscripts 
               
 1. ~~Write methods for 2022 Acropora Moorea manuscript~~ 
-2. Write methods for E5 Nom Nom project
-2. Write results for Mcap2021 manuscript
+2. ~~Write methods for E5 Nom Nom project~~
+2. ~~Write results for Mcap2021 manuscript~~
 3. Outline Life History Perspectives manuscript 
 4. Outline E5 physiology discussion
 
@@ -31,6 +31,20 @@ September goals and daily notebook entries.
 4. Plan dates with Jen for AUS travel in spring (April/May 2024) 
 
 ## **Daily Log**   
+
+### September 28
+
+- Roberts Lab meeting
+- URI budget meeting
+- Mcap2021 writing 
+- Read papers
+ 
+### September 27
+
+- Travel planning
+- Mcap2021 writing
+- eScience seminar presentation
+- NSF GRFP UW workshop
 
 ### September 26
 
