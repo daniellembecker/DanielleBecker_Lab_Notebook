@@ -14,7 +14,6 @@ September goals and daily notebook entries.
 1. ~~Write methods for 2022 Acropora Moorea manuscript~~ 
 2. ~~Write methods for E5 Nom Nom project~~
 2. ~~Write results for Mcap2021 manuscript~~
-3. Outline Life History Perspectives manuscript 
 4. Outline E5 physiology discussion
 
 ### Sample processing
@@ -31,6 +30,14 @@ September goals and daily notebook entries.
 4. Plan dates with Jen for AUS travel in spring (April/May 2024) 
 
 ## **Daily Log**   
+
+### September 29
+
+- ceabigr coding
+- WGCNA meeting with Zach
+- Writing meeting with Jill
+- Putnam Lab meeting
+- Read 10 papers 
 
 ### September 28
 
