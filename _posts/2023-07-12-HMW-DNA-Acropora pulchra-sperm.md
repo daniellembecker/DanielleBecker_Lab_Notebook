@@ -15,6 +15,8 @@ Use *Acropora pulchra* sperm samples to extract high molecular weight DNA for E5
 
 [Maggie Schedl Qiagen Genomic Tip HMW DNA Extraction of Fire Coral](https://meschedl.github.io/MESPutnam_Open_Lab_Notebook/firecoral-HMW/)
 
+[Maggie Schedl HMW DNA Extraction of Pocillopora acuta with the Qiagen Genomic Tip](https://meschedl.github.io/MESPutnam_Open_Lab_Notebook/pacuta-HMW/)
+
 [New England Biolabs High Molecular Weight DNA Extraction Guidelines](https://www.neb.com/monarch/high-molecular-weight-dna-extraction?gclid=Cj0KCQjwnrmlBhDHARIsADJ5b_kHBvc274KwNljTVwN6r2KJbjBQjnWFzkyJLI6GpmEZw7UNU-HPjmEaAt_tEALw_wcB)
 
 [New England Biolabs High Molecular Weight DNA Cells and Blood Kit](https://www.neb.com/-/media/nebus/files/manuals/manualt3050.pdf?rev=41e2c417f75c4889b2d0caeaa6746419&hash=1A3E03456DCB79B426622B85DFB85111)
@@ -148,7 +150,7 @@ Note: at this step should see DNA precipitate at bottom of tube
 
 #### Qubit
 
-- Use the broad range DNA assay and [protocol](https://github.com/meschedl/PPP-Lab-Resources/blob/master/Protocols/Qubit-Assay-Protocol.md)
+- Use the broad range DNA assay and [protocol](https://github.com/meschedl/PPP-Lab-Resources/tree/master/Protocols_and_Lab_Resources/DNA_Quality_Control)
 - Quantify both the top and bottom of each tube and then use the averages of each tube for the final concentration
 - You should be getting very high DNA quants for this, above 100ng/ul is good
 
@@ -206,3 +208,40 @@ Qubit results on 20230721 by ZD:
 Notes: These data show that the samples is still not homogenized, samples placed back in 4°C fridge.
 
 Next steps: Danielle will QC the sample again on Wednesday the 26th to see if anymore homogenizing has happened, if not, she is going to try another sample without the change to the thermo mixer speed. Could also increase the input amount of sample from 300 uL to 600 uL.
+
+Qubit results on sample completed on 20230721, read on 20230727:
+
+| Sample.ID | Qubit Reading (ng/ul) |
+|-----------|---------------|
+| S1        | 193.03        |
+| S2        | 21519.79      |
+| Top1      | 19.5         |
+| Top2      | 17.6         |
+| Bottom1   | 262        |
+| Bottom2   | 312        |
+
+Next steps: On 20230810 Danielle increased the input amount of sample from 300 uL to 600 uL on 20230810 for HMW. Adjusted ProteinaseK and RNAse volume additions by x2 to match new volume input of sample.
+
+Qubit results on 600 uL sample:
+
+| Sample.ID | Qubit Reading (ng/ul) |
+|-----------|---------------|
+| S1        | 189.38       |
+| S2        | 19206.16      |
+| Top1      | 19.6         |
+| Top2      | 19.7         |
+| Bottom1   | 20.8       |
+| Bottom2   | 21.4        |
+
+Next steps: On 20231012 Danielle and Hollie looked into troubleshooting steps. It was suggested to reduce the material (used 150 uL of sperm sample) from the original inpur volume of 300 uL. Upon using half of the input volume, step 3 of the protocol was adjusted to use half the ProteinaseK and RNase as well. Also, Danielle used the vertical rotating mixer now set up by the molecular Putnam bench so that this step will be more precise and hopefully help to dissolve/re-suspend the HMW DNA. The last adjustment was to reduce the elution buffer by 1/2 as well for step 9 of the protocol.
+
+Qubit results on 150 uL sample:
+
+| Sample.ID | Qubit Reading (ng/ul) |
+|-----------|---------------|
+| S1        | 208.21       |
+| S2        | 21991.61     |
+| Top1      | 18.38        |
+| Top2      | 18.28         |
+| Bottom1   | 18.70       |
+| Bottom2   | 18.60       |

@@ -419,3 +419,40 @@ Trinity \
 Submitted batch job 282369 on 20230927 at 15:56
 
   ```
+  
+  Trinity finished 20231011 with a FailedCommands.txt file. After looking at Trinity GitHub issues, many suggestions were to run the FailedCommmands line by line to see where the errors are occuring.
+  
+    ```
+    # made a failed commands script to run each command individually
+    
+nano failedcommands
+
+#!/bin/bash
+#SBATCH --job-name=20230925_trinity
+#SBATCH --time=30-00:00:00
+#SBATCH --nodes=1 --ntasks-per-node=1
+#SBATCH --exclusive
+#SBATCH --export=NONE
+#SBATCH --mem=500GB
+#SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
+#SBATCH --mail-user=danielle_becker@uri.edu #your email to send notifications
+#SBATCH --account=putnamlab
+#SBATCH -D /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed
+#SBATCH --error="FC_script_error" #if your job fails, the error report will be put in this file
+#SBATCH --output="FC_output_script" #once your job is completed, any final job report comments will be put in this file
+
+
+# Load Trinity module
+
+module load Trinity/2.15.1-foss-2022a
+
+# Run failed commands for Trinity
+
+/opt/software/Trinity/2.15.1-foss-2022a/trinityrnaseq-v2.15.1/util/support_scripts/../../Trinity --single "/glfs/brick01/gv0/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trinity_out_dir/read_partitions/Fb_6/CBin_6008/c600976.trinity.reads.fa" --output "/glfs/brick01/gv0/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trinity_out_dir/read_partitions/Fb_6/CBin_6008/c600976.trinity.reads.fa.out" --CPU 1 --max_memory 1G --run_as_paired --SS_lib_type F --seqType fa --trinity_complete --full_cleanup --no_salmon
+
+# submitted on 20231012
+
+Submitted batch job 285323
+
+
+  ```
