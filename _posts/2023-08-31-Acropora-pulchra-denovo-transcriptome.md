@@ -515,7 +515,44 @@ scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/DeNovo_transcript
 a) Run TrinityStats.pl script for stats output, need to use the path of trinity module and then add the util folder before you can access the .pl script
 
 ```
-/opt/software/Trinity/2.15.1-foss-2022a/trinityrnaseq-v2.15.1/util/TrinityStats.pl Trinity.tmp.fasta
+/opt/software/Trinity/2.15.1-foss-2022a/trinityrnaseq-v2.15.1/util/TrinityStats.pl Trinity.tmp.fasta > trinity_assembly_stats
 
-$TRINITY_HOME/util/TrinityStats.pl
+```
+
+```
+################################
+## Counts of transcripts, etc.
+################################
+Total trinity 'genes':	1142459
+Total trinity transcripts:	1930791
+Percent GC: 44.29
+
+########################################
+Stats based on ALL transcript contigs:
+########################################
+
+	Contig N10: 5234
+	Contig N20: 3535
+	Contig N30: 2555
+	Contig N40: 1878
+	Contig N50: 1369
+
+	Median contig length: 404
+	Average contig: 789.38
+	Total assembled bases: 1524120185
+
+
+#####################################################
+## Stats based on ONLY LONGEST ISOFORM per 'GENE':
+#####################################################
+
+	Contig N10: 3788
+	Contig N20: 2150
+	Contig N30: 1418
+	Contig N40: 977
+	Contig N50: 696
+
+	Median contig length: 327
+	Average contig: 548.57
+	Total assembled bases: 626714473
 ```
