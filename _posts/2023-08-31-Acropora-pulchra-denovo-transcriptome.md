@@ -510,9 +510,15 @@ scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/DeNovo_transcript
 
   ```
 
-# 7) Use [Trinity toolkit utilities](https://github.com/trinityrnaseq/trinityrnaseq/wiki/Transcriptome-Contig-Nx-and-ExN50-stats) for a assembly quality assessment
+# 7) Assessing quality of the assesment
+
+Use [Trinity toolkit utilities](https://github.com/trinityrnaseq/trinityrnaseq/wiki/Transcriptome-Contig-Nx-and-ExN50-stats) for a assembly quality assessment
 
 a) Run TrinityStats.pl script for stats output, need to use the path of trinity module and then add the util folder before you can access the .pl script
+
+This script will compute the contig Nx statistics (eg. the contig N50 value), in addition to a modification of the Nx statistic that takes into consideration transcript expression (read support) data, which we call the ExN50 statistic.
+
+Based on the lengths of the assembled transcriptome contigs, we can compute the conventional Nx length statistic, such that at least x% of the assembled transcript nucleotides are found in contigs that are at least of Nx length. The traditional method is computing N50, such that at least half of all assembled bases are in transcript contigs of at least the N50 length value.
 
 ```
 /opt/software/Trinity/2.15.1-foss-2022a/trinityrnaseq-v2.15.1/util/TrinityStats.pl Trinity.tmp.fasta > trinity_assembly_stats
@@ -541,7 +547,13 @@ Stats based on ALL transcript contigs:
 	Average contig: 789.38
 	Total assembled bases: 1524120185
 
+```
 
+The N10 through N50 values are shown computed based on all assembled contigs. In this example, 10% of the assembled bases are found in transcript contigs at least 5,234 bases in length (N10 value), and the N50 value indicates that at least half the assembled bases are found in contigs that are at least 1,369 bases in length.
+
+The contig N50 values can often be exaggerated due to an assembly program generating too many transcript isoforms, especially for the longer transcripts. To mitigate this effect, the script will also compute the Nx values based on using only the single longest isoform per 'gene':
+
+```
 #####################################################
 ## Stats based on ONLY LONGEST ISOFORM per 'GENE':
 #####################################################
@@ -555,4 +567,71 @@ Stats based on ALL transcript contigs:
 	Median contig length: 327
 	Average contig: 548.57
 	Total assembled bases: 626714473
+```
+
+You can see that the Nx values based on the single longest isoform per gene are lower than the Nx stats based on all assembled contigs, as expected, and even though the Nx statistic is really not a reliable indicator of the quality of a transcriptome assembly, the Nx value based on using the longest isoform per gene is perhaps better for reasons described above.
+
+
+b) Run BUSCO ( Benchmarking Universal Single-Copy Orthologs)
+
+- *Commands and overview for running BUSCO here*: https://busco.ezlab.org/busco_userguide.html
+- uses highly conserved single-copy orthologs; evolutionary informed expectations of gene content.
+- appears that youu can focus a BUSCO analysis to orthologs related to your target taxa.
+
+- image below shows a BUSCO analysis comparing the crayfish targetted for tde novo transcriptome assembly to 44 other arthropod species assemblies and a single vertebrate assembly:
+
+*Theissinger et al. 2016* https://www.sciencedirect.com/science/article/abs/pii/S1874778716300137
+
+Citation: Theissinger, K., Falckenhayn, C., Blande, D., Toljamo, A., Gutekunst, J., Makkonen, J., ... & Kokko, H. (2016). De Novo assembly and annotation of the freshwater crayfish Astacus astacus transcriptome. Marine Genomics, 28, 7-10.
+
+
+Make run-busco-transcriptome.sh script:
+
+```
+nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco.sh
+
+```
+
+```
+#!/bin/bash
+
+#SBATCH --job-name="busco"
+#SBATCH --time="100:00:00"
+#SBATCH --nodes 1 --ntasks-per-node=20
+#SBATCH --mem=250G
+##SBATCH --output="busco-%u-%x-%j"
+##SBATCH --account=putnamlab
+##SBATCH --export=NONE
+
+echo "START" $(date)
+
+labbase=/data/putnamlab
+busco_shared="${labbase}/shared/busco"
+[ -z "$query" ] && query="${labbase}/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trinity_out_dir/Trinity.tmp.fasta" # set this to the query (genome/transcriptome) you are running
+[ -z "$db_to_compare" ] && db_to_compare="${busco_shared}/downloads/lineages/metazoa_odb10"
+
+source "${busco_shared}/scripts/busco_init.sh"  # sets up the modules required for this in the right order
+
+# This will generate output under your $HOME/busco_output
+busco --config "${busco_shared}/scripts/busco-config.init.sh"  -f -c 20 --long -i "${query}" -l "${db_to_compare}" -o busco_output -m transcriptome
+
+echo "STOP" $(date)
+
+```
+
+Run BUSCO script
+
+```
+sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco.sh
+
+Submitted batch job 285508
+
+```
+
+
+### BUSCO Results
+
+```
+
+
 ```
