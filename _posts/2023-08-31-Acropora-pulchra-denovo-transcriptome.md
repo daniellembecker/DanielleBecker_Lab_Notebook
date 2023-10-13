@@ -614,7 +614,7 @@ source "${busco_shared}/scripts/busco_init.sh"  # sets up the modules required f
 
 # This will generate output under your $HOME/busco_output
 cd "${labbase}/${dbecks}"
-busco --config "${busco_shared}/scripts/busco-config.init.sh"  -f -c 20 --long -i "${query}" -l "${db_to_compare}" -o busco_output -m transcriptome
+busco --config "${busco_shared}/scripts/busco-config.ini"  -f -c 20 --long -i "${query}" -l "${db_to_compare}" -o busco_output -m transcriptome
 
 echo "STOP" $(date)
 
@@ -627,9 +627,51 @@ Run BUSCO script
 sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco.sh
 
 
-Submitted batch job 285508
+```
+
+My first run of BUSCO, I was getting this repeated error in my slurm output error file:
+
+"Message: BatchFatalError(AttributeError("'NoneType' object has no attribute 'hmmer_results_lines'"))"
+
+The issue was that the above script was referencing busco-config.ini which had old versions (based on the old modules) instead of using the installed copy $EBROOTBUSCO/config/config.ini which has the correct paths. So I changed the line in the script below to use the new correct path and it began to run!
+
 
 ```
+#!/bin/bash
+
+#SBATCH --job-name="busco"
+#SBATCH --time="100:00:00"
+#SBATCH --nodes 1 --ntasks-per-node=20
+#SBATCH --mem=250G
+##SBATCH --output="busco-%u-%x-%j"
+##SBATCH --account=putnamlab
+##SBATCH --export=NONE
+
+echo "START" $(date)
+
+labbase=/data/putnamlab
+busco_shared="${labbase}/shared/busco"
+[ -z "$query" ] && query="${labbase}/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trinity_out_dir/Trinity.tmp.fasta" # set this to the query (genome/transcriptome) you are running
+[ -z "$db_to_compare" ] && db_to_compare="${busco_shared}/downloads/lineages/metazoa_odb10"
+
+source "${busco_shared}/scripts/busco_init.sh"  # sets up the modules required for this in the right order
+
+# This will generate output under your $HOME/busco_output
+cd "${labbase}/${dbecks}"
+busco --config "$EBROOTBUSCO/config/config.ini"  -f -c 20 --long -i "${query}" -l "${db_to_compare}" -o busco_output -m transcriptome
+
+echo "STOP" $(date)
+
+```
+
+```
+
+sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco.sh
+
+Submitted batch job 285515
+
+```
+
 
 
 ### BUSCO Results
