@@ -613,6 +613,7 @@ busco_shared="${labbase}/shared/busco"
 source "${busco_shared}/scripts/busco_init.sh"  # sets up the modules required for this in the right order
 
 # This will generate output under your $HOME/busco_output
+cd "${labbase}/${dbecks}"
 busco --config "${busco_shared}/scripts/busco-config.init.sh"  -f -c 20 --long -i "${query}" -l "${db_to_compare}" -o busco_output -m transcriptome
 
 echo "STOP" $(date)
@@ -622,7 +623,9 @@ echo "STOP" $(date)
 Run BUSCO script
 
 ```
+
 sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco.sh
+
 
 Submitted batch job 285508
 
