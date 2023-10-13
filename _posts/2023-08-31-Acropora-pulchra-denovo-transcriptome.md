@@ -133,7 +133,7 @@ Downloaded all files to Andromeda URI HPC location
 
 Trim ACRP-CON reads.
 
-Reads for samples ACR-140, ACR-145, ACR-150, ACR-173, and ACR-178 were trimmed using the built-in version of Trimmomatic with the default settings, following the 9FastQ QC and Trimming - E5 Coral RNA-seq Data for A.pulchra protocol)[https://robertslab.github.io/sams-notebook/2023/05/19/FastQ-QC-and-Trimming-E5-Coral-RNA-seq-Data-for-A.pulchra-P.evermanni-and-P.meandrina-Using-FastQC-fastp-and-MultiQC-on-Mox.html].
+Reads for samples ACR-140, ACR-145, ACR-150, ACR-173, and ACR-178 were trimmed using the built-in version of Trimmomatic with the default settings, following the 9FastQ QC and Trimming - [E5 Coral RNA-seq Data for A.pulchra protocol](https://robertslab.github.io/sams-notebook/2023/05/19/FastQ-QC-and-Trimming-E5-Coral-RNA-seq-Data-for-A.pulchra-P.evermanni-and-P.meandrina-Using-FastQC-fastp-and-MultiQC-on-Mox.html).
 
 Downloaded all files to Andromeda URI HPC location
 
@@ -512,9 +512,10 @@ scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/DeNovo_transcript
 
 # 7) Use [Trinity toolkit utilities](https://github.com/trinityrnaseq/trinityrnaseq/wiki/Transcriptome-Contig-Nx-and-ExN50-stats) for a assembly quality assessment
 
-a) Run TrinityStats.pl script for stats output
+a) Run TrinityStats.pl script for stats output, need to use the path of trinity module and then add the util folder before you can access the .pl script
 
 ```
 /opt/software/Trinity/2.15.1-foss-2022a/trinityrnaseq-v2.15.1/util/TrinityStats.pl Trinity.tmp.fasta
 
+$TRINITY_HOME/util/TrinityStats.pl
 ```
