@@ -419,40 +419,90 @@ Trinity \
 Submitted batch job 282369 on 20230927 at 15:56
 
   ```
-  
-  Trinity finished 20231011 with a FailedCommands.txt file. After looking at Trinity GitHub issues, many suggestions were to run the FailedCommmands line by line to see where the errors are occuring.
-  
-    ```
-    # made a failed commands script to run each command individually
-    
-nano failedcommands
 
-#!/bin/bash
-#SBATCH --job-name=20230925_trinity
-#SBATCH --time=30-00:00:00
-#SBATCH --nodes=1 --ntasks-per-node=1
-#SBATCH --exclusive
-#SBATCH --export=NONE
-#SBATCH --mem=500GB
-#SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
-#SBATCH --mail-user=danielle_becker@uri.edu #your email to send notifications
-#SBATCH --account=putnamlab
-#SBATCH -D /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed
-#SBATCH --error="FC_script_error" #if your job fails, the error report will be put in this file
-#SBATCH --output="FC_output_script" #once your job is completed, any final job report comments will be put in this file
+Trinity finished 20231011 with a FailedCommands.txt file. I submitted a GitHub issues with my output script to the [Trinity GitHub Issues](https://github.com/trinityrnaseq/trinityrnaseq/issues/1342#issuecomment-1760111445).
+
+```
+Response to issue:
+
+It looks like there's 18 failed commands.  I'm seeing the errors like this:
+
+/glfs/brick01/gv0/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trinity_out_dir/read_partitions/Fb_8/CBin_8455/c845648.trinity.reads.fa.out/inchworm.fa.tmp':
 
 
-# Load Trinity module
+If you find the failed_commands.txt file (or similar name) in the trinity
+output directory, it should have the list of the commands it's having a
+hard time with.   Each should have an output directory, like in the above
+example, it would be:
 
-module load Trinity/2.15.1-foss-2022a
+/glfs/brick01/gv0/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trinity_out_dir/read_partitions/Fb_8/CBin_8455/c845648.trinity.reads.fa.out
 
-# Run failed commands for Trinity
+If you can remove those output directories and then rerun your Trinity
+command, it should hopefully process everything just fine (unless you ran
+out of disk space...)
 
-/opt/software/Trinity/2.15.1-foss-2022a/trinityrnaseq-v2.15.1/util/support_scripts/../../Trinity --single "/glfs/brick01/gv0/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trinity_out_dir/read_partitions/Fb_6/CBin_6008/c600976.trinity.reads.fa" --output "/glfs/brick01/gv0/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trinity_out_dir/read_partitions/Fb_6/CBin_6008/c600976.trinity.reads.fa.out" --CPU 1 --max_memory 1G --run_as_paired --SS_lib_type F --seqType fa --trinity_complete --full_cleanup --no_salmon
+```
 
-# submitted on 20231012
+I then removed all the corrupt files (18) listed in the FailedCommands.txt file and re-ran Trinity on 20231012 at 16:04 after changing the amount of CPUs to 20 because a number of solutions in the developer's GitHub Issues suggest that sometimes the CPUs process things too quickly for the computer's file system to keep up, leading to problems
 
-Submitted batch job 285323
+```
+rm -rf /glfs/brick01/gv0/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trinity_out_dir/read_partitions/Fb_8/CBin_8455/c845648.trinity.reads.fa.out
 
+rm -rf /glfs/brick01/gv0/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trinity_out_dir/read_partitions/Fb_6/CBin_6008/c600976.trinity.reads.fa.out
 
-  ```
+rm -rf /glfs/brick01/gv0/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trinity_out_dir/read_partitions/Fb_8/CBin_8295/c829640.trinity.reads.fa.out
+
+rm -rf /glfs/brick01/gv0/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trinity_out_dir/read_partitions/Fb_7/CBin_7785/c778615.trinity.reads.fa.out
+
+rm -rf /glfs/brick01/gv0/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trinity_out_dir/read_partitions/Fb_0/CBin_139/c13942.trinity.reads.fa.out
+
+rm -rf /glfs/brick01/gv0/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trinity_out_dir/read_partitions/Fb_7/CBin_7922/c792325.trinity.reads.fa.out
+
+rm -rf /glfs/brick01/gv0/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trinity_out_dir/read_partitions/Fb_4/CBin_4006/c400692.trinity.reads.fa.out
+
+rm -rf /glfs/brick01/gv0/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trinity_out_dir/read_partitions/Fb_3/CBin_3881/c388169.trinity.reads.fa.out
+
+rm -rf /glfs/brick01/gv0/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trinity_out_dir/read_partitions/Fb_8/CBin_8455/c845648.trinity.reads.fa.out
+
+rm -rf /glfs/brick01/gv0/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trinity_out_dir/read_partitions/Fb_5/CBin_5650/c565150.trinity.reads.fa.out
+
+rm -rf /glfs/brick01/gv0/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trinity_out_dir/read_partitions/Fb_5/CBin_5326/c532719.trinity.reads.fa.out
+
+rm -rf /glfs/brick01/gv0/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trinity_out_dir/read_partitions/Fb_6/CBin_6986/c698736.trinity.reads.fa.out
+
+rm -rf /glfs/brick01/gv0/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trinity_out_dir/read_partitions/Fb_6/CBin_6598/c659988.trinity.reads.fa.out
+
+rm -rf /glfs/brick01/gv0/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trinity_out_dir/read_partitions/Fb_6/CBin_6003/c600479.trinity.reads.fa.out
+
+rm -rf /glfs/brick01/gv0/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trinity_out_dir/read_partitions/Fb_4/CBin_4526/c452745.trinity.reads.fa.out
+
+rm -rf /glfs/brick01/gv0/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trinity_out_dir/read_partitions/Fb_2/CBin_2558/c255895.trinity.reads.fa.out
+
+rm -rf /glfs/brick01/gv0/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trinity_out_dir/read_partitions/Fb_2/CBin_2424/c242423.trinity.reads.fa.out
+
+rm -rf /glfs/brick01/gv0/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trinity_out_dir/read_partitions/Fb_7/CBin_7230/c723106.trinity.reads.fa.out
+
+```
+
+```
+sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/trinity.sh
+
+Submitted batch job 285355
+```
+
+Trinity completed successfully!!!! When Trinity completes, it creates a 'Trinity.tmp.fasta' output file (or prefix based on the output directory you specify).
+
+Trinity groups transcripts into clusters based on shared sequence content. Such a transcript cluster is very loosely referred to as a 'gene'. This information is encoded in the Trinity fasta accession. An example Fasta entry for one of the transcripts is formatted like so:
+
+```
+>TRINITY_DN1000_c115_g5_i1 len=247 path=[31015:0-148 23018:149-246]
+ AATCTTTTTTGGTATTGGCAGTACTGTGCTCTGGGTAGTGATTAGGGCAAAAGAAGACAC
+ ACAATAAAGAACCAGGTGTTAGACGTCAGCAAGTCAAGGCCTTGGTTCTCAGCAGACAGA
+ AGACAGCCCTTCTCAATCCTCATCCCTTCCCTGAACAGACATGTCTTCTGCAAGCTTCTC
+ CAAGTCAGTTGTTCACAGGAACATCATCAGAATAAATTTGAAATTATGATTAGTATCTGA
+ TAAAGCA
+ ```
+
+# 7) Run assembly quality assessment with Trinity stats script
+
+a) Run TrinityStats.pl script for stats output
