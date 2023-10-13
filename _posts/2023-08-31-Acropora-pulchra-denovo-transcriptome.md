@@ -503,6 +503,18 @@ Trinity groups transcripts into clusters based on shared sequence content. Such 
  TAAAGCA
  ```
 
-# 7) Run assembly quality assessment with Trinity stats script
+Download Trinity fasta to Desktop if needed, too large to have stored there always
+
+ ```
+scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trinity_out_dir/Trinity.tmp.fasta /Users/Danielle/Desktop/Putnam_Lab/Gametogenesis/bioinformatics
+
+  ```
+
+# 7) Use [Trinity toolkit utilities](https://github.com/trinityrnaseq/trinityrnaseq/wiki/Transcriptome-Contig-Nx-and-ExN50-stats) for a assembly quality assessment
 
 a) Run TrinityStats.pl script for stats output
+
+```
+/opt/software/Trinity/2.15.1-foss-2022a/trinityrnaseq-v2.15.1/util/TrinityStats.pl Trinity.tmp.fasta
+
+```
