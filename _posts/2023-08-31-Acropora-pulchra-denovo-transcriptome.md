@@ -506,7 +506,7 @@ Trinity groups transcripts into clusters based on shared sequence content. Such 
 Download Trinity fasta to Desktop if needed, too large to have stored there always
 
  ```
-scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trinity_out_dir/Trinity.tmp.fasta /Users/Danielle/Desktop/Putnam_Lab/Gametogenesis/bioinformatics
+scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trinity_out_dir/trinity_out_dir.Trinity.fasta /Users/Danielle/Desktop/Putnam_Lab/Gametogenesis/bioinformatics
 
   ```
 
@@ -521,7 +521,7 @@ This script will compute the contig Nx statistics (eg. the contig N50 value), in
 Based on the lengths of the assembled transcriptome contigs, we can compute the conventional Nx length statistic, such that at least x% of the assembled transcript nucleotides are found in contigs that are at least of Nx length. The traditional method is computing N50, such that at least half of all assembled bases are in transcript contigs of at least the N50 length value.
 
 ```
-/opt/software/Trinity/2.15.1-foss-2022a/trinityrnaseq-v2.15.1/util/TrinityStats.pl Trinity.tmp.fasta > trinity_assembly_stats
+/opt/software/Trinity/2.15.1-foss-2022a/trinityrnaseq-v2.15.1/util/TrinityStats.pl trinity_out_dir.Trinity.fasta > trinity_assembly_stats
 
 ```
 
@@ -529,27 +529,27 @@ Based on the lengths of the assembled transcriptome contigs, we can compute the 
 ################################
 ## Counts of transcripts, etc.
 ################################
-Total trinity 'genes':	1142459
-Total trinity transcripts:	1930791
-Percent GC: 44.29
+Total trinity 'genes':  1019918
+Total trinity transcripts:      1476390
+Percent GC: 44.78
 
 ########################################
 Stats based on ALL transcript contigs:
 ########################################
 
-	Contig N10: 5234
-	Contig N20: 3535
-	Contig N30: 2555
-	Contig N40: 1878
-	Contig N50: 1369
+        Contig N10: 4395
+        Contig N20: 2790
+        Contig N30: 1956
+        Contig N40: 1417
+        Contig N50: 1021
 
-	Median contig length: 404
-	Average contig: 789.38
-	Total assembled bases: 1524120185
+        Median contig length: 376
+        Average contig: 675.99
+        Total assembled bases: 998026397
 
 ```
 
-The N10 through N50 values are shown computed based on all assembled contigs. In this example, 10% of the assembled bases are found in transcript contigs at least 5,234 bases in length (N10 value), and the N50 value indicates that at least half the assembled bases are found in contigs that are at least 1,369 bases in length.
+The N10 through N50 values are shown computed based on all assembled contigs. In this example, 10% of the assembled bases are found in transcript contigs at least 4,395 bases in length (N10 value), and the N50 value indicates that at least half the assembled bases are found in contigs that are at least 1,021 bases in length.
 
 The contig N50 values can often be exaggerated due to an assembly program generating too many transcript isoforms, especially for the longer transcripts. To mitigate this effect, the script will also compute the Nx values based on using only the single longest isoform per 'gene':
 
@@ -558,15 +558,15 @@ The contig N50 values can often be exaggerated due to an assembly program genera
 ## Stats based on ONLY LONGEST ISOFORM per 'GENE':
 #####################################################
 
-	Contig N10: 3788
-	Contig N20: 2150
-	Contig N30: 1418
-	Contig N40: 977
-	Contig N50: 696
+        Contig N10: 3840
+        Contig N20: 2221
+        Contig N30: 1479
+        Contig N40: 1026
+        Contig N50: 731
 
-	Median contig length: 327
-	Average contig: 548.57
-	Total assembled bases: 626714473
+        Median contig length: 335
+        Average contig: 565.18
+        Total assembled bases: 576438524
 ```
 
 You can see that the Nx values based on the single longest isoform per gene are lower than the Nx stats based on all assembled contigs, as expected, and even though the Nx statistic is really not a reliable indicator of the quality of a transcriptome assembly, the Nx value based on using the longest isoform per gene is perhaps better for reasons described above.
@@ -607,7 +607,7 @@ echo "START" $(date)
 
 labbase=/data/putnamlab
 busco_shared="${labbase}/shared/busco"
-[ -z "$query" ] && query="${labbase}/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trinity_out_dir/Trinity.tmp.fasta" # set this to the query (genome/transcriptome) you are running
+[ -z "$query" ] && query="${labbase}/dbecks/DeNovo_transcriptome/2023_A.pul/data/trinity_out_dir/trinity_out_dir.Trinity.fasta" # set this to the query (genome/transcriptome) you are running
 [ -z "$db_to_compare" ] && db_to_compare="${busco_shared}/downloads/lineages/metazoa_odb10"
 
 source "${busco_shared}/scripts/busco_init.sh"  # sets up the modules required for this in the right order
@@ -629,11 +629,13 @@ sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco.sh
 
 ```
 
-My first run of BUSCO, I was getting this repeated error in my slurm output error file:
+My first run of BUSCO, I was getting this repeated errors in my slurm output error file:
 
 "Message: BatchFatalError(AttributeError("'NoneType' object has no attribute 'hmmer_results_lines'"))"
 
 The issue was that the above script was referencing busco-config.ini which had old versions (based on the old modules) instead of using the installed copy $EBROOTBUSCO/config/config.ini which has the correct paths. So I changed the line in the script below to use the new correct path and it began to run!
+
+There was also another error that the metazoa_odb10 file was an old version and to make sure BUSCO always updates these file versions, we need to use the command -l metazoa_odb10 instead of a set file path for BUSCO to automatically update the versions. Further explanation could be found in the [download and automatically update lineaages BUSCO guide section](https://busco.ezlab.org/busco_userguide.html#download-and-automated-update).
 
 
 ```
@@ -651,14 +653,14 @@ echo "START" $(date)
 
 labbase=/data/putnamlab
 busco_shared="${labbase}/shared/busco"
-[ -z "$query" ] && query="${labbase}/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/trinity_out_dir/Trinity.tmp.fasta" # set this to the query (genome/transcriptome) you are running
+[ -z "$query" ] && query="${labbase}/dbecks/DeNovo_transcriptome/2023_A.pul/data/trinity_out_dir/trinity_out_dir.Trinity.fasta" # set this to the query (genome/transcriptome) you are running
 [ -z "$db_to_compare" ] && db_to_compare="${busco_shared}/downloads/lineages/metazoa_odb10"
 
 source "${busco_shared}/scripts/busco_init.sh"  # sets up the modules required for this in the right order
 
 # This will generate output under your $HOME/busco_output
 cd "${labbase}/${dbecks}"
-busco --config "$EBROOTBUSCO/config/config.ini"  -f -c 20 --long -i "${query}" -l "${db_to_compare}" -o busco_output -m transcriptome
+busco --config "$EBROOTBUSCO/config/config.ini"  -f -c 20 --long -i "${query}" -l metazoa_odb10 -o busco_output -m transcriptome
 
 echo "STOP" $(date)
 
@@ -668,7 +670,7 @@ echo "STOP" $(date)
 
 sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco.sh
 
-Submitted batch job 285515
+Submitted batch job 285867
 
 ```
 
@@ -677,6 +679,28 @@ Submitted batch job 285515
 ### BUSCO Results
 
 ```
+cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/busco/busco_output
+less short_summary.specific.metazoa_odb10.busco_output.txt
 
+# BUSCO version is: 5.2.2
+# The lineage dataset is: metazoa_odb10 (Creation date: 2021-02-17, number of genomes: 65, number of BUSCOs: 954)
+# Summarized benchmarking in BUSCO notation for file /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trinity_out_dir/trinity_out_dir.Trinity.fasta
+# BUSCO was run in mode: transcriptome
+
+        ***** Results: *****
+
+        C:99.9%[S:21.0%,D:78.9%],F:0.1%,M:0.0%,n:954       
+        953     Complete BUSCOs (C)                        
+        200     Complete and single-copy BUSCOs (S)        
+        753     Complete and duplicated BUSCOs (D)         
+        1       Fragmented BUSCOs (F)                      
+        0       Missing BUSCOs (M)                         
+        954     Total BUSCO groups searched               
 
 ```
+
+BUSCO completeness looks great. Completeness looks for the presence or absence of highly conserved genes in an assembly. The aim is to have the highest percentage of genes identified in your assembly, with a BUSCO complete score above 95% considered good.
+
+However, the complete and duplicated BUSCOs are higher than expected. A high level of duplication may be explained by a recent whole duplication event (biological) or a chimeric assembly of haplotypes (technical). Transcriptomes and protein sets that are not filtered for isoforms will lead to a high proportion of duplicates. Therefore you should filter them before a BUSCO analysis. 
+
+Next steps may be to filer for isoforms?
