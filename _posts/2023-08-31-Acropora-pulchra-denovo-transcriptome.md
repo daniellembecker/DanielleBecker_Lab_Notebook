@@ -699,8 +699,8 @@ less short_summary.specific.metazoa_odb10.busco_output.txt
 
 ```
 
-BUSCO completeness looks great. Completeness looks for the presence or absence of highly conserved genes in an assembly. The aim is to have the highest percentage of genes identified in your assembly, with a BUSCO complete score above 95% considered good.
+BUSCO completeness looks great. Completeness looks for the presence or absence of highly conserved genes in an assembly. The aim is to have the highest percentage of genes identified in your assembly, with a BUSCO complete score above 95% considered good (we have 99.9% so yay!).
 
-However, the complete and duplicated BUSCOs are higher than expected. A high level of duplication may be explained by a recent whole duplication event (biological) or a chimeric assembly of haplotypes (technical). Transcriptomes and protein sets that are not filtered for isoforms will lead to a high proportion of duplicates. Therefore you should filter them before a BUSCO analysis. 
+However, the complete and duplicated BUSCOs are high. Transcriptomes and protein sets that are not filtered for isoforms will lead to a high proportion of duplicates. So, this is not unusual and we don't need to worry about it.
 
 Next steps may be to filer for isoforms?
