@@ -12,6 +12,6 @@ The goal of this expedition is to conduct research within Ariana Huffmyer's Nati
 
 Experimental design and overview of this project including questions of interest and object can be viewed below. 
 
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/Moorea2023/Moorea_design_v2.png?raw=true)  
 
-![](https://drive.google.com/file/d/15cdHZ-Q86GD9XM0eCkfVNGKb1StGpJ9q/view) 
-
+# Date entry here 
