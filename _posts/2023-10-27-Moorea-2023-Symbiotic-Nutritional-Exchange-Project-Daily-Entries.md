@@ -14,4 +14,6 @@ Experimental design and overview of this project including questions of interest
 
 ![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/Moorea2023/Moorea_design_v2.png?raw=true)  
 
+The GitHub repository with all information and data for this project [can be found here](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/blob/main/data/field_collection/collection_metadata.xlsx). 
+
 # Date entry here 
