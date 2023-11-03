@@ -246,9 +246,9 @@ Qubit results on 150 uL sample:
 | Bottom1   | 18.70       |
 | Bottom2   | 18.60       |
 
-Next steps: Was waiting to confirm which approach and what quality and quantity was required for HI-C approach or Illumina. On 20231027 Danielle reduced the material (used 150 uL of sperm sample) from the original input volume of 300 uL. Upon using half of the input volume, step 3 of the protocol was adjusted to use half the ProteinaseK and RNase as well. Also, Danielle used the vertical rotating mixer now set up by the molecular Putnam bench so that this step will be more precise and hopefully help to dissolve/re-suspend the HMW DNA. The last adjustment was to reduce the elution buffer by 1/2 as well for step 9 of the protocol.
+Next steps: Was waiting to confirm which approach and what quality and quantity was required for HI-C approach or Illumina. On 20231027 I used the original input volume of 300 uL. I also used the vertical rotating mixer now set up by the molecular Putnam bench so that this step will be more precise and hopefully help to dissolve/re-suspend the HMW DNA. The last adjustment was to reduce the elution buffer by 1/2 as well for step 9 of the protocol.
 
-Qubit results on 150 uL sample:
+Qubit results on 300 uL sample 20231027:
 
 | Sample.ID | Qubit Reading (ng/ul) |
 |-----------|---------------|
@@ -258,3 +258,14 @@ Qubit results on 150 uL sample:
 | Top2      | 29.98         |
 | Bottom1   | 30.12       |
 | Bottom2   | 30.05       |
+
+Qubit results on 300 uL sample 20231102:
+
+| Sample.ID | Qubit Reading (ng/ul) |
+|-----------|---------------|
+| S1        | 196.68      |
+| S2        | 21113.09     |
+| Top1      | 39.6      |
+| Top2      | 39.4         |
+| Bottom1   | 39.2       |
+| Bottom2   | 39.6       |
