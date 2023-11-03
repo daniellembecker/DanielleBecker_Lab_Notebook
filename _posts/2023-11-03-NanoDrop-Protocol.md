@@ -26,4 +26,16 @@ Use the Jenkins lab NanoDrop at URI to measure the nucleic acid concentration an
 1. Contact Dr. Bethany Jenkins or Dr. Chris Lane lab members to confirm that you can use the NanoDrop. There is also another [NanoDrop](https://web.uri.edu/riinbre/nanodrop-8000-2/) in the URI RI-INBRE lab for free use.
 2. Once trained on the Jenkins Lab NanoDrop, begin your processing by pressing the enter button a few times on the keyboard of the ViewSonic windows computer to view the screen (never turn off monitor or system, it is always on idle).
 3. Double-click on the NanoDrop 2000 software on the desktop.
-4. While waiting for the software to load, open the metal grey flap of the NanoDrop carefully. You will see a black 
+4. While waiting for the software to load, raise the metal grey sampling arm of the NanoDrop carefully. You will see a black ring with a small metal grey point in the center, this is the lower measurement pedestal, the upper measurement pedestal is a small grey metal point on the top of the raised sampling arm.
+
+![image1]()
+
+5. Using a kimwipe, gently wipe the lower and upper measurement pedestal.
+
+![kimwipe]()
+
+6. After wiping the pedestals, you will see the software has loaded to a homepage that has a range of selections from Nucleic Acid to Protein BCA to Cell Cultures protocol options.
+
+![softwarehome]()
+
+7. For my goals, I selected the Nucleic Acid protocol. 
