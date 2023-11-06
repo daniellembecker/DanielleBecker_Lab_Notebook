@@ -32,6 +32,8 @@ Use the Jenkins lab NanoDrop at URI to measure the nucleic acid concentration an
 3. Double-click on the NanoDrop 2000 software on the desktop.
 4. While waiting for the software to load, raise the metal grey sampling arm of the NanoDrop carefully. You will see a black ring with a small metal grey point in the center, this is the lower measurement pedestal, the upper measurement pedestal is a small grey metal point on the top of the raised sampling arm.
 
+![pedestal1](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/images/NanoDrop/pedestal.jpg)
+
 ![pedestal](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/images/NanoDrop/samplingarm.png)
 
 5. Using a kimwipe, gently wipe the lower and upper measurement pedestal.
