@@ -269,3 +269,79 @@ Qubit results on 300 uL sample 20231102:
 | Top2      | 39.4         |
 | Bottom1   | 39.2       |
 | Bottom2   | 39.6       |
+
+To check the purity of the DNA sample, I used a NanoDrop on 20231103:
+
+- I followed the [NanoDrop Protocol](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resources/DNA_RNA-protocols/NanoDrop-2000c-Protocol.md) exactly using the NEB Elution Buffer II as my blank and the NanoDrop2000c in Dr. Jenkins lab CBLS 260.
+
+
+Values:
+
+| Sample ID    | Qubit concentration | NanoDrop Concentration | 260/280 | 260/230 |
+|--------------|---------------------|------------------------|---------|---------|
+| HMW_20231027 | 39.5 ng/uL          | 57.1 ng/uL             | 1.74    | 1.24    |
+
+Composite Figure:
+
+![firstnanodrop](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/images/NanoDrop/firstnanodrop.jpg)
+
+We realized that the 260/280 and 260/230 ratios were a bit low for purity for the recommendations for submitting a sample for library prep and Illumina sequencing at Quick Biology Inc.
+- Recommendations:
+    - Illumina Need = DNA amount: ≥ 200 ng for normal input (PCR-free); minimum 50 ng (PCR option); DNA concentration: ≥20 ng/μL, Optimal concentration: 20 ng/μl to 500 ng/μl in Tris-HCL (pH8.0); Purity: A260/280:1.8-2.0, A260/230: ≥ 1.8, Intact DNA, RNA-free, and non-degraded.
+
+Zoe suggested using an Ethanol Precipitation Protocol to clean up the sample and improve the purity. So, we followed the [Ethanol Precipitation Protocol](https://zdellaert.github.io/ZD_Putnam_Lab_Notebook/PCR-Protocol/) section to clen up the eluted DNA.
+
+On 20231103 we cleaned the sample.
+
+Protocol steps:
+1. Add 9.6 uL of 3M sodium acetate to the eluted DNA suspended in ~96 uL of NEB elution buffer II. (1/10th the total volume).
+2. Add 316.8 uL of **ice cold** 100% ethanol to each tube (3x the total volume after adding sodium acetate). Equation = 96 uL eluted sample + 9.6 uL of 3M sodium acetate = 105.6 uL x 3 = 316.8 uL of ethanol.
+3. Pipette up and down to mix and transfer entire volume to a new labeled 1.5ml tube.
+4. Place tubes in -80 ºC freezer for 1 hour or in the -20 ºC freezer overnight.
+5. Spin for 30 minutes at 15,000rcf (room temp). Make sure all the tubes are facing the same way (hinges out). The DNA will pellet on the back wall.
+6. Pipette off the liquid without disturbing the pellet. It will most likely be invisible.
+7. Add 200µL of **ice cold** 70% Ethanol.
+8. Spin for 15 minutes at 15,000rcf. This is to wash the pellet. Again make sure each tube is facing the same direction.
+9. Pipette off the ethanol without disturbing the pellet.
+10. Let dry at room temperature with the caps open for about 15 minutes or until all ethanol has evaporated (put in fume hood).
+11. Add 30µL of Tris to the pellet and pipette up and down to resuspend, go straight to nanodrop/qubit quantification or store cleaned PCR product in the -20 ºC freezer.
+
+After cleaning the sample, we checked for quantity, quality, and purity of the sample and ran another Quibit, a NanoDrop reading, and a tapestation.
+
+**Qubit**
+
+We used the broad range DNA assay and [protocol](https://github.com/meschedl/PPP-Lab-Resources/tree/master/Protocols_and_Lab_Resources/DNA_Quality_Control) like above.
+
+Qubit results after cleaning sample on 20231103:
+
+| Sample.ID | Qubit Reading (ng/ul) |
+|-----------|---------------|
+| S1        | 206.31      |
+| S2        | 21891.51     |
+| HMW1     | 69.5     |
+| HMW2     | 70.1         |
+
+**NanoDrop**
+
+Followed the same [NanoDrop Protocol](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resources/DNA_RNA-protocols/NanoDrop-2000c-Protocol.md) but with Tris as my buffer.
+
+Values:
+
+| Sample ID    | Qubit concentration | NanoDrop Concentration | 260/280 | 260/230 |
+|--------------|---------------------|------------------------|---------|---------|
+| HMW_20231027 | 101.5 ng/uL          | 70.0 ng/uL             | 1.80    | 1.55    |
+
+Composite Figure:
+![aftercleaningnanodrop](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/images/NanoDrop/aftercleaningnanodrop.png)
+
+The cleaning of the eluted DNA improved by 0.06 for the 260/280 ratio and by 0.31 for the 260/230 ratio! Yay!
+
+I checked with Quick Biology and they said these results were acceptable to move forward with library prep.
+
+**Tapestation**
+
+To be sure that we still had HMW DNA in our sample after these extended steps, we followed the [TapeStation Protocol](https://meschedl.github.io/MESPutnam_Open_Lab_Notebook/DNA-Tapestation/) exactly.
+
+![tapestation](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/images/NanoDrop/tapestation_image_1105.PNG)
+
+The quality looks very good. And we see peaks are in the >60,000bp which is what we want for HMW DNA :) Yay! Sample is ready to go and be shipped to Quick Biology Inc.
