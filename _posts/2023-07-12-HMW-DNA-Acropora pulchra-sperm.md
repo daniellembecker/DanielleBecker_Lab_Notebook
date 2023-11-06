@@ -270,6 +270,8 @@ Qubit results on 300 uL sample 20231102:
 | Bottom1   | 39.2       |
 | Bottom2   | 39.6       |
 
+**NanoDrop**
+
 To check the purity of the DNA sample, I used a NanoDrop on 20231103:
 
 - I followed the [NanoDrop Protocol](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resources/DNA_RNA-protocols/NanoDrop-2000c-Protocol.md) exactly using the NEB Elution Buffer II as my blank and the NanoDrop2000c in Dr. Jenkins lab CBLS 260.
