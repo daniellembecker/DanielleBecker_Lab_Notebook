@@ -72,6 +72,8 @@ Here is a look at our initial set up.
 
 ![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/Moorea2023/pic1.png?raw=true)  
 
+We did not observe setting or spawning tonight. 
+
 ## Collecting adults and recruits for PI curves 
 
 Pierrick and Ariana collected adult and recruit samples for the Symbiotic Exchange project. We decided to sample *Acropora, Pocillopora, and Porites* corals from the Ava'iti site. The original experimental design only included *Acropora* and *Pocillopora*. We have the capacity to add in *Porites* and it is a relevant species for this study. We will adjust the experimental design as we go through the study to account for another species within the same number of total samples. 
@@ -163,3 +165,138 @@ In this image, the first row (bottom) is a test set of POC with 1 ACR and 1 POR.
 ![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/Moorea2023/pic4.png?raw=true)  
 
 These samples will be used for PI curves tomorrow. 
+
+# Sunday - November 5, 2023 
+
+Today we prepared equipment and tests for PI curves, prepared sampling probes, and monitored for spawning. 
+
+## Checking on adults and recruits 
+
+The adults and recruits on plugs looked good today at 08:00. No tissue mortality. Possibly some slight bleaching on adult POC tissues that we will keep an eye on.  
+
+## Running PI curves
+
+Here are the things we did today to prepare for running PI curves tomorrow:  
+
+- Read through protocol
+- Prepped chambers, trimmed stands, trimmed and re glued corals that were too tall (POC and ACR adults). Trimmed fragments with coral saw at 16:00. 
+- Cleaned lab and set up area 
+- Set up OXY 10 units and equipment using the Putnam Lab [OXY protocol](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resources/Equipment_Protocols/Respirometry_Protocol/Respirometry_Manual.md). 
+- Calibrated 0% sodium sulfite and 100% airsaturated 50 um FSW (continuous bubbling for 30 min). We made the solutions and then calibrated the probes all in 0% and then all in 100% seawater following the protocol above. Probes were allowed to sit in the 0% solution for about 30 minutes prior to calibration. The calibration values for all probes are as follows. Calibration was conducted from 15:30-16:30. Calibration done at 21°C. 
+
+| Probe | 0% Phase | 100% Phase |
+|-------|----------|------------|
+| 1     | 51.38    | 22.09      |
+| 2     | 52.40    | 22.76      |
+| 3     | 51.82    | 23.87      |
+| 4     | 51.43    | 23.87      |
+| 5     | 50.56    | 24.42      |
+| 6     | 54.31    | 22.52      |
+| 7     | 53.55    | 21.85      |
+| 8     | 51.33    | 22.61      |
+| 9     | 54.41    | 22.26      |
+| 10    | 51.42    | 21.88      |
+| 11    | 49.33    | 22.67      |
+| 12    | 51.58    | 24.94      |
+| 13    | 51.09    | 24.33      |
+| 14    | 54.24    | 23.19      |
+| 15    | 51.36    | 22.17      |
+| 16    | 52.01    | 22.39      |
+| 17    | 51.18    | 22.34      |
+| 18    | 49.34    | 21.66      |
+| 19    | 51.60    | 20.28      |
+| 20    | 51.31    | 21.94      |
+
+
+- Prepared Apex unit to control water temperature in the OXY chamber bath. Also prepared two water baths below the OXY table to pre heat temperatures for when we do multiple temperature runs for P & R rates. Used 1 Apex unit, 1 EB8 energy bar, 2 PM1s, and 3 temperature probes. Set up on Apex Fusion in the Putnam Lab account. 
+- Calibrated pH and conductivity probes. Calibrated pH probe with Tris batch T27. Conductivity probe calibrated with 1413 uS/cm at 20.7°C. Temperature probe is RS-232. Apogee probe is MQ-S10 SSN 3706. 
+
+| tris.date | mVTris | Ttris |
+|-----------|--------|-------|
+| 20231105  | -77.5  | 21.05 |
+| 20231105  | -77    | 21.48 |
+| 20231105  | -76.5  | 22    |
+| 20231105  | -75.8  | 22.5  |
+| 20231105  | -75.2  | 23    |
+| 20231105  | -74.6  | 23.5  |
+| 20231105  | -74    | 24    |
+| 20231105  | -73.4  | 24.5  |
+| 20231105  | -72.7  | 25    |
+| 20231105  | -72.1  | 25.5  |
+| 20231105  | -71.5  | 26.01 |
+| 20231105  | -70.9  | 26.52 |
+| 20231105  | -70.3  | 27.01 |
+| 20231105  | -69.6  | 27.53 |
+| 20231105  | -69.1  | 28.02 |
+| 20231105  | -68.4  | 28.51 |
+| 20231105  | -67.7  | 29    |
+| 20231105  | -67.1  | 29.49 |
+| 20231105  | -66.4  | 30    | 
+
+
+- Collected daily measurements at 15:00 in the water table (with corals on plugs) and in the blue tank (with *A. hyacinthus* adults). Weather was rainy and cloudy, so light is low.  
+
+| date    | time | tank        | pH.mV | temp.C | sal.psu | par | tris.date | notes         |
+|---------|------|-------------|-------|--------|---------|-----|-----------|---------------|
+| 11/5/23 | 1500 | water_table | -70.9 | 27.35  | 36.02   | 15  | 20231105  | rainy, cloudy |
+| 11/5/23 | 1500 | blue_tank   | -69   | 27.84  | 36.11   | 25  | 20231105  | rainy, cloudy |
+
+- Optimized lights with 6 16HD light array and took light measurments at each position in the chambers. We tried using 2 32 HD lights but the light was too intense in the center of the array. We are using 18 chambers in this arrangement below. We used 6 AI 16HD lights and light was within 50 PAR between all 18 positions. Hollie will take full light measurements tomorrow for all positions. 
+
+|   |   |   |    |    |    |
+|---|---|---|----|----|----|
+| 1 | 4 | 7 | 10 | 13 | 16 |
+| 2 | 5 | 8 | 11 | 14 | 17 |
+| 3 | 6 | 9 | 12 | 15 | 18 |
+
+- Determined light levels to use for PI curves. We will run 3 PI curves tomorrow. Each run will have 2 blanks, 1 temperature probe within a chamber, and 15 coral samples. We have 15 samples of each species today, so we will do 3 PI curve runs tomorrow. Because we do not have any OXY temperature probes (oops!), we will deploy the temperature logger (Hobo Tidbit) logging every 1 second to match the frequency of data collection in the Oxy 10 system. We can then use this to back calculate oxygen solubility when analyzing the data. The water bath does not stay constant enough to rely only on a static temperature input. 
+
+Light levels for PI curves: 
+
+| PAR | Percent |
+|-----|---------|
+| 0   | 0       |
+| 9   | 2       |
+| 29  | 5       |
+| 79  | 10      |
+| 143 | 15      |
+| 206 | 20      |
+| 317 | 30      |
+| 514 | 50      |
+| 700 | 75      |
+| 846 | 100     |
+
+## Preparing for the next sampling 
+
+Today Pierrick fixed the coral saw, which we will use for adding corals to plugs and trimming fragments as needed. 
+
+Tomorrow we will collect the following corals, which will supply about 1.5-2 days of PR runs: 
+
+- ACR-A-6 to ACR-A-17
+- ACR-R-11 to ACR-R-30
+- POC-A-6 to POC-A-17
+- POC-R-11 to POC-R-30
+- POR-A-6 to POR-A-17
+- POR-R-11 to POR-R-30
+
+96 total corals. I expect this will take about 3-4 hours to collect. The last time we collected it was half this amount collected in about 1.5 hours. 
+
+Ariana rinsed and dried a new set of plugs. Ariana also labled whirlpacks with these coral ID's and labeled DNA tubes (yellow cryo labels with date, "DNA", coral sample ID, and running consecutive number; tubes 1-96). Field equipment, bags, and whirlpacks were prepped. Tubes were labeled and placed in boxes. 
+
+[Sample manifest](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/blob/main/data/master_sample_manifest.xlsx) and [DNA lists](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/blob/main/data/dna/dna_metadata.xlsx) are on GitHub. 
+
+## Adjusting plans  
+
+We will revise the P & R rates protocol to run the following profile: 
+
+- Ik PAR (15 min): P rates 
+- 0 PAR (15 min): LEDR rates 
+- Ik PAR (5-10 min): light exposure for preparation for molecular sampling 
+- Then, sample a clipping for RNA into RNA/DNA shield
+- Then, sample remaining fragment into whirl pack and flash freeze. 
+
+## Spawning 
+
+- Check colonies
+- Watch for spawning 
+- No spawning
