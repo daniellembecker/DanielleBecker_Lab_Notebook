@@ -331,7 +331,7 @@ Values:
 
 | Sample ID    | Qubit concentration | NanoDrop Concentration | 260/280 | 260/230 |
 |--------------|---------------------|------------------------|---------|---------|
-| HMW_20231027 | 70.0 ng/uL          | 101.5 ng/uL             | 1.80    | 1.55    |
+| HMW_20231027 | 101.9 ng/uL          | 70.0 ng/uL             | 1.80    | 1.55    |
 
 Composite Figure:
 ![aftercleaningnanodrop](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/images/NanoDrop/aftercleaningnanodrop.png)
