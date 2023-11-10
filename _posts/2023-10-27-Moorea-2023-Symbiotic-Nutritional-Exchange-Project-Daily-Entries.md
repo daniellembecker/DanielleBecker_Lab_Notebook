@@ -437,6 +437,8 @@ We will do the last run tomorrow.
 
 We saw a small amount of spawning from some fragments and from one small patch of one large colony. We didn't collect any samples. 
 
+Here is a colony setting in one of the fragments from our project. This is important to consider that ACR and POC are in their reproductive seasons. This will create different energetic requirements for adults compared to recruits. 
+
 ![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/Moorea2023/pic13.jpeg?raw=true) 
 
 # Tuesday - November 7, 2023 
@@ -445,14 +447,171 @@ We saw a small amount of spawning from some fragments and from one small patch o
 
 We did one more run of PI curves today. We followed the same protocol as yesterday. Here is our run information from today. 
 
+| Run  | Light_Level | Light_Value | Date     | Start.time | Stop.time | Light_Percent |
+|------|-------------|-------------|----------|------------|-----------|---------------|
+| Run3 | 0           | 0           | 20231107 | 12:38      | 12:52     | 0             |
+| Run3 | 1           | 9           | 20231107 | 12:54      | 13:09     | 2             |
+| Run3 | 2           | 29          | 20231107 | 13:11      | 13:26     | 5             |
+| Run3 | 3           | 79          | 20231107 | 13:28      | 13:43     | 10            |
+| Run3 | 4           | 143         | 20231107 | 13:45      | 14:00     | 15            |
+| Run3 | 5           | 206         | 20231107 | 14:02      | 14:17     | 20            |
+| Run3 | 6           | 317         | 20231107 | 14:19      | 14:39     | 30            |
+| Run3 | 7           | 514         | 20231107 | 14:41      | 14:56     | 50            |
+| Run3 | 8           | 700         | 20231107 | 14:58      | 15:13     | 70            |
+| Run3 | 9           | 846         | 20231107 | 15:15      | 15:30     | 100           |
 
+Temperatures were measured in the chamber and measured 28.15, 27.91, 28.21 in the last three intervals. Temperatures are on target.   
+
+| Date     | sample_id | Chamber.Channel | Position | Run  | Species     | Lifestage | Temp.Cat | Chamber.Vol.L | Logger   | Notes |
+|----------|-----------|-----------------|----------|------|-------------|-----------|----------|---------------|----------|-------|
+| 20231107 | POC-A5    | 1               | P1-1     | Run3 | Pocillopora | Adult     | 27.8     | 0.195         | 21723472 |       |
+| 20231107 | ACR-R8    | 2               | P1-2     | Run3 | Acropora    | Recruit   | 27.8     | 0.19          | 21723472 |       |
+| 20231107 | POR-R6    | 3               | P1-3     | Run3 | Porites     | Recruit   | 27.8     | 0.196         | 21723472 |       |
+| 20231107 | POR-R7    | 4               | P1-4     | Run3 | Porites     | Recruit   | 27.8     | 0.201         | 21723472 |       |
+| 20231107 | ACR-R7    | 5               | P1-5     | Run3 | Acropora    | Recruit   | 27.8     | 0.198         | 21723472 |       |
+| 20231107 | ACR-A5    | 6               | P1-6     | Run3 | Acropora    | Adult     | 27.8     | 0.406         | 21723472 |       |
+| 20231107 | POR-R8    | 7               | P1-7     | Run3 | Porites     | Recruit   | 27.8     | 0.194         | 21723472 |       |
+| 20231107 | POC-A4    | 8               | P1-8     | Run3 | Pocillopora | Adult     | 27.8     | 0.193         | 21723472 |       |
+| 20231107 | ACR-R6    | 9               | P1-9     | Run3 | Acropora    | Recruit   | 27.8     | 0.181         | 21723472 |       |
+| 20231107 | BK-5      | 10              | P2-1     | Run3 | Blank       | Blank     | 27.8     | 0.198         | 21723472 |       |
+| 20231107 | LOG-3     | 11              | P2-2     | Run3 | logger      | logger    | 27.8     | NA            | 21723472 |       |
+| 20231107 | POR-R9    | 12              | P2-3     | Run3 | Porites     | Recruit   | 27.8     | 0.194         | 21723472 |       |
+| 20231107 | POR-R10   | 13              | P2-4     | Run3 | Porites     | Recruit   | 27.8     | 0.195         | 21723472 |       |
+| 20231107 | POR-R5    | 14              | P2-5     | Run3 | Porites     | Recruit   | 27.8     | 0.194         | 21723472 |       |
+| 20231107 | POC-R6    | 15              | P2-6     | Run3 | Pocillopora | Recruit   | 27.8     | 0.193         | 21723472 |       |
+| 20231107 | POC-R4    | 16              | P2-7     | Run3 | Pocillopora | Recruit   | 27.8     | 0.196         | 21723472 |       |
+| 20231107 | BK-6      | 17              | P2-8     | Run3 | Blank       | Blank     | 27.8     | 0.19          | 21723472 |       |
+| 20231107 | ACR-R9    | 18              | P2-9     | Run3 | Acropora    | Recruit   | 27.8     | 0.189         | 21723472 |       |
+
+We analyzed the PI curve data. We had to troubleshoot the script because the script was loading in the time column in different time zones depending on if the data was from the PC or the tablet (channels 11-18 created errors). We manually changed the times. Ariana checked the computers and couldn't find any settings that would change the time zone. Computers are on correct time. We will have to return to this issue to analyze P&R rates.    
+
+We also used a blackout curtain today during the dark run portions to avoid any effects of the lights or door opening.  
+
+Here are the PI curves from our 3 runs:   
+
+By individual:   
+![](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/blob/main/figures/pi_curves/pi_curve_raw_plots_bycoral.png?raw=true) 
+
+By group:   
+![](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/blob/main/figures/pi_curves/pi_curve_raw_plots_species.png?raw=true) 
+
+Dotted lines here are recruits and solid lines are adults.   
+
+Parameter estimates: 
+![](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/blob/main/figures/pi_curves/PI_parameters_untransformed.jpeg?raw=true)   
+
+We are missing some colonies from this data because the NLS model did not fit some of the samples well. The samples that failed the NLS model are:  
+
+- ACR-A4 - POC-A5  - POR-A5 - ACR-R6 - ACR-R8 - ACR-R9 
+- POC-R3 
+- POC-R4 - POC-R6 - POC-R9 - POC-R10 - POR-R4 - POR-R5 - POR-R6  - POR-R7 - POR-R9 - POR-R10 
+
+This is due to sensitivity of the NLS model to the model fit. We wil return to these colonies to troubleshoot. Many of the POR recruits didn't show an asymptote in the curve, which may be the issue. This is interesting that max photosynthesis wasn't reached. 
+
+For our next step of P&R curves, we will select light levels between 500-600 PAR to capture max photosynthesis rates without hitting photoinhibition. 
 
 ## Daily measurements
 
 Chloe took daily measurements at multiple points throughout the day. Daily measurement data are [on GitHub here](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/tree/main/data/environmental). 
 
-## Planning PR measurements 
+## Plugs from yesterday 
 
-## Planning isotopes
+The plugs collected from yesterday look happy! 
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/Moorea2023/pic11.jpeg?raw=true) 
+
+We took a photo with a scale bar for reference for future measurements of diameter/size. The rows are organized in order of sample ID:  
+
+ACR-A6 to A17  
+ACR-R11 to R30   
+POC-A6 to A17  
+POC-R11 to R30   
+POR-A6 to A17  
+POR-R11 to R30   
 
 ## Spawning
+
+There was a little spawning tonight again, but no new corals. We will check again tomorrow. 
+
+## Planning PR rates 
+
+To measure photosynthesis (P) and respiration (R) rates, we will expose corals to the following profile:  
+
+1. 15 minutes at saturating irradiance (Ik)  
+2. 15 minutes in the dark (LEDR)
+3. 10 minutes at saturating irradiance (Ik) to allow for photosynthetic activity to resume prior to sampling; not used for rate measurements 
+4. Snap freeze in liquid nitrogen for RNA/DNA 
+
+We will measure n=4 adults per species per temperature (36 total adutls) and n=6 recruits per species per temperature (54 recruits). This will divide out for us to do 6 separate runs (n=2 adults per species and n=3 recruits per species per run) with 2 runs at each temperature. 90 total corals will be sampled. We will select recruits across the size gradient for each run. This will take place with 1 run per temperature per day.  
+
+This is our current working plan!  
+
+## Planning isotope metabolomics incubations
+
+For isotoped, we will collect corals and clip DNA while adding them onto plugs. We will then do a 5 h incubation at 27, 30, or 33°C at 550 PAR. After incubations, they will be rinsed in FSW and snap frozen in liquid nitrogen. We will use 15 chambers per temperature per day, running a total of 45 corals per day. One temperature run will include 15 light C13 enriched corals: 
+
+- n=3 recruits per species = 9 per run 
+- n=2 adults per species = 6 per run
+
+This would give n=4 adults per species per temperature and n=6 recruits per species per temperature. 
+
+Run over 2 days would equal 15 * 3 temps * 2 days = 90 samples 
+
+After the light incubations, we will do a control run with the following replication:  
+
+- Control Run 1: n=6 dark samples (n=1 per lifestage * species) 
+- Control Run 2: n=6 C12 light samples (n=1 per lifestage * species) + n=6 C12 light samples (n=1 per lifestage * species)
+
+With controls, we will have a total of 90 + 6 + 12 = 108 samples 
+
+The controls will be run on day 3. 
+
+In total we will need: 
+
+- ACR recruits = 18 + 1 + 2 = 21
+- ACR adults = 12 + 1 + 2 = 15
+- POC recruits = 18 + 1 + 2 = 21
+- POC adults = 12 + 1 + 2 = 15
+- POR recruits = 18 + 1 + 2 = 21
+- POR adults = 12 + 1 + 2 = 15
+
+This equals 108 corals. We will do a field collection where we will collect in stages:  
+
+- First trip = POC recruits, POC adults, and ACR adults (Saturday AM); 54 corals
+- Second trip = ACR recruits, POR recruits, POR adults (Saturday PM); 54 corals 
+
+A team will collect in the field and another team will clip each sample for DNA and add to plugs. 
+
+We will need to label tubes, whirl packs, and plugs for the following numbers before Saturday: 
+
+- ACR-A18 to ACR-A32
+- ACR-R31 to ACR-R51
+- POC-A18 to POC-A32
+- POC-R31 to POC-R51
+- POR-A18 to POR-A32
+- POR-R31 to POR-R51
+
+## Surface area of PI curve corals 
+
+We clipped each PI curve coral sample stored at -20°C for DNA (~0.5 cm area; 5-10 polyp area) placed into RNA/DNA shield. Gloves, clippers and equipment were sterilzed between clippings with 20% bleach, 80% ethanol, and DI water. Samples were stored in tube box #1 in the Molecular Lab -40°C. Stored in 500 uL RNA DNA shield. 
+
+DNA metadata and sample list is on [GitHub here](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/blob/main/data/dna/dna_metadata.xlsx). 
+
+After clipping, samples were put into cups with 40-50% bleach solution. After tissue was removed, samples were put in the drying oven at 80°C at 22:00. They will be ready for wax dipping the next morning. 
+
+# Wednesday - November 8, 2023
+
+## Surface area of PI curve corals 
+
+## Reva Atea meeting 
+
+## Planning PR rates for tomorrow and preparing tanks 
+
+## Testing tank and jar incubations at high temperature 
+
+# Thursday - November 9, 2023
+
+## PR rates and sampling
+
+## Daily measurements 
+
