@@ -243,11 +243,15 @@ Here are the things we did today to prepare for running PI curves tomorrow:
 
 - Optimized lights with 6 16HD light array and took light measurments at each position in the chambers. We tried using 2 32 HD lights but the light was too intense in the center of the array. We are using 18 chambers in this arrangement below. We used 6 AI 16HD lights and light was within 50 PAR between all 18 positions. Hollie will take full light measurements tomorrow for all positions. 
 
+Wall 
+
 |   |   |   |    |    |    |
 |---|---|---|----|----|----|
-| 1 | 4 | 7 | 10 | 13 | 16 |
-| 2 | 5 | 8 | 11 | 14 | 17 |
-| 3 | 6 | 9 | 12 | 15 | 18 |
+| 7 | 8 | 9 | 16 | 17 | 18 |
+| 4 | 5 | 6 | 13 | 14 | 15 |
+| 1 | 2 | 3 | 10 | 11 | 12 |
+
+Bench/people space
 
 - Determined light levels to use for PI curves. We will run 3 PI curves tomorrow. Each run will have 2 blanks, 1 temperature probe within a chamber, and 15 coral samples. We have 15 samples of each species today, so we will do 3 PI curve runs tomorrow. Because we do not have any OXY temperature probes (oops!), we will deploy the temperature logger (Hobo Tidbit) logging every 1 second to match the frequency of data collection in the Oxy 10 system. We can then use this to back calculate oxygen solubility when analyzing the data. The water bath does not stay constant enough to rely only on a static temperature input. 
 
@@ -297,6 +301,158 @@ We will revise the P & R rates protocol to run the following profile:
 
 ## Spawning 
 
-- Check colonies
-- Watch for spawning 
-- No spawning
+No spawning observed. 
+
+# Monday - November 6, 2023 
+
+## Collecting adults and recruits 
+
+Today Ariana and Pierrick collected all the corals we wanted for PR measurements including: 
+
+- ACR-A6 to ACR-A17
+- ACR-R11 to ACR-R30
+- POC-A6 to POC-A17
+- POC-R11 to POC-R30
+- POR-A6 to POR-A17
+- POR-R11 to POR-R30
+
+We collected for about 4 hours between 09:00 to 13:00. We were able to find all recruits and adult samples using the protocol described on November 4. The only deviation from this protocol is that we included an additional photograph to get both width/planar photograph and height photograph to help us calculate total colony size. 
+
+During collection samples were enclosed in filled large whirlpacks and kept in a mesh bag hanging below the boat in between collections. Colonies looked healthy when we brought them back to the lab at 13:30. We put the corals in the water table and opened the bags. 
+
+## Adding adults and recruits to plugs 
+
+We added corals to plugs using the protocol described on November 4. We used a coral diamond saw (Gryphon) to trim off any rock and excess area or algae/organisms in adult fragments. We added a total of 96 corals (all collected today) to labeled plugs. Plugs were placed in a plug mat in the water tables. Plugs were added from 16:00-18:30. 
+
+It was dark when we finished the plugging, so I didn't take a picture. I will do this tomorrow morning. 
+
+## Daily measurements 
+
+Chloe collected daily measurements at 12:00 today. We will take 3-4 measurements each day for the next few days to get higher frequency measurements across different times of day. 
+
+| date    | time  | tank        | pH.mV | temp.C | sal.psu | par | tris.date | notes         |
+|---------|-------|-------------|-------|--------|---------|-----|-----------|---------------|
+| 11/6/23 | 12:02 | water table | -69.9 | 28.36  | 35.95   | 376 | 20231105  | rainy, cloudy |
+| 11/6/23 | 12:05 | blue tank   | -69.3 | 28.8   | 35.95   | 517 | 20231105  | rainy, cloudy |
+
+## PI curves 
+
+Today we started running PI curves of adults and recruits of each species. The PI curves will allow us to determine light levels for upcoming P&R measurements. We ran three runs of PI curves with 2 today and 1 tomorrow. We set up two OXY 10 units with the first controlled by a PC (10 probes; channels 1-10) and the second controlled by a PC tablet (8 probes; channels 11-18). 
+
+We do not have the temperature probes. We are going to set a constant temperature with a water bath controlled by an Apex unit. We will launch a logger in the water bath to track temperature and apply calculations for oxygen solubility. 
+
+We can run 15 coral samples, 1 logger chamber, and 2 blank chambers in each run. 
+
+We have 15 corals per species, so this will equal 3 runs total. We will randomly mix species and lifestage within each run. 
+
+The PI curve protocol will follow the [Putnam Lab PI protocol](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resources/Equipment_Protocols/Respirometry_Protocol/Respirometry_Manual.md). 
+
+Data, metadata, and run information sheets are [on GitHub here](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/tree/main/data/pi_curves). 
+
+Data are recorded in umol/L. Temperature was set at 27.8°C. Stir bars are spinning at 380 on VELP Scientifica multistirrer digital magnetic stirrer plates. Chamber volume is recorded at the end of the run. The run information is below. 
+
+Blanks are labeled as BK-# in running order across the entire project/experiment. Blanks had just plugs. Water was loaded at treatment temperature with raw seawater.  
+
+At the end of each run, corals were put in their whirl packs and stored at -20°C. We will clip these for DNA sequencing at a later date. 
+
+Corals were exposed to 5 min of light at 50% to standardize the light environment prior to measuring oxygen consumption at 0 PAR for light enhanced dark respiration (LEDR) at the start of the run. 
+
+This is what our set up looks like. 
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/Moorea2023/pic8.jpeg?raw=true)   
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/Moorea2023/pic9.jpeg?raw=true) 
+
+Here is the run metadata from the 2 runs today: 
+
+| Run  | Light_Level | Light_Value | Date     | Start.time | Stop.time | Light_Percent |
+|------|-------------|-------------|----------|------------|-----------|---------------|
+| Run1 | 0           | 0           | 20231106 | 11:12      | 11:27     | 0             |
+| Run1 | 1           | 9           | 20231106 | 11:29      | 11:44     | 2             |
+| Run1 | 2           | 29          | 20231106 | 11:46      | 12:01     | 5             |
+| Run1 | 3           | 79          | 20231106 | 12:05      | 12:20     | 10            |
+| Run1 | 4           | 143         | 20231106 | 12:21      | 12:36     | 15            |
+| Run1 | 5           | 206         | 20231106 | 12:37      | 12:52     | 20            |
+| Run1 | 6           | 317         | 20231106 | 12:53      | 13:08     | 30            |
+| Run1 | 7           | 514         | 20231106 | 13:10      | 13:25     | 50            |
+| Run1 | 8           | 700         | 20231106 | 13:26      | 13:41     | 75            |
+| Run1 | 9           | 846         | 20231106 | 13:43      | 13:58     | 100           |
+| Run2 | 0           | 0           | 20231106 | 15:51      | 16:06     | 0             |
+| Run2 | 1           | 9           | 20231106 | 16:08      | 16:23     | 2             |
+| Run2 | 2           | 29          | 20231106 | 16:25      | 16:40     | 5             |
+| Run2 | 3           | 79          | 20231106 | 16:42      | 16:57     | 10            |
+| Run2 | 4           | 143         | 20231106 | 16:59      | 17:14     | 15            |
+| Run2 | 5           | 206         | 20231106 | 17:16      | 17:31     | 20            |
+| Run2 | 6           | 317         | 20231106 | 17:33      | 17:48     | 30            |
+| Run2 | 7           | 514         | 20231106 | 17:50      | 18:05     | 50            |
+| Run2 | 8           | 700         | 20231106 | 18:09      | 18:24     | 75            |
+| Run2 | 9           | 846         | 20231106 | 18:28      | 18:43     | 100           |
+
+Temperatures were: 27.65, 28.08, 27.95, 28.06, 28.25, 27.93, 27.83, 28, 27.92, 27.97 measured at the start of each light step. 
+
+Here is the sample metadata from our 2 runs today: 
+
+| Date     | sample_id | Chamber.Channel | Position | Run  | Species     | Lifestage | Temp.Cat | Chamber.Vol.L | Logger   | Notes         |
+|----------|-----------|-----------------|----------|------|-------------|-----------|----------|---------------|----------|---------------|
+| 20231106 | ACR-A1    | 1               | P1-1     | Run1 | Acropora    | Adult     | 27.8     | 181           | 21723472 |               |
+| 20231106 | ACR-R5    | 2               | P2-7     | Run1 | Acropora    | Recruit   | 27.8     | 177           | 21723472 |               |
+| 20231106 | ACR-R1    | 3               | P2-3     | Run1 | Acropora    | Recruit   | 27.8     | 187           | 21723472 |               |
+| 20231106 | POC-A5    | 4               | P2-5     | Run1 | Pocillopora | Adult     | 27.8     | 176           | 21723472 |               |
+| 20231106 | POR-R10   | 5               | P1-3     | Run1 | Porites     | Recruit   | 27.8     | 185           | 21723472 |               |
+| 20231106 | ACR-R10   | 6               | P2-6     | Run1 | Acropora    | Recruit   | 27.8     | 189           | 21723472 |               |
+| 20231106 | POR-R7    | 7               | P1-2     | Run1 | Porites     | Recruit   | 27.8     | 180           | 21723472 |               |
+| 20231106 | BK-2      | 8               | P2-9     | Run1 | Blank       | Blank     | 27.8     | 191           | 21723472 |               |
+| 20231106 | POC-R5    | 9               | P1-4     | Run1 | Pocillopora | Recruit   | 27.8     | 194           | 21723472 |               |
+| 20231106 | POR-A1    | 10              | P1-5     | Run1 | Porites     | Adult     | 27.8     | 177           | 21723472 |               |
+| 20231106 | POC-R8    | 11              | P1-6     | Run1 | Pocillopora | Recruit   | 27.8     | 179           | 21723472 |               |
+| 20231106 | LOG-1     | 12              | P2-4     | Run1 | logger      | logger    | 27.8     | NA            | 21723472 |               |
+| 20231106 | POC-R9    | 13              | P1-8     | Run1 | Pocillopora | Recruit   | 27.8     | 186           | 21723472 |               |
+| 20231106 | BK-1      | 14              | P1-7     | Run1 | Blank       | Blank     | 27.8     | 194           | 21723472 |               |
+| 20231106 | ACR-A4    | 15              | P2-8     | Run1 | Acropora    | Adult     | 27.8     | 180           | 21723472 |               |
+| 20231106 | POR-R3    | 16              | P2-1     | Run1 | Porites     | Recruit   | 27.8     | 194           | 21723472 |               |
+| 20231106 | POR-A4    | 17              | P1-9     | Run1 | Porites     | Adult     | 27.8     | 167           | 21723472 |               |
+| 20231106 | POC-A1    | 18              | P2-2     | Run1 | Pocillopora | Adult     | 27.8     | 184           | 21723472 |               |
+| 20231106 | POC-R2    | 1               | P1-1     | Run2 | Pocillopora | Recruit   | 27.8     | 178           | 21723472 |               |
+| 20231106 | ACR-R4    | 2               | P1-2     | Run2 | Acropora    | Recruit   | 27.8     | 190           | 21723472 | Crab on coral |
+| 20231106 | POR-A2    | 3               | P1-3     | Run2 | Porites     | Adult     | 27.8     | 172           | 21723472 |               |
+| 20231106 | BK-4      | 4               | P1-4     | Run2 | Blank       | Blank     | 27.8     | 181           | 21723472 |               |
+| 20231106 | ACR-A3    | 5               | P1-5     | Run2 | Acropora    | Adult     | 27.8     | 182           | 21723472 |               |
+| 20231106 | POR-R1    | 6               | P1-6     | Run2 | Porites     | Recruit   | 27.8     | 191           | 21723472 |               |
+| 20231106 | BK-3      | 7               | P1-7     | Run2 | Blank       | Blank     | 27.8     | 190           | 21723472 |               |
+| 20231106 | ACR-R3    | 8               | P1-8     | Run2 | Acropora    | Recruit   | 27.8     | 190           | 21723472 |               |
+| 20231106 | POC-A3    | 9               | P1-9     | Run2 | Pocillopora | Adult     | 27.8     | 199           | 21723472 |               |
+| 20231106 | ACR-A2    | 10              | P2-1     | Run2 | Acropora    | Adult     | 27.8     | 188           | 21723472 |               |
+| 20231106 | POC-R1    | 11              | P2-2     | Run2 | Pocillopora | Recruit   | 27.8     | 192           | 21723472 |               |
+| 20231106 | LOG-2     | 12              | P2-3     | Run2 | logger      | logger    | 27.8     | NA            | 21723472 |               |
+| 20231106 | POR-R2    | 13              | P2-4     | Run2 | Porites     | Recruit   | 27.8     | 182           | 21723472 |               |
+| 20231106 | ACR-R2    | 14              | P2-5     | Run2 | Acropora    | Recruit   | 27.8     | 180           | 21723472 |               |
+| 20231106 | POC-R3    | 15              | P2-6     | Run2 | Pocillopora | Recruit   | 27.8     | 195           | 21723472 |               |
+| 20231106 | POR-A3    | 16              | P2-7     | Run2 | Porites     | Adult     | 27.8     | 184           | 21723472 |               |
+| 20231106 | POR-R4    | 17              | P2-8     | Run2 | Porites     | Recruit   | 27.8     | 180           | 21723472 |               |
+| 20231106 | POC-A2    | 18              | P2-9     | Run2 | Pocillopora | Adult     | 27.8     | 184           | 21723472 |               |
+
+We will do the last run tomorrow. 
+
+## Spawning
+
+We saw a small amount of spawning from some fragments and from one small patch of one large colony. We didn't collect any samples. 
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/Moorea2023/pic13.jpeg?raw=true) 
+
+# Tuesday - November 7, 2023 
+
+## PI Curve runs and analysis 
+
+We did one more run of PI curves today. We followed the same protocol as yesterday. Here is our run information from today. 
+
+
+
+## Daily measurements
+
+Chloe took daily measurements at multiple points throughout the day. Daily measurement data are [on GitHub here](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/tree/main/data/environmental). 
+
+## Planning PR measurements 
+
+## Planning isotopes
+
+## Spawning
