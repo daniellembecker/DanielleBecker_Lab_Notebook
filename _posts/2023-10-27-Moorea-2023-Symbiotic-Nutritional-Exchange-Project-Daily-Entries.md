@@ -603,15 +603,319 @@ After clipping, samples were put into cups with 40-50% bleach solution. After ti
 
 ## Surface area of PI curve corals 
 
+Dried skeletons were wax dipped in the morning. Ariana ran a new standard curve, which we will use for this same batch of wax for the remainder of the project. Parrafin wax used with wax bath. Weights measured on the LTER Mettler Toledo ME303TE balance. 
+
+Wax dipping was done as describe in [the E5 protocol](https://github.com/urol-e5/protocols/blob/master/2021-02-17-Surface_Area_Protocol.md) and the data is [on GitHub here](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/blob/main/data/physiology/surface_area/surface_area_data.csv). All samples were measured and 7 standards were used ranging from 1.18cm to 7.44cm diameter (wooden spheres). All samples dipped with 1 layer of wax. 
+
 ## Reva Atea meeting 
 
 ## Planning PR rates for tomorrow and preparing tanks 
 
+Chloe prepared the water bath for the respiration measurements, cleaned chambers, prepared water bath bins, and rinsed all previous spawning equipment. 
+
+We altered our plan for PR measurements. Here is the new plan: 
+
+- We will use the same replication as previously decided. We will run 6 runs of PR measurements with 2 runs per temperature (27, 30, 33C). Each run will contain 15 corals. 
+- Each run will contain n=2 adults per species and n=3 recruits per species. This will result in n=4 adults per species per temperature and n=6 recruits per species per temperature. 
+- Rather than running PR from the corals at ambient in short incubations, we will pre-incubate corals in water bath mesocosm tanks in the mesocosm room for the same amount of time corals will be in the isotope metabolomics incubations later in the project. This will allow us to make more direct comparisons between temperature effects on metabolomics and PR rates. 
+- To do this, we will fill n=1 large tank per temperature and incubate the corals prior to PR measurements. We will work on setting this up today. 
+
+Based on the PI curve results, we will aim for a light exposure of 550 PAR for incubations and PR measurements. We did light measurements at 55% and 60% light intensity in the respirometry water bath to pick the correct light intensity. 
+
+Mean light intensity across 24 spots in the water bath was 531 at 60% intensity and 480 at 55% intensity. We will use 60% light intensity. 
+
+Loggers were launched in each of the three mesocosm tanks at 16:00.  
+
+- Logger #21723473 = Tank #1 (27°C) 
+- Logger #21723477 = Tank #2 (30°C) 
+- Logger #21723476 = Tank #3 (33°C)  
+
+Here is our general set up for our tanks:  
+
+- 3 tanks with lower rack ambient (27) and upper rack 30 and 33 °C temperatures 
+- Each tank has apex units and probes, pumps, a hobo logger, and 500W titanium heater 
+- Corals 5 inches above the base of the tank on a basket elevating a plug mat/rack 
+- Flow was 16-17 mL per 5 sec
+- Logger was in middle of tank under the basket out of direct light
+- Lights were 9cm from water level
+- All apex probes calibrated 20231108
+- Tanks were 55 cm x 55 cm x 36 cm. The volume was 108.9 L. At the water flow rate this was a 9.45 hr turnover rate (0.192 L/min). 
+
+Light values were measured in the center and 4 quandrants around the center. Light values were the following in PAR at 60% intensity: 
+
+- Tank 1 = 426, 435, 570, 501, 587 
+- Tank 2 = 475, 581, 483, 493, 534
+- Tank 3 = 513, 435, 550, 507, 547
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/Moorea2023/pic10.jpeg?raw=true) 
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/Moorea2023/pic12.jpeg?raw=true) 
+
+We added n=2 fragments per species to one tank to test that they live in these conditions for our experiment. We added them to the tank, ramped to 33°C, and kept for 5 hours. They looked good at the end! We are good to go with running these incubations. 
+
+We will put the corals in the tanks at ambient temperature (27) and ramp them to the desired temperature treatment over 30-60 minutes. Once temperature is reached, they will be incubated in tanks for 4 hours, then the PR rates will start. Corals will be sampled after about 1 hour in the respiration chambers, giving 5 hours of total incubation time. The isotope corals will also be incubated for 5 hours so we can make more direct comparisons between measurements. 
+
+## Tank maintenance and daily measurements 
+
+A Hobo Tidbit logger was launched at 08:00 in the fragment water table logging every 10 minutes (SSN 21723474). 
+
+Chloe collected daily measurements multiple times today, found on [GitHub here](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/tree/main/data/environmental).  
+
 ## Testing tank and jar incubations at high temperature 
+
+We added 6 test corals to 6 glass jars that will be used for the isotope incubations. We then ran a test incubation for 5 hours at the highest temperature, 33C, to verify that the corals wouldn't die at this temperature. These jars are 4 oz jars with a plug stand and stir bar. This will allow for circulation during the incubations. The jars will be open to allow for light exposure and prevent metabolism of respired carbon label.   
+
+Here is what our test looked like. We used n=2 of each species for this test at 33°C.     
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/Moorea2023/pic14.jpeg?raw=true) 
+
+We will construct bins to hold 15 samples at each temperature simultaneously during the isotope exposures.   
+
+At the end of the exposure, the corals looked great! *They also stayed alive after the incubation for the rest of the experiment.*   
 
 # Thursday - November 9, 2023
 
 ## PR rates and sampling
 
+Today we ran 3 runs of P&R measurements. Here is our metadata for each run.  
+
+The general protocol is (as described above for PI curves): 
+
+- Prepare the plate map of corals in each run (n=2 adults per species, n=3 recruits per species, n=1 blank). We are only able to run 16 total samples (15 corals and 1 blank) because two sensors (5 and 8) stopped working on the Oxy-10 (channels 15 and 18). 
+- Add the corals to the tank corresponding to the temperature treatment. Measure temperature in these tanks every 30 minutes. Ramp using Apex to the correct temperature. Record start time. 
+- Rearrange position of corals at hour 2 of incubation to account for light field variability. 
+- 30 minutes before the run needs to be measured, prepare the water bath to the correct temperature. 
+- Add coral plug on to the plug stand in the acrylic chamber (200 mL chambers) with a stir bar. Add the coral and fill with treatment water in the treatment tank. Seal with the acrylic lid (tubing around edge of lid) and plug the temperature probe hole (since we do not have temperature probes). 
+- Remove water from the top. Put the chamber on the stir plate, which is below the water bath. 
+- Stir at 380. 
+- Add Oxy 10 oxygen probes to each chamber. Check for bubbles and reseal if necessary. Make sure crabs and other organisms are removed. 
+- Name all measurement channels in the Oxy 10 and start probe measurement. Set temperature to manual run temperature. 
+- Once all corals are in the bin, turn on lights to 60% (550 PAR). Run in the light for 15 minutes. 
+- Turn off lights, cover array with black out curtain. Run in the dark for 15 minutes. Record start and end times for each phase with 2 minutes between light changes to allow for acclimation. 
+- Finally turn the lights on again to 60%. Run in the light for 10 minutes. 
+- Stop probe measurement. 
+- Take corals out one at a time. Remove the coral and snap freeze in liquid nitrogen in whirl pack. Pour water into graduated cylinder and measure water volume. Record in metadata. 
+- Rinse all chambers to prepare for the next run of measurements. 
+
+Sampled corals were stored in the Biocode -40°C freezer in a mesh bag.  
+
+Here are examples of sealed chambers. 
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/Moorea2023/pic20.jpeg?raw=true) 
+
+We ran a staggered start time for each run so that runs were incubating throughout the day. 
+
+Run 1: 33°C  
+Run 2: 27°C   
+Run 3: 30°C  
+ 
+Here is our sample metadata from all runs done today (and tomorrow). I added this post after all runs were done, so all data is below for Nov 9 and Nov 10 runs. 
+
+| Date     | sample_id | Species     | Lifestage | Chamber.Channel | Position | Run  | Temp.Cat | Tank | Time.Loaded | Time.Temp.Reached | Time.5h | Time.Measured | Time.Sampled | Total.Incubation | Chamber.Vol.L | Notes                                                                                                    |
+|----------|-----------|-------------|-----------|-----------------|----------|------|----------|------|-------------|-------------------|---------|---------------|--------------|------------------|---------------|----------------------------------------------------------------------------------------------------------|
+| 20231108 | POR-A15   | Porites     | Adult     | 1               | P1-1     | Run1 | 33       | 3    | 7:30        | 8:30              | 13:30   | 12:30         | 13:30        | 5                | 0.172         |                                                                                                          |
+| 20231108 | POC-R19   | Pocillopora | Recruit   | 2               | P2-7     | Run1 | 33       | 3    | 7:30        | 8:30              | 13:30   | 12:30         | 13:30        | 5                | 0.173         |                                                                                                          |
+| 20231108 | BK-1      | Blank       | Blank     | 3               | P2-3     | Run1 | 33       | 3    | 7:30        | 8:30              | 13:30   | 12:30         | 13:30        | 5                | 0.188         |                                                                                                          |
+| 20231108 | ACR-R13   | Acropora    | Recruit   | 4               | P2-5     | Run1 | 33       | 3    | 7:30        | 8:30              | 13:30   | 12:30         | 13:30        | 5                | 0.188         |                                                                                                          |
+| 20231108 | POC-R14   | Pocillopora | Recruit   | 5               | P1-3     | Run1 | 33       | 3    | 7:30        | 8:30              | 13:30   | 12:30         | 13:30        | 5                | 0.186         |                                                                                                          |
+| 20231108 | ACR-A6    | Acropora    | Adult     | 6               | P2-6     | Run1 | 33       | 3    | 7:30        | 8:30              | 13:30   | 12:30         | 13:30        | 5                | 0.188         |                                                                                                          |
+| 20231108 | POR-R28   | Porites     | Recruit   | 7               | P1-2     | Run1 | 33       | 3    | 7:30        | 8:30              | 13:30   | 12:30         | 13:30        | 5                | 0.192         |                                                                                                          |
+| 20231108 | POC-A11   | Pocillopora | Adult     | 8               | P2-9     | Run1 | 33       | 3    | 7:30        | 8:30              | 13:30   | 12:30         | 13:30        | 5                | 0.19          |                                                                                                          |
+| 20231108 | POR-R19   | Porites     | Recruit   | 9               | P1-4     | Run1 | 33       | 3    | 7:30        | 8:30              | 13:30   | 12:30         | 13:30        | 5                | 0.186         |                                                                                                          |
+| 20231108 | ACR-R16   | Acropora    | Recruit   | 10              | P1-5     | Run1 | 33       | 3    | 7:30        | 8:30              | 13:30   | 12:30         | 13:30        | 5                | 0.196         |                                                                                                          |
+| 20231108 | POR-R13   | Porites     | Recruit   | 11              | P1-6     | Run1 | 33       | 3    | 7:30        | 8:30              | 13:30   | 12:30         | 13:30        | 5                | 0.194         |                                                                                                          |
+| 20231108 | POR-A10   | Porites     | Adult     | 12              | P2-4     | Run1 | 33       | 3    | 7:30        | 8:30              | 13:30   | 12:30         | 13:30        | 5                | 0.194         |                                                                                                          |
+| 20231108 | ACR-A9    | Acropora    | Adult     | 13              | P1-8     | Run1 | 33       | 3    | 7:30        | 8:30              | 13:30   | 12:30         | 13:30        | 5                | 0.191         |                                                                                                          |
+| 20231108 | POC-A12   | Pocillopora | Adult     | 14              | P1-7     | Run1 | 33       | 3    | 7:30        | 8:30              | 13:30   | 12:30         | 13:30        | 5                | 0.187         |                                                                                                          |
+| 20231108 | POC-R30   | Pocillopora | Recruit   | 16              | P2-1     | Run1 | 33       | 3    | 7:30        | 8:30              | 13:30   | 12:30         | 13:30        | 5                | 0.192         |                                                                                                          |
+| 20231108 | ACR-R12   | Acropora    | Recruit   | 17              | P1-9     | Run1 | 33       | 3    | 7:30        | 8:30              | 13:30   | 12:30         | 13:30        | 5                | 0.182         |                                                                                                          |
+| 20231108 | ACR-R27   | Acropora    | Recruit   | 1               | P1-1     | Run2 | 27       | 1    | 10:30       | 11:00             | 16:00   | 15:00         | 16:00        | 5                | 0.19          | Given 30 minutes at 27 - no ramp needed, but kept total exposure time the   same as the other treatments |
+| 20231108 | ACR-A16   | Acropora    | Adult     | 2               | P1-2     | Run2 | 27       | 1    | 10:30       | 11:00             | 16:00   | 15:00         | 16:00        | 5                | 0.192         |                                                                                                          |
+| 20231108 | POC-A9    | Pocillopora | Adult     | 3               | P1-3     | Run2 | 27       | 1    | 10:30       | 11:00             | 16:00   | 15:00         | 16:00        | 5                | 0.189         |                                                                                                          |
+| 20231108 | POR-R30   | Porites     | Recruit   | 4               | P1-4     | Run2 | 27       | 1    | 10:30       | 11:00             | 16:00   | 15:00         | 16:00        | 5                | 0.186         |                                                                                                          |
+| 20231108 | ACR-R23   | Acropora    | Recruit   | 5               | P1-5     | Run2 | 27       | 1    | 10:30       | 11:00             | 16:00   | 15:00         | 16:00        | 5                | 0.172         |                                                                                                          |
+| 20231108 | POC-R29   | Pocillopora | Recruit   | 6               | P1-6     | Run2 | 27       | 1    | 10:30       | 11:00             | 16:00   | 15:00         | 16:00        | 5                | 0.179         |                                                                                                          |
+| 20231108 | POR-A12   | Porites     | Adult     | 7               | P1-7     | Run2 | 27       | 1    | 10:30       | 11:00             | 16:00   | 15:00         | 16:00        | 5                | 0.178         |                                                                                                          |
+| 20231108 | ACR-R11   | Acropora    | Recruit   | 8               | P1-8     | Run2 | 27       | 1    | 10:30       | 11:00             | 16:00   | 15:00         | 16:00        | 5                | 0.192         |                                                                                                          |
+| 20231108 | POR-R22   | Porites     | Recruit   | 9               | P1-9     | Run2 | 27       | 1    | 10:30       | 11:00             | 16:00   | 15:00         | 16:00        | 5                | 0.188         |                                                                                                          |
+| 20231108 | ACR-A14   | Acropora    | Adult     | 10              | P2-1     | Run2 | 27       | 1    | 10:30       | 11:00             | 16:00   | 15:00         | 16:00        | 5                | 0.193         |                                                                                                          |
+| 20231108 | POC-A6    | Pocillopora | Adult     | 11              | P2-2     | Run2 | 27       | 1    | 10:30       | 11:00             | 16:00   | 15:00         | 16:00        | 5                | 0.189         |                                                                                                          |
+| 20231108 | POC-R11   | Pocillopora | Recruit   | 12              | P2-3     | Run2 | 27       | 1    | 10:30       | 11:00             | 16:00   | 15:00         | 16:00        | 5                | 0.192         |                                                                                                          |
+| 20231108 | BK-2      | Blank       | Blank     | 13              | P2-4     | Run2 | 27       | 1    | 10:30       | 11:00             | 16:00   | 15:00         | 16:00        | 5                | 0.19          |                                                                                                          |
+| 20231108 | POC-R23   | Pocillopora | Recruit   | 14              | P2-5     | Run2 | 27       | 1    | 10:30       | 11:00             | 16:00   | 15:00         | 16:00        | 5                | 0.195         |                                                                                                          |
+| 20231108 | POR-A16   | Porites     | Adult     | 16              | P2-7     | Run2 | 27       | 1    | 10:30       | 11:00             | 16:00   | 15:00         | 16:00        | 5                | 0.19          |                                                                                                          |
+| 20231108 | POR-R18   | Porites     | Recruit   | 17              | P2-8     | Run2 | 27       | 1    | 10:30       | 11:00             | 16:00   | 15:00         | 16:00        | 5                | 0.192         |                                                                                                          |
+| 20231108 | ACR-A10   | Acropora    | Adult     | 1               | P1-1     | Run3 | 30       | 2    | 13:00       | 13:30             | 18:30   | 17:30         | 18:30        | 5                | 0.19          |                                                                                                          |
+| 20231108 | POC-R22   | Pocillopora | Recruit   | 2               | P1-2     | Run3 | 30       | 2    | 13:00       | 13:30             | 18:30   | 17:30         | 18:30        | 5                | 0.194         |                                                                                                          |
+| 20231108 | POR-R16   | Porites     | Recruit   | 3               | P1-3     | Run3 | 30       | 2    | 13:00       | 13:30             | 18:30   | 17:30         | 18:30        | 5                | 0.191         |                                                                                                          |
+| 20231108 | POC-A17   | Pocillopora | Adult     | 4               | P1-4     | Run3 | 30       | 2    | 13:00       | 13:30             | 18:30   | 17:30         | 18:30        | 5                | 0.192         |                                                                                                          |
+| 20231108 | POR-R14   | Porites     | Recruit   | 5               | P1-5     | Run3 | 30       | 2    | 13:00       | 13:30             | 18:30   | 17:30         | 18:30        | 5                | 0.184         |                                                                                                          |
+| 20231108 | ACR-R26   | Acropora    | Recruit   | 6               | P1-6     | Run3 | 30       | 2    | 13:00       | 13:30             | 18:30   | 17:30         | 18:30        | 5                | 0.186         |                                                                                                          |
+| 20231108 | POR-A9    | Porites     | Adult     | 7               | P1-7     | Run3 | 30       | 2    | 13:00       | 13:30             | 18:30   | 17:30         | 18:30        | 5                | 0.188         |                                                                                                          |
+| 20231108 | POR-R29   | Porites     | Recruit   | 8               | P1-8     | Run3 | 30       | 2    | 13:00       | 13:30             | 18:30   | 17:30         | 18:30        | 5                | 0.194         |                                                                                                          |
+| 20231108 | POC-R26   | Pocillopora | Recruit   | 9               | P1-9     | Run3 | 30       | 2    | 13:00       | 13:30             | 18:30   | 17:30         | 18:30        | 5                | 0.188         |                                                                                                          |
+| 20231108 | POC-A14   | Pocillopora | Adult     | 10              | P2-1     | Run3 | 30       | 2    | 13:00       | 13:30             | 18:30   | 17:30         | 18:30        | 5                | 0.187         |                                                                                                          |
+| 20231108 | ACR-R18   | Acropora    | Recruit   | 11              | P2-2     | Run3 | 30       | 2    | 13:00       | 13:30             | 18:30   | 17:30         | 18:30        | 5                | 0.182         |                                                                                                          |
+| 20231108 | ACR-R14   | Acropora    | Recruit   | 12              | P2-3     | Run3 | 30       | 2    | 13:00       | 13:30             | 18:30   | 17:30         | 18:30        | 5                | 0.186         |                                                                                                          |
+| 20231108 | ACR-A15   | Acropora    | Adult     | 13              | P2-4     | Run3 | 30       | 2    | 13:00       | 13:30             | 18:30   | 17:30         | 18:30        | 5                | 0.187         |                                                                                                          |
+| 20231108 | BK-3      | Blank       | Blank     | 14              | P2-5     | Run3 | 30       | 2    | 13:00       | 13:30             | 18:30   | 17:30         | 18:30        | 5                | 0.179         |                                                                                                          |
+| 20231108 | POC-R13   | Pocillopora | Recruit   | 16              | P2-7     | Run3 | 30       | 2    | 13:00       | 13:30             | 18:30   | 17:30         | 18:30        | 5                | 0.194         |                                                                                                          |
+| 20231108 | POR-A7    | Porites     | Adult     | 17              | P2-8     | Run3 | 30       | 2    | 13:00       | 13:30             | 18:30   | 17:30         | 18:30        | 5                | 0.186         |                                                                                                          |
+| 20231109 | POC-A7    | Pocillopora | Adult     | 1               | P1-1     | Run4 | 30       | 2    | 7:45        | 8:15              | 13:15   | 12:15         | 13:15        | 5                | 0.186         |                                                                                                          |
+| 20231109 | POC-R24   | Pocillopora | Recruit   | 2               | P2-7     | Run4 | 30       | 2    | 7:45        | 8:15              | 13:15   | 12:15         | 13:15        | 5                | 0.194         |                                                                                                          |
+| 20231109 | POR-A17   | Porites     | Adult     | 3               | P2-3     | Run4 | 30       | 2    | 7:45        | 8:15              | 13:15   | 12:15         | 13:15        | 5                | 0.185         |                                                                                                          |
+| 20231109 | ACR-R22   | Acropora    | Recruit   | 4               | P2-5     | Run4 | 30       | 2    | 7:45        | 8:15              | 13:15   | 12:15         | 13:15        | 5                | 0.188         |                                                                                                          |
+| 20231109 | POR-R21   | Porites     | Recruit   | 5               | P1-3     | Run4 | 30       | 2    | 7:45        | 8:15              | 13:15   | 12:15         | 13:15        | 5                | 0.188         |                                                                                                          |
+| 20231109 | BK-4      | Blank       | Blank     | 6               | P2-6     | Run4 | 30       | 2    | 7:45        | 8:15              | 13:15   | 12:15         | 13:15        | 5                | 0.189         |                                                                                                          |
+| 20231109 | ACR-R25   | Acropora    | Recruit   | 7               | P1-2     | Run4 | 30       | 2    | 7:45        | 8:15              | 13:15   | 12:15         | 13:15        | 5                | 0.187         |                                                                                                          |
+| 20231109 | POC-R18   | Pocillopora | Recruit   | 8               | P2-9     | Run4 | 30       | 2    | 7:45        | 8:15              | 13:15   | 12:15         | 13:15        | 5                | 0.188         |                                                                                                          |
+| 20231109 | POC-A10   | Pocillopora | Adult     | 9               | P1-4     | Run4 | 30       | 2    | 7:45        | 8:15              | 13:15   | 12:15         | 13:15        | 5                | 0.187         |                                                                                                          |
+| 20231109 | ACR-A11   | Acropora    | Adult     | 10              | P1-5     | Run4 | 30       | 2    | 7:45        | 8:15              | 13:15   | 12:15         | 13:15        | 5                | 0.194         |                                                                                                          |
+| 20231109 | POR-R11   | Porites     | Recruit   | 11              | P1-6     | Run4 | 30       | 2    | 7:45        | 8:15              | 13:15   | 12:15         | 13:15        | 5                | 0.189         |                                                                                                          |
+| 20231109 | ACR-A7    | Acropora    | Adult     | 12              | P2-4     | Run4 | 30       | 2    | 7:45        | 8:15              | 13:15   | 12:15         | 13:15        | 5                | 0.189         |                                                                                                          |
+| 20231109 | POC-R12   | Pocillopora | Recruit   | 13              | P1-8     | Run4 | 30       | 2    | 7:45        | 8:15              | 13:15   | 12:15         | 13:15        | 5                | 0.193         |                                                                                                          |
+| 20231109 | POR-R25   | Porites     | Recruit   | 14              | P1-7     | Run4 | 30       | 2    | 7:45        | 8:15              | 13:15   | 12:15         | 13:15        | 5                | 0.192         |                                                                                                          |
+| 20231109 | ACR-R28   | Acropora    | Recruit   | 16              | P2-1     | Run4 | 30       | 2    | 7:45        | 8:15              | 13:15   | 12:15         | 13:15        | 5                | 0.191         |                                                                                                          |
+| 20231109 | POR-A8    | Porites     | Adult     | 17              | P1-9     | Run4 | 30       | 2    | 7:45        | 8:15              | 13:15   | 12:15         | 13:15        | 5                | 0.19          |                                                                                                          |
+| 20231109 | ACR-R19   | Acropora    | Recruit   | 1               | P1-1     | Run5 | 33       | 3    | 10:00       | 11:00             | 16:00   | 15:00         | 16:00        | 5                | 0.19          |                                                                                                          |
+| 20231109 | ACR-A17   | Acropora    | Adult     | 2               | P1-2     | Run5 | 33       | 3    | 10:00       | 11:00             | 16:00   | 15:00         | 16:00        | 5                | 0.192         |                                                                                                          |
+| 20231109 | ACR-R30   | Acropora    | Recruit   | 3               | P1-3     | Run5 | 33       | 3    | 10:00       | 11:00             | 16:00   | 15:00         | 16:00        | 5                | 0.183         |                                                                                                          |
+| 20231109 | POC-A16   | Pocillopora | Adult     | 4               | P1-4     | Run5 | 33       | 3    | 10:00       | 11:00             | 16:00   | 15:00         | 16:00        | 5                | 0.193         |                                                                                                          |
+| 20231109 | BK-5      | Blank       | Blank     | 5               | P1-5     | Run5 | 33       | 3    | 10:00       | 11:00             | 16:00   | 15:00         | 16:00        | 5                | 0.188         |                                                                                                          |
+| 20231109 | POR-A11   | Porites     | Adult     | 6               | P1-6     | Run5 | 33       | 3    | 10:00       | 11:00             | 16:00   | 15:00         | 16:00        | 5                | 0.184         |                                                                                                          |
+| 20231109 | ACR-A13   | Acropora    | Adult     | 7               | P1-7     | Run5 | 33       | 3    | 10:00       | 11:00             | 16:00   | 15:00         | 16:00        | 5                | 0.193         |                                                                                                          |
+| 20231109 | POC-R15   | Pocillopora | Recruit   | 8               | P1-8     | Run5 | 33       | 3    | 10:00       | 11:00             | 16:00   | 15:00         | 16:00        | 5                | 0.188         | Make sure the name of the dataframe is POC-R15 not A15                                                   |
+| 20231109 | POR-R27   | Porites     | Recruit   | 9               | P1-9     | Run5 | 33       | 3    | 10:00       | 11:00             | 16:00   | 15:00         | 16:00        | 5                | 0.186         |                                                                                                          |
+| 20231109 | POC-A8    | Pocillopora | Adult     | 10              | P2-1     | Run5 | 33       | 3    | 10:00       | 11:00             | 16:00   | 15:00         | 16:00        | 5                | 0.183         |                                                                                                          |
+| 20231109 | POR-A6    | Porites     | Adult     | 11              | P2-2     | Run5 | 33       | 3    | 10:00       | 11:00             | 16:00   | 15:00         | 16:00        | 5                | 0.186         |                                                                                                          |
+| 20231109 | ACR-R15   | Acropora    | Recruit   | 12              | P2-3     | Run5 | 33       | 3    | 10:00       | 11:00             | 16:00   | 15:00         | 16:00        | 5                | 0.187         |                                                                                                          |
+| 20231109 | POC-R20   | Pocillopora | Recruit   | 13              | P2-4     | Run5 | 33       | 3    | 10:00       | 11:00             | 16:00   | 15:00         | 16:00        | 5                | 0.191         |                                                                                                          |
+| 20231109 | POR-R15   | Porites     | Recruit   | 14              | P2-5     | Run5 | 33       | 3    | 10:00       | 11:00             | 16:00   | 15:00         | 16:00        | 5                | 0.189         |                                                                                                          |
+| 20231109 | POR-R24   | Porites     | Recruit   | 16              | P2-7     | Run5 | 33       | 3    | 10:00       | 11:00             | 16:00   | 15:00         | 16:00        | 5                | 0.187         |                                                                                                          |
+| 20231109 | POC-R16   | Pocillopora | Recruit   | 17              | P2-8     | Run5 | 33       | 3    | 10:00       | 11:00             | 16:00   | 15:00         | 16:00        | 5                | 0.191         |                                                                                                          |
+| 20231109 | POR-A14   | Porites     | Adult     | 1               | P1-1     | Run6 | 27       | 1    | 12:30       | 13:00             | 18:00   | 17:00         | 18:00        | 5                | 0.192         |                                                                                                          |
+| 20231109 | ACR-R24   | Acropora    | Recruit   | 2               | P1-2     | Run6 | 27       | 1    | 12:30       | 13:00             | 18:00   | 17:00         | 18:00        | 5                | 0.186         |                                                                                                          |
+| 20231109 | POR-R20   | Porites     | Recruit   | 3               | P1-3     | Run6 | 27       | 1    | 12:30       | 13:00             | 18:00   | 17:00         | 18:00        | 5                | 0.177         |                                                                                                          |
+| 20231109 | POR-R17   | Porites     | Recruit   | 4               | P1-4     | Run6 | 27       | 1    | 12:30       | 13:00             | 18:00   | 17:00         | 18:00        | 5                | 0.192         |                                                                                                          |
+| 20231109 | ACR-A12   | Acropora    | Adult     | 5               | P1-5     | Run6 | 27       | 1    | 12:30       | 13:00             | 18:00   | 17:00         | 18:00        | 5                | 0.19          |                                                                                                          |
+| 20231109 | POC-R27   | Pocillopora | Recruit   | 6               | P1-6     | Run6 | 27       | 1    | 12:30       | 13:00             | 18:00   | 17:00         | 18:00        | 5                | 0.186         |                                                                                                          |
+| 20231109 | POR-R26   | Porites     | Recruit   | 7               | P1-7     | Run6 | 27       | 1    | 12:30       | 13:00             | 18:00   | 17:00         | 18:00        | 5                | 0.193         |                                                                                                          |
+| 20231109 | ACR-A8    | Acropora    | Adult     | 8               | P1-8     | Run6 | 27       | 1    | 12:30       | 13:00             | 18:00   | 17:00         | 18:00        | 5                | 0.191         |                                                                                                          |
+| 20231109 | POR-A13   | Porites     | Adult     | 9               | P1-9     | Run6 | 27       | 1    | 12:30       | 13:00             | 18:00   | 17:00         | 18:00        | 5                | 0.186         |                                                                                                          |
+| 20231109 | POC-R28   | Pocillopora | Recruit   | 10              | P2-1     | Run6 | 27       | 1    | 12:30       | 13:00             | 18:00   | 17:00         | 18:00        | 5                | 0.19          |                                                                                                          |
+| 20231109 | BK-6      | Blank       | Blank     | 11              | P2-2     | Run6 | 27       | 1    | 12:30       | 13:00             | 18:00   | 17:00         | 18:00        | 5                | 0.184         |                                                                                                          |
+| 20231109 | POC-A13   | Pocillopora | Adult     | 12              | P2-3     | Run6 | 27       | 1    | 12:30       | 13:00             | 18:00   | 17:00         | 18:00        | 5                | 0.192         |                                                                                                          |
+| 20231109 | ACR-R17   | Acropora    | Recruit   | 13              | P2-4     | Run6 | 27       | 1    | 12:30       | 13:00             | 18:00   | 17:00         | 18:00        | 5                | 0.183         |                                                                                                          |
+| 20231109 | ACR-R29   | Acropora    | Recruit   | 14              | P2-5     | Run6 | 27       | 1    | 12:30       | 13:00             | 18:00   | 17:00         | 18:00        | 5                | 0.188         |                                                                                                          |
+| 20231109 | POC-A15   | Pocillopora | Adult     | 16              | P2-7     | Run6 | 27       | 1    | 12:30       | 13:00             | 18:00   | 17:00         | 18:00        | 5                | 0.192         |                                                                                                          |
+| 20231109 | POC-R21   | Pocillopora | Recruit   | 17              | P2-8     | Run6 | 27       | 1    | 12:30       | 13:00             | 18:00   | 17:00         | 18:00        | 5                | 0.19          |                                                                                                          |
+
+And here is our run metadata. 
+
+| Run  | Temp.Cat | Tank | Light_Level | Light_Value | Date     | Start.time | Stop.time | Light_Percent |
+|------|----------|------|-------------|-------------|----------|------------|-----------|---------------|
+| Run1 | 33       | 3    | 1           | 550         | 20231108 | 12:36      | 12:51     | 60            |
+| Run1 | 33       | 3    | 2           | 0           | 20231108 | 12:53      | 13:08     | 0             |
+| Run1 | 33       | 3    | 3           | 550         | 20231108 | 13:10      | 13:20     | 60            |
+| Run2 | 27       | 1    | 1           | 550         | 20231108 | 15:09      | 15:24     | 60            |
+| Run2 | 27       | 1    | 2           | 0           | 20231108 | 15:26      | 15:41     | 0             |
+| Run2 | 27       | 1    | 3           | 550         | 20231108 | 15:43      | 15:53     | 60            |
+| Run3 | 30       | 2    | 1           | 550         | 20231108 | 17:32      | 17:43     | 60            |
+| Run3 | 30       | 2    | 2           | 0           | 20231108 | 17:45      | 17:58     | 0             |
+| Run3 | 30       | 2    | 3           | 550         | 20231108 | 18:00      | 18:10     | 60            |
+| Run4 | 30       | 2    | 1           | 550         | 20231109 | 12:13      | 12:28     | 60            |
+| Run4 | 30       | 2    | 2           | 0           | 20231109 | 12:35      | 12:50     | 0             |
+| Run4 | 30       | 2    | 3           | 550         | 20231109 | 12:52      | 13:02     | 60            |
+| Run5 | 33       | 3    | 1           | 550         | 20231109 | 15:11      | 15:26     | 60            |
+| Run5 | 33       | 3    | 2           | 0           | 20231109 | 15:28      | 15:43     | 0             |
+| Run5 | 33       | 3    | 3           | 550         | 20231109 | 15:45      | 15:55     | 60            |
+| Run6 | 27       | 1    | 1           | 550         | 20231109 | 17:03      | 17:18     | 60            |
+| Run6 | 27       | 1    | 2           | 0           | 20231109 | 17:20      | 17:35     | 0             |
+| Run6 | 27       | 1    | 3           | 550         | 20231109 | 17:37      | 17:47     | 60            |
+
+All data were exported and saved on [GitHub here](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/tree/main/data/p_r_rates). 
+
 ## Daily measurements 
+
+Chloe took daily measurements and they are on [GitHub here](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/tree/main/data/environmental). Logger files are also downloaded [here](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/tree/main/data/environmental). 
+
+## Spawning
+
+We had a big spawning night! 8-10 of our *A. hyacinthus* colonies spawned. We allowed the colonies to spawn in the tank all together. We then gathered the bundles from the surface using mesh bottom scoops/containers. 
+
+We then pooled the bundles into buckets to allow them to mix. 
+
+We then allocated bundles to falcon tubes and buckets to fertilize. These protocols follow previous spawning protocols developed for [Montipora capitata](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Montipora-capitata-spawning-and-larval-rearing-protocol/) and [Acropora pulchra](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Moorea-2023-Symbiotic-Nutritional-Exchange-Project-Daily-Entries/). 
+
+Briefly, 5 mL of bundles were added to each of 12 falcon tubes and filled to 45 mL with 50 µm FSW. Falcon tubes were placed on their side and gently rocked until all bundles were broken and eggs could fertilize (~1 h). 
+
+Remaining bundles (we had a lot!) were pooled in buckets. Once bundles separate, sperm is released. After 1 hour of pooled fertilization, the sperm water was removed using a pipette from the falcon tubes and the eggs were washed with clean water. The same proceedure was used for the buckets but rinsing eggs with a seive. 
+
+Eggs were then added to squarical containers (described above) at 1 falcon tube per squarical and to 5 large bins/coolers that will be filled stagnant water. 
+
+All eggs were added to tanks at approximately 23:30. We added water flow at ~8-10 mL per 5 seconds and left them for the night. Coolers and bins were left open (no water flow) to allow wind to gently mix and move the bundles. 
+
+We will check them in the morning! 
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/Moorea2023/pic15.jpeg?raw=true) 
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/Moorea2023/pic16.jpeg?raw=true) 
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/Moorea2023/pic17.jpeg?raw=true) 
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/Moorea2023/pic18.jpeg?raw=true) 
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/Moorea2023/pic19.jpeg?raw=true) 
+
+# Friday - November 10, 2023
+
+## PR rates and sampling
+
+We completed runs 4, 5, and 6 today. See the entry from yesterday for all the data. Everything ran smoothly! Samples were stored in the Biocode -40°C freezer.  
+
+## Daily measurements 
+
+Daily measurements were completed in all incubation tanks and all outdoor tanks and are [recorded here](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/tree/main/data/environmental). 
+
+## Spawning and larval rearing 
+
+The embryos looked great today! There was minimal mortality. We cleaned the inline filters, stirred the embryos, and removed any dirty/dead material. 
+
+We did a water change on the coolers at 2200. There was no spawning tonight. 
+
+## Preparing for field sampling 
+
+We prepared materials and lists for field sampling for our next round of collections, which will occur tomorrow. We will sample the following corals for our isotope experiment.  
+
+ACR-A18 to A32
+ACR-R31 to R51
+POC-A18 to A32
+POC-R31 to R51
+POR-A18 to A32
+POR-R31 to R51
+
+We labeled tubes (for DNA clipping), plugs, and whirlpacks for tomorrow. 
+
+# Saturday - November 11, 2023
+
+## Sample collection 
+
+Today we sampled corals for isotope incubations, which will occur over the next three days. We followed sampling protocols described from November 6 collections. 
+
+We sampled about half on a morning trip, about half on an afternoon trip, and have 10 more left to sample in the morning that we didn't finish. 
+
+When the corals came back to the lab, we clipped for DNA (as described above from the PI curve corals) and added samples to plugs (as described from November 6th. 
+
+Here is the [DNA sample metadata](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/tree/main/data/dna) and [collection metadata](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/tree/main/data/field_collection). 
+
+## Daily measurements
+
+Daily measurements were taken at 1800. The temperature in the blue tank was a bit high (29°C), so we increased the water flow. The adult *A. hyacinthus* colonies will be put back on the reef tomorrow. 
+
+## Spawning and larval rearing 
+
+Hollie cleaned the banjo filters and periodically stirred and checked the larvae. Everything looks great! The larvae were ciliated and moving around a bit by the evening. 
+
+No spawning tonight. 
+
 
