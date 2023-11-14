@@ -434,3 +434,26 @@ Protocol steps:
 9. Pipette off the ethanol without disturbing the pellet.
 10. Let dry at room temperature with the caps open for about 15 minutes or until all ethanol has evaporated (put in fume hood).
 11. Add 30µL of Tris to the pellet and pipette up and down to resuspend, go straight to nanodrop/qubit quantification or store cleaned PCR product in the 4ºC fridge for HMW DNA.
+
+**Qubit results on 20231114 after cleaning samples**
+
+We used the broad range DNA assay and [protocol](https://github.com/meschedl/PPP-Lab-Resources/tree/master/Protocols_and_Lab_Resources/DNA_Quality_Control) like above.
+
+Qubit results after cleaning sample on 20231114:
+
+| Sample.ID | Qubit Reading (ng/ul) |
+|-----------|---------------|
+| S1        | 195.80      |
+| S2        | 19468.7    |
+| 1.1    | 110     |
+| 1.2    | 110  |
+| 2.1    | 80.1    |
+| 2.2    | 79.9     |
+| 3.1    | 100    |
+| 3.2    | 100     |
+| 4.1    | 230     |
+| 4.2    | 230     |
+| 5.1    | 5.54     |
+| 5.2    | 5.57     |
+
+Qubit concentrations look great and are eluted in 30 uL of tris, so we have ~13 ug genomic DNA. Going to combine and run a tapestation and nanodrop on the samples today.
