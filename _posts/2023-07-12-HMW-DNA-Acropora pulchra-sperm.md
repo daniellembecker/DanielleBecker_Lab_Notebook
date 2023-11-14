@@ -457,3 +457,45 @@ Qubit results after cleaning sample on 20231114:
 | 5.2    | 5.57     |
 
 Qubit concentrations look great and are eluted in 30 uL of tris, so we have ~13 ug genomic DNA. Going to combine and run a tapestation and nanodrop on the samples today.
+
+**NanoDrop 20231114**
+
+Followed the same [NanoDrop Protocol](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resources/DNA_RNA-protocols/NanoDrop-2000c-Protocol.md) but with Tris as my buffer.
+
+Values:
+
+| Sample ID    | Qubit concentration | NanoDrop Concentration | 260/280 | 260/230 |
+|--------------|---------------------|------------------------|---------|---------|
+| HMW_20231114 | 77.5 ng/uL          | 110.2 ng/uL             | 1.84   | 1.98   |
+
+Composite Figure:
+![nanodrop3](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/images/20231114_nanodrop.jpg)
+
+PacBio requested a 260/280 ratio between 1.8 and 1.9, this is above what is requested!
+
+**Tapestation**
+
+To be sure that we still had HMW DNA in our sample after these extended steps, we followed the [TapeStation Protocol](https://meschedl.github.io/MESPutnam_Open_Lab_Notebook/DNA-Tapestation/) exactly.
+
+[TapeStation Report](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/images/20231114_tapestation.pdf)
+
+The quality looks very good with a great DIN value. And we see peaks are in the >60,000bp which is what we want for HMW DNA :) Yay! The concentration reading was lower than expected so I did another Qubit. I made sure to pipette the sample a bit more using the wide bore tips before this Qubit in case that was causing a lower reading.
+
+Qubit results after combining samples:
+
+| Sample.ID | Qubit Reading (ng/ul) |
+|-----------|---------------|
+| S1        | 214.86      |
+| S2        | 21633.12    |
+| T    | 76.8     |
+| B    | 78.3  |
+
+The sample is in ~150 uL of Tris reading ~77.5 ng/uL (77.5 ng/uL * 150 uL)/1000 ng) which equals 11.625 ug is within the range (10-20 ug) necessary for genomic DNA for PacBio.
+
+Hollie submitted data sheet below to PacBio GenoHub:
+
+| Project Number | Sample Container Type | Sample ID        | Sample Type | Sample Source | Species          | Purification/Extraction Method                                                                                                                                                                                                                                                                                                     | BSL Level | Sample Buffer | Volume (μL) | Concentration (ng/μL) | Requested Insert Size (including adapters) | QC Method                  | A 260/280 | A 260/230 | Multiplexing Group | Reference Genome | Comment (i.e. special storage or handling) |
+|----------------|-----------------------|------------------|-------------|---------------|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|---------------|-------------|-----------------------|--------------------------------------------|----------------------------|-----------|-----------|--------------------|------------------|--------------------------------------------|
+| 6693786         | 1.5 mL tube           | ACR_HMW_20231114_DMB | DNA         | coral sperm   | Acropora pulchra | Extracted with New England BioLabs Inc. Monarch® HMW DNA Extraction Kit for Cells & Blood Kit, then an ethanol precipitation purification step, resuspended in 30 uL of Tris, combined with 4 other samples at 30 uL for 150 uL total, full protocol here: https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/_posts/2023-07-12-HMW-DNA-Acropora%20pulchra-sperm.md | 1         | Tris          | 150          | 77.5                    | Standard                                   | Qubit/Tapestation/NanoDrop | 1.84      | 1.9      | NA                 | NA               | NA                                         |
+
+Sending sample first thing tomorrow morning (20231114).
