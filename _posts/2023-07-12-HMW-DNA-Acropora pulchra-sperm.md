@@ -7,7 +7,7 @@ tag: [ Acropora pulchra, HMW ]
 ## Testing how to extract High Molecular Weight DNA for Acropora pulchra sperm
 
 #### Goal:
-Use *Acropora pulchra* sperm samples to extract high molecular weight DNA for E5 project *A. pulchra* genome. Testing methods between the Genomic Tip High Molecular Weight DNA Extraction Protocol and NEB High Molecular Weight DNA Extraction.
+Use *Acropora pulchra* sperm samples to extract high molecular weight DNA for E5 project *A. pulchra* genome. Testing methods between the Genomic Tip High Molecular Weight DNA Extraction Protocol and NEB High Molecular Weight DNA Extraction. Using sperm samples (n=3) from the same adult genotype and parental history that spawned on October 10th 2022. [Tube numbers 206, 207, and 208](https://github.com/daniellembecker/Gametogenesis/blob/main/spawning/metadata/molecular_sample_metadata.csv) from a larger [marine heatwave and gametogenesis project](https://github.com/daniellembecker/Gametogenesis/tree/main) conducted in Mo'orea, French Polynesia with spawning in October 2022. For Illumina approach with Quick Biology, we need DNA amount: ≥ 200 ng for normal input (PCR-free); minimum 50 ng (PCR option); DNA concentration: ≥20 ng/μL, Optimal concentration: 20 ng/μl to 500 ng/μl in Tris-HCL (pH8.0); Purity: A260/280:1.8-2.0, A260/230: ≥ 1.8, Intact DNA, RNA-free, and non-degraded. For PacBio we need 10-20ug of genomic DNA (as quantified by Qubit) in less than 400ul. Quality of the DNA should be over 40kb in size, though we can remove smaller fragments. We’d prefer to have a 260/280 nanodrop of 1.8-1.9.
 
 #### Example Protocols
 
@@ -291,7 +291,7 @@ We realized that the 260/280 and 260/230 ratios were a bit low for purity for th
 - Recommendations:
     - Illumina Need = DNA amount: ≥ 200 ng for normal input (PCR-free); minimum 50 ng (PCR option); DNA concentration: ≥20 ng/μL, Optimal concentration: 20 ng/μl to 500 ng/μl in Tris-HCL (pH8.0); Purity: A260/280:1.8-2.0, A260/230: ≥ 1.8, Intact DNA, RNA-free, and non-degraded.
 
-Zoe suggested using an Ethanol Precipitation Protocol to clean up the sample and improve the purity. So, we followed the [Ethanol Precipitation Protocol](https://zdellaert.github.io/ZD_Putnam_Lab_Notebook/PCR-Protocol/) section to clen up the eluted DNA.
+Zoe suggested using an Ethanol Precipitation Protocol to clean up the sample and improve the purity. So, we followed the [Ethanol Precipitation Protocol](https://zdellaert.github.io/ZD_Putnam_Lab_Notebook/PCR-Protocol/) section to clean up the eluted DNA.
 
 On 20231103 we cleaned the sample.
 
@@ -354,6 +354,83 @@ Submitted data sheet below to QuickBiology GenoHub:
 |----------------|-----------------------|------------------|-------------|---------------|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|---------------|-------------|-----------------------|--------------------------------------------|----------------------------|-----------|-----------|--------------------|------------------|--------------------------------------------|
 | 2748776        | 1.5 mL tube           | ACR_HMW_20231107 | DNA         | coral sperm   | Acropora pulchra | Extracted with New England BioLabs Inc. Monarch® HMW DNA Extraction Kit for Cells & Blood Kit, then an ethanol precipitation purification step, resuspended in 30 uL of Tris, full protocol here: https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/_posts/2023-07-12-HMW-DNA-Acropora%20pulchra-sperm.md | 1         | Tris          | 30          | 70                    | Standard                                   | Qubit/Tapestation/NanoDrop | 1.8       | 1.55      | NA                 | NA               | NA                                         |
 
-Sample sent to QuickBiology Inc. on 20231107, received on 20231108.
+Sample sent to QuickBiology Inc. on 20231107, received on 20231108 for Illumina sequencing.
 
+## Preparing sample for PacBio Sequencing
 
+On 20231106 following the same NEB HMW kit and protocol above, Danielle used an original input volume of 300 uL for five extractions. Danielle used the vertical rotating mixer now set up by the molecular Putnam bench so that this step will be more precise and hopefully help to dissolve/re-suspend the HMW DNA. Modifications for this round of extractions were using the suggested salt addition step to help separate polysaccharides from the DNA. Using this approach, Danielle added 200uL of 5M NaCl after the precipitation enchancer step which would bring the NaCl concentration slightly over 2M before adding the isopropanol. Also adjusted the isopropanol volume as suggested which should be 0.7 volume, so added 415 uL of isopropanol. After following the rest of the protocol as above, samples were stored in the 4°C fridge for later QC (best to have the samples in the fridge for 3-4 days for better concentration).
+
+**Qubit results on 20231109**
+
+We used the broad range DNA assay and [protocol](https://github.com/meschedl/PPP-Lab-Resources/tree/master/Protocols_and_Lab_Resources/DNA_Quality_Control) like above.
+
+Qubit results after cleaning sample on 20231109:
+
+| Sample.ID | Qubit Reading (ng/ul) |
+|-----------|---------------|
+| S1        | 207.15      |
+| S2        | 21278.27     |
+| 1.1    | 20.2     |
+| 1.2    | 20.1     |
+| 2.1    | 12.6     |
+| 2.2    | 12.5     |
+| 3.1    | 11.1     |
+| 3.2    | 11.0     |
+| 4.1    | 18.2     |
+| 4.2    | 18.0     |
+| 5.1    | 11.0     |
+| 5.2    | 11.2     |
+
+These extractions had lower concentrations than expected, could have been due to the added salt step or lower input volume. Decided to move forward and do 5 more extractions at 600 uL without the salt step addition.
+
+Next steps: On 20231109 Danielle increased the input amount of sample from 300 uL to 600 uL for HMW. Adjusted ProteinaseK and RNAse volume additions by x2 to match new volume input of sample. Samples were stored in 4°C fridge for later QC (best to have the samples in the fridge for 3-4 days for better concentration).
+
+Qubit results for all 10 extractions on 20231113:
+
+| Sample.ID | Qubit Reading (ng/ul) |
+|-----------|---------------|
+| S1        | 207.15      |
+| S2        | 21278.27     |
+| 1.1    | 16.8     |
+| 1.2    | 16.8     |
+| 2.1    | 13.0     |
+| 2.2    | 13.0     |
+| 3.1    | 3.14     |
+| 3.2    | 3.12     |
+| 4.1    | 17.0     |
+| 4.2    | 17.1     |
+| 5.1    | 8.81     |
+| 5.2    | 8.10     |
+| 6.1    | 26.7     |
+| 6.2    | 26.9     |
+| 7.1    | 20.1     |
+| 7.2    | 22.3     |
+| 8.1    | 40.0     |
+| 8.2    | 40.1     |
+| 9.1    | 31.6     |
+| 9.2    | 32.1     |
+| 10.1    | 7.42     |
+| 10.2    | 7.51     |
+
+Three out of the ten extractions (30%) had lower than expected Qubit concentrations, but the other eight had good values for the input provided and from my estimated calculations, we should have 10-12ug necessary to send to PacBio!
+
+**Sample cleaning step on 20231114**
+
+Zoe suggested using an Ethanol Precipitation Protocol to clean up the samples and improve the purity. So, we followed the [Ethanol Precipitation Protocol](https://zdellaert.github.io/ZD_Putnam_Lab_Notebook/PCR-Protocol/) section to clean up the eluted DNA.
+
+On 20231114 Danielle cleaned the sample.
+
+- Using five 1.5 mL tubes, two extractions (100 uL per sample, 200 uL in each tube) were added to each tube for downstream cleaning steps to make sure the necessary ethanol and sodium acetate volumes could be added.
+
+Protocol steps:
+1. Add 20 uL of 3M sodium acetate to the eluted DNA suspended in 200 uL of NEB elution buffer II. (1/10th the total volume).
+2. Add 660 uL of **ice cold** 100% ethanol to each tube (3x the total volume after adding sodium acetate). Equation = 200 uL eluted sample + 20 uL of 3M sodium acetate = 220 uL x 3 = 660 uL of ethanol.
+3. Pipette up and down to mix and transfer entire volume to a new labeled 1.5ml tube.
+4. Place tubes in -80 ºC freezer for 1 hour or in the -20 ºC freezer overnight.
+5. Spin for 30 minutes at 15,000rcf (room temp). Make sure all the tubes are facing the same way (hinges out). The DNA will pellet on the back wall.
+6. Pipette off the liquid without disturbing the pellet. It will most likely be invisible.
+7. Add 200µL of **ice cold** 70% Ethanol.
+8. Spin for 15 minutes at 15,000rcf. This is to wash the pellet. Again make sure each tube is facing the same direction.
+9. Pipette off the ethanol without disturbing the pellet.
+10. Let dry at room temperature with the caps open for about 15 minutes or until all ethanol has evaporated (put in fume hood).
+11. Add 30µL of Tris to the pellet and pipette up and down to resuspend, go straight to nanodrop/qubit quantification or store cleaned PCR product in the 4ºC fridge for HMW DNA.

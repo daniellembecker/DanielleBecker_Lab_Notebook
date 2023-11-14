@@ -670,7 +670,7 @@ echo "STOP" $(date)
 
 sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco.sh
 
-Submitted batch job 285867
+Submitted batch job 288779
 
 ```
 
