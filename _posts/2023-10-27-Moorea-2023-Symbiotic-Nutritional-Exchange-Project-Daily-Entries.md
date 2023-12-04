@@ -918,4 +918,51 @@ Hollie cleaned the banjo filters and periodically stirred and checked the larvae
 
 No spawning tonight. 
 
+# Sunday - November 12, 2023
+
+## Isotopes day 1 
+
+## Larval care 
+
+## Morning spawning
+
+## DNA clipping and frag plugs 
+
+
+# Monday - November 13, 2023
+
+## Morning spawning
+
+## Isotopes day 2 - run 2 and dark run 
+
+## Larval care
+
+## Trial symbiont infections 
+
+
+# Tuesday - November 14, 2023 
+
+## Morning spawning 
+
+## Larval care
+
+## Planning larval experiments 
+
+## Trial temperature exposure with ACR larvae incubations 
+
+## PI curves 
+
+# Wednesday - November 15, 2023 
+
+## POC and ACR larval sampling: respirometry, RNA, metabolomics, physiology, and size 
+
+## Daily measurements
+
+## Larval care 
+
+## POC spawning 
+
+
+
+
 
