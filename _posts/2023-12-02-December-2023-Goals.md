@@ -5,7 +5,7 @@ date: '2023-10-05'
 categories: Monthly_Goals
 tags: Goals
 ---
-October goals and daily notebook entries. 
+December goals and daily notebook entries. 
 
 ## Goals  
 
@@ -40,3 +40,10 @@ October goals and daily notebook entries.
 
 ## **Daily Log**   
 
+### Monday, December 4
+
+- Read 20 scientific papers 
+- Emails/logistics for sequencing PO's
+- Mcap2021 discussion writing 
+- Reva Atea magazine edits for digital version
+- MCR AIM 
