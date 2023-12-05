@@ -17,11 +17,13 @@ December goals and daily notebook entries.
 
 ### Sample processing
 
-1. Send HI 2023 RNA for sequencing 
+1. Send HI 2023 RNA for sequencing with Jill
 2. Larval size photograph analyze for HI 2023 
 3. Larval cell density analyze with Jill for HI 2023
 4. Coding for phenoplate for HI 2023
-5. Finish cell density and PR analysis for Moorea 2023
+5. ~~Finish cell density analysis for Moorea 2023~~
+6. Finish QC'ing PR data for Moorea 2023
+7. ~~Upload Moorea 2023 collection photos~~
 
 ### Field work
 
@@ -32,13 +34,20 @@ December goals and daily notebook entries.
 
 ### Conferences
 
-1. Prepare SICB 2024 presentation
+1. Prepare SICB 2024 presentation of Mcap 2021 data
+2. ~~MCR AIM meeting~~
 
 ### Oysters 
 
 1. Start analysis of FFAR offspring data 
 
 ## **Daily Log**   
+
+### Tuesday, December 5
+
+- MCR AIM 
+- Relabeled Moorea 2023 collection images
+- Moorea 2023 GitHub notebook 
 
 ### Monday, December 4
 
@@ -47,3 +56,4 @@ December goals and daily notebook entries.
 - Mcap2021 discussion writing 
 - Reva Atea magazine edits for digital version
 - MCR AIM 
+- Hawaii 2023 cell density analysis finished
