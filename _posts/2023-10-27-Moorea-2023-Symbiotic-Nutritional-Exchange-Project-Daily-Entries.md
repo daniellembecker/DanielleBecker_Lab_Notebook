@@ -607,8 +607,6 @@ Dried skeletons were wax dipped in the morning. Ariana ran a new standard curve,
 
 Wax dipping was done as describe in [the E5 protocol](https://github.com/urol-e5/protocols/blob/master/2021-02-17-Surface_Area_Protocol.md) and the data is [on GitHub here](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/blob/main/data/physiology/surface_area/surface_area_data.csv). All samples were measured and 7 standards were used ranging from 1.18cm to 7.44cm diameter (wooden spheres). All samples dipped with 1 layer of wax. 
 
-## Reva Atea meeting 
-
 ## Planning PR rates for tomorrow and preparing tanks 
 
 Chloe prepared the water bath for the respiration measurements, cleaned chambers, prepared water bath bins, and rinsed all previous spawning equipment. 
@@ -912,7 +910,7 @@ Here is the [DNA sample metadata](https://github.com/AHuffmyer/moorea_symbiotic_
 
 Daily measurements were taken at 1800. The temperature in the blue tank was a bit high (29°C), so we increased the water flow. The adult *A. hyacinthus* colonies will be put back on the reef tomorrow. 
 
-## Spawning and larval rearing 
+## Acropora spawning and larval rearing 
 
 Hollie cleaned the banjo filters and periodically stirred and checked the larvae. Everything looks great! The larvae were ciliated and moving around a bit by the evening. 
 
@@ -920,49 +918,648 @@ No spawning tonight.
 
 # Sunday - November 12, 2023
 
+## Pocillopora spawning
+
+We saw Pocillopora spawning this morning! Details are recorded in Hollie and Pierrick's RAPID notebooks. These larvae will be used for this study for metabolic rate and isotopic incubations (described in future days). 
+
+## Sample collection 
+
+We finished sample collection for isotopes in the morning right after observing Pocillopora spawning. Pocillopora spawning and larval rearing are recorded in Hollie and Pierrick's notebooks for the RAPID project. 
+
+Once brought back to the lab, samples were clipped for DNA as done yesterday. Here is the [DNA sample metadata](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/tree/main/data/dna) and [collection metadata](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/tree/main/data/field_collection). All samples added to Box 3. We will not be using these samples in the incubations today to allow them the same recovery time as the previously collected samples. Samples were added to plugs as done yesterday.  
+
+All photos of the collections were labeled with the sample ID and stored on Google Drive. 
+ 
 ## Isotopes day 1 
 
-## Larval care 
+### Protocol and notes about using C13 
 
-## Morning spawning
+Today we will start running isotope incubations! The general steps are as follows:  
 
-## DNA clipping and frag plugs 
+- Mix seawater isotope solutions
+- Load samples into jars
+- Start incubation in water baths
+- Sample at the end of incubation (5-5.5 hrs) by taking each sample out of the jar, putting it into a labeled whirlpack, and snap freezing. 
+- Store samples at -40°C
 
+Because we are enriching seawater with C13 labeled sodium bicarbonate, it is *critical* that the isotope is contained and does not contaminate equipment, surfaces, or water that flows back to the natural environment. This is to prevent any change in the natural C13 signal in the local habitat. Here are the precautions and steps taken to prevent any C13 exposure. 
+
+- Gloves are worn at all times. Gloves are changed after handling of any equipment or samples that touched C13 water. Researchers did not touch anything with C13 contaminated gloves. 
+- Countertops or any surfaces were covered with bench paper and plastic coverings, which were immediately disposed of after the C13 experiments.  
+- Any equipment, tools, jars, or bins that touched C13 water were cleaned with ethanol and fresh water using papertowels or kimwipes. All of this equipment was contained in one plastic snap top bin after the experiment and labeled with "C13 use only" and kept in storage in the lab. This equipment will not be used for any use that contaminates other surfaces or seawater. 
+- All seawater used in the experiment was kept after the experiment in plastic screw top Nalgene bottles labeled "C13 waste seawater" and kept in a snap top plastic bin in the lab. These will be transported back to the US at a later date for proper disposal. We cannot dispose of in Moorea because all waste water has the potential to drain back into the ocean. 
+- As an extra precaution, all equipment and surfaces were thoroughly cleaned with ethanol and wipes after the experiment. 
+- All stock C13 sodium bicarbonate was contained in triple layer plastic bags and a separate container in the lab. This will be transported back to URI.  
+
+### Set up 
+
+We set up three bins as water baths each on a 15 stir plate (as used for P:R measurements). The height of the water was set up so that 120mL glass jars containing samples (described below), will be submerged partially to control temperature.  
+
+Each bin/water bath contains heaters controlled with an Apex system, a recirculuating pump, and AquaIllumination LED lights. The temperature and light was controlled as described above for P and R measurements. 
+
+Hobo TidBit loggers were launched in each water bin logging every 10 minutes, starting at 12:30 (SSN 21723477, 21723473, 21723472). 
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/Moorea2023/pic21.jpeg?raw=true) 
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/Moorea2023/pic22.jpeg?raw=true) 
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/Moorea2023/pic23.jpeg?raw=true) 
+ 
+We optimized the light exposure to be even across all samples. We did this by independently controlling light intensity above each bin. We needed lower intensity in the middle bin and higher intensity in the edge bins, for example, to make an even light field. Mean light values were 511 in bin 1 (left), 517 in bin 2 (middle), and 511 in bin 3 (right). Bin 1 lights were at 90% (all channels, no UV or moonlight), bin 2 were at 70% and bin 3 lights were at 100%. Light measurements were collected at each of the 15 locations in each bin. 
+
+Bins were randomly assigned a temperature treatment, and these were randomly re arranged for each day of incubations. Today, Bin 1 is 27C, Bin 2 is 30C, and Bin 3 is 33C. Each bin will have 15 jars with n=2 adults per species and n=3 recruits per species. Samples were chosen by randomly selecting 2 adults per species and picking a small, medium, and large recruit of each species. 
+
+Target incubation time is between 5 and 6 hours to match incubation time for PR measurements and conduct short term incubations to prevent metabolism of C13 stored in lipids as in previous literature.  
+
+### Solutions  
+
+Isotopes were made at a concentration of 4 mM enrichment of sodium bicarbonate following previous literature. For today, I made 5.474 L of solution to supply all samples needed (45 samples x 120 mL (plus a little extra). This was the recipe today:  
+
+5 x 1000 mL 0.2 µm FSW and 340 mg C13  
+1 x 474 mL 0.2 µm FSW and 161.16 mg C13  
+
+This was calculated using the desired molarity and the molar mass of the sodium bicarbonate. Here is the formula:  
+
+4 mM / 1000 x 5475 mL / 1000 x 85 g/mol = 1.8616 g total C13, which divides to 340 mg per L of FSW.   
+
+The measured pH of the solution was 8.0-8.2. The solution was not acidic and therefore there was no need for balacing with NaOH solution.  
+
+### Run 1 
+
+Starting at 14:20, a randomly selected sample from each batch was added into a 120 mL glass jar on a plug stand with a stir bar (see photos above). Ariana then filled the jar with C13 FSW following protocols listed above. The jar was then placed in the water bath bin. Bins were loaded between 14:20-14:56. 
+
+After all samples were loaded, temperature was ramped to target over a 15-20 minute period and jars reached target temperature by approximately 30 minutes. Stirring was set at a rate of 380 as done for PR measurements. Corals were at 5 cm depth. 
+
+Temperature was recorded several times throughout the run to verify treatment temperature and will also be verified using logger data. 
+
+Sample location was randomly rearranged within bin to account for any light variation at 17:00-17:30. 
+
+Sample and run metadata are on [GitHub here](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/blob/main/data/isotopes/sample_metadata_isotopes.xlsx).   
+
+### Sampling 
+
+We started sampling corals at 19:35 after 5 hours of incubation. We noticed that at 33°C, almost all Acropora samples, both adult and recruit samples, had cloudy water. No mortality or tissue loss seen. No cloudy water in other species. Perhaps this is a sign of stress?  
+
+To sample, fragments were removed with gloved hands by Ariana and placed in a whirl pack with the whirl pack opened and held by another person to avoid any C13 touching the outside of the whirl pack. The whirl pack was then closed, the time recorded, and submerged in liquid nitrogen in <30s from removal from treatment. 
+
+After all samples were collected (staggered time to have samples have equal incubation time), samples were removed from liquid nitrogen and stored in the BIOCODE -40°C. 
+
+## Acropora larval care
+
+Acropora larvae looked good today in the squaricals and the coolers. We did water changes and cleaned banjos and filters for the Acropora larvae. Given that we now have both Pocillopora and Acropora larvae, here is my plan for what I would like to do for larval measurements. This will give us larval, recruit, and adult lifestages in this experiment, woo hoo! This will also give us aposymbiotic species and symbiotic species comparisons!
+
+1. P&R and RNA: Incubate in glass vials at 27, 30, and 33°C as done for adults and measure metabolic rates in the light (photosynthesis, we expect 0 here for ACR as they have no symbionts) and dark (respiration) after 5 hours of exposure.  Additional vials will be sampled for  RNA as done for the adults. Run n=10 pools of 5 larvae per species per temperature. We will need to conduct a PI curve for Pocillopora larvae before measurements to confirm saturating irradiance, which will likely be lower for larvae.  
+
+2. Trial symbiont infections: We will put ACR larvae in plates and vials to trial symbiont infections. If successful, we could run measurements both on aposymbiotic and symbiotic larvae. We don't have a lot of time to trial this, so I'm not sure we will have enough for measurements. 
+
+3. Stable isotope metabolomics: Incubate POC larvae at 27, 30, and 33°C as done for the adults but in glass vials. Only incubate POC larvae as we do not expect ACR larvae to take up symbionts by that point. 
+
+I'll work on planning the specifics of these measurements next! 
 
 # Monday - November 13, 2023
 
 ## Morning spawning
 
+There was a little POC spawning this morning, but not as much as yesterday. For our experiments for this project we will use the 20231112 cohort when larval measurements take place. 
+
 ## Isotopes day 2 - run 2 and dark run 
+
+### Run 2
+
+We ran the second and final C13 samples for isotope metabolomics today. The protocol was followed as described yesterday. The samples were loaded from 10:18-11:01 with a 15-20 min temperature ramp for the water bath. Samples were rearranged within tank at 13:00. 
+
+Sample and run metadata are on [GitHub here](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/blob/main/data/isotopes/sample_metadata_isotopes.xlsx).   
+
+Corals were sampled from 15:30-16:45 (5-5.5 hr incubation) as described for yesterday. 
+
+### Run 3 (dark controls) 
+
+In the evening, we ran dark controls for C13 metabolomics. The purpose of the dark controls is to verify that photosynthates are enriched in C13 only in the light, when photosynthesis is occuring. 
+
+To do this, we exposed n=1 coral per group (lifestage x species) to 27°C in the dark. All other aspects of the incubation were run as described for light samples. Samples were loaded at 16:30 and sampled at 21:30. 
 
 ## Larval care
 
+Larvae were cleaned, stirred, and maintained. They are healthy and swimming! 
+
 ## Trial symbiont infections 
 
+I set up some trial symbiont infections by airbrushing 1 *Acropora hyacinthus* fragment and isolating the pellet in filtered seawater. Tissue slurry was spun at 4000 rmp for 4 minutes, rinsed in FSW, and spun again before resuspending in FSW. I added some larvae to 6 well plates with a drop of symbiont concentrate and left over night. I'll check tomorrow to see if they took up any symbionts using the fluorescent scope in the lab. Larvae placed in incubator at 26°C overnight. 
 
 # Tuesday - November 14, 2023 
 
 ## Morning spawning 
 
+More spawning today! See Pierrick and Hollie's notebooks for spawning and rearing information. 
+
 ## Larval care
+
+Larvae care continued as described for previous days. 
 
 ## Planning larval experiments 
 
-## Trial temperature exposure with ACR larvae incubations 
+We will conduct larval experiments tomorrow. I labeled tubes and vials today in preparation. We will use the 20231112 cohort of POC larvae and larvae from the squaricals for *Acropora hyacinthus*. We will do staggered start times for larvae that will be incubated and measured for P&R first. We will start the vials for RNA and metabolomics later so that we have time to do all of the measurements in the same day. 
+
+Today we incubated some ACR larvae in 20 mL glass vials at 33°C and 27°C for 5 hours to make sure the larvae survived. They all looked happy at 5 hours and even survived overnight! 
+
+We will do the following replication:  
+
+- P&R: n=10 wells per species per temperature (1 plate per species); n=10 blanks per temperature. n=60 POC larvae per well (based on HP and PH initial measurements for thresholds of larvae needed to get a P signal) and n=6 ACR per well (based on last year's data). 
+- RNA: n=6 vials per species per temperature (200 POC per vial, 100 ACR per vial). Sample POC into 200 µL DNA/RNA shield for POC and 500 µL for ACR to account for more biomass in ACR. 
+- Metabolomics: n=6 vials of POC per temperature + 3 vials POC in the dark (black glass jars) at 27°C only. 200 larvae per vial. We will pour the larvae through a cell strainer, rinse the larvae in FSW, concentrate in a cell strainer, and sample in a screw top tube into liquid nitrogen to sample. 
+- Physiology: n=3 tubes per species snap frozen. 100 ACR and 200 POC for these samples. 
+
+We will sample larvae by pouring vial of water with larvae through a cell strainer and concentrating with a glass pipette into a screw top 1.5 mL tube and sample either into RNA DNA shield or snap frozen in liquid nitrogen. All samples will be stored at -40°C. We will also collect n=3 tubes per species for larval size images and fix in 37% formalin and store at 4°C. 
+
+We will use a total of 11,000 POC larvae and ~5,500 ACR larvae. 
+
+Tubes are labeled as follows:  
+
+- M1-M21 (POC metabolomics)
+- C1-C18 (physiology)
+- E1-E6 (extra tubes for trialing extractions)
+- A1-A18 (Acropora RNA)
+- P1-P18 (Pocillopora RNA)
 
 ## PI curves 
+
+Hollie and Pierrick ran a PI curve with n=60 POC larvae per well and we found saturating irradiance to be ~50 PAR. We will run incubations at 150 PAR to meet saturating irradiance. 
+
+Data files for the PI curves [can be found here](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/tree/main/data/larvae_pi_curves). Here is the preliminary PI curve and parameter estimates.  
+
+![](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/blob/main/figures/larvae_pi_curves/nls_curves_all.png?raw=true) 
+
+![](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/blob/main/figures/larvae_pi_curves/parameters.png?raw=true) 
+
+## Daily measurements 
+
+Daily measurements were collected at 16:30. 
 
 # Wednesday - November 15, 2023 
 
 ## POC and ACR larval sampling: respirometry, RNA, metabolomics, physiology, and size 
 
+Today we ran our larval experiments! All larval work will occur today so that there are not developmental effects. POC larvae are 3-4 days post fertilization. These larvae develop into swimming planulae within about 6-9 hours post fertilization! They develop very quickly. All notes on larval rearing and development are in Hollie's and Pierrick's notebooks (NSF RAPID project).  
+
+### Loading vials at density 
+
+To load larvae into vials for incubations and measurements, we collected a concentrated stock of larvae of each species by scooping into squarical containers (n=12 containers for ACR and n=1 container for POC) with mesh scoops (35 µm for POC and 253 µm for ACR) and concentrating with a transfer pipette into 50 mL falcon tubes (3-4 per species). We then took 6 subsampled counts in a known volume (0.5-1 mL) and counted the number of larvae in each subsample. This was then used to calculate the density of the full stock falcon tube. 
+
+The desired volume to obtain the desired number of larvae was calculated and this volume was added into each vial. 
+
+Vials twere then filled with 0.2 µm filtered seawater with the exception of stable isotope metabolomics incubation vials, which were filled with 4mM C13 sodium bicarbonate solution as described above for the adult/recruit experiments. 
+
+Here are the samples we ran today and the full metadata:    
+
+| tube_id | species     | temp | type       | number_larvae | preservation  | storage_location | freezer                         |
+|---------|-------------|------|------------|---------------|---------------|------------------|---------------------------------|
+| M1      | Pocillopora | 27   | C13        | 200           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| M2      | Pocillopora | 27   | C13        | 200           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| M3      | Pocillopora | 27   | C13        | 200           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| M4      | Pocillopora | 27   | C13        | 200           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| M5      | Pocillopora | 27   | C13        | 200           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| M6      | Pocillopora | 27   | C13        | 200           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| M7      | Pocillopora | 30   | C13        | 200           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| M8      | Pocillopora | 30   | C13        | 200           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| M9      | Pocillopora | 30   | C13        | 200           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| M10     | Pocillopora | 30   | C13        | 200           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| M11     | Pocillopora | 30   | C13        | 200           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| M12     | Pocillopora | 30   | C13        | 200           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| M13     | Pocillopora | 33   | C13        | 200           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| M14     | Pocillopora | 33   | C13        | 200           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| M15     | Pocillopora | 33   | C13        | 200           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| M16     | Pocillopora | 33   | C13        | 200           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| M17     | Pocillopora | 33   | C13        | 200           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| M18     | Pocillopora | 33   | C13        | 200           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| M19     | Pocillopora | 27   | C13 Dark   | 200           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| M20     | Pocillopora | 27   | C13 Dark   | 200           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| M21     | Pocillopora | 27   | C13 Dark   | 200           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| P1      | Pocillopora | 27   | RNA        | 200           | 250 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| P2      | Pocillopora | 27   | RNA        | 200           | 250 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| P3      | Pocillopora | 27   | RNA        | 200           | 250 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| P4      | Pocillopora | 27   | RNA        | 200           | 250 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| P5      | Pocillopora | 27   | RNA        | 200           | 250 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| P6      | Pocillopora | 27   | RNA        | 200           | 250 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| P7      | Pocillopora | 30   | RNA        | 200           | 250 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| P8      | Pocillopora | 30   | RNA        | 200           | 250 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| P9      | Pocillopora | 30   | RNA        | 200           | 250 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| P10     | Pocillopora | 30   | RNA        | 200           | 250 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| P11     | Pocillopora | 30   | RNA        | 200           | 250 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| P12     | Pocillopora | 30   | RNA        | 200           | 250 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| P13     | Pocillopora | 33   | RNA        | 200           | 250 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| P14     | Pocillopora | 33   | RNA        | 200           | 250 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| P15     | Pocillopora | 33   | RNA        | 200           | 250 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| P16     | Pocillopora | 33   | RNA        | 200           | 250 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| P17     | Pocillopora | 33   | RNA        | 200           | 250 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| P18     | Pocillopora | 33   | RNA        | 200           | 250 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| A1      | Acropora    | 27   | RNA        | 100           | 500 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| A2      | Acropora    | 27   | RNA        | 100           | 500 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| A3      | Acropora    | 27   | RNA        | 100           | 500 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| A4      | Acropora    | 27   | RNA        | 100           | 500 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| A5      | Acropora    | 27   | RNA        | 100           | 500 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| A6      | Acropora    | 27   | RNA        | 100           | 500 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| A7      | Acropora    | 30   | RNA        | 100           | 500 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| A8      | Acropora    | 30   | RNA        | 100           | 500 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| A9      | Acropora    | 30   | RNA        | 100           | 500 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| A10     | Acropora    | 30   | RNA        | 100           | 500 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| A11     | Acropora    | 30   | RNA        | 100           | 500 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| A12     | Acropora    | 30   | RNA        | 100           | 500 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| A13     | Acropora    | 33   | RNA        | 100           | 500 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| A14     | Acropora    | 33   | RNA        | 100           | 500 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| A15     | Acropora    | 33   | RNA        | 100           | 500 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| A16     | Acropora    | 33   | RNA        | 100           | 500 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| A17     | Acropora    | 33   | RNA        | 100           | 500 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| A18     | Acropora    | 33   | RNA        | 100           | 500 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| C1      | Acropora    | 27   | Physiology | 100           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| C2      | Acropora    | 27   | Physiology | 100           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| C3      | Acropora    | 27   | Physiology | 100           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| C4      | Acropora    | 30   | Physiology | 100           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| C5      | Acropora    | 30   | Physiology | 100           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| C6      | Acropora    | 30   | Physiology | 100           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| C7      | Acropora    | 33   | Physiology | 100           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| C8      | Acropora    | 33   | Physiology | 100           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| C9      | Acropora    | 33   | Physiology | 100           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| C10     | Pocillopora | 27   | Physiology | 200           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| C11     | Pocillopora | 27   | Physiology | 200           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| C12     | Pocillopora | 27   | Physiology | 200           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| C13     | Pocillopora | 30   | Physiology | 200           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| C14     | Pocillopora | 30   | Physiology | 200           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| C15     | Pocillopora | 30   | Physiology | 200           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| C16     | Pocillopora | 33   | Physiology | 200           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| C17     | Pocillopora | 33   | Physiology | 200           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| C18     | Pocillopora | 33   | Physiology | 200           | Snap frozen   | Box 6            | Molecular -40C freezer, shelf 4 |
+| E1      | Acropora    | 27   | Extra      | 100           | 500 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| E2      | Acropora    | 27   | Extra      | 100           | 500 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| E3      | Acropora    | 27   | Extra      | 100           | 500 uL shield | Box 4            | Molecular -40C freezer, shelf 4 |
+| E4      | Pocillopora | 27   | Extra      | 200           | 250 uL shield | Box 6            | Molecular -40C freezer, shelf 4 |
+| E5      | Pocillopora | 27   | Extra      | 200           | 250 uL shield | Box 6            | Molecular -40C freezer, shelf 4 |
+| E6      | Pocillopora | 27   | Extra      | 200           | 250 uL shield | Box 6            | Molecular -40C freezer, shelf 4 |
+
+This metadata file is available on [GitHub here](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/blob/main/data/larvae_incubations/larvae_incubations_metadata.xlsx).  
+
+### Incubations 
+
+Larvae were added using density calculations described above to 20 mL glass scintillation vials with white caps partially (~90%) submerged in water baths. Dark isotope samples were loaded in 120 mL black glass jars. Vials were loaded from 13:45-16:00. 
+
+Larvae that were incubated for P&R measurements were loaded into 3 replicate falcon tubes per temperature. Larvae will be pulled from these falcon tubes for SDR measurements. These vials were loaded first from 08:00-10:00. 
+
+Temperatures are recorded using loggers as done for the isotope measurements and manually measured using a thermometer throughout the incubations. Logger 21723473 was in Bin 1 at 30°C; Logger 21723472 was in Bin 2 at 33°C; Logger 21723477 was in Bin 3 at 27°C.  
+
+To achieve an even light field of 150 PAR as indicated by our PI curves, lights were set at 25% for Bin 1, 20% for Bin 2, and 25% for Bin 3 to achieve 150-160 PAR in the center of each bin. Once throughout the vials were rearranged within each bin. 
+
+Notebook images with manual temperature measurements for all experiments are on [Google Drive](https://drive.google.com/drive/u/2/folders/1mSyysOjFE0tYiLL5EdxFeVNkcZdwqXNa).  
+
+Here is an image of our larval incubation set up from today.  
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/Moorea2023/pic24.jpeg?raw=true)
+
+### Respirometry 
+
+The first SDR run was conducted from 15:57-16:35. This was later than originally planned, but was the earliest we could conduct the measurements. We conducted a 100% air saturated seawater calibration before this run using 0.2µm seawater that was bubbled for 30 minutes before calibration. Sensors were reading a bit high before the calibration (~120%) and were reading 100% afterwards. 
+
+SDR Run 1 was run at 27°C with larvae incubated at 30°C. We will use 6 larvae per well for ACR and 60 larvae per well for POC. POC larvae are counted under a fluorescent scope/blue light into small pools of water that are then added into the wells of the glass plate. 
+
+Subsequently, we conducted Run #2 at 27°C (18:05-18:42) and Run #3 at 33°C (21:08-21:50). 
+
+SDR runs followed protocols established in the [Putnam Lab](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resources/Equipment_Protocols/Respirometry_Protocol/SDR-Respirometry-Protocol.md) and using protocols developed for the [Hawaii 2023 project](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Hawaii-2023-Coral-Spawning-and-Field-Expedition-Daily-Entry/). We ran measurements using a pair of SDR readers (PreSens) and glass plates with oxygen dot sensors (80 µL; Loligo). 
+
+Briefly, we followed the following proceedure for each run: 
+
+- n=10 larvae were loaded into a plate with n=10 FSW blanks. We loaded ACR in one plate and POC in another. Larvae were loaded and the well was filled with 0.2 µm FSW and sealed with glass cover slips. 
+- Plates were placed on SDR readers in benchtop incubators at the treatment temperature. We first ran a light exposure period for 15-20 minutes at 18% AI 16HD LED light intensity (150 PAR) for photosynthesis. 
+- We then turned the lights off to measure respiration for 12-15 minutes (light enhanced respiration). 
+
+Note that becuase ACR does not have symbionts, we expect that there will be net oxygen depletion in ACR during the light period. We will extract oxygen evolution rates for ACR respiration from the first light period. This is because the well will reach oxygen depletion by the time that we enter the dark period, which will result in lower than actual respiration rates.  
+
+Here is the run and sample metadata for SDR runs #1-3:  
+
+| Date     | Run | Plate | SDR | Temperature | Light_Level | Light_Value | TimeStart | TimeStop | TimeInterval | IntervalStart | IntervalStop | Notes |
+|----------|-----|-------|-----|-------------|-------------|-------------|-----------|----------|--------------|---------------|--------------|-------|
+| 20231115 | 1   | 1     | 641 | 30          | 1           | 150         | 15:57     | 16:18    | 0:21         | 0             | 21           |       |
+| 20231115 | 1   | 1     | 641 | 30          | 2           | 0           | 16:20     | 16:35    | 0:15         | 23            | 38           |       |
+| 20231115 | 1   | 2     | 710 | 30          | 1           | 150         | 15:57     | 16:18    | 0:21         | 0             | 21           |       |
+| 20231115 | 1   | 2     | 710 | 30          | 2           | 0           | 16:20     | 16:35    | 0:15         | 23            | 38           |       |
+| 20231115 | 2   | 3     | 641 | 27          | 1           | 150         | 18:05     | 18:25    | 0:20         | 0             | 20           |       |
+| 20231115 | 2   | 3     | 641 | 27          | 2           | 0           | 18:27     | 18:42    | 0:15         | 22            | 37           |       |
+| 20231115 | 2   | 4     | 710 | 27          | 1           | 150         | 18:05     | 18:25    | 0:20         | 0             | 20           |       |
+| 20231115 | 2   | 4     | 710 | 27          | 2           | 0           | 18:27     | 18:42    | 0:15         | 22            | 37           |       |
+| 20231115 | 3   | 5     | 641 | 33          | 1           | 150         | 21:08     | 21:28    | 0:20         | 0             | 20           |       |
+| 20231115 | 3   | 5     | 641 | 33          | 2           | 0           | 21:30     | 21:50    | 0:20         | 22            | 42           |       |
+| 20231115 | 3   | 6     | 710 | 33          | 1           | 150         | 21:08     | 21:28    | 0:20         | 0             | 20           |       |
+| 20231115 | 3   | 6     | 710 | 33          | 2           | 0           | 21:30     | 21:50    | 0:20         | 22            | 42           |       |
+
+
+| Date     | Sample.ID | Chamber.ID | SDR | Temperature | Species     | Type   | Salinity | Plate | Run | Volume  | Org.Number | Notes |
+|----------|-----------|------------|-----|-------------|-------------|--------|----------|-------|-----|---------|------------|-------|
+| 20231115 | 1         | A1         | 641 | 30          | Pocillopora | Sample | 36       | 1     | 1   | 0.00008 | 60         |       |
+| 20231115 | 7         | B1         | 641 | 30          | Pocillopora | Sample | 36       | 1     | 1   | 0.00008 | 60         |       |
+| 20231115 | 13        | C1         | 641 | 30          | NA          | Blank  | 36       | 1     | 1   | 0.00008 | NA         |       |
+| 20231115 | 19        | D1         | 641 | 30          | NA          | Blank  | 36       | 1     | 1   | 0.00008 | NA         |       |
+| 20231115 | 2         | A2         | 641 | 30          | NA          | Blank  | 36       | 1     | 1   | 0.00008 | NA         |       |
+| 20231115 | 8         | B2         | 641 | 30          | NA          | Blank  | 36       | 1     | 1   | 0.00008 | NA         |       |
+| 20231115 | 14        | C2         | 641 | 30          | NA          | Blank  | 36       | 1     | 1   | 0.00008 | NA         |       |
+| 20231115 | 20        | D2         | 641 | 30          | Pocillopora | Sample | 36       | 1     | 1   | 0.00008 | 60         |       |
+| 20231115 | 3         | A3         | 641 | 30          | NA          | Blank  | 36       | 1     | 1   | 0.00008 | NA         |       |
+| 20231115 | 9         | B3         | 641 | 30          | Pocillopora | Sample | 36       | 1     | 1   | 0.00008 | 60         |       |
+| 20231115 | 15        | C3         | 641 | 30          | Pocillopora | Sample | 36       | 1     | 1   | 0.00008 | 60         |       |
+| 20231115 | 21        | D3         | 641 | 30          | NA          | Blank  | 36       | 1     | 1   | 0.00008 | NA         |       |
+| 20231115 | 4         | A4         | 641 | 30          | NA          | Blank  | 36       | 1     | 1   | 0.00008 | NA         |       |
+| 20231115 | 10        | B4         | 641 | 30          | Pocillopora | Sample | 36       | 1     | 1   | 0.00008 | 60         |       |
+| 20231115 | 16        | C4         | 641 | 30          | Pocillopora | Sample | 36       | 1     | 1   | 0.00008 | 60         |       |
+| 20231115 | 22        | D4         | 641 | 30          | NA          | Blank  | 36       | 1     | 1   | 0.00008 | NA         |       |
+| 20231115 | 5         | A5         | 641 | 30          | Pocillopora | Sample | 36       | 1     | 1   | 0.00008 | 60         |       |
+| 20231115 | 11        | B5         | 641 | 30          | NA          | Blank  | 36       | 1     | 1   | 0.00008 | NA         |       |
+| 20231115 | 17        | C5         | 641 | 30          | NA          | Blank  | 36       | 1     | 1   | 0.00008 | NA         |       |
+| 20231115 | 23        | D5         | 641 | 30          | NA          | Blank  | 36       | 1     | 1   | 0.00008 | NA         |       |
+| 20231115 | 6         | A6         | 641 | 30          | NA          | Blank  | 36       | 1     | 1   | 0.00008 | NA         |       |
+| 20231115 | 12        | B6         | 641 | 30          | Pocillopora | Sample | 36       | 1     | 1   | 0.00008 | 60         |       |
+| 20231115 | 18        | C6         | 641 | 30          | Pocillopora | Sample | 36       | 1     | 1   | 0.00008 | 60         |       |
+| 20231115 | 24        | D6         | 641 | 30          | NA          | Blank  | 36       | 1     | 1   | 0.00008 | NA         |       |
+| 20231115 | 1         | A1         | 740 | 30          | Acropora    | Sample | 36       | 2     | 1   | 0.00008 | 6          |       |
+| 20231115 | 7         | B1         | 740 | 30          | NA          | Blank  | 36       | 2     | 1   | 0.00008 | NA         |       |
+| 20231115 | 13        | C1         | 740 | 30          | Acropora    | Sample | 36       | 2     | 1   | 0.00008 | 6          |       |
+| 20231115 | 19        | D1         | 740 | 30          | NA          | Blank  | 36       | 2     | 1   | 0.00008 | NA         |       |
+| 20231115 | 2         | A2         | 740 | 30          | NA          | Blank  | 36       | 2     | 1   | 0.00008 | NA         |       |
+| 20231115 | 8         | B2         | 740 | 30          | Acropora    | Sample | 36       | 2     | 1   | 0.00008 | 6          |       |
+| 20231115 | 14        | C2         | 740 | 30          | NA          | Blank  | 36       | 2     | 1   | 0.00008 | NA         |       |
+| 20231115 | 20        | D2         | 740 | 30          | NA          | Blank  | 36       | 2     | 1   | 0.00008 | NA         |       |
+| 20231115 | 3         | A3         | 740 | 30          | NA          | Blank  | 36       | 2     | 1   | 0.00008 | NA         |       |
+| 20231115 | 9         | B3         | 740 | 30          | Acropora    | Sample | 36       | 2     | 1   | 0.00008 | 6          |       |
+| 20231115 | 15        | C3         | 740 | 30          | NA          | Blank  | 36       | 2     | 1   | 0.00008 | NA         |       |
+| 20231115 | 21        | D3         | 740 | 30          | Acropora    | Sample | 36       | 2     | 1   | 0.00008 | 6          |       |
+| 20231115 | 4         | A4         | 740 | 30          | Acropora    | Sample | 36       | 2     | 1   | 0.00008 | 6          |       |
+| 20231115 | 10        | B4         | 740 | 30          | NA          | Blank  | 36       | 2     | 1   | 0.00008 | NA         |       |
+| 20231115 | 16        | C4         | 740 | 30          | NA          | Blank  | 36       | 2     | 1   | 0.00008 | NA         |       |
+| 20231115 | 22        | D4         | 740 | 30          | NA          | Blank  | 36       | 2     | 1   | 0.00008 | NA         |       |
+| 20231115 | 5         | A5         | 740 | 30          | NA          | Blank  | 36       | 2     | 1   | 0.00008 | NA         |       |
+| 20231115 | 11        | B5         | 740 | 30          | NA          | Blank  | 36       | 2     | 1   | 0.00008 | NA         |       |
+| 20231115 | 17        | C5         | 740 | 30          | Acropora    | Sample | 36       | 2     | 1   | 0.00008 | 6          |       |
+| 20231115 | 23        | D5         | 740 | 30          | Acropora    | Sample | 36       | 2     | 1   | 0.00008 | 6          |       |
+| 20231115 | 6         | A6         | 740 | 30          | Acropora    | Sample | 36       | 2     | 1   | 0.00008 | 6          |       |
+| 20231115 | 12        | B6         | 740 | 30          | Acropora    | Sample | 36       | 2     | 1   | 0.00008 | 6          |       |
+| 20231115 | 18        | C6         | 740 | 30          | NA          | Blank  | 36       | 2     | 1   | 0.00008 | NA         |       |
+| 20231115 | 24        | D6         | 740 | 30          | NA          | Blank  | 36       | 2     | 1   | 0.00008 | NA         |       |
+| 20231115 | 1         | A1         | 641 | 27          | Acropora    | Sample | 36       | 3     | 2   | 0.00008 | 6          |       |
+| 20231115 | 7         | B1         | 641 | 27          | Acropora    | Sample | 36       | 3     | 2   | 0.00008 | 6          |       |
+| 20231115 | 13        | C1         | 641 | 27          | Acropora    | Sample | 36       | 3     | 2   | 0.00008 | 6          |       |
+| 20231115 | 19        | D1         | 641 | 27          | NA          | Blank  | 36       | 3     | 2   | 0.00008 | NA         |       |
+| 20231115 | 2         | A2         | 641 | 27          | NA          | Blank  | 36       | 3     | 2   | 0.00008 | NA         |       |
+| 20231115 | 8         | B2         | 641 | 27          | Acropora    | Sample | 36       | 3     | 2   | 0.00008 | 6          |       |
+| 20231115 | 14        | C2         | 641 | 27          | NA          | Blank  | 36       | 3     | 2   | 0.00008 | NA         |       |
+| 20231115 | 20        | D2         | 641 | 27          | NA          | Blank  | 36       | 3     | 2   | 0.00008 | NA         |       |
+| 20231115 | 3         | A3         | 641 | 27          | NA          | Blank  | 36       | 3     | 2   | 0.00008 | NA         |       |
+| 20231115 | 9         | B3         | 641 | 27          | NA          | Blank  | 36       | 3     | 2   | 0.00008 | NA         |       |
+| 20231115 | 15        | C3         | 641 | 27          | NA          | Blank  | 36       | 3     | 2   | 0.00008 | NA         |       |
+| 20231115 | 21        | D3         | 641 | 27          | Acropora    | Sample | 36       | 3     | 2   | 0.00008 | 6          |       |
+| 20231115 | 4         | A4         | 641 | 27          | Acropora    | Sample | 36       | 3     | 2   | 0.00008 | 6          |       |
+| 20231115 | 10        | B4         | 641 | 27          | Acropora    | Sample | 36       | 3     | 2   | 0.00008 | 6          |       |
+| 20231115 | 16        | C4         | 641 | 27          | NA          | Blank  | 36       | 3     | 2   | 0.00008 | NA         |       |
+| 20231115 | 22        | D4         | 641 | 27          | Acropora    | Sample | 36       | 3     | 2   | 0.00008 | 6          |       |
+| 20231115 | 5         | A5         | 641 | 27          | NA          | Blank  | 36       | 3     | 2   | 0.00008 | NA         |       |
+| 20231115 | 11        | B5         | 641 | 27          | NA          | Blank  | 36       | 3     | 2   | 0.00008 | NA         |       |
+| 20231115 | 17        | C5         | 641 | 27          | Acropora    | Sample | 36       | 3     | 2   | 0.00008 | 6          |       |
+| 20231115 | 23        | D5         | 641 | 27          | NA          | Blank  | 36       | 3     | 2   | 0.00008 | NA         |       |
+| 20231115 | 6         | A6         | 641 | 27          | NA          | Blank  | 36       | 3     | 2   | 0.00008 | NA         |       |
+| 20231115 | 12        | B6         | 641 | 27          | Acropora    | Sample | 36       | 3     | 2   | 0.00008 | 6          |       |
+| 20231115 | 18        | C6         | 641 | 27          | NA          | Blank  | 36       | 3     | 2   | 0.00008 | NA         |       |
+| 20231115 | 24        | D6         | 641 | 27          | NA          | Blank  | 36       | 3     | 2   | 0.00008 | NA         |       |
+| 20231115 | 1         | A1         | 740 | 27          | NA          | Blank  | 36       | 4     | 2   | 0.00008 | NA         |       |
+| 20231115 | 7         | B1         | 740 | 27          | NA          | Blank  | 36       | 4     | 2   | 0.00008 | NA         |       |
+| 20231115 | 13        | C1         | 740 | 27          | Pocillopora | Sample | 36       | 4     | 2   | 0.00008 | 60         |       |
+| 20231115 | 19        | D1         | 740 | 27          | NA          | Blank  | 36       | 4     | 2   | 0.00008 | NA         |       |
+| 20231115 | 2         | A2         | 740 | 27          | Pocillopora | Sample | 36       | 4     | 2   | 0.00008 | 60         |       |
+| 20231115 | 8         | B2         | 740 | 27          | NA          | Blank  | 36       | 4     | 2   | 0.00008 | NA         |       |
+| 20231115 | 14        | C2         | 740 | 27          | Pocillopora | Sample | 36       | 4     | 2   | 0.00008 | 60         |       |
+| 20231115 | 20        | D2         | 740 | 27          | NA          | Blank  | 36       | 4     | 2   | 0.00008 | NA         |       |
+| 20231115 | 3         | A3         | 740 | 27          | NA          | Blank  | 36       | 4     | 2   | 0.00008 | NA         |       |
+| 20231115 | 9         | B3         | 740 | 27          | Pocillopora | Sample | 36       | 4     | 2   | 0.00008 | 60         |       |
+| 20231115 | 15        | C3         | 740 | 27          | NA          | Blank  | 36       | 4     | 2   | 0.00008 | NA         |       |
+| 20231115 | 21        | D3         | 740 | 27          | Pocillopora | Sample | 36       | 4     | 2   | 0.00008 | 60         |       |
+| 20231115 | 4         | A4         | 740 | 27          | Pocillopora | Sample | 36       | 4     | 2   | 0.00008 | 60         |       |
+| 20231115 | 10        | B4         | 740 | 27          | NA          | Blank  | 36       | 4     | 2   | 0.00008 | NA         |       |
+| 20231115 | 16        | C4         | 740 | 27          | Pocillopora | Sample | 36       | 4     | 2   | 0.00008 | 60         |       |
+| 20231115 | 22        | D4         | 740 | 27          | NA          | Blank  | 36       | 4     | 2   | 0.00008 | NA         |       |
+| 20231115 | 5         | A5         | 740 | 27          | Pocillopora | Sample | 36       | 4     | 2   | 0.00008 | 60         |       |
+| 20231115 | 11        | B5         | 740 | 27          | NA          | Blank  | 36       | 4     | 2   | 0.00008 | NA         |       |
+| 20231115 | 17        | C5         | 740 | 27          | NA          | Blank  | 36       | 4     | 2   | 0.00008 | NA         |       |
+| 20231115 | 23        | D5         | 740 | 27          | NA          | Blank  | 36       | 4     | 2   | 0.00008 | NA         |       |
+| 20231115 | 6         | A6         | 740 | 27          | NA          | Blank  | 36       | 4     | 2   | 0.00008 | NA         |       |
+| 20231115 | 12        | B6         | 740 | 27          | Pocillopora | Sample | 36       | 4     | 2   | 0.00008 | 60         |       |
+| 20231115 | 18        | C6         | 740 | 27          | NA          | Blank  | 36       | 4     | 2   | 0.00008 | NA         |       |
+| 20231115 | 24        | D6         | 740 | 27          | Pocillopora | Sample | 36       | 4     | 2   | 0.00008 | 60         |       |
+| 20231115 | 1         | A1         | 641 | 33          | NA          | Blank  | 36       | 5     | 3   | 0.00008 | NA         |       |
+| 20231115 | 7         | B1         | 641 | 33          | Acropora    | Sample | 36       | 5     | 3   | 0.00008 | 6          |       |
+| 20231115 | 13        | C1         | 641 | 33          | NA          | Blank  | 36       | 5     | 3   | 0.00008 | NA         |       |
+| 20231115 | 19        | D1         | 641 | 33          | Acropora    | Sample | 36       | 5     | 3   | 0.00008 | 6          |       |
+| 20231115 | 2         | A2         | 641 | 33          | Acropora    | Sample | 36       | 5     | 3   | 0.00008 | 6          |       |
+| 20231115 | 8         | B2         | 641 | 33          | NA          | Blank  | 36       | 5     | 3   | 0.00008 | NA         |       |
+| 20231115 | 14        | C2         | 641 | 33          | Acropora    | Sample | 36       | 5     | 3   | 0.00008 | 6          |       |
+| 20231115 | 20        | D2         | 641 | 33          | Acropora    | Sample | 36       | 5     | 3   | 0.00008 | 6          |       |
+| 20231115 | 3         | A3         | 641 | 33          | Acropora    | Sample | 36       | 5     | 3   | 0.00008 | 6          |       |
+| 20231115 | 9         | B3         | 641 | 33          | NA          | Blank  | 36       | 5     | 3   | 0.00008 | NA         |       |
+| 20231115 | 15        | C3         | 641 | 33          | NA          | Blank  | 36       | 5     | 3   | 0.00008 | NA         |       |
+| 20231115 | 21        | D3         | 641 | 33          | NA          | Blank  | 36       | 5     | 3   | 0.00008 | NA         |       |
+| 20231115 | 4         | A4         | 641 | 33          | NA          | Blank  | 36       | 5     | 3   | 0.00008 | NA         |       |
+| 20231115 | 10        | B4         | 641 | 33          | Acropora    | Sample | 36       | 5     | 3   | 0.00008 | 6          |       |
+| 20231115 | 16        | C4         | 641 | 33          | NA          | Blank  | 36       | 5     | 3   | 0.00008 | NA         |       |
+| 20231115 | 22        | D4         | 641 | 33          | Acropora    | Sample | 36       | 5     | 3   | 0.00008 | 6          |       |
+| 20231115 | 5         | A5         | 641 | 33          | NA          | Blank  | 36       | 5     | 3   | 0.00008 | NA         |       |
+| 20231115 | 11        | B5         | 641 | 33          | NA          | Blank  | 36       | 5     | 3   | 0.00008 | NA         |       |
+| 20231115 | 17        | C5         | 641 | 33          | NA          | Blank  | 36       | 5     | 3   | 0.00008 | NA         |       |
+| 20231115 | 23        | D5         | 641 | 33          | NA          | Blank  | 36       | 5     | 3   | 0.00008 | NA         |       |
+| 20231115 | 6         | A6         | 641 | 33          | NA          | Blank  | 36       | 5     | 3   | 0.00008 | NA         |       |
+| 20231115 | 12        | B6         | 641 | 33          | Acropora    | Sample | 36       | 5     | 3   | 0.00008 | 6          |       |
+| 20231115 | 18        | C6         | 641 | 33          | NA          | Blank  | 36       | 5     | 3   | 0.00008 | NA         |       |
+| 20231115 | 24        | D6         | 641 | 33          | Acropora    | Sample | 36       | 5     | 3   | 0.00008 | 6          |       |
+| 20231115 | 1         | A1         | 740 | 33          | Pocillopora | Sample | 36       | 6     | 3   | 0.00008 | 60         |       |
+| 20231115 | 7         | B1         | 740 | 33          | NA          | Blank  | 36       | 6     | 3   | 0.00008 | NA         |       |
+| 20231115 | 13        | C1         | 740 | 33          | Pocillopora | Sample | 36       | 6     | 3   | 0.00008 | 60         |       |
+| 20231115 | 19        | D1         | 740 | 33          | NA          | Blank  | 36       | 6     | 3   | 0.00008 | NA         |       |
+| 20231115 | 2         | A2         | 740 | 33          | NA          | Blank  | 36       | 6     | 3   | 0.00008 | NA         |       |
+| 20231115 | 8         | B2         | 740 | 33          | Pocillopora | Sample | 36       | 6     | 3   | 0.00008 | 60         |       |
+| 20231115 | 14        | C2         | 740 | 33          | NA          | Blank  | 36       | 6     | 3   | 0.00008 | NA         |       |
+| 20231115 | 20        | D2         | 740 | 33          | Pocillopora | Sample | 36       | 6     | 3   | 0.00008 | 60         |       |
+| 20231115 | 3         | A3         | 740 | 33          | Pocillopora | Sample | 36       | 6     | 3   | 0.00008 | 60         |       |
+| 20231115 | 9         | B3         | 740 | 33          | Pocillopora | Sample | 36       | 6     | 3   | 0.00008 | 60         |       |
+| 20231115 | 15        | C3         | 740 | 33          | NA          | Blank  | 36       | 6     | 3   | 0.00008 | NA         |       |
+| 20231115 | 21        | D3         | 740 | 33          | Pocillopora | Sample | 36       | 6     | 3   | 0.00008 | 60         |       |
+| 20231115 | 4         | A4         | 740 | 33          | NA          | Blank  | 36       | 6     | 3   | 0.00008 | NA         |       |
+| 20231115 | 10        | B4         | 740 | 33          | NA          | Blank  | 36       | 6     | 3   | 0.00008 | NA         |       |
+| 20231115 | 16        | C4         | 740 | 33          | Pocillopora | Sample | 36       | 6     | 3   | 0.00008 | 60         |       |
+| 20231115 | 22        | D4         | 740 | 33          | NA          | Blank  | 36       | 6     | 3   | 0.00008 | NA         |       |
+| 20231115 | 5         | A5         | 740 | 33          | NA          | Blank  | 36       | 6     | 3   | 0.00008 | NA         |       |
+| 20231115 | 11        | B5         | 740 | 33          | Pocillopora | Sample | 36       | 6     | 3   | 0.00008 | 60         |       |
+| 20231115 | 17        | C5         | 740 | 33          | NA          | Blank  | 36       | 6     | 3   | 0.00008 | NA         |       |
+| 20231115 | 23        | D5         | 740 | 33          | NA          | Blank  | 36       | 6     | 3   | 0.00008 | NA         |       |
+| 20231115 | 6         | A6         | 740 | 33          | NA          | Blank  | 36       | 6     | 3   | 0.00008 | NA         |       |
+| 20231115 | 12        | B6         | 740 | 33          | NA          | Blank  | 36       | 6     | 3   | 0.00008 | NA         |       |
+| 20231115 | 18        | C6         | 740 | 33          | Pocillopora | Sample | 36       | 6     | 3   | 0.00008 | 60         |       |
+| 20231115 | 24        | D6         | 740 | 33          | NA          | Blank  | 36       | 6     | 3   | 0.00008 | NA         |       |
+
+All data files can be found on [GitHub here](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/tree/main/data/larvae_sdr).   
+
+### RNA, metabolomics, physiology 
+
+Larvae were loaded into vials for temperature treatment incubations and were sampled for RNA, stable isotope metabolomics, and physiology, as done for the adult/recruit experiments. We loaded larvae into vials (see replication and number of larvae above in the metadata table) as described above. 
+
+Metabolomics samples were loaded in solutions as described for adult/recruit samples. Metabolomics dark samples were dark adapted starting at 11:00am prior to incubations to prevent labeling of residual photosynthetic activity. 
+
+Vials were loaded between 13:30-16:00. 
+
+To sample, larvae were poured through a cell strainer held in 6-well plate wells with 0.2 µm FSW. Larvae were then gathered with as little water as possible using a glass pipette and transfered to respective labeled 1.5 mL tubes. Samples for RNA were preserved in RNA DNA shield (500 µL for ACR and 250 µL for POC). We used a different pipette and cell strainer for each treatment/species group. 
+
+Metabolomics samples were sampled in the same way using the isotope precautions and protocols described above. A dedicated set of pipettes, plates, and cell strainers were used for isotope samples. Larvae were snap frozen in liquid nitrogen. 
+
+Physiology samples were also sampled in this way and snap frozen. Sampling occured from 19:07 to 20:48 and staggered to obtain approx. 5 hour incubation times.
+
+All samples were stored in the Molecular Lab -40°C freezer.  
+
+### Larval size 
+
+We also collected tubes of 50-100 larvae of each species were collected after SDR runs and fixed in 37% formalin in Box 5 and stored at 4°C for later imaging. 
+
+Here are the samples we collected for larval size:  
+
+| tube_id       | species     | temp | type | number_larvae | preservation        | storage_location | freezer               |
+|---------------|-------------|------|------|---------------|---------------------|------------------|-----------------------|
+| F1            | Acropora    | 27   | Size | 50            | 200 uL 37% formalin | Box 5            | Molecular   fridge 4C |
+| F2            | Acropora    | 27   | Size | 50            | 200 uL 37% formalin | Box 5            | Molecular fridge 4C   |
+| F3            | Pocillopora | 27   | Size | 50            | 200 uL 37% formalin | Box 5            | Molecular fridge 4C   |
+| F4            | Pocillopora | 27   | Size | 50            | 200 uL 37% formalin | Box 5            | Molecular fridge 4C   |
+| Poc 27 fixed  | Pocillopora | 27   | Size | 50            | 200 uL 37% formalin | Box 5            | Molecular fridge 4C   |
+| Poc 30 fixed  | Pocillopora | 30   | Size | 50            | 200 uL 37% formalin | Box 5            | Molecular fridge 4C   |
+| Poc 33 fixed  | Pocillopora | 33   | Size | 50            | 200 uL 37% formalin | Box 5            | Molecular fridge 4C   |
+
+Box 4 contains A, P, and E tubes; Box 5 contains fixed F tubes; Box 6 contains M, C tubes.  
+
 ## Daily measurements
 
-## Larval care 
+Daily measurements were collected at 08:30. 
 
-## POC spawning 
+# Thursday - November 16, 2023 
+
+## Reva Atea 
+
+Ariana worked on the [Reva Atea](https://www.reva-atea.com/) magazine today. 
+
+## Larval rearing 
+
+Today Chloe cleaned water tables, took 10 extra tube samples of ACR into RNA DNA shield (Ex 1-10; 500 µL shield) and cleaned the adult/recruit tank. Chloe also cleaned all larval containers and set up some mesh bins for trial settlement! Larvae were added into mesh bottom bins with upside down aragonite plugs or pieces of coral rubble. We will monitor the larvae to see if we get settlement. 
+
+The temperature logger in the adult/recruit tank was moved at 15:16 to the new clean tank. We will use the remaining extra adult/recruit samples for a few more control/test runs. 
+
+## Metabolomics control runs 
+
+We ran one metabolomics run today to run C12 and C13 controls and take some test samples of larvae for MALDI imaging. Here are the samples we ran today:  
+
+Adults: n=3 C12; n=3 C13 at 27°C
+
+Larvae: n=3 C13 and n=3 FSW at 27°C and 33°C for POC; n=3 FSW at 27°C and 33°C for ACR  
+
+C12 controls were run to verify that the presence of C13 did not alter coral metabolism. To do this, we randomly selected n=1 adult per species for C12 exposure and C13 exposure. 4 mM solutions of C13 sodium bicarbonate (as described previouslyl 0.255 g + 750 mL FSW) and 4 mM solutions of C12 sodium bicarbonate (0.168 g + 500 mL FSW) were mixed and added into glass jars as previously describe. C12 samples were loaded into plastic respiration chambers that had no C13 exposure. 
+
+Light and temperature were controlled as described previously for adult/recruit experiments. 
+
+Samples were incubated from 15:00 and sampled as previously described at 20:30 (5.5 hours) into labeled whirl packs and snap frozen and stored at -40°C. Metadata can be found on [GitHub here](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/blob/main/data/isotopes/sample_metadata_isotopes.xlsx). 
+
+For larval samples, we loaded 20-30 ACR larvae into each ACR vial and 50-100 POC larvae. We used n=3 tubes with C13 label and n=3 in FSW at 27°C and 33°C for POC. We only ran FSW for ACR at 27°C and 33°C. This is because ACR do not have symbionts and therefore we are not interested in carbon tracing for the purpose of studying nutritional exchange. 
+
+These samples were sampled into 300 µL 4% CMC and snap frozen for potential use for future MALDI imaging with Jen Matthews. 
+
+Exposures were conducted as done before for larval incubuations at 150 PAR. Samples were loaded at 15:15 and sampled at 20:30 (about 5-5.5 hours). 
+
+# Friday - November 17, 2023 
+
+## RNA clipping of PR corals 
+
+Today we clipped biopsies for RNA from all corals run for P&R measurements on Nov 9-10, 2023. To do this, we removed a small batch of fragments from the freezer and kept them on ice. Fragments were then clipped for ~0.5 cm area (~10 polyp area). The biopsy was then put into a labeled 1.5 mL screw top tube in 500 µL RNA/DNA shield. The fragment was then returned to the freezer for physiology processing in a few days. Where fragments taken were larger, we added extra shield. 
+
+The samples were processed in a random order and gloves, tools, clippers, and bench space were sterilized with 70% ethanol, 10% bleach, and alcohol wipes between samples. Ariana and Lucy processed all samples between 13:50-17:00. 
+
+Samples were frozen in the -40°C freezer in Boxes 1 and 3. 
+
+Protocol followed that described on 11 November 2023. 
+
+The metadata from processing today is available on [GitHub](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/blob/main/data/dna/dna_metadata.xlsx).  
+
+## Sample inventory 
+
+Here are the boxes that we have in the freezer/fridge so far:  
+
+| Box           | Preservative   | Tubes                                                      | Transport                      |
+|---------------|----------------|------------------------------------------------------------|--------------------------------|
+| 1             | RNA/DNA Shield | DNA - PI Curves; DNA - PR                                  | Room Temp                      |
+| 2             | RNA/DNA Shield | DNA - Metabolomics corals                                  | Room Temp                      |
+| 3             | RNA/DNA Shield | DNA - PR Corals; DNA - Metabolomics corals                 | Room Temp                      |
+| 4             | RNA/DNA Shield | POC & ACR Larvae RNA/DNA samples                           | Room Temp                      |
+| 5             | Formalin       | Larval size samples                                        | Process in Moorea or Room Temp |
+| 6             | Snap Frozen    | Larval metabolomics, larval physiology, larval CMC samples | Dry shipper                    |
+| Mesh bags x 2 | Snap Frozen    | Isotope metabolomics fragments                             | Dry shipper                    |
 
 
+# Saturday - November 18, 2023 
 
+## Airbrushing 
 
+We will start airbrushing corals from PR samples tomorrow. We will follow the established [E5 protocol](https://github.com/urol-e5/protocols/blob/master/2020-01-01-Airbrushing.md) with the following modifications:   
 
+- Take a small batch of fragments out of the freezer and put in a cooler on ice
+- Airbrush using an artists' airbrush with cold 1X PBS buffer
+- Airbrush by first using only air to get as much tissue as possible before adding PBS to concentrate the tissue. Airbrush into a plastic sandwich size bag or a whirl pack for very small fragments. 
+- Once the skeleton is clean, pour tissue slurry into a 5 mL or 15 mL, depending on the total amount of volume. We aimed for 3-15 mL total volume. Recruits had lower volume than adults for small recruits. We had 2 people airbrushing at a time. 
+- After airbrushing, slurry was homogenized using a Pro Scientific Tissue Shearer for ~15 sec. Homogenizer was cleaned with 70% ethanol and DI water between samples. 
+- From homogenized slurry, take 1 mL sample into a tube labeled with the coral ID + "S". This is the symbiont tube. 
+- Put remaining homogenate into the freezer for later use for holobiont metrics or to do additional physiological measurements. 
+- Spin the S tube at 13,000 rpm on Labnet Spectrofuge 24D for 3 min. 
+- Transfer supertatant (1 mL) to a new tube labeled with teh coral ID + "H". This is the host tube. 
+- Add 500 µL of PBS to the S tube and pipette up and down and vortex briefly to resuspend the symbiont pellet. 
+- Put both the H and S tubes in the freezer in respective "Host" and "Symbiont" boxes. Keep at -40°C. 
+- We have boxes "H1", "H2", "S1", and "S2" to fit all our samples. 
+- Put the clean skeleton into a plastic cup and keep the whirlpack with the cup. Fill with 20-50% bleach to cover the skeleton. Leave in bleach for 8-10 hours. 
+- After bleaching, rinse the skeleton in fresh water and put in the drying oven at 80°C for 4-6 hours until dry. 
+- After dry, proceed with surface area (discussed below). 
+- Where any volumes or deviations in this protocol took place they were noted in metadata. 
+
+We followed this protocol for all samples over 2 days.   
+
+Airbrushing data can be found on [GitHub here](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/blob/main/data/physiology/homog_vols.csv).    
+
+Note that two recruit samples (POC-R26 and ACR-R11) were very small and did not have any extra slurry in addition to the aliquot. For these samples, a subsample of 300 uL of resuspended symbiont pellet was removed and placed in a tube labeled with the coral ID and "Chl" to designate for future use for chlorophyll measurements. This is because the S tubes, which will be used for cell counting, will be thawed and therefore would compromise the chlorophyll quality. 
+
+First, we will use the S tube for cell density counting and complete surface area measurements. If Hollie or other members of the team have time, we can do host protein, chlorophyll content, or other analyses in the future. 
+
+# Sunday - November 19, 2023 
+
+## Airbrushing 
+
+We continued and finished airbrushing of all 90 samples today. See yesterday's entry for protocol, notes, and data. Fragments from yesterday were placed in the drying oven at 08:00. Fragments from today were placed in bleach by 12:45 and put into the drying oven at 19:30. 
+
+Airbrushing data can be found on [GitHub here](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/blob/main/data/physiology/homog_vols.csv).  
+
+## Cell counting
+
+We starting measuring symbiont cell densities on airbrushed samples S tubes today. Lucy and Ariana will both work on cell counting. We followed the [E5 cell counting protocol](https://github.com/urol-e5/protocols/blob/master/2020-01-07-Cell_Density-Protocol.md). We did not make any modifications to this protocol. 
+
+Counts were done on a Neubauer Improved 0.1mm deep bright line hemocytometer (Hausser Scientific). We conducted 6 replicate counts per sample and calculated the CV (>90% of samples had CV below 10%). When CV was high, we repeated the counts. Data was entered daily in the notebook and is [on GitHub here](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/blob/main/data/physiology/cell_density/cells.csv). Ariana and Lucy both worked on this until Ariana left on Nov 21. Lucy continued and finished the counts afterwards. 
+
+## Surface area 
+
+We measured surface area of the corals airbrushed on Nov 18th. We followed the [E5 surface area protocol](https://github.com/urol-e5/protocols/blob/master/2021-02-17-Surface_Area_Protocol.md). We are using the standard curve generated from surface area measurements on November 8, 2023. Samples weighed on a Mettler Toledo PB303-S/FACT scale. 
+
+Data were recorded in [GitHub here](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/tree/main/data/physiology/surface_area).  
+
+# Monday - November 20, 2023 
+
+## Surface area 
+
+We measured surface area of the corals airbrushed on Nov 19th. Data were recorded in [GitHub here](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/tree/main/data/physiology/surface_area). Dried skeletons were left in the molecular lab cabinet until data was analyzed. 
+
+## Cleaning and inventory 
+
+Ariana cleaned the lab, organized supplies, and conducted sample inventory. Everything is done! 
+
+## Cell counting 
+
+Lucy continued cell counting and will do a few samples each day until all are completed.  
+
+# Tuesday - November 21, 2023 
+
+Today we attended the Fete de la Science festival in Papeete with [Reva Atea](https://www.reva-atea.com/)!  

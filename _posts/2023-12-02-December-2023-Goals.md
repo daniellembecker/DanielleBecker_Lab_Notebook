@@ -43,6 +43,13 @@ December goals and daily notebook entries.
 
 ## **Daily Log**   
 
+### Wednesday, December 6
+
+- On UW campus
+- Moorea 2023 notebook finished 
+- eScience seminar meeting
+- Backup files for Moorea 2023 
+
 ### Tuesday, December 5
 
 - MCR AIM 
@@ -57,3 +64,4 @@ December goals and daily notebook entries.
 - Reva Atea magazine edits for digital version
 - MCR AIM 
 - Hawaii 2023 cell density analysis finished
+- Moorea TER
