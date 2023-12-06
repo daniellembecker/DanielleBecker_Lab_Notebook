@@ -49,6 +49,7 @@ December goals and daily notebook entries.
 - Moorea 2023 notebook finished 
 - eScience seminar meeting
 - Backup files for Moorea 2023 
+- Moorea coding for PR QC'ing 
 
 ### Tuesday, December 5
 

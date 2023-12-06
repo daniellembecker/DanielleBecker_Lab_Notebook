@@ -6,15 +6,15 @@ categories: Moorea_SymbioticExchange_2023
 tags: ExperimentalDesign Acropora Pocillopora Physiology Processing Protocol Reproduction Respirometry Sampling StableIsotopes
 ---
 
-This post details daily entries for the Fall 2023 Moorea Field Expedition. 
+This post details daily entries for the Fall 2023 Moorea Field Expedition.   
 
-The goal of this expedition is to conduct research within Ariana Huffmyer's National Science Foundation Ocean Sciences Postdoctoral Fellowship research. 
+The goal of this expedition is to conduct research within Ariana Huffmyer's National Science Foundation Ocean Sciences Postdoctoral Fellowship research.   
 
-Experimental design and overview of this project including questions of interest and object can be viewed below. 
+Experimental design and overview of this project including questions of interest and object can be viewed below.   
 
-![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/Moorea2023/Moorea_design_v2.png?raw=true)  
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/Moorea2023/Moorea_design_v2.png?raw=true)    
 
-The GitHub repository with all information and data for this project [can be found here](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/blob/main/data/field_collection/collection_metadata.xlsx). 
+The GitHub repository with all information and data for this project [can be found here](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/blob/main/data/field_collection/collection_metadata.xlsx).   
 
 # Thursday - November 2, 2023 
 
@@ -885,12 +885,12 @@ We did a water change on the coolers at 2200. There was no spawning tonight.
 
 We prepared materials and lists for field sampling for our next round of collections, which will occur tomorrow. We will sample the following corals for our isotope experiment.  
 
-ACR-A18 to A32
-ACR-R31 to R51
-POC-A18 to A32
-POC-R31 to R51
-POR-A18 to A32
-POR-R31 to R51
+ACR-A18 to A32  
+ACR-R31 to R51  
+POC-A18 to A32  
+POC-R31 to R51  
+POR-A18 to A32  
+POR-R31 to R51  
 
 We labeled tubes (for DNA clipping), plugs, and whirlpacks for tomorrow. 
 
@@ -929,6 +929,10 @@ We finished sample collection for isotopes in the morning right after observing 
 Once brought back to the lab, samples were clipped for DNA as done yesterday. Here is the [DNA sample metadata](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/tree/main/data/dna) and [collection metadata](https://github.com/AHuffmyer/moorea_symbiotic_exchange_2023/tree/main/data/field_collection). All samples added to Box 3. We will not be using these samples in the incubations today to allow them the same recovery time as the previously collected samples. Samples were added to plugs as done yesterday.  
 
 All photos of the collections were labeled with the sample ID and stored on Google Drive. 
+
+Here are all of the metabolomics fragments.  
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/Moorea2023/pic25.JPG?raw=true) 
  
 ## Isotopes day 1 
 
