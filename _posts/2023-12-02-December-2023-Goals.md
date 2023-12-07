@@ -43,6 +43,12 @@ December goals and daily notebook entries.
 
 ## **Daily Log**   
 
+### Thursday, December 7
+
+- Roberts Lab meeting
+- Moorea2023 coding for PR
+- Hawaii2023 coding for phenoplate data 
+
 ### Wednesday, December 6
 
 - On UW campus
