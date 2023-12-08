@@ -1,6 +1,6 @@
 ---
 layout: post
-title: October 2023 Goals
+title: December 2023 Goals
 date: '2023-10-05'
 categories: Monthly_Goals
 tags: Goals
