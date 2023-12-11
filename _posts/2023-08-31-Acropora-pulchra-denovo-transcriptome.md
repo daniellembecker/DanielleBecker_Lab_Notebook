@@ -490,7 +490,7 @@ sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/trinity.sh
 Submitted batch job 285355
 ```
 
-Trinity completed successfully!!!! When Trinity completes, it creates a 'Trinity.tmp.fasta' output file (or prefix based on the output directory you specify).
+Trinity completed successfully!!!! When Trinity completes, it creates a 'trinity_out_dir.Trinity.fasta' output file (or prefix based on the output directory you specify).
 
 Trinity groups transcripts into clusters based on shared sequence content. Such a transcript cluster is very loosely referred to as a 'gene'. This information is encoded in the Trinity fasta accession. An example Fasta entry for one of the transcripts is formatted like so:
 
@@ -510,7 +510,7 @@ scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/DeNovo_transcript
 
   ```
 
-# 7) Assessing quality of the assesment
+# 7) Assessing quality of the assessment
 
 Use [Trinity toolkit utilities](https://github.com/trinityrnaseq/trinityrnaseq/wiki/Transcriptome-Contig-Nx-and-ExN50-stats) for a assembly quality assessment
 
@@ -701,6 +701,161 @@ less short_summary.specific.metazoa_odb10.busco_output.txt
 
 BUSCO completeness looks great. Completeness looks for the presence or absence of highly conserved genes in an assembly. The aim is to have the highest percentage of genes identified in your assembly, with a BUSCO complete score above 95% considered good (we have 99.9% so yay!).
 
-However, the complete and duplicated BUSCOs are high. Transcriptomes and protein sets that are not filtered for isoforms will lead to a high proportion of duplicates. So, this is not unusual and we don't need to worry about it.
+However, the complete and duplicated BUSCOs are high. Transcriptomes and protein sets that are not filtered for isoforms will lead to a high proportion of duplicates. So, next step suggestions:
 
-Next steps may be to filer for isoforms?
+1. Filter for isoforms
+2. Map to closest genome (*Acropora millepora*)
+3. Filter symbiont genes to check if it helps duplication
+
+# 8) Map to *Acropora millepora* genome
+
+#### a) Obtain Reference Genome and Create Folder Structure
+
+I am using the Maldives *Acropora millepora* genome to compare alignment statistics.
+
+[Ying, Hua, et al. "The whole-genome sequence of the coral Acropora millepora." Genome biology and evolution 11.5 (2019): 1374-1379.](https://academic.oup.com/gbe/article/11/5/1374/5480306)
+
+Location on Andromeda, the HPC server for URI:
+```
+cd /data/putnamlab/REFS/Amil_ref
+```
+
+All of the genome files (i.e., genome scaffolds, CDS, proteins, GFF, and functional annotations) were downloaded from the [NCBI RefBase](https://www.ncbi.nlm.nih.gov/datasets/genome/?taxon=45264) and added to the Andromeda HPC folder.
+
+```
+scp -r /Users/Danielle/Downloads/ncbi_dataset/ncbi_dataset/data/GCF_013753865.1/GCF_013753865.1_Amil_v2.1_genomic.fna danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/REFS/Amil_ref/
+```
+
+
+#### b) Generate genome build
+
+##### HiSat2 Align reads to refernece genome
+[HiSat2](https://daehwankimlab.github.io/hisat2/main/)
+[HiSat2 Github](https://github.com/DaehwanKimLab/hisat2)
+
+
+```
+nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/Hisat2_genome_build.sh
+```
+
+```
+#!/bin/bash
+#SBATCH -t 24:00:00
+#SBATCH --nodes=1 --ntasks-per-node=1
+#SBATCH --export=NONE
+#SBATCH --mem=100GB
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=danielle_becker@uri.edu
+#SBATCH --account=putnamlab
+#SBATCH -D /data/putnamlab/REFS/Amil_ref/
+#SBATCH --error="script_error"
+#SBATCH --output="output_script"
+
+module load HISAT2/2.2.1-gompi-2022a
+
+# index the reference genome for Amil output index to working directory
+hisat2-build -f /data/putnamlab/REFS/Amil_ref/GCF_013753865.1_Amil_v2.1_genomic.fna ./Amil_ref # called the reference genome (scaffolds)
+echo "Reference genome indexed. Starting alignment" $(date)
+```
+
+```
+sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/Hisat2_genome_build.sh
+
+Submitted batch job 289152
+```
+
+#### c) Align reads to genome
+
+```
+mkdir data/mapped
+```
+
+- Trinity assembly in FASTA format and you want to align it to a reference genome, you would generally use a different tool like BLAT, GMAP, or minimap2, as they are designed for aligning longer sequences like transcripts or assembled contigs.
+- Using minimap2
+  - In this example, -ax splice specifies that the input is spliced transcripts, -uf specifies the reference genome, and the output is redirected to a SAM file (Trinity_aligned.sam).
+
+```
+nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/minimap_align2.sh
+```
+
+```
+#!/bin/bash
+#SBATCH -t 72:00:00
+#SBATCH --nodes=1 --ntasks-per-node=5
+#SBATCH --export=NONE
+#SBATCH --mem=500GB
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=danielle_becker@uri.edu
+#SBATCH --account=putnamlab
+#SBATCH -D /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Amil/mapped
+#SBATCH --cpus-per-task=3
+#SBATCH --error="script_error"
+#SBATCH --output="output_script"
+
+
+module load minimap2/2.24-GCCcore-11.3.0
+
+#Aligning to Trinity output file
+
+minimap2 -d /data/putnamlab/REFS/Amil_ref/reference_index.idx /data/putnamlab/REFS/Amil_ref/GCF_013753865.1_Amil_v2.1_genomic.fna
+
+minimap2 -ax splice -uf /data/putnamlab/REFS/Amil_ref/reference_index.idx /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trinity_out_dir/trinity_out_dir.Trinity.fasta > trinity_aligned.sam
+
+```
+
+```
+sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/minimap_align2.sh
+
+Submitted batch job 290621
+
+```
+
+#### d) Sort and convert sam to bam and check number of mapped reads and mapping percentages
+
+- Explanation:
+  - samtools sort -o Trinity_aligned.sorted.bam Trinity_aligned.sam: This command sorts the SAM file and creates a sorted BAM file (Trinity_aligned.sorted.bam).
+  - samtools index Trinity_aligned.sorted.bam: This command creates an index for the sorted BAM file. The index file (Trinity_aligned.sorted.bam.bai) is necessary for certain operations and viewers.
+  - samtools flagstat Trinity_aligned.sorted.bam: This command generates statistics about the alignment, including the number of mapped reads and mapping percentages.
+
+```
+nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/SAMtoBAM.sh
+
+#There will be lots of .tmp file versions in your folder, this is normal while this script runs and they should delete at the end to make one sorted.bam file
+```
+```
+#!/bin/bash
+#SBATCH -t 72:00:00
+#SBATCH --nodes=1 --ntasks-per-node=8
+#SBATCH --export=NONE
+#SBATCH --mem=500GB
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=danielle_becker@uri.edu
+#SBATCH --account=putnamlab
+#SBATCH -D /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Amil/mapped
+#SBATCH --cpus-per-task=3
+#SBATCH --error="script_error"
+#SBATCH --output="output_script"
+
+module load SAMtools/1.16.1-GCC-11.3.0 #Preparation of alignment for assembly: SAMtools
+
+samtools view -bS trinity_aligned.sam > trinity_aligned.bam
+samtools sort trinity_aligned.bam -o trinity_aligned_sorted.bam
+samtools index trinity_aligned_sorted.bam
+samtools flagstat trinity_aligned.sorted.bam > alignment_stats.txt
+
+```
+
+```
+sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/SAMtoBAM.sh
+
+Submitted batch job 290614
+
+```
+
+#### e) Download mapping percentages and statistics to desktop
+
+```
+
+scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Amil/mapped/ /Users/Danielle/Desktop/Putnam_Lab/Gametogenesis/heatwave/bioinformatics
+
+```
