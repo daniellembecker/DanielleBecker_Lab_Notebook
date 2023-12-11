@@ -841,21 +841,65 @@ module load SAMtools/1.16.1-GCC-11.3.0 #Preparation of alignment for assembly: S
 samtools view -bS trinity_aligned.sam > trinity_aligned.bam
 samtools sort trinity_aligned.bam -o trinity_aligned_sorted.bam
 samtools index trinity_aligned_sorted.bam
-samtools flagstat trinity_aligned.sorted.bam > alignment_stats.txt
+samtools flagstat trinity_aligned_sorted.bam > alignment_stats.txt
 
 ```
 
 ```
 sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/SAMtoBAM.sh
 
-Submitted batch job 290614
+Submitted batch job 290625
 
 ```
+
+**Alignment statistics**
+
+```
+
+2337097 + 0 in total (QC-passed reads + QC-failed reads)
+1476390 + 0 primary
+805750 + 0 secondary
+54957 + 0 supplementary
+0 + 0 duplicates
+0 + 0 primary duplicates
+1714368 + 0 mapped (73.35% : N/A)
+853661 + 0 primary mapped (57.82% : N/A)
+
+Explanation:
+
+1. Total Reads:
+  - 2337097 + 0 in total (QC-passed reads + QC-failed reads): Indicates the total number of reads, including both QC-passed and QC-failed reads. In this case, there are 2,337,097 reads in total.
+
+2. Primary and Secondary Alignments:
+  - 1476390 + 0 primary: The number of primary alignments. These are the primary alignment records for each read. In this case, there are 1,476,390 primary alignments.
+  - 805750 + 0 secondary: The number of secondary alignments.
+  - Secondary alignments can occur for reads that map equally well to multiple locations in the reference genome.
+
+3. Supplementary Alignments:
+  - 54957 + 0 supplementary: The number of supplementary alignments. - Supplementary alignments are used to represent chimeric or novel splice junctions.
+
+4. Duplicates:
+  - 0 + 0 duplicates: The number of duplicate reads. Duplicate reads can result from PCR artifacts and are often removed in quality control.
+
+5. Primary Duplicates:
+  - 0 + 0 primary duplicates: The number of duplicate primary reads. This specifically refers to duplicate primary alignment records.
+
+6. Mapped Reads:
+  - 1714368 + 0 mapped (73.35% : N/A): The total number and percentage of mapped reads. In this case, 1,714,368 reads are mapped, and they constitute 73.35% of the total reads.
+
+7. Primary Mapped Reads:
+  - 853661 + 0 primary mapped (57.82% : N/A)
+  - The number and percentage of primary mapped reads.
+  - Primary mapped reads refer to those reads where the primary alignment is reported.
+  - In this case, 853,661 reads are primary mapped, constituting 57.82% of the total reads.
+
+```
+
 
 #### e) Download mapping percentages and statistics to desktop
 
 ```
 
-scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Amil/mapped/ /Users/Danielle/Desktop/Putnam_Lab/Gametogenesis/heatwave/bioinformatics
+scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Amil/mapped/alignment_stats.txt /Users/Danielle/Desktop/Putnam_Lab/Gametogenesis/bioinformatics/transcriptome
 
 ```
