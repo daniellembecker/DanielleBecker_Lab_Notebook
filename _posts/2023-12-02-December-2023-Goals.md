@@ -20,11 +20,11 @@ December goals and daily notebook entries.
 1. Send HI 2023 RNA for sequencing with Jill
 2. Larval size photograph analyze for HI 2023 
 3. Larval cell density analyze with Jill for HI 2023
-4. Coding for phenoplate for HI 2023
+4. ~~Coding for phenoplate for HI 2023~~
 5. ~~Finish cell density analysis for Moorea 2023~~
 6. ~~Finish QC'ing PR data for Moorea 2023~~
 7. ~~Upload Moorea 2023 collection photos~~
-8. Larval size analysis for Moorea 20232
+8. Larval size analysis for Moorea 2023
 9. Chl analysis for Moorea 2023
 
 ### Field work
@@ -44,6 +44,19 @@ December goals and daily notebook entries.
 1. Start analysis of FFAR offspring data 
 
 ## **Daily Log**   
+
+### Tuesday, December 12
+
+- Hawaii 2023 coding
+- Prepping ideas for NOAA SeaGrant funding call
+- Mcap2021 SICB presentation
+- Meeting with Danielle 
+
+### Monday, December 11
+
+- Hawaii 2023 coding
+- Putnam Lab writing group
+- Meeting with Jill
 
 ### Friday, December 8
 
