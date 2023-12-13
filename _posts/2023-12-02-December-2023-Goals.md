@@ -45,6 +45,12 @@ December goals and daily notebook entries.
 
 ## **Daily Log**   
 
+### Wednesday, December 13
+
+- Geoduck repo coding and organization
+- SICB presentation prep
+- Roberts Lab hackweek
+ 
 ### Tuesday, December 12
 
 - Hawaii 2023 coding
