@@ -25,13 +25,13 @@ December goals and daily notebook entries.
 6. ~~Finish QC'ing PR data for Moorea 2023~~
 7. ~~Upload Moorea 2023 collection photos~~
 8. Larval size analysis for Moorea 2023
-9. Chl analysis for Moorea 2023
+9. ~~Chl analysis for Moorea 2023~~
 
 ### Field work
 
 1. Plan dates with Jen for AUS travel in spring (April/May 2024) 
 2. ~~Catch up on Moorea 2023 field work notebook posts~~ 
-3. Call CITES to check on status of export permit 
+3. ~~Call CITES to check on status of export permit~~ 
 4. Submit new CITES for Moorea 2023 samples to export to AUS 
 
 ### Conferences
@@ -41,9 +41,46 @@ December goals and daily notebook entries.
 
 ### Oysters 
 
-1. Start analysis of FFAR offspring data 
+1. ~~Start analysis of FFAR offspring data~~ 
 
 ## **Daily Log**   
+
+### Thursday, December 21
+
+- Roberts Lab meeting
+- Meeting with Jen UTS
+- Mcap2021 manuscript
+- SICB discussion
+
+### Wednesday, December 20
+
+- Mcap2021 manuscript
+- CITES call
+
+### Tuesday, December 19
+
+- Mcap2021 manuscript
+
+### Monday, December 18
+
+- Meeting with Steven
+- SICB presentation 
+- Mcap2021 discussion
+
+### Friday, December 15
+
+- E5 molecular meeting
+- Putnam Lab meeting
+- Meeting with Danielle
+- SICB presentation
+- Mcap2021 manuscript
+
+### Thursday, December 14
+
+- Roberts Lab meeting
+- Jill mock oral exam
+- Mcap2021
+- SICB presentation
 
 ### Wednesday, December 13
 
