@@ -29,14 +29,14 @@ December goals and daily notebook entries.
 
 ### Field work
 
-1. Plan dates with Jen for AUS travel in spring (April/May 2024) 
+1. ~~Plan dates with Jen for AUS travel in spring (April/May 2024)~~ 
 2. ~~Catch up on Moorea 2023 field work notebook posts~~ 
 3. ~~Call CITES to check on status of export permit~~ 
 4. Submit new CITES for Moorea 2023 samples to export to AUS 
 
 ### Conferences
 
-1. Prepare SICB 2024 presentation of Mcap 2021 data
+1. ~~Prepare SICB 2024 presentation of Mcap 2021 data~~
 2. ~~MCR AIM meeting~~
 
 ### Oysters 
@@ -44,6 +44,36 @@ December goals and daily notebook entries.
 1. ~~Start analysis of FFAR offspring data~~ 
 
 ## **Daily Log**   
+
+### Friday, December 29
+
+- Sea Grant LOI
+- Mcap2021
+- SICB talk 
+
+### Thursday, December 28
+
+- Roberts Lab meeting
+- Sea Grant LOI
+- Mcap2021
+- SICB talk 
+ 
+### Wednesday, December 27
+
+- Mcap2021
+- SICB talk 
+ 
+### Tuesday, December 26
+
+- Mcap2021
+- SICB talk 
+- Putnam Lab talk practice 
+
+### Friday, December 22
+
+- Mcap2021
+- SICB talk 
+- Meeting with Hollie
 
 ### Thursday, December 21
 
