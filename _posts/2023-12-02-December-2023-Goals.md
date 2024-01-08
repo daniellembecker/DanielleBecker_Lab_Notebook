@@ -11,7 +11,7 @@ December goals and daily notebook entries.
 
 ### Writing and manuscripts 
               
-1. Write Mcap2021 full draft
+1. ~~Write Mcap2021 full draft~~
 2. Start E5 physiology discussion section
 3. Mcap2020 revisions
 
