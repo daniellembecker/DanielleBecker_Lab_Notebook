@@ -133,7 +133,7 @@ Downloaded all files to Andromeda URI HPC location
 
 Trim ACRP-CON reads.
 
-Reads for samples ACR-140, ACR-145, ACR-150, ACR-173, and ACR-178 were trimmed using the built-in version of Trimmomatic with the default settings, following the 9FastQ QC and Trimming - [E5 Coral RNA-seq Data for A.pulchra protocol](https://robertslab.github.io/sams-notebook/2023/05/19/FastQ-QC-and-Trimming-E5-Coral-RNA-seq-Data-for-A.pulchra-P.evermanni-and-P.meandrina-Using-FastQC-fastp-and-MultiQC-on-Mox.html).
+Reads for samples ACR-140, ACR-145, ACR-150, ACR-173, and ACR-178 were trimmed using the built-in version of Trimmomatic with the default settings, following the 9FastQ QC and Trimming - [E5 Coral RNA-seq Data for A.pulchra protocol](https://robertslab.github.io/sams-notebook/posts/2023/2023-05-19-FastQ-QC-and-Trimming---E5-Coral-RNA-seq-Data-for-A.pulchra-P.evermanni-and-P.meandrina-Using-FastQC-fastp-and-MultiQC-on-Mox/). All fast
 
 Downloaded all files to Andromeda URI HPC location
 
