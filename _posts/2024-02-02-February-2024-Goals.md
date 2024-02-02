@@ -45,7 +45,9 @@ February goals and daily notebook entries.
 - E5 molecular meeting 
 - Putnam computing hour 
 - E5 results revisions 
-- 
+- WSG planning and notebook entries 
+- Mcap2021 
+- Sea Grant application
 
 #### February 1 
 
