@@ -15,6 +15,11 @@ February goals and daily notebook entries.
 2. Start E5 physiology discussion section By March
 3. Mcap2020 revisions By Feb 15th
 
+### Analysis
+
+1. Analyze effects of species on E5 phys and ITS2 data
+2. Revise E5 results 
+
 ### Sample processing
 
 1. Larval size photograph analyze for HI 2023 
@@ -30,7 +35,7 @@ February goals and daily notebook entries.
 ### Oysters 
 
 1. PI meeting with WSG collaborators
-2. WSG/USDA sample size planning
+2. ~~WSG/USDA sample size planning~~
 3. WSG/USDA equipment planning 
 4. WSG/USDA secondary stress experiment and sampling
 
@@ -46,8 +51,6 @@ February goals and daily notebook entries.
 - Putnam computing hour 
 - E5 results revisions 
 - WSG planning and notebook entries 
-- Mcap2021 
-- Sea Grant application
 
 #### February 1 
 
