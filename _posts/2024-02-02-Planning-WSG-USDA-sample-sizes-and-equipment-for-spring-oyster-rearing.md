@@ -91,8 +91,8 @@ Here are the numbers that we committed to outplanting in the field for each proj
 Ariana made [this online worksheet to calculate all the things](https://docs.google.com/spreadsheets/d/1gasSHWZV_AJKqMfixigTO-WQbHoIFwtHidUycu7t5L0/edit#gid=0)!
 
 ### USDA project 
-
--**[Objective 1: Larval conditioning]** Broodstock (5 families) will be strip spawned and larvae from each family challenged with environmental conditions over a 4 month period. Field deployments of spat will take place at Discovery Bayy and Totten Inlet (Puget Sound) and Bay Center and Goose Point (Willapa Bay) with Taylor Shellfish Co. and Nisbet Oyster Co. 
+ 
+- **[Objective 1: Larval conditioning]** Broodstock (5 families) will be strip spawned and larvae from each family challenged with environmental conditions over a 4 month period. Field deployments of spat will take place at Discovery Bayy and Totten Inlet (Puget Sound) and Bay Center and Goose Point (Willapa Bay) with Taylor Shellfish Co. and Nisbet Oyster Co. 
 
 - **[Objective 2: Broodstock conditioning]** Expose broodstock (5 families) before spawning to stress exposures from Objective 1, undergo strip spawning and rear larvae. Spat from these treated broodstock will be deployed at the same size as described above.  
 
