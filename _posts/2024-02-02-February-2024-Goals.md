@@ -17,7 +17,7 @@ February goals and daily notebook entries.
 
 ### Analysis
 
-1. Analyze effects of species on E5 phys and ITS2 data
+1. ~~Analyze effects of species on E5 phys and ITS2 data~~
 2. Revise E5 results 
 
 ### Sample processing
@@ -31,6 +31,7 @@ February goals and daily notebook entries.
 1. Finalize CITES for AUS trip  
 2. Dates and flights planning for AUS trip
 3. Dates and flights planning for URI trip 
+4. Plan CITES export for Chloe for Moorea 
 
 ### Oysters 
 
