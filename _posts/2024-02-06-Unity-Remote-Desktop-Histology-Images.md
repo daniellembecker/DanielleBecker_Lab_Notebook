@@ -26,32 +26,28 @@ Develop a way to use URIs Research Computing [Unity Remote Desktop](https://ood.
 
 - When you see the Unity Single Sign-On page, click on the University of Rhode Island organization icon
 
-single sign on image
+![1](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/images/Unity_remote_desktop/unity_SSO.png)
 
 - Log in with your URI email credentials
 - If you are using the URI VPN, you will be directly to the [Cisco DUO mobile verification page](https://duo.com/resources/ebooks/the-multi-factor-authentication-evaluation-guide?utm_source=google&utm_medium=paid_search&utm_campaign=DUO_AMER_NA_GS_Branded_General_T1&utm_content=General&gad_source=1&gclid=Cj0KCQiAzoeuBhDqARIsAMdH14HikwqO9eUWvR37ewGtuHWGonw3uZOpZG2uyI_-7Bl8Nip2bleyN2UaAnszEALw_wcB)
 - Accept the Cisco DUO mobile notification on your phone application and you will be logged into the [Unity OnDemand Desktop](https://ood.unity.rc.umass.edu/pun/sys/dashboard/batch_connect/sys/bc_desktop/session_contexts/new) on your computer desktop
 
-Unity desktop image
+![2](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/images/Unity_remote_desktop/unity_remote_desktop.png)
 
-- hf
 
 ##### Step 3: Upload your images or files to a Unity directory that you can set up with URI research computing
 
 - On the top left of the Unity OnDemand page, select the Files drop down and select the directory where you would like your files stored
 - I navigated to the Putnam work directory called: / work / pi_hputnam_uri_edu /
 
-putnam stoarge image
+![3](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/images/Unity_remote_desktop/putnam_directory.png)
 
 - I then selected the 'New Directory' option and made a directory to store my *Acropora pulchra* histological images: 'Apul_histo_images'
 - Select the new directory you have made and select the 'Upload' option
 - From your hard drive or computer, drag in the images or files you would like stored there
-- A panel will pop up that says how mmany images it will be uploaded, confirm the images and then it will begin to load them into your new directory.
+- A panel will pop up that says how many images it will be uploaded, confirm the images and then it will begin to load them into your new directory.
 
-- directory image
-
-
-
+![4](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/images/Unity_remote_desktop/loadingfiles.png)
 
 
 ##### Step 3: Launch an interactive desktop environment with the specifications you need for your project
@@ -63,28 +59,26 @@ putnam stoarge image
 
 Settings:
 
-unity desktop settings image
-
+![5](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/images/Unity_remote_desktop/unity_settings.png)
 
 - Make sure to select the I would like to receive an email option and press 'Launch'
 - You will then be redirected to a page that will show you that your Unity desktop session is queued
 
-queued imagej
+![6](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/images/Unity_remote_desktop/unity_queued.png)
 
 - It will take ~1 minute for this to change to running and then you can select 'Launch Unity Desktop'
 
-launch desktop imagej
-
+![7](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/images/Unity_remote_desktop/unity_launchunitydesktop.png)
 
 ##### Step 4: Use FIJI/ImageJ on your Unity remote Desktop
 
 - When you begin your session, a new tab will open with the homepage for your remote desktop that will look like a normal computer screen
 
-desktop unity imagej
+![8](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/images/Unity_remote_desktop/unitydesktop_hommepage.png)
 
 - Select the black and white terminal icon at the bottom left to open a linux/command line terminal
 
-temrinal operation
+![9](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/images/Unity_remote_desktop/unitydesktop_terminal.png)
 
 - Depending on the modules you need for your project, contact research computing at itrcs-group@uri.edu
 - For our FIJI/ImageJ analysis, we needed the updated Fiji/2.14.0-Java-1.8, which research computing updated on February 5th
@@ -92,13 +86,15 @@ temrinal operation
 - Type into the terminal: 'module load uri/main Fiji/2.14.0-Java-1.8'
 - After this loads, then type in the 'ImageJ-linux64' command to open the applications
 
-ImageJ image
+![10](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/images/Unity_remote_desktop/unity_FIJIopening.png)
 
 - After this is opened, you are now using the FIJI/ImageJ application as you would with any other computer systems
 - To open your stored files from Unity, select the 'File' option in FIJI, then 'Open'. This will show you your personal desktop operating folders.
 - Select the hard drive icon at the top left to the right of the pencil icon and you will see a list of directories
 - Our putnam lab directory is in the work directory, so I double clicked into the 'work' directory and then double clicked into the 'pi_hputnam_uri_edu' directory to find my uploaded folders
 
+![11](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/images/Unity_remote_desktop/photodirectories1.png)
 
-photo directory image 1
-photo directory image 2
+![12](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/images/Unity_remote_desktop/photodirectories2.png)
+
+- After you have navigated to your images, select them individually and follow this [protocol](https://github.com/chloe-gilligan/Gilligan_Putnam_Lab_Notebook/blob/master/protocols/2022-10-07-ImageJProtocol.md) for further instructions.
