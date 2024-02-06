@@ -64,6 +64,13 @@ February 2024 goals and daily notebook entries.
 - Working to get FIJI access through Research Computing Unity remote desktop
 - Molecular underpinnings introduction and methods edits
 
+### February 6
+- Imaging POC images and stage micrometer at Brown (90 slides ~7 hours)
+- Lab meeting 11 - 12:30pm
+- Molecular underpinnings edits for introduction, methods, results, and discussion
+- Figured out how to use FIJI in URI Unity remote desktop
+- Wrote protocol for analyzing histological images in Unity remote desktop
+
 
 
 
