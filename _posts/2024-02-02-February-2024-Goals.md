@@ -38,6 +38,7 @@ February goals and daily notebook entries.
 2. ~~WSG/USDA sample size planning~~
 3. WSG/USDA equipment planning 
 4. WSG/USDA secondary stress experiment and sampling
+5. Email Niel T. with request for adult oysters
 
 ### Funding 
 
