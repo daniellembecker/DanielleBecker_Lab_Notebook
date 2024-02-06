@@ -139,3 +139,15 @@ aov(Abundance~site*Profile*haplotype, data=.)
 ```
 
 Overall, ITS2 communities are very different by haplotype. Next, we will need to decide how to proceed with multivariate data and include haplotype as a source of explained variance in RDA analyses. 
+
+# 4. Revising variance partioning to include haplotype
+
+I then revised the variance partioning analysis to include haplotype along with site and time in explaining multivariate physiological variance. Here are the results.  
+
+In this analysis, I included categories that explained over 1% of the variance. Note that for *Porites*, a term called "Site&Haplotype" is present. This is because one of the haplotypes is not present at one site, and therefore the model cannot fully separate these terms.  
+
+![](https://github.com/urol-e5/timeseries/blob/master/time_series_analysis/Figures/Multivariate/VarPart_Panel.png?raw=true)
+
+I'll need to fix the labels to make it more clear to see the percentages, but this gives us something to work with. 
+
+The main new result is that haplotype explains a larger portion of the variance in *Porites* than is explained by site. Previously, we saw higher site variance in this species. This was likely driven by haplotype, which we can see more clearly now. Haplotype is minor for *Porites*, which makes sense with the PCA results above.  
