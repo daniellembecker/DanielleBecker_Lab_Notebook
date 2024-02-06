@@ -54,7 +54,16 @@ February 2024 goals and daily notebook entries.
 ### February 4
 - Knauss edits from Sunshine
 - Emailed to SeaGrant for second review period
-- USAjobs resume builder, applied for Research Oceanographer position
+- USAjobs resume builder
+
+### February 5
+- TA 11-11:50
+- TA meeting 12-1pm
+- Aquarium daily duties
+- Knauss edits from second SeaGrant review
+- Working to get FIJI access through Research Computing Unity remote desktop
+- Molecular underpinnings introduction and methods edits
+
 
 
 
