@@ -47,9 +47,18 @@ February goals and daily notebook entries.
 
 ## **Daily Log**   
 
+#### February 6 
+
+- Putnam Lab meeting
+- Mcap 2021
+- Called US Cites again
+- URI payroll questions
+- Sea Grant application 
+- Meeting with Chloe to plan CITES export 
+
 #### February 5 
 
-- E5 results revisions
+- E5 results and haployte effects 
 - Sea Grant proposal 
 - Meeting with Neil at USDA 
 
