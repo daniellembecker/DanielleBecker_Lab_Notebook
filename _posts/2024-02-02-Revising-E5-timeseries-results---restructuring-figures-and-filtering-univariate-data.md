@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Revising E5 timeseries results - restructuring figures and filtering univariate data
+title: Revising E5 timeseries results - restructuring figures, filtering, and haplotypes
 date: '2024-02-02'
 categories: E5
 tags: Writing Multivariate R
