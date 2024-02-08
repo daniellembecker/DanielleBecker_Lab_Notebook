@@ -35,7 +35,7 @@ February goals and daily notebook entries.
 
 ### Oysters 
 
-1. PI meeting with WSG collaborators
+1. ~~PI meeting with WSG collaborators~~
 2. ~~WSG/USDA sample size planning~~
 3. WSG/USDA equipment planning 
 4. WSG/USDA secondary stress experiment and sampling
@@ -46,6 +46,16 @@ February goals and daily notebook entries.
 1. Draft Sea Grant proposal
 
 ## **Daily Log**   
+
+#### February 8 
+
+- Roberts Lab meeting
+- eScience seminar
+- ceabigr meeting
+- SafeCampus UW training
+- Carrington/Roberts WSG meeting
+- Mcap2021 manuscript
+- Call CITES  
 
 #### February 7 
 
