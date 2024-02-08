@@ -1,7 +1,7 @@
 ---
 layout: post
 title: February 2024 Goals
-date: '2024-02-02'
+date: '2024-02-08'
 categories: Monthly_Goals
 tags: Goals
 ---
@@ -39,7 +39,7 @@ February goals and daily notebook entries.
 2. ~~WSG/USDA sample size planning~~
 3. WSG/USDA equipment planning 
 4. WSG/USDA secondary stress experiment and sampling
-5. Email Niel T. with request for adult oysters
+5. ~~Email Niel T. with request for adult oysters~~
 
 ### Funding 
 
