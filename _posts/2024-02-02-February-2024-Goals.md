@@ -47,13 +47,16 @@ February goals and daily notebook entries.
 
 ## **Daily Log**   
 
+#### February 7 
+
+- Putnam Lab writing meeting
+- Mcap2021 discussion and revisions 
+
 #### February 6 
 
 - Putnam Lab meeting
-- Mcap 2021
-- Called US Cites again
+- Mcap 2021 intro
 - URI payroll questions
-- Sea Grant application 
 - Meeting with Chloe to plan CITES export 
 
 #### February 5 
