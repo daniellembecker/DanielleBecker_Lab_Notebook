@@ -51,11 +51,10 @@ February goals and daily notebook entries.
 
 - Roberts Lab meeting
 - eScience seminar
-- ceabigr meeting
+- ceabigr meeting and coding
 - SafeCampus UW training
 - Carrington/Roberts WSG meeting
 - Mcap2021 manuscript
-- Call CITES  
 
 #### February 7 
 
