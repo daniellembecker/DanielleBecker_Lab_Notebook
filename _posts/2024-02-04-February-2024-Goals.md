@@ -71,9 +71,21 @@ February 2024 goals and daily notebook entries.
 - Figured out how to use FIJI in URI Unity remote desktop
 - Wrote protocol for analyzing histological images in Unity remote desktop
 
+### February 7
+- Molecular underpinnings edits
+- 11-12pm career fair
+- Lab writing meeting, feedback on Arianas Mcap2021 manuscript, molecular underpinnings writing
+- Addressed Arianas edits on molecular underpinnings
+- Worked on gametogenesis figure 
+- Completed Demes Knauss edits
 
-
-
+### February 8
+- Finished molecular underpinnings edits, sent to Hollie on GitHub issues
+- Time management workshop 12-1pm
+- Worked on gametogenesis figure, finished and sent to Hollie on GitHub issues
+- Met with VS200 rep for imaging
+- Worked on BS-SNPer for SNP write up 
+- TA SeaLifeBase comparisons
 
 
 
