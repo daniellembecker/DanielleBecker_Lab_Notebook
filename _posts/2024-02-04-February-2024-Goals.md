@@ -89,5 +89,18 @@ February 2024 goals and daily notebook entries.
 - Worked on BS-SNPer for SNP write up 
 - TA SeaLifeBase comparisons
 
+### February 9
+- +5 TA meeting 9:30-10:30
+- Final Knauss CV edits
+- Molecular mechanisms meeting 12pm
+- Used ImageJ and 40x stage micrometer for looking at oocyte confidence intervals in measurements
+
+### February 12
+- Hollie meeting 9-10am
+- Labeling POC images from slide scanner
+- TA 11-1pm
+- Uploaded POC images to Unity
+- Wrote workflow for BS-SNPer
+
 
 
