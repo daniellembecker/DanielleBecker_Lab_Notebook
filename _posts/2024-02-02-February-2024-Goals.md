@@ -31,7 +31,8 @@ February goals and daily notebook entries.
 1. Finalize CITES for AUS trip  
 2. Dates and flights planning for AUS trip
 3. Dates and flights planning for URI trip 
-4. Plan CITES export for Chloe for Moorea 
+4. ~~Plan CITES export for Chloe for Moorea~~ 
+5. URI Trip TER 
 
 ### Oysters 
 
@@ -46,6 +47,19 @@ February goals and daily notebook entries.
 1. Draft Sea Grant proposal
 
 ## **Daily Log**   
+
+#### February 13 
+
+- Putnam Lab journal club meeting 
+- Danielle writing meeting 
+- Mcap2020 revisions 
+
+#### February 12 
+
+- Meeting with Hollie 
+- Mcap2020 revisions
+- Journal club paper 
+- Prepped URI TER
 
 #### February 9 
 
