@@ -12,8 +12,7 @@ February 2024 goals and daily notebook entries.
 
 ### Writing and manuscripts 
               
-1. USAjobs applications (Feb. 5 and Feb. 7)
-2. Finish restructuring of molecular underpinnings (Ch.1)
+1. Finish restructuring of molecular underpinnings (Ch.1)
 2. A.pul gametogenesis final figures, results sections for physio and histology analysis
 3. Write full methods and flush out introduction for marine heatwave manuscript
 4. Knauss Fellowship (Feb. 15)
@@ -28,7 +27,7 @@ February 2024 goals and daily notebook entries.
 ### Data analysis
 
 1. Finish stats for A. pul gametogenesis paper
-2. Work on DEG analysis after mapping sequences to de novo transcriptome
+2. Work on DEG analysis for heatwave after mapping sequences to de novo transcriptome
 	- See about duplication errors through trinity pipeline approach
 3. Histological image/gonad analyses 
 
@@ -112,7 +111,7 @@ February 2024 goals and daily notebook entries.
 - Knauss submission
 - TA 11-11:50
 - Lab meeting 12-1:30
-- Workflow and script for BS-SNPer
-- Apul gameto results section
+- Made workflow for BS-SNPer, running deduplicated sam sort and merge
+
 
 
