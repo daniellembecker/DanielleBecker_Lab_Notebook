@@ -113,6 +113,7 @@ February 2024 goals and daily notebook entries.
 - Lab meeting 12-1:30
 - Made workflow for BS-SNPer, running deduplicated sam sort and merge
 - Submitted error for BS-SNPer as an issue: https://github.com/hellbelly/BS-Snper/issues/22
+- Met with research computing to get AWS remote desktop working for OlyVIA software for histology image analysis
 
 
 
