@@ -1,7 +1,7 @@
 ---
 layout: post
 title: February 2024 Goals
-date: '2024-02-08'
+date: '2024-02-14'
 categories: Monthly_Goals
 tags: Goals
 ---
@@ -47,6 +47,13 @@ February goals and daily notebook entries.
 1. Draft Sea Grant proposal
 
 ## **Daily Log**   
+
+#### February 14 
+
+- Putnam Lab meeting 
+- Oyster growth data 
+- Mcap2020 
+- Point Whitney - monitor experiment and clean tanks, took pictures 
 
 #### February 13 
 
