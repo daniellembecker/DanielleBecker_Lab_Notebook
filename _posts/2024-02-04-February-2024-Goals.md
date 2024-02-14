@@ -102,5 +102,17 @@ February 2024 goals and daily notebook entries.
 - Uploaded POC images to Unity
 - Wrote workflow for BS-SNPer
 
+### February 13
+- Knauss edits from Hollie
+- Ariana meeting, writing and final Knauss edits
+- Checked in with research computing on image analysis
+- Lost internet at home
+
+### February 14
+- Knauss submission
+- TA 11-11:50
+- Lab meeting 12-1:30
+- Workflow and script for BS-SNPer
+- Apul gameto results section
 
 
