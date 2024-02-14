@@ -112,6 +112,7 @@ February 2024 goals and daily notebook entries.
 - TA 11-11:50
 - Lab meeting 12-1:30
 - Made workflow for BS-SNPer, running deduplicated sam sort and merge
+- Submitted error for BS-SNPer as an issue: https://github.com/hellbelly/BS-Snper/issues/22
 
 
 
