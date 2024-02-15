@@ -115,5 +115,9 @@ February 2024 goals and daily notebook entries.
 - Submitted error for BS-SNPer as an issue: https://github.com/hellbelly/BS-Snper/issues/22
 - Met with research computing to get AWS remote desktop working for OlyVIA software for histology image analysis
 
-
+### February 15
+- Titrations and daily measurements for aquarium 
+- Working to get AWS remote desktop linked to FileZilla and OlyVIA
+- Next step in BS-SNPer, running the samtools merge script
+- +5 TA work
 

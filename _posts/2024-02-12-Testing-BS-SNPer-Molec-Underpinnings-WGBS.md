@@ -93,6 +93,9 @@ BS_SNPer_merged.bam \
 
 `sbatch /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/scripts/merge_bam.sh`
 
+`Submitted batch job 302931`
+
+
 View output file header
 
 `samtools view merged-sorted-deduplicated.bam | head `
