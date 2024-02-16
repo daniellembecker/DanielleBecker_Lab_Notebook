@@ -98,10 +98,21 @@ BS_SNPer_merged.bam \
 
 View output file header
 
-`samtools view merged-sorted-deduplicated.bam | head `
+# this feature is only in the older module of samtools
+
+`module load SAMtools/1.9-foss-2018b `
+
+`samtools view BS-SNPer_merged.bam | head `
+
 
 ```
+GWNJ-1013:120:GW201202000:2:2318:21766:34992_1:N:0:GGCTTAAG+GGTCACGA	163	Pver_Sc0000000_size2095917	28	42	130M	=	240	342	ATATCTAACACATTAAAACTTCCTAAATCAAAAAAAAATTCCCTCTACATCAAACACAACAAACAACATTTTAATAAAAACACACATATATATTTCTTACCCCATTTTCAATAATAATAACAAATCAATA	FFFFFFFFFFF:FFFFFFFFFFFFFFFFFFFFFFFFF:FFFFFFFF:FFFFFFFFFFFFFFFFFFFFFF:FFF:FFFFFFFFFFFFF:F,FFFFFFFFFFFFFFF,FFFFFFFFFFFFFFFFFFFFFFFF	NM:i:24	MD:Z:7G1G1G2G16G2G0G10G5G8G10G3G0G5G25G0G1G2G2G4G1T0G0G1G0	XM:Z:.......h.z.z..h................h..hh..........x.....x........x..........h...hh.....z.........................zx.h..h..h....h..hh.hXR:Z:GA	XG:Z:GA
 
+GWNJ-1013:120:GW201202000:2:1535:13349:28714_1:N:0:TTACAGGA+GCTTGTCA	99	Pver_Sc0000000_size2095917	42	42	24M1D106M	=	378	465	GAAATTTTTTAAATTAAGAAGGAATTTTTTTGTATTAGATATAATAGATAATATTTTGATAGGAATATGTATATATATTTTTTGTTTTATTTTTGGTGATGATGATAAGTTGGTGTTGTGTTATTTTAGT	FFFFFFFFFFFFFFF:FFFFFFFFFFFFFFFFFF:FFFFFFFFFFFFFFF:FFFF:FFFFFFFFFFFFFFFF:F:FFFFF,FFF::FF,FFFFFFFFFFFFFFFFFFFF,FFFFFFFFFFFFFFFFFFFF	NM:i:31	MD:Z:4C2C0C5C9^T1C0C0C1C2C2C3C1C2C3C2C13C1C1C10C2A0C0C0C0C5C11C15C1C2C2C0	XM:Z:....h..hh.....h..........hhh.x..h..x...h.h..x...h..h.............h.z.h..........h...hhhh.....z...........h...............h.h..x..h	XR:Z:CT	XG:Z:CT
+
+GWNJ-1013:120:GW201202000:2:1117:2908:33927_1:N:0:TCTCTACT+GAACCGCG	163	Pver_Sc0000000_size2095917	68	6	130M	=	196	259	CCCTCTACATCAAACACAACAAACAACATTTTAATAAAAACACACATATATATTTCTTACCCCATTTTCAATAATAATAACAAATCAATATTATATCACTTCAACAAATACCTTTATCAACATAAAAATA	FFF,F,FFFFFFFF::FFF:FFFFFFFF:FFFFF,FFFFFFFFF:FFF,F,F,FF,,FFFFFFF,FFFFFFFFFFFF:FFF:FF,FFF,FFFFFFF:FF,F:FFF,FFFFFF,FFF,FFF,:,FFFFFFF	NM:i:25	MD:Z:6G5G8G10G3G0G5G25G0G1G2G2G4G1T0G0G1G2G1G8G5G9G4G2G1G0	XM:Z:......x.....x........x..........h...hh.....z.........................zx.h..h..h....h..hh.h..h.h........x.....h.........x....h..h.hXR:Z:GA	XG:Z:GA
+
+GWNJ-1013:120:GW201202000:2:2622:23312:3787_1:N:0:TTACAGGA+GCTTGTCA	163	Pver_Sc0000000_size2095917	77	21	129M	=	346	399	TCAAACACAACAAACAACATTTTAATAAAAACACACATATATATTTCTTACCCCATTTTCAATAATAATAACAAATCAATATTATGTCACTTCAACAAATACCTTTATCAACATAAAAATAACAAAATT	FFFFFF:FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF:FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF:FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF:	NM:i:24	MD:Z:3G8G10G3G0G5G25G0G1G2G2G4G1T0G0G1G2G10G5G9G4G2G1G2G5	XM:Z:...x........x..........h...hh.....z.........................zx.h..h..h....h..hh.h..h.H........x.....h.........x....h..h.h..z.....	XR:Z:GA	XG:Z:GA
 ```
 
 ## 2b. Identify SNPs
@@ -148,7 +159,7 @@ Following Stevens script:
 #SBATCH --account=putnamlab
 #SBATCH --export=NONE
 #SBATCH --mail-type=BEGIN,END,FAIL
-#SBATCH --mail-user=kevin_wong1@uri.edu
+#SBATCH --mail-user=danielle_becker@uri.edu
 #SBATCH -D /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output
 
 module load BS-Snper/1.0-foss-2021b
@@ -174,6 +185,27 @@ data/putnamlab/kevin_wong1/Thermal_Transplant_WGBS/methylseq_trim3/WGBS_methylse
 
 `sbatch /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/scripts/bs_snper_merged_steven.sh`
 
+`Submitted batch job 302954`
+
+Current issue:
+
+```
+Unknown option: input
+FLAG: 1
+refSeqFile = /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/data/refs/Pverr/Pver_genome_assembly_v1.0.fasta.
+bamFileName = /data/putnamlab/kevin_wong1/Thermal_Transplant_WGBS/methylseq_trim3/WGBS_methylseq/bismark_deduplicated/BS_SNPer_merged.bam.
+snpFileName = /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/SNP-candidates.txt.
+methCgFileName = /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CpG-meth-info.tab.
+methChgFileName = /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CHG-meth-info.tab.
+methChhFileName = /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CHH-meth-info.tab.
+vQualMin = 15.
+nLayerMax = 1000.
+vSnpRate = 0.100000.
+vSnpPerBase = 0.020000.
+mapqThr = 20.
+Too many characters in one row! Try to split the long row into several short rows (fewer than 1000000 characters per row).
+Error! at /opt/software/BS-Snper/1.0-foss-2021b/bin/BS-Snper.pl line 110.
+```
 
 
 
@@ -190,7 +222,7 @@ Following Kevins script:
 #SBATCH --account=putnamlab
 #SBATCH --export=NONE
 #SBATCH --mail-type=BEGIN,END,FAIL
-#SBATCH --mail-user=kevin_wong1@uri.edu
+#SBATCH --mail-user=danielle_becker@uri.edu
 #SBATCH -D /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output
 
 module load BS-Snper/1.0-foss-2021b
@@ -208,3 +240,26 @@ perl /opt/software/BS-Snper/1.0-foss-2021b/bin/BS-Snper.pl \
 ```
 
 `sbatch /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/scripts/bs_snper_merged_kevin.sh`
+
+
+`Submitted batch job 302955`
+
+Current issue:
+
+```
+Unknown option: input
+FLAG: 1
+refSeqFile = /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/data/refs/Pverr/Pver_genome_assembly_v1.0.fasta.
+bamFileName = /data/putnamlab/kevin_wong1/Thermal_Transplant_WGBS/methylseq_trim3/WGBS_methylseq/bismark_deduplicated/BS_SNPer_merged.bam.
+snpFileName = /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/SNP-candidates.txt.
+methCgFileName = /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CpG-meth-info.tab.
+methChgFileName = /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CHG-meth-info.tab.
+methChhFileName = /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CHH-meth-info.tab.
+vQualMin = 15.
+nLayerMax = 1000.
+vSnpRate = 0.100000.
+vSnpPerBase = 0.020000.
+mapqThr = 20.
+Too many characters in one row! Try to split the long row into several short rows (fewer than 1000000 characters per row).
+Error! at /opt/software/BS-Snper/1.0-foss-2021b/bin/BS-Snper.pl line 110.
+```
