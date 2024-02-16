@@ -13,7 +13,7 @@ February goals and daily notebook entries.
               
 1. ~~Write Mcap2021 full draft By Feb 15th~~
 2. Draft E5 physiology introduction section 
-3. Mcap2020 revisions By Feb 16th
+3. ~~Mcap2020 revisions By Feb 16th~~
 
 ### Analysis
 
@@ -47,6 +47,10 @@ February goals and daily notebook entries.
 1. Draft Sea Grant proposal
 
 ## **Daily Log**   
+
+#### February 16 
+
+- Finished Mcap2020 full draft, sent to HP 
 
 #### February 15 
 
