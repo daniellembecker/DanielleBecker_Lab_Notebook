@@ -165,7 +165,7 @@ Following Stevens script:
 module load BS-Snper/1.0-foss-2021b
 
 perl /opt/software/BS-Snper/1.0-foss-2021b/bin/BS-Snper.pl \
-data/putnamlab/kevin_wong1/Thermal_Transplant_WGBS/methylseq_trim3/WGBS_methylseq/bismark_deduplicated/BS_SNPer_merged.bam \
+/data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/bismark_deduplicated/BS_SNPer_merged.bam \
 --fa /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/data/refs/Pverr/Pver_genome_assembly_v1.0.fasta \
 --output /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/SNP-candidates.out \
 --methcg /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CpG-meth-info.tab \
@@ -193,7 +193,7 @@ Current issue:
 Unknown option: input
 FLAG: 1
 refSeqFile = /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/data/refs/Pverr/Pver_genome_assembly_v1.0.fasta.
-bamFileName = /data/putnamlab/kevin_wong1/Thermal_Transplant_WGBS/methylseq_trim3/WGBS_methylseq/bismark_deduplicated/BS_SNPer_merged.bam.
+bamFileName = /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/bismark_deduplicated/BS_SNPer_merged.bam.
 snpFileName = /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/SNP-candidates.txt.
 methCgFileName = /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CpG-meth-info.tab.
 methChgFileName = /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CHG-meth-info.tab.
@@ -229,7 +229,7 @@ module load BS-Snper/1.0-foss-2021b
 
 perl /opt/software/BS-Snper/1.0-foss-2021b/bin/BS-Snper.pl \
 --fa /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/data/refs/Pverr/Pver_genome_assembly_v1.0.fasta \
---input /data/putnamlab/kevin_wong1/Thermal_Transplant_WGBS/methylseq_trim3/WGBS_methylseq/bismark_deduplicated/BS_SNPer_merged.bam \
+--input /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/bismark_deduplicated/BS_SNPer_merged.bam \
 --output /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/SNP-candidates.txt \
 --methcg /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CpG-meth-info.tab \
 --methchg /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CHG-meth-info.tab \
@@ -250,7 +250,7 @@ Current issue:
 Unknown option: input
 FLAG: 1
 refSeqFile = /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/data/refs/Pverr/Pver_genome_assembly_v1.0.fasta.
-bamFileName = /data/putnamlab/kevin_wong1/Thermal_Transplant_WGBS/methylseq_trim3/WGBS_methylseq/bismark_deduplicated/BS_SNPer_merged.bam.
+bamFileName = /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/bismark_deduplicated/BS_SNPer_merged.bam.
 snpFileName = /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/SNP-candidates.txt.
 methCgFileName = /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CpG-meth-info.tab.
 methChgFileName = /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CHG-meth-info.tab.
@@ -263,3 +263,38 @@ mapqThr = 20.
 Too many characters in one row! Try to split the long row into several short rows (fewer than 1000000 characters per row).
 Error! at /opt/software/BS-Snper/1.0-foss-2021b/bin/BS-Snper.pl line 110.
 ```
+
+
+Possible reason for error: The limit for the number of characters per row is 1,00,000 and our input has a line that is  2,095,918. Research commputing patched the module and BS-SNPer.pl script to accept 3,000,000. I reran the Steven approach script.
+
+`sbatch /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/scripts/bs_snper_merged_steven.sh`
+
+`Submitted batch job 303588`
+
+Received another error:
+
+```
+Unknown option: input
+FLAG: 1
+refSeqFile = /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/data/refs/Pverr/Pver_genome_assembly_v1.0.fasta.
+bamFileName = /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/bismark_deduplicated/BS_SNPer_merged.bam.
+snpFileName = /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/SNP-candidates.txt.
+methCgFileName = /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CpG-meth-info.tab.
+methChgFileName = /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CHG-meth-info.tab.
+methChhFileName = /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CHH-meth-info.tab.
+vQualMin = 15.
+nLayerMax = 1000.
+vSnpRate = 0.100000.
+vSnpPerBase = 0.020000.
+mapqThr = 20.
+Too many chromosomes!
+Error! at /opt/software/BS-Snper/1.0-foss-2021b/bin/BS-Snper.pl line 110.
+```
+
+Possible reason for this error: The .pl script had a limit of 10k chromosomes. Research computing patched it to accept 30k (same multiplier as the line length). I then reran the script.
+
+`sbatch /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/scripts/bs_snper_merged_steven.sh`
+
+`Submitted batch job 303594`
+
+IT IS RUNNING YAY!
