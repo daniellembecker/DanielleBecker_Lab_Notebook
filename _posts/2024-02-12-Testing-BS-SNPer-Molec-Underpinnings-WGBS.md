@@ -317,15 +317,15 @@ The output files include an SNP output file and a methylation output file.
 The SNP output file has a standard VCF format.
 The methylation output file has a tab-separated format same as MethylExtract (https://sourceforge.net/projects/methylextract/files/MethylExtract_1.4/ManualMethylExtract.pdf/download):
 
-`1. CHROM: Chromosome.
-2. POS: Sequence context most 5’ position on the Watson strand (1-based).
-3. CONTEXT: Sequence contexts with the SNVs annotated using the IUPAC nucleotide ambiguity code (referred to the Watson strand).
-4. Watson METH: The number of methyl-cytosines (referred to the Watson strand).
-5. Watson COVERAGE: The number of reads covering the cytosine in this sequence context (referred to the Watson strand).
-6. Watson QUAL: Average PHRED score for the reads covering the cytosine (referred to the Watson strand).
-7. Crick METH: The number of methyl-cytosines (referred to the Watson strand).
-8. Crick COVERAGE: The number of reads covering the guanine in this context (referred to the Watson strand).
-9. Crick QUAL: Average PHRED score for the reads covering the guanine (referred to the Watson strand).`
+- 1. CHROM: Chromosome.
+- 2. POS: Sequence context most 5’ position on the Watson strand (1-based).
+- 3. CONTEXT: Sequence contexts with the SNVs annotated using the IUPAC nucleotide ambiguity code (referred to the Watson strand).
+- 4. Watson METH: The number of methyl-cytosines (referred to the Watson strand).
+- 5. Watson COVERAGE: The number of reads covering the cytosine in this sequence context (referred to the Watson strand).
+- 6. Watson QUAL: Average PHRED score for the reads covering the cytosine (referred to the Watson strand).
+- 7. Crick METH: The number of methyl-cytosines (referred to the Watson strand).
+- 8. Crick COVERAGE: The number of reads covering the guanine in this context (referred to the Watson strand).
+- 9. Crick QUAL: Average PHRED score for the reads covering the guanine (referred to the Watson strand).`
 
 View SNP-results.vcf file:
 
