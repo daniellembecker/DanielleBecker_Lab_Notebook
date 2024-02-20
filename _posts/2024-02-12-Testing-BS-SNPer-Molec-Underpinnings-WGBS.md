@@ -98,7 +98,7 @@ BS_SNPer_merged.bam \
 
 View output file header
 
-# this feature is only in the older module of samtools
+## This feature is only in the older module of samtools
 
 `module load SAMtools/1.9-foss-2018b `
 
