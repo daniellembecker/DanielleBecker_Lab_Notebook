@@ -207,8 +207,6 @@ Too many characters in one row! Try to split the long row into several short row
 Error! at /opt/software/BS-Snper/1.0-foss-2021b/bin/BS-Snper.pl line 110.
 ```
 
-
-
 Following Kevins script:
 
 `nano /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/scripts/bs_snper_merged_kevin.sh`
@@ -235,7 +233,7 @@ perl /opt/software/BS-Snper/1.0-foss-2021b/bin/BS-Snper.pl \
 --methchg /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CHG-meth-info.tab \
 --methchh /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CHH-meth-info.tab \
 --mincover 5 \
-> /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_outputSNP-results.vcf 2> /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/merged.ERR.log
+> /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/SNP-results.vcf 2> /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/merged.ERR.log
 
 ```
 
@@ -312,3 +310,106 @@ Research computing modified the install recipe to copy it to where it's expectin
 `sbatch /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/scripts/bs_snper_merged_steven.sh`
 
 `Submitted batch job 303619`
+
+The script ran without errors! The output .vcf files all look good compared to Steven and Yaamminis output files.
+
+The output files include an SNP output file and a methylation output file.
+The SNP output file has a standard VCF format.
+The methylation output file has a tab-separated format same as MethylExtract (https://sourceforge.net/projects/methylextract/files/MethylExtract_1.4/ManualMethylExtract.pdf/download):
+
+`1. CHROM: Chromosome.
+2. POS: Sequence context most 5’ position on the Watson strand (1-based).
+3. CONTEXT: Sequence contexts with the SNVs annotated using the IUPAC nucleotide ambiguity code (referred to the Watson strand).
+4. Watson METH: The number of methyl-cytosines (referred to the Watson strand).
+5. Watson COVERAGE: The number of reads covering the cytosine in this sequence context (referred to the Watson strand).
+6. Watson QUAL: Average PHRED score for the reads covering the cytosine (referred to the Watson strand).
+7. Crick METH: The number of methyl-cytosines (referred to the Watson strand).
+8. Crick COVERAGE: The number of reads covering the guanine in this context (referred to the Watson strand).
+9. Crick QUAL: Average PHRED score for the reads covering the guanine (referred to the Watson strand).`
+
+View SNP-results.vcf file:
+
+`head /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/SNP-results.vcf`
+
+`##fileDate= 20240220
+##bssnperVersion=1.1
+##bssnperCommand=--fa /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/data/refs/Pverr/Pver_genome_assembly_v1.0.fasta   --input /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/bismark_deduplicated/BS_SNPer_merged.bam --output /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/SNP-candidates.out --methcg /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CpG-meth-info.tab --methchg /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CHG-meth-info.tab --methchh /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CHH-meth-info.tab --minhetfreq  0.1 --minhomfreq  0.85 --minquali 15 --mincover 10 --maxcover 1000 --minread2 2 --errorate 0.02 --mapvalue 20
+##reference=file:///data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/data/refs/Pverr/Pver_genome_assembly_v1.0.fasta
+##Bisulfite=directional>
+##contig=<ID=Pver_Sc0000000_size2095917,length=2095917>
+##contig=<ID=Pver_Sc0000001_size2081954,length=2081954>
+##contig=<ID=Pver_Sc0000002_size1617595,length=1617595>
+##contig=<ID=Pver_Sc0000003_size1576134,length=1576134>`
+
+Count number of lines in the SNP-results.vcf file
+
+`wc -l /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/SNP-results.vcf`
+
+`4764382`
+
+## 2c. Intersect VCF with SNP locations and CG motif track
+
+Use BEDtools intersectBED to determine which SNPs are present at CG sites:
+
+`nano /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/scripts/intersectbed.SNPs.sh`
+
+```bash
+#!/bin/bash
+#SBATCH --job-name="BEDtools"
+#SBATCH -t 500:00:00
+#SBATCH --nodes=1 --ntasks-per-node=10
+#SBATCH --mem=120GB
+#SBATCH --account=putnamlab
+#SBATCH --export=NONE
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=danielle_becker@uri.edu
+#SBATCH -D /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output
+
+module load BEDTools/2.30.0-GCC-11.3.0
+
+intersectBed \
+-u \
+-a /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/SNP-results.vcf \
+-b /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/data/refs/Pverr/Pver_genome_assembly_v1.0_modified.gff3 \
+| grep "C	T" \
+> /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CT-SNPs.tab
+
+```
+
+`sbatch /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/scripts/intersectbed.SNPs.sh`
+
+`Submitted batch job 303631`
+
+Look at CT SNPs output file:
+
+`head CT-SNPs.tab`
+
+Components of output file:
+
+1. Chromosome/Contig: The first column of the output file is likely to contain information about the chromosome or contig where the SNP is located. This information is often found in the VCF file (SNP-results.vcf).
+2. Position: The second column represents the position of the SNP on the chromosome or contig.
+3. ID/Name: The third column may contain an identifier or name for the SNP.
+4. Reference Allele: The fourth column shows the reference allele at the specified position.
+5. Alternate Allele: The fifth column shows the alternate allele at the specified position.
+6. Quality Score (QUAL): There might be a column indicating the quality score of the SNP. This information is often found in the VCF file.
+7. Filter Status (FILTER): This column could show whether the SNP passes certain quality filters.
+8. INFO fields:
+- DP: This field represents the total read depth at the position of the variant.
+- ADF (Allelic Depth Forward) and ADR (Allelic Depth Reverse): These fields represent the number of reads supporting the variant allele in the forward and reverse directions, respectively.
+- AD (Allelic Depth): The total number of reads supporting the variant allele (ADF + ADR).
+9. FORMAT field (e.g., "GT:DP:ADF:ADR"):
+- GT (Genotype): Represents the genotype of the variant. For example, "0/1" indicates a heterozygous variant.
+- DP: Same as in the INFO field, representing the total read depth.
+- ADF and ADR: Same as in the INFO field, representing allelic depths for forward and reverse reads, respectively.
+
+`Pver_Sc0000000_size2095917	14130	.	C	T	1000	PASS	DP=103;ADF=0,0;ADR=1,102;AD=1,102;	GT:DP:ADF:ADR:AD:BSD:BSQ:ALFR	0/1:103:0,0:1,102:1,102:0,0,64,0,0,102,1,0:0,0,36,0,0,37,37,0:0.010,0.990
+Pver_Sc0000000_size2095917	14608	.	C	T	1000	PASS	DP=414;ADF=0,0;ADR=293,121;AD=293,121;	GT:DP:ADF:ADR:AD:BSD:BSQ:ALFR	0/1:414:0,0:293,121:293,121:0,0,200,0,0,121,293,0:0,0,36,0,0,37,37,0:0.708,0.292
+Pver_Sc0000000_size2095917	14723	.	C	T	1000	PASS	DP=11;ADF=0,0;ADR=1,10;AD=1,10;	GT:DP:ADF:ADR:AD:BSD:BSQ:ALFR	0/1:11:0,0:1,10:1,10:0,0,23,0,0,10,1,0:0,0,36,0,0,37,37,0:0.091,0.909
+Pver_Sc0000000_size2095917	14730	.	C	T	1000	Low	DP=8;ADF=0,0;ADR=0,8;AD=0,8;	GT:DP:ADF:ADR:AD:BSD:BSQ:ALFR	0/1:8:0,0:0,8:0,8:0,0,22,0,0,8,0,0:0,0,37,0,0,37,0,0:0.000,1.000`
+
+Look at CT-SNPs specific tab file to see how many CT SNPs are in my dataset:
+
+`wc -l CT-SNPs.tab
+411482 CT-SNPs.tab`
+
+411,482 out of 4,764,382 chromosomes have CT SNPs = 8.64%
