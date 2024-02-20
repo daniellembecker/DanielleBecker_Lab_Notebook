@@ -121,3 +121,18 @@ February 2024 goals and daily notebook entries.
 - Next step in BS-SNPer, running the samtools merge script
 - +5 TA work
 
+### February 16
+- +5 TA meeting with Austin 9:30-10:30
+- TA 11-11:50
+- Updated CV
+- Booked Knauss interview
+- Transferred files using Globus Personal Connection for new AWS remote desktop
+
+### February 19
+- Got BS-SNPer to run!!!
+- Updated CV for merced job
+- Wrote cover letter for merced job
+- Finished Apul image files transfer to use OlyVIA on remote desktop
+
+
+

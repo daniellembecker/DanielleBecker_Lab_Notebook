@@ -295,6 +295,20 @@ Possible reason for this error: The .pl script had a limit of 10k chromosomes. R
 
 `sbatch /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/scripts/bs_snper_merged_steven.sh`
 
-`Submitted batch job 303594`
+`Submitted batch job 303600`
 
 IT IS RUNNING YAY!
+
+Another error after the script ran:
+
+```
+At the end of `merged.ERR.log` it says it failed to call a copy of samtools it expected to be local to the BS-Snper install.
+
+```
+
+Research computing modified the install recipe to copy it to where it's expecting to find it.
+
+
+`sbatch /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/scripts/bs_snper_merged_steven.sh`
+
+`Submitted batch job 303619`
