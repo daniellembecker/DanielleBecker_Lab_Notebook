@@ -19,6 +19,7 @@ February goals and daily notebook entries.
 
 1. ~~Analyze effects of species on E5 phys and ITS2 data~~
 2. Revise E5 results 
+3. ceabigr time series ANOVA and WGCNA results 
 
 ### Sample processing
 
@@ -47,6 +48,14 @@ February goals and daily notebook entries.
 1. Draft Sea Grant proposal
 
 ## **Daily Log**   
+
+#### February 22 
+
+- ceabigr coding 
+- Roberts Lab meeting 
+- Downloaded sequences from Azenta to URI and UW servers, worked on uploading to NCBI 
+- USDA/WSG stressor experiment planning 
+- Planning URI trip
 
 #### February 16 
 
