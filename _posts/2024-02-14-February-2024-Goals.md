@@ -49,6 +49,14 @@ February goals and daily notebook entries.
 
 ## **Daily Log**   
 
+#### February 23 
+
+- E5 All Hands meeting 
+- Meeting with Steven to plan next week's sampling 
+- Planning equipment and proceedures for next week 
+- SRA NCBI uploads 
+- Sea grant application
+
 #### February 22 
 
 - ceabigr coding 
