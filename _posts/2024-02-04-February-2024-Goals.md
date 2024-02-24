@@ -134,5 +134,35 @@ February 2024 goals and daily notebook entries.
 - Wrote cover letter for merced job
 - Finished Apul image files transfer to use OlyVIA on remote desktop
 
+### February 20
+- Calculated CT-SNPs from WGBS data using samtools intersectBED
+- Working through OlyVIA technical errors on remote desktop
+- Journal club meeting 11 - 12:30 pm 
+- TA testing correction hours 2 - 4pm
+
+### February 21
+- Still working through OlyVIA technical errors on remote desktop
+- TA 11 - 11:50 pm
+- Lab meeting 12 - 1:30 pm
+- TA test corrections 2:30 - 4:30 pm
+- Cover letter for transgenic coral postdoc at UNCW
+
+### February 22
+- Equity in teaching pedagogy workshop 9-11am
+- Imaging standardization for ImageJ/FIJI
+- Aquarium daily tasks, calibrated all Apex probes, tris calibration
+- Final POC imaging at Brown 3-6pm
+- Worked on CV and cover letter for UNCW postdoc
+
+### February 23
+- +5 TA meeting with Austin 9:30-10:30pm
+- TA 11 - 11:50 pm
+- E5 meeting 12 - 1:00 pm
+- Submitted application for transgenic coral postdoc at UNCW
+
+### February 24
+- Reviewed Ariana Mcap 2020 paper 
+- Reviewed JEB paper
+
 
 

@@ -262,8 +262,11 @@ Too many characters in one row! Try to split the long row into several short row
 Error! at /opt/software/BS-Snper/1.0-foss-2021b/bin/BS-Snper.pl line 110.
 ```
 
+Possible reason for error: The limit for the number of characters per row is 1,00,000 and our input fasta file has a line that is  2,095,918. Research computing patched the module and BS-SNPer.pl script to accept 3,000,000. I reran the Steven approach script.
 
-Possible reason for error: The limit for the number of characters per row is 1,00,000 and our input has a line that is  2,095,918. Research commputing patched the module and BS-SNPer.pl script to accept 3,000,000. I reran the Steven approach script.
+Python script used to determine number of characters:
+
+`python /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/scripts/max_ln.py /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/data/refs/Pverr/Pver_genome_assembly_v1.0.fasta`
 
 `sbatch /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/scripts/bs_snper_merged_steven.sh`
 
