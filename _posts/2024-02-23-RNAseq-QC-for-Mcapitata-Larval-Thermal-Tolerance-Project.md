@@ -606,9 +606,33 @@ This report also included the fastp stats, which was new to me!
 | trim.R99_R1_001  |               |            |        |           |  54.7% |  43% |  5.7   |
 | trim.R99_R2_001  |               |            |        |           |  54.6% |  43% |  5.7   |
 
-- ENTER RESULTS HERE 
+- Fastp filtering: most reads filtered were due to low quality   
 
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/Hawaii2023/rnaseq/fastp_filtered_reads_plot.png?raw=true)  
 
+- Average insert size is 133 bp
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/Hawaii2023/rnaseq/fastp-insert-size-plot.png?raw=true) 
+
+- You can see the seven samples here with low read counts (<5M)
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/Hawaii2023/rnaseq/trim_reads.png?raw=true)
+
+- There is some sequence duplication. Need to determine if this is expected or a problem.  
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/Hawaii2023/rnaseq/trim_duplication.png?raw=true)
+
+- GC content is better now. There are two samples with weird distributions. I'll look at those in more detail in individual files.  
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/Hawaii2023/rnaseq/trim_gc.png?raw=true)
+
+- Length is shorter now after adapter removal.   
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/Hawaii2023/rnaseq/trim_length.png?raw=true)
+
+- Quality is very high 
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/Hawaii2023/rnaseq/trim_quality.png?raw=true)
 
 Next I need to look at the individual raw and trimmed FastQC files for each sample.  
 
@@ -621,6 +645,8 @@ scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/mcap-2023-rnaseq/trim
 
 ```
 
-Raw FastQC files can be found [on GitHub here]() and trimmed FastQC files can be found [on GitHub here]().  
+Raw FastQC files can be found [on GitHub here](https://github.com/AHuffmyer/larval_symbiont_TPC/tree/main/data/rna_seq/QC/fastqc_raw) and trimmed FastQC files can be found [on GitHub here]().  
 
-ENTER RESULTS HERE  
+I'll next dig into each sample and see what they look like - especially those with low sequence counts and deviations from normal QC results.  
+
+Note that we only had 50 larvae in each sample, so I am not surprised that we have most of our reads with 10-15M reads.  
