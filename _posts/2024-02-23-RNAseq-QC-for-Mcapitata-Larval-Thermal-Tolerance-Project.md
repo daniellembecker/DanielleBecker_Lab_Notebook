@@ -606,11 +606,11 @@ This report also included the fastp stats, which was new to me!
 | trim.R99_R1_001  |               |            |        |           |  54.7% |  43% |  5.7   |
 | trim.R99_R2_001  |               |            |        |           |  54.6% |  43% |  5.7   |
 
-- 
+- ENTER RESULTS HERE 
 
 
 
-
+Next I need to look at the individual raw and trimmed FastQC files for each sample.  
 
 Copy the individual fastqc files to my computer.   
 
@@ -623,3 +623,4 @@ scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/mcap-2023-rnaseq/trim
 
 Raw FastQC files can be found [on GitHub here]() and trimmed FastQC files can be found [on GitHub here]().  
 
+ENTER RESULTS HERE  
