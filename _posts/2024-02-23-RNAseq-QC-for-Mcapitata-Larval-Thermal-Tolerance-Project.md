@@ -74,7 +74,8 @@ The raw sequence MultiQC [report can be found on GitHub here](https://github.com
 See [this previous post with statistics of samples provided by Azenta](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/Mcapitata-Larval-Thermal-Tolerance-Project-NCBI-upload/).    
 
 - **Samples with lowest sequence counts**   
-	- Samples R75, R99, R67, R83, R91, R107, R59 have <10M sequence counts. These are randomly distributed between treatments, so if they are removed it doesn't cause a problem. A standard approach is to have samples with >5M mapped reads for DEG analysis. If we have <5M reads after mapping they will likely be removed or we will need to see how or if results from these samples differ from others using PCA's, etc.  
+	- Samples R75, R99, R67, R83, R91, R107, R59 have <10M sequence counts. These are randomly distributed between treatments, so if they are removed it doesn't cause a problem. A standard approach is to have samples with >5M mapped reads for DEG analysis. If we have <5M reads after mapping they will likely be removed or we will need to see how or if results from these samples differ from others using PCA's, etc. 
+	- I emailed Azenta on 20240226 to inquire about library prep QC, methods, and the option to resequence these low read depth libraries.  
 	 
 	- **R75**: Bleached Cladocopium at 30°C; Batch 7; Qbit RNA 16.1; Nanodrop RNA 12.5 
 	- **R99**: Nonbleached Mixed at 33°C; Batch 9; Qbit RNA 21.6; Nanodrop RNA 14.1 
@@ -488,7 +489,7 @@ scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/mcap-2023-rnaseq/trim
 
 ```
 
-The MultiQC report results are below. The seven samples that had <10M reads had reads reduced and now they are <5M reads. These will likely need to be removed from analyses. The remaining samples have 9M-25M reads. We will reevaluate which samples should be removed from analyses after the mapping step. 
+The MultiQC report results are below. The seven samples that had <10M reads had reads reduced and now they are <5M reads. These will likely need to be removed from analyses. The remaining samples have 9M-25M reads. We will reevaluate which samples should be removed from analyses after the mapping step and after I hear back from Azenta. 
 
 This report also included the fastp stats, which was new to me!   
 
@@ -645,8 +646,6 @@ scp ashuffmyer@ssh3.hac.uri.edu:/data/putnamlab/ashuffmyer/mcap-2023-rnaseq/trim
 
 ```
 
-Raw FastQC files can be found [on GitHub here](https://github.com/AHuffmyer/larval_symbiont_TPC/tree/main/data/rna_seq/QC/fastqc_raw) and trimmed FastQC files can be found [on GitHub here]().  
+Raw FastQC files can be found [on GitHub here](https://github.com/AHuffmyer/larval_symbiont_TPC/tree/main/data/rna_seq/QC/fastqc_raw) and trimmed FastQC files can be found [on GitHub here](https://github.com/AHuffmyer/larval_symbiont_TPC/tree/main/data/rna_seq/QC/fastqc_trimmed).  
 
 I'll next dig into each sample and see what they look like - especially those with low sequence counts and deviations from normal QC results.  
-
-Note that we only had 50 larvae in each sample, so I am not surprised that we have most of our reads with 10-15M reads.  
