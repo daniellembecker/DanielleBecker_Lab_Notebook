@@ -14,7 +14,7 @@ See my [previous post here](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/
 
 # Coding and results 
 
-```{r setup, include=FALSE}
+```
 #library(kableExtra)
 # library(DESeq2)
 # library(pheatmap)
@@ -44,7 +44,7 @@ Read in data that now has sample_fold in rows and genes in columns with values r
 
 Running for just females for now.  
 
-```{r}
+```
 #setwd("Projects/ceabigr")
 
 #datExpr <- fread("output/68-female-exon-fold/logfc.txt")
@@ -53,7 +53,7 @@ datExpr <- fread("output/72-exon-data-rfmt/female_exon_tf.csv")
 
 Set row names and remove character column. 
 
-```{r}
+```
 rownames(datExpr) <- datExpr$SampleID_fold
 sample_vector<-datExpr$SampleID_fold
 datExpr <- datExpr[ , -1, with = FALSE]
@@ -61,7 +61,7 @@ datExpr <- datExpr[ , -1, with = FALSE]
 
 Remove rows that are a sum of 0. These are the fold 1 rows.  
 
-```{r}
+```
 # Find rows with sum not equal to 0
 nonZeroSumRows <- rowSums(datExpr, na.rm=TRUE) != 0
 
@@ -71,7 +71,7 @@ datExpr <- datExpr[nonZeroSumRows, ]
 
 Remove columns that have na's (removed genes not present in every sample).  
 
-```{r}
+```
 datExpr<-datExpr %>%
     select_if(~ !any(is.na(.)))
 ```
@@ -79,7 +79,7 @@ We had 13,280 genes before, and now have 11,270 genes.
 
 Choose a soft power. 
 
-```{r}
+```
 powers = c(1:35)
 sft = pickSoftThreshold(datExpr, powerVector = powers, verbose = 5)
 plot(sft$fitIndices[,1], sft$fitIndices[,3], pch = 19, xlab="Soft Threshold (power)", ylab="scale free topology model fit", type="n")
@@ -96,7 +96,7 @@ It's having a problem estimating variance to generate the soft powers... It does
 
 Run blockwise modules with a signed network. 
 
-``` {r, echo=TRUE, warning=FALSE, message=FALSE}
+```
 
 picked_power =  10
 temp_cor <- cor       
@@ -147,7 +147,7 @@ names(membership)<-c("module", "gene")
 
 Next plot eigengene levels 
 
-```{r}
+```
 #Calculate eigengenes
 MEList = moduleEigengenes(datExpr, colors = mergedColors, softPower = 8)
 MEs = MEList$eigengenes
@@ -170,7 +170,7 @@ There are three modules.
 
 Plot module expression across exon location. 
 
-```{r}
+```
 head(MEs)
 names(MEs)
 Strader_MEs <- MEs
@@ -183,14 +183,14 @@ Strader_MEs <- separate(Strader_MEs, col = sample, into = c("sample", "fold"), s
 head(Strader_MEs)
 ```
 
-```{r}
+```
 plot_MEs<-Strader_MEs%>%
   gather(., key="Module", value="Mean", ME0:ME2)
 ```
 
 First, assign treatment by sample ID. 
 
-```{r}
+```
 meta<-read_csv("data/adult-meta.csv")
 
 plot_MEs$treatment<-meta$Treatment[match(plot_MEs$sample, meta$OldSample.ID)]
@@ -198,7 +198,7 @@ plot_MEs$treatment<-meta$Treatment[match(plot_MEs$sample, meta$OldSample.ID)]
 
 Plot module expression across exon location. 
 
-```{r}
+```
 library(ggplot2)
 library(tidyverse)
 
