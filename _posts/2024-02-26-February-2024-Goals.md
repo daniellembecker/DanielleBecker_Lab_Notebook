@@ -1,7 +1,7 @@
 ---
 layout: post
 title: February 2024 Goals
-date: '2024-02-14'
+date: '2024-02-26'
 categories: Monthly_Goals
 tags: Goals
 ---
@@ -48,6 +48,15 @@ February goals and daily notebook entries.
 1. Draft Sea Grant proposal
 
 ## **Daily Log**   
+
+#### February 27 
+
+- Putnam Lab writing group 
+- Meeting with Shayle
+- Moorea writing meeting with Danielle 
+- ceabigr WGCNA attempt 
+- Seagrant application - watched webinar, project description 
+- Prepped Putnam Lab meeting PPT  
 
 #### February 26 
 
