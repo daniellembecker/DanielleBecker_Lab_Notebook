@@ -177,6 +177,16 @@ Kathleen, Grace, and Eric took samples and extra oysters back to UW after sampli
 
 We will next work on using extra oysters to trial assays and processing samples after we look at Eric's qPCR results from his November sampling.   
 
+Here are the storage notes from Eric:  
+
+RNA: was stored at room temp overnight on feb 28. Then moved to 4º in FTR 213 at 11 AM on feb 29. Tomorrow (feb 30) around noon I will remove the RNA later from tubes and store in -80. This is following their [recommendation](https://tools.thermofisher.com/content/sfs/manuals/cms_056069.pdf).  
+
+DNA: stored in 4º in FTR 213 at 7:30 pm, feb 28  
+
+Phys: taken from dry shipper, put into boxes, immediately put in -80º at 7:30 on feb 28. They are not in the leftmost -80 freezer because that one is completely full. They are in the freezer to the right of it, on the top shelf.  
+
+All are in clearly labeled boxes e.g 20240228 LCO-24 DNA AHuffmyer or EE  
+
 # Pictures
 
 Here are some pictures of the day taken by Kathleen! 
