@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Lifestage Carryover Project Sampling - February 28, 2024 
+title: Lifestage Carryover Project Sampling
 date: '2024-02-28'
 categories: RobertsLab_Oysters WSG_USDA
 tags: Oyster Husbandry Survival Sampling
