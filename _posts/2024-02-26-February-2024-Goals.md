@@ -5,6 +5,7 @@ date: '2024-02-26'
 categories: Monthly_Goals
 tags: Goals
 ---
+
 February goals and daily notebook entries. 
 
 ## Goals  
@@ -39,8 +40,8 @@ February goals and daily notebook entries.
 
 1. ~~PI meeting with WSG collaborators~~
 2. ~~WSG/USDA sample size planning~~
-3. WSG/USDA equipment planning 
-4. WSG/USDA secondary stress experiment and sampling
+3. ~~WSG/USDA equipment planning~~ 
+4. ~~WSG/USDA secondary stress experiment and sampling~~
 5. ~~Email Niel T. with request for adult oysters~~
 
 ### Funding 
@@ -48,6 +49,10 @@ February goals and daily notebook entries.
 1. Draft Sea Grant proposal
 
 ## **Daily Log**   
+
+#### February 28 
+
+- Sampling lifestage carry over project at Point Whitney
 
 #### February 27 
 
