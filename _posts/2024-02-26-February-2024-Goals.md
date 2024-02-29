@@ -50,6 +50,14 @@ February goals and daily notebook entries.
 
 ## **Daily Log**   
 
+#### February 29 
+
+- Seagrant application
+- Roberts Lab meeting 
+- Pubathon
+- eScience seminar
+- Called CITES
+
 #### February 28 
 
 - Sampling lifestage carry over project at Point Whitney

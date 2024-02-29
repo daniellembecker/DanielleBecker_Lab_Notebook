@@ -176,3 +176,19 @@ Metadata for sampling was typed from physical notebook pages and stored on [GitH
 Kathleen, Grace, and Eric took samples and extra oysters back to UW after sampling. RNA later will be left at room temperature until Thursday PM or Friday AM and will then be put in the -20°C freezer. DNA samples will be added to the 4°C fridge. Physiology/molecular samples will be added to the -80°C fridge. Boxes will have the date (20240228), "Huffmyer", "LCO-24", and the sample type labeled.  
 
 We will next work on using extra oysters to trial assays and processing samples after we look at Eric's qPCR results from his November sampling.   
+
+# Pictures
+
+Here are some pictures of the day taken by Kathleen! 
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/oysters/wsg_usda/sampling1.jpg?raw=true)
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/oysters/wsg_usda/sampling2.jpg?raw=true)
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/oysters/wsg_usda/sampling3.jpg?raw=true)
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/oysters/wsg_usda/sampling4.jpg?raw=true)
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/oysters/wsg_usda/sampling5.jpg?raw=true)
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/oysters/wsg_usda/sampling6.jpg?raw=true)
