@@ -6,6 +6,8 @@ categories: RobertsLab_Oysters WSG_USDA
 tags: Oyster Growth Husbandry Survival
 ---
 
+This post details preparations for oyster sampling for Lifestage Carryover project.  
+
 # Overview
 
 Today I went to Point Whitney to clean, organize, and measure growth and survival of oysters in the lifestage carryover project. See previous posts on this project in [my notebook here](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/categoryview/#wsg-usda) and [Eric's notebook here](https://eric-ess.github.io/notebook/). 
