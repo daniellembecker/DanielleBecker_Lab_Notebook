@@ -164,5 +164,33 @@ February 2024 goals and daily notebook entries.
 - Reviewed Ariana Mcap 2020 paper 
 - Reviewed JEB paper
 
+### February 25
+- Reviewed JEB paper
+
+### February 26
+- Knauss interview prep
+- Reviewed JEB paper
+- TA 11-1pm
+- Knauss mock interview 1-2pm
+- Unity remote desktop sizing n=20 for 10um
+
+### February 27
+- Knauss interview prep
+- Finished JEB review 
+- Writing group meeting 11-12:30pm
+- Started measuring gametes
+- Moorea writing meeting 2:30-3:30pm
+- Knauss mock interview 4-5pm
+
+### February 28
+- TA 11-11:50am
+- Knauss interview prep
+- Knauss interview
+
+### February 29
+- TA office hours 9-12pm
+- Molecular underpinnings edits second round from Hollie
+- Titrations and daily aquarium responsibilities
+
 
 
