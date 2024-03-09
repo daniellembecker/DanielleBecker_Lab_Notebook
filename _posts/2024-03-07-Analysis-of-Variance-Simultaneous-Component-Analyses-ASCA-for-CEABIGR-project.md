@@ -38,7 +38,7 @@ I tried a few other packages, but this one has the most functionality, great plo
 
 Citation: Jarmund AH, Madssen TS and Giskeødegård GF (2022) ALASCA: An R package for longitudinal and cross-sectional analysis of multivariate data by ASCA-based methods. Front. Mol. Biosci. 9:962431. doi: 10.3389/fmolb.2022.962431 
 
-[Bertinetto et al. 2020](https://www.sciencedirect.com/science/article/pii/S2590134620300232) provide an excellent description of ASCA analysis int he paper linked here.  
+[Bertinetto et al. 2020](https://www.sciencedirect.com/science/article/pii/S2590134620300232) provide an excellent description of ASCA analysis in the paper linked here.  
 
 I highly recommend reading these papers before attempting analyses.  
 
@@ -65,7 +65,7 @@ I will now walk through the analyses and how I interpretted the results.
 
 ## Analysis  
 
-Note that I repeated all of the analyses here for females and males. The results were very similar for each sex, so I will show and describe the results for females in this notebook post. Throughotu, I'll point out any interesting results from the males that are not seen in the females.  
+Note that I repeated all of the analyses here for females and males. The results were very similar for each sex, so I will show and describe the results for females in this notebook post. Throughout, I'll point out any interesting results from the males that are not seen in the females.  
 
 ### 1. Load and set up data  
 
@@ -320,7 +320,7 @@ This matches expression values when plotted at the level of individual genes.
 
 PCs 1-4 showed no difference in treatments and the patterns were the same for males and females. However, the top loading genes were different between males and females. I will include the full panel figures with male and female results below.  
 
-### 4. View model results for PCs that show no difference between treatments 
+### 4. View model results for PCs that show differences between treatments 
 
 We are most interested in PCs that describe differences in alternative splicing patterns between treatments. This was seen in PCs 5 and 6 for both males and females.  
 
@@ -328,11 +328,13 @@ We will look at PC5, which explained 6-9% of the variance. See results for PC6 b
 
 ![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/oysters/ceabigr/asca/pc5.png?raw=true)
 
-PC5 is interesting! PC5 described genes that show either higher or lower expression of exons 2-6 relative to exon 1 depending on treatment. As described above, genes with loading scores >0 are genes with expresssion of exons 2-6 lower in treated oysters compared to high with control expression of exons 2-6 higher in treated oysters. 
+PC5 is interesting! PC5 described genes that show either higher or lower expression of exons 2-6 relative to exon 1 depending on treatment. As described above, genes with loading scores >0 are genes with expresssion of exons 2-6 lower in treated oysters compared to high with control expression of exons 2-6 higher in treated oysters. You'll notice that as the variance explained decreases, so do the confidence intervals. Confidence intervals for treatments do not overlap.  
 
 *Importantly*, this is showing relative expression of each exon as compared to exon 1. This does NOT reflect total gene expression.   
 
 ![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/oysters/ceabigr/asca/pc5_genes.png?raw=true)
+
+PC6, which is shown below, describes genes that show differential exon expression between treatments in which either the front or end exons have higher or lower expression depending on treatment. Cool!  
 
 ### 5. View all PC results
 
@@ -344,7 +346,7 @@ Here are the PCs that describe patterns that are not affected by treatment.
 
 ![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/oysters/ceabigr/asca/asca3.png?raw=true)
 
-Finally, here are the PCs that describe patterns that are not affected by treatment.   
+Finally, here are the PCs that describe patterns that are affected by treatment.   
 
 ![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/oysters/ceabigr/asca/asca4.png?raw=true)
 
