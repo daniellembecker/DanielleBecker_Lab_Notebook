@@ -207,61 +207,6 @@ Too many characters in one row! Try to split the long row into several short row
 Error! at /opt/software/BS-Snper/1.0-foss-2021b/bin/BS-Snper.pl line 110.
 ```
 
-Following Kevins script:
-
-`nano /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/scripts/bs_snper_merged_kevin.sh`
-
-```bash
-#!/bin/bash
-#SBATCH --job-name="BS_snper"
-#SBATCH -t 500:00:00
-#SBATCH --nodes=1 --ntasks-per-node=10
-#SBATCH --mem=120GB
-#SBATCH --account=putnamlab
-#SBATCH --export=NONE
-#SBATCH --mail-type=BEGIN,END,FAIL
-#SBATCH --mail-user=danielle_becker@uri.edu
-#SBATCH -D /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output
-
-module load BS-Snper/1.0-foss-2021b
-
-perl /opt/software/BS-Snper/1.0-foss-2021b/bin/BS-Snper.pl \
---fa /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/data/refs/Pverr/Pver_genome_assembly_v1.0.fasta \
---input /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/bismark_deduplicated/BS_SNPer_merged.bam \
---output /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/SNP-candidates.txt \
---methcg /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CpG-meth-info.tab \
---methchg /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CHG-meth-info.tab \
---methchh /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CHH-meth-info.tab \
---mincover 5 \
-> /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/SNP-results.vcf 2> /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/merged.ERR.log
-
-```
-
-`sbatch /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/scripts/bs_snper_merged_kevin.sh`
-
-
-`Submitted batch job 302955`
-
-Current issue:
-
-```
-Unknown option: input
-FLAG: 1
-refSeqFile = /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/data/refs/Pverr/Pver_genome_assembly_v1.0.fasta.
-bamFileName = /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/bismark_deduplicated/BS_SNPer_merged.bam.
-snpFileName = /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/SNP-candidates.txt.
-methCgFileName = /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CpG-meth-info.tab.
-methChgFileName = /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CHG-meth-info.tab.
-methChhFileName = /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CHH-meth-info.tab.
-vQualMin = 15.
-nLayerMax = 1000.
-vSnpRate = 0.100000.
-vSnpPerBase = 0.020000.
-mapqThr = 20.
-Too many characters in one row! Try to split the long row into several short rows (fewer than 1000000 characters per row).
-Error! at /opt/software/BS-Snper/1.0-foss-2021b/bin/BS-Snper.pl line 110.
-```
-
 Possible reason for error: The limit for the number of characters per row is 1,00,000 and our input fasta file has a line that is  2,095,918. Research computing patched the module and BS-SNPer.pl script to accept 3,000,000. I reran the Steven approach script.
 
 Python script used to determine number of characters:
@@ -348,11 +293,43 @@ Count number of lines in the SNP-results.vcf file
 
 `wc -l /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/SNP-results.vcf`
 
-`4764382`
+`4,764,382`
 
 ## 2c. Intersect VCF with SNP locations and CG motif track
 
 Use BEDtools intersectBED to determine which SNPs are present at CG sites:
+
+You first need to make CG motif file from your origin genome to filter for just CG motifs using EMBOSS fuzznuc function.
+
+`nano /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/data/refs/Pverr/fuzznuc.sh`
+
+```bash
+#!/bin/bash
+#SBATCH --job-name="fuzznuc"
+#SBATCH -t 500:00:00
+#SBATCH --nodes=1 --ntasks-per-node=10
+#SBATCH --mem=120GB
+#SBATCH --account=putnamlab
+#SBATCH --export=NONE
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=danielle_becker@uri.edu
+#SBATCH -D /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/data/refs/Pverr
+
+module load EMBOSS/6.6.0-foss-2018b
+
+fuzznuc \
+-sequence /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/data/refs/Pverr/Pver_genome_assembly_v1.0.fasta \
+-pattern CG \
+-outfile 20240311_fuzznuc_pverr_CGmotif.gff \
+-rformat gff
+
+```
+
+`sbatch /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/data/refs/Pverr/fuzznuc.sh`
+
+`Submitted batch job 305435`
+
+Then use BEDtools intersectBED to determine which SNPs are present at CG sites:
 
 `nano /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/scripts/intersectbed.SNPs.sh`
 
@@ -373,7 +350,7 @@ module load BEDTools/2.30.0-GCC-11.3.0
 intersectBed \
 -u \
 -a /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/SNP-results.vcf \
--b /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/data/refs/Pverr/Pver_genome_assembly_v1.0_modified.gff3 \
+-b /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/data/refs/Pverr/ \
 | grep "C	T" \
 > /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CT-SNPs.tab
 
@@ -381,7 +358,7 @@ intersectBed \
 
 `sbatch /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/scripts/intersectbed.SNPs.sh`
 
-`Submitted batch job 303631`
+`Submitted batch job `
 
 Look at CT SNPs output file:
 
@@ -405,14 +382,27 @@ Components of output file:
 - DP: Same as in the INFO field, representing the total read depth.
 - ADF and ADR: Same as in the INFO field, representing allelic depths for forward and reverse reads, respectively.
 
-`Pver_Sc0000000_size2095917	14130	.	C	T	1000	PASS	DP=103;ADF=0,0;ADR=1,102;AD=1,102;	GT:DP:ADF:ADR:AD:BSD:BSQ:ALFR	0/1:103:0,0:1,102:1,102:0,0,64,0,0,102,1,0:0,0,36,0,0,37,37,0:0.010,0.990
-Pver_Sc0000000_size2095917	14608	.	C	T	1000	PASS	DP=414;ADF=0,0;ADR=293,121;AD=293,121;	GT:DP:ADF:ADR:AD:BSD:BSQ:ALFR	0/1:414:0,0:293,121:293,121:0,0,200,0,0,121,293,0:0,0,36,0,0,37,37,0:0.708,0.292
-Pver_Sc0000000_size2095917	14723	.	C	T	1000	PASS	DP=11;ADF=0,0;ADR=1,10;AD=1,10;	GT:DP:ADF:ADR:AD:BSD:BSQ:ALFR	0/1:11:0,0:1,10:1,10:0,0,23,0,0,10,1,0:0,0,36,0,0,37,37,0:0.091,0.909
-Pver_Sc0000000_size2095917	14730	.	C	T	1000	Low	DP=8;ADF=0,0;ADR=0,8;AD=0,8;	GT:DP:ADF:ADR:AD:BSD:BSQ:ALFR	0/1:8:0,0:0,8:0,8:0,0,22,0,0,8,0,0:0,0,37,0,0,37,0,0:0.000,1.000`
+``
 
 Look at CT-SNPs specific tab file to see how many CT SNPs are in my dataset:
 
-`wc -l CT-SNPs.tab
-411482 CT-SNPs.tab`
 
-411,482 out of 4,764,382 chromosomes have CT SNPs = 8.64%
+
+
+
+
+
+
+
+
+
+
+
+
+# 3. Filter SNP variants from 10x.bed files
+
+Download BS-SNPer .vcf results file to Desktop from Andromeda
+
+`scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/SNP-results.vcf /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/RAnalysis/Data/WGBS/BS-SNPer`
+
+Filter SNPs from BS-SNPer.vcf output file from 10x .bed files created from this [workflow](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/_posts/2022-12-10-P.verrucosa-WGBS-Workflow-Host.md) and remaining steps perfromed in this [Rscript]()
