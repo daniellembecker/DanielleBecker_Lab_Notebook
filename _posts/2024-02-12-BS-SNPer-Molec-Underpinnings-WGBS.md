@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Testing BS-SNPer on WGBS data
+title: BS-SNPer on WGBS data
 date: '2024-02-12'
 categories: Analysis
 tags: WGBS, BS-SNPer
@@ -13,9 +13,7 @@ In this notebook post, I'll use [BS-Snper](https://github.com/hellbelly/BS-Snper
 Other lab members, Kevin Wong and Emma Strand have tried to run BS-SNPer on their data but keep encountering this error: Too many characters in one row! Try to split the long row into several short rows (fewer than 1000000 characters per row).
 Error! at /opt/software/BS-Snper/1.0-foss-2021b/bin/BS-Snper.pl line 110.
 
-Kevin also reached out to URI research computing and there is now an updated BS-SNPer module that may have solved this error that I will try.
-
-As we have run the same pipeline and similar extractions from coral tissue samples, we think it may be an issue with the .bam output files from the nf-core methylseq pipeine. I am going to try an approach with my samples, first with the methods used by Steven Roberts in this [post](https://github.com/hputnam/Geoduck_Meth/blob/master/code/10-ct-snp.sh) and then an approach used by Kevin Wong [here](https://github.com/kevinhwong1/KevinHWong_Notebook/blob/master/_posts/2022-11-21-Testing-BS-SNPer-on-WGBS-data.md).
+I am going to try an approach with my samples, with the methods used by Steven Roberts in this [post](https://github.com/hputnam/Geoduck_Meth/blob/master/code/10-ct-snp.sh).
 
 # 1. Set working directory
 
@@ -299,7 +297,7 @@ Count number of lines in the SNP-results.vcf file
 
 Use BEDtools intersectBED to determine which SNPs are present at CG sites:
 
-You first need to make CG motif file from your origin genome to filter for just CG motifs using EMBOSS fuzznuc function.
+You first need to make CG motif file from your origin genome to filter for just CG motifs using [EMBOSS fuzznuc](https://emboss.sourceforge.net/apps/cvs/emboss/apps/fuzznuc.html) function.
 
 `nano /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/data/refs/Pverr/fuzznuc.sh`
 
@@ -350,7 +348,7 @@ module load BEDTools/2.30.0-GCC-11.3.0
 intersectBed \
 -u \
 -a /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/SNP-results.vcf \
--b /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/data/refs/Pverr/ \
+-b /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/data/refs/Pverr/20240311_fuzznuc_pverr_CGmotif.gff \
 | grep "C	T" \
 > /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CT-SNPs.tab
 
@@ -358,7 +356,7 @@ intersectBed \
 
 `sbatch /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/scripts/intersectbed.SNPs.sh`
 
-`Submitted batch job `
+`Submitted batch job 308874 `
 
 Look at CT SNPs output file:
 
@@ -387,17 +385,13 @@ Components of output file:
 Look at CT-SNPs specific tab file to see how many CT SNPs are in my dataset:
 
 
+'Pver_Sc0000000_size2095917      1286    .       C       T       15      PASS    DP=144;ADF=0,0;ADR=122,22;AD=122,22;    GT:DP:ADF:ADR:AD:BSD:BSQ:ALFR   0/1:144:0,0:122,22:122,22:1,0,146,0,0,22,122,0:37,0,36,0,0,36,37,0:0.847,0.153
+Pver_Sc0000000_size2095917      1610    .       C       T       62      PASS    DP=128;ADF=0,0;ADR=115,13;AD=115,13;    GT:DP:ADF:ADR:AD:BSD:BSQ:ALFR   0/1:128:0,0:115,13:115,13:0,0,21,0,0,13,115,0:0,0,37,0,0,37,37,0:0.898,0.102
+Pver_Sc0000000_size2095917      5189    .       C       T       1000    PASS    DP=95;ADF=0,0;ADR=77,18;AD=77,18;       GT:DP:ADF:ADR:AD:BSD:BSQ:ALFR   0/1:95:0,0:77,18:77,18:0,0,73,0,0,18,77,0:0,0,36,0,0,37,36,0:0.811,0.189
+Pver_Sc0000000_size2095917      6277    .       C       T       1000    PASS    DP=12;ADF=0,0;ADR=0,12;AD=0,12; GT:DP:ADF:ADR:AD:BSD:BSQ:ALFR   0/1:12:0,0:0,12:0,12:0,0,64,0,0,12,0,0:0,0,37,0,0,37,0,0:0.000,1.000'
 
-
-
-
-
-
-
-
-
-
-
+# wc -l CT-SNPs.tab 
+# 151896 out of 4,764,382 = 3.18%
 
 # 3. Filter SNP variants from 10x.bed files
 
@@ -405,4 +399,4 @@ Download BS-SNPer .vcf results file to Desktop from Andromeda
 
 `scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/SNP-results.vcf /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/RAnalysis/Data/WGBS/BS-SNPer`
 
-Filter SNPs from BS-SNPer.vcf output file from 10x .bed files created from this [workflow](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/_posts/2022-12-10-P.verrucosa-WGBS-Workflow-Host.md) and remaining steps perfromed in this [Rscript]()
+Filter SNPs from BS-SNPer.vcf output file from 10x .bed files created from this [workflow](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/_posts/2022-12-10-P.verrucosa-WGBS-Workflow-Host.md) and remaining steps performed in this [Rscript](https://github.com/hputnam/Becker_E5/blob/master/RAnalysis/Scripts/WGBS/BS-SNPer.filter.Rmd)
