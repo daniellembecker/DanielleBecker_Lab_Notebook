@@ -390,13 +390,13 @@ Pver_Sc0000000_size2095917      1610    .       C       T       62      PASS    
 Pver_Sc0000000_size2095917      5189    .       C       T       1000    PASS    DP=95;ADF=0,0;ADR=77,18;AD=77,18;       GT:DP:ADF:ADR:AD:BSD:BSQ:ALFR   0/1:95:0,0:77,18:77,18:0,0,73,0,0,18,77,0:0,0,36,0,0,37,36,0:0.811,0.189
 Pver_Sc0000000_size2095917      6277    .       C       T       1000    PASS    DP=12;ADF=0,0;ADR=0,12;AD=0,12; GT:DP:ADF:ADR:AD:BSD:BSQ:ALFR   0/1:12:0,0:0,12:0,12:0,0,64,0,0,12,0,0:0,0,37,0,0,37,0,0:0.000,1.000'
 
-# wc -l CT-SNPs.tab 
-# 151896 out of 4,764,382 = 3.18%
+'wc -l CT-SNPs.tab'
+'151896 out of 4,764,382 = 3.18%'
 
 # 3. Filter SNP variants from 10x.bed files
 
-Download BS-SNPer .vcf results file to Desktop from Andromeda
+Download CT-SNPs.tab results file to Desktop from Andromeda
 
-`scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/SNP-results.vcf /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/RAnalysis/Data/WGBS/BS-SNPer`
+`scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CT-SNPs.tab /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/RAnalysis/Data/WGBS/BS-SNPer`
 
-Filter SNPs from BS-SNPer.vcf output file from 10x .bed files created from this [workflow](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/_posts/2022-12-10-P.verrucosa-WGBS-Workflow-Host.md) and remaining steps performed in this [Rscript](https://github.com/hputnam/Becker_E5/blob/master/RAnalysis/Scripts/WGBS/BS-SNPer.filter.Rmd)
+Filter SNPs from BCT-SNPs.tab output file from 10x .bed files created from this [workflow](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/_posts/2022-12-10-P.verrucosa-WGBS-Workflow-Host.md) and remaining steps performed in this [Rscript](https://github.com/hputnam/Becker_E5/blob/master/RAnalysis/Scripts/WGBS/BS-SNPer.filter.Rmd)
