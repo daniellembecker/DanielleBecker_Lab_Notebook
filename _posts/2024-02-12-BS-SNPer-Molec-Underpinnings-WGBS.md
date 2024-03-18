@@ -384,14 +384,14 @@ Components of output file:
 
 Look at CT-SNPs specific tab file to see how many CT SNPs are in my dataset:
 
-
-'Pver_Sc0000000_size2095917      1286    .       C       T       15      PASS    DP=144;ADF=0,0;ADR=122,22;AD=122,22;    GT:DP:ADF:ADR:AD:BSD:BSQ:ALFR   0/1:144:0,0:122,22:122,22:1,0,146,0,0,22,122,0:37,0,36,0,0,36,37,0:0.847,0.153
+`Pver_Sc0000000_size2095917      1286    .       C       T       15      PASS    DP=144;ADF=0,0;ADR=122,22;AD=122,22;    GT:DP:ADF:ADR:AD:BSD:BSQ:ALFR   0/1:144:0,0:122,22:122,22:1,0,146,0,0,22,122,0:37,0,36,0,0,36,37,0:0.847,0.153
 Pver_Sc0000000_size2095917      1610    .       C       T       62      PASS    DP=128;ADF=0,0;ADR=115,13;AD=115,13;    GT:DP:ADF:ADR:AD:BSD:BSQ:ALFR   0/1:128:0,0:115,13:115,13:0,0,21,0,0,13,115,0:0,0,37,0,0,37,37,0:0.898,0.102
 Pver_Sc0000000_size2095917      5189    .       C       T       1000    PASS    DP=95;ADF=0,0;ADR=77,18;AD=77,18;       GT:DP:ADF:ADR:AD:BSD:BSQ:ALFR   0/1:95:0,0:77,18:77,18:0,0,73,0,0,18,77,0:0,0,36,0,0,37,36,0:0.811,0.189
-Pver_Sc0000000_size2095917      6277    .       C       T       1000    PASS    DP=12;ADF=0,0;ADR=0,12;AD=0,12; GT:DP:ADF:ADR:AD:BSD:BSQ:ALFR   0/1:12:0,0:0,12:0,12:0,0,64,0,0,12,0,0:0,0,37,0,0,37,0,0:0.000,1.000'
+Pver_Sc0000000_size2095917      6277    .       C       T       1000    PASS    DP=12;ADF=0,0;ADR=0,12;AD=0,12; GT:DP:ADF:ADR:AD:BSD:BSQ:ALFR   0/1:12:0,0:0,12:0,12:0,0,64,0,0,12,0,0:0,0,37,0,0,37,0,0:0.000,1.000`
 
-'wc -l CT-SNPs.tab'
-'151896 out of 4,764,382 = 3.18%'
+`wc -l CT-SNPs.tab`
+
+`151896 out of 4,764,382 = 3.18%`
 
 # 3. Filter SNP variants from 10x.bed files
 
