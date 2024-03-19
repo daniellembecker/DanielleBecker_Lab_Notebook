@@ -289,11 +289,19 @@ View SNP-results.vcf file:
 ##contig=<ID=Pver_Sc0000002_size1617595,length=1617595>
 ##contig=<ID=Pver_Sc0000003_size1576134,length=1576134>`
 
-Count number of lines in the SNP-results.vcf file
+Count number of lines in the SNP-results.vcf file:
 
 `wc -l /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/SNP-results.vcf`
 
 `4,764,382`
+
+Following Stevens code, use the grep function to select for specific SNP mutations where the reference allele is C and the alternate allele is G to find CT SNPs from the output file:
+
+`grep $'C\tG' output/SNP.vcf  >  CT-SNP.vcf`
+
+`wc -l output/CT-SNP.vcf`
+
+`147,198 SNPs out of 4,764,382 = 3.08%`
 
 ## 2c. Intersect VCF with SNP locations and CG motif track
 
@@ -397,8 +405,10 @@ Pver_Sc0000000_size2095917      6277    .       C       T       1000    PASS    
 
 # 3. Filter SNP variants from 10x.bed files
 
-Download CT-SNPs.tab results file to Desktop from Andromeda
+Download CT-SNPs.tab results file that was filtered to CG motifs and CT-SNP.vcf file that was filtered for CT-SNP positions to Desktop from Andromeda
 
 `scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CT-SNPs.tab /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/RAnalysis/Data/WGBS/BS-SNPer`
 
-Filter SNPs from BCT-SNPs.tab output file from 10x .bed files created from this [workflow](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/_posts/2022-12-10-P.verrucosa-WGBS-Workflow-Host.md) and remaining steps performed in this [Rscript](https://github.com/hputnam/Becker_E5/blob/master/RAnalysis/Scripts/WGBS/BS-SNPer.filter.Rmd)
+`scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CT-SNP.vcf /Users/Danielle/Desktop/`
+
+Filter SNPs from CT-SNPs.tab and CT-SNP.vcf output files from 10x .bed files created from this [workflow](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/_posts/2022-12-10-P.verrucosa-WGBS-Workflow-Host.md) and remaining steps performed in this [Rscript](https://github.com/hputnam/Becker_E5/blob/master/RAnalysis/Scripts/WGBS/BS-SNPer.filter.Rmd)
