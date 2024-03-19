@@ -259,7 +259,7 @@ Research computing modified the install recipe to copy it to where it's expectin
 
 `Submitted batch job 303619`
 
-The script ran without errors! The output .vcf files all look good compared to Steven and Yaamminis output files.
+The script ran without errors! The output .vcf files match the SNP output file standard VCF format.
 
 The output files include an SNP output file and a methylation output file.
 The SNP output file has a standard VCF format.
