@@ -115,34 +115,36 @@ GWNJ-1013:120:GW201202000:2:2622:23312:3787_1:N:0:TTACAGGA+GCTTGTCA	163	Pver_Sc0
 
 ## 2b. Identify SNPs
 
-Options for the script are found [here](https://github.com/hellbelly/BS-Snper/blob/master/README.txt) and below.
+Options for the script are found [here](https://github.com/hellbelly/BS-Snper/blob/master/README.txt) and instructions are taken from BS-SNPer GitHub descriptions.
 
-```
---fa: Reference genome file in fasta format
---input: Input bam file (I'm using deduplicated sorted bams)
---output: Temporary file storing SNP candidates
---methcg: CpG methylation information
---methchg: CHG methylation information
---methchh: CHH methylation information
---minhetfreq: Threshold of frequency for calling heterozygous SNP
---minhomfreq: Threshold of frequency for calling homozygous SNP
---minquali: Threshold of base quality
---mincover: Threshold of minimum depth of covered reads
---maxcover: Threshold of maximum depth of covered reads
---minread2: Minimum mutation reads number
---errorate: Minimum mutation rate
---mapvalue: Minimum read mapping value
-SNP.out: Final SNP result file
-ERR.log: Log file
-```
+Usage:
 
 You can run BS-SNPer in Linux or MAC OS, using the command like:
 
-```
 perl BS-Snper.pl <sorted_bam_file> --fa <reference_file> --output <snp_result_file> --methcg <meth_cg_result_file> --methchg <meth_chg_result_file> --methchh <meth_chh_result_file> --minhetfreq 0.1 --minhomfreq 0.85 --minquali 15 --mincover 10 --maxcover 1000 --minread2 2 --errorate 0.02 --mapvalue 20 >SNP.out 2>ERR.log
-```
 
-**Attention**: Both of the input and output file arguments should be passed to BS-SNPer in the form of absolute paths.
+Attention:
+
+Both of the input and output file arguments should be passed to BS-SNPer in the form of absolute paths. 
+
+Options:
+
+	--fa: Reference genome file in fasta format
+	--output: Temporary file storing SNP candidates
+	--methcg: CpG methylation information
+	--methchg: CHG methylation information
+	--methchh: CHH methylation information
+	--minhetfreq: Threshold of frequency for calling heterozygous SNP
+	--minhomfreq: Threshold of frequency for calling homozygous SNP
+	--minquali: Threshold of base quality
+	--mincover: Threshold of minimum depth of covered reads
+	--maxcover: Threshold of maximum depth of covered reads
+	--minread2: Minimum mutation reads number
+	--errorate: Minimum mutation rate
+	--mapvalue: Minimum read mapping value
+	SNP.out: Final SNP result file
+	ERR.log: Log file
+
 
 `nano /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/scripts/bs_snper_merged_steven.sh`
 
