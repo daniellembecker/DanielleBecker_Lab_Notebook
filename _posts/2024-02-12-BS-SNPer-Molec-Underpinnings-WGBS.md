@@ -102,7 +102,6 @@ View output file header
 
 `samtools view BS-SNPer_merged.bam | head `
 
-
 ```
 GWNJ-1013:120:GW201202000:2:2318:21766:34992_1:N:0:GGCTTAAG+GGTCACGA	163	Pver_Sc0000000_size2095917	28	42	130M	=	240	342	ATATCTAACACATTAAAACTTCCTAAATCAAAAAAAAATTCCCTCTACATCAAACACAACAAACAACATTTTAATAAAAACACACATATATATTTCTTACCCCATTTTCAATAATAATAACAAATCAATA	FFFFFFFFFFF:FFFFFFFFFFFFFFFFFFFFFFFFF:FFFFFFFF:FFFFFFFFFFFFFFFFFFFFFF:FFF:FFFFFFFFFFFFF:F,FFFFFFFFFFFFFFF,FFFFFFFFFFFFFFFFFFFFFFFF	NM:i:24	MD:Z:7G1G1G2G16G2G0G10G5G8G10G3G0G5G25G0G1G2G2G4G1T0G0G1G0	XM:Z:.......h.z.z..h................h..hh..........x.....x........x..........h...hh.....z.........................zx.h..h..h....h..hh.hXR:Z:GA	XG:Z:GA
 
@@ -129,7 +128,7 @@ Both of the input and output file arguments should be passed to BS-SNPer in the 
 
 Options:
 
-	```--fa: Reference genome file in fasta format
+	--fa: Reference genome file in fasta format
 	--output: Temporary file storing SNP candidates
 	--methcg: CpG methylation information
 	--methchg: CHG methylation information
@@ -143,8 +142,9 @@ Options:
 	--errorate: Minimum mutation rate
 	--mapvalue: Minimum read mapping value
 	SNP.out: Final SNP result file
-	ERR.log: Log file ```
+	ERR.log: Log file
 
+## Write script for BS-SNPer approach for our data
 
 `nano /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/scripts/bs_snper_merged_steven.sh`
 
