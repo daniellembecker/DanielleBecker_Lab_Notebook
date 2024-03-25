@@ -297,11 +297,11 @@ Count number of lines in the SNP-results.vcf file:
 
 Following Stevens code, use the grep function to select for specific SNP mutations where the reference allele is C and the alternate allele is G to find CT SNPs from the output file:
 
-`grep $'C\tG' output/SNP.vcf  >  CT-SNP.vcf`
+`grep $'C\tT' output/SNP.vcf  >  CT-SNP.vcf`
 
 `wc -l output/CT-SNP.vcf`
 
-`147,198 SNPs out of 4,764,382 = 3.08%`
+`660,997 SNPs out of 4,764,382 = 13%`
 
 ## 2c. Intersect VCF with SNP locations and CG motif track
 
@@ -409,6 +409,6 @@ Download CT-SNPs.tab results file that was filtered to CG motifs and CT-SNP.vcf 
 
 `scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CT-SNPs.tab /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/RAnalysis/Data/WGBS/BS-SNPer`
 
-`scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CT-SNP.vcf /Users/Danielle/Desktop/`
+`scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CT-SNP2.vcf /Users/Danielle/Desktop/`
 
 Filter SNPs from CT-SNPs.tab and CT-SNP.vcf output files from 10x .bed files created from this [workflow](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/_posts/2022-12-10-P.verrucosa-WGBS-Workflow-Host.md) and remaining steps performed in this [Rscript](https://github.com/hputnam/Becker_E5/blob/master/RAnalysis/Scripts/WGBS/BS-SNPer.filter.Rmd)
