@@ -1,6 +1,6 @@
 ---
 layout: post
-title: E5 POC and POR Species ID PCR and RFLPs 20240325
+title: E5 POC and POR Species ID PCR and RFLPs
 date: '2024-03-26'
 categories: E5
 tags: PCR RFLP Molecular Sanger Protocol
