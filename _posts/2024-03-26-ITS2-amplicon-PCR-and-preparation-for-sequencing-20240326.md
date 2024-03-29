@@ -6,6 +6,8 @@ categories: Larval_Symbiont_TPC_2023
 tags: PCR ITS2 Molecular Mcapitata
 ---
 
+The post details ITS2 amplicon PCR amplificaiton and preparation for sequencing.  
+
 # Overview 
 
 # Protocol 
@@ -13,9 +15,20 @@ tags: PCR ITS2 Molecular Mcapitata
 Base protocol
 List of modifications 
 
+https://github.com/emmastrand/EmmaStrand_Notebook/blob/master/_posts/2020-01-31-ITS2-Sequencing-Protocol.md
+
+# Sample requirements 
+
+DNA extracted and quanitified 
+
 # Equipment and supplies 
 
-xxx
+- Loading Dye [NEB 6X Purple Loading Dye NEB Cat # B7024S]()        
+- Gel Stain [Biotium GelGreen Nucleic Acid Gel Stain, 10,000X in Water Fisher Cat NC9728313](https://www.fishersci.com/shop/products/gel-green-stain-5ml/NC9728313#?keyword=NC9728313)
+- DNA Ladder [1kb Gel ladder](https://github.com/hputnam/Putnam_Lab_Notebook/blob/master/images/NEB_1kb_Ladder_N3232S.png?raw=true)
+- Ultrapure water 
+- Master mix
+- Primers
 
 # 20240325
 
@@ -61,12 +74,6 @@ After dilutions were made, samples were stored at -20°C until the next step.
 # 20240328
 
 Today we will conduct the PCR and gel QC steps of this protocol.  
-
-
-
-
-
-
 
 
 ## Sample and master mix calculations  
@@ -138,12 +145,23 @@ xxxx
 
 ## Gel for QC 
 
-![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/uri_2024/20240328_ITS2_gel_1.png?raw=true)
+We ran two medium 2% agarose gels at 80 V for 1 h following the lab [gel protocol](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resources/DNA_RNA-protocols/Agarose-Gel-Protocol.md)). 
 
-![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/uri_2024/20240328_ITS2_gel_1.png?raw=true)
+For each gel, we mixed 100 mL 1X TAE buffer and 2 g agarose in a flask and heated for 1 min in the microwave and swirled every 20 sec. After warming, we added 1 µL GelGreen to each gel. Gel was set in a medium box with two rows of combs (40 wells in each gel total).  
 
+Gels were allowed to cool until set. Combs were removed and trays were rotated with the top of the gel towards the black and bottom of the gel towards the red electrodes. Boxes were filled with 1X TAE buffer until a thin layer was over the gel and wells were filled.  
+
+Samples were loaded by mixing 3 µL of each sample with 1 µL purple loading dye on parafilm and then transferring into gel wells. Pipette tips were changed between each transfer. We used 1Kb purple plus DNA ladder in our gels. We loaded all reactions with sample triplicates next to each other.  
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/uri_2024/20240328_ITS2_gel_1.PNG?raw=true)
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/uri_2024/20240328_ITS2_gel_2.JPG?raw=true)
+
+Unfortunately there is contamination in every reaction, the positives, and the negatives. The most likely source of contamination is the water used for dilutions and/or the master mix. We need to run a new PCR to test whether changing the water source removes the contamination. If so, we can reamplify all samples.  
 
 ## PCR amplification to QC for contamination using new water source  
+
+
 
 # 20240329
 

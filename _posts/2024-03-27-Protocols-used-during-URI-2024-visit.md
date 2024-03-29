@@ -25,7 +25,7 @@ List of protocols used in the lab at URI for lab-a-thon in March 2024!
 	- Lab [Qubit protocol](https://github.com/Putnam-Lab/Lab_Management/blob/master/Lab_Resources/DNA_RNA-protocols/Qubit-Protocol.md) 
 
 - **ITS2 PCR amplification and preparation for next gen sequencing at RI-INBRE**
-	- Emma's [ITS2 amplification and prep protocol](xxx) 
+	- Emma's [ITS2 amplification and prep protocol](https://github.com/emmastrand/EmmaStrand_Notebook/blob/master/_posts/2020-01-31-ITS2-Sequencing-Protocol.md) 
 	- [Our proceedure with modifications](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/ITS2-amplicon-PCR-and-preparation-for-sequencing-20240326/) that we ran this week modified in our protocol 
  
 - **Pocillopora POC Histone RFLP**  
