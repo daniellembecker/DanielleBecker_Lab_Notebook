@@ -26,7 +26,7 @@ List of protocols used in the lab at URI for lab-a-thon in March 2024!
 
 - **ITS2 PCR amplification and preparation for next gen sequencing at RI-INBRE**
 	- Emma's [ITS2 amplification and prep protocol](xxx) 
-	- [Our proceedure with modifications](xxx) that we ran this week modified in our protocol 
+	- [Our proceedure with modifications](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/ITS2-amplicon-PCR-and-preparation-for-sequencing-20240326/) that we ran this week modified in our protocol 
  
 - **Pocillopora POC Histone RFLP**  
 	- Hollie's [Pocillopora species ID protocol](https://github.com/hputnam/Putnam_Lab_Notebook/blob/master/_posts/2023-07-23-PocID.md) and Zoe's [mtORF and POC Histone protocol](https://zdellaert.github.io/ZD_Putnam_Lab_Notebook/PCR-Protocol/)

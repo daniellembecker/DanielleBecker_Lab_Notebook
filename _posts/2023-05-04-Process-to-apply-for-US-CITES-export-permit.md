@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Process to apply for US CITES export permit
-date: '2023-05-04'
+date: '2024-03-15'
 categories: Permitting
 tags: Permitting CITES
 ---
@@ -10,9 +10,17 @@ This post details the process I used to apply for a CITES export permit with the
 
 # Application type 
 
-For scientific research, we applied for the **3-200-37e: Import/Export/Re-Export of Biological Specimens (CITES/ESA) for Scientific Research**
+For ESA or Appendix I species use the **3-200-37e: Import/Export/Re-Export of Biological Specimens (CITES/ESA) for Scientific Research**.   
 
-[Information on this application can be found here](https://fwsepermits.servicenowservices.com/fws?id=fws_kb_view&sys_id=fbe611ea1b1b14104fa520eae54bcb97).   
+[Information on this application can be found here](https://fwsepermits.servicenowservices.com/fws?id=fws_kb_view&sys_id=fbe611ea1b1b14104fa520eae54bcb97)  
+
+For non-ESA or Appendix II/III species use the **3-200-29: Export/Re-export of Wildlife Samples and/or Biomedical Samples (CITES)**.    
+
+[Information on this application can be found here](https://fwsepermits.servicenowservices.com/fws?id=fws_kb_view&sys_id=9c132e0e1bba10101f45dbdbe54bcb7d)     
+
+View the [CITES appendices here](https://cites.org/sites/default/files/eng/app/2021/E-Appendices-2021-02-14.pdf)  
+
+**Search for species and find appendix information on [Species+](https://speciesplus.net/species)**  
 
 # Step 1: Prepare application and supporting documents
 
@@ -121,6 +129,32 @@ You will fill out information from the application form, upload the supplemental
 # Step 4: Update and recieve export and import permit approval 
 
 Once an import permit is issued, update the application online with the approved import permit and CITES number. 
+
+Submit the export permit information to the management authority of the country you are exporting to.  
+
+Contact FWS if you have not heard about the status of your application for a long period of time.  
+
+Ensure your import permit has time to be approved before export. Follow instructions from the respective county. 
+
+# Step 5: Submit eDec and 48 hour notice form for export 
+
+The week before your departure (>48 hrs), fill out an eDeclaration (eDec form) in your account [here](https://edecs.fws.gov/).  
+
+### eDec 
+
+- Create an account 
+- Click "new eDec"
+- Enter port of clearance. If you can, depart (if you are taking the samples in baggage on a flight) from a designated [port of clearance](https://www.fws.gov/sites/default/files/documents/OLE%20Wildlife%20Trade%20-%20Wildlife%20Inspection%20Offices%202023_0.pdf). If you cannot do a sample inspection at one of these sites, you will need to apply for a permit for [inspection at an alternative site](https://www.ecfr.gov/current/title-50/chapter-I/subchapter-B/part-14/subpart-C). 
+
+AH ENTER HERE 
+
+### 48 hr notice 
+
+AH ENTER HERE 
+
+# Step 6: Inspect and export sample 
+
+AH ENTER HERE 
 
 # Contact for questions 
 

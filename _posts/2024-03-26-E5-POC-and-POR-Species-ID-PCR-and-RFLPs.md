@@ -419,7 +419,7 @@ Danielle labeled the tubes and we will take them to Janet for sequencing tomorro
 
 ## Pocillopora 
 
-Today we did a new round of PCR and RFLP with new restriction enzymes.  
+Today we did a new round of PCR and RFLP with new restriction enzyme and buffer that arrived today.  
 
 Danielle ran this protocol today and Ariana ran the final gel.   
 
@@ -429,7 +429,11 @@ xxx
 
 ### POC PCR QC gel
 
+We ran a 2% gel at 80V for 1 h as described above.  
+
 ![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/uri_2024/20240328_POC_QC_gel.png?raw=true)
+
+E5 samples amplified, but POS4 is no longer amplifying. This is because we ran out of DNA and only a small amount was left for this reaction. The other positive controls 1 and 2 are showing a band. However, this band is slightly longer than our E5 samples. Hollie suggested that this could be due to lower concentration of DNA in these samples. We will look into this further.   
 
 ### POC RFLP incubation 
 
@@ -437,9 +441,30 @@ xxx
 
 ### POC RFLP gel 
 
-![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/uri_2024/20240328_POC_RFLP_gel.png?raw=true)
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/uri_2024/20240328_POC_RFLP_gel.jpeg?raw=true)   
  
-xxx
+We did not see any cutting in this RFLP. Hollie talked to NEB today (the manufacturer of Xhol and rCutSmart) and asked them about the concentration of the rCutSmart buffer. In Zoe and Hollie's protocols/posts and in the Johnston et al. 2018 paper, the buffer addition is referred to as "0.5 µL 1X CutSmart/rCutSmart buffer per reaction". The stock of buffer comes in 10X concentration, so we have been reading this as the need to dilute the buffer before addition. In Zoe's protocol, there is a dilution step to dilture the 10X buffer to 1X, which is then added as 0.5 µL per reaction.     
+
+However, as described yesterday, Hollie did not do this dilution in her protocol. Yesterday we tried adding the 10X buffer to the master mix rather than diluting but did not see any effect. It could be that this was because the buffer and/or restriction enzyme was degraded.  
+
+Today, Hollie talked with NEB and they said that the 1X refers to the concentration *within* the reaction, NOT the concentration before the addition to the master mix. Therefore, we will do one more RFLP tomorrow at the NEB suggested concentration and with the new buffer that arrived today.    
+
+Their recommendation is 5 µL buffer in a 50 µL reaction, which is a 1/10th dilution factor (5/50=0.1). This does not match the Johnson et al. concentrations or the concentrations in our protocol and is much higher than our current addition (0.5/15 = 0.033) and this will be 10 times less if we are doing the dilution before addition to the master mix if this is not required. Tomorrow we will run one more RFLP at the NEB suggested concentration with the remaining PCR product from today.  
+
+We will try this out and clarify in future posts and protocols whether the concentration of buffers is *within* the reaction or *stock before the reaction*.    
+
+**We will use one of the following reaction volume options.**    
+
+Full sample volume:  
+
+15 µL sample + 1.9 µL rCutSmart buffer + 1.9 µL Xhol = 18.8 µL total volume  
+1.9/18.8 = 0.10 
+
+Reduced sample volume (to save some for potential Sanger sequencing if RFLP doesn't work):  
+
+7.5 µL sample + 0.95 µL rCutSmart buffer + 0.95 µL Xhol = 9.4 µL total volume  
+0.95/7.5 = 0.10
+
 
 ## Porites
 
@@ -451,4 +476,8 @@ Danielle and Jill delivered the Porites prepared product for sequencing at RI-IN
 
 ### POC RFLP incubation without diluted rCutSmart
 
+xxx
+
 ### POC RFLP gel 
+
+xxx
