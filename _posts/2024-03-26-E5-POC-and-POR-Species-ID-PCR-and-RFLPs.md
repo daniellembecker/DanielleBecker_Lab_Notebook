@@ -56,7 +56,7 @@ These samples are:
 | POR-362 | Reamplify and resequence for H2 |
 | POR-83  | Reamplify and resequence for H2 |
 
-We will conduct PCR and RFLP for the *Pocillopora* samples and will conduct PCR and Sanger sequencing for the *Porites* samples.   
+We will conduct PCR and RFLP for the *Pocillopora* samples (POC Histone) and will conduct PCR and Sanger sequencing for the *Porites* samples (H2).   
 
 # Protocol
 
@@ -67,9 +67,7 @@ We will note below where we deviate from the standard protocol.
 # Equipment and supplies 
 
 - Sample Preservation and Lysis [Zymo Research DNA/RNA Shield R1100-250](https://github.com/hputnam/Putnam_Lab_Notebook/blob/master/images/Zymo_r1100-250_dna_rna_shield.pdf)
-- DNA Extraction [Zymo Research Quick-DNA™ Miniprep Plus Kit D4069](https://github.com/hputnam/Putnam_Lab_Notebook/blob/master/images/d4068_d4069_quick-dna_miniprep_plus_kit.pdf)    
-- Foward primer [FatP6.1 200µM Stock IDT)](https://github.com/hputnam/Putnam_Lab_Notebook/blob/master/images/Fatp6.1_IDT_Spec_328104852.pdf) 
-- Reverse primer [RORF 200µM Stock IDT](https://github.com/hputnam/Putnam_Lab_Notebook/blob/master/images/RORF_IDT_Spec_328104853.pdf)         
+- DNA Extraction [Zymo Research Quick-DNA™ Miniprep Plus Kit D4069](https://github.com/hputnam/Putnam_Lab_Notebook/blob/master/images/d4068_d4069_quick-dna_miniprep_plus_kit.pdf)            
 - Master Mix [EmeraldAmp GT PCR Master Mix](https://github.com/hputnam/Putnam_Lab_Notebook/blob/master/images/TaKaRa_Emerald_RR320A_DS.pdf)
 - EmeraldAmp GT PCR Master Mix is a loading-dye-added version of EmeraldAmp MAX PCR Master Mix that is optimized for great performance and convenience in both standard and high-throughput PCR applications.
 - Loading Dye [NEB 6X Purple Loading Dye NEB Cat # B7024S]()        
@@ -78,6 +76,8 @@ We will note below where we deviate from the standard protocol.
 - Gel ladder [GeneRuler 100 bp DNA Ladder (Thermo FIsher Catalog SM0241)](https://github.com/hputnam/Putnam_Lab_Notebook/blob/master/images/SM0241_GeneRuler_100bp_DNALadder.pdf) 
 - Restriction Enzyme [XhoI R0146Sk](https://github.com/hputnam/Putnam_Lab_Notebook/blob/master/images/XhoI%20_%20NEB_R0146S.pdf) 
 - Restriction Enzyme Buffer [rCutSmart B6004S](https://github.com/hputnam/Putnam_Lab_Notebook/blob/master/images/rCutSmart_Buffer%20_%20NEB_B6004S.pdf) 
+- Forward primer [POC Histone F]()
+- Reverse primer [POC Histone R]()
  
 # 20240325 
 
@@ -123,16 +123,16 @@ We are planning the master mix for the POC samples for 16 samples ± 5-10% for e
 | Component                      | Concentration | 1 rxn (uL) | 18 rxns (uL) |
 |--------------------------------|---------------|------------|--------------|
 | EmeraldAmp 2X GT PCR Master Mix |               | 12.55      | 225.9        |
-| FatP6.1 F primer               | 10 uM         | 0.32       | 5.76         |
-| RORF R primer                  | 10 uM         | 0.32       | 5.76         |
+| POC Histone F primer               | 10 uM         | 0.32       | 5.76         |
+| POC Histone R primer                  | 10 uM         | 0.32       | 5.76         |
 | Ultra Pure H20                 |               | 10.8       | 194.4        |
 | DNA                            |               | 1          |            |
 | Total volume                   |               | 25uL       |              |
 
 Our primers are:  
 
-FatP6.1 5′-TTTGGGSATTCGTTTAGCAG-3′  
-RORF 5′-SCCAATATGTTAAACASCATGTCA-3′  
+Poc Histone F
+Poc Histone R 
 
 ### POC PCR amplification  
 
