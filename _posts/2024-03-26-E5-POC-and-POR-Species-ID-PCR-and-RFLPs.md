@@ -387,6 +387,10 @@ There was no amplification of sample 707 again, even with dilution. This sample 
 
 We will move forward with preparing the full concentration of 837 and 469 for Sanger sequencing.    
 
+### PCR product clean up 
+
+xxx
+
 ### Preparation for Sanger sequencing 
 
 Danielle prepared the samples for Sanger sequencing for Janet at RI-INBRE.  
@@ -415,3 +419,36 @@ Danielle labeled the tubes and we will take them to Janet for sequencing tomorro
 
 ## Pocillopora 
 
+Today we did a new round of PCR and RFLP with new restriction enzymes.  
+
+Danielle ran this protocol today and Ariana ran the final gel.   
+
+### POC PCR 
+
+xxx
+
+### POC PCR QC gel
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/uri_2024/20240328_POC_QC_gel.png?raw=true)
+
+### POC RFLP incubation 
+
+xxx
+
+### POC RFLP gel 
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/uri_2024/20240328_POC_RFLP_gel.png?raw=true)
+ 
+xxx
+
+## Porites
+
+Danielle and Jill delivered the Porites prepared product for sequencing at RI-INBRE!  
+
+# 20240329
+
+## Pocillopora
+
+### POC RFLP incubation without diluted rCutSmart
+
+### POC RFLP gel 
