@@ -16,11 +16,11 @@ The post details ITS2 amplicon PCR amplificaiton and preparation for sequencing.
 
 # Overview 
 
-We are conducting ITS2 amplicon sequencing to characterize the symbiont community in *M. capitata* larvae from the Hawaii 2023 project. See posts about this project and samples [in my previous posts here](XXX).  
+We are conducting ITS2 amplicon sequencing to characterize the symbiont community in *M. capitata* larvae from the Hawaii 2023 project. See posts about this project and samples [in my previous posts here](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/categoryview/#larval-symbiont-tpc-2023).  
 
 # Protocol 
 
-I am following my revised and updated [ITS2 amplification protocol](XXX) that is based on Emma's [ITS2 sequencing protocol](https://github.com/emmastrand/EmmaStrand_Notebook/blob/master/_posts/2020-01-31-ITS2-Sequencing-Protocol.md) with modifications described in this post. 
+I am following my revised and updated [ITS2 amplification protocol - IN PROGRESS](XXX) that is based on Emma's [ITS2 sequencing protocol](https://github.com/emmastrand/EmmaStrand_Notebook/blob/master/_posts/2020-01-31-ITS2-Sequencing-Protocol.md) with modifications described in this post. 
 
 Other protocols used in this post:  
 
@@ -28,16 +28,16 @@ Other protocols used in this post:
 
 # Sample status 
 
-We are using samples that have already gone through DNA and RNA extraction from Jill's previous work [detailed here](XXX). gDNA has been previously quantified with data [available here](XXX).   
+We are using samples that have already gone through DNA and RNA extraction from Jill's previous work [detailed in her notebook](https://jillashey.github.io/JillAshey_Putnam_Lab_Notebook/). gDNA has been previously quantified with data [available here](https://github.com/AHuffmyer/larval_symbiont_TPC/blob/main/data/rna_seq/rna-extraction-workbook.xlsx).   
 
 # Equipment and supplies 
 
-- [2X Phusion Mastermix](XXX)
-- [Forward Primer: ITSint2](XXX)
-- [Reverse Primer: ITS2_Reverse](XXX)
-- Loading Dye [NEB 6X Purple Loading Dye NEB Cat # B7024S](XXX)        
+- [2X Phusion Mastermix](https://www.neb.com/en-us/products/m0531-phusion-high-fidelity-pcr-master-mix-with-hf-buffer)
+- Forward primer (*ITSintfor2*) at 100uM: TCG TCG GCA GCG TCA GAT GTG TAT AAG AGA CAG GAA TTG CAG AAC TCC GTG
+- Reverse primer (*ITS2_Reverse*) at 100uM: GTC TCG TGG GCT CGG AGA TGT GTA TAA GAG ACA GGG GAT CCA TAT GCT TAA GTT CAG CGG GT
+- Loading Dye [NEB 6X Purple Loading Dye NEB Cat # B7024S](https://www.neb.com/en-us/products/b7024-gel-loading-dye-purple-6x)        
 - Gel Stain [Biotium GelGreen Nucleic Acid Gel Stain, 10,000X in Water Fisher Cat NC9728313](https://www.fishersci.com/shop/products/gel-green-stain-5ml/NC9728313#?keyword=NC9728313)
-- DNA Ladder [1kb Gel ladder](https://github.com/hputnam/Putnam_Lab_Notebook/blob/master/images/NEB_1kb_Ladder_N3232S.png?raw=true) and [100bp gel ladder](XXX)
+- DNA Ladder [1kb Gel ladder](https://github.com/hputnam/Putnam_Lab_Notebook/blob/master/images/NEB_1kb_Ladder_N3232S.png?raw=true) and [100bp gel ladder](https://www.neb.com/en-us/products/n3231-100-bp-dna-ladder)
 - Agarose and 1XTAE buffer for gel electrophoresis 
 - Ultrapure water 
 - PCR strip tubes and 1.5 mL tubes 
@@ -46,7 +46,7 @@ We are using samples that have already gone through DNA and RNA extraction from 
 
 ## Sample dilution 
 
-All gDNA has previously been extracted and quantified by Jill detailed in these posts: [xxx](xxx), [xxx](xxx), [xxx](xxx).
+All gDNA has previously been extracted and quantified by Jill detailed in these [posts stored on GitHub](https://github.com/AHuffmyer/larval_symbiont_TPC/tree/main/notebooks).
 
 Today we diluted gDNA samples in preparation for ITS2 amplification and preparation for sequencing. Dilution is performed to standardize the amount of input in each reaction. Samples were diluted to a concentration of 4ng/uL with the exception of two samples, which had concentrations lower than 4ng/uL in the original gDNA. For these samples, we diluted to 3ng/uL and we will increase the input volume to have a total of 4ng gDNA input for every reaction.  
 
@@ -54,7 +54,7 @@ We diluted to a total volume of 10uL. For several samples, we were unable to obt
 
 Dilutions were generated in individually labeled 0.6mL tubes and not in 96-well plates as described in Emma's base protocol. 
 
-We will use Ultrapure H20 as our negative control. Our positive control is an Mcap2020 project sample D18, which was [successfully amplified and sequenced previously]().  
+We will use Ultrapure H20 as our negative control. Our positive control is an Mcap2020 project sample D18, which was [successfully amplified and sequenced previously](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/ITS2-and-16s-Extractions/).  
 
 | Sample | Group       | Treatment | Qubit Conc (ng/uL) | Nanodrop Conc (ng/uL) | DNA for dilution (uL) | Water | Total volume | Final Concentration (ng/ul) | Notes                                                                    |
 |--------|-------------|-----------|--------------------|-----------------------|-----------------------|-------|--------------|-----------------------------|--------------------------------------------------------------------------|
