@@ -38,8 +38,6 @@ Therefore, the protocol written below includes steps for a ratio of 1.5x to remo
 
 ## Protocol steps 
 
-**JA and AH - Resolve outstanding questions in steps #7 and #15 before starting this protocol**. 
-
 1. Ensure that KAPA Pure Beads has been equilibrated
 to room temperature and that the beads are fully
 resuspended before proceeding.
@@ -59,7 +57,7 @@ beads. Incubate until the liquid is clear.
 6. Carefully remove and discard the supernatant.
 
 7. Keeping the tubes on the magnet, add
-200 µL of 80% ethanol. **Outstanding question: This volume was written in the original protocol for a sample volume of 100uL input. Since we are only inputting 25uL, should this be reduced?** 
+200 µL of 80% ethanol. 
 
 8. Incubate the tubes on the magnet at room
 temperature for ≥30 sec.
@@ -82,11 +80,11 @@ over-drying the beads may result in reduced yield.
 
 14. Remove the plate/tube(s) from the magnet
 
-15. Resuspend the beads in an appropriate volume
+15. Resuspend the beads in 25 uL
 of elution buffer (10 mM Tris-HCl, pH 8.0 – 8.5) or
 PCR-grade water, depending on the downstream
-application. Here, we will use an alkaline elution buffer (10 mM Tris-HCl). **What is the appropriate volume for elution? We input 25uL sample, so would 25uL be an appropriate elution volume?** 
-
+application. Here, we will use an alkaline elution buffer (10 mM Tris-HCl). *We chose 25uL as the elution volume because it was the original sample input volume. We will test this protocol and revise if necessary.* 
+  
 16. Incubate the plate/tube(s) at room temperature for
 2 min to elute the DNA off the beads. The elution
 time may be extended up to 10 min if necessary to
