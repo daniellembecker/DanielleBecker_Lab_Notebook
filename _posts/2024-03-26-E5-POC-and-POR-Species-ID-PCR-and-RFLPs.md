@@ -6,6 +6,10 @@ categories: E5
 tags: PCR RFLP Molecular Sanger Protocol
 ---
 
+**REPLACE XXX WITH LINKS** 
+
+
+
 This post details protocls and results from identifying species of *Porites* and *Pocillopora* samples for the E5 RoL project. 
 
 Danielle Becker  
@@ -76,9 +80,11 @@ We will note below where we deviate from the standard protocol.
 - Gel ladder [GeneRuler 100 bp DNA Ladder (Thermo FIsher Catalog SM0241)](https://github.com/hputnam/Putnam_Lab_Notebook/blob/master/images/SM0241_GeneRuler_100bp_DNALadder.pdf) 
 - Restriction Enzyme [XhoI R0146Sk](https://github.com/hputnam/Putnam_Lab_Notebook/blob/master/images/XhoI%20_%20NEB_R0146S.pdf) 
 - Restriction Enzyme Buffer [rCutSmart B6004S](https://github.com/hputnam/Putnam_Lab_Notebook/blob/master/images/rCutSmart_Buffer%20_%20NEB_B6004S.pdf) 
-- Forward primer [POC Histone F]()
-- Reverse primer [POC Histone R]()
+- Forward primer [POC Histone F](XXX)
+- Reverse primer [POC Histone R](XXX)
  
+*Note that we successfully ran this protocol on 20240329 because previous days protocols used the wrong primers. We were able to do some troubleshooting even so to improve this protocol.* 
+
 # 20240325 
 
 ## Pocillopora 
@@ -389,7 +395,31 @@ We will move forward with preparing the full concentration of 837 and 469 for Sa
 
 ### PCR product clean up 
 
-xxx
+Followed the exact protocol from the [Zymo DNA Clean and Concentrator Kit](https://files.zymoresearch.com/protocols/_d4005_d4006__d4033_d4034_dna_clean_concentrator-25_kit.pdf)
+
+Buffer Preparation:
+
+1. Before starting: Add 24 ml 100% ethanol (26 ml 95% ethanol) to the 6 ml DNA Wash Buffer concentrate. 
+2. Add 96 ml 100% ethanol (104 ml 95% ethanol) to the 24 ml DNA Wash Buffer concentrate.  
+
+Sample Processing:
+ 
+- All centrifugation steps should be performed between 10,000 - 16,000 x g. 
+1. In a 1.5 ml microcentrifuge tube, add 2-7 volumes of DNA Binding Buffer to each volume of DNA sample (see table below). Mix briefly by vortexing. 
+
+| Application                  | DNA Binding Buffer : Sample | Example         |
+|------------------------------|-----------------------------|-----------------|
+| Plasmid, genomic DNA (>2 kb) | 2 : 1                       | 200 µl : 100 µl |
+| PCR product, DNA fragment    | 5 : 1                       | 500 µl : 100 µl |
+| ssDNA (e.g. cDNA, M13 phage  | 7 : 1                       | 700 µl : 100 µl |
+
+- We had 21 µl in our post PCR product tubes (25 µl reaction - 4 µl for post-PCR gel).
+- We added 21 µl from each sample into a 1.5ml tube and added five times the initial volume 105 µl (21 µl  x 5) of the DNA binding buffer to the 1.5 ml microcentrifuge tube.
+
+2. Transfer mixture to a provided Zymo-Spin™ Column in a Collection Tube. 
+3. Centrifuge for 30 seconds. Discard the flow-through. 
+4. Add 200 µl DNA Wash Buffer to the column. Centrifuge at for 30 seconds. Repeat the wash step. 
+5. Add ≥ 25 µl DNA Elution Buffer directly to the column matrix and incubate at room temperature for one minute. Transfer the column to a 1.5 ml microcentrifuge tube and centrifuge at for 30 seconds to elute the DNA. Ultra-pure DNA is now ready for use. 
 
 ### Preparation for Sanger sequencing 
 
@@ -425,21 +455,40 @@ Danielle ran this protocol today and Ariana ran the final gel.
 
 ### POC PCR 
 
-xxx
+We prepared a PCR as described previously using the new restriction enzymes. We have 20 samples with the 4 positive controls and 1 negative control. Danielle prepared master mix for 33 uL volume so that we have extra material to work with. We will plan for 22 reactions worth of master mix.   
+
+PCR master mix included:  
+
+| Component                      | Concentration | 1 rxn (uL) | 22 rxns (uL) |
+|--------------------------------|---------------|------------|--------------|
+| EmeraldAmp 2X GT PCR Master Mix |               | 16.66      | 366.52        |
+| F primer             				 | 10 uM         | 0.43       | 9.46         |
+| R primer                  | 10 uM         | 0.43       | 9.46         |
+| Ultra Pure H20                 |               | 14.66       | 322.52        |
+| DNA                            |               | 1          |            |
+| Total volume                   |               | 33uL       |              |
+
+Each reaction included 32 uL master mix, 1uL template DNA, with ultra pure water added for negative controls. *Note that the volume added of DNA was incorrect - the volume should have been adjusted to 1.32 uL DNA to have the same proportion DNA added as in our 25 uL reactions.*  
+
+The PCR started at 11:27 and ran until 13:04.  
 
 ### POC PCR QC gel
 
-We ran a 2% gel at 80V for 1 h as described above.  
+We ran a 2% gel at 80V for 1 h as described above with 4 uL for each sample.  
 
 ![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/uri_2024/20240328_POC_QC_gel.png?raw=true)
 
-E5 samples amplified, but POS4 is no longer amplifying. This is because we ran out of DNA and only a small amount was left for this reaction. The other positive controls 1 and 2 are showing a band. However, this band is slightly longer than our E5 samples. Hollie suggested that this could be due to lower concentration of DNA in these samples. We will look into this further.   
+E5 samples amplified, but POS4 is no longer amplifying. This is because we ran out of DNA and only a small amount was left for this reaction. The other positive controls 1 and 2 are showing a band. However, this band is slightly longer than our E5 samples. It is possible that these samples have a different amplified length of this region because we expect them to be *P. grandis*.  We will see if this is the case when we get a successful RFLP.  
 
 ### POC RFLP incubation 
 
-xxx
+We prepared a master mix of 1X rCutSmart buffer and Xhol RE with 12 uL of each as done previously. We added 1 uL of this master mix and 15 uL of sample to new strip tubes for RFLP incubation as done above. We added an additional water negative as we have before.  
+
+These samples ran from 15:35-16:35.  
 
 ### POC RFLP gel 
+
+We prepared at 2% gel and ran it at 80V for 1 hr from 18:05-19:05.  
 
 ![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/uri_2024/20240328_POC_RFLP_gel.jpeg?raw=true)   
  
@@ -465,6 +514,7 @@ Reduced sample volume (to save some for potential Sanger sequencing if RFLP does
 7.5 µL sample + 0.95 µL rCutSmart buffer + 0.95 µL Xhol = 9.4 µL total volume  
 0.95/7.5 = 0.10
 
+We are using the reduce sample volume master mix since we previously had success running RFLP with half sample volumes due to high concentration of amplicons after the PCR.  
 
 ## Porites
 
@@ -474,10 +524,65 @@ Danielle and Jill delivered the Porites prepared product for sequencing at RI-IN
 
 ## Pocillopora
 
-### POC RFLP incubation without diluted rCutSmart
+### POC RFLP incubation with 10X rCutSmart
 
-xxx
+We generated a master mix of 10X rCutSmart buffer and Xhol RE using the following volumes:  
 
-### POC RFLP gel 
+7.5 µL sample + 0.95 µL rCutSmart buffer + 0.95 µL Xhol = 9.4 µL total volume  
 
-xxx
+We prepared a mix for 21 samples with 21.85 uL of each component. Each reaction included 7.5 uL of PCR product and 1.9 uL of master mix.  
+
+Samples were added to the thermocycler at 10:00-11:30 for the incubation.  
+
+During this time, we realized that the wrong primers were used (mtORF) instead of POC Histone! This now explains why the restriction enzymes weren't cutting.  We will now repeat the PCR and restriction enzyme incubation with the new primers.  
+
+### PCR with correct POC Histone primers  
+
+Danielle ran a new PCR using the 33uL volumes as described above with the correct primers.  
+
+1 uL of template DNA was added to each sample.  
+
+| Component                      | Concentration | 1 rxn (uL) | 22 rxns (uL) |
+|--------------------------------|---------------|------------|--------------|
+| EmeraldAmp 2X GT PCR Master Mix |               | 16.66      | 366.52        |
+| F primer             				 | 10 uM         | 0.43       | 9.46         |
+| R primer                  | 10 uM         | 0.43       | 9.46         |
+| Ultra Pure H20                 |               | 14.66       | 322.52        |
+| DNA                            |               | 1          |            |
+| Total volume                   |               | 33uL       |              |
+
+The PCR ran from 12:48-14:12.  
+
+### Gel of PCR product 
+
+We ran a gel at 80V for 1 hour with 3 uL of product. Gel ran from 14:50-15:50.  
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/uri_2024/20240329_POC_QC_gel.jpeg?raw=true)   
+
+All samples amplified successfully, including all positives. Negatives are clear.  
+
+### RFLP incubation  
+
+We prepared the master mix as we did yesterday at the higher concentration:  
+
+7.5 µL sample + 0.95 µL rCutSmart buffer + 0.95 µL Xhol = 9.4 µL total volume   
+
+Master mix was prepared with 21.85 uL of each component with 1.9 uL added to each reaction along with 7.5 uL of sample or water in the case of the negative.  
+
+Samples were added to the thermocycler at 15:33-16:53.  
+
+### Gel of RFLP product  
+
+We prepared for a 2% gel and ran RFLP product at 80V for 1 hour with 3 uL sample in each well. The gel ran from 17:12-18:12.  
+
+![](https://github.com/AHuffmyer/ASH_Putnam_Lab_Notebook/blob/master/images/NotebookImages/uri_2024/20240329_POC_RFLP_gel.jpeg?raw=true) 
+
+It worked! All of our E5 samples are *P. meandrina*, shown by no cutting by the restriction enzyme. All four positive controls show successful cutting. Negative controls are clear.  
+
+RFLP and PCR products were discarded as they wont be used anymore.  
+
+Ariana and Danielle added sequencing data to the [E5 GitHub](XXX) and the [Google Drive tracking sheet](https://docs.google.com/spreadsheets/d/1NbWRAi-Ko7zgQqbTuAFRxV7qBS_E6AaXG0XdwiSJ-lA/edit#gid=691848179 ).  
+
+# Results
+
+All *Pocillopora* samples are *P. meandrina* and all *Porites* samples are *P. evermanni*.  
