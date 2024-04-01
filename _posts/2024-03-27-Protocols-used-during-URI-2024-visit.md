@@ -6,10 +6,6 @@ categories: Protocol
 tags: PCR RFLP Molecular Sanger Protocol ITS2 Extraction Protocol LibraryPrep
 ---
 
-**Replace XXX with links** 
-
-
-
 List of protocols used in the lab at URI for lab-a-thon in March 2024!  
 
 # Protocols used this week at URI for lab processing 
