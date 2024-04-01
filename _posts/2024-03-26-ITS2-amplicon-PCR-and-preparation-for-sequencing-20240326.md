@@ -6,12 +6,6 @@ categories: Larval_Symbiont_TPC_2023
 tags: PCR ITS2 Molecular Mcapitata
 ---
 
-
-**REPLACE XXX with links throughout** 
-
-
-
-
 The post details ITS2 amplicon PCR amplificaiton and preparation for sequencing.  
 
 # Overview 
@@ -20,7 +14,7 @@ We are conducting ITS2 amplicon sequencing to characterize the symbiont communit
 
 # Protocol 
 
-I am following my revised and updated [ITS2 amplification protocol - IN PROGRESS](XXX) that is based on Emma's [ITS2 sequencing protocol](https://github.com/emmastrand/EmmaStrand_Notebook/blob/master/_posts/2020-01-31-ITS2-Sequencing-Protocol.md) with modifications described in this post. 
+I am following my revised and updated [ITS2 amplification protocol](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/ITS2-amplification-protocol/) that is based on Emma's [ITS2 sequencing protocol](https://github.com/emmastrand/EmmaStrand_Notebook/blob/master/_posts/2020-01-31-ITS2-Sequencing-Protocol.md) with modifications described in this post. 
 
 Other protocols used in this post:  
 
