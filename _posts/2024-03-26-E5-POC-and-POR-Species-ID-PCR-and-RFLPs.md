@@ -6,10 +6,6 @@ categories: E5
 tags: PCR RFLP Molecular Sanger Protocol
 ---
 
-**REPLACE XXX WITH LINKS** 
-
-
-
 This post details protocls and results from identifying species of *Porites* and *Pocillopora* samples for the E5 RoL project. 
 
 Danielle Becker  
@@ -74,16 +70,16 @@ We will note below where we deviate from the standard protocol.
 - DNA Extraction [Zymo Research Quick-DNA™ Miniprep Plus Kit D4069](https://github.com/hputnam/Putnam_Lab_Notebook/blob/master/images/d4068_d4069_quick-dna_miniprep_plus_kit.pdf)            
 - Master Mix [EmeraldAmp GT PCR Master Mix](https://github.com/hputnam/Putnam_Lab_Notebook/blob/master/images/TaKaRa_Emerald_RR320A_DS.pdf)
 - EmeraldAmp GT PCR Master Mix is a loading-dye-added version of EmeraldAmp MAX PCR Master Mix that is optimized for great performance and convenience in both standard and high-throughput PCR applications.
-- Loading Dye [NEB 6X Purple Loading Dye NEB Cat # B7024S]()        
+- Loading Dye [NEB 6X Purple Loading Dye NEB Cat # B7024S](https://www.neb.com/en-us/products/b7024-gel-loading-dye-purple-6x)        
 - Gel Stain [Biotium GelGreen Nucleic Acid Gel Stain, 10,000X in Water Fisher Cat NC9728313](https://www.fishersci.com/shop/products/gel-green-stain-5ml/NC9728313#?keyword=NC9728313)
 - DNA Ladder [1kb Gel ladder](https://github.com/hputnam/Putnam_Lab_Notebook/blob/master/images/NEB_1kb_Ladder_N3232S.png?raw=true) 
 - Gel ladder [GeneRuler 100 bp DNA Ladder (Thermo FIsher Catalog SM0241)](https://github.com/hputnam/Putnam_Lab_Notebook/blob/master/images/SM0241_GeneRuler_100bp_DNALadder.pdf) 
 - Restriction Enzyme [XhoI R0146Sk](https://github.com/hputnam/Putnam_Lab_Notebook/blob/master/images/XhoI%20_%20NEB_R0146S.pdf) 
 - Restriction Enzyme Buffer [rCutSmart B6004S](https://github.com/hputnam/Putnam_Lab_Notebook/blob/master/images/rCutSmart_Buffer%20_%20NEB_B6004S.pdf) 
-- Forward primer [POC Histone F](XXX)
-- Reverse primer [POC Histone R](XXX)
+- Forward primer (PocHistoneF: 5′-ATTCAGTCTCACTCACTCACTCAC- 3′) [Johnston et al. 2018](https://peerj.com/articles/4355/)
+- Reverse primer (PocHistoneR: 5′-TATCTTCGAACAGACCCACCAAAT-3′) [Johnston et al. 2018](https://peerj.com/articles/4355/)
  
-*Note that we successfully ran this protocol on 20240329 because previous days protocols used the wrong primers. We were able to do some troubleshooting even so to improve this protocol.* 
+*Note that we successfully ran this protocol on 20240329 because previous days protocols used the wrong primers. We were able to do some troubleshooting even so to improve this protocol. Scroll to 20240329 to see final results.* 
 
 # 20240325 
 
@@ -118,9 +114,9 @@ Danielle prepared samples and pulled the samples we will need to use from the fr
 15 POC samples  
 2 POR samples  
 
-1 negative control 
+1 negative control   
 
-Today we are just doing the POC samples, so there are 16 total to run.  
+Today we are just doing the POC samples, so there are 16 total to run.    
 
 ### POC Master Mix 
 
@@ -581,7 +577,7 @@ It worked! All of our E5 samples are *P. meandrina*, shown by no cutting by the 
 
 RFLP and PCR products were discarded as they wont be used anymore.  
 
-Ariana and Danielle added sequencing data to the [E5 GitHub](XXX) and the [Google Drive tracking sheet](https://docs.google.com/spreadsheets/d/1NbWRAi-Ko7zgQqbTuAFRxV7qBS_E6AaXG0XdwiSJ-lA/edit#gid=691848179 ).  
+Ariana and Danielle added sequencing data to the [E5 GitHub](https://github.com/urol-e5/timeseries/tree/master/time_series_analysis/Species_ID) and the [Google Drive tracking sheet](https://docs.google.com/spreadsheets/d/1NbWRAi-Ko7zgQqbTuAFRxV7qBS_E6AaXG0XdwiSJ-lA/edit#gid=691848179).  
 
 # Results
 
