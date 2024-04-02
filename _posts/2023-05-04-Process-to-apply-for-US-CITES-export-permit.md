@@ -145,8 +145,8 @@ The week before your departure (>48 hrs), fill out an eDeclaration (eDec form) i
 - Create an account 
 - Click "new eDec"
 - Enter port of clearance. If you can, depart (if you are taking the samples in baggage on a flight) from a designated [port of clearance](https://www.fws.gov/sites/default/files/documents/OLE%20Wildlife%20Trade%20-%20Wildlife%20Inspection%20Offices%202023_0.pdf). If you cannot do a sample inspection at one of these sites, you will need to apply for a permit for [inspection at an alternative site](https://www.ecfr.gov/current/title-50/chapter-I/subchapter-B/part-14/subpart-C). 
-
-AH ENTER HERE 
+- Enter personal information, domestic, and foreign addresses. 
+- Enter species information and codes from your approved CITES permit. 
 
 ### 48 hr notice 
 
