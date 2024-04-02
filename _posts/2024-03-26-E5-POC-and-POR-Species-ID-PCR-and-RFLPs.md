@@ -400,22 +400,26 @@ Buffer Preparation:
 
 Sample Processing:
  
-- All centrifugation steps should be performed between 10,000 - 16,000 x g. 
 1. In a 1.5 ml microcentrifuge tube, add 2-7 volumes of DNA Binding Buffer to each volume of DNA sample (see table below). Mix briefly by vortexing. 
 
-| Application                  | DNA Binding Buffer : Sample | Example         |
-|------------------------------|-----------------------------|-----------------|
-| Plasmid, genomic DNA (>2 kb) | 2 : 1                       | 200 µl : 100 µl |
-| PCR product, DNA fragment    | 5 : 1                       | 500 µl : 100 µl |
-| ssDNA (e.g. cDNA, M13 phage  | 7 : 1                       | 700 µl : 100 µl |
+    | Application                  | DNA Binding Buffer : Sample | Example         |
+    |------------------------------|-----------------------------|-----------------|
+    | Plasmid, genomic DNA (>2 kb) | 2 : 1                       | 200 µl : 100 µl |
+    | PCR product, DNA fragment    | 5 : 1                       | 500 µl : 100 µl |
+    | ssDNA (e.g. cDNA, M13 phage) | 7 : 1                       | 700 µl : 100 µl |
 
-- We had 21 µl in our post PCR product tubes (25 µl reaction - 4 µl for post-PCR gel).
-- We added 21 µl from each sample into a 1.5ml tube and added five times the initial volume 105 µl (21 µl  x 5) of the DNA binding buffer to the 1.5 ml microcentrifuge tube.
+    We had 21 µl in our post PCR product tubes (25 µl reaction - 4 µl for post-PCR gel).
+    We added 21 µl from each sample into a 1.5ml tube and added five times the initial volume 105 µl (21 µl  x 5) of the DNA binding buffer to the 1.5 ml microcentrifuge tube.
 
 2. Transfer mixture to a provided Zymo-Spin™ Column in a Collection Tube. 
+
 3. Centrifuge for 30 seconds. Discard the flow-through. 
-4. Add 200 µl DNA Wash Buffer to the column. Centrifuge at for 30 seconds. Repeat the wash step. 
-5. Add ≥ 25 µl DNA Elution Buffer directly to the column matrix and incubate at room temperature for one minute. Transfer the column to a 1.5 ml microcentrifuge tube and centrifuge at for 30 seconds to elute the DNA. Ultra-pure DNA is now ready for use. 
+
+4. Add 200 µl DNA Wash Buffer to the column. Centrifuge for 30 seconds. Repeat the wash step. 
+
+5. Add ≥ 25 µl DNA Elution Buffer directly to the column matrix and incubate at room temperature for one minute.
+
+6. Transfer the column to a 1.5 ml microcentrifuge tube and centrifuge for 30 seconds to elute the DNA. Ultra-pure DNA is now ready for use. 
 
 ### Preparation for Sanger sequencing 
 
