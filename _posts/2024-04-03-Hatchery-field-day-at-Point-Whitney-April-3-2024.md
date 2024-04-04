@@ -16,7 +16,7 @@ We have 4 projects/aims in our current work out at Point Whitney.
 
 # Project list 
 
-1. **Lifestage carry over (LCO)** 
+**Lifestage carry over (LCO)** 
 
 In this project, we exposed spat, seed, juveniles (all from POGS 2023 spawn at multiple size classes), and adults (Pacific Hybreed) to thermal conditioning in Oct-Nov 2023 and conducted an acute thermal stress test in Feb 2024 to investigate effects of thermal conditioning on tolerance. We are continuing to monitor growth of these groups as temperature is slowly increased to test for long term effects of conditioning on phenotypes. 
 
@@ -24,19 +24,19 @@ The lifestage carry over GitHub [repository is here](https://github.com/RobertsL
 
 See previous posts on this project in [my notebook](https://ahuffmyer.github.io/ASH_Putnam_Lab_Notebook/categoryview/#wsg-usda) and [Eric's notebook](https://eric-ess.github.io/data-explanation/). 
 
-2. **POGS weekly seed conditioning** 
+**POGS weekly seed conditioning** 
 
 In this project, we are conducting weekly, short stress exposures (24°C for 30 min) on POGS 2023 seed reared in Point Whitney trays. These seed will be outplanted in May to evaluate the effect of thermal conditioning on field performance.  
 
 This project is included in the project-gigas-conditioning [GitHub repository](https://github.com/RobertsLab/project-gigas-conditioning).  
 
-3. **POGS daily seed conditioning** 
+**POGS daily seed conditioning** 
 
 In this project, we are exposing seed to daily 6h exposures at 25°C. These seed are from POGS 2023 spawn that have been reared in Point Whitney trays. We will outplant seed in May to evaluate field performance. 
 
 This project is included in the project-gigas-conditioning [GitHub repository](https://github.com/RobertsLab/project-gigas-conditioning).  
 
-4. **Adult daily conditioning** 
+**Adult daily conditioning** 
 
 In this project, we are exposing adults from 4 Pacific Hybreed families (Dog, Bird, Orange, Blue, and Yellow; same families as in lifestage carryover project) to daily 6h exposures at 25°C. We will outplant adults in May to evaluate field performance. 
 
