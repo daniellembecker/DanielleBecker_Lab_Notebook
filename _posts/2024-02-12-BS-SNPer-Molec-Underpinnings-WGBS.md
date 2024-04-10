@@ -297,9 +297,9 @@ Count number of lines in the SNP-results.vcf file:
 
 Following Stevens code, use the grep function to select for specific SNP mutations where the reference allele is C and the alternate allele is G to find CT SNPs from the output file:
 
-`grep $'C\tT' output/SNP.vcf  >  CT-SNP.vcf`
+`grep $'C\tT' SNP-results.vcf  >  CT-SNP.vcf`
 
-`wc -l output/CT-SNP.vcf`
+`wc -l SNP-results.vcf`
 
 `660,997 SNPs out of 4,764,382 = 13%`
 
