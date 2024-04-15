@@ -903,3 +903,45 @@ Explanation:
 scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Amil/mapped/alignment_stats.txt /Users/Danielle/Desktop/Putnam_Lab/Gametogenesis/bioinformatics/transcriptome
 
 ```
+
+# 9) Identify and analyze isoforms in **de novo** traanscriptome
+
+#### a) Extract isoform sequences and gene-isoform mapping
+
+```
+nano /data/putnamlab/dbecks/Heatwave_A.pul_2022Project/scripts/gene_isoform_map.sh
+
+```
+```
+#!/bin/bash
+#SBATCH -t 120:00:00
+#SBATCH --cpus-per-task=24
+#SBATCH --mem=32GB
+#SBATCH --nodes=1 --ntasks-per-node=1
+#SBATCH --export=NONE
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=danielle_becker@uri.ed
+#SBATCH --account=putnamlab
+#SBATCH --output=slurm-%A.out
+#SBATCH -D /data/putnamlab/dbecks/Heatwave_A.pul_2022Project/data/trinity/trinity_mapped/all_samples/
+
+module load Trinity/2.15.1-foss-2022a
+module load SAMtools/1.16.1-GCC-11.3.0
+
+
+## Generate isoform expression estimates
+$EBROOTTRINITY/trinityrnaseq-v2.15.1/util/abundance_estimates_to_matrix.pl \
+    --est_method RSEM \
+    --out_prefix isoform_expr \
+    --gene_trans_map /data/putnamlab/dbecks/Heatwave_A.pul_2022Project/data/trinity/trinity_mapped/all_samples/gene_to_isoform.map \
+    --name_sample_file /data/putnamlab/dbecks/Heatwave_A.pul_2022Project/data/trinity/trinity_mapped/rsem_sample_names.txt \
+    --name_sample_by_basedir \
+    --quant_files /data/putnamlab/dbecks/Heatwave_A.pul_2022Project/data/trinity/trinity_mapped/rsem_isoform_files.txt
+
+```
+
+```
+sbatch /data/putnamlab/dbecks/Heatwave_A.pul_2022Project/scripts/gene_isoform_map.sh
+
+Submitted batch job 312328
+```
