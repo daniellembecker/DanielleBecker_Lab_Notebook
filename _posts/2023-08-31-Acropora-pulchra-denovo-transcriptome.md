@@ -906,7 +906,7 @@ scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/DeNovo_transcript
 
 # 9) Identify and analyze isoforms in **de novo** traanscriptome
 
-#### a) Extract isoform sequences and gene-isoform mapping
+#### a) Extract isoform sequences and gene-isoform mapping to visualize isoform positions per gene and identify "stacked" or mutually exclusive isoform expression patterns
 
 ```
 nano /data/putnamlab/dbecks/Heatwave_A.pul_2022Project/scripts/gene_isoform_map.sh
@@ -927,6 +927,7 @@ nano /data/putnamlab/dbecks/Heatwave_A.pul_2022Project/scripts/gene_isoform_map.
 
 module load Trinity/2.15.1-foss-2022a
 module load SAMtools/1.16.1-GCC-11.3.0
+module load R-bundle-Bioconductor/3.16-foss-2022b-R-4.2.2
 
 
 ## Generate isoform expression estimates
@@ -943,5 +944,17 @@ $EBROOTTRINITY/trinityrnaseq-v2.15.1/util/abundance_estimates_to_matrix.pl \
 ```
 sbatch /data/putnamlab/dbecks/Heatwave_A.pul_2022Project/scripts/gene_isoform_map.sh
 
-Submitted batch job 312328
+Submitted batch job 312338
+```
+
+#### b) Download isoform_expr.isoform.TPM.not_cross_norm and gene_to_isoform.map files for processing in RStudio
+
+- The isoform_expr.isoform.TPM.not_cross_norm file contains Transcripts Per Million (TPM) values, which are length-normalized expression values. TPM values are more interpretable and easier to compare across isoforms within a gene, as they account for isoform length differences.
+
+```
+
+scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Heatwave_A.pul_2022Project/data/trinity/trinity_mapped/all_samples/isoform_expr.isoform.TPM.not_cross_norm /Users/Danielle/Desktop/
+
+scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Heatwave_A.pul_2022Project/data/trinity/trinity_mapped/all_samples/gene_to_isoform.map /Users/Danielle/Desktop/
+
 ```
