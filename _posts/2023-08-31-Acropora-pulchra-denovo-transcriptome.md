@@ -904,7 +904,7 @@ scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/DeNovo_transcript
 
 ```
 
-# 9) Identify and analyze isoforms in **de novo** traanscriptome
+# 9) Identify and analyze isoforms in **de novo** transcriptome
 
 #### a) Extract isoform sequences and gene-isoform mapping to visualize isoform positions per gene and identify "stacked" or mutually exclusive isoform expression patterns
 
@@ -972,35 +972,26 @@ gff3_file="/data/putnamlab/dbecks/Heatwave_A.pul_2022Project/data/trinity/trinit
 # Output gene_to_isoform.map file
 output_file="/data/putnamlab/dbecks/Heatwave_A.pul_2022Project/data/trinity/trinity_mapped/all_samples/updated_gene_map/output_gene_to_isoform.map"
 
-# Parse the .gff3 file and generate gene_to_isoform.map
+# Parse the .gff3 file and extract isoform IDs and positions
 awk -F'\t' '
     BEGIN {
         OFS="\t"
     }
-    !/^#/ && $3 == "exon" {
-        split($9, attributes, /[;=]/)
-        isoform_id = attributes[2]
-        if (!(isoform_id in isoforms)) {
-            isoforms[isoform_id] = $4 "\t" $5
-        } else {
-            isoforms[isoform_id] = (isoforms[isoform_id] < $4 ? isoforms[isoform_id] : $4) "\t" (isoforms[isoform_id] > $5 ? isoforms[isoform_id] : $5)
-        }
-    }
-    END {
-        for (isoform_id in isoforms) {
-            print isoform_id, isoforms[isoform_id]
-        }
+    $1 ~ /^TRINITY/ {
+        isoform_id = $1
+        start = $4
+        end = $5
+        print isoform_id, start, end
     }
 ' "$gff3_file" > "$output_file"
 
-echo "Gene-to-isoform map generated: $output_file"
 
 ```
 
 ```
 sbatch /data/putnamlab/dbecks/Heatwave_A.pul_2022Project/scripts/updated_gene_isoform_map.sh
 
-Submitted batch job 312353
+Submitted batch job 312395
 ```
 
 - I now have the output file with positions of isoforms, I can now merge this with the original gene_to_isoform.map file in R
