@@ -947,6 +947,8 @@ Submitted batch job 312402
 ```
 less output_script_intersect
 
+Proportion of transcripts intersecting genomic locations = 0.68 * 100 = 68%
+
 ```
 
 
@@ -1087,7 +1089,7 @@ cd /data/putnamlab/jillashey/Apul_Genome/assembly/data/apul.hifiasm.intial.bp.p_
 
 
 ```
-nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/Hisat2_genome_build.sh
+nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/Hisat2_genome_build_Apul.sh
 ```
 
 ```
@@ -1099,21 +1101,21 @@ nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/Hisat2_genom
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --mail-user=danielle_becker@uri.edu
 #SBATCH --account=putnamlab
-#SBATCH -D /data/putnamlab/REFS/Amil_ref/
+#SBATCH -D /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Apul
 #SBATCH --error="script_error"
 #SBATCH --output="output_script"
 
 module load HISAT2/2.2.1-gompi-2022a
 
 # index the reference genome for Amil output index to working directory
-hisat2-build -f /data/putnamlab/REFS/Amil_ref/GCF_013753865.1_Amil_v2.1_genomic.fna ./Amil_ref # called the reference genome (scaffolds)
+hisat2-build -f /data/putnamlab/jillashey/Apul_Genome/assembly/data/apul.hifiasm.intial.bp.p_ctg.fa ./Apul_ref # called the reference genome (scaffolds)
 echo "Reference genome indexed. Starting alignment" $(date)
 ```
 
 ```
-sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/Hisat2_genome_build.sh
+sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/Hisat2_genome_build_Apul.sh
 
-Submitted batch job 289152
+Submitted batch job 312414
 ```
 
 #### c) Align reads to genome
@@ -1127,7 +1129,7 @@ mkdir data/mapped
   - In this example, -ax splice specifies that the input is spliced transcripts, -uf specifies the reference genome, and the output is redirected to a SAM file (Trinity_aligned.sam).
 
 ```
-nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/minimap_align2.sh
+nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/minimap_align2_Apul.sh
 ```
 
 ```
@@ -1139,7 +1141,7 @@ nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/minimap_alig
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --mail-user=danielle_becker@uri.edu
 #SBATCH --account=putnamlab
-#SBATCH -D /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Amil/mapped
+#SBATCH -D /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Apul/mapped
 #SBATCH --cpus-per-task=3
 #SBATCH --error="script_error"
 #SBATCH --output="output_script"
@@ -1149,14 +1151,14 @@ module load minimap2/2.24-GCCcore-11.3.0
 
 #Aligning to Trinity output file
 
-minimap2 -d /data/putnamlab/REFS/Amil_ref/reference_index.idx /data/putnamlab/REFS/Amil_ref/GCF_013753865.1_Amil_v2.1_genomic.fna
+minimap2 -d /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Apul/reference_index.idx /data/putnamlab/jillashey/Apul_Genome/assembly/data/apul.hifiasm.intial.bp.p_ctg.fa
 
 minimap2 -ax splice -uf /data/putnamlab/REFS/Amil_ref/reference_index.idx /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trinity_out_dir/trinity_out_dir.Trinity.fasta > trinity_aligned.sam
 
 ```
 
 ```
-sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/minimap_align2.sh
+sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/minimap_align2_Apul.sh
 
 Submitted batch job 290621
 
