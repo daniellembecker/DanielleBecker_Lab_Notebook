@@ -947,13 +947,73 @@ sbatch /data/putnamlab/dbecks/Heatwave_A.pul_2022Project/scripts/gene_isoform_ma
 Submitted batch job 312338
 ```
 
-#### b) Download isoform_expr.isoform.TPM.not_cross_norm and gene_to_isoform.map files for processing in RStudio
+#### b) Add isoform positions per gene to gene_to_isoform.map file
+
+```
+nano /data/putnamlab/dbecks/Heatwave_A.pul_2022Project/scripts/updated_gene_isoform_map.sh
+
+```
+```
+#!/bin/bash
+#SBATCH -t 120:00:00
+#SBATCH --cpus-per-task=24
+#SBATCH --mem=32GB
+#SBATCH --nodes=1 --ntasks-per-node=1
+#SBATCH --export=NONE
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=danielle_becker@uri.ed
+#SBATCH --account=putnamlab
+#SBATCH --output=slurm-%A.out
+#SBATCH -D /data/putnamlab/dbecks/Heatwave_A.pul_2022Project/data/trinity/trinity_mapped/all_samples/updated_gene_map
+
+# Input .gff3 file
+gff3_file="/data/putnamlab/dbecks/Heatwave_A.pul_2022Project/data/trinity/trinity_out_dir.Trinity.fasta.transdecoder.gff3"
+
+# Output gene_to_isoform.map file
+output_file="/data/putnamlab/dbecks/Heatwave_A.pul_2022Project/data/trinity/trinity_mapped/all_samples/updated_gene_map/output_gene_to_isoform.map"
+
+# Parse the .gff3 file and generate gene_to_isoform.map
+awk -F'\t' '
+    BEGIN {
+        OFS="\t"
+    }
+    !/^#/ && $3 == "exon" {
+        split($9, attributes, /[;=]/)
+        isoform_id = attributes[2]
+        if (!(isoform_id in isoforms)) {
+            isoforms[isoform_id] = $4 "\t" $5
+        } else {
+            isoforms[isoform_id] = (isoforms[isoform_id] < $4 ? isoforms[isoform_id] : $4) "\t" (isoforms[isoform_id] > $5 ? isoforms[isoform_id] : $5)
+        }
+    }
+    END {
+        for (isoform_id in isoforms) {
+            print isoform_id, isoforms[isoform_id]
+        }
+    }
+' "$gff3_file" > "$output_file"
+
+echo "Gene-to-isoform map generated: $output_file"
+
+```
+
+```
+sbatch /data/putnamlab/dbecks/Heatwave_A.pul_2022Project/scripts/updated_gene_isoform_map.sh
+
+Submitted batch job 312353
+```
+
+- I now have the output file with positions of isoforms, I can now merge this with the original gene_to_isoform.map file in R
+
+#### c) Download isoform_expr.isoform.TPM.not_cross_norm and gene_to_isoform.map files for processing in RStudio
 
 - The isoform_expr.isoform.TPM.not_cross_norm file contains Transcripts Per Million (TPM) values, which are length-normalized expression values. TPM values are more interpretable and easier to compare across isoforms within a gene, as they account for isoform length differences.
 
 ```
 
 scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Heatwave_A.pul_2022Project/data/trinity/trinity_mapped/all_samples/isoform_expr.isoform.TPM.not_cross_norm /Users/Danielle/Desktop/
+
+scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Heatwave_A.pul_2022Project/data/trinity/trinity_mapped/all_samples/updated_gene_map/output_gene_to_isoform.map  /Users/Danielle/Desktop/
 
 scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Heatwave_A.pul_2022Project/data/trinity/trinity_mapped/all_samples/gene_to_isoform.map /Users/Danielle/Desktop/
 
