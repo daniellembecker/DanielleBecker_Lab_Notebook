@@ -1153,14 +1153,14 @@ module load minimap2/2.24-GCCcore-11.3.0
 
 minimap2 -d /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Apul/reference_index.idx /data/putnamlab/jillashey/Apul_Genome/assembly/data/apul.hifiasm.intial.bp.p_ctg.fa
 
-minimap2 -ax splice -uf /data/putnamlab/REFS/Amil_ref/reference_index.idx /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trinity_out_dir/trinity_out_dir.Trinity.fasta > trinity_aligned.sam
+minimap2 -ax splice -uf /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Apul/reference_index.idx /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trinity_out_dir/Apul_denovo.fasta > trinity_aligned.sam
 
 ```
 
 ```
 sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/minimap_align2_Apul.sh
 
-Submitted batch job 290621
+Submitted batch job 312416
 
 ```
 
