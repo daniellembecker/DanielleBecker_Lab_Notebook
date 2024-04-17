@@ -897,7 +897,7 @@ Explanation:
 
 ```
 
-#### e) Determine the proportion of your transcripts that intersect with one or more genomic locations in the A. millepora reference genome
+#### e) Determine the proportion of your transcripts that intersect with one genomic location in the A. millepora reference genome
 
 ```
 nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/transcript.intersect.sh
@@ -947,7 +947,7 @@ Submitted batch job 312402
 ```
 less output_script_intersect
 
-Proportion of transcripts intersecting genomic locations = 0.68 * 100 = 68%
+Proportion of transcripts intersecting unique genomic locations = 0.68 * 100 = 68%
 
 ```
 
@@ -1172,7 +1172,7 @@ Submitted batch job 312416
   - samtools flagstat Trinity_aligned.sorted.bam: This command generates statistics about the alignment, including the number of mapped reads and mapping percentages.
 
 ```
-nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/SAMtoBAM.sh
+nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/SAMtoBAM_Apul.sh
 
 #There will be lots of .tmp file versions in your folder, this is normal while this script runs and they should delete at the end to make one sorted.bam file
 ```
@@ -1185,7 +1185,7 @@ nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/SAMtoBAM.sh
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --mail-user=danielle_becker@uri.edu
 #SBATCH --account=putnamlab
-#SBATCH -D /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Amil/mapped
+#SBATCH -D /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Apul/mapped
 #SBATCH --cpus-per-task=3
 #SBATCH --error="script_error"
 #SBATCH --output="output_script"
@@ -1200,9 +1200,9 @@ samtools flagstat trinity_aligned_sorted.bam > alignment_stats.txt
 ```
 
 ```
-sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/SAMtoBAM.sh
+sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/SAMtoBAM_Apul.sh
 
-Submitted batch job 290625
+Submitted batch job 312420
 
 ```
 
@@ -1210,50 +1210,141 @@ Submitted batch job 290625
 
 ```
 
-2337097 + 0 in total (QC-passed reads + QC-failed reads)
+2163770 + 0 in total (QC-passed reads + QC-failed reads)
 1476390 + 0 primary
-805750 + 0 secondary
-54957 + 0 supplementary
+641906 + 0 secondary
+45474 + 0 supplementary
 0 + 0 duplicates
 0 + 0 primary duplicates
-1714368 + 0 mapped (73.35% : N/A)
-853661 + 0 primary mapped (57.82% : N/A)
+1554267 + 0 mapped (71.83% : N/A)
+866887 + 0 primary mapped (58.72% : N/A)
 
-Explanation:
-
-1. Total Reads:
-  - 2337097 + 0 in total (QC-passed reads + QC-failed reads): Indicates the total number of reads, including both QC-passed and QC-failed reads. In this case, there are 2,337,097 reads in total.
-
-2. Primary and Secondary Alignments:
-  - 1476390 + 0 primary: The number of primary alignments. These are the primary alignment records for each read. In this case, there are 1,476,390 primary alignments.
-  - 805750 + 0 secondary: The number of secondary alignments.
-  - Secondary alignments can occur for reads that map equally well to multiple locations in the reference genome.
-
-3. Supplementary Alignments:
-  - 54957 + 0 supplementary: The number of supplementary alignments. - Supplementary alignments are used to represent chimeric or novel splice junctions.
-
-4. Duplicates:
-  - 0 + 0 duplicates: The number of duplicate reads. Duplicate reads can result from PCR artifacts and are often removed in quality control.
-
-5. Primary Duplicates:
-  - 0 + 0 primary duplicates: The number of duplicate primary reads. This specifically refers to duplicate primary alignment records.
-
-6. Mapped Reads:
-  - 1714368 + 0 mapped (73.35% : N/A): The total number and percentage of mapped reads. In this case, 1,714,368 reads are mapped, and they constitute 73.35% of the total reads.
-
-7. Primary Mapped Reads:
-  - 853661 + 0 primary mapped (57.82% : N/A)
-  - The number and percentage of primary mapped reads.
-  - Primary mapped reads refer to those reads where the primary alignment is reported.
-  - In this case, 853,661 reads are primary mapped, constituting 57.82% of the total reads.
 
 ```
 
 
-#### e) Download mapping percentages and statistics to desktop
+#### e) Determine number of multiple transcripts aligning to the same genomic location for **A. pulchra**
+
+```
+nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/transcript.group.sh
 
 ```
 
-scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Amil/mapped/alignment_stats.txt /Users/Danielle/Desktop/Putnam_Lab/Gametogenesis/bioinformatics/transcriptome
+```
+#!/bin/bash
+#SBATCH -t 72:00:00
+#SBATCH --nodes=1 --ntasks-per-node=8
+#SBATCH --export=NONE
+#SBATCH --mem=500GB
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=danielle_becker@uri.edu
+#SBATCH --account=putnamlab
+#SBATCH -D /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Apul/mapped
+#SBATCH --cpus-per-task=3
+#SBATCH --output=slurm-%A.out
+
+
+# Define input and output files
+alignment_file="parsed_alignment.txt"
+grouped_transcripts_file="grouped_transcripts.txt"
+
+# Group aligned transcripts based on genomic coordinates
+awk '{
+    key = $1 ":" $2 ":" $3;  # Create a key using chromosome, start, and end positions
+    transcripts[key] = transcripts[key] "\n" $0;  # Append the current transcript to the existing transcripts at the same key
+}
+END {
+    for (key in transcripts) {
+        print transcripts[key];  # Print all transcripts belonging to the same key
+        print "";  # Add an empty line to separate groups
+    }
+}' "$alignment_file" > "$grouped_transcripts_file"
+
+# Count the number of transcript groups
+num_transcript_groups=$(wc -l < "$grouped_transcripts_file")
+echo "Number of transcript groups: $((num_transcript_groups / 2))"  # Divide by 2 because each group is separated by an empty line
+```
+
+```
+sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/transcript.group.sh
+
+Submitted batch job 312422
+```
+
+```
+Number of transcript groups: 2,176,695
+```
+
+Once you have aligned the transcripts, analyze the alignment results to identify multi-mapping or duplication:
+
+Multi-Mapping:
+
+- Look for transcripts that align equally well to multiple locations in the reference genome.
+- Check the mapping quality scores (MAPQ) or alignment flags/tags to identify reads/transcripts that may be multi-mapping.
+- Count the number of transcripts that align to multiple locations and assess the extent of multi-mapping in the transcriptome assembly.
+
+Duplication:
+
+- Identify transcripts that align to the same genomic location or closely neighboring locations.
+- Group transcripts based on their genomic coordinates and count the number of transcripts aligning to each group.
+- Assess whether multiple transcripts aligning to the same genomic location represent genuine gene duplications or sequencing artifacts.
+
+```
+nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/transcript.multimap.check.sh
+
+```
+
+```
+#!/bin/bash
+#SBATCH -t 72:00:00
+#SBATCH --nodes=1 --ntasks-per-node=8
+#SBATCH --export=NONE
+#SBATCH --mem=500GB
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=danielle_becker@uri.edu
+#SBATCH --account=putnamlab
+#SBATCH -D /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Apul/mapped
+#SBATCH --cpus-per-task=3
+#SBATCH --output=slurm-%A.out
+
+# Define input and output files
+alignment_file="trinity_aligned.sam"
+
+# Multi-Mapping Analysis
+# Count the number of transcripts that align to multiple locations
+multi_mapping_count=$(awk '$5 == 0 || $5 == "*" || $5 ~ /H/ {multi_count++} END {print multi_count}' "$alignment_file")
+echo "Number of transcripts with multi-mapping: $multi_mapping_count"
+
+# Duplication Analysis
+# Group transcripts based on their genomic coordinates and count the number of transcripts aligning to each group
+awk '{
+    if ($1 ~ /^@/) { next }  # Skip header lines
+    key = $3 ":" $4 ":" $4 + length($10) - 1  # Create a key using chromosome, start, and end positions
+    transcripts[key]++
+}
+END {
+    duplicate_count = 0
+    for (key in transcripts) {
+        if (transcripts[key] > 1) {
+            duplicate_count++
+        }
+    }
+    print "Number of transcripts with duplication: " duplicate_count
+}' "$alignment_file"
+
+```
+
+```
+sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/transcript.multimap.check.sh
+
+Submitted batch job 312426
+
+```
+
+```
+less slurm-312426.out
+
+Number of transcripts with multi-mapping: 1,284,191 of 1,554,456 = 82.61%
+Number of transcripts with duplication: 114,327 of 1,554,456 = 7.8%
 
 ```
