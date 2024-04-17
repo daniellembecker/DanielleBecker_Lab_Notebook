@@ -8,7 +8,7 @@ projects: Molecular Underpinnings
 ---
 # Adding RNASeq and WGBS Sequence Files to NCBI Sequence Read Archive
 
-### This workflow follows the [NCBI SRA Submission Protocol](https://github.com/Putnam-Lab/Lab_Management/blob/master/Bioinformatics_%26_Coding/Data_Mangament/SRA-Upload_Protocol.md) made by [meschedl](https://github.com/meschedl). I have updated information on the NCBI SRA website from 20210709 and including a section on how to upload sequence files through the [URI Bluewaves](https://web.uri.edu/hpc-research-computing/using-bluewaves/) server.
+### This workflow follows the [NCBI SRA Submission Protocol](https://github.com/Putnam-Lab/Lab_Management/blob/master/Bioinformatics_%26_Coding/Data_Mangament/SRA-Upload_Protocol.md) made by [meschedl](https://github.com/meschedl). I have updated information on the NCBI SRA website from 20210709 and including a section on how to upload sequence files through the [URI Andromeda](https://its.uri.edu/research-computing/using-andromeda/) server.
 
 # NCBI Archive Structure
 [BioProject](https://www.ncbi.nlm.nih.gov/bioproject/): "A BioProject is a collection of biological data related to a single initiative, originating from a single organization or from a consortium. A BioProject record provides users a single place to find links to the diverse data types generated for that project." All data and samples from this initiative reside under the one BioProject.
@@ -223,14 +223,14 @@ Once you have gathered those, the next thing to do is **login to the [submission
 
 - Then you have to choose what type of instructions to use. Click the FTP upload instructions and it will give you some command prompts that I will go into more detail with here.
 
-## **Instructions on how to connect to the NCBI SRA server using Bluewaves**
+## **Instructions on how to connect to the NCBI SRA server using Andromeda**
 
-- First, in your terminal connect to your [Bluewaves account](https://github.com/Putnam-Lab/Lab_Management/tree/master/Bioinformatics_%26_Coding/Bluewaves). Go to the directory that contains your raw data (usually fastq.gz) files. If there are other files not being uploaded, either remove them or create a new directory that **only** contains the sequence files you are going to upload.
-- FTP, or [File Transfer Protocol](https://searchnetworking.techtarget.com/definition/File-Transfer-Protocol-FTP), lets you access a folder for NCBI and your directory at the same time just for the purpose of transferring files. I noticed that this FTP is not functional on Bluewaves so we will be using a different command called [NcFTP](https://www.tecmint.com/command-line-ftp-clients-for-linux/) which is an alternative to the standard FTP program to connect.
+- First, in your terminal connect to your [Andromeda account](https://github.com/Putnam-Lab/Lab_Management/tree/master/Bioinformatics_%26_Coding/Andromeda). Go to the directory that contains your raw data (usually fastq.gz) files. If there are other files not being uploaded, either remove them or create a new directory that **only** contains the sequence files you are going to upload.
+- FTP, or [File Transfer Protocol](https://searchnetworking.techtarget.com/definition/File-Transfer-Protocol-FTP), lets you access a folder for NCBI and your directory at the same time just for the purpose of transferring files. I noticed that this FTP is not functional on Andromeda so we will be using a different command called [NcFTP](https://www.tecmint.com/command-line-ftp-clients-for-linux/) which is an alternative to the standard FTP program to connect.
 
 ![33](https://raw.githubusercontent.com/Putnam-Lab/Lab_Management/master/Bioinformatics_%26_Coding/images/select-folder.png)
 
-- While you are in the Bluewaves directory with your files, invoke the NcFTP command instead of FTP. To start the process by type:
+- While you are in the Andromeda directory with your files, invoke the NcFTP command instead of FTP. To start the process by type:
 
 ```
 ncftp -u 'username provided through NCBI for you' ftp-private.ncbi.nlm.nih.gov
