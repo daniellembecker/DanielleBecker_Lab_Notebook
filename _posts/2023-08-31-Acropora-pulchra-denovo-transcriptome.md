@@ -260,6 +260,7 @@ done
 ```
 ```
 sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/trim.sh
+
 Submitted batch job 281915
 
 ```
@@ -348,23 +349,24 @@ scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/DeNovo_transcript
 
 ```
 
-# 6) Run Trinity with forward and reverse sequences
+# 6) Run Trinity with paired-end sequences
 
 Trinity commands as found on [Trinity vignette](https://www.broadinstitute.org/videos/introduction-de-novo-rna-seq-assembly-using-trinity) and [Roberts Lab Guide](https://robertslab.github.io/resources/bio_Transcriptome-assembly/):
  -    Trinity  = runs trinity program
  -    seqType fq  = specifys FASTQ file format
- -    SS_lib_type RF  = Trinity has the option (--SS_lib_type) to specify whether or not the sequences you're assembly are      "stranded". User should specify this in the following fashion as on option in the Trinity command (example specifies typical stranded libraries): --SS_lib_type RF
+ -    SS_lib_type RF  = Trinity has the option (--SS_lib_type) to specify whether or not the sequences you're assembly are "stranded". User should specify this in the following fasion as on option in the Trinity command (example specifies typical stranded libraries): --SS_lib_type RF
  -    max_memory 100G  = max memory for trinity 100G should not be changed, per communications with the developer
  -    CPU 36  = match however many CPUs your computing cluster has access to, maximum number of parallel processes (for andromeda the maximum number of cores is 36.  On Unity, the nodes in the uri-cpu partition can go up to 64, and in the cpu and cpu-preempt partitions it can go to 128)
  -    left  = paired end reads filenames
  -    right = paired end reads filenames
+ -    For non-stranded assembly, you do not provide any information about the directionality of the reads, allowing Trinity to assume an equal distribution of reads from both strands.
 
+a) Originally ran both stranded and non-stranded in same assembly, running them separate beneath this code
 
-a) Write Trinity script
+```
+nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/trinity.sh
 
- ```
- nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/trinity.sh
- ```
+```
 
 ```
 
@@ -409,16 +411,14 @@ Trinity \
 /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-173-S1-TP2_R2_001.fastp-trim.20230519.fastq.gz,\
 /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-178-S1-TP2_R2_001.fastp-trim.20230519.fastq.gz
 
-  ```
+```
 
-  b) Run trinity script
-
-  ```
-  sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/trinity.sh
+```
+sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/trinity.sh
 
 Submitted batch job 282369 on 20230927 at 15:56
 
-  ```
+```
 
 Trinity finished 20231011 with a FailedCommands.txt file. I submitted a GitHub issues with my output script to the [Trinity GitHub Issues](https://github.com/trinityrnaseq/trinityrnaseq/issues/1342#issuecomment-1760111445).
 
@@ -503,12 +503,105 @@ Trinity groups transcripts into clusters based on shared sequence content. Such 
  TAAAGCA
  ```
 
-Download Trinity fasta to Desktop if needed, too large to have stored there always
+
+b) Run stranded assembly to provide Trinity with information about the directionality of the reads, allowing it to consider this information during the assembly process
+
+```
+nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/trinity_stranded.sh
+```
 
  ```
-scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trinity_out_dir/trinity_out_dir.Trinity.fasta /Users/Danielle/Desktop/Putnam_Lab/Gametogenesis/bioinformatics
+#!/bin/bash
+#SBATCH --job-name=20240418_trinity_stranded
+#SBATCH --time=30-00:00:00
+#SBATCH --nodes=1 --ntasks-per-node=1
+#SBATCH --exclusive
+#SBATCH --export=NONE
+#SBATCH --mem=500GB
+#SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
+#SBATCH --mail-user=danielle_becker@uri.edu #your email to send notifications
+#SBATCH --account=putnamlab
+#SBATCH -D /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/stranded_output
+#SBATCH --error="script_error_stranded" #if your job fails, the error report will be put in this file
+#SBATCH --output="output_script_stranded" #once your job is completed, any final job report comments will be put in this file
 
-  ```
+
+# Load Trinity module
+
+module load Trinity/2.15.1-foss-2022a
+
+# Run Trinity
+
+Trinity \
+--seqType fq \
+--SS_lib_type RF \
+--max_memory 100G \
+--CPU 36 \
+--left \
+/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-140-S1-TP2_R1_001.fastp-trim.20230519.fastq.gz,\
+/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-145-S1-TP2_R1_001.fastp-trim.20230519.fastq.gz,\
+/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-150-S1-TP2_R1_001.fastp-trim.20230519.fastq.gz,\
+/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-173-S1-TP2_R1_001.fastp-trim.20230519.fastq.gz,\
+/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-178-S1-TP2_R1_001.fastp-trim.20230519.fastq.gz \
+--right \
+/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-140-S1-TP2_R2_001.fastp-trim.20230519.fastq.gz,\
+/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-145-S1-TP2_R2_001.fastp-trim.20230519.fastq.gz,\
+/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-150-S1-TP2_R2_001.fastp-trim.20230519.fastq.gz,\
+/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-173-S1-TP2_R2_001.fastp-trim.20230519.fastq.gz,\
+/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/RNA-ACR-178-S1-TP2_R2_001.fastp-trim.20230519.fastq.gz
+
+
+```
+
+```
+sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/trinity_stranded.sh
+
+Submitted batch job 312460 on 20240418 14:24
+```
+
+
+b) Run non-stranded assembly, do not provide any information about the directionality of the reads, allowing Trinity to assume an equal distribution of reads from both strands
+
+```
+nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/trinity_nonstranded.sh
+```
+
+```
+
+#!/bin/bash
+#SBATCH --job-name=20240418_trinity_nonstranded
+#SBATCH --time=30-00:00:00
+#SBATCH --nodes=1 --ntasks-per-node=1
+#SBATCH --exclusive
+#SBATCH --export=NONE
+#SBATCH --mem=500GB
+#SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
+#SBATCH --mail-user=danielle_becker@uri.edu #your email to send notifications
+#SBATCH --account=putnamlab
+#SBATCH -D /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output
+#SBATCH --error="script_error_nonstranded" #if your job fails, the error report will be put in this file
+#SBATCH --output="output_script_nonstranded" #once your job is completed, any final job report comments will be put in this file
+
+# Load Trinity module
+
+module load Trinity/2.15.1-foss-2022a
+
+# Run Trinity
+
+Trinity \
+--seqType fq \
+--max_memory 100G \
+--CPU 36 \
+--left /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/ACRP_R1_001.fastq.gz \
+--right /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trimmed/ACRP_R2_001.fastq.gz \
+
+```
+
+```
+sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/trinity_nonstranded.sh
+
+Submitted batch job 312458 on 20240418 14:00
+```
 
 # 7) Assessing quality of the assessment
 
