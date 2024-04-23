@@ -613,6 +613,8 @@ This script will compute the contig Nx statistics (eg. the contig N50 value), in
 
 Based on the lengths of the assembled transcriptome contigs, we can compute the conventional Nx length statistic, such that at least x% of the assembled transcript nucleotides are found in contigs that are at least of Nx length. The traditional method is computing N50, such that at least half of all assembled bases are in transcript contigs of at least the N50 length value.
 
+Ran on original assembly:
+
 ```
 /opt/software/Trinity/2.15.1-foss-2022a/trinityrnaseq-v2.15.1/util/TrinityStats.pl trinity_out_dir.Trinity.fasta > trinity_assembly_stats
 
@@ -664,6 +666,58 @@ The contig N50 values can often be exaggerated due to an assembly program genera
 
 You can see that the Nx values based on the single longest isoform per gene are lower than the Nx stats based on all assembled contigs, as expected, and even though the Nx statistic is really not a reliable indicator of the quality of a transcriptome assembly, the Nx value based on using the longest isoform per gene is perhaps better for reasons described above.
 
+Ran on nonstranded assembly:
+
+```
+/opt/software/Trinity/2.15.1-foss-2022a/trinityrnaseq-v2.15.1/util/TrinityStats.pl trinity_out_dir.Trinity.fasta > trinity_assembly_stats_nonstranded
+
+```
+
+```
+################################
+## Counts of transcripts, etc.
+################################
+Total trinity 'genes':  379192
+Total trinity transcripts:      574858
+Percent GC: 43.90
+
+########################################
+Stats based on ALL transcript contigs:
+########################################
+
+        Contig N10: 5001
+        Contig N20: 3273
+        Contig N30: 2346
+        Contig N40: 1722
+        Contig N50: 1256
+
+        Median contig length: 415
+        Average contig: 771.09
+        Total assembled bases: 443268594
+
+```
+
+The N10 through N50 values are shown computed based on all assembled contigs. In this example, 10% of the assembled bases are found in transcript contigs at least 4,395 bases in length (N10 value), and the N50 value indicates that at least half the assembled bases are found in contigs that are at least 1,021 bases in length.
+
+The contig N50 values can often be exaggerated due to an assembly program generating too many transcript isoforms, especially for the longer transcripts. To mitigate this effect, the script will also compute the Nx values based on using only the single longest isoform per 'gene':
+
+```
+## Stats based on ONLY LONGEST ISOFORM per 'GENE':
+#####################################################
+
+        Contig N10: 3857
+        Contig N20: 2295
+        Contig N30: 1577
+        Contig N40: 1120
+        Contig N50: 815
+
+        Median contig length: 360
+        Average contig: 606.70
+        Total assembled bases: 230057536
+
+```
+
+
 
 b) Run BUSCO ( Benchmarking Universal Single-Copy Orthologs)
 
@@ -677,52 +731,7 @@ b) Run BUSCO ( Benchmarking Universal Single-Copy Orthologs)
 
 Citation: Theissinger, K., Falckenhayn, C., Blande, D., Toljamo, A., Gutekunst, J., Makkonen, J., ... & Kokko, H. (2016). De Novo assembly and annotation of the freshwater crayfish Astacus astacus transcriptome. Marine Genomics, 28, 7-10.
 
-
-Make run-busco-transcriptome.sh script:
-
-```
-nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco.sh
-
-```
-
-```
-#!/bin/bash
-
-#SBATCH --job-name="busco"
-#SBATCH --time="100:00:00"
-#SBATCH --nodes 1 --ntasks-per-node=20
-#SBATCH --mem=250G
-##SBATCH --output="busco-%u-%x-%j"
-##SBATCH --account=putnamlab
-##SBATCH --export=NONE
-
-echo "START" $(date)
-
-labbase=/data/putnamlab
-busco_shared="${labbase}/shared/busco"
-[ -z "$query" ] && query="${labbase}/dbecks/DeNovo_transcriptome/2023_A.pul/data/trinity_out_dir/trinity_out_dir.Trinity.fasta" # set this to the query (genome/transcriptome) you are running
-[ -z "$db_to_compare" ] && db_to_compare="${busco_shared}/downloads/lineages/metazoa_odb10"
-
-source "${busco_shared}/scripts/busco_init.sh"  # sets up the modules required for this in the right order
-
-# This will generate output under your $HOME/busco_output
-cd "${labbase}/${dbecks}"
-busco --config "${busco_shared}/scripts/busco-config.ini"  -f -c 20 --long -i "${query}" -l "${db_to_compare}" -o busco_output -m transcriptome
-
-echo "STOP" $(date)
-
-```
-
-Run BUSCO script
-
-```
-
-sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco.sh
-
-
-```
-
-My first run of BUSCO, I was getting this repeated errors in my slurm output error file:
+My first run of BUSCO for original assembly, I was getting this repeated errors in my slurm output error file:
 
 "Message: BatchFatalError(AttributeError("'NoneType' object has no attribute 'hmmer_results_lines'"))"
 
@@ -730,6 +739,7 @@ The issue was that the above script was referencing busco-config.ini which had o
 
 There was also another error that the metazoa_odb10 file was an old version and to make sure BUSCO always updates these file versions, we need to use the command -l metazoa_odb10 instead of a set file path for BUSCO to automatically update the versions. Further explanation could be found in the [download and automatically update lineaages BUSCO guide section](https://busco.ezlab.org/busco_userguide.html#download-and-automated-update).
 
+Run updated for original assembly:
 
 ```
 #!/bin/bash
@@ -767,9 +777,7 @@ Submitted batch job 288779
 
 ```
 
-
-
-### BUSCO Results
+### BUSCO Results for original assembly
 
 ```
 cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/busco/busco_output
@@ -799,6 +807,75 @@ However, the complete and duplicated BUSCOs are high. Transcriptomes and protein
 1. Filter for isoforms
 2. Map to closest genome (*Acropora millepora*)
 3. Filter symbiont genes to check if it helps duplication
+
+Want to also run BUSCO for nonstranded and stranded assemmblies seperate:
+
+Non-stranded BUSCO scores:
+
+```
+nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco_nonstranded.sh
+
+```
+
+```
+#!/bin/bash
+
+#SBATCH --job-name="busco_nonstranded"
+#SBATCH --time="100:00:00"
+#SBATCH --nodes 1 --ntasks-per-node=20
+#SBATCH --mem=250G
+##SBATCH --output="busco-%u-%x-%j"
+##SBATCH --account=putnamlab
+##SBATCH --export=NONE
+
+echo "START" $(date)
+
+labbase=/data/putnamlab
+busco_shared="${labbase}/shared/busco"
+[ -z "$query" ] && query="${labbase}/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output/trinity_out_dir.Trinity.fasta" # set this to the query (genome/transcriptome) you are running
+[ -z "$db_to_compare" ] && db_to_compare="${busco_shared}/downloads/lineages/metazoa_odb10"
+
+source "${busco_shared}/scripts/busco_init.sh"  # sets up the modules required for this in the right order
+
+# This will generate output under your $HOME/busco_output
+cd "${labbase}/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output/"
+busco --config "$EBROOTBUSCO/config/config.ini"  -f -c 20 --long -i "${query}" -l metazoa_odb10 -o busco_output -m transcriptome
+
+echo "STOP" $(date)
+
+```
+
+```
+
+sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco_nonstranded.sh
+
+Submitted batch job 312932
+
+```
+
+### BUSCO Results for nonstranded assembly
+
+```
+cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/busco/busco_output
+less short_summary.specific.metazoa_odb10.busco_output.txt
+
+# BUSCO version is: 5.2.2
+# The lineage dataset is: metazoa_odb10 (Creation date: 2021-02-17, number of genomes: 65, number of BUSCOs: 954)
+# Summarized benchmarking in BUSCO notation for file /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trinity_out_dir/trinity_out_dir.Trinity.fasta
+# BUSCO was run in mode: transcriptome
+
+***** Results: *****
+
+C:97.3%[S:18.9%,D:78.4%],F:1.8%,M:0.9%,n:954       
+928     Complete BUSCOs (C)                        
+180     Complete and single-copy BUSCOs (S)        
+748     Complete and duplicated BUSCOs (D)         
+17      Fragmented BUSCOs (F)                      
+9       Missing BUSCOs (M)                         
+954     Total BUSCO groups searched               
+
+```
+
 
 # 8) Map to *Acropora millepora* genome
 
