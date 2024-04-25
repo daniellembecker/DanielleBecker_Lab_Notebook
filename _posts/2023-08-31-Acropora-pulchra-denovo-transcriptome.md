@@ -808,7 +808,7 @@ However, the complete and duplicated BUSCOs are high. Transcriptomes and protein
 2. Map to closest genome (*Acropora millepora*)
 3. Filter symbiont genes to check if it helps duplication
 
-Want to also run BUSCO for nonstranded and stranded assemmblies seperate:
+Want to also run BUSCO for nonstranded and stranded assemblies separate:
 
 Non-stranded BUSCO scores:
 
@@ -856,7 +856,7 @@ Submitted batch job 312932
 ### BUSCO Results for nonstranded assembly
 
 ```
-cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/busco/busco_output
+cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output/busco_nonstranded/busco_output
 less short_summary.specific.metazoa_odb10.busco_output.txt
 
 # BUSCO version is: 5.2.2
@@ -876,6 +876,179 @@ C:97.3%[S:18.9%,D:78.4%],F:1.8%,M:0.9%,n:954
 
 ```
 
+Stranded BUSCO scores:
+
+```
+nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco_stranded.sh
+
+```
+
+```
+#!/bin/bash
+
+#SBATCH --job-name="busco_stranded"
+#SBATCH --time="100:00:00"
+#SBATCH --nodes 1 --ntasks-per-node=20
+#SBATCH --mem=250G
+##SBATCH --output="busco-%u-%x-%j"
+##SBATCH --account=putnamlab
+##SBATCH --export=NONE
+
+echo "START" $(date)
+
+labbase=/data/putnamlab
+busco_shared="${labbase}/shared/busco"
+[ -z "$query" ] && query="${labbase}/dbecks/DeNovo_transcriptome/2023_A.pul/output/stranded_output/trinity_out_dir.Trinity.fasta" # set this to the query (genome/transcriptome) you are running
+[ -z "$db_to_compare" ] && db_to_compare="${busco_shared}/downloads/lineages/metazoa_odb10"
+
+source "${busco_shared}/scripts/busco_init.sh"  # sets up the modules required for this in the right order
+
+# This will generate output under your $HOME/busco_output
+cd "${labbase}/dbecks/DeNovo_transcriptome/2023_A.pul/output/stranded_output/"
+busco --config "$EBROOTBUSCO/config/config.ini"  -f -c 20 --long -i "${query}" -l metazoa_odb10 -o busco_output -m transcriptome
+
+echo "STOP" $(date)
+
+```
+
+```
+
+sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco_stranded.sh
+
+Submitted batch job 313009
+
+```
+
+### BUSCO Results for stranded assembly
+
+```
+cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/stranded_output/busco_nonstranded/busco_output
+less short_summary.specific.metazoa_odb10.busco_output.txt
+
+# BUSCO version is: 5.2.2
+# The lineage dataset is: metazoa_odb10 (Creation date: 2024-01-08, number of genomes: 65, number of BUSCOs: 954)
+# Summarized benchmarking in BUSCO notation for file /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/stranded_output/trinity_out_dir.Trinity.fasta
+# BUSCO was run in mode: transcriptome
+
+        ***** Results: *****
+
+        C:99.8%[S:23.9%,D:75.9%],F:0.2%,M:0.0%,n:954       
+        952     Complete BUSCOs (C)                        
+        228     Complete and single-copy BUSCOs (S)        
+        724     Complete and duplicated BUSCOs (D)         
+        2       Fragmented BUSCOs (F)                      
+        0       Missing BUSCOs (M)                         
+        954     Total BUSCO groups searched    
+
+
+```
+
+
+### Merge the trinity_out_dir.Trinity.fasta and trinity_out_dir.Trinity.fasta.gene_trans_map files from the non-stranded and stranded assemblies
+
+```
+# Use the cat command to concatenate the fasta files of the assembled transcripts from both assemblies
+
+cat /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output/trinity_out_dir.Trinity.fasta /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/stranded_output/trinity_out_dir.Trinity.fasta > combined_trinity_out_dir.Trinity.fasta
+
+# Use the cat command to concatenate the gene_trans_map of the assembled transcripts from both assemblies
+
+cat /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output/trinity_out_dir.Trinity.fasta.gene_trans_map /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/stranded_output/trinity_out_dir.Trinity.fasta.gene_trans_map > combined_trinity_out_dir.Trinity.fasta.gene_trans_map
+
+# For sanity check, check each individual count of the trinity.fastas and trintiy_gene_maps and make sure combine equals the correct total:
+
+# fastas
+# Stranded:
+wc -l stranded_output/trinity_out_dir.Trinity.fasta
+
+12602391 trinity_out_dir.Trinity.fasta
+
+# Non-stranded:
+
+wc -l trinity_out_dir.Trinity.fasta
+
+8240935 nonstranded_output/trinity_out_dir.Trinity.fasta
+
+#Combined:
+
+wc -l combined_trinity_out_dir.Trinity.fasta
+
+20843326 combined_trinity_out_dir.Trinity.fasta
+
+Totals: 12,602,391 + 8,240,935 = 20,843,326
+
+# gene maps
+# Stranded:
+wc -l stranded_output/trinity_out_dir.Trinity.fasta.gene_trans_map
+
+982,351 trinity_out_dir.Trinity.fasta.gene_trans_map
+
+# Non-stranded:
+
+wc -l nonstranded_output/trinity_out_dir.Trinity.fasta.gene_trans_map
+
+574,858 trinity_out_dir.Trinity.fasta.gene_trans_map
+
+#Combined:
+
+wc -l combined_trinity_out_dir.Trinity.fasta.gene_trans_map
+
+1,557,209 combined_trinity_out_dir.Trinity.fasta.gene_trans_map
+
+Totals: 982,351 + 574,858 = 1,557,209
+```
+
+Combined trinity transcriptome BUSCO scores:
+
+```
+nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco_combined.sh
+
+```
+
+```
+#!/bin/bash
+
+#SBATCH --job-name="busco_combined"
+#SBATCH --time="100:00:00"
+#SBATCH --nodes 1 --ntasks-per-node=20
+#SBATCH --mem=250G
+##SBATCH --output="busco-%u-%x-%j"
+##SBATCH --account=putnamlab
+##SBATCH --export=NONE
+
+echo "START" $(date)
+
+labbase=/data/putnamlab
+busco_shared="${labbase}/shared/busco"
+[ -z "$query" ] && query="${labbase}dbecks/DeNovo_transcriptome/2023_A.pul/output/merged_trinity_assembly/combined_trinity_out_dir.Trinity.fasta" # set this to the query (genome/transcriptome) you are running
+[ -z "$db_to_compare" ] && db_to_compare="${busco_shared}/downloads/lineages/metazoa_odb10"
+
+source "${busco_shared}/scripts/busco_init.sh"  # sets up the modules required for this in the right order
+
+# This will generate output under your $HOME/busco_output
+cd "${labbase}/dbecks/DeNovo_transcriptome/2023_A.pul/output/merged_trinity_assembly/busco_combined/"
+busco --config "$EBROOTBUSCO/config/config.ini"  -f -c 20 --long -i "${query}" -l metazoa_odb10 -o busco_output -m transcriptome
+
+echo "STOP" $(date)
+
+```
+
+```
+
+sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco_combined.sh
+
+Submitted batch job 313025
+
+```
+
+### BUSCO Results for combined assembly
+
+```
+cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/stranded_output/busco_combined/busco_output
+less short_summary.specific.metazoa_odb10.busco_output.txt
+
+
+```
 
 # 8) Map to *Acropora millepora* genome
 
