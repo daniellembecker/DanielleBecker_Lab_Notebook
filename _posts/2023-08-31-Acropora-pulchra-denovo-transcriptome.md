@@ -1005,14 +1005,14 @@ stranded_vs_non = pd.read_csv('stranded_blast.out', sep='\t', header=None)
 
 # Rename columns for clarity
 columns = ['qseqid', 'sseqid', 'pident', 'length', 'mismatch', 'gapopen', 'qstart', 'qend', 'sstart', 'send', 'evalue', 'bitscore']
-non_vs_stranded.columns = columns
-stranded_vs_non.columns = columns
+nonstranded.columns = columns
+stranded.columns = columns
 
 # Identify unique transcripts in non-stranded transcriptome
-unique_non_stranded = set(non_vs_stranded['qseqid']) - set(stranded_vs_non['sseqid'])
+unique_non_stranded = set(nonstranded['qseqid']) - set(stranded['sseqid'])
 
 # Identify unique transcripts in stranded transcriptome
-unique_stranded = set(stranded_vs_non['qseqid']) - set(non_vs_stranded['sseqid'])
+unique_stranded = set(stranded['qseqid']) - set(nonstranded['sseqid'])
 
 # Output results
 with open('unique_non_stranded.txt', 'w') as f:
