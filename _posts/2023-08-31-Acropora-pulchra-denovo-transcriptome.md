@@ -666,13 +666,16 @@ The contig N50 values can often be exaggerated due to an assembly program genera
 
 You can see that the Nx values based on the single longest isoform per gene are lower than the Nx stats based on all assembled contigs, as expected, and even though the Nx statistic is really not a reliable indicator of the quality of a transcriptome assembly, the Nx value based on using the longest isoform per gene is perhaps better for reasons described above.
 
-Ran on nonstranded assembly:
+Ran on nonstranded and stranded assembly:
 
 ```
 /opt/software/Trinity/2.15.1-foss-2022a/trinityrnaseq-v2.15.1/util/TrinityStats.pl trinity_out_dir.Trinity.fasta > trinity_assembly_stats_nonstranded
 
+/opt/software/Trinity/2.15.1-foss-2022a/trinityrnaseq-v2.15.1/util/TrinityStats.pl trinity_out_dir.Trinity.fasta > trinity_assembly_stats_stranded
+
 ```
 
+## N50 nonstranded results:
 ```
 ################################
 ## Counts of transcripts, etc.
@@ -714,6 +717,47 @@ The contig N50 values can often be exaggerated due to an assembly program genera
         Median contig length: 360
         Average contig: 606.70
         Total assembled bases: 230057536
+
+```
+
+### N50 Results for stranded assembly
+
+```
+################################
+## Counts of transcripts, etc.
+################################
+Total trinity 'genes':  670597
+Total trinity transcripts:      982351
+Percent GC: 44.73
+
+########################################
+Stats based on ALL transcript contigs:
+########################################
+
+        Contig N10: 4414
+        Contig N20: 2858
+        Contig N30: 2047
+        Contig N40: 1498
+        Contig N50: 1073
+
+        Median contig length: 367
+        Average contig: 681.05
+        Total assembled bases: 669031487
+
+
+#####################################################
+## Stats based on ONLY LONGEST ISOFORM per 'GENE':
+#####################################################
+
+        Contig N10: 3950
+        Contig N20: 2359
+        Contig N30: 1575
+        Contig N40: 1074
+        Contig N50: 747
+
+        Median contig length: 321
+        Average contig: 560.45
+        Total assembled bases: 375834024
 
 ```
 
@@ -810,7 +854,7 @@ However, the complete and duplicated BUSCOs are high. Transcriptomes and protein
 
 Want to also run BUSCO for nonstranded and stranded assemblies separate:
 
-Non-stranded BUSCO scores:
+Calculate non-stranded BUSCO scores:
 
 ```
 nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco_nonstranded.sh
@@ -876,7 +920,8 @@ C:97.3%[S:18.9%,D:78.4%],F:1.8%,M:0.9%,n:954
 
 ```
 
-Stranded BUSCO scores:
+
+Calculate stranded BUSCO scores:
 
 ```
 nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco_stranded.sh
@@ -944,111 +989,79 @@ less short_summary.specific.metazoa_odb10.busco_output.txt
 ```
 
 
-### Merge the trinity_out_dir.Trinity.fasta and trinity_out_dir.Trinity.fasta.gene_trans_map files from the non-stranded and stranded assemblies
+
+c) Assess the completeness and unique transcripts between the non-stranded and stranded de novo transcriptomes using NCBI nucleotide BLAST to compare the nucleotide sequences of our transcriptomes
+
+Create a Python script to parse the BLAST results and identify unique and common transcripts:
 
 ```
-# Use the cat command to concatenate the fasta files of the assembled transcripts from both assemblies
+nano parse_blast_results.py
 
-cat /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output/trinity_out_dir.Trinity.fasta /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/stranded_output/trinity_out_dir.Trinity.fasta > combined_trinity_out_dir.Trinity.fasta
+import pandas as pd
 
-# Use the cat command to concatenate the gene_trans_map of the assembled transcripts from both assemblies
+# Load BLAST results
+non_vs_stranded = pd.read_csv('nonstranded_blast.out', sep='\t', header=None)
+stranded_vs_non = pd.read_csv('stranded_blast.out', sep='\t', header=None)
 
-cat /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output/trinity_out_dir.Trinity.fasta.gene_trans_map /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/stranded_output/trinity_out_dir.Trinity.fasta.gene_trans_map > combined_trinity_out_dir.Trinity.fasta.gene_trans_map
+# Rename columns for clarity
+columns = ['qseqid', 'sseqid', 'pident', 'length', 'mismatch', 'gapopen', 'qstart', 'qend', 'sstart', 'send', 'evalue', 'bitscore']
+non_vs_stranded.columns = columns
+stranded_vs_non.columns = columns
 
-# For sanity check, check each individual count of the trinity.fastas and trintiy_gene_maps and make sure combine equals the correct total:
+# Identify unique transcripts in non-stranded transcriptome
+unique_non_stranded = set(non_vs_stranded['qseqid']) - set(stranded_vs_non['sseqid'])
 
-# fastas
-# Stranded:
-wc -l stranded_output/trinity_out_dir.Trinity.fasta
+# Identify unique transcripts in stranded transcriptome
+unique_stranded = set(stranded_vs_non['qseqid']) - set(non_vs_stranded['sseqid'])
 
-12602391 trinity_out_dir.Trinity.fasta
+# Output results
+with open('unique_non_stranded.txt', 'w') as f:
+    for transcript in unique_non_stranded:
+        f.write(transcript + '\n')
 
-# Non-stranded:
+with open('unique_stranded.txt', 'w') as f:
+    for transcript in unique_stranded:
+        f.write(transcript + '\n')
 
-wc -l trinity_out_dir.Trinity.fasta
-
-8240935 nonstranded_output/trinity_out_dir.Trinity.fasta
-
-#Combined:
-
-wc -l combined_trinity_out_dir.Trinity.fasta
-
-20843326 combined_trinity_out_dir.Trinity.fasta
-
-Totals: 12,602,391 + 8,240,935 = 20,843,326
-
-# gene maps
-# Stranded:
-wc -l stranded_output/trinity_out_dir.Trinity.fasta.gene_trans_map
-
-982,351 trinity_out_dir.Trinity.fasta.gene_trans_map
-
-# Non-stranded:
-
-wc -l nonstranded_output/trinity_out_dir.Trinity.fasta.gene_trans_map
-
-574,858 trinity_out_dir.Trinity.fasta.gene_trans_map
-
-#Combined:
-
-wc -l combined_trinity_out_dir.Trinity.fasta.gene_trans_map
-
-1,557,209 combined_trinity_out_dir.Trinity.fasta.gene_trans_map
-
-Totals: 982,351 + 574,858 = 1,557,209
-```
-
-Combined trinity transcriptome BUSCO scores:
-
-```
-nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco_combined.sh
+print(f"Unique non-stranded transcripts: {len(unique_non_stranded)}")
+print(f"Unique stranded transcripts: {len(unique_stranded)}")
 
 ```
 
+Create a script to run the blastn process on both transcriptomes:
 ```
+
+nano blast_transcriptomes.sh
+
 #!/bin/bash
-
-#SBATCH --job-name="busco_combined"
-#SBATCH --time="100:00:00"
+#SBATCH --job-name="trans_blastn"
+#SBATCH --time="04:00:00"
 #SBATCH --nodes 1 --ntasks-per-node=20
 #SBATCH --mem=250G
-##SBATCH --output="busco-%u-%x-%j"
+##SBATCH --output="blastn-%u-%x-%j"
 ##SBATCH --account=putnamlab
 ##SBATCH --export=NONE
 
-echo "START" $(date)
+module load ncbi-blast/2.10.1+
 
-labbase=/data/putnamlab
-busco_shared="${labbase}/shared/busco"
-[ -z "$query" ] && query="${labbase}dbecks/DeNovo_transcriptome/2023_A.pul/output/merged_trinity_assembly/combined_trinity_out_dir.Trinity.fasta" # set this to the query (genome/transcriptome) you are running
-[ -z "$db_to_compare" ] && db_to_compare="${busco_shared}/downloads/lineages/metazoa_odb10"
+# Create BLAST databases
+makeblastdb -in /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output/trinity_out_dir.Trinity.fasta -dbtype nucl -out non_stranded_db
 
-source "${busco_shared}/scripts/busco_init.sh"  # sets up the modules required for this in the right order
+makeblastdb -in /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/stranded_output/trinity_out_dir.Trinity.fasta -dbtype nucl -out stranded_db
 
-# This will generate output under your $HOME/busco_output
-cd "${labbase}/dbecks/DeNovo_transcriptome/2023_A.pul/output/merged_trinity_assembly/busco_combined/"
-busco --config "$EBROOTBUSCO/config/config.ini"  -f -c 20 --long -i "${query}" -l metazoa_odb10 -o busco_output -m transcriptome
+# Run BLAST searches
+blastn -query /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output/trinity_out_dir.Trinity.fasta -db stranded_db -out nonstranded_blast.out -outfmt 6 -evalue 1e-5
 
-echo "STOP" $(date)
+blastn -query /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/stranded_output/trinity_out_dir.Trinity.fasta -db non_stranded_db -out stranded_blast.out -outfmt 6 -evalue 1e-5
 
-```
-
-```
-
-sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco_combined.sh
-
-Submitted batch job 313025
-
-```
-
-### BUSCO Results for combined assembly
-
-```
-cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/stranded_output/busco_combined/busco_output
-less short_summary.specific.metazoa_odb10.busco_output.txt
+# Analyze BLAST results
+python parse_blast_results.py
 
 
 ```
+
+
+
 
 # 8) Map to *Acropora millepora* genome
 
