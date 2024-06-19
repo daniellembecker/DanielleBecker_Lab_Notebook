@@ -992,7 +992,45 @@ less short_summary.specific.metazoa_odb10.busco_output.txt
 
 c) Assess the completeness and unique transcripts between the non-stranded and stranded de novo transcriptomes using NCBI nucleotide BLAST to compare the nucleotide sequences of our transcriptomes
 
+
+Create a script to run the blastn process on both transcriptomes:
+```
+
+nano blast_transcriptomes.sh
+
+#!/bin/bash
+#SBATCH --job-name="trans_blastn"
+#SBATCH --time="04:00:00"
+#SBATCH --nodes 1 --ntasks-per-node=20
+#SBATCH --mem=250G
+##SBATCH --output="blastn-%u-%x-%j"
+##SBATCH --account=putnamlab
+#SBATCH -D /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/ref_trans_blast
+##SBATCH --export=NONE
+
+module load BLAST+/2.15.0-gompi-2023a
+
+# Create BLAST databases
+makeblastdb -in /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output/trinity_out_dir.Trinity.fasta -dbtype nucl -out non_stranded_db
+
+makeblastdb -in /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/stranded_output/trinity_out_dir.Trinity.fasta -dbtype nucl -out stranded_db
+
+# Run BLAST searches
+blastn -query /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output/trinity_out_dir.Trinity.fasta -db stranded_db -out nonstranded_blast.out -outfmt 6 -evalue 1e-5
+
+blastn -query /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/stranded_output/trinity_out_dir.Trinity.fasta -db non_stranded_db -out stranded_blast.out -outfmt 6 -evalue 1e-5
+
+
+Submitted batch job 323906
+```
+
 Create a Python script to parse the BLAST results and identify unique and common transcripts:
+
+Enter interactive mode on ssh$ by typing interactive
+
+Enter: module load SciPy-bundle
+
+Then run script below: python parse_blast_results.py
 
 ```
 nano parse_blast_results.py
@@ -1028,40 +1066,6 @@ print("Unique non-stranded transcripts: {}".format(len(unique_non_stranded)))
 print("Unique stranded transcripts: {}".format(len(unique_stranded)))
 
 ```
-
-Create a script to run the blastn process on both transcriptomes:
-```
-
-nano blast_transcriptomes.sh
-
-#!/bin/bash
-#SBATCH --job-name="trans_blastn"
-#SBATCH --time="04:00:00"
-#SBATCH --nodes 1 --ntasks-per-node=20
-#SBATCH --mem=250G
-##SBATCH --output="blastn-%u-%x-%j"
-##SBATCH --account=putnamlab
-#SBATCH -D /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/ref_trans_blast
-##SBATCH --export=NONE
-
-module load BLAST+/2.15.0-gompi-2023a
-
-# Create BLAST databases
-makeblastdb -in /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output/trinity_out_dir.Trinity.fasta -dbtype nucl -out non_stranded_db
-
-makeblastdb -in /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/stranded_output/trinity_out_dir.Trinity.fasta -dbtype nucl -out stranded_db
-
-# Run BLAST searches
-blastn -query /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output/trinity_out_dir.Trinity.fasta -db stranded_db -out nonstranded_blast.out -outfmt 6 -evalue 1e-5
-
-blastn -query /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/stranded_output/trinity_out_dir.Trinity.fasta -db non_stranded_db -out stranded_blast.out -outfmt 6 -evalue 1e-5
-
-# Analyze BLAST results
-python parse_blast_results.py
-
-Submitted batch job 323906
-```
-
 
 
 
