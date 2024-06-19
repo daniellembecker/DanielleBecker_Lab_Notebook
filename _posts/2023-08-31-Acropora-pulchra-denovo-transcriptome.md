@@ -1000,8 +1000,8 @@ nano parse_blast_results.py
 import pandas as pd
 
 # Load BLAST results
-non_vs_stranded = pd.read_csv('nonstranded_blast.out', sep='\t', header=None)
-stranded_vs_non = pd.read_csv('stranded_blast.out', sep='\t', header=None)
+nonstranded = pd.read_csv('nonstranded_blast.out', sep='\t', header=None)
+stranded = pd.read_csv('stranded_blast.out', sep='\t', header=None)
 
 # Rename columns for clarity
 columns = ['qseqid', 'sseqid', 'pident', 'length', 'mismatch', 'gapopen', 'qstart', 'qend', 'sstart', 'send', 'evalue', 'bitscore']
@@ -1023,8 +1023,9 @@ with open('unique_stranded.txt', 'w') as f:
     for transcript in unique_stranded:
         f.write(transcript + '\n')
 
-print(f"Unique non-stranded transcripts: {len(unique_non_stranded)}")
-print(f"Unique stranded transcripts: {len(unique_stranded)}")
+# Print results
+print("Unique non-stranded transcripts: {}".format(len(unique_non_stranded)))
+print("Unique stranded transcripts: {}".format(len(unique_stranded)))
 
 ```
 
@@ -1040,9 +1041,10 @@ nano blast_transcriptomes.sh
 #SBATCH --mem=250G
 ##SBATCH --output="blastn-%u-%x-%j"
 ##SBATCH --account=putnamlab
+#SBATCH -D /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/ref_trans_blast
 ##SBATCH --export=NONE
 
-module load ncbi-blast/2.10.1+
+module load BLAST+/2.15.0-gompi-2023a
 
 # Create BLAST databases
 makeblastdb -in /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output/trinity_out_dir.Trinity.fasta -dbtype nucl -out non_stranded_db
@@ -1057,7 +1059,7 @@ blastn -query /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/stra
 # Analyze BLAST results
 python parse_blast_results.py
 
-
+Submitted batch job 323906
 ```
 
 
