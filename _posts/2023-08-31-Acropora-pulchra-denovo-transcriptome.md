@@ -1062,8 +1062,17 @@ with open('unique_stranded.txt', 'w') as f:
         f.write(transcript + '\n')
 
 # Print results
-print("Unique non-stranded transcripts: {}".format(len(unique_non_stranded)))
+print("Unique non-stranded transcripts:
+{}".format(len(unique_non_stranded)))
 print("Unique stranded transcripts: {}".format(len(unique_stranded)))
+
+```
+
+```
+# Print results
+print "Unique non-stranded transcripts: 341
+
+print "Unique stranded transcripts: 1049
 
 ```
 
