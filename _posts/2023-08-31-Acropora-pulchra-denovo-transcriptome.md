@@ -1,4 +1,4 @@
----
+contaminantscontaminants---
 layout: post
 title: Workflow for Acropora pulchra de novo transcriptome
 category: [ de novo transcriptome , DNA]
@@ -1066,6 +1066,103 @@ print("Unique non-stranded transcripts: {}".format(len(unique_non_stranded)))
 print("Unique stranded transcripts: {}".format(len(unique_stranded)))
 
 ```
+
+# 8) Remove contaminants from both stranded and nonstranded assembly
+
+My next step is to remove any contaminant reads from the reference transcriptomes (stranded and nonstranded). Jill already did this so following her instructions from her [notebook post](https://github.com/JillAshey/JillAshey_Putnam_Lab_Notebook/blob/master/_posts/2024-02-06-Apulchra-Genome-Assembly.md). From Young et al. 2024: "Raw HiFi reads first underwent a contamination screening, following the methodology in [68], using BLASTn [32, 68] against the assembled mitochondrial O. faveolata genome and the following databases: common eukaryote contaminant sequences (ftp.ncbi.nlm.nih. gov/pub/kitts/contam_in_euks.fa.gz), NCBI viral (ref_ viruses_rep_genomes) and prokaryote (ref_prok_rep_ genomes) representative genome sets".
+
+Create a folder for output data from removing contaminants:
+
+```
+cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/
+
+mkdir contam_remove
+
+```
+
+Download contaminant data sets:
+
+```
+Eukaryote contaminants:
+
+wget ftp.ncbi.nlm.nih.gov/pub/kitts/contam_in_euks.fa.gz
+
+gunzip contam_in_euks.fa.gz
+
+For the viral and prokaryote datasets:
+There’s a file /data/shared/ncbi-db/.ncbirc that gets updated to point to the current directory, which the blast* tools will automatically pick up, so you can just do -db ref_prok_rep_ genomes, for example.
+
+For other tools that can read the ncbi databases, you can use blastdb_path -db  ref_viruses_rep_genomes to get the path, although for some reason with the nr database you need to specify -dbtype prot, i.e., blastdb_path -db  nr -dbtype prot.
+
+```
+
+Now I ran run a script that blasts the stranded and nonstranded references against these sequences. In /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts, nano blast_contam_euk.sh
+
+```
+#!/bin/bash
+#SBATCH -t 100:00:00
+#SBATCH --nodes=1 --ntasks-per-node=10
+#SBATCH --export=NONE
+#SBATCH --mem=500GB
+#SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
+#SBATCH --mail-user=danielle_becker@uri.edu #your email to send notifications
+#SBATCH --account=putnamlab
+#SBATCH -D /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/contam_remove/
+#SBATCH -o slurm-%j.out
+#SBATCH -e slurm-%j.error
+
+module load BLAST+/2.13.0-gompi-2022a
+
+echo "BLASTing reference transcriptomes against eukaryote contaminant sequences" $(date)
+
+blastn -query /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/stranded_output/trinity_out_dir.Trinity.fasta -subject /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/raw/contam_in_euks.fa -task megablast -outfmt 6 -evalue 4 -perc_identity 90 -num_threads 15 -out contaminant_hits_euks_rr_stranded.txt
+
+echo "BLAST complete, remove contaminant seqs from stranded" $(date)
+
+awk '{ if( ($4 >= 50 && $4 <= 99 && $3 >=98 ) ||
+         ($4 >= 100 && $4 <= 199 && $3 >= 94 ) ||
+         ($4 >= 200 && $3 >= 90) )  {print $0}
+    }' contaminant_hits_euks_rr_stranded.txt > contaminants_pass_filter_euks_rr_stranded.txt
+
+echo "Contaminant seqs removed from stranded assembly" $(date)
+
+blastn -query /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output/trinity_out_dir.Trinity.fasta -subject /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/raw/contam_in_euks.fa -task megablast -outfmt 6 -evalue 4 -perc_identity 90 -num_threads 15 -out contaminant_hits_euks_rr_nonstranded.txt
+
+echo "BLAST complete, remove contaminant seqs from nonstranded" $(date)
+
+awk '{ if( ($4 >= 50 && $4 <= 99 && $3 >=98 ) ||
+         ($4 >= 100 && $4 <= 199 && $3 >= 94 ) ||
+         ($4 >= 200 && $3 >= 90) )  {print $0}
+    }' contaminant_hits_euks_rr_nonstranded.txt > contaminants_pass_filter_euks_rr_nonstranded.txt
+
+echo "Contaminant seqs removed from nonstranded assembly" $(date)
+```
+
+Submitted batch job 328533 at 13:36 07/02, ran in about three minutes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
