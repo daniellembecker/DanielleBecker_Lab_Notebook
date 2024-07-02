@@ -1115,7 +1115,7 @@ module load BLAST+/2.13.0-gompi-2022a
 
 echo "BLASTing reference transcriptomes against eukaryote contaminant sequences" $(date)
 
-blastn -query /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/stranded_output/trinity_out_dir.Trinity.fasta -subject /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/raw/contam_in_euks.fa -task megablast -outfmt 6 -evalue 4 -perc_identity 90 -num_threads 15 -out contaminant_hits_euks_rr_stranded.txt
+blastn -query /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/stranded_output/trinity_out_dir.Trinity.fasta -subject /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/raw/contam_in_euks.fa -task megablast -outfmt 6 -evalue 4 -perc_identity 90 -num_threads 15 -out /stranded/contaminant_hits_euks_rr_stranded.txt
 
 echo "BLAST complete, remove contaminant seqs from stranded" $(date)
 
@@ -1126,7 +1126,7 @@ awk '{ if( ($4 >= 50 && $4 <= 99 && $3 >=98 ) ||
 
 echo "Contaminant seqs removed from stranded assembly" $(date)
 
-blastn -query /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output/trinity_out_dir.Trinity.fasta -subject /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/raw/contam_in_euks.fa -task megablast -outfmt 6 -evalue 4 -perc_identity 90 -num_threads 15 -out contaminant_hits_euks_rr_nonstranded.txt
+blastn -query /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output/trinity_out_dir.Trinity.fasta -subject /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/raw/contam_in_euks.fa -task megablast -outfmt 6 -evalue 4 -perc_identity 90 -num_threads 15 -out /nonstranded/contaminant_hits_euks_rr_nonstranded.txt
 
 echo "BLAST complete, remove contaminant seqs from nonstranded" $(date)
 
@@ -1140,24 +1140,192 @@ echo "Contaminant seqs removed from nonstranded assembly" $(date)
 
 Submitted batch job 328533 at 13:36 07/02, ran in about three minutes
 
+I looked at the contamination hits in R. See code [here](https://github.com/daniellembecker/A.pul_Heatwave/blob/master/bioinformatics/scripts/transcriptome_analysis.Rmd).
+
+Now I can move forward with the blasting against viral and prok genomes. In the scripts folder: nano blastn_viral.sh
+
+```
+#!/bin/bash
+#SBATCH -t 100:00:00
+#SBATCH --nodes=1 --ntasks-per-node=10
+#SBATCH --export=NONE
+#SBATCH --mem=500GB
+#SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
+#SBATCH --mail-user=danielle_becker@uri.edu #your email to send notifications
+#SBATCH --account=putnamlab
+#SBATCH -D /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/contam_remove/
+#SBATCH -o slurm-%j.out
+#SBATCH -e slurm-%j.error
+
+module load BLAST+/2.13.0-gompi-2022a
+
+echo "Blasting stranded transcriptome reference against viral genomes to look for contaminants" $(date)
+
+blastn -query /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/stranded_output/trinity_out_dir.Trinity.fasta -db ref_viruses_rep_genomes -outfmt 6 -evalue 1e-4 -perc_identity 90 -out stranded/viral_contaminant_hits_rr_stranded.txt
+
+echo "Blast complete!" $(date)
+
+echo "Blasting nonstranded transcriptome reference against viral genomes to look for contaminants" $(date)
+
+blastn -query /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output/trinity_out_dir.Trinity.fasta -db ref_viruses_rep_genomes -outfmt 6 -evalue 1e-4 -perc_identity 90 -out nonstranded/viral_contaminant_hits_rr_nonstranded.txt
+
+echo "Blast complete!" $(date)
+```
+
+Submitted batch job 328556 at 14:05 07/02, took about thirty minutes
+
+I looked at the contamination hits in R. See code [here](https://github.com/daniellembecker/A.pul_Heatwave/blob/master/bioinformatics/scripts/transcriptome_analysis.Rmd).
+
+In the scripts folder: `nano blastn_prok.sh`
+
+```
+#!/bin/bash
+#SBATCH -t 100:00:00
+#SBATCH --nodes=1 --ntasks-per-node=10
+#SBATCH --export=NONE
+#SBATCH --mem=500GB
+#SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
+#SBATCH --mail-user=danielle_becker@uri.edu #your email to send notifications
+#SBATCH --account=putnamlab
+#SBATCH -D /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/contam_remove/
+#SBATCH -o slurm-%j.out
+#SBATCH -e slurm-%j.error
+
+module load BLAST+/2.13.0-gompi-2022a
+
+echo "Blasting stranded transcriptome reference against prokaryote genomes to look for contaminants" $(date)
+
+blastn -query /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/stranded_output/trinity_out_dir.Trinity.fasta -db ref_prok_rep_genomes -outfmt 6 -evalue 1e-4 -perc_identity 90 -out stranded/prok_contaminant_hits_rr_stranded.txt
+
+echo "Blast complete!" $(date)
+
+echo "Blasting nonstranded transcriptome reference against prokaryote genomes to look for contaminants" $(date)
+
+blastn -query /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output/trinity_out_dir.Trinity.fasta -db ref_prok_rep_genomes -outfmt 6 -evalue 1e-4 -perc_identity 90 -out nonstranded/prok_contaminant_hits_rr_nonstranded.txt
+
+echo "Blast complete!" $(date)
+```
+
+Submitted batch job 328594 at 14:05 07/02 took about thirty minutes
+
+Cat the prok and viral results together and remove anything that has a bit score <1000.
+
+```
+cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/contam_remove/stranded
+
+cat viral_contaminant_hits_rr_stranded.txt prok_contaminant_hits_rr_stranded.txt > all_contaminant_hits_rr_stranded.txt
+awk '$12 > 1000 {print $0}' all_contaminant_hits_rr_stranded.txt > contaminant_hits_pv_passfilter_rr_stranded.txt
+
+cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/contam_remove/nonstranded
+
+cat viral_contaminant_hits_rr_nonstranded.txt prok_contaminant_hits_rr_nonstranded.txt > all_contaminant_hits_rr_nonstranded.txt
+awk '$12 > 1000 {print $0}' all_contaminant_hits_rr_nonstranded.txt > contaminant_hits_pv_passfilter_rr_nonstranded.txt
+```
+
+Similarly to what I did above, I looked at the contamination hits in R. See code [here](https://github.com/daniellembecker/A.pul_Heatwave/blob/master/bioinformatics/scripts/transcriptome_analysis.Rmd).
+
+
+Submitted batch job 328558 at 14:11 07/02
+
+I also need to blast the symbiont genome information. Based on the ITS2 data, the *Acropora spp* from the Manava site have mostly A1 and D1 symbionts, so I'll be using the [A1 genome](http://smic.reefgenomics.org/download/Smic.genome.scaffold.final.fa.gz) and the [D1 genome](https://marinegenomics.oist.jp/symbd/viewer/download?project_id=102).
+
+![](https://raw.githubusercontent.com/urol-e5/timeseries/master/time_series_analysis/Figures/ITS2/species_site_panel.jpeg)
+
+Going to blast to sym genomes now. First download them:
+
+```
+cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/raw
+wget http://smic.reefgenomics.org/download/Smic.genome.scaffold.final.fa.gz
+wget https://marinegenomics.oist.jp/symbd/download/102_symbd_genome_scaffold.fa.gz
+
+gunzip Smic.genome.scaffold.final.fa.gz
+gunzip 102_symbd_genome_scaffold.fa.gz
+```
+
+In the assembly scripts folder: `nano blastn_sym.sh`
+
+```
+#!/bin/bash
+#SBATCH -t 100:00:00
+#SBATCH --nodes=1 --ntasks-per-node=10
+#SBATCH --export=NONE
+#SBATCH --mem=500GB
+#SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
+#SBATCH --mail-user=danielle_becker@uri.edu #your email to send notifications
+#SBATCH --account=putnamlab
+#SBATCH -D /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/contam_remove/
+#SBATCH -o slurm-%j.out
+#SBATCH -e slurm-%j.error
+
+module load BLAST+/2.13.0-gompi-2022a
+
+echo "Build A1 seq db" $(date)
+
+makeblastdb -in /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/raw/Smic.genome.scaffold.final.fa -dbtype nucl -out /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/raw/A1_db
+
+echo "Build D1 seq db" $(date)
+
+makeblastdb -in /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/raw/102_symbd_genome_scaffold.fa -dbtype nucl -out /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/raw/D1_db
+
+echo "Blasting stranded transcriptome reference reads against symbiont A1 genome to look for contaminants" $(date)
+
+blastn -query /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/stranded_output/trinity_out_dir.Trinity.fasta -db /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/raw/A1_db -outfmt 6 -evalue 1e-4 -perc_identity 90 -out stranded/sym_A1_contaminant_hits_rr_stranded.txt
+
+echo "A1 blast complete! Now blasting stranded transcriptome reference reads against symbiont D1 genome to look for contaminants" $(date)
+
+blastn -query /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/stranded_output/trinity_out_dir.Trinity.fasta -db /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/raw/D1_db -outfmt 6 -evalue 1e-4 -perc_identity 90 -out stranded/sym_D1_contaminant_hits_rr_stranded.txt
+
+echo "Blasting nonstranded transcriptome reference reads against symbiont A1 genome to look for contaminants" $(date)
+
+blastn -query /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output/trinity_out_dir.Trinity.fasta -db /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/raw/A1_db -outfmt 6 -evalue 1e-4 -perc_identity 90 -out nonstranded/sym_A1_contaminant_hits_rr_nonstranded.txt
+
+echo "A1 blast complete! Now blasting nonstranded transcriptome reference reads against symbiont D1 genome to look for contaminants" $(date)
+
+blastn -query /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output/trinity_out_dir.Trinity.fasta -db /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/raw/D1_db -outfmt 6 -evalue 1e-4 -perc_identity 90 -out nonstranded/sym_D1_contaminant_hits_rr_nonstranded.txt
+
+echo "D1 blast complete!"$(date)
+```
+
+Submitted batch job 328568
+
+Cat the sym blast results together for stranded and nonstranded and remove anything that has a bit score <1000.
+
+```
+cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/contam_remove/stranded
+
+cat sym_A1_contaminant_hits_rr_stranded.txt sym_D1_contaminant_hits_rr_stranded.txt > sym_contaminant_hits_rr_stranded.txt
+
+awk '$12 > 1000 {print $0}' sym_contaminant_hits_rr_stranded.txt > contaminant_hits_sym_passfilter_rr_stranded.txt
+
+wc -l contaminant_hits_sym_passfilter_rr_stranded.txt
+# contaminant_hits_sym_passfilter_rr_stranded.txt
+
+cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/contam_remove/nonstranded
+
+cat sym_A1_contaminant_hits_rr_nonstranded.txt sym_D1_contaminant_hits_rr_nonstranded.txt > sym_contaminant_hits_rr_nonstranded.txt
+
+awk '$12 > 1000 {print $0}' sym_contaminant_hits_rr_nonstranded.txt > contaminant_hits_sym_passfilter_rr_nonstranded.txt
+
+wc -l contaminant_hits_sym_passfilter_rr_nonstranded.txt
+# contaminant_hits_sym_passfilter_rr_nonstranded.txt
+```
+
+Make transcript length .txt files for stranded and nonstranded references:
+
+```
+cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/stranded_output
+
+awk 'BEGIN {OFS="\t"} /^>/ {if (seq_length > 0) print transcript_id, seq_length; split($1, a, " "); transcript_id = substr(a[1], 2); seq_length = 0; next} {seq_length += length($0)} END {if (seq_length > 0) print transcript_id, seq_length}' trinity_out_dir.Trinity.fasta | sort -k2 -nr > transcript_lengths_stranded.txt
+
+cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output
+
+awk 'BEGIN {OFS="\t"} /^>/ {if (seq_length > 0) print transcript_id, seq_length; split($1, a, " "); transcript_id = substr(a[1], 2); seq_length = 0; next} {seq_length += length($0)} END {if (seq_length > 0) print transcript_id, seq_length}' trinity_out_dir.Trinity.fasta | sort -k2 -nr > transcript_lengths_nonstranded.txt
+```
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Pretty clean when bit scores <1000 are removed. Copy this data onto my computer and remove the contaminants in the [R script](https://github.com/daniellembecker/A.pul_Heatwave/blob/master/bioinformatics/scripts/transcriptome_analysis.Rmd).
 
 
 
