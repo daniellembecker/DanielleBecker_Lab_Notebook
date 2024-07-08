@@ -1,4 +1,4 @@
-contaminantscontaminants---
+---
 layout: post
 title: Workflow for Acropora pulchra de novo transcriptome
 category: [ de novo transcriptome , DNA]
@@ -1225,10 +1225,16 @@ cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/contam_remove/s
 cat viral_contaminant_hits_rr_stranded.txt prok_contaminant_hits_rr_stranded.txt > all_contaminant_hits_rr_stranded.txt
 awk '$12 > 1000 {print $0}' all_contaminant_hits_rr_stranded.txt > contaminant_hits_pv_passfilter_rr_stranded.txt
 
+wc -l contaminant_hits_pv_passfilter_rr_stranded.txt
+#154867
+
 cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/contam_remove/nonstranded
 
 cat viral_contaminant_hits_rr_nonstranded.txt prok_contaminant_hits_rr_nonstranded.txt > all_contaminant_hits_rr_nonstranded.txt
 awk '$12 > 1000 {print $0}' all_contaminant_hits_rr_nonstranded.txt > contaminant_hits_pv_passfilter_rr_nonstranded.txt
+
+wc -l contaminant_hits_pv_passfilter_rr_stranded.txt
+#1979
 ```
 
 Similarly to what I did above, I looked at the contamination hits in R. See code [here](https://github.com/daniellembecker/A.pul_Heatwave/blob/master/bioinformatics/scripts/transcriptome_analysis.Rmd).
@@ -1307,7 +1313,7 @@ cat sym_A1_contaminant_hits_rr_stranded.txt sym_D1_contaminant_hits_rr_stranded.
 awk '$12 > 1000 {print $0}' sym_contaminant_hits_rr_stranded.txt > contaminant_hits_sym_passfilter_rr_stranded.txt
 
 wc -l contaminant_hits_sym_passfilter_rr_stranded.txt
-# contaminant_hits_sym_passfilter_rr_stranded.txt
+# 10742 contaminant_hits_sym_passfilter_rr_stranded.txt
 
 cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/contam_remove/nonstranded
 
@@ -1316,7 +1322,7 @@ cat sym_A1_contaminant_hits_rr_nonstranded.txt sym_D1_contaminant_hits_rr_nonstr
 awk '$12 > 1000 {print $0}' sym_contaminant_hits_rr_nonstranded.txt > contaminant_hits_sym_passfilter_rr_nonstranded.txt
 
 wc -l contaminant_hits_sym_passfilter_rr_nonstranded.txt
-# contaminant_hits_sym_passfilter_rr_nonstranded.txt
+# 11681 contaminant_hits_sym_passfilter_rr_nonstranded.txt
 ```
 
 Make transcript length .txt files for stranded and nonstranded references:
@@ -1331,10 +1337,42 @@ cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_out
 awk 'BEGIN {OFS="\t"} /^>/ {if (seq_length > 0) print transcript_id, seq_length; split($1, a, " "); transcript_id = substr(a[1], 2); seq_length = 0; next} {seq_length += length($0)} END {if (seq_length > 0) print transcript_id, seq_length}' trinity_out_dir.Trinity.fasta | sort -k2 -nr > transcript_lengths_nonstranded.txt
 ```
 
-
-
-
 Pretty clean when bit scores <1000 are removed. Copy this data onto my computer and remove the contaminants in the [R script](https://github.com/daniellembecker/A.pul_Heatwave/blob/master/bioinformatics/scripts/transcriptome_analysis.Rmd).
+
+
+Copy the files all_contam_rem_good_strand_read_list.txt and all_contam_rem_good_nonstrand_read_list.txt that were generated from the R code mentioned above. These specific files were written starting on line 257 and 509. It contains the reads that have passed contamination filtering. I copied each file into cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/contam_remove/stranded and cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/contam_remove/nonstranded
+
+
+```
+cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/contam_remove/stranded
+
+wc -l all_contam_rem_good_strand_read_list.txt
+962995 all_contam_rem_good_strand_read_list.txt
+
+cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/contam_remove/nonstranded
+
+wc -l all_contam_rem_good_nonstrand_read_list.txt
+566,929 all_contam_rem_good_nonstrand_read_list.txt
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
