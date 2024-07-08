@@ -1355,10 +1355,56 @@ wc -l all_contam_rem_good_nonstrand_read_list.txt
 566,929 all_contam_rem_good_nonstrand_read_list.txt
 ```
 
+The vast majority of the transcripts are retained after contamination filtering, which is a good sign of high quality sequencing. My next step is to subset the raw stranded and nonstranded transcriptome fasta files to remove the contaminants identified above. I can do this with the seqtk subseq command. In the scripts folder: nano subseq.sh
+
+But first, I need to remove the length information from the all_contam_rem_good_strand_read_list.txt and all_contam_rem_good_nonstrand_read_list.txt files
+
+```
+cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/contam_remove/stranded
+
+awk '{$2=""; print $0}' all_contam_rem_good_strand_read_list.txt > output_file_strand.txt
+
+cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/contam_remove/nonstranded
+
+awk '{$2=""; print $0}' all_contam_rem_good_nonstrand_read_list.txt > output_file_nonstrand.txt
+```
 
 
+Write script to subset the raw stranded and nonstranded fasta files to remove the contaminants identified above.
+```
+cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts
+nano subseq.sh
+```
 
+```
+#!/bin/bash
+#SBATCH -t 100:00:00
+#SBATCH --nodes=1 --ntasks-per-node=10
+#SBATCH --export=NONE
+#SBATCH --mem=500GB
+#SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
+#SBATCH --mail-user=danielle_becker@uri.edu #your email to send notifications
+#SBATCH --account=putnamlab
+#SBATCH -D /data/putnamlab/jillashey/Apul_Genome/assembly/scripts
+#SBATCH -o slurm-%j.out
+#SBATCH -e slurm-%j.error
 
+module load seqtk/1.3-GCC-9.3.0
+
+echo "Subsetting stranded transcripts that passed contamination filtering" $(date)
+
+seqtk subseq m84100_240128_024355_s2.hifi_reads.bc1029.fasta output_file_strand.txt > strand_rr_allcontam_rem.fasta
+
+echo "Subsetting complete stranded!" $(date)
+
+echo "Subsetting nonstranded transcripts that passed contamination filtering" $(date)
+
+seqtk subseq m84100_240128_024355_s2.hifi_reads.bc1029.fasta output_file_nonstrand.txt > strand_rr_allcontam_rem.fasta
+
+echo "Subsetting complete stranded!" $(date)
+
+/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output
+```
 
 
 
