@@ -1364,11 +1364,14 @@ cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/contam_remove/s
 
 awk '{$2=""; print $0}' all_contam_rem_good_strand_read_list.txt > output_file_strand.txt
 
+wc -l 962,995 output_file_strand.txt
+
 cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/contam_remove/nonstranded
 
 awk '{$2=""; print $0}' all_contam_rem_good_nonstrand_read_list.txt > output_file_nonstrand.txt
-```
 
+wc -l 566929 output_file_nonstrand.txt
+```
 
 Write script to subset the raw stranded and nonstranded fasta files to remove the contaminants identified above.
 ```
@@ -1385,7 +1388,7 @@ nano subseq.sh
 #SBATCH --mail-type=BEGIN,END,FAIL #email you when job starts, stops and/or fails
 #SBATCH --mail-user=danielle_becker@uri.edu #your email to send notifications
 #SBATCH --account=putnamlab
-#SBATCH -D /data/putnamlab/jillashey/Apul_Genome/assembly/scripts
+#SBATCH -D /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/contam_remove
 #SBATCH -o slurm-%j.out
 #SBATCH -e slurm-%j.error
 
@@ -1393,19 +1396,24 @@ module load seqtk/1.3-GCC-9.3.0
 
 echo "Subsetting stranded transcripts that passed contamination filtering" $(date)
 
-seqtk subseq m84100_240128_024355_s2.hifi_reads.bc1029.fasta output_file_strand.txt > strand_rr_allcontam_rem.fasta
+awk 'NR==FNR{ids[$1]; next} /^>/{f=0; for(i in ids) if(index($1, i)) {f=1; break}} f' \
+    /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/contam_remove/stranded/output_file_strand.txt \
+    /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/stranded_output/trinity_out_dir.Trinity.fasta \
+    | seqtk seq -l0 > /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/stranded_output/strand_rr_allcontam_rem.fasta
 
 echo "Subsetting complete stranded!" $(date)
 
 echo "Subsetting nonstranded transcripts that passed contamination filtering" $(date)
 
-seqtk subseq m84100_240128_024355_s2.hifi_reads.bc1029.fasta output_file_nonstrand.txt > strand_rr_allcontam_rem.fasta
+awk 'NR==FNR{ids[$1]; next} /^>/{f=0; for(i in ids) if(index($1, i)) {f=1; break}} f' \
+    /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/contam_remove/nonstranded/output_file_nonstrand.txt \
+    /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output/trinity_out_dir.Trinity.fasta \
+    | seqtk seq -l0 > /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output/nonstrand_rr_allcontam_rem.fasta
 
-echo "Subsetting complete stranded!" $(date)
+echo "Subsetting complete nonstranded!" $(date)
 
-/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output
 ```
-
+Submitted batch job 329322 at 9:48
 
 
 
