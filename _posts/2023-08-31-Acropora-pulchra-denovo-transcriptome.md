@@ -1,3 +1,4 @@
+
 ---
 layout: post
 title: Workflow for Acropora pulchra de novo transcriptome
@@ -7,7 +8,7 @@ tag: [ Acropora pulchra, de novo transcriptome ]
 ## Designing a workflow to create a de novo transcriptome for *Acropora pulchra*
 
 #### Goal:
-Use samples from 11 *Acropora pulchra* colonies collected in Mo'orea, French Polynesia on January 15th 2022 from the north shore backreef site Mahana (17°29'13.9"S 149°53'14.7"W) part of a 12-month [Gametogenesis timeseries project](https://github.com/daniellembecker/Gametogenesis) that were than [concentrated into one sequenced sample](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/_posts/2023-04-25-Acropora-pulchra-transcriptome-extraction-concentration.md) using the [Zymo RNA Clean Concentrate Protocol](https://github.com/zdellaert/ZD_Putnam_Lab_Notebook/blob/master/protocols/Zymo_RNA_Clean_Concentrate.pdf) and five sequence samples also collected from Mo'orea, French Polynesia part of the [E5 Rules of Life project](https://github.com/urol-e5) to create a de novo transcriptome for *A. pulchra*. Literature review of current *Acropora* de novo transcriptomes and genomes completed already.
+Use samples from 11 *Acropora pulchra* colonies collected in Mo'orea, French Polynesia on January 15th 2022 from the north shore backreef site Mahana (17°29'13.9"S 149°53'14.7"W) part of a 12-month [Gametogenesis timeseries project](https://github.com/daniellembecker/Gametogenesis) that were than [concentrated into one sequenced sample](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/_posts/2023-04-25-Acropora-pulchra-transcriptome-extraction-concentration.md) using the [Zymo RNA Clean Concentrate Protocol](https://github.com/zdellaert/ZD_Putnam_Lab_Notebook/blob/master/protocols/Zymo_RNA_Clean_Concentrate.pdf) and five sequence samples also collected from Moorea, French Polynesia part of the [E5 Rules of Life project](https://github.com/urol-e5) to create a de novo transcriptome for *A. pulchra*. Literature review of current *Acropora* de novo transcriptomes and genomes completed already.
 
 **Important notes about de novo transcriptomes**
 
@@ -1414,6 +1415,99 @@ echo "Subsetting complete nonstranded!" $(date)
 
 ```
 Submitted batch job 329322 at 9:48
+
+
+Identify the unique transcript IDs found in the nonstranded assemmbly not found in the stranded assembly and concatenate them with the stranded assembly to make a final reference assembly.
+
+
+```
+cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/
+
+mkdir final_assembly
+
+cd final_assembly
+
+# Extract IDs from stranded FASTA
+grep "^>" /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/stranded_output/strand_rr_allcontam_rem.fasta | sed 's/>//' > stranded_ids.txt
+
+# Extract unique IDs from nonstranded FASTA
+grep "^>" /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output/nonstrand_rr_allcontam_rem.fasta | sed 's/>//' | grep -v -F -f stranded_ids.txt > unique_nonstranded_ids.txt
+
+# Concatenate stranded FASTA with unique nonstranded FASTA sequences
+cat /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/stranded_output/strand_rr_allcontam_rem.fasta > /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/combined_assemblies.fasta
+while read id; do
+    awk -v id="$id" '/^>/{f=($0==">"id)}f' /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output/nonstrand_rr_allcontam_rem.fasta >> /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/combined_assemblies.fasta
+done < unique_nonstranded_ids.txt
+
+echo "Unique transcripts have been concatenated and saved to /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/combined_assemblies.fasta"
+
+# look for any duplicate IDs in newly assembled .fasta:
+
+grep "^>" /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/combined_assemblies.fasta | sort | uniq -d
+
+#no duplicates found
+
+# check number of transcripts in final assembly:
+
+grep -c "^>" /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/combined_assemblies.fasta
+
+966,730
+
+```
+
+
+### Run BUSCO for combined final assembly
+
+```
+nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco_final.sh
+
+```
+
+```
+#!/bin/bash
+
+#SBATCH --job-name="busco_final"
+#SBATCH --time="100:00:00"
+#SBATCH --nodes 1 --ntasks-per-node=20
+#SBATCH --mem=250G
+##SBATCH --output="busco-%u-%x-%j"
+##SBATCH --account=putnamlab
+##SBATCH --export=NONE
+
+echo "START" $(date)
+
+labbase=/data/putnamlab
+busco_shared="${labbase}/shared/busco"
+[ -z "$query" ] && query="${labbase}/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/combined_assemblies.fasta" # set this to the query (genome/transcriptome) you are running
+[ -z "$db_to_compare" ] && db_to_compare="${busco_shared}/downloads/lineages/metazoa_odb10"
+
+source "${busco_shared}/scripts/busco_init.sh"  # sets up the modules required for this in the right order
+
+# This will generate output under your $HOME/busco_output
+cd "${labbase}/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/"
+busco --config "$EBROOTBUSCO/config/config.ini"  -f -c 20 --long -i "${query}" -l metazoa_odb10 -o busco_output -m transcriptome
+
+echo "STOP" $(date)
+
+```
+
+```
+
+sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco_final.sh
+
+Submitted batch job 332765
+
+```
+
+
+```
+cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output/busco_nonstranded/busco_output
+less short_summary.specific.metazoa_odb10.busco_output.txt
+
+
+
+```
+
 
 
 
