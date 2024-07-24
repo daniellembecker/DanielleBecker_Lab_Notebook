@@ -1451,7 +1451,7 @@ grep "^>" /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_as
 
 grep -c "^>" /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/combined_assemblies.fasta
 
-966,730
+966,729
 
 ```
 
@@ -1495,7 +1495,7 @@ echo "STOP" $(date)
 
 sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco_final.sh
 
-Submitted batch job 332765
+Submitted batch job 332779
 
 ```
 
