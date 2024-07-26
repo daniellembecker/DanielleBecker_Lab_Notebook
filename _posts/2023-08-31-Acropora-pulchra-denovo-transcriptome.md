@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: Workflow for Acropora pulchra de novo transcriptome
@@ -1427,31 +1426,65 @@ mkdir final_assembly
 
 cd final_assembly
 
-# Extract IDs from stranded FASTA
-grep "^>" /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/stranded_output/strand_rr_allcontam_rem.fasta | sed 's/>//' > stranded_ids.txt
+nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/concat.sh
 
-# Extract unique IDs from nonstranded FASTA
-grep "^>" /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output/nonstrand_rr_allcontam_rem.fasta | sed 's/>//' | grep -v -F -f stranded_ids.txt > unique_nonstranded_ids.txt
+#!/bin/bash
+#SBATCH -t 100:00:00
+#SBATCH --nodes=1 --ntasks-per-node=10
+#SBATCH --export=NONE
+#SBATCH --mem=500GB
+#SBATCH --mail-type=BEGIN,END,FAIL # email notifications
+#SBATCH --mail-user=danielle_becker@uri.edu # your email
+#SBATCH --account=putnamlab
+#SBATCH -D /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly
+#SBATCH -o slurm-%j.out
+#SBATCH -e slurm-%j.error
 
-# Concatenate stranded FASTA with unique nonstranded FASTA sequences
-cat /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/stranded_output/strand_rr_allcontam_rem.fasta > /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/combined_assemblies.fasta
-while read id; do
-    awk -v id="$id" '/^>/{f=($0==">"id)}f' /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output/nonstrand_rr_allcontam_rem.fasta >> /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/combined_assemblies.fasta
-done < unique_nonstranded_ids.txt
+# Load necessary modules
+module load SeqKit/2.3.1
 
-echo "Unique transcripts have been concatenated and saved to /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/combined_assemblies.fasta"
+# Define file paths
+UNIQUE_IDS="/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/ref_trans_blast/unique_non_stranded.txt"
+NONSTRANDED_FASTA="/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output/nonstrand_rr_allcontam_rem.fasta"
+STRANDED_FASTA="/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/stranded_output/strand_rr_allcontam_rem.fasta"
+OUTPUT_FASTA="/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/combined_assemblies.fasta"
+
+# Extract unique non-stranded sequences
+seqkit grep -f $UNIQUE_IDS $NONSTRANDED_FASTA > unique_non_stranded_sequences.fasta
+
+# Concatenate the unique non-stranded sequences with the stranded sequences
+cat unique_non_stranded_sequences.fasta $STRANDED_FASTA > $OUTPUT_FASTA
+
+# Clean up intermediate files
+rm unique_non_stranded_sequences.fasta
+
+echo "Unique non-stranded sequences have been extracted and concatenated with the stranded sequences."
+
+sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/concat.sh
+
+Submitted batch job 332872
 
 # look for any duplicate IDs in newly assembled .fasta:
 
 grep "^>" /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/combined_assemblies.fasta | sort | uniq -d
 
-#no duplicates found
+# two duplicates found:
+>TRINITY_DN189409_c0_g1_i1 len=211 path=[0:0-210]
+>TRINITY_DN297413_c0_g1_i1 len=237 path=[0:0-236]
+
+# removed two duplicates:
+
+awk '/^>/ {if(seen[$0]++) next} {print}' combined_assemblies.fasta > combined_assemblies_cleaned.fasta
+
+# remove duplicates with different lengths, the one with length 277 came from nonstranded assembly:
+
+awk '/^>/ {if ($0 == ">TRINITY_DN113515_c0_g1_i1 len=277 path=[0:0-276]") {p=0} else {p=1}} p' combined_assemblies.fasta > cleaned_assemblies.fasta
 
 # check number of transcripts in final assembly:
 
 grep -c "^>" /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/combined_assemblies.fasta
 
-966,729
+963413 which makes sense because stranded output fasta had 963075 and 341 unique nonstranded minus the three duplicates
 
 ```
 
@@ -1469,7 +1502,7 @@ nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco_final.
 #SBATCH --job-name="busco_final"
 #SBATCH --time="100:00:00"
 #SBATCH --nodes 1 --ntasks-per-node=20
-#SBATCH --mem=250G
+#SBATCH --mem=120G
 ##SBATCH --output="busco-%u-%x-%j"
 ##SBATCH --account=putnamlab
 ##SBATCH --export=NONE
@@ -1495,7 +1528,7 @@ echo "STOP" $(date)
 
 sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco_final.sh
 
-Submitted batch job 332779
+Submitted batch job 333181
 
 ```
 
