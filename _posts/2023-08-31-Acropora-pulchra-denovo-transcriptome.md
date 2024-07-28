@@ -1636,8 +1636,18 @@ Submitted batch job 333443
 ```
 
 ```
-cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output/busco_nonstranded/busco_output
+cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/busco_output
 less short_summary.specific.metazoa_odb10.busco_output.txt
+
+***** Results: *****
+
+C:99.8%[S:23.8%,D:76.0%],F:0.1%,M:0.1%,n:954       
+952     Complete BUSCOs (C)                        
+227     Complete and single-copy BUSCOs (S)        
+725     Complete and duplicated BUSCOs (D)         
+1       Fragmented BUSCOs (F)                      
+1       Missing BUSCOs (M)                         
+954     Total BUSCO groups searched
 
 ```
 
@@ -1650,7 +1660,7 @@ I am using the Moorea, French Polynesia incomplete *Acropora pulchra* genome to 
 
 Location on Andromeda, the HPC server for URI:
 ```
-cd /data/putnamlab/jillashey/Apul_Genome/assembly/data/apul.hifiasm.intial.bp.p_ctg.fa
+cd /data/putnamlab/jillashey/Apul_Genome/assembly/data/apul.hifiasm.s55_pa.p_ctg.fa.k32.w100.z1000.ntLink.5rounds.fa
 ```
 
 [Bioinformatic workflow](https://github.com/JillAshey/JillAshey_Putnam_Lab_Notebook/blob/master/_posts/2024-02-06-Apulchra-Genome-Assembly.md) made by Jill Ashey as she works on reference genome assembly
@@ -1682,15 +1692,15 @@ nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/Hisat2_genom
 
 module load HISAT2/2.2.1-gompi-2022a
 
-# index the reference genome for Amil output index to working directory
-hisat2-build -f /data/putnamlab/jillashey/Apul_Genome/assembly/data/apul.hifiasm.intial.bp.p_ctg.fa ./Apul_ref # called the reference genome (scaffolds)
+# index the reference genome for Apul output index to working directory
+hisat2-build -f /data/putnamlab/jillashey/Apul_Genome/assembly/data/apul.hifiasm.s55_pa.p_ctg.fa.k32.w100.z1000.ntLink.5rounds.fa ./Apul_ref # called the reference genome (scaffolds)
 echo "Reference genome indexed. Starting alignment" $(date)
 ```
 
 ```
 sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/Hisat2_genome_build_Apul.sh
 
-Submitted batch job 312414
+Submitted batch job 333445
 ```
 
 #### c) Align reads to genome
@@ -1726,17 +1736,17 @@ module load minimap2/2.24-GCCcore-11.3.0
 
 #Aligning to Trinity output file
 
-minimap2 -d /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Apul/reference_index.idx /data/putnamlab/jillashey/Apul_Genome/assembly/data/apul.hifiasm.intial.bp.p_ctg.fa
+minimap2 -d /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Apul/reference_index.idx /data/putnamlab/jillashey/Apul_Genome/assembly/data/apul.hifiasm.s55_pa.p_ctg.fa.k32.w100.z1000.ntLink.5rounds.fa
 
-minimap2 -ax splice -uf /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Apul/reference_index.idx /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trinity_out_dir/Apul_denovo.fasta > trinity_aligned.sam
+minimap2 -ax splice -uf /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Apul/reference_index.idx /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/combined_assemblies_no_duplicates.fasta > trinity_aligned.sam
 
 ```
 
 ```
 sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/minimap_align2_Apul.sh
 
-Submitted batch job 312416
 
+Submitted batch job 333448
 ```
 
 #### d) Sort and convert sam to bam and check number of mapped reads and mapping percentages
@@ -1777,23 +1787,29 @@ samtools flagstat trinity_aligned_sorted.bam > alignment_stats.txt
 ```
 sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/SAMtoBAM_Apul.sh
 
-Submitted batch job 312420
+Submitted batch job 333450
 
 ```
 
 **Alignment statistics**
 
 ```
-
-2163770 + 0 in total (QC-passed reads + QC-failed reads)
-1476390 + 0 primary
-641906 + 0 secondary
-45474 + 0 supplementary
+1437863 + 0 in total (QC-passed reads + QC-failed reads)
+963287 + 0 primary
+442731 + 0 secondary
+31845 + 0 supplementary
 0 + 0 duplicates
 0 + 0 primary duplicates
-1554267 + 0 mapped (71.83% : N/A)
-866887 + 0 primary mapped (58.72% : N/A)
-
+1051624 + 0 mapped (73.14% : N/A)
+577048 + 0 primary mapped (59.90% : N/A)
+0 + 0 paired in sequencing
+0 + 0 read1
+0 + 0 read2
+0 + 0 properly paired (N/A : N/A)
+0 + 0 with itself and mate mapped
+0 + 0 singletons (N/A : N/A)
+0 + 0 with mate mapped to a different chr
+0 + 0 with mate mapped to a different chr (mapQ>=5)
 
 ```
 
@@ -1843,11 +1859,12 @@ echo "Number of transcript groups: $((num_transcript_groups / 2))"  # Divide by 
 ```
 sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/transcript.group.sh
 
-Submitted batch job 312422
+Submitted batch job 333453
+
 ```
 
 ```
-Number of transcript groups: 2,176,695
+Number of transcript groups: 1,674,441
 ```
 
 Once you have aligned the transcripts, analyze the alignment results to identify multi-mapping or duplication:
@@ -1912,14 +1929,14 @@ END {
 ```
 sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/transcript.multimap.check.sh
 
-Submitted batch job 312426
+Submitted batch job 333454
 
 ```
 
 ```
 less slurm-312426.out
 
-Number of transcripts with multi-mapping: 1,284,191 of 1,554,456 = 82.61%
-Number of transcripts with duplication: 114,327 of 1,554,456 = 7.8%
+Number of transcripts with multi-mapping: 852,516 of 1,674,441 = 50%
+Number of transcripts with duplication: 76,951 of 1,674,441 = 4%
 
 ```
