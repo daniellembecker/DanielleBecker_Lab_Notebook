@@ -7,7 +7,6 @@ tag: [ Acropora pulchra, de novo transcriptome ]
 ## Designing a workflow to create a de novo transcriptome for *Acropora pulchra*
 
 #### Goal:
-Use samples from 11 *Acropora pulchra* colonies collected in Mo'orea, French Polynesia on January 15th 2022 from the north shore backreef site Mahana (17°29'13.9"S 149°53'14.7"W) part of a 12-month [Gametogenesis timeseries project](https://github.com/daniellembecker/Gametogenesis) that were than [concentrated into one sequenced sample](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/_posts/2023-04-25-Acropora-pulchra-transcriptome-extraction-concentration.md) using the [Zymo RNA Clean Concentrate Protocol](https://github.com/zdellaert/ZD_Putnam_Lab_Notebook/blob/master/protocols/Zymo_RNA_Clean_Concentrate.pdf) and five sequence samples also collected from Moorea, French Polynesia part of the [E5 Rules of Life project](https://github.com/urol-e5) to create a de novo transcriptome for *A. pulchra*. Literature review of current *Acropora* de novo transcriptomes and genomes completed already.
 
 **Important notes about de novo transcriptomes**
 
@@ -1501,7 +1500,8 @@ nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco_final.
 
 #SBATCH --job-name="busco_final"
 #SBATCH --time="100:00:00"
-#SBATCH --nodes 1 --ntasks-per-node=20
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=20
 #SBATCH --mem=120G
 ##SBATCH --output="busco-%u-%x-%j"
 ##SBATCH --account=putnamlab
@@ -1512,13 +1512,14 @@ echo "START" $(date)
 labbase=/data/putnamlab
 busco_shared="${labbase}/shared/busco"
 [ -z "$query" ] && query="${labbase}/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/combined_assemblies.fasta" # set this to the query (genome/transcriptome) you are running
-[ -z "$db_to_compare" ] && db_to_compare="${busco_shared}/downloads/lineages/metazoa_odb10"
 
 source "${busco_shared}/scripts/busco_init.sh"  # sets up the modules required for this in the right order
 
 # This will generate output under your $HOME/busco_output
 cd "${labbase}/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/"
-busco --config "$EBROOTBUSCO/config/config.ini"  -f -c 20 --long -i "${query}" -l metazoa_odb10 -o busco_output -m transcriptome
+
+# Run BUSCO with the --offline flag and specify the download path
+busco --config "$EBROOTBUSCO/config/config.ini" -f -c 20 -i "${query}" -l metazoa_odb10 -o busco_output -m transcriptome --offline --download_path "${busco_shared}/downloads/"
 
 echo "STOP" $(date)
 
@@ -1528,401 +1529,120 @@ echo "STOP" $(date)
 
 sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco_final.sh
 
-Submitted batch job 333181
+```
+
+Initial BUSCO run gave an error of duplicate transcripts in the combined_assemblies.fasta. I searched duplicates and it showed that some nonstranded concatenated transcripts had duplicate IDs but different lengths. Following the trinity guidelines, I wrote a python script to search my assembly for duplicate IDs with different lengths and kept the longest transcripts.
+
+```
+nano remove_duplicates.py
+
+from Bio import SeqIO
+
+input_file = "combined_assemblies.fasta"
+output_file = "combined_assemblies_no_duplicates.fasta"
+
+sequence_dict = {}
+
+for record in SeqIO.parse(input_file, "fasta"):
+    seq_id = record.id.split()[0]
+    # Extract the length from the description
+    seq_len = int(record.description.split("len=")[1].split()[0])
+
+    if seq_id not in sequence_dict or seq_len > int(sequence_dict[seq_id].description.split("len=")[1].split()[0]):
+        sequence_dict[seq_id] = record
+
+with open(output_file, "w") as out_f:
+    SeqIO.write(sequence_dict.values(), out_f, "fasta")
+
+print(f"Output written to {output_file}")
 
 ```
 
+Ran the script
+
+
+```
+interactive
+
+module load Python/3.10.4-GCCcore-11.3.0
+
+pip install --user biopython
+
+python remove_duplicates.py
+
+```
+
+Checked duplicates were removed properly and how many transcripts were removed
+
+```
+grep ">TRINITY_DN115924_c0_g1_i1" combined_assemblies_no_duplicates.fasta
+>TRINITY_DN115924_c0_g1_i1 len=663 path=[0:0-662]
+
+grep -c "^>" combined_assemblies_no_duplicates.fasta
+963287
+
+grep -c ">" combined_assemblies.fasta
+963413
+
+126 duplicates with different lengths were removed which means 215 transcripts from nonstranded assembly were still concatenated and can be used moving forward
+
+```
+
+
+Ran BUSCO again with edited no duplicate combined assembly.fasta
+```
+nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco_final.sh
+
+```
+
+```
+#!/bin/bash
+
+#SBATCH --job-name="busco_final"
+#SBATCH --time="100:00:00"
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=36
+#SBATCH --mem=120G
+##SBATCH --output="busco-%u-%x-%j"
+##SBATCH --account=putnamlab
+##SBATCH --export=NONE
+
+echo "START" $(date)
+
+export NUMEXPR_MAX_THREADS=36
+
+labbase=/data/putnamlab
+busco_shared="${labbase}/shared/busco"
+[ -z "$query" ] && query="${labbase}/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/combined_assemblies_no_duplicates.fasta" # set this to the query (genome/transcriptome) you are running
+
+source "${busco_shared}/scripts/busco_init.sh"  # sets up the modules required for this in the right order
+
+# This will generate output under your $HOME/busco_output
+cd "${labbase}/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/"
+
+# Run BUSCO with the --offline flag and specify the download path
+busco --config "$EBROOTBUSCO/config/config.ini" -f -c 20 -i "${query}" -l metazoa_odb10 -o busco_output -m transcriptome --offline --download_path "${busco_shared}/downloads/"
+
+echo "STOP" $(date)
+
+```
+
+```
+
+sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco_final.sh
+
+Submitted batch job 333443
+
+```
 
 ```
 cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/nonstranded_output/busco_nonstranded/busco_output
 less short_summary.specific.metazoa_odb10.busco_output.txt
 
-
-
 ```
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# 8) Map to *Acropora millepora* genome
-
-#### a) Obtain Reference Genome and Create Folder Structure
-
-I am using the Maldives *Acropora millepora* genome to compare alignment statistics.
-
-[Ying, Hua, et al. "The whole-genome sequence of the coral Acropora millepora." Genome biology and evolution 11.5 (2019): 1374-1379.](https://academic.oup.com/gbe/article/11/5/1374/5480306)
-
-Location on Andromeda, the HPC server for URI:
-```
-cd /data/putnamlab/REFS/Amil_ref
-```
-
-All of the genome files (i.e., genome scaffolds, CDS, proteins, GFF, and functional annotations) were downloaded from the [NCBI RefBase](https://www.ncbi.nlm.nih.gov/datasets/genome/?taxon=45264) and added to the Andromeda HPC folder.
-
-```
-scp -r /Users/Danielle/Downloads/ncbi_dataset/ncbi_dataset/data/GCF_013753865.1/GCF_013753865.1_Amil_v2.1_genomic.fna danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/REFS/Amil_ref/
-
-scp -r /Users/Danielle/Downloads/ncbi_dataset1/ncbi_dataset/data/GCF_013753865.1/genommic.gff danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/REFS/Amil_ref/
-```
-
-
-#### b) Generate genome build
-
-##### HiSat2 Align reads to refernece genome
-[HiSat2](https://daehwankimlab.github.io/hisat2/main/)
-[HiSat2 Github](https://github.com/DaehwanKimLab/hisat2)
-
-
-```
-nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/Hisat2_genome_build.sh
-```
-
-```
-#!/bin/bash
-#SBATCH -t 24:00:00
-#SBATCH --nodes=1 --ntasks-per-node=1
-#SBATCH --export=NONE
-#SBATCH --mem=100GB
-#SBATCH --mail-type=BEGIN,END,FAIL
-#SBATCH --mail-user=danielle_becker@uri.edu
-#SBATCH --account=putnamlab
-#SBATCH -D /data/putnamlab/REFS/Amil_ref/
-#SBATCH --error="script_error"
-#SBATCH --output="output_script"
-
-module load HISAT2/2.2.1-gompi-2022a
-
-# index the reference genome for Amil output index to working directory
-hisat2-build -f /data/putnamlab/REFS/Amil_ref/GCF_013753865.1_Amil_v2.1_genomic.fna ./Amil_ref # called the reference genome (scaffolds)
-echo "Reference genome indexed. Starting alignment" $(date)
-```
-
-```
-sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/Hisat2_genome_build.sh
-
-Submitted batch job 289152
-```
-
-#### c) Align reads to genome
-
-```
-mkdir data/mapped
-```
-
-- Trinity assembly in FASTA format and you want to align it to a reference genome, you would generally use a different tool like BLAT, GMAP, or minimap2, as they are designed for aligning longer sequences like transcripts or assembled contigs.
-- Using minimap2
-  - In this example, -ax splice specifies that the input is spliced transcripts, -uf specifies the reference genome, and the output is redirected to a SAM file (Trinity_aligned.sam).
-
-```
-nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/minimap_align2.sh
-```
-
-```
-#!/bin/bash
-#SBATCH -t 72:00:00
-#SBATCH --nodes=1 --ntasks-per-node=5
-#SBATCH --export=NONE
-#SBATCH --mem=500GB
-#SBATCH --mail-type=BEGIN,END,FAIL
-#SBATCH --mail-user=danielle_becker@uri.edu
-#SBATCH --account=putnamlab
-#SBATCH -D /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Amil/mapped
-#SBATCH --cpus-per-task=3
-#SBATCH --error="script_error"
-#SBATCH --output="output_script"
-
-
-module load minimap2/2.24-GCCcore-11.3.0
-
-#Aligning to Trinity output file
-
-minimap2 -d /data/putnamlab/REFS/Amil_ref/reference_index.idx /data/putnamlab/REFS/Amil_ref/GCF_013753865.1_Amil_v2.1_genomic.fna
-
-minimap2 -ax splice -uf /data/putnamlab/REFS/Amil_ref/reference_index.idx /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/trinity_out_dir/trinity_out_dir.Trinity.fasta > trinity_aligned.sam
-
-```
-
-```
-sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/minimap_align2.sh
-
-Submitted batch job 290621
-
-```
-
-#### d) Sort and convert sam to bam and check number of mapped reads and mapping percentages
-
-- Explanation:
-  - samtools sort -o Trinity_aligned.sorted.bam Trinity_aligned.sam: This command sorts the SAM file and creates a sorted BAM file (Trinity_aligned.sorted.bam).
-  - samtools index Trinity_aligned.sorted.bam: This command creates an index for the sorted BAM file. The index file (Trinity_aligned.sorted.bam.bai) is necessary for certain operations and viewers.
-  - samtools flagstat Trinity_aligned.sorted.bam: This command generates statistics about the alignment, including the number of mapped reads and mapping percentages.
-
-```
-nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/SAMtoBAM.sh
-
-#There will be lots of .tmp file versions in your folder, this is normal while this script runs and they should delete at the end to make one sorted.bam file
-```
-```
-#!/bin/bash
-#SBATCH -t 72:00:00
-#SBATCH --nodes=1 --ntasks-per-node=8
-#SBATCH --export=NONE
-#SBATCH --mem=500GB
-#SBATCH --mail-type=BEGIN,END,FAIL
-#SBATCH --mail-user=danielle_becker@uri.edu
-#SBATCH --account=putnamlab
-#SBATCH -D /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Amil/mapped
-#SBATCH --cpus-per-task=3
-#SBATCH --error="script_error"
-#SBATCH --output="output_script"
-
-module load SAMtools/1.16.1-GCC-11.3.0 #Preparation of alignment for assembly: SAMtools
-
-samtools view -bS trinity_aligned.sam > trinity_aligned.bam
-samtools sort trinity_aligned.bam -o trinity_aligned_sorted.bam
-samtools index trinity_aligned_sorted.bam
-samtools flagstat trinity_aligned_sorted.bam > alignment_stats.txt
-
-```
-
-```
-sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/SAMtoBAM.sh
-
-Submitted batch job 290625
-
-```
-
-**Alignment statistics**
-
-```
-
-2337097 + 0 in total (QC-passed reads + QC-failed reads)
-1476390 + 0 primary
-805750 + 0 secondary
-54957 + 0 supplementary
-0 + 0 duplicates
-0 + 0 primary duplicates
-1714368 + 0 mapped (73.35% : N/A)
-853661 + 0 primary mapped (57.82% : N/A)
-
-Explanation:
-
-1. Total Reads:
-  - 2337097 + 0 in total (QC-passed reads + QC-failed reads): Indicates the total number of reads, including both QC-passed and QC-failed reads. In this case, there are 2,337,097 reads in total.
-
-2. Primary and Secondary Alignments:
-  - 1476390 + 0 primary: The number of primary alignments. These are the primary alignment records for each read. In this case, there are 1,476,390 primary alignments.
-  - 805750 + 0 secondary: The number of secondary alignments.
-  - Secondary alignments can occur for reads that map equally well to multiple locations in the reference genome.
-
-3. Supplementary Alignments:
-  - 54957 + 0 supplementary: The number of supplementary alignments. - Supplementary alignments are used to represent chimeric or novel splice junctions.
-
-4. Duplicates:
-  - 0 + 0 duplicates: The number of duplicate reads. Duplicate reads can result from PCR artifacts and are often removed in quality control.
-
-5. Primary Duplicates:
-  - 0 + 0 primary duplicates: The number of duplicate primary reads. This specifically refers to duplicate primary alignment records.
-
-6. Mapped Reads:
-  - 1714368 + 0 mapped (73.35% : N/A): The total number and percentage of mapped reads. In this case, 1,714,368 reads are mapped, and they constitute 73.35% of the total reads.
-
-7. Primary Mapped Reads:
-  - 853661 + 0 primary mapped (57.82% : N/A)
-  - The number and percentage of primary mapped reads.
-  - Primary mapped reads refer to those reads where the primary alignment is reported.
-  - In this case, 853,661 reads are primary mapped, constituting 57.82% of the total reads.
-
-```
-
-#### e) Determine the proportion of your transcripts that intersect with one genomic location in the A. millepora reference genome
-
-```
-nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/transcript.intersect.sh
-
-```
-
-```
-#!/bin/bash
-#SBATCH -t 72:00:00
-#SBATCH --nodes=1 --ntasks-per-node=8
-#SBATCH --export=NONE
-#SBATCH --mem=500GB
-#SBATCH --mail-type=BEGIN,END,FAIL
-#SBATCH --mail-user=danielle_becker@uri.edu
-#SBATCH --account=putnamlab
-#SBATCH -D /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Amil/mapped
-#SBATCH --cpus-per-task=3
-#SBATCH --error="script_error_intersect"
-#SBATCH --output="output_script_intersect"
-
-module load BEDTools/2.30.0-GCC-11.3.0
-module load SAMtools/1.16.1-GCC-11.3.0
-module load Subread/2.0.0-GCC-8.3.0
-
-# Intersect transcripts with gene annotations
-bedtools intersect -a trinity_aligned_sorted.bam -b /data/putnamlab/REFS/Amil_ref/genomic.gff -bed -wao > transcripts_intersected.bed
-
-# Count number of transcripts intersecting at least one gene
-intersected_transcripts=$(awk '$NF != "."' transcripts_intersected.bed | cut -f 4 | sort -u | wc -l)
-total_transcripts=$(samtools view -c trinity_aligned_sorted.bam)
-proportion=$(echo "scale=2; $intersected_transcripts / $total_transcripts" | bc)
-
-echo "Proportion of transcripts intersecting genomic locations: $proportion"
-
-# Count number of transcripts per gene
-featureCounts -a /data/putnamlab/REFS/Amil_ref/genomic.gff -g gene -L 20000 -o gene_counts.txt trinity_aligned_sorted.bam
-
-
-```
-
-```
-sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/transcript.intersect.sh
-
-Submitted batch job 312402
-```
-
-```
-less output_script_intersect
-
-Proportion of transcripts intersecting unique genomic locations = 0.68 * 100 = 68%
-
-```
-
-
-
-#### f) Download mapping percentages and statistics to desktop
-
-```
-
-scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Amil/mapped/alignment_stats.txt /Users/Danielle/Desktop/Putnam_Lab/Gametogenesis/bioinformatics/transcriptome
-
-```
-
-# 9) Identify and analyze isoforms in **de novo** transcriptome
-
-#### a) Extract isoform sequences and gene-isoform mapping to visualize isoform positions per gene and identify "stacked" or mutually exclusive isoform expression patterns
-
-```
-nano /data/putnamlab/dbecks/Heatwave_A.pul_2022Project/scripts/gene_isoform_map.sh
-
-```
-```
-#!/bin/bash
-#SBATCH -t 120:00:00
-#SBATCH --cpus-per-task=24
-#SBATCH --mem=32GB
-#SBATCH --nodes=1 --ntasks-per-node=1
-#SBATCH --export=NONE
-#SBATCH --mail-type=BEGIN,END,FAIL
-#SBATCH --mail-user=danielle_becker@uri.ed
-#SBATCH --account=putnamlab
-#SBATCH --output=slurm-%A.out
-#SBATCH -D /data/putnamlab/dbecks/Heatwave_A.pul_2022Project/data/trinity/trinity_mapped/all_samples/
-
-module load Trinity/2.15.1-foss-2022a
-module load SAMtools/1.16.1-GCC-11.3.0
-module load R-bundle-Bioconductor/3.16-foss-2022b-R-4.2.2
-
-
-## Generate isoform expression estimates
-$EBROOTTRINITY/trinityrnaseq-v2.15.1/util/abundance_estimates_to_matrix.pl \
-    --est_method RSEM \
-    --out_prefix isoform_expr \
-    --gene_trans_map /data/putnamlab/dbecks/Heatwave_A.pul_2022Project/data/trinity/trinity_mapped/all_samples/gene_to_isoform.map \
-    --name_sample_file /data/putnamlab/dbecks/Heatwave_A.pul_2022Project/data/trinity/trinity_mapped/rsem_sample_names.txt \
-    --name_sample_by_basedir \
-    --quant_files /data/putnamlab/dbecks/Heatwave_A.pul_2022Project/data/trinity/trinity_mapped/rsem_isoform_files.txt
-
-```
-
-```
-sbatch /data/putnamlab/dbecks/Heatwave_A.pul_2022Project/scripts/gene_isoform_map.sh
-
-Submitted batch job 312338
-```
-
-#### b) Add isoform positions per gene to gene_to_isoform.map file
-
-```
-nano /data/putnamlab/dbecks/Heatwave_A.pul_2022Project/scripts/updated_gene_isoform_map.sh
-
-```
-```
-#!/bin/bash
-#SBATCH -t 120:00:00
-#SBATCH --cpus-per-task=24
-#SBATCH --mem=32GB
-#SBATCH --nodes=1 --ntasks-per-node=1
-#SBATCH --export=NONE
-#SBATCH --mail-type=BEGIN,END,FAIL
-#SBATCH --mail-user=danielle_becker@uri.ed
-#SBATCH --account=putnamlab
-#SBATCH --output=slurm-%A.out
-#SBATCH -D /data/putnamlab/dbecks/Heatwave_A.pul_2022Project/data/trinity/trinity_mapped/all_samples/updated_gene_map
-
-# Input .gff3 file
-gff3_file="/data/putnamlab/dbecks/Heatwave_A.pul_2022Project/data/trinity/trinity_out_dir.Trinity.fasta.transdecoder.gff3"
-
-# Output gene_to_isoform.map file
-output_file="/data/putnamlab/dbecks/Heatwave_A.pul_2022Project/data/trinity/trinity_mapped/all_samples/updated_gene_map/output_gene_to_isoform.map"
-
-# Parse the .gff3 file and extract isoform IDs and positions
-awk -F'\t' '
-    BEGIN {
-        OFS="\t"
-    }
-    $1 ~ /^TRINITY/ {
-        isoform_id = $1
-        start = $4
-        end = $5
-        print isoform_id, start, end
-    }
-' "$gff3_file" > "$output_file"
-
-
-```
-
-```
-sbatch /data/putnamlab/dbecks/Heatwave_A.pul_2022Project/scripts/updated_gene_isoform_map.sh
-
-Submitted batch job 312395
-```
-
-- I now have the output file with positions of isoforms, I can now merge this with the original gene_to_isoform.map file in R
-
-#### c) Download isoform_expr.isoform.TPM.not_cross_norm and gene_to_isoform.map files for processing in RStudio
-
-- The isoform_expr.isoform.TPM.not_cross_norm file contains Transcripts Per Million (TPM) values, which are length-normalized expression values. TPM values are more interpretable and easier to compare across isoforms within a gene, as they account for isoform length differences.
-
-```
-
-scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Heatwave_A.pul_2022Project/data/trinity/trinity_mapped/all_samples/isoform_expr.isoform.TPM.not_cross_norm /Users/Danielle/Desktop/
-
-scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Heatwave_A.pul_2022Project/data/trinity/trinity_mapped/all_samples/updated_gene_map/output_gene_to_isoform.map  /Users/Danielle/Desktop/
-
-scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Heatwave_A.pul_2022Project/data/trinity/trinity_mapped/all_samples/gene_to_isoform.map /Users/Danielle/Desktop/
-
-```
-
-# 10) Map to *Acropora pulchra* incomplete reference genome
+# 9) Map to *Acropora pulchra* incomplete reference genome
 
 #### a) Obtain Reference Genome and Create Folder Structure
 
