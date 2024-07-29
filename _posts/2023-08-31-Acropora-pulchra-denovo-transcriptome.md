@@ -1940,3 +1940,7 @@ Number of transcripts with multi-mapping: 852,516 of 1,674,441 = 50%
 Number of transcripts with duplication: 76,951 of 1,674,441 = 4%
 
 ```
+
+# 10) Use CD-HIT to reduce redundancy and improve transcriptime assembly quality
+
+[CD-HIT](https://www.bioinformatics.org/cd-hit/) stands for Cluster Database at High Identity with Tolerance. The program (cd-hit) takes a fasta format sequence database as input and produces a set of 'non-redundant' (nr) representative sequences as output. The idea is to reduce the overall size of the database without removing any sequence information by only removing 'redundant' (or highly similar) sequences. This is why the resulting database is called non-redundant (nr). Essentially, cd-hit produces a set of closely related protein families from a given fasta sequence database.
