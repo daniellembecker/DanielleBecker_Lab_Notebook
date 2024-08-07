@@ -1652,7 +1652,183 @@ C:99.8%[S:23.8%,D:76.0%],F:0.1%,M:0.1%,n:954
 ```
 
 
-# 9) Map to *Acropora pulchra* incomplete reference genome
+# 9) Use CD-HIT to reduce redundancy and improve transcriptime assembly quality
+
+#### a) Run CD-HIT-EST
+
+[CD-HIT-EST](https://www.bioinformatics.org/cd-hit/cd-hit-user-guide)  stands for Cluster Database at High Identity with Tolerance for ESTs (Expressed Sequence Tags). The program (cd-hit-est) takes a FASTA format sequence database as input and produces a set of 'non-redundant' (nr) representative sequences as output. The goal is to reduce the overall size of the database while preserving sequence information by clustering sequences that are highly similar. This process eliminates redundancy by grouping similar sequences into clusters, with only one representative sequence retained per cluster. The resulting database is called non-redundant (nr) as it contains unique representatives of similar sequences, thus simplifying the dataset and focusing on diversity within the data. Essentially, cd-hit-est organizes sequences into clusters, reducing redundancy and making it easier to analyze large sequence datasets.
+
+
+```
+nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/cd-hit-est.sh
+
+```
+
+```
+#!/bin/bash
+#SBATCH -t 6-00:00:00          # Time limit in days-hours:minutes:seconds
+#SBATCH --nodes=1 --ntasks-per-node=1
+#SBATCH --export=NONE
+#SBATCH --mem=500GB
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=danielle_becker@uri.edu
+#SBATCH --account=putnamlab
+#SBATCH -D /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/CD-HIT
+#SBATCH --cpus-per-task=8      # Adjusted to match -T
+#SBATCH --output=slurm-%A.out
+
+# Load CD-HIT module
+module load CD-HIT/4.8.1-GCC-11.3.0
+
+# Define input and output file paths
+INPUT_FILE="/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/combined_assemblies_no_duplicates.fasta"
+OUTPUT_FILE="/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/CD-HIT/combined_assemblies_no_duplicates_cdhit.fasta"
+
+# Run CD-HIT
+cd-hit-est -i $INPUT_FILE -o $OUTPUT_FILE -c 0.95 -n 10 -d 0 -M 16000 -T 8
+
+```
+
+
+```
+sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/cd-hit-est.sh
+
+Submitted batch job 333716
+```
+
+CD-HIT-EST Output file is: combined_assemblies_no_duplicates_cdhit.fasta
+```
+963287  finished     781174  clusters
+
+Approximated maximum memory consumption: 2850M
+writing new database
+writing clustering information
+program completed !
+
+Total CPU time 3750.80
+```
+
+#### b) Asses CD-HIT-EST output with N50 and BUSCO
+
+Run N50 on cdhit assembly:
+
+```
+/opt/software/Trinity/2.15.1-foss-2022a/trinityrnaseq-v2.15.1/util/TrinityStats.pl combined_assemblies_no_duplicates_cdhit.fasta > trinity_cdhit_assembly_stats
+
+```
+
+```
+################################
+## Counts of transcripts, etc.
+################################
+Total trinity 'genes':  626275
+Total trinity transcripts:      781174
+Percent GC: 44.37
+
+########################################
+Stats based on ALL transcript contigs:
+########################################
+
+        Contig N10: 3594
+        Contig N20: 2345
+        Contig N30: 1642
+        Contig N40: 1154
+        Contig N50: 812
+
+        Median contig length: 343
+        Average contig: 590.62
+        Total assembled bases: 461374005
+
+```
+
+The N10 through N50 values are shown computed based on all assembled contigs. In this example, 10% of the assembled bases are found in transcript contigs at least 3,594 bases in length (N10 value), and the N50 value indicates that at least half the assembled bases are found in contigs that are at least 812 bases in length.
+
+The contig N50 values can often be exaggerated due to an assembly program generating too many transcript isoforms, especially for the longer transcripts. To mitigate this effect, the script will also compute the Nx values based on using only the single longest isoform per 'gene':
+
+```
+#####################################################
+## Stats based on ONLY LONGEST ISOFORM per 'GENE':
+#####################################################
+
+        Contig N10: 3374
+        Contig N20: 2085
+        Contig N30: 1392
+        Contig N40: 950
+        Contig N50: 673
+
+        Median contig length: 321
+        Average contig: 535.50
+        Total assembled bases: 335367540
+```
+
+You can see that the Nx values based on the single longest isoform per gene are lower than the Nx stats based on all assembled contigs, as expected, and even though the Nx statistic is really not a reliable indicator of the quality of a transcriptome assembly, the Nx value based on using the longest isoform per gene is perhaps better for reasons described above.
+
+
+Run BUSCO on cdhit assembly:
+
+```
+nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco_cdhit.sh
+
+```
+
+```
+#!/bin/bash
+
+#SBATCH --job-name="busco_final"
+#SBATCH --time="100:00:00"
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=36
+#SBATCH --mem=120G
+##SBATCH --output="busco-%u-%x-%j"
+##SBATCH --account=putnamlab
+##SBATCH --export=NONE
+
+echo "START" $(date)
+
+export NUMEXPR_MAX_THREADS=36
+
+labbase=/data/putnamlab
+busco_shared="${labbase}/shared/busco"
+[ -z "$query" ] && query="${labbase}/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/CD-HIT/combined_assemblies_no_duplicates_cdhit.fasta" # set this to the query (genome/transcriptome) you are running
+
+source "${busco_shared}/scripts/busco_init.sh"  # sets up the modules required for this in the right order
+
+# This will generate output under your $HOME/busco_output
+cd "${labbase}/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/CD-HIT/"
+
+# Run BUSCO with the --offline flag and specify the download path
+busco --config "$EBROOTBUSCO/config/config.ini" -f -c 20 -i "${query}" -l metazoa_odb10 -o busco_output -m transcriptome --offline --download_path "${busco_shared}/downloads/"
+
+echo "STOP" $(date)
+
+```
+
+```
+
+sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco_cdhit.sh
+Submitted batch job 333728
+```
+
+```
+cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/CD-HIT/busco_output
+less short_summary.specific.metazoa_odb10.busco_output.txt
+
+--------------------------------------------------
+|Results from dataset metazoa_odb10               |
+--------------------------------------------------
+|C:99.8%[S:29.4%,D:70.4%],F:0.1%,M:0.1%,n:954     |
+|952    Complete BUSCOs (C)                       |
+|280    Complete and single-copy BUSCOs (S)       |
+|672    Complete and duplicated BUSCOs (D)        |
+|1      Fragmented BUSCOs (F)                     |
+|1      Missing BUSCOs (M)                        |
+|954    Total BUSCO groups searched               |
+--------------------------------------------------
+
+```
+
+
+# 10) Map to *Acropora pulchra* incomplete reference genome
 
 #### a) Obtain Reference Genome and Create Folder Structure
 
@@ -1738,7 +1914,7 @@ module load minimap2/2.24-GCCcore-11.3.0
 
 minimap2 -d /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Apul/reference_index.idx /data/putnamlab/jillashey/Apul_Genome/assembly/data/apul.hifiasm.s55_pa.p_ctg.fa.k32.w100.z1000.ntLink.5rounds.fa
 
-minimap2 -ax splice -uf /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Apul/reference_index.idx /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/combined_assemblies_no_duplicates.fasta > trinity_aligned.sam
+minimap2 -ax splice -uf /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Apul/reference_index.idx /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/CD-HIT/final_apul_denovo_transcriptome.fasta > trinity_aligned.sam
 
 ```
 
@@ -1746,7 +1922,7 @@ minimap2 -ax splice -uf /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/d
 sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/minimap_align2_Apul.sh
 
 
-Submitted batch job 333448
+Submitted batch job 333831
 ```
 
 #### d) Sort and convert sam to bam and check number of mapped reads and mapping percentages
@@ -1787,160 +1963,50 @@ samtools flagstat trinity_aligned_sorted.bam > alignment_stats.txt
 ```
 sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/SAMtoBAM_Apul.sh
 
-Submitted batch job 333450
+Submitted batch job 333834
 
 ```
 
 **Alignment statistics**
 
 ```
-1437863 + 0 in total (QC-passed reads + QC-failed reads)
-963287 + 0 primary
-442731 + 0 secondary
-31845 + 0 supplementary
+1113311 + 0 in total (QC-passed reads + QC-failed reads)
+781174 + 0 primary
+306490 + 0 secondary
+25647 + 0 supplementary
 0 + 0 duplicates
 0 + 0 primary duplicates
-1051624 + 0 mapped (73.14% : N/A)
-577048 + 0 primary mapped (59.90% : N/A)
-0 + 0 paired in sequencing
-0 + 0 read1
-0 + 0 read2
-0 + 0 properly paired (N/A : N/A)
-0 + 0 with itself and mate mapped
-0 + 0 singletons (N/A : N/A)
-0 + 0 with mate mapped to a different chr
-0 + 0 with mate mapped to a different chr (mapQ>=5)
+756286 + 0 mapped (67.93% : N/A)
+424149 + 0 primary mapped (54.30% : N/A)
+
+Explanation:
+
+1. Total Reads:
+  - 1113311 + 0 in total (QC-passed reads + QC-failed reads): Indicates the total number of reads, including both QC-passed and QC-failed reads. In this case, there are 1,113,311 reads in total.
+
+2. Primary and Secondary Alignments:
+  - 781174 + 0 primary: The number of primary alignments. These are the primary alignment records for each read.
+  - 306490 + 0 secondary: The number of secondary alignments.
+  - Secondary alignments can occur for reads that map equally well to multiple locations in the reference genome.
+
+3. Supplementary Alignments:
+  - 25647 + 0 supplementary: The number of supplementary alignments. - Supplementary alignments are used to represent chimeric or novel splice junctions.
+
+4. Duplicates:
+  - 0 + 0 duplicates: The number of duplicate reads. Duplicate reads can result from PCR artifacts and are often removed in quality control.
+
+5. Primary Duplicates:
+  - 0 + 0 primary duplicates: The number of duplicate primary reads. This specifically refers to duplicate primary alignment records.
+
+6. Mapped Reads:
+  - 756286 + 0 mapped (67.93% : N/A): The total number and percentage of mapped reads. In this case, 756,286 reads are mapped, and they constitute 67.93% of the total reads.
+
+7. Primary Mapped Reads:
+  - 424149 + 0 primary mapped (54.30% : N/A)
+  - The number and percentage of primary mapped reads.
+  - Primary mapped reads refer to those reads where the primary alignment is reported.
+  - In this case, 577,048 reads are primary mapped, constituting 59.90% of the total reads.
 
 ```
 
-
-#### e) Determine number of multiple transcripts aligning to the same genomic location for **A. pulchra**
-
-```
-nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/transcript.group.sh
-
-```
-
-```
-#!/bin/bash
-#SBATCH -t 72:00:00
-#SBATCH --nodes=1 --ntasks-per-node=8
-#SBATCH --export=NONE
-#SBATCH --mem=500GB
-#SBATCH --mail-type=BEGIN,END,FAIL
-#SBATCH --mail-user=danielle_becker@uri.edu
-#SBATCH --account=putnamlab
-#SBATCH -D /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Apul/mapped
-#SBATCH --cpus-per-task=3
-#SBATCH --output=slurm-%A.out
-
-
-# Define input and output files
-alignment_file="parsed_alignment.txt"
-grouped_transcripts_file="grouped_transcripts.txt"
-
-# Group aligned transcripts based on genomic coordinates
-awk '{
-    key = $1 ":" $2 ":" $3;  # Create a key using chromosome, start, and end positions
-    transcripts[key] = transcripts[key] "\n" $0;  # Append the current transcript to the existing transcripts at the same key
-}
-END {
-    for (key in transcripts) {
-        print transcripts[key];  # Print all transcripts belonging to the same key
-        print "";  # Add an empty line to separate groups
-    }
-}' "$alignment_file" > "$grouped_transcripts_file"
-
-# Count the number of transcript groups
-num_transcript_groups=$(wc -l < "$grouped_transcripts_file")
-echo "Number of transcript groups: $((num_transcript_groups / 2))"  # Divide by 2 because each group is separated by an empty line
-```
-
-```
-sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/transcript.group.sh
-
-Submitted batch job 333453
-
-```
-
-```
-Number of transcript groups: 1,674,441
-```
-
-Once you have aligned the transcripts, analyze the alignment results to identify multi-mapping or duplication:
-
-Multi-Mapping:
-
-- Look for transcripts that align equally well to multiple locations in the reference genome.
-- Check the mapping quality scores (MAPQ) or alignment flags/tags to identify reads/transcripts that may be multi-mapping.
-- Count the number of transcripts that align to multiple locations and assess the extent of multi-mapping in the transcriptome assembly.
-
-Duplication:
-
-- Identify transcripts that align to the same genomic location or closely neighboring locations.
-- Group transcripts based on their genomic coordinates and count the number of transcripts aligning to each group.
-- Assess whether multiple transcripts aligning to the same genomic location represent genuine gene duplications or sequencing artifacts.
-
-```
-nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/transcript.multimap.check.sh
-
-```
-
-```
-#!/bin/bash
-#SBATCH -t 72:00:00
-#SBATCH --nodes=1 --ntasks-per-node=8
-#SBATCH --export=NONE
-#SBATCH --mem=500GB
-#SBATCH --mail-type=BEGIN,END,FAIL
-#SBATCH --mail-user=danielle_becker@uri.edu
-#SBATCH --account=putnamlab
-#SBATCH -D /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Apul/mapped
-#SBATCH --cpus-per-task=3
-#SBATCH --output=slurm-%A.out
-
-# Define input and output files
-alignment_file="trinity_aligned.sam"
-
-# Multi-Mapping Analysis
-# Count the number of transcripts that align to multiple locations
-multi_mapping_count=$(awk '$5 == 0 || $5 == "*" || $5 ~ /H/ {multi_count++} END {print multi_count}' "$alignment_file")
-echo "Number of transcripts with multi-mapping: $multi_mapping_count"
-
-# Duplication Analysis
-# Group transcripts based on their genomic coordinates and count the number of transcripts aligning to each group
-awk '{
-    if ($1 ~ /^@/) { next }  # Skip header lines
-    key = $3 ":" $4 ":" $4 + length($10) - 1  # Create a key using chromosome, start, and end positions
-    transcripts[key]++
-}
-END {
-    duplicate_count = 0
-    for (key in transcripts) {
-        if (transcripts[key] > 1) {
-            duplicate_count++
-        }
-    }
-    print "Number of transcripts with duplication: " duplicate_count
-}' "$alignment_file"
-
-```
-
-```
-sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/transcript.multimap.check.sh
-
-Submitted batch job 333454
-
-```
-
-```
-less slurm-312426.out
-
-Number of transcripts with multi-mapping: 852,516 of 1,674,441 = 50%
-Number of transcripts with duplication: 76,951 of 1,674,441 = 4%
-
-```
-
-# 10) Use CD-HIT to reduce redundancy and improve transcriptime assembly quality
-
-[CD-HIT](https://www.bioinformatics.org/cd-hit/) stands for Cluster Database at High Identity with Tolerance. The program (cd-hit) takes a fasta format sequence database as input and produces a set of 'non-redundant' (nr) representative sequences as output. The idea is to reduce the overall size of the database without removing any sequence information by only removing 'redundant' (or highly similar) sequences. This is why the resulting database is called non-redundant (nr). Essentially, cd-hit produces a set of closely related protein families from a given fasta sequence database.
+Transcriptome reference assembly complete! Next step is to make the functional annotation, all steps outlined in the [Acropora pulchra functional annotation workflow](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/_posts/2024-01-17-A.pulchra-functional-annotation.md).
