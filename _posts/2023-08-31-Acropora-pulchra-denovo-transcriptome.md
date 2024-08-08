@@ -1937,12 +1937,13 @@ nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/SAMtoBAM_Apu
 
 #There will be lots of .tmp file versions in your folder, this is normal while this script runs and they should delete at the end to make one sorted.bam file
 ```
+
 ```
 #!/bin/bash
 #SBATCH -t 72:00:00
 #SBATCH --nodes=1 --ntasks-per-node=8
 #SBATCH --export=NONE
-#SBATCH --mem=500GB
+#SBATCH --mem=120GB
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --mail-user=danielle_becker@uri.edu
 #SBATCH --account=putnamlab
@@ -1953,60 +1954,55 @@ nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/SAMtoBAM_Apu
 
 module load SAMtools/1.16.1-GCC-11.3.0 #Preparation of alignment for assembly: SAMtools
 
-samtools view -bS trinity_aligned.sam > trinity_aligned.bam
-samtools sort trinity_aligned.bam -o trinity_aligned_sorted.bam
-samtools index trinity_aligned_sorted.bam
-samtools flagstat trinity_aligned_sorted.bam > alignment_stats.txt
+# Directory containing SAM files
+sam_directory="/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Apul/mapped"
+
+# Process each SAM file in the directory
+for sam_file in "$sam_directory"/*.sam; do
+    if [ -f "$sam_file" ]; then
+        # Extract sample name from the file
+        sample_name=$(basename "${sam_file%.sam}")
+
+        # Step 1: Sort the SAM file and convert to BAM
+        samtools sort -o "${sam_directory}/${sample_name}_sorted.bam" "$sam_file"
+
+        # Step 2: Index the BAM file
+        samtools index "${sam_directory}/${sample_name}_sorted.bam"
+
+        # Step 3: Check Mapping Statistics
+        samtools flagstat "${sam_directory}/${sample_name}_sorted.bam" > "${sam_directory}/${sample_name}_flagstat.txt"
+
+        echo "Processed: ${sample_name}"
+        echo "------------------------"
+    fi
+done
 
 ```
 
 ```
 sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/SAMtoBAM_Apul.sh
 
-Submitted batch job 333834
+Submitted batch job 334118
 
 ```
 
-**Alignment statistics**
+**Mapping Percentages**
 
 ```
-1113311 + 0 in total (QC-passed reads + QC-failed reads)
-781174 + 0 primary
-306490 + 0 secondary
-25647 + 0 supplementary
-0 + 0 duplicates
-0 + 0 primary duplicates
+interactive
+
+module load SAMtools/1.9-foss-2018b #Preparation of alignment for assembly: SAMtools
+
+for i in *sorted.bam; do
+    echo "${i}" >> mapped_reads_counts_trinity
+    samtools flagstat ${i} | grep "mapped (" >> mapped_reads_counts_trinity
+done
+
+trinity_aligned_sorted.bam
 756286 + 0 mapped (67.93% : N/A)
-424149 + 0 primary mapped (54.30% : N/A)
-
-Explanation:
-
-1. Total Reads:
-  - 1113311 + 0 in total (QC-passed reads + QC-failed reads): Indicates the total number of reads, including both QC-passed and QC-failed reads. In this case, there are 1,113,311 reads in total.
-
-2. Primary and Secondary Alignments:
-  - 781174 + 0 primary: The number of primary alignments. These are the primary alignment records for each read.
-  - 306490 + 0 secondary: The number of secondary alignments.
-  - Secondary alignments can occur for reads that map equally well to multiple locations in the reference genome.
-
-3. Supplementary Alignments:
-  - 25647 + 0 supplementary: The number of supplementary alignments. - Supplementary alignments are used to represent chimeric or novel splice junctions.
-
-4. Duplicates:
-  - 0 + 0 duplicates: The number of duplicate reads. Duplicate reads can result from PCR artifacts and are often removed in quality control.
-
-5. Primary Duplicates:
-  - 0 + 0 primary duplicates: The number of duplicate primary reads. This specifically refers to duplicate primary alignment records.
-
-6. Mapped Reads:
-  - 756286 + 0 mapped (67.93% : N/A): The total number and percentage of mapped reads. In this case, 756,286 reads are mapped, and they constitute 67.93% of the total reads.
-
-7. Primary Mapped Reads:
-  - 424149 + 0 primary mapped (54.30% : N/A)
-  - The number and percentage of primary mapped reads.
-  - Primary mapped reads refer to those reads where the primary alignment is reported.
-  - In this case, 577,048 reads are primary mapped, constituting 59.90% of the total reads.
 
 ```
 
-Transcriptome reference assembly complete! Next step is to make the functional annotation, all steps outlined in the [Acropora pulchra functional annotation workflow](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/_posts/2024-01-17-A.pulchra-functional-annotation.md).
+
+
+Transcriptome reference assembly complete! Next step is to make the functional annotation, all steps outlined in the [Acropora pulchra functional annotation workflow](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/_posts/2024-01-17-A.pulchra-functional-annotation.md) and complete transcript expression quantification using RSEM for gene counts in this [workflow](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/_posts/2023-01-01-A.pulchra-RNASeq-Workflow.md).
