@@ -46,14 +46,19 @@ First I need to sort all the deduplicated bam files
 #SBATCH -D /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/bismark_deduplicated
 
 # load modules needed
-
 module load SAMtools/1.16.1-GCC-11.3.0
+
+# List of files to exclude
+EXCLUDE_FILES=("2_R1_001_val_1_bismark_bt2_pe.deduplicated.bam" "16_R1_001_val_1_bismark_bt2_pe.deduplicated.bam" "19_R1_001_val_1_bismark_bt2_pe.deduplicated.bam")
 
 for f in *.deduplicated.bam
 do
-  STEM=$(basename "${f}" _R1_001_val_1_bismark_bt2_pe.deduplicated.bam)
-  samtools sort "${f}" \
-  -o "${STEM}".deduplicated_sorted.bam
+  # Check if the current file is in the exclude list
+  if [[ ! " ${EXCLUDE_FILES[@]} " =~ " ${f} " ]]; then
+    STEM=$(basename "${f}" _R1_001_val_1_bismark_bt2_pe.deduplicated.bam)
+    samtools sort "${f}" \
+    -o "${STEM}".deduplicated_sorted.bam
+  fi
 done
 ```
 
@@ -91,7 +96,7 @@ BS_SNPer_merged.bam \
 
 `sbatch /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/scripts/merge_bam.sh`
 
-`Submitted batch job 302931`
+`Submitted batch job 334278`
 
 
 View output file header
@@ -185,7 +190,7 @@ perl /opt/software/BS-Snper/1.0-foss-2021b/bin/BS-Snper.pl \
 
 `sbatch /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/scripts/bs_snper_merged_steven.sh`
 
-`Submitted batch job 302954`
+`Submitted batch job 334300`
 
 Current issue:
 
@@ -412,3 +417,72 @@ Download CT-SNPs.tab results file that was filtered to CG motifs and CT-SNP.vcf 
 `scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CT-SNP2.vcf /Users/Danielle/Desktop/`
 
 Filter SNPs from CT-SNPs.tab and CT-SNP.vcf output files from 10x .bed files created from this [workflow](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/_posts/2022-12-10-P.verrucosa-WGBS-Workflow-Host.md) and remaining steps performed in this [Rscript](https://github.com/hputnam/Becker_E5/blob/master/RAnalysis/Scripts/WGBS/BS-SNPer.filter.Rmd)
+
+
+# 4. Calculate genetic relatedness among samples using [PLINK](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1950838/).
+
+First, we convert the VCF file to PLINK format using vcftools. This step creates PLINK files (.ped and .map) from the VCF file.
+
+
+`nano /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/scripts/vcf_to_plink.sh`
+
+```bash
+#!/bin/bash
+#SBATCH --job-name="vcf_to_plink"
+#SBATCH --time=2:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --mem=10GB
+#SBATCH --account=putnamlab
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=danielle_becker@uri.edu
+#SBATCH -D /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output
+
+module load VCFtools/0.1.16-GCC-11.2.0
+module load PLINK/2.00a3.7-gfbf-2023a
+
+VCF_FILE="/data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/SNP-results.vcf"
+PLINK_OUTPUT_DIR="/data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/genetic_relatedness"
+
+vcftools --vcf ${VCF_FILE} --plink --out ${PLINK_OUTPUT_DIR}/plink_data
+
+echo "VCF to PLINK conversion completed" | mail -s "VCF to PLINK Job Status" danielle_becker@uri.edu
+
+```
+
+`sbatch /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/scripts/vcf_to_plink.sh`
+
+` `
+
+
+Next, calculate the genetic relatedness using the PLINK files created in the previous step. This will generate a file containing the relatedness matrix.
+
+`nano /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/scripts/plink_relatedness.sh`
+
+```bash
+#!/bin/bash
+#SBATCH --job-name="vcf_to_plink"
+#SBATCH --time=2:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --mem=10GB
+#SBATCH --account=putnamlab
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=danielle_becker@uri.edu
+#SBATCH -D /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output
+
+module load VCFtools/0.1.16-GCC-11.2.0
+module load PLINK/2.00a3.7-gfbf-2023a
+
+VCF_FILE="/data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/SNP-results.vcf"
+PLINK_OUTPUT_DIR="/data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/genetic_relatedness"
+
+vcftools --vcf ${VCF_FILE} --plink --out ${PLINK_OUTPUT_DIR}/plink_data
+
+echo "VCF to PLINK conversion completed" | mail -s "VCF to PLINK Job Status" danielle_becker@uri.edu
+
+```
+
+`nano /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/scripts/plink_relatedness.sh`
+
+` `
