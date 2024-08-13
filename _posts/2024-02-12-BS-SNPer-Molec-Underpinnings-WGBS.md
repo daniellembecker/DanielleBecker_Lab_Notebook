@@ -298,15 +298,15 @@ Count number of lines in the SNP-results.vcf file:
 
 `wc -l /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/SNP-results.vcf`
 
-`4,764,382`
+`4,754,830`
 
 Following Stevens code, use the grep function to select for specific SNP mutations where the reference allele is C and the alternate allele is G to find CT SNPs from the output file:
 
 `grep $'C\tT' SNP-results.vcf  >  CT-SNP.vcf`
 
-`wc -l SNP-results.vcf`
+`wc -l CT-SNP.vcf`
 
-`660,997 SNPs out of 4,764,382 = 13%`
+`659,639 SNPs out of 4,754,830 = 13%`
 
 ## 2c. Intersect VCF with SNP locations and CG motif track
 
@@ -333,14 +333,14 @@ module load EMBOSS/6.6.0-foss-2018b
 fuzznuc \
 -sequence /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/data/refs/Pverr/Pver_genome_assembly_v1.0.fasta \
 -pattern CG \
--outfile 20240311_fuzznuc_pverr_CGmotif.gff \
+-outfile 20240813_fuzznuc_pverr_CGmotif.gff \
 -rformat gff
 
 ```
 
 `sbatch /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/data/refs/Pverr/fuzznuc.sh`
 
-`Submitted batch job 305435`
+`Submitted batch job 334354`
 
 Then use BEDtools intersectBED to determine which SNPs are present at CG sites:
 
@@ -363,7 +363,7 @@ module load BEDTools/2.30.0-GCC-11.3.0
 intersectBed \
 -u \
 -a /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/SNP-results.vcf \
--b /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/data/refs/Pverr/20240311_fuzznuc_pverr_CGmotif.gff \
+-b /data/putnamlab/dbecks/Becker_E5/Becker_RNASeq/data/refs/Pverr/20240813_fuzznuc_pverr_CGmotif.gff \
 | grep "C	T" \
 > /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CT-SNPs.tab
 
@@ -371,7 +371,7 @@ intersectBed \
 
 `sbatch /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/scripts/intersectbed.SNPs.sh`
 
-`Submitted batch job 308874 `
+`Submitted batch job 334357 `
 
 Look at CT SNPs output file:
 
@@ -399,22 +399,21 @@ Components of output file:
 
 Look at CT-SNPs specific tab file to see how many CT SNPs are in my dataset:
 
-`Pver_Sc0000000_size2095917      1286    .       C       T       15      PASS    DP=144;ADF=0,0;ADR=122,22;AD=122,22;    GT:DP:ADF:ADR:AD:BSD:BSQ:ALFR   0/1:144:0,0:122,22:122,22:1,0,146,0,0,22,122,0:37,0,36,0,0,36,37,0:0.847,0.153
-Pver_Sc0000000_size2095917      1610    .       C       T       62      PASS    DP=128;ADF=0,0;ADR=115,13;AD=115,13;    GT:DP:ADF:ADR:AD:BSD:BSQ:ALFR   0/1:128:0,0:115,13:115,13:0,0,21,0,0,13,115,0:0,0,37,0,0,37,37,0:0.898,0.102
-Pver_Sc0000000_size2095917      5189    .       C       T       1000    PASS    DP=95;ADF=0,0;ADR=77,18;AD=77,18;       GT:DP:ADF:ADR:AD:BSD:BSQ:ALFR   0/1:95:0,0:77,18:77,18:0,0,73,0,0,18,77,0:0,0,36,0,0,37,36,0:0.811,0.189
-Pver_Sc0000000_size2095917      6277    .       C       T       1000    PASS    DP=12;ADF=0,0;ADR=0,12;AD=0,12; GT:DP:ADF:ADR:AD:BSD:BSQ:ALFR   0/1:12:0,0:0,12:0,12:0,0,64,0,0,12,0,0:0,0,37,0,0,37,0,0:0.000,1.000`
+`Pver_Sc0000000_size2095917      5189    .       C       T       1000    PASS    DP=93;ADF=0,0;ADR=75,18;AD=75,18;       GT:DP:ADF:ADR:AD:BSD:BSQ:ALFR   0/1:93:0,0:75,18:75,18:0,0,73,0,0,18,75,0:0,0,36,0,0,37,36,0:0.806,0.194
+Pver_Sc0000000_size2095917      6277    .       C       T       1000    PASS    DP=10;ADF=0,0;ADR=0,10;AD=0,10; GT:DP:ADF:ADR:AD:BSD:BSQ:ALFR   0/1:10:0,0:0,10:0,10:0,0,64,0,0,10,0,0:0,0,37,0,0,37,0,0:0.000,1.000
+Pver_Sc0000000_size2095917      7044    .       C       T       1000    PASS    DP=58;ADF=0,0;ADR=24,34;AD=24,34;       GT:DP:ADF:ADR:AD:BSD:BSQ:ALFR   0/1:58:0,0:24,34:24,34:0,0,28,0,0,34,24,0:0,0,36,0,0,37,37,0:0.414,0.586`
 
 `wc -l CT-SNPs.tab`
 
-`151896 out of 4,764,382 = 3.18%`
+`151,495 out of 4,754,830 = 3.18%`
 
 # 3. Filter SNP variants from 10x.bed files
 
 Download CT-SNPs.tab results file that was filtered to CG motifs and CT-SNP.vcf file that was filtered for CT-SNP positions to Desktop from Andromeda
 
-`scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CT-SNPs.tab /Users/Danielle/Desktop/Putnam_Lab/Becker_E5/RAnalysis/Data/WGBS/BS-SNPer`
+`scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CT-SNPs.tab /Users/Danielle/Downloads/`
 
-`scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CT-SNP2.vcf /Users/Danielle/Desktop/`
+`scp -r danielle_becker@ssh3.hac.uri.edu:/data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/CT-SNP.vcf /Users/Danielle/Downloads/`
 
 Filter SNPs from CT-SNPs.tab and CT-SNP.vcf output files from 10x .bed files created from this [workflow](https://github.com/daniellembecker/DanielleBecker_Lab_Notebook/blob/master/_posts/2022-12-10-P.verrucosa-WGBS-Workflow-Host.md) and remaining steps performed in this [Rscript](https://github.com/hputnam/Becker_E5/blob/master/RAnalysis/Scripts/WGBS/BS-SNPer.filter.Rmd)
 
@@ -422,7 +421,6 @@ Filter SNPs from CT-SNPs.tab and CT-SNP.vcf output files from 10x .bed files cre
 # 4. Calculate genetic relatedness among samples using [PLINK](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1950838/).
 
 First, we convert the VCF file to PLINK format using vcftools. This step creates PLINK files (.ped and .map) from the VCF file.
-
 
 `nano /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/scripts/vcf_to_plink.sh`
 
@@ -436,9 +434,9 @@ First, we convert the VCF file to PLINK format using vcftools. This step creates
 #SBATCH --account=putnamlab
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --mail-user=danielle_becker@uri.edu
-#SBATCH -D /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output
+#SBATCH -D /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/PLINK
 
-module load VCFtools/0.1.16-GCC-11.2.0
+module load VCFtools/0.1.16-foss-2018b-Perl-5.28.0
 module load PLINK/2.00a3.7-gfbf-2023a
 
 VCF_FILE="/data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/SNP-results.vcf"
