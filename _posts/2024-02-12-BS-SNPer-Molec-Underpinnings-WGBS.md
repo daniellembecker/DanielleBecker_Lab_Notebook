@@ -436,21 +436,42 @@ First, we convert the VCF file to PLINK format using vcftools. This step creates
 #SBATCH --mail-user=danielle_becker@uri.edu
 #SBATCH -D /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/PLINK
 
-module load VCFtools/0.1.16-foss-2018b-Perl-5.28.0
+# Load PLINK module
 module load PLINK/2.00a3.7-gfbf-2023a
 
+# Define file paths
 VCF_FILE="/data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/SNP-results.vcf"
-PLINK_OUTPUT_DIR="/data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/genetic_relatedness"
+OUTPUT_PREFIX="snp_data"
 
-vcftools --vcf ${VCF_FILE} --plink --out ${PLINK_OUTPUT_DIR}/plink_data
+# Convert VCF to PLINK format, splitting multiallelic variants
+plink2 --vcf $VCF_FILE \
+    --make-bed \
+    --out ${OUTPUT_PREFIX}_multiallelic \
+    --allow-extra-chr \
+    --double-id \
+    --set-missing-var-ids @:#:\$r:\$a \
+    --new-id-max-allele-len 1000 missing
 
-echo "VCF to PLINK conversion completed" | mail -s "VCF to PLINK Job Status" danielle_becker@uri.edu
+# Remove multiallelic variants
+plink2 --bfile ${OUTPUT_PREFIX}_multiallelic \
+    --max-alleles 2 \
+    --make-bed \
+    --out $OUTPUT_PREFIX \
+    --allow-extra-chr
+
+# Calculate genetic relationship matrix (GRM)
+plink2 --bfile $OUTPUT_PREFIX \
+    --make-grm-gz \
+    --out relatedness \
+    --allow-extra-chr
+
+echo "PLINK processing complete. Output files are in the current directory."
 
 ```
 
 `sbatch /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/scripts/vcf_to_plink.sh`
 
-` `
+`Submitted batch job 334475`
 
 
 Next, calculate the genetic relatedness using the PLINK files created in the previous step. This will generate a file containing the relatedness matrix.
@@ -459,7 +480,7 @@ Next, calculate the genetic relatedness using the PLINK files created in the pre
 
 ```bash
 #!/bin/bash
-#SBATCH --job-name="vcf_to_plink"
+#SBATCH --job-name=calculate_grm
 #SBATCH --time=2:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
@@ -467,20 +488,18 @@ Next, calculate the genetic relatedness using the PLINK files created in the pre
 #SBATCH --account=putnamlab
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --mail-user=danielle_becker@uri.edu
-#SBATCH -D /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output
+#SBATCH -D /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/PLINK
 
-module load VCFtools/0.1.16-GCC-11.2.0
+# Load PLINK module
 module load PLINK/2.00a3.7-gfbf-2023a
 
-VCF_FILE="/data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/merged_SNP_output/SNP-results.vcf"
-PLINK_OUTPUT_DIR="/data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/Becker_WGBS/BS-SNPer/genetic_relatedness"
+# Step 1: Calculate allele frequencies
+plink2 --bfile snp_data_split --freq --out allele_freqs --allow-extra-chr
 
-vcftools --vcf ${VCF_FILE} --plink --out ${PLINK_OUTPUT_DIR}/plink_data
-
-echo "VCF to PLINK conversion completed" | mail -s "VCF to PLINK Job Status" danielle_becker@uri.edu
-
+# Step 2: Calculate GRM using the calculated frequencies
+plink2 --bfile snp_data_split --read-freq allele_freqs.afreq --make-grm-list --out relatedness --allow-extra-chr
 ```
 
-`nano /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/scripts/plink_relatedness.sh`
+`sbatch /data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5/scripts/plink_relatedness.sh`
 
-` `
+`Submitted batch job 334479 `
