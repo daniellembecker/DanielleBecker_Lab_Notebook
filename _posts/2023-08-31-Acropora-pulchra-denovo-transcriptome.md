@@ -1415,7 +1415,7 @@ echo "Subsetting complete nonstranded!" $(date)
 Submitted batch job 329322 at 9:48
 
 
-Identify the unique transcript IDs found in the nonstranded assemmbly not found in the stranded assembly and concatenate them with the stranded assembly to make a final reference assembly.
+Identify the unique transcript IDs found in the nonstranded assemmbly not found in the stranded assembly
 
 
 ```
@@ -1487,8 +1487,10 @@ grep -c "^>" /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/final
 
 ```
 
+Deciding to move forward with just the stranded assembly, as not many more being added with the nonstranded, which can cause downstream errors later in alignment when stranded needs to be specified.
 
-### Run BUSCO for combined final assembly
+
+### Run BUSCO for final stranded assembly
 
 ```
 nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco_final.sh
@@ -1511,7 +1513,7 @@ echo "START" $(date)
 
 labbase=/data/putnamlab
 busco_shared="${labbase}/shared/busco"
-[ -z "$query" ] && query="${labbase}/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/combined_assemblies.fasta" # set this to the query (genome/transcriptome) you are running
+[ -z "$query" ] && query="${labbase}/dbecks/DeNovo_transcriptome/2023_A.pul/output/stranded_output/strand_rr_allcontam_rem.fasta" # set this to the query (genome/transcriptome) you are running
 
 source "${busco_shared}/scripts/busco_init.sh"  # sets up the modules required for this in the right order
 
@@ -1529,111 +1531,9 @@ echo "STOP" $(date)
 
 sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco_final.sh
 
+Submitted batch job 334841
 ```
 
-Initial BUSCO run gave an error of duplicate transcripts in the combined_assemblies.fasta. I searched duplicates and it showed that some nonstranded concatenated transcripts had duplicate IDs but different lengths. Following the trinity guidelines, I wrote a python script to search my assembly for duplicate IDs with different lengths and kept the longest transcripts.
-
-```
-nano remove_duplicates.py
-
-from Bio import SeqIO
-
-input_file = "combined_assemblies.fasta"
-output_file = "combined_assemblies_no_duplicates.fasta"
-
-sequence_dict = {}
-
-for record in SeqIO.parse(input_file, "fasta"):
-    seq_id = record.id.split()[0]
-    # Extract the length from the description
-    seq_len = int(record.description.split("len=")[1].split()[0])
-
-    if seq_id not in sequence_dict or seq_len > int(sequence_dict[seq_id].description.split("len=")[1].split()[0]):
-        sequence_dict[seq_id] = record
-
-with open(output_file, "w") as out_f:
-    SeqIO.write(sequence_dict.values(), out_f, "fasta")
-
-print(f"Output written to {output_file}")
-
-```
-
-Ran the script
-
-
-```
-interactive
-
-module load Python/3.10.4-GCCcore-11.3.0
-
-pip install --user biopython
-
-python remove_duplicates.py
-
-```
-
-Checked duplicates were removed properly and how many transcripts were removed
-
-```
-grep ">TRINITY_DN115924_c0_g1_i1" combined_assemblies_no_duplicates.fasta
->TRINITY_DN115924_c0_g1_i1 len=663 path=[0:0-662]
-
-grep -c "^>" combined_assemblies_no_duplicates.fasta
-963287
-
-grep -c ">" combined_assemblies.fasta
-963413
-
-126 duplicates with different lengths were removed which means 215 transcripts from nonstranded assembly were still concatenated and can be used moving forward
-
-```
-
-
-Ran BUSCO again with edited no duplicate combined assembly.fasta
-```
-nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco_final.sh
-
-```
-
-```
-#!/bin/bash
-
-#SBATCH --job-name="busco_final"
-#SBATCH --time="100:00:00"
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=36
-#SBATCH --mem=120G
-##SBATCH --output="busco-%u-%x-%j"
-##SBATCH --account=putnamlab
-##SBATCH --export=NONE
-
-echo "START" $(date)
-
-export NUMEXPR_MAX_THREADS=36
-
-labbase=/data/putnamlab
-busco_shared="${labbase}/shared/busco"
-[ -z "$query" ] && query="${labbase}/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/combined_assemblies_no_duplicates.fasta" # set this to the query (genome/transcriptome) you are running
-
-source "${busco_shared}/scripts/busco_init.sh"  # sets up the modules required for this in the right order
-
-# This will generate output under your $HOME/busco_output
-cd "${labbase}/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/"
-
-# Run BUSCO with the --offline flag and specify the download path
-busco --config "$EBROOTBUSCO/config/config.ini" -f -c 20 -i "${query}" -l metazoa_odb10 -o busco_output -m transcriptome --offline --download_path "${busco_shared}/downloads/"
-
-echo "STOP" $(date)
-
-```
-
-```
-
-sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco_final.sh
-
-Submitted batch job 333443
-
-```
 
 ```
 cd /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/busco_output
@@ -1681,8 +1581,8 @@ nano /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/cd-hit-est.s
 module load CD-HIT/4.8.1-GCC-11.3.0
 
 # Define input and output file paths
-INPUT_FILE="/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/combined_assemblies_no_duplicates.fasta"
-OUTPUT_FILE="/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/CD-HIT/combined_assemblies_no_duplicates_cdhit.fasta"
+INPUT_FILE="/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/strand_rr_allcontam_rem.fasta"
+OUTPUT_FILE="/data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/CD-HIT/stranded_assembly_cdhit.fasta"
 
 # Run CD-HIT
 cd-hit-est -i $INPUT_FILE -o $OUTPUT_FILE -c 0.95 -n 10 -d 0 -M 16000 -T 8
@@ -1693,19 +1593,22 @@ cd-hit-est -i $INPUT_FILE -o $OUTPUT_FILE -c 0.95 -n 10 -d 0 -M 16000 -T 8
 ```
 sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/cd-hit-est.sh
 
-Submitted batch job 333716
+Submitted batch job 334849
 ```
 
-CD-HIT-EST Output file is: combined_assemblies_no_duplicates_cdhit.fasta
+CD-HIT-EST Output file is: stranded_assembly_cdhit.fasta
 ```
-963287  finished     781174  clusters
+total seq: 963075
+longest and shortest : 51090 and 164
+Total letters: 625126251
+Sequences have been sorted
 
-Approximated maximum memory consumption: 2850M
-writing new database
-writing clustering information
-program completed !
-
-Total CPU time 3750.80
+Approximated minimal memory consumption:
+Sequence        : 759M
+Buffer          : 8 X 34M = 275M
+Table           : 2 X 32M = 64M
+Miscellaneous   : 17M
+Total           : 1116M
 ```
 
 #### b) Asses CD-HIT-EST output with N50 and BUSCO
@@ -1713,7 +1616,7 @@ Total CPU time 3750.80
 Run N50 on cdhit assembly:
 
 ```
-/opt/software/Trinity/2.15.1-foss-2022a/trinityrnaseq-v2.15.1/util/TrinityStats.pl combined_assemblies_no_duplicates_cdhit.fasta > trinity_cdhit_assembly_stats
+/opt/software/Trinity/2.15.1-foss-2022a/trinityrnaseq-v2.15.1/util/TrinityStats.pl stranded_assembly_cdhit.fasta > trinity_cdhit_assembly_stats
 
 ```
 
@@ -1721,23 +1624,23 @@ Run N50 on cdhit assembly:
 ################################
 ## Counts of transcripts, etc.
 ################################
-Total trinity 'genes':  626275
-Total trinity transcripts:      781174
+Total trinity 'genes':  626101
+Total trinity transcripts:      780970
 Percent GC: 44.37
 
 ########################################
 Stats based on ALL transcript contigs:
 ########################################
 
-        Contig N10: 3594
+        Contig N10: 3595
         Contig N20: 2345
         Contig N30: 1642
         Contig N40: 1154
         Contig N50: 812
 
         Median contig length: 343
-        Average contig: 590.62
-        Total assembled bases: 461374005
+        Average contig: 590.67
+        Total assembled bases: 461293650
 
 ```
 
@@ -1752,13 +1655,13 @@ The contig N50 values can often be exaggerated due to an assembly program genera
 
         Contig N10: 3374
         Contig N20: 2085
-        Contig N30: 1392
+        Contig N30: 1393
         Contig N40: 950
         Contig N50: 673
 
         Median contig length: 321
-        Average contig: 535.50
-        Total assembled bases: 335367540
+        Average contig: 535.54
+        Total assembled bases: 335300440
 ```
 
 You can see that the Nx values based on the single longest isoform per gene are lower than the Nx stats based on all assembled contigs, as expected, and even though the Nx statistic is really not a reliable indicator of the quality of a transcriptome assembly, the Nx value based on using the longest isoform per gene is perhaps better for reasons described above.
@@ -1789,7 +1692,7 @@ export NUMEXPR_MAX_THREADS=36
 
 labbase=/data/putnamlab
 busco_shared="${labbase}/shared/busco"
-[ -z "$query" ] && query="${labbase}/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/CD-HIT/combined_assemblies_no_duplicates_cdhit.fasta" # set this to the query (genome/transcriptome) you are running
+[ -z "$query" ] && query="${labbase}/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/CD-HIT/stranded_assembly_cdhit.fasta" # set this to the query (genome/transcriptome) you are running
 
 source "${busco_shared}/scripts/busco_init.sh"  # sets up the modules required for this in the right order
 
@@ -1806,7 +1709,8 @@ echo "STOP" $(date)
 ```
 
 sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/busco_cdhit.sh
-Submitted batch job 333728
+
+Submitted batch job 334850
 ```
 
 ```
@@ -1844,7 +1748,7 @@ cd /data/putnamlab/jillashey/Apul_Genome/assembly/data/apul.hifiasm.s55_pa.p_ctg
 
 #### b) Generate genome build
 
-##### HiSat2 Align reads to refernece genome
+##### HiSat2 Align reads to refernece transcriptome
 [HiSat2](https://daehwankimlab.github.io/hisat2/main/)
 [HiSat2 Github](https://github.com/DaehwanKimLab/hisat2)
 
@@ -1879,7 +1783,7 @@ sbatch /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/scripts/Hisat2_gen
 Submitted batch job 333445
 ```
 
-#### c) Align reads to genome
+#### c) Align transcriptome to genome
 
 ```
 mkdir data/mapped
@@ -1914,7 +1818,7 @@ module load minimap2/2.24-GCCcore-11.3.0
 
 minimap2 -d /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Apul/reference_index.idx /data/putnamlab/jillashey/Apul_Genome/assembly/data/apul.hifiasm.s55_pa.p_ctg.fa.k32.w100.z1000.ntLink.5rounds.fa
 
-minimap2 -ax splice -uf /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Apul/reference_index.idx /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/CD-HIT/final_apul_denovo_transcriptome.fasta > trinity_aligned.sam
+minimap2 -ax splice -uf /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/data/ref_genome_Apul/reference_index.idx /data/putnamlab/dbecks/DeNovo_transcriptome/2023_A.pul/output/final_assembly/CD-HIT/stranded_assembly_cdhit.fasta > trinity_aligned.sam
 
 ```
 
