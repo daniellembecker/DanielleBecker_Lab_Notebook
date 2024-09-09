@@ -31,3 +31,16 @@ September 2024 goals and daily notebook entries.
 - Sent Neptune Systems Apex units for repair
 - Ch1 edits and updates
 
+### September 4
+- Ch1 target gene list methods and compilation
+- Ch2 holobiont protein QC and updates
+- Ch3 func annotation
+- Nyssa Meeting
+- Grading TA meeting
+
+### September 5
+- Ch1 target gene list compilation
+- Ch3 reproductive responses genotype contributions
+- Grading TA meeting
+
+
