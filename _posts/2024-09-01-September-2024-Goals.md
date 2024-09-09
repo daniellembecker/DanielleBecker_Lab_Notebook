@@ -43,4 +43,17 @@ September 2024 goals and daily notebook entries.
 - Ch3 reproductive responses genotype contributions
 - Grading TA meeting
 
+### September 6
+- Ch1 target gene list compilation
+- Ch3 reproductive responses genotype contributions
+- Grading TA 
+
+### September 9
+- Ch1 target gene list compilation
+- Ch3 functional annotation workflow
+- Ch3 results and methods section
+- Updated Gen5 lab software to version 3.16 and downloaded data for Nyssa
+- Lab storage inventory work
+
+
 
