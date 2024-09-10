@@ -55,5 +55,11 @@ September 2024 goals and daily notebook entries.
 - Updated Gen5 lab software to version 3.16 and downloaded data for Nyssa
 - Lab storage inventory work
 
+### September 10
+- Ch1 target gene list finished!
+- Ch3 functional annotation workflow
+- Ch3 introduction review
+- Ariana writing meeting
+
 
 
