@@ -1552,7 +1552,7 @@ C:99.8%[S:23.8%,D:76.0%],F:0.1%,M:0.1%,n:954
 ```
 
 
-# 9) Use CD-HIT to reduce redundancy and improve transcriptime assembly quality
+# 9) Use CD-HIT to reduce redundancy and improve transcriptome assembly quality
 
 #### a) Run CD-HIT-EST
 
