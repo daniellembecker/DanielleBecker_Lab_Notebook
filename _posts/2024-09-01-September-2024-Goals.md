@@ -75,6 +75,16 @@ September 2024 goals and daily notebook entries.
 - Ch1 edits to results and discussion
 - Flo writing meeting
 
+### September 13
+- BES writing accountability meeting - ch3 discussion paragraphs 1 and 2 - ch1 final results and discussion edits, sent to Hollie
+- Ch3 functional annotation workflow - trinotate signalp6 module issues
+- Ch3 revisit discussion outline - lit review
+- Ch1 submit to Hollie
+- Ch3 made mapping workflow to A.pul genome
+- Ch3 literature review on gene expression carryover/heritability analyses
+- Ch3 update results section
+- Ch3 lit review on Fst and kinship coefficient analyses
+
 
 
 
