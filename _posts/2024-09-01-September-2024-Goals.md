@@ -58,8 +58,25 @@ September 2024 goals and daily notebook entries.
 ### September 10
 - Ch1 target gene list finished!
 - Ch3 functional annotation workflow
-- Ch3 introduction review
+- Ch3 introduction edits
 - Ariana writing meeting
+
+### September 11
+- Writing accountability - virtual
+- Ch1 target gene list updates to results and discussion
+- Ch3 functional annotation workflow - trinotate tmhmv2 module issues
+- Ch3 introduction edits complete 
+- Ch3 update methods and discussion outline
+
+### September 12 
+- Ch3 genome RNAseq workflow write up (mapping most recent A.pul to genome assembly)
+- Ch3 functional annotation workflow - trinotate signalp6 module issues
+- Ch3 revisit discussion outline - lit review
+- Ch1 edits to results and discussion
+- Flo writing meeting
+
+
+
 
 
 
