@@ -84,6 +84,30 @@ September 2024 goals and daily notebook entries.
 - Ch3 literature review on gene expression carryover/heritability analyses
 - Ch3 update results section
 - Ch3 lit review on Fst and kinship coefficient analyses
+- IDP completion
+
+### September 15
+- Ch3 discussion paragraphs 1 and 2
+- Ch3 Fst workflow for transcriptome variant calling
+- DEIJ bullet points for Putnam Lab meeting
+- Ch3 genotypic contribution model creation
+- Ch3 hisat2 alignment to A.pul genome workflow
+
+### September 16
+- Ch3 discussion paragraphs 1 and 2 edits
+- Ch3 Fst workflow for transcriptome variant calling 
+- Running into length errors, I think this is due to transcripts compared to genes due to isoforms
+- Putnam Lab meeting
+- Ch3 genotypic contribution paragraph
+
+### September 17
+- Ch3 discussion paragraphs 1 and 2 and 3 edits
+- Ch3 Fst workflow for transcriptome variant calling using supertranscripts and trinity pipeline for GATK, etc.
+- Jacob meeting 
+- Ch3 genotypic contribution paragraph and analyses for fertilization success
+- Literature review for ordinal logistic regression model with [temporal autocorrelation](https://www.nature.com/articles/s41467-018-04074-2)
+
+
 
 
 
