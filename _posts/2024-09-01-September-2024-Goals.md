@@ -107,8 +107,34 @@ September 2024 goals and daily notebook entries.
 - Ch3 genotypic contribution paragraph and analyses for fertilization success
 - Literature review for ordinal logistic regression model with [temporal autocorrelation](https://www.nature.com/articles/s41467-018-04074-2)
 
+### September 18
+- Ch3 intro and discussion edits
+- Ch3 fst pipeline move all materials to unity through globus connect, not enough RAM on Andromeda
+- Ch2 multicollinearity script and logistic regression
+- Ch3 funtional annotation
+- BES writing accountability Ch3 discussion paragraph 3 + 4
 
+### September 19
+- Lab writing meeting, ch1 edits and feedback for ncRNA Jill manuscript
+- Hollie meeting, ch2 and ch3 ways forward for story 
+- Ch1 edits
+- Ch3 intro and discussion edits
+- TA test prep for two sections
 
+### September 20
+- Ch3 final func annot done
+- Ch3 variant calling on globus connect and unity 
+- E5 molecular meeting
+
+### September 21
+- Ch3 final func annot done
+- Ch3 venn diagram for DEGs comparison
+- Ch3 functional annotation goMWU methods and script
+
+### September 23
+- Ch2 paragraphs 1 and 2 and abstract and intro edits
+- TA grading
+- Ch2 multicollinearity analysis
 
 
 
