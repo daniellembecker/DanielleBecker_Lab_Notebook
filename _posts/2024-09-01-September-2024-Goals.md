@@ -135,6 +135,26 @@ September 2024 goals and daily notebook entries.
 - Ch2 paragraphs 1 and 2 and abstract and intro edits
 - TA grading
 - Ch2 multicollinearity analysis
+- Lab meeting
+
+### September 24
+- Ch2 ordinal logistic regression analysis 
+- Ch3 discussion paragraph edits and paragraph three
+- Ch3 func annot goMWU scripts
+- Ch2 discussion paragraph 1 and 2
+
+### September 25
+- BES writing accountability
+- Ch3 variant calling script finished!
+- Ch3 discussion paragraph three
+- Ch3 introduction edits 
+- Ch2 discussion paragraph 3, introduction edits
+
+
+
+
+
+
 
 
 
