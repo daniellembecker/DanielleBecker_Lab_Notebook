@@ -150,6 +150,20 @@ September 2024 goals and daily notebook entries.
 - Ch3 introduction edits 
 - Ch2 discussion paragraph 3, introduction edits
 
+### September 26
+- Ch3 vcf tools vcf concat 
+- Ch3 discussion paragraph 4 + 5
+- Ch2 discussion paragraph 3, introduction edits
+- Ch2 multivariate stats analysis
+
+### September 27
+- Ch3 vcf tools vcf concat working throuh
+- Ch3 discussion paragraph 6, intro add paragraph for energy trade off
+- Ch2 discussion paragraph 4
+- Ch2 multivariate stats analysis
+- Ch3 larval daily measurements
+- BES writing accountability
+
 
 
 
