@@ -20,4 +20,7 @@ I am working on transferring the following files from Andromeda to Unity. The fi
 	- SNP calling;trinity `/data/putnamlab/dbecks/Heatwave_A.pul_2022Project/data`
 	- Scripts `/data/putnamlab/dbecks/Heatwave_A.pul_2022Project/scripts`
 
+- Acropora pulchra de novo transcriptome 2023 project
+	- `/data/putnamlab/dbecks/DeNovo_transcriptome`
+
  I tried transferring on May 1st, just realized some data files did not go through, re-running globusconnect.
