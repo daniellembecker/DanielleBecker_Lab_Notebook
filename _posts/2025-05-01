@@ -1,0 +1,23 @@
+---
+layout: post
+title: Data transfer from Andromeda to Unity
+date: '2025-05-01'
+categories: Data_Management
+tags: Data_Management
+---
+
+I began transferring and backing up data from Andromeda (URI server) to Unity.
+
+# Transfers to Unity 
+
+I am working on transferring the following files from Andromeda to Unity. The file paths indicate current location. I am only transferring raw data and not intermediate files.   
+
+- E5 2020 project
+	- RNAseq `/data/putnamlab/dbecks/Becker_E5/Becker_RNASeq`
+	- WGBS `/data/putnamlab/dbecks/Becker_E5/WGBS_Becker_E5`
+
+- Marine Heatwave 2022 project 
+	- SNP calling;trinity `/data/putnamlab/dbecks/Heatwave_A.pul_2022Project/data`
+	- Scripts `/data/putnamlab/dbecks/Heatwave_A.pul_2022Project/scripts`
+
+ I tried transferring on May 1st, just realized some data files did not go through, re-running globusconnect.
